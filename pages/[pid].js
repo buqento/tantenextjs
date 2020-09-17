@@ -47,7 +47,7 @@ const Post = () => {
                     </div>
                 }
             </Container>
-            <div style={{ marginBottom: '26px' }}>
+            <div style={{ marginBottom: '50px' }}>
                 <ListKos data={otherItems} />
             </div>
             <FooterDetail className="fix-footer footer-detail" contactUs={pid && dt && dt[0].contact_us} />

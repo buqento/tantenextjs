@@ -8,7 +8,7 @@ class KostItem extends Component {
         const { item } = this.props
         return (
             <Link href={item.slug}>
-                <div>
+                <div style={{borderTop: '8px solid gainsboro'}}>
                     <Image src={item.images[0]} alt={item.title} fluid />
                     <div className="p-3">
                     <Card.Title>{item.title}</Card.Title>

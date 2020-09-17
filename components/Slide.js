@@ -19,7 +19,7 @@ class Slide extends Component {
             {
                 imagesData && imagesData.map((item, index) =>
                     <SwiperSlide key={index}>
-                        <img src={item} alt={`${imageTitle} ${index+1}`} style={{maxHeight: '360px'}} />
+                        <img src={item} alt={`${imageTitle} ${index+1}`} style={{maxHeight: '500px'}} />
                     </SwiperSlide>
                 )
             }
