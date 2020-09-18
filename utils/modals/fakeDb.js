@@ -5,8 +5,8 @@ export const DataKos = [
         title: 'Rumah Makan Kontrak Tahunan Laha Kota Ambon',
         description: 'Dikontrakkan sebuah rumah makan, berlokasi di daerah depan bandar udara Pattimura Laha Kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
         images: [
-            'https://i.imgur.com/uyF2J7P.png',
-            'https://i.imgur.com/3Z3Y5G0.png'
+            'https://thumbnails-photos.amazon.com/v1/thumbnail/vDJ1RcLBR9yz7dbjd3gn4w?viewBox=660%2C620&ownerId=A3GRWG6KFYTNSE',
+            'https://thumbnails-photos.amazon.com/v1/thumbnail/40igOpw4QkaxzGs61cmBwg?viewBox=660%2C619&ownerId=A3GRWG6KFYTNSE'
         ],
         location_title: 'Laha',
         category: 'kos',
@@ -22,11 +22,11 @@ export const DataKos = [
         title: 'Rumah kontrak tahunan Suli Atas',
         description: 'Dikontrakkan sebuah rumah di daerah Suli Atas. Fasilitas yang disediakan yaitu 2 kamar tidur, kamar mandi, dapur, ruang tamu, ruang keluarga, teras, garasi mobil. Bagi yang berminat dapat menghubungi pengelola.',
         images: [
-            'https://i.imgur.com/0utQPHq.png',
-            'https://i.imgur.com/L4OSPWG.png',
-            'https://i.imgur.com/WUUNk48.png',
-            'https://i.imgur.com/rMMEKS5.png',
-            'https://i.imgur.com/JhcE4Bo.png'
+            'https://thumbnails-photos.amazon.com/v1/thumbnail/huG7cShzQ_m_flk2luDe-g?viewBox=620%2C620&ownerId=A3GRWG6KFYTNSE',
+            'https://thumbnails-photos.amazon.com/v1/thumbnail/OO5SdIIvTuGinZ4-ZZDUaQ?viewBox=620%2C620&ownerId=A3GRWG6KFYTNSE',
+            'https://thumbnails-photos.amazon.com/v1/thumbnail/WS4jxlwgQDCoeVo1GHe9Rg?viewBox=620%2C620&ownerId=A3GRWG6KFYTNSE',
+            'https://thumbnails-photos.amazon.com/v1/thumbnail/gHavXsHvSuOvvX55TFfY7w?viewBox=620%2C620&ownerId=A3GRWG6KFYTNSE',
+            'https://thumbnails-photos.amazon.com/v1/thumbnail/ptBT8WvHSyS-f67ruWusww?viewBox=620%2C620&ownerId=A3GRWG6KFYTNSE'
         ],
         location_title: 'Suli Atas',
         category: 'kos',
