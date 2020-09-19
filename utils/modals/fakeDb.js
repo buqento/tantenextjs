@@ -4,6 +4,7 @@ export const DataKos = [
         slug: 'rumah-makan-kontrak-tahunan-laha-kota-ambon',
         title: 'Rumah Makan Kontrak Tahunan Laha Kota Ambon',
         description: 'Dikontrakkan sebuah rumah makan, berlokasi di daerah depan bandar udara Pattimura Laha Kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'rumah, kos, kontrakan, laha',
         images: [
             'https://i.imgur.com/uyF2J7P.png',
             'https://i.imgur.com/3Z3Y5G0.png'
@@ -21,6 +22,7 @@ export const DataKos = [
         slug: 'rumah-kontrak-tahunan-suli-atas',
         title: 'Rumah kontrak tahunan Suli Atas',
         description: 'Dikontrakkan sebuah rumah di daerah Suli Atas. Fasilitas yang disediakan yaitu 2 kamar tidur, kamar mandi, dapur, ruang tamu, ruang keluarga, teras, garasi mobil. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'rumah, kos, kontrakan, suli',
         images: [
             'https://i.imgur.com/0utQPHq.png',
             'https://i.imgur.com/L4OSPWG.png',
@@ -41,6 +43,7 @@ export const DataKos = [
         slug: 'rumah-kos-lorong-mayang-pusat-kota-ambon',
         title: 'Rumah Kos Lorong Mayang, Pusat Kota Ambon',
         description: 'Kamar kos berlokasi di Pusat Kota Ambon (lorong Mayang, belakang Apotik Gideon Farma). Tersedia fasilitas AC, televisi, kulkas, lemari, springbed 2 bdn, kursi dan meja. Kamar mandi dan mini kitchen d dlm kamar. Listrik token. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'rumah, kos, kontrakan, ambon',
         images: [
             'https://i.imgur.com/MGQNiuC.png',
             'https://i.imgur.com/3b4ul2j.png',
@@ -61,6 +64,7 @@ export const DataKos = [
         slug: 'kos-harian-bulanan-seram-bagian-barat-piru',
         title: 'Kos harian/bulanan Seram Bagian Barat (Piru)',
         description: 'Terima kos harian (biaya sewa disesuaikan), bulanan (biaya sewa Rp400.000 / bulan. Beralamat di Desa Kamal (dekat Pasar Waisarisa depan Puskesmas Kamal lama), Seram Bagian Barat (Piru). Kelebihan: Bebas tempat parkir, Air bersih, keamanan terjamin, lokasi strategis (depan jalan), dekat dengan fasilitas umum seperti sekolah, pasar, bank dll.',
+        keywords: 'rumah, kos, kontrakan, piru',
         images: [
             'https://i.imgur.com/IEclXWo.png',
             'https://i.imgur.com/JOyd5Br.png',
@@ -79,6 +83,7 @@ export const DataKos = [
         slug: 'kos-harian-bulanan-nyaman-strategis-almira-homestay',
         title: 'Kos Murah Harian Bulanan Almira Homestay di Silale Kota Ambon',
         description: 'Tersedia kos murah, nyaman dan strategis. Biaya sewa dan fasilitas bervariasi mulai dari harian (Rp100.000) dan bulanan (Rp700.000). Bebas biaya listrik dan air bersih. Berlokasi di Silale Kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'rumah, kos, kontrakan, silale',
         images: [
             'https://i.imgur.com/eT62Hma.png',
             'https://i.imgur.com/k8jx1CJ.png',
