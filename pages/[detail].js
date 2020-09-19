@@ -23,6 +23,8 @@ class Detail extends React.Component {
       {
         data && data[0] &&
         <NextHead>
+          <title>{data[0].title}</title>
+          <link rel="canonical" content={`https://tantekos.com/${data[0].slug}`}></link>
           <meta property="og:title" content={data[0].title} />
           <meta property="og:description" content={data[0].description} />
           <meta property="og:type" content="website" />
@@ -54,7 +56,7 @@ class Detail extends React.Component {
           </Container>
           <div style={{ marginBottom: '50px' }}>
             <ListKos data={otherItems} />
-            </div>
+          </div>
           <FooterDetail className="fix-footer footer-detail" contactUs={data[0].contact_us} />
         </>
       }
