@@ -9,7 +9,7 @@ class ListKos extends Component {
         const { data } = this.props
         return (
             <div style={{borderTop: '8px solid gainsboro'}}>
-            <p className={`ml-3 ${styles.headingtwo}`}>Kos Lainnya</p>
+            <p className={`ml-3 ${styles.headingtwo}`}>Kost Lainnya</p>
 
                 <Container className="mt-3">
                 {
