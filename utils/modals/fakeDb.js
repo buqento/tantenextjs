@@ -143,6 +143,24 @@ export const DataKos = [
             phone: '6282331324783'
         },
         facilities: ['Kamar tidur', 'Ruang tamu', 'Dapur', 'Kamar mandi']
+    },
+    {
+        id: 8,
+        slug: 'kos-murah-nyaman-strategis-jalan-baru-kota-ambon',
+        title: 'Kost Murah Nyaman Bersih Strategis Jalan Baru Kota Ambon',
+        description: 'Tersedia kos murah, nyaman dan strategis dekat Masjid Raya Alfatah, Masjid Jami Jalan baru kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'jalan baru, kota ambon',
+        images: [
+            'https://i.imgur.com/SxJCFTL.png',
+            'https://i.imgur.com/jQtXqlw.png',
+            'https://i.imgur.com/FzzOpw2.png'
+        ],
+        location_title: 'Jalan Baru',
+        category: 'kost',
+        contact_us : {
+            facebook_url: 'https://www.facebook.com/chie.m.nhirasharye',
+            phone: ''
+        },
+        facilities: ['Lemari pakaian', 'Kamar mandi dalam', 'Kasur', 'Internet', 'AC/Kipas angin']
     }
 ]
-
