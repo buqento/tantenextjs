@@ -4,7 +4,7 @@ export const DataKos = [
         slug: 'rumah-makan-kontrak-tahunan-laha-kota-ambon',
         title: 'Rumah Makan Kontrak Tahunan Laha Kota Ambon',
         description: 'Dikontrakkan sebuah rumah makan, berlokasi di daerah depan bandar udara Pattimura Laha Kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
-        keywords: 'laha',
+        keywords: 'laha, kota ambon',
         images: [
             'https://i.imgur.com/uyF2J7P.png',
             'https://i.imgur.com/3Z3Y5G0.png'
@@ -30,7 +30,7 @@ export const DataKos = [
             'https://i.imgur.com/rMMEKS5.png',
             'https://i.imgur.com/JhcE4Bo.png'
         ],
-        location_title: 'Suli Atas',
+        location_title: 'Suli Atas, kota ambon',
         category: 'kontrakan',
         contact_us : {
             facebook_url: 'https://www.facebook.com/Dedox002',
@@ -63,7 +63,7 @@ export const DataKos = [
         slug: 'kos-harian-bulanan-seram-bagian-barat-piru',
         title: 'Kost Harian Bulanan Piru Seram Bagian Barat',
         description: 'Terima kost harian (biaya sewa disesuaikan), bulanan (biaya sewa Rp400.000 / bulan. Beralamat di Desa Kamal (dekat Pasar Waisarisa depan Puskesmas Kamal lama), Seram Bagian Barat (Piru). Kelebihan: Bebas tempat parkir, Air bersih, keamanan terjamin, lokasi strategis (depan jalan), dekat dengan fasilitas umum seperti sekolah, pasar, bank dll.',
-        keywords: 'piru',
+        keywords: 'piru, seram bagian barat',
         images: [
             'https://i.imgur.com/IEclXWo.png',
             'https://i.imgur.com/JOyd5Br.png',
@@ -82,7 +82,7 @@ export const DataKos = [
         slug: 'kos-harian-bulanan-nyaman-strategis-almira-homestay',
         title: 'Kost Murah Harian Bulanan Silale Kota Ambon Almira Homestay',
         description: 'Tersedia kost murah, nyaman dan strategis. Biaya sewa dan fasilitas bervariasi mulai dari harian (Rp100.000) dan bulanan (Rp700.000). Bebas biaya listrik dan air bersih. Berlokasi di Silale Kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
-        keywords: 'silale',
+        keywords: 'silale, kota ambon',
         images: [
             'https://i.imgur.com/eT62Hma.png',
             'https://i.imgur.com/k8jx1CJ.png',
@@ -104,7 +104,7 @@ export const DataKos = [
         slug: 'kos-vivi-silale',
         title: 'Kost Murah Harian Bulanan Silale Kota Ambon Kost Vivi',
         description: 'Kost Vivi Silale. Fasilitas (sesuai foto). Springbed+sperai dan bantal, lemari besar, AC, kamar luas, kamar mandi dalam luas+dapur dalam. Tiap kamar ada jemuran, ada tempat parkir motor & mobil. Air sumur bor lancar jaya. Harga sewa 1,5jt/bulan atau 500rb/minggu. Info lengkap 085244774092 (Vivi Rimony) - Instagram @vvrimony',
-        keywords: 'silale',
+        keywords: 'silale, kota ambon',
         images: [
             'https://i.imgur.com/pkt6aLg.png',
             'https://i.imgur.com/rtzs9XG.png',
@@ -118,7 +118,31 @@ export const DataKos = [
             facebook_url: 'https://www.facebook.com/vivi.rimony',
             phone: '6285244774092'
         },
-        facilities: ['Springbed + sperai dan bantal', 'lemari besar', 'AC', 'Kamar mandi dalam', 'Dapur dalam', 'Tiap kamar ada jemuran', 'Parkiran motor & mobil'        ]
+        facilities: ['Springbed + sperai dan bantal', 'lemari besar', 'AC', 'Kamar mandi dalam', 'Dapur dalam', 'Tiap kamar ada jemuran', 'Parkiran motor & mobil']
+    },
+    {
+        id: 7,
+        slug: 'rumah-kontrak-kampung-jawa-kapaha-ambon',
+        title: 'Rumah Kontrak Tahunan Kampung Jawa Kapaha Kota Ambon',
+        description: 'Dikontrakan sebuah rumah sederhana, bersih, dan nyaman. Alamat Kampung Jawa, Kapaha, Kota Ambon. Bagi yang berminat dapat menghubungi pemilik pada nomor yang tersedia.',
+        keywords: 'kampung jawa, kapaha, kota ambon',
+        images: [
+            'https://i.imgur.com/4g4Lbyu.png',
+            'https://i.imgur.com/k5lIboq.png',
+            'https://i.imgur.com/1Xf4l6P.png',
+            'https://i.imgur.com/OoyUSTr.png',
+            'https://i.imgur.com/jLrc8B5.png',
+            'https://i.imgur.com/OrnqFMU.png',
+            'https://i.imgur.com/ELrzE90.png',
+            'https://i.imgur.com/EKxK1f3.png'
+        ],
+        location_title: 'Kapaha',
+        category: 'kost',
+        contact_us : {
+            facebook_url: 'https://www.facebook.com/profile.php?id=100039966772432',
+            phone: '6282331324783'
+        },
+        facilities: ['Kamar tidur', 'Ruang tamu', 'Dapur', 'Kamar mandi']
     }
 ]
 
