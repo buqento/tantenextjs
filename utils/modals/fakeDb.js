@@ -98,6 +98,27 @@ export const DataKos = [
             phone: ''
         },
         facilities: ['Kamar mandi dalam', 'Kasur', 'AC']
+    },
+    {
+        id: 6,
+        slug: 'kos-vivi-silale',
+        title: 'Kost Murah Harian Bulanan Silale Kota Ambon Kost Vivi',
+        description: 'Kost Vivi Silale. Fasilitas (sesuai foto). Springbed+sperai dan bantal, lemari besar, AC, kamar luas, kamar mandi dalam luas+dapur dalam. Tiap kamar ada jemuran, ada tempat parkir motor & mobil. Air sumur bor lancar jaya. Harga sewa 1,5jt/bulan atau 500rb/minggu. Info lengkap 085244774092 (Vivi Rimony) - Instagram @vvrimony',
+        keywords: 'silale',
+        images: [
+            'https://i.imgur.com/pkt6aLg.png',
+            'https://i.imgur.com/rtzs9XG.png',
+            'https://i.imgur.com/9ZBViea.png',
+            'https://i.imgur.com/ZsrDQKA.png',
+            'https://i.imgur.com/VAko5rH.png'
+        ],
+        location_title: 'Silale',
+        category: 'kost',
+        contact_us : {
+            facebook_url: 'https://www.facebook.com/vivi.rimony',
+            phone: '6285244774092'
+        },
+        facilities: ['Springbed + sperai dan bantal', 'lemari besar', 'AC', 'Kamar mandi dalam', 'Dapur dalam', 'Tiap kamar ada jemuran', 'Parkiran motor & mobil'        ]
     }
 ]
 
