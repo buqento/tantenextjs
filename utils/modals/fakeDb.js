@@ -1,6 +1,8 @@
 export const DataKos = [
     {
         id: 1,
+        date_modified: '2020-06-08 17:10:19 +0700',
+        date_published: '2020-06-08 17:10:19 +0700',
         slug: 'rumah-makan-kontrak-tahunan-laha-kota-ambon',
         title: 'Rumah Makan Kontrak Tahunan Laha Kota Ambon',
         description: 'Dikontrakkan sebuah rumah makan, berlokasi di daerah depan bandar udara Pattimura Laha Kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
@@ -19,6 +21,8 @@ export const DataKos = [
     },
     {
         id: 2,
+        date_modified: '2020-06-08 17:10:19 +0700',
+        date_published: '2020-06-08 17:10:19 +0700',
         slug: 'rumah-kontrak-tahunan-suli-atas',
         title: 'Rumah Kontrak Tahunan Suli Atas',
         description: 'Dikontrakkan sebuah rumah di daerah Suli Atas. Fasilitas yang disediakan yaitu 2 kamar tidur, kamar mandi, dapur, ruang tamu, ruang keluarga, teras, garasi mobil. Bagi yang berminat dapat menghubungi pengelola.',
@@ -40,6 +44,8 @@ export const DataKos = [
     },
     {
         id: 3,
+        date_modified: '2020-06-08 17:10:19 +0700',
+        date_published: '2020-06-08 17:10:19 +0700',
         slug: 'rumah-kos-lorong-mayang-pusat-kota-ambon',
         title: 'Rumah Kost Lorong Mayang Pusat Kota Ambon',
         description: 'Kamar kost berlokasi di Pusat Kota Ambon (lorong Mayang, belakang Apotik Gideon Farma). Tersedia fasilitas AC, televisi, kulkas, lemari, springbed 2 bdn, kursi dan meja. Kamar mandi dan mini kitchen d dlm kamar. Listrik token. Bagi yang berminat dapat menghubungi pengelola.',
@@ -60,6 +66,8 @@ export const DataKos = [
     },
     {
         id: 4,
+        date_modified: '2020-06-08 17:10:19 +0700',
+        date_published: '2020-06-08 17:10:19 +0700',
         slug: 'kos-harian-bulanan-seram-bagian-barat-piru',
         title: 'Kost Harian Bulanan Piru Seram Bagian Barat',
         description: 'Terima kost harian (biaya sewa disesuaikan), bulanan (biaya sewa Rp400.000 / bulan. Beralamat di Desa Kamal (dekat Pasar Waisarisa depan Puskesmas Kamal lama), Seram Bagian Barat (Piru). Kelebihan: Bebas tempat parkir, Air bersih, keamanan terjamin, lokasi strategis (depan jalan), dekat dengan fasilitas umum seperti sekolah, pasar, bank dll.',
@@ -79,6 +87,8 @@ export const DataKos = [
     },
     {
         id: 5,
+        date_modified: '2020-06-08 17:10:19 +0700',
+        date_published: '2020-06-08 17:10:19 +0700',
         slug: 'kos-harian-bulanan-nyaman-strategis-almira-homestay',
         title: 'Kost Murah Harian Bulanan Silale Kota Ambon Almira Homestay',
         description: 'Tersedia kost murah, nyaman dan strategis. Biaya sewa dan fasilitas bervariasi mulai dari harian (Rp100.000) dan bulanan (Rp700.000). Bebas biaya listrik dan air bersih. Berlokasi di Silale Kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
@@ -101,6 +111,8 @@ export const DataKos = [
     },
     {
         id: 6,
+        date_modified: '2020-06-08 17:10:19 +0700',
+        date_published: '2020-06-08 17:10:19 +0700',
         slug: 'kos-vivi-silale',
         title: 'Kost Murah Harian Bulanan Silale Kota Ambon Kost Vivi',
         description: 'Kost Vivi Silale. Fasilitas (sesuai foto). Springbed+sperai dan bantal, lemari besar, AC, kamar luas, kamar mandi dalam luas+dapur dalam. Tiap kamar ada jemuran, ada tempat parkir motor & mobil. Air sumur bor lancar jaya. Harga sewa 1,5jt/bulan atau 500rb/minggu. Info lengkap 085244774092 (Vivi Rimony) - Instagram @vvrimony',
@@ -122,6 +134,8 @@ export const DataKos = [
     },
     {
         id: 7,
+        date_modified: '2020-06-08 17:10:19 +0700',
+        date_published: '2020-06-08 17:10:19 +0700',
         slug: 'rumah-kontrak-kampung-jawa-kapaha-ambon',
         title: 'Rumah Kontrak Tahunan Kampung Jawa Kapaha Kota Ambon',
         description: 'Dikontrakan sebuah rumah sederhana, bersih, dan nyaman. Alamat Kampung Jawa, Kapaha, Kota Ambon. Bagi yang berminat dapat menghubungi pemilik pada nomor yang tersedia.',
@@ -146,6 +160,8 @@ export const DataKos = [
     },
     {
         id: 8,
+        date_modified: '2020-06-08 17:10:19 +0700',
+        date_published: '2020-06-08 17:10:19 +0700',
         slug: 'kos-murah-nyaman-strategis-jalan-baru-kota-ambon',
         title: 'Kost Murah Nyaman Bersih Strategis Jalan Baru Kota Ambon',
         description: 'Tersedia kos murah, nyaman dan strategis dekat Masjid Raya Alfatah, Masjid Jami Jalan baru kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',

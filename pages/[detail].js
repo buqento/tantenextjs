@@ -22,12 +22,27 @@ class Detail extends React.Component {
     const otherItems = DataKos.filter(item => item.slug !== slug)
     const structureData = `{
       "@context": "https://schema.org",
-      "@id": "#product",
-      "@type": "IndividualProduct",
-      "additionalType": "${`https://tantekos.com/${slug}`}",
-      "description": "${data[0].description}",
-      "name": "${data[0].title}",
-      "image": "${data[0].images[0]}"
+      "@type": "NewsArticle",
+      "url": "${`https://tantekos.com/${slug}`}",
+      "author": {
+        "@type": "Person",
+        "name": "Bvqento"
+      },
+      "publisher":{
+         "@type":"Organization",
+         "name":"Tantekos",
+         "logo": {
+          "@type": "ImageObject",
+          "url": "https://github.com/buqento/tantenextjs/blob/master/static/images/Home-icon.png?raw=true"
+        }
+      },
+      "headline": "${data[0].title}",
+      "mainEntityOfPage": "${`https://tantekos.com/${slug}`}",
+      "articleBody": "${data[0].description}",
+      "image": [${data[0].images.map(item => `"${item}"`)}],
+      "dateModified":"${data[0].date_modified}",
+      "datePublished":"${data[0].date_published}"
+
   }`
     return <>
       {
