@@ -8,6 +8,7 @@ import ListKos from '../components/ListKos'
 import HeadPage from '../components/HeadPage'
 import styles from '../styles/Home.module.css'
 import { DataKos } from '../utils/modals/fakeDb'
+import Currency from '../components/Currency'
 
 class Detail extends React.Component {
   static async getInitialProps(ctx) {
@@ -92,6 +93,13 @@ class Detail extends React.Component {
                 <p className={styles.headingtwo}>Lokasi Kost</p>
                 {data[0].location_title}
               </div>
+              {
+                data[0].start_price > 0 &&
+                <div>
+                  <p className={styles.headingtwo}>Harga Mulai</p>
+                  {Currency(data[0].start_price)}
+                </div>
+              }
               <div className="border-top mt-3">
                 <small>
                   * Data dapat berubah sewaktu-waktu, tanyakan data saat ini.

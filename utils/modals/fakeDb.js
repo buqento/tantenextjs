@@ -17,7 +17,8 @@ export const DataKos = [
             facebook_url: 'https://www.facebook.com/zhul.putra.148',
             phone: '6285256593431'
         },
-        facilities: ['Parkiran']
+        facilities: ['Parkiran'],
+        start_price: 0
     },
     {
         id: 2,
@@ -40,7 +41,8 @@ export const DataKos = [
             facebook_url: 'https://www.facebook.com/Dedox002',
             phone: ''
         },
-        facilities: ['Kamar mandi', 'Dapur', 'Ruang tamu', 'Ruang keluarga', 'Teras', 'Garasi mobil', 'Listrik meteran (pulsa)']
+        facilities: ['Kamar mandi', 'Dapur', 'Ruang tamu', 'Ruang keluarga', 'Teras', 'Garasi mobil', 'Listrik meteran (pulsa)'],
+        start_price: 0
     },
     {
         id: 3,
@@ -62,7 +64,8 @@ export const DataKos = [
             facebook_url: 'https://www.facebook.com/profile.php?id=100004804935380',
             phone: ''
         },
-        facilities: ['AC', 'televisi', 'kulkas', 'lemari', 'springbed', 'kursi dan meja', 'Kamar mandi', 'mini kitchen']
+        facilities: ['AC', 'televisi', 'kulkas', 'lemari', 'springbed', 'kursi dan meja', 'Kamar mandi', 'mini kitchen'],
+        start_price: 0
     },
     {
         id: 4,
@@ -83,7 +86,8 @@ export const DataKos = [
             facebook_url: 'https://www.facebook.com/profile.php?id=100006131414651',
             phone: '6282239502969'
         },
-        facilities: ['Parkiran', 'Air bersih']
+        facilities: ['Parkiran', 'Air bersih'],
+        start_price: 400000
     },
     {
         id: 5,
@@ -107,7 +111,8 @@ export const DataKos = [
             facebook_url: 'https://www.facebook.com/almirahomestay.almirahomestay',
             phone: ''
         },
-        facilities: ['Kamar mandi dalam', 'Kasur', 'AC']
+        facilities: ['Kamar mandi dalam', 'Kasur', 'AC'],
+        start_price: 100000
     },
     {
         id: 6,
@@ -130,7 +135,8 @@ export const DataKos = [
             facebook_url: 'https://www.facebook.com/vivi.rimony',
             phone: '6285244774092'
         },
-        facilities: ['Springbed + sperai dan bantal', 'lemari besar', 'AC', 'Kamar mandi dalam', 'Dapur dalam', 'Tiap kamar ada jemuran', 'Parkiran motor & mobil']
+        facilities: ['Springbed + sperai dan bantal', 'lemari besar', 'AC', 'Kamar mandi dalam', 'Dapur dalam', 'Tiap kamar ada jemuran', 'Parkiran motor & mobil'],
+        start_price: 500000
     },
     {
         id: 7,
@@ -156,7 +162,8 @@ export const DataKos = [
             facebook_url: 'https://www.facebook.com/profile.php?id=100039966772432',
             phone: '6282331324783'
         },
-        facilities: ['Kamar tidur', 'Ruang tamu', 'Dapur', 'Kamar mandi']
+        facilities: ['Kamar tidur', 'Ruang tamu', 'Dapur', 'Kamar mandi'],
+        start_price: 0
     },
     {
         id: 8,
@@ -164,7 +171,7 @@ export const DataKos = [
         date_published: '2020-06-08 17:10:19 +0700',
         slug: 'kos-murah-nyaman-strategis-jalan-baru-kota-ambon',
         title: 'Kost Murah Nyaman Bersih Strategis Jalan Baru Kota Ambon',
-        description: 'Tersedia kos murah, nyaman dan strategis dekat Masjid Raya Alfatah, Masjid Jami Jalan baru kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
+        description: 'Tersedia kost murah, nyaman dan strategis dekat Masjid Raya Alfatah, Masjid Jami Jalan baru kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
         keywords: 'jalan baru, kota ambon',
         images: [
             'https://i.imgur.com/SxJCFTL.png',
@@ -177,6 +184,34 @@ export const DataKos = [
             facebook_url: 'https://www.facebook.com/chie.m.nhirasharye',
             phone: ''
         },
-        facilities: ['Lemari pakaian', 'Kamar mandi dalam', 'Kasur', 'Internet', 'AC/Kipas angin']
+        facilities: ['Lemari pakaian', 'Kamar mandi dalam', 'Kasur', 'Internet', 'AC/Kipas angin'],
+        start_price: 0
+
+    },
+    {
+        id: 9,
+        date_modified: '2020-09-24 05:10:19 +0700',
+        date_published: '2020-09-24 05:10:19 +0700',
+        slug: 'kontrakan-tahunan-nyaman-bersih-strategis-jalan-baru-kota-ambon-belakang-masjid-nurul-huda',
+        title: 'Kontrakan Tahunan Nyaman Bersih Strategis Jalan Baru Kota Ambon - Belakang Masjid Nurul Huda',
+        description: 'Tersedia rumah kontrak tahunan murah nyaman dan strategis Jalan baru kota Ambon (3 Lantai). Dari Mesjid Al Fatah masuk lorong di belakang Masjid Nurul Huda. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'jalan baru, kota ambon',
+        images: [
+            'https://i.imgur.com/20XrnCI.png',
+            'https://i.imgur.com/P8MvbqL.png',
+            'https://i.imgur.com/hzCOAzl.png',
+            'https://i.imgur.com/QrAzRDc.png',
+            'https://i.imgur.com/cFxLyzk.png',
+            'https://i.imgur.com/aaLTKFg.png',
+            'https://i.imgur.com/pij3ZH4.png'
+        ],
+        location_title: 'Jalan Baru',
+        category: 'kontrakan',
+        contact_us : {
+            facebook_url: 'https://www.facebook.com/yudha.a.setiawan.14',
+            phone: '6282195753215'
+        },
+        facilities: ['Air Sumur Bor', '2 Kamar Tidur', '1 Kamar Mandi'],
+        start_price: 12000000
     }
 ]
