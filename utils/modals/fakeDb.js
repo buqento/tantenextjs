@@ -193,7 +193,7 @@ export const DataKos = [
         },
         facilities: ['Lemari pakaian', 'Kamar mandi dalam', 'Kasur', 'Internet', 'AC/Kipas angin'],
         start_price: 0,
-        post_url: ''
+        post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/3309832139037191/'
     },
     {
         id: 9,
@@ -220,7 +220,7 @@ export const DataKos = [
         },
         facilities: ['Air Sumur Bor', '2 Kamar Tidur', '1 Kamar Mandi'],
         start_price: 12000000,
-        post_url: ''
+        post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/2998202270200181/'
     },
     {
         id: 10,
