@@ -247,5 +247,32 @@ export const DataKos = [
         facilities: ['2 lantai', '3 ruang tamu utama', '6 kamar tidur', '3 kamar mandi (lantai 1)', '2 ruang tidur (lantai 2)', '1 kamar mandi dan ruang tamu (lantai 2)'],
         start_price: 40000000,
         post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/3444397455580658/'
+    },
+    {
+        id: 11,
+        date_modified: '2020-09-25 07:10:19 +0700',
+        date_published: '2020-09-25 07:10:19 +0700',
+        slug: 'kost-murah-nyaman-bersih-strategis-karang-panjang-kota-ambon-puncak-bogor-karpan',
+        title: 'Kost Murah Nyaman Bersih Strategis Karang Panjang Kota Ambon - Puncak Bogor Karpan',
+        description: 'Tersedia kost eksklusif Puncak Bogor Karang Panjang Kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'karpan, karang panjang, kota ambon',
+        images: [
+            'https://i.imgur.com/MJPv6M5.png',
+            'https://i.imgur.com/Krh1Nlw.png',
+            'https://i.imgur.com/HcpaLL2.png',
+            'https://i.imgur.com/uBGiQoV.png'
+        ],
+        location_title: 'Karpan',
+        category: 'Kost',
+        contact_us : {
+            facebook_url: 'https://www.facebook.com/ricky.huwaa',
+            phone: '6281343281081'
+        },
+        facilities: ['Meja belajar', 'Lemari pakaian', 'Kamar mandi dalam', 'AC', 'Air panas'],
+        start_price: 2000000,
+        post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/3231991046821301/'
     }
 ]
+
+
+
