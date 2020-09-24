@@ -81,7 +81,7 @@ class Detail extends React.Component {
               <h1>
                 <Card.Title>{data[0].title}</Card.Title>
               </h1>
-              <div>
+              <div className="pt-1">
                 <p className={styles.headingtwo}>Deskripsi {data[0].category}</p>
                 {data[0].description}
               </div>
@@ -101,6 +101,14 @@ class Detail extends React.Component {
                 </div>
               }
               <div className="border-top mt-3">
+                {
+                  data[0].post_url !== '' &&
+                  <div className="pt-3">
+                    <small>
+                      <a href={data[0].post_url} target="blank">* Kunjungi link terkait</a>
+                    </small>
+                  </div>
+                }
                 <small>
                   * Data dapat berubah sewaktu-waktu, tanyakan data saat ini.
                 </small>

@@ -18,7 +18,8 @@ export const DataKos = [
             phone: '6285256593431'
         },
         facilities: ['Parkiran'],
-        start_price: 0
+        start_price: 0,
+        post_url: ''
     },
     {
         id: 2,
@@ -42,7 +43,8 @@ export const DataKos = [
             phone: ''
         },
         facilities: ['Kamar mandi', 'Dapur', 'Ruang tamu', 'Ruang keluarga', 'Teras', 'Garasi mobil', 'Listrik meteran (pulsa)'],
-        start_price: 0
+        start_price: 0,
+        post_url: ''
     },
     {
         id: 3,
@@ -65,7 +67,8 @@ export const DataKos = [
             phone: ''
         },
         facilities: ['AC', 'televisi', 'kulkas', 'lemari', 'springbed', 'kursi dan meja', 'Kamar mandi', 'mini kitchen'],
-        start_price: 0
+        start_price: 0,
+        post_url: ''
     },
     {
         id: 4,
@@ -87,7 +90,8 @@ export const DataKos = [
             phone: '6282239502969'
         },
         facilities: ['Parkiran', 'Air bersih'],
-        start_price: 400000
+        start_price: 400000,
+        post_url: ''
     },
     {
         id: 5,
@@ -112,7 +116,8 @@ export const DataKos = [
             phone: ''
         },
         facilities: ['Kamar mandi dalam', 'Kasur', 'AC'],
-        start_price: 100000
+        start_price: 100000,
+        post_url: ''
     },
     {
         id: 6,
@@ -136,7 +141,8 @@ export const DataKos = [
             phone: '6285244774092'
         },
         facilities: ['Springbed + sperai dan bantal', 'lemari besar', 'AC', 'Kamar mandi dalam', 'Dapur dalam', 'Tiap kamar ada jemuran', 'Parkiran motor & mobil'],
-        start_price: 500000
+        start_price: 500000,
+        post_url: ''
     },
     {
         id: 7,
@@ -157,13 +163,14 @@ export const DataKos = [
             'https://i.imgur.com/EKxK1f3.png'
         ],
         location_title: 'Kapaha',
-        category: 'Kost',
+        category: 'Kontrakan',
         contact_us : {
             facebook_url: 'https://www.facebook.com/profile.php?id=100039966772432',
             phone: '6282331324783'
         },
         facilities: ['Kamar tidur', 'Ruang tamu', 'Dapur', 'Kamar mandi'],
-        start_price: 0
+        start_price: 0,
+        post_url: ''
     },
     {
         id: 8,
@@ -185,8 +192,8 @@ export const DataKos = [
             phone: ''
         },
         facilities: ['Lemari pakaian', 'Kamar mandi dalam', 'Kasur', 'Internet', 'AC/Kipas angin'],
-        start_price: 0
-
+        start_price: 0,
+        post_url: ''
     },
     {
         id: 9,
@@ -212,6 +219,33 @@ export const DataKos = [
             phone: '6282195753215'
         },
         facilities: ['Air Sumur Bor', '2 Kamar Tidur', '1 Kamar Mandi'],
-        start_price: 12000000
+        start_price: 12000000,
+        post_url: ''
+    },
+    {
+        id: 10,
+        date_modified: '2020-09-24 10:10:19 +0700',
+        date_published: '2020-09-24 10:10:19 +0700',
+        slug: 'rumah-kontrakan-tahunan-galala-hative-kecil-kota-ambon-rumah-dua-lantai',
+        title: 'Rumah Kontrakan Tahunan Galala Hative Kecil Kota Ambon - Rumah Dua Lantai',
+        description: 'Rumah kontrak tahunan Galala Hative Kecil Kota Ambon, Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'galala, hative kecil, kota ambon',
+        images: [
+            'https://i.imgur.com/MEL1RGi.png',
+            'https://i.imgur.com/tC4UdhI.png',
+            'https://i.imgur.com/oPgIBaA.png',
+            'https://i.imgur.com/qjPFAzw.png',
+            'https://i.imgur.com/GbP1nCU.png',
+            'https://i.imgur.com/Bj2KGeC.png'
+        ],
+        location_title: 'Galala',
+        category: 'Kontrakan',
+        contact_us : {
+            facebook_url: 'https://www.facebook.com/profile.php?id=100016477352041',
+            phone: '6281294962895'
+        },
+        facilities: ['2 lantai', '3 ruang tamu utama', '6 kamar tidur', '3 kamar mandi (lantai 1)', '2 ruang tidur (lantai 2)', '1 kamar mandi dan ruang tamu (lantai 2)'],
+        start_price: 40000000,
+        post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/3444397455580658/'
     }
 ]
