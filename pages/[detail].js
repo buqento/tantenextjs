@@ -82,21 +82,21 @@ class Detail extends React.Component {
                 <Card.Title>{data[0].title}</Card.Title>
               </h1>
               <div>
-                <p className={styles.headingtwo}>Deskripsi Kost</p>
+                <p className={styles.headingtwo}>Deskripsi {data[0].category}</p>
                 {data[0].description}
               </div>
               <div>
-                <p className={styles.headingtwo}>Fasilitas Kost dan Kamar</p>
+                <p className={styles.headingtwo}>Fasilitas {data[0].category}</p>
                 {data[0].facilities.map((item, index) => <li key={index}>{item}</li>)}
               </div>
               <div>
-                <p className={styles.headingtwo}>Lokasi Kost</p>
+                <p className={styles.headingtwo}>Lokasi {data[0].category}</p>
                 {data[0].location_title}
               </div>
               {
                 data[0].start_price > 0 &&
                 <div>
-                  <p className={styles.headingtwo}>Harga Mulai</p>
+                  <p className={styles.headingtwo}>Harga {data[0].category} Mulai</p>
                   {Currency(data[0].start_price)}
                 </div>
               }
@@ -108,7 +108,7 @@ class Detail extends React.Component {
             </div>
           </Container>
           <div style={{ marginBottom: '50px' }}>
-            <ListKos data={otherItems} />
+            <ListKos data={otherItems} category={data[0].category} />
           </div>
           <FooterDetail className="fix-footer footer-detail" contactUs={data[0].contact_us} />
         </>

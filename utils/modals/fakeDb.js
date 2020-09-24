@@ -12,7 +12,7 @@ export const DataKos = [
             'https://i.imgur.com/3Z3Y5G0.png'
         ],
         location_title: 'Laha',
-        category: 'kontrakan',
+        category: 'Kontrakan',
         contact_us : {
             facebook_url: 'https://www.facebook.com/zhul.putra.148',
             phone: '6285256593431'
@@ -36,7 +36,7 @@ export const DataKos = [
             'https://i.imgur.com/JhcE4Bo.png'
         ],
         location_title: 'Suli Atas, kota ambon',
-        category: 'kontrakan',
+        category: 'Kontrakan',
         contact_us : {
             facebook_url: 'https://www.facebook.com/Dedox002',
             phone: ''
@@ -59,7 +59,7 @@ export const DataKos = [
             'https://i.imgur.com/WvhUdBK.png'
         ],
         location_title: 'Kota Ambon',
-        category: 'kost',
+        category: 'Kost',
         contact_us : {
             facebook_url: 'https://www.facebook.com/profile.php?id=100004804935380',
             phone: ''
@@ -81,7 +81,7 @@ export const DataKos = [
             'https://i.imgur.com/nf2RsYH.png'
         ],
         location_title: 'Piru',
-        category: 'kost',
+        category: 'Kost',
         contact_us : {
             facebook_url: 'https://www.facebook.com/profile.php?id=100006131414651',
             phone: '6282239502969'
@@ -106,7 +106,7 @@ export const DataKos = [
             'https://i.imgur.com/5eUg5wy.png'
         ],
         location_title: 'Silale',
-        category: 'kost',
+        category: 'Kost',
         contact_us : {
             facebook_url: 'https://www.facebook.com/almirahomestay.almirahomestay',
             phone: ''
@@ -130,7 +130,7 @@ export const DataKos = [
             'https://i.imgur.com/VAko5rH.png'
         ],
         location_title: 'Silale',
-        category: 'kost',
+        category: 'Kost',
         contact_us : {
             facebook_url: 'https://www.facebook.com/vivi.rimony',
             phone: '6285244774092'
@@ -157,7 +157,7 @@ export const DataKos = [
             'https://i.imgur.com/EKxK1f3.png'
         ],
         location_title: 'Kapaha',
-        category: 'kost',
+        category: 'Kost',
         contact_us : {
             facebook_url: 'https://www.facebook.com/profile.php?id=100039966772432',
             phone: '6282331324783'
@@ -179,7 +179,7 @@ export const DataKos = [
             'https://i.imgur.com/FzzOpw2.png'
         ],
         location_title: 'Jalan Baru',
-        category: 'kost',
+        category: 'Kost',
         contact_us : {
             facebook_url: 'https://www.facebook.com/chie.m.nhirasharye',
             phone: ''
@@ -206,7 +206,7 @@ export const DataKos = [
             'https://i.imgur.com/pij3ZH4.png'
         ],
         location_title: 'Jalan Baru',
-        category: 'kontrakan',
+        category: 'Kontrakan',
         contact_us : {
             facebook_url: 'https://www.facebook.com/yudha.a.setiawan.14',
             phone: '6282195753215'

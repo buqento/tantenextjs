@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
-import { arrayOf, shape } from 'prop-types'
+import { arrayOf, shape, string } from 'prop-types'
 import Link from 'next/link'
 import { Media, Container } from 'react-bootstrap'
 import styles from '../styles/Home.module.css'
 
 class ListKos extends Component {
     render() {
-        const { data } = this.props
+        const { data, category } = this.props
         return (
             <div style={{borderTop: '8px solid gainsboro'}}>
-            <p className={`ml-3 ${styles.headingtwo}`}>Kost Lainnya</p>
+            <p className={`ml-3 ${styles.headingtwo}`}>{category} Lainnya</p>
 
                 <Container className="mt-3">
                 {
-                    data.map((item, index) =>
+                    data.filter(i => i.category === category)
+                    .map((item, index) =>
                         <div key={index} className="pb-3">
                             <Link href={item.slug}>
                                 <Media>
@@ -39,11 +40,13 @@ class ListKos extends Component {
 }
 
 ListKos.propTypes = {
-    data: arrayOf(shape({}))
+    data: arrayOf(shape({})),
+    category: string
 }
 
 ListKos.defaultProps = {
-    data: null
+    data: null,
+    category: null
 }
 
 export default ListKos;
