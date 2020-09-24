@@ -142,7 +142,7 @@ export const DataKos = [
         },
         facilities: ['Springbed + sperai dan bantal', 'lemari besar', 'AC', 'Kamar mandi dalam', 'Dapur dalam', 'Tiap kamar ada jemuran', 'Parkiran motor & mobil'],
         start_price: 500000,
-        post_url: ''
+        post_url: 'https://m.facebook.com/marketplace/item/278742183320768/'
     },
     {
         id: 7,
@@ -170,7 +170,7 @@ export const DataKos = [
         },
         facilities: ['Kamar tidur', 'Ruang tamu', 'Dapur', 'Kamar mandi'],
         start_price: 0,
-        post_url: ''
+        post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/3223648417655564/'
     },
     {
         id: 8,
@@ -271,6 +271,33 @@ export const DataKos = [
         facilities: ['Meja belajar', 'Lemari pakaian', 'Kamar mandi dalam', 'AC', 'Air panas'],
         start_price: 2000000,
         post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/3231991046821301/'
+    },
+    {
+        id: 12,
+        date_modified: '2020-09-25 08:10:19 +0700',
+        date_published: '2020-09-25 08:10:19 +0700',
+        slug: 'kost-murah-nyaman-bersih-strategis-poka-rumah-tiga-kota-ambon-khusus-karyawan-dan-mahasiswa',
+        title: 'Kost Murah Nyaman Bersih Strategis Poka Rumah Tiga Kota Ambon - Khusus Karyawan Dan Mahasiswa',
+        description: 'Tersedia kost murah untuk karyawan dan mahasiswa berlokasi di wilayah Poka Rumah Tiga Kota Ambon. Biaya sewa sudah termasuk fasilitas. Air lancar sumur bor, dapur umum luas, 4 kamar mandi luar. Bagi yang berminat dapat menghubungi pengelola',
+        keywords: 'poka, rumah tiga, kota ambon',
+        images: [
+            'https://i.imgur.com/MJPv6M5.png',
+            'https://i.imgur.com/MJPv6M5.png',
+            'https://i.imgur.com/MJPv6M5.png',
+            'https://i.imgur.com/MJPv6M5.png',
+            'https://i.imgur.com/MJPv6M5.png',
+            'https://i.imgur.com/MJPv6M5.png',
+            'https://i.imgur.com/MJPv6M5.png',
+        ],
+        location_title: 'Poka',
+        category: 'Kost',
+        contact_us : {
+            facebook_url: '(https://www.facebook.com/azzahra.s.940',
+            phone: '6282199033245'
+        },
+        facilities: ['Lemari pakaian', 'Kasur', 'Internet', 'Listrik', 'Air bersih'],
+        start_price: 700000,
+        post_url: ''
     }
 ]
 

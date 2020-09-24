@@ -21,8 +21,24 @@ class Detail extends React.Component {
     const { slug } = this.props;
     const data = DataKos.filter(item => item.slug === slug)
     const otherItems = DataKos.filter(item => item.slug !== slug)
-    const structureData = `{
-      "@context": "https://schema.org",
+    const structureTypeBreadcrumbList =
+      `{
+        "@type": "BreadcrumbList",
+        "itemListElement":
+        [{
+          "@type": "ListItem",
+          "position": 1,
+          "item":
+          {
+          "@id": "https://tantekos.com/${slug}",
+          "name": "${data[0].title}"
+          }
+        }]
+     }`
+
+       console.log(JSON.parse(structureTypeBreadcrumbList))
+
+    const structureTypeNewsArticle = `{
       "@type": "NewsArticle",
       "url": "${`https://tantekos.com/${slug}`}",
       "author": {
@@ -43,8 +59,16 @@ class Detail extends React.Component {
       "image": [${data[0].images.map(item => `"${item}"`)}],
       "dateModified":"${data[0].date_modified}",
       "datePublished":"${data[0].date_published}"
+    }`
 
-  }`
+    const structureDetailPage = {
+      '@context': 'https://schema.org',
+      '@graph': [
+        JSON.parse(structureTypeNewsArticle),
+        JSON.parse(structureTypeBreadcrumbList)
+      ]
+    };
+
     return <>
       {
         data && data[0] &&
@@ -68,7 +92,7 @@ class Detail extends React.Component {
           <meta name="keyphrases" content="Info Kost, Cari Kost, Sewa Kost, Kost Bebas, Kost Murah, Kost pasutri, Aplikasi Kost, Aplikasi Pencarian Kost, Aplikasi Info Kost, APlikasi Cari Kost, Kost, Tantekost, Tantekosapp, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
           <meta name="classification" content="Business, Rent House, Sewa Kost, Property, Rent Room, Info Kost, Information, Kost, Room, Cari Kost, Kost Murah, Kost Bebas, Application, Mobile Application, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
           <link rel="canonical" content={`https://tantekos.com/${data[0].slug}`} />
-          <script type="application/ld+json">{structureData}</script>
+          <script type="application/ld+json">{JSON.stringify(structureDetailPage)}</script>
         </NextHead>
       }
       {
