@@ -281,13 +281,9 @@ export const DataKos = [
         description: 'Tersedia kost murah untuk karyawan dan mahasiswa berlokasi di wilayah Poka Rumah Tiga Kota Ambon. Biaya sewa sudah termasuk fasilitas. Air lancar sumur bor, dapur umum luas, 4 kamar mandi luar. Bagi yang berminat dapat menghubungi pengelola',
         keywords: 'poka, rumah tiga, kota ambon',
         images: [
-            'https://i.imgur.com/MJPv6M5.png',
-            'https://i.imgur.com/MJPv6M5.png',
-            'https://i.imgur.com/MJPv6M5.png',
-            'https://i.imgur.com/MJPv6M5.png',
-            'https://i.imgur.com/MJPv6M5.png',
-            'https://i.imgur.com/MJPv6M5.png',
-            'https://i.imgur.com/MJPv6M5.png',
+            'https://i.imgur.com/7v2aJ0z.png',
+            'https://i.imgur.com/i68HYjA.png',
+            'https://i.imgur.com/fhxzDWy.png'
         ],
         location_title: 'Poka',
         category: 'Kost',
