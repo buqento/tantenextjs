@@ -36,26 +36,28 @@ class Header extends Component {
             ]
         };
 
-        const structureTypeLocalBusiness = `{
-            "@type": "LocalBusiness",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Kota Ambon",
-                "addressRegion": "Nusaniwe, Benteng",
-                "postalCode": "97117",
-                "streetAddress": "Jl. Gudang Arang, No. 1"
+        const structureTypeLocalBusiness = {
+            '@type': "LocalBusiness",
+            address: {
+                '@type': "PostalAddress",
+                addressLocality: "Kota Ambon",
+                addressRegion: "Nusaniwe, Benteng",
+                postalCode: "97117",
+                streetAddress: "Jl. Gudang Arang, No. 1"
             },
-            "name": "Tantekos",
-            "telephone": "6287872033154",
-            "url": "https://www.tantekos.com"
-        }`
+            name: "Tantekos",
+            telephone: "6287872033154",
+            url: "https://www.tantekos.com",
+            image:"https://github.com/buqento/tantenextjs/blob/master/static/images/Home-icon.png?raw=true",
+            priceRange: 'Rp 50.000 - Rp 15.000.000',
+        }
 
         const structureHomePage = {
             '@context': 'https://schema.org',
             '@graph': [
                 structureTypeWebsite,
                 structureTypeOrganization,
-                JSON.parse(structureTypeLocalBusiness)
+                structureTypeLocalBusiness
             ]
         };
 
