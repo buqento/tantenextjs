@@ -288,7 +288,7 @@ export const DataKos = [
         location_title: 'Poka',
         category: 'Kost',
         contact_us : {
-            facebook_url: '(https://www.facebook.com/azzahra.s.940',
+            facebook_url: 'https://www.facebook.com/azzahra.s.940',
             phone: '6282199033245'
         },
         facilities: ['Lemari pakaian', 'Kasur', 'Internet', 'Listrik', 'Air bersih'],
