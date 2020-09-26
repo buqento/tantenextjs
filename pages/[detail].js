@@ -23,44 +23,44 @@ class Detail extends React.Component {
     const otherItems = DataKos.filter(item => item.slug !== slug)
     const structureTypeBreadcrumbList =
       `{
+        "@context": "https://schema.org",
         "@type": "BreadcrumbList",
-        "itemListElement":
-        [{
+        "itemListElement": [{
           "@type": "ListItem",
           "position": 1,
-          "item":
-          {
-          "@id": "https://tantekos.com/${slug}",
-          "name": "${data[0].title}"
-          }
+          "name": "${data[0].title}",
+          "item": "https://tantekos.com/${slug}"
         }]
      }`
 
     const structureTypeNewsArticle = `{
+      "@context": "https://schema.org",
       "@type": "NewsArticle",
-      "url": "${`https://tantekos.com/${slug}`}",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "${`https://tantekos.com/${slug}`}"
+      },
+      "headline": "${data[0].title}",
+      "image": [${data[0].images.map(item => `"${item}"`)}],
+      "dateModified":"${data[0].date_modified}",
+      "datePublished":"${data[0].date_published}",
       "author": {
         "@type": "Person",
-        "name": "Bvqento"
+        "name": "Bvqento Richard"
       },
-      "publisher":{
-         "@type":"Organization",
-         "name":"Tantekos",
-         "logo": {
+      "publisher": {
+        "@type": "Organization",
+        "name": "Tantekos",
+        "logo": {
           "@type": "ImageObject",
           "url": "https://github.com/buqento/tantenextjs/blob/master/static/images/Home-icon.png?raw=true"
         }
       },
-      "headline": "${data[0].title}",
-      "mainEntityOfPage": "${`https://tantekos.com/${slug}`}",
       "articleBody": "${data[0].description}",
-      "image": [${data[0].images.map(item => `"${item}"`)}],
-      "dateModified":"${data[0].date_modified}",
-      "datePublished":"${data[0].date_published}"
+      "url": "${`https://tantekos.com/${slug}`}"
     }`
 
     const structureDetailPage = {
-      '@context': 'https://schema.org',
       '@graph': [
         JSON.parse(structureTypeNewsArticle),
         JSON.parse(structureTypeBreadcrumbList)

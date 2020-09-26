@@ -5,10 +5,10 @@ class Header extends Component {
 
     render() {
         const structureTypeWebsite = {
+            '@context': 'https://schema.org',
             '@type': 'WebSite',
-            url: 'https://tantekos.com',
+            url: 'https://tantekos.com/',
             name: 'Tantekos',
-            alternateName: 'Kos Online, Informasi Kos, Informasi Kontrakan | Tantekos.com',
             potentialAction: {
                 '@type': 'SearchAction',
                 target: 'https://tantekos.com/search?q={search_term_string}',
@@ -17,14 +17,12 @@ class Header extends Component {
         };
 
         const structureTypeOrganization = {
+            '@context': 'https://schema.org',
             '@type': 'Organization',
             name: 'Tantekos',
             alternateName: 'Kos Online, Informasi Kos, Informasi Kontrakan | Tantekos.com',
-            url: 'https://www.tantekos.com',
-            logo: {
-                "@type": "ImageObject",
-                "url": "https://github.com/buqento/tantenextjs/blob/master/static/images/Home-icon.png?raw=true"
-            },
+            url: 'https://www.tantekos.com/',
+            logo: 'https://github.com/buqento/tantenextjs/blob/master/static/images/Home-icon.png?raw=true',
             contactPoint: {
                 '@type': 'ContactPoint',
                 telephone: '+6285243322433',
@@ -32,28 +30,46 @@ class Header extends Component {
                 areaServed: 'ID',
                 availableLanguage: 'Indonesian'
             },
-            sameAs: ['https://www.facebook.com/tantekos/', 'https://tantekos.com/', 'https://twitter.com/tantekos', 'https://www.instagram.com/tantekos_official/', 'https://www.youtube.com/tantekos.com'
+            sameAs: ['https://www.facebook.com/tantekos/', 'https://tantekos.com/', 'https://twitter.com/tantekos', 'https://www.instagram.com/tantekos_official/'
             ]
         };
 
         const structureTypeLocalBusiness = {
+            '@context': 'https://schema.org',
             '@type': "LocalBusiness",
             address: {
                 '@type': "PostalAddress",
-                addressLocality: "Kota Ambon",
-                addressRegion: "Nusaniwe, Benteng",
+                streetAddress: "Jl. Gudang Arang, Benteng, Nusaniwe",
+                addressLocality: "Ambon",
+                addressRegion: "Maluku",
                 postalCode: "97117",
-                streetAddress: "Jl. Gudang Arang, No. 1"
+                addressCountry: "ID"
             },
-            name: "Tantekos",
-            telephone: "6287872033154",
-            url: "https://www.tantekos.com",
+            review: {
+                '@type': "Review",
+                reviewRating: {
+                  '@type': "Rating",
+                  ratingValue: 4,
+                  bestRating: 5
+                },
+                author: {
+                  '@type': "Person",
+                  name: "Bvqento Richard"
+                }
+            },
+            "geo": {
+                '@type': "GeoCoordinates",
+                latitude: -3.703152,
+                longitude: 128.162934
+            },
+            name: "Tantekos.com",
+            telephone: "+6285243322433",
+            url: "https://www.tantekos.com/",
             image:"https://github.com/buqento/tantenextjs/blob/master/static/images/Home-icon.png?raw=true",
             priceRange: 'Rp 50.000 - Rp 15.000.000',
         }
 
         const structureHomePage = {
-            '@context': 'https://schema.org',
             '@graph': [
                 structureTypeWebsite,
                 structureTypeOrganization,
