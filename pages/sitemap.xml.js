@@ -6,7 +6,7 @@ const sitemapXml = data => {
   let projectsXML = "";
 
   data.map(post => {
-    const postDate = post.date_modified;
+    const postDate = Date.parse(post.date_modified);
     if (!latestPost || postDate > latestPost) {
       latestPost = postDate;
     }
