@@ -25,3 +25,20 @@ a {
   background-color: gainsboro;
   height: 55px;
 }
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  height: 80px;
+}
+
+.main-layout {
+  max-width: 411px;
+  margin: auto;
+  box-shadow: '0 0 48px 0 rgba(0,0,0,.2)';
+}
+
+.header-page {
+  background-color: #007bff;
+  color: #fff;
+}

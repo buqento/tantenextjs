@@ -95,7 +95,7 @@ class Detail extends React.Component {
       }
       {
         data && data[0] &&
-        <>
+        <div className="main-layout">
           <HeadPage title={data[0].category +' '+data[0].location_title} />
           <Slide imagesData={data[0].images} imageTitle={data[0].title} />
           <Container className="mb-3">
@@ -141,7 +141,7 @@ class Detail extends React.Component {
             <ListKos data={otherItems} category={data[0].category} />
           </div>
           <FooterDetail className="fix-footer footer-detail" contactUs={data[0].contact_us} />
-        </>
+        </div>
       }
     </>
   }

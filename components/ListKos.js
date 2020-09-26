@@ -8,7 +8,7 @@ class ListKos extends Component {
     render() {
         const { data, category } = this.props
         return (
-            <div style={{borderTop: '8px solid gainsboro'}}>
+            <div style={{borderTop: '12px solid gainsboro'}}>
             <p className={`ml-3 ${styles.headingtwo}`}>{category} Lainnya</p>
 
                 <Container className="mt-3">

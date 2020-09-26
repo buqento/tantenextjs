@@ -10,7 +10,7 @@ class Kos extends Component {
                     DataKos
                     .sort(function(a, b){return b.id - a.id})
                     .map((item, index) =>
-                        <div key={index} className="mt-3 mb-3">
+                        <div key={index}>
                             <KostItem item={item} />
                         </div>
                     )
