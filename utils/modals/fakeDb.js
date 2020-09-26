@@ -1,8 +1,8 @@
 export const DataKos = [
     {
         id: 1,
-        date_modified: '2020-06-08 17:10:19 +0700',
-        date_published: '2020-06-08 17:10:19 +0700',
+        date_modified: '2020-06-08T17:10+19:00',
+        date_published: '2020-06-08T17:10+19:00',
         slug: 'rumah-makan-kontrak-tahunan-laha-kota-ambon',
         title: 'Rumah Makan Kontrak Tahunan Laha Kota Ambon',
         description: 'Dikontrakkan sebuah rumah makan, berlokasi di daerah depan bandar udara Pattimura Laha Kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
@@ -23,8 +23,8 @@ export const DataKos = [
     },
     {
         id: 2,
-        date_modified: '2020-06-08 17:10:19 +0700',
-        date_published: '2020-06-08 17:10:19 +0700',
+        date_modified: '2020-06-09T17:10+19:00',
+        date_published: '2020-06-09T17:10+19:00',
         slug: 'rumah-kontrak-tahunan-suli-atas',
         title: 'Rumah Kontrak Tahunan Suli Atas',
         description: 'Dikontrakkan sebuah rumah di daerah Suli Atas. Fasilitas yang disediakan yaitu 2 kamar tidur, kamar mandi, dapur, ruang tamu, ruang keluarga, teras, garasi mobil. Bagi yang berminat dapat menghubungi pengelola.',
@@ -48,8 +48,8 @@ export const DataKos = [
     },
     {
         id: 3,
-        date_modified: '2020-06-08 17:10:19 +0700',
-        date_published: '2020-06-08 17:10:19 +0700',
+        date_modified: '2020-06-10T17:10+19:00',
+        date_published: '2020-06-10T17:10+19:00',
         slug: 'rumah-kos-lorong-mayang-pusat-kota-ambon',
         title: 'Rumah Kost Lorong Mayang Pusat Kota Ambon',
         description: 'Kamar kost berlokasi di Pusat Kota Ambon (lorong Mayang, belakang Apotik Gideon Farma). Tersedia fasilitas AC, televisi, kulkas, lemari, springbed 2 bdn, kursi dan meja. Kamar mandi dan mini kitchen d dlm kamar. Listrik token. Bagi yang berminat dapat menghubungi pengelola.',
@@ -72,8 +72,8 @@ export const DataKos = [
     },
     {
         id: 4,
-        date_modified: '2020-06-08 17:10:19 +0700',
-        date_published: '2020-06-08 17:10:19 +0700',
+        date_modified: '2020-06-11T17:10+19:00',
+        date_published: '2020-06-11T17:10+19:00',
         slug: 'kos-harian-bulanan-seram-bagian-barat-piru',
         title: 'Kost Harian Bulanan Piru Seram Bagian Barat',
         description: 'Terima kost harian (biaya sewa disesuaikan), bulanan (biaya sewa Rp400.000 / bulan. Beralamat di Desa Kamal (dekat Pasar Waisarisa depan Puskesmas Kamal lama), Seram Bagian Barat (Piru). Kelebihan: Bebas tempat parkir, Air bersih, keamanan terjamin, lokasi strategis (depan jalan), dekat dengan fasilitas umum seperti sekolah, pasar, bank dll.',
@@ -95,8 +95,8 @@ export const DataKos = [
     },
     {
         id: 5,
-        date_modified: '2020-06-08 17:10:19 +0700',
-        date_published: '2020-06-08 17:10:19 +0700',
+        date_modified: '2020-06-12T17:10+19:00',
+        date_published: '2020-06-12T17:10+19:00',
         slug: 'kos-harian-bulanan-nyaman-strategis-almira-homestay',
         title: 'Kost Murah Harian Bulanan Silale Kota Ambon Almira Homestay',
         description: 'Tersedia kost murah, nyaman dan strategis. Biaya sewa dan fasilitas bervariasi mulai dari harian (Rp100.000) dan bulanan (Rp700.000). Bebas biaya listrik dan air bersih. Berlokasi di Silale Kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
@@ -121,8 +121,8 @@ export const DataKos = [
     },
     {
         id: 6,
-        date_modified: '2020-06-08 17:10:19 +0700',
-        date_published: '2020-06-08 17:10:19 +0700',
+        date_modified: '2020-06-13T17:10+19:00',
+        date_published: '2020-06-13T17:10+19:00',
         slug: 'kos-vivi-silale',
         title: 'Kost Murah Harian Bulanan Silale Kota Ambon Kost Vivi',
         description: 'Kost Vivi Silale. Fasilitas (sesuai foto). Springbed+sperai dan bantal, lemari besar, AC, kamar luas, kamar mandi dalam luas+dapur dalam. Tiap kamar ada jemuran, ada tempat parkir motor & mobil. Air sumur bor lancar jaya. Harga sewa 1,5jt/bulan atau 500rb/minggu. Info lengkap 085244774092 (Vivi Rimony) - Instagram @vvrimony',
@@ -146,8 +146,8 @@ export const DataKos = [
     },
     {
         id: 7,
-        date_modified: '2020-06-08 17:10:19 +0700',
-        date_published: '2020-06-08 17:10:19 +0700',
+        date_modified: '2020-06-20T17:10+19:00',
+        date_published: '2020-06-20T17:10+19:00',
         slug: 'rumah-kontrak-kampung-jawa-kapaha-ambon',
         title: 'Rumah Kontrak Tahunan Kampung Jawa Kapaha Kota Ambon',
         description: 'Dikontrakan sebuah rumah sederhana, bersih, dan nyaman. Alamat Kampung Jawa, Kapaha, Kota Ambon. Bagi yang berminat dapat menghubungi pemilik pada nomor yang tersedia.',
@@ -174,8 +174,8 @@ export const DataKos = [
     },
     {
         id: 8,
-        date_modified: '2020-06-08 17:10:19 +0700',
-        date_published: '2020-06-08 17:10:19 +0700',
+        date_modified: '2020-06-21T17:10+19:00',
+        date_published: '2020-06-21T17:10+19:00',
         slug: 'kos-murah-nyaman-strategis-jalan-baru-kota-ambon',
         title: 'Kost Murah Nyaman Bersih Strategis Jalan Baru Kota Ambon',
         description: 'Tersedia kost murah, nyaman dan strategis dekat Masjid Raya Alfatah, Masjid Jami Jalan baru kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
@@ -197,8 +197,8 @@ export const DataKos = [
     },
     {
         id: 9,
-        date_modified: '2020-09-24 05:10:19 +0700',
-        date_published: '2020-09-24 05:10:19 +0700',
+        date_modified: '2020-06-24T17:10+19:00',
+        date_published: '2020-06-24T17:10+19:00',
         slug: 'kontrakan-tahunan-nyaman-bersih-strategis-jalan-baru-kota-ambon-belakang-masjid-nurul-huda',
         title: 'Kontrakan Tahunan Nyaman Bersih Strategis Jalan Baru Kota Ambon - Belakang Masjid Nurul Huda',
         description: 'Tersedia rumah kontrak tahunan murah nyaman dan strategis Jalan baru kota Ambon (3 Lantai). Dari Mesjid Al Fatah masuk lorong di belakang Masjid Nurul Huda. Bagi yang berminat dapat menghubungi pengelola.',
@@ -224,8 +224,8 @@ export const DataKos = [
     },
     {
         id: 10,
-        date_modified: '2020-09-24 10:10:19 +0700',
-        date_published: '2020-09-24 10:10:19 +0700',
+        date_modified: '2020-06-24T17:10+19:00',
+        date_published: '2020-06-24T17:10+19:00',
         slug: 'rumah-kontrakan-tahunan-galala-hative-kecil-kota-ambon-rumah-dua-lantai',
         title: 'Rumah Kontrakan Tahunan Galala Hative Kecil Kota Ambon - Rumah Dua Lantai',
         description: 'Rumah kontrak tahunan Galala Hative Kecil Kota Ambon, Bagi yang berminat dapat menghubungi pengelola.',
@@ -250,8 +250,8 @@ export const DataKos = [
     },
     {
         id: 11,
-        date_modified: '2020-09-25 07:10:19 +0700',
-        date_published: '2020-09-25 07:10:19 +0700',
+        date_modified: '2020-06-25T17:10+19:00',
+        date_published: '2020-06-25T17:10+19:00',
         slug: 'kost-murah-nyaman-bersih-strategis-karang-panjang-kota-ambon-puncak-bogor-karpan',
         title: 'Kost Murah Nyaman Bersih Strategis Karang Panjang Kota Ambon - Puncak Bogor Karpan',
         description: 'Tersedia kost eksklusif Puncak Bogor Karang Panjang Kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
@@ -274,8 +274,8 @@ export const DataKos = [
     },
     {
         id: 12,
-        date_modified: '2020-09-25 08:10:19 +0700',
-        date_published: '2020-09-25 08:10:19 +0700',
+        date_modified: '2020-06-25T17:10+19:00',
+        date_published: '2020-06-25T17:10+19:00',
         slug: 'kost-murah-nyaman-bersih-strategis-poka-rumah-tiga-kota-ambon-khusus-karyawan-dan-mahasiswa',
         title: 'Kost Murah Nyaman Bersih Strategis Poka Rumah Tiga Kota Ambon - Khusus Karyawan Dan Mahasiswa',
         description: 'Tersedia kost murah untuk karyawan dan mahasiswa berlokasi di wilayah Poka Rumah Tiga Kota Ambon. Biaya sewa sudah termasuk fasilitas. Air lancar sumur bor, dapur umum luas, 4 kamar mandi luar. Bagi yang berminat dapat menghubungi pengelola',
@@ -296,6 +296,3 @@ export const DataKos = [
         post_url: ''
     }
 ]
-
-
-
