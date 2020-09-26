@@ -28,7 +28,7 @@ export const DataKos = [
         slug: 'rumah-kontrak-tahunan-suli-atas',
         title: 'Rumah Kontrak Tahunan Suli Atas',
         description: 'Dikontrakkan sebuah rumah di daerah Suli Atas. Fasilitas yang disediakan yaitu 2 kamar tidur, kamar mandi, dapur, ruang tamu, ruang keluarga, teras, garasi mobil. Bagi yang berminat dapat menghubungi pengelola.',
-        keywords: 'suli',
+        keywords: 'suli, kota ambon',
         images: [
             'https://i.imgur.com/0utQPHq.png',
             'https://i.imgur.com/L4OSPWG.png',
@@ -36,7 +36,7 @@ export const DataKos = [
             'https://i.imgur.com/rMMEKS5.png',
             'https://i.imgur.com/JhcE4Bo.png'
         ],
-        location_title: 'Suli Atas, kota ambon',
+        location_title: 'Suli Atas',
         category: 'Kontrakan',
         contact_us : {
             facebook_url: 'https://www.facebook.com/Dedox002',

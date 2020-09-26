@@ -1,14 +1,26 @@
 import React, { Component } from 'react'
-import { Navbar } from 'react-bootstrap';
+import { FaChevronLeft } from 'react-icons/fa'
+import Link from 'next/link'
+import { string } from 'prop-types'
 
 class HeadPage extends Component {
     render() {
+        const { title } = this.props;
         return (
-            <Navbar bg="light" expand="lg">
-                <Navbar.Brand href="/">Home</Navbar.Brand>
-            </Navbar>
+            <div className="d-flex p-3">
+                <div><Link href="/"><FaChevronLeft /></Link></div>
+                <div className="ml-3">{title}</div>
+            </div>
         )
     }
+}
+
+HeadPage.propTypes = {
+    title: string
+}
+
+HeadPage.defaultProps = {
+    title: 'Detail'
 }
 
 export default HeadPage;
