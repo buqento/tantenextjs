@@ -1,3 +1,62 @@
+export const DataArea = [
+    // { slug: 'benteng', title: 'Benteng'},
+    // { slug: 'wainitu', title: 'Wainitu'},
+    // { slug: 'kudamati', title: 'Kudamati'},
+    // { slug: 'mangga-dua', title: 'Mangga Dua'},
+    // { slug: 'urimessing', title: 'Urimessing'},
+    // { slug: 'waihaong', title: 'Waihaong'},
+    { slug: 'silale', title: 'Silale'},
+    // { slug: 'latuhalat', title: 'Latuhalat'},
+    // { slug: 'seilale', title: 'Seilale'},
+    // { slug: 'nusaniwe', title: 'Nusaniwe'},
+    // { slug: 'amahusu', title: 'Amahusu'},
+    // { slug: 'urimessing', title: 'Urimessing'},
+
+    // { slug: 'batu-merah', title: 'Batu Merah'},
+    // { slug: 'hative-kecil', title: 'Hative Kecil'},
+    // { slug: 'soya', title: 'Soya'},
+    { slug: 'galala', title: 'Galala'},
+    // { slug: 'ahusen', title: 'Ahusen'},
+    // { slug: 'amantelu', title: 'Amantelu'},
+    // { slug: 'batu-gajah', title: 'Batu Gajah'},
+    // { slug: 'batu-meja', title: 'Batu Meja'},
+    { slug: 'honipopu', title: 'Honipopu'},
+    { slug: 'karang-panjang', title: 'Karang Panjang'},
+    { slug: 'pandan-kasturi', title: 'Pandan Kasturi'},
+    // { slug: 'rijali', title: 'Rijali'},
+    // { slug: 'uritetu', title: 'Uritetu'},
+    // { slug: 'waihoka', title: 'Waihoka'},
+
+    // { slug: 'halong', title: 'Halong'},
+    // { slug: 'passo', title: 'Passo'},
+    // { slug: 'latta', title: 'Latta'},
+    // { slug: 'nania', title: 'Nania'},
+    // { slug: 'negeri-lama', title: 'Negeri Lama'},
+    // { slug: 'waiheru', title: 'Waiheru'},
+    // { slug: 'lateri', title: 'Lateri'},
+
+    // { slug: 'hative-besar', title: 'Hative Besar'},
+    { slug: 'laha', title: 'Laha'},
+    { slug: 'poka', title: 'Poka'},
+    // { slug: 'rumah-tiga', title: 'Rumah Tiga'},
+    // { slug: 'tawiri', title: 'Tawiri'},
+    // { slug: 'hunuth-durian-patah', title: 'Hunuth / Durian Patah'},
+    // { slug: 'wayame', title: 'Wayame'},
+    // { slug: 'tihu', title: 'Tihu'},
+
+    // { slug: 'ema', title: 'Ema'},
+    // { slug: 'hatalai', title: 'Hatalai'},
+    // { slug: 'hutumury', title: 'Hutumury'},
+    // { slug: 'hukurila', title: 'Hukurila'},
+    // { slug: 'kilang', title: 'Kilang'},
+    // { slug: 'leahari', title: 'Leahari'},
+    // { slug: 'naku', title: 'Naku'},
+    // { slug: 'rutong', title: 'Rutong'},
+
+    { slug: 'suli', title: 'Suli'},
+    { slug: 'piru', title: 'Piru'}
+];
+
 export const DataKos = [
     {
         id: 1,
@@ -11,9 +70,9 @@ export const DataKos = [
             'https://i.imgur.com/uyF2J7P.png',
             'https://i.imgur.com/3Z3Y5G0.png'
         ],
-        location_title: 'Laha',
+        location_title: 'laha',
         category: 'Kontrakan',
-        contact_us : {
+        contact_us: {
             facebook_url: 'https://www.facebook.com/zhul.putra.148',
             phone: '6285256593431'
         },
@@ -36,9 +95,9 @@ export const DataKos = [
             'https://i.imgur.com/rMMEKS5.png',
             'https://i.imgur.com/JhcE4Bo.png'
         ],
-        location_title: 'Suli Atas',
+        location_title: 'suli',
         category: 'Kontrakan',
-        contact_us : {
+        contact_us: {
             facebook_url: 'https://www.facebook.com/Dedox002',
             phone: ''
         },
@@ -60,9 +119,9 @@ export const DataKos = [
             'https://i.imgur.com/9n0zU4r.png',
             'https://i.imgur.com/WvhUdBK.png'
         ],
-        location_title: 'Kota Ambon',
+        location_title: 'honipopu',
         category: 'Kost',
-        contact_us : {
+        contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100004804935380',
             phone: ''
         },
@@ -83,9 +142,9 @@ export const DataKos = [
             'https://i.imgur.com/JOyd5Br.png',
             'https://i.imgur.com/nf2RsYH.png'
         ],
-        location_title: 'Piru',
+        location_title: 'piru',
         category: 'Kost',
-        contact_us : {
+        contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100006131414651',
             phone: '6282239502969'
         },
@@ -109,9 +168,9 @@ export const DataKos = [
             'https://i.imgur.com/Vs3KV8o.png',
             'https://i.imgur.com/5eUg5wy.png'
         ],
-        location_title: 'Silale',
+        location_title: 'silale',
         category: 'Kost',
-        contact_us : {
+        contact_us: {
             facebook_url: 'https://www.facebook.com/almirahomestay.almirahomestay',
             phone: ''
         },
@@ -134,9 +193,9 @@ export const DataKos = [
             'https://i.imgur.com/ZsrDQKA.png',
             'https://i.imgur.com/VAko5rH.png'
         ],
-        location_title: 'Silale',
+        location_title: 'silale',
         category: 'Kost',
-        contact_us : {
+        contact_us: {
             facebook_url: 'https://www.facebook.com/vivi.rimony',
             phone: '6285244774092'
         },
@@ -162,9 +221,9 @@ export const DataKos = [
             'https://i.imgur.com/ELrzE90.png',
             'https://i.imgur.com/EKxK1f3.png'
         ],
-        location_title: 'Kapaha',
+        location_title: 'pandan-kasturi',
         category: 'Kontrakan',
-        contact_us : {
+        contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100039966772432',
             phone: '6282331324783'
         },
@@ -185,9 +244,9 @@ export const DataKos = [
             'https://i.imgur.com/jQtXqlw.png',
             'https://i.imgur.com/FzzOpw2.png'
         ],
-        location_title: 'Jalan Baru',
+        location_title: 'honipopu',
         category: 'Kost',
-        contact_us : {
+        contact_us: {
             facebook_url: 'https://www.facebook.com/chie.m.nhirasharye',
             phone: ''
         },
@@ -212,9 +271,9 @@ export const DataKos = [
             'https://i.imgur.com/aaLTKFg.png',
             'https://i.imgur.com/pij3ZH4.png'
         ],
-        location_title: 'Jalan Baru',
+        location_title: 'honipopu',
         category: 'Kontrakan',
-        contact_us : {
+        contact_us: {
             facebook_url: 'https://www.facebook.com/yudha.a.setiawan.14',
             phone: '6282195753215'
         },
@@ -238,9 +297,9 @@ export const DataKos = [
             'https://i.imgur.com/GbP1nCU.png',
             'https://i.imgur.com/Bj2KGeC.png'
         ],
-        location_title: 'Galala',
+        location_title: 'galala',
         category: 'Kontrakan',
-        contact_us : {
+        contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100016477352041',
             phone: '6281294962895'
         },
@@ -262,9 +321,9 @@ export const DataKos = [
             'https://i.imgur.com/HcpaLL2.png',
             'https://i.imgur.com/uBGiQoV.png'
         ],
-        location_title: 'Karpan',
+        location_title: 'karang-panjang',
         category: 'Kost',
-        contact_us : {
+        contact_us: {
             facebook_url: 'https://www.facebook.com/ricky.huwaa',
             phone: '6281343281081'
         },
@@ -285,9 +344,9 @@ export const DataKos = [
             'https://i.imgur.com/i68HYjA.png',
             'https://i.imgur.com/fhxzDWy.png'
         ],
-        location_title: 'Poka',
+        location_title: 'poka',
         category: 'Kost',
-        contact_us : {
+        contact_us: {
             facebook_url: 'https://www.facebook.com/azzahra.s.940',
             phone: '6282199033245'
         },
