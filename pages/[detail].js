@@ -9,6 +9,7 @@ import HeadPage from '../components/HeadPage'
 import styles from '../styles/Home.module.css'
 import { DataKos } from '../utils/modals/fakeDb'
 import Currency from '../components/Currency'
+import Firstupper from '../utils/Firstupper'
 
 class Detail extends React.Component {
   static async getInitialProps(ctx) {
@@ -67,6 +68,9 @@ class Detail extends React.Component {
       ]
     };
 
+    let headTitle = "";
+    data[0].location_title.split("-").map(index => headTitle += Firstupper(index)+" ")
+
     return <>
       {
         data && data[0] &&
@@ -96,7 +100,7 @@ class Detail extends React.Component {
       {
         data && data[0] &&
         <div className="main-layout">
-          <HeadPage title={data[0].category +' '+data[0].location_title} />
+          <HeadPage title={data[0].category +' '+headTitle} />
           <Slide imagesData={data[0].images} imageTitle={data[0].title} />
           <Container className="mb-3">
             <div className="pt-3">

@@ -18,7 +18,7 @@ class ListKos extends Component {
                     {
                         listData.map((item, index) =>
                             <div key={index} className="pb-3">
-                                <Link href={item.slug}>
+                                <Link href={`https://tantekos.com/${item.slug}`}>
                                     <Media>
                                         <img
                                             width={64}
