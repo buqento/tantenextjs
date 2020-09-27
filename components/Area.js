@@ -1,9 +1,19 @@
 import React, { Component } from 'react'
 import DragScroll from './DragScroll'
-import { Button } from 'react-bootstrap'
-import { DataArea } from '../utils/modals/fakeDb'
+import { Button, Badge } from 'react-bootstrap'
+import { DataArea, DataKos } from '../utils/modals/fakeDb'
 
 class Area extends Component {
+    
+    constructor(){
+        super()
+        this.count = this.count.bind(this)
+    }
+        
+    count(location){
+        return DataKos.filter(item => location === item.location_title).length
+    }
+
     render() {
         return (
             <div className="mt-3 mb-3">
@@ -11,7 +21,7 @@ class Area extends Component {
                     <div className="d-flex ml-3">
                         {
                             DataArea.map((item, index) =>
-                                <Button key={index} href={`area/${item.slug}`} variant="info" className="mr-3 text-nowrap" size="lg">{item.title}</Button>
+                        <Button key={index} href={`area/${item.slug}`} variant="secondary" className="mr-3 text-nowrap" size="sm">{item.title} <Badge variant="danger">{this.count(item.slug)}</Badge></Button>
                             )
                         }
                     </div>

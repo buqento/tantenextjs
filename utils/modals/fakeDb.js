@@ -5,24 +5,24 @@ export const DataArea = [
     // { slug: 'mangga-dua', title: 'Mangga Dua'},
     // { slug: 'urimessing', title: 'Urimessing'},
     // { slug: 'waihaong', title: 'Waihaong'},
-    { slug: 'silale', title: 'Silale'},
+    { slug: 'silale', title: 'Silale' },
     // { slug: 'latuhalat', title: 'Latuhalat'},
     // { slug: 'seilale', title: 'Seilale'},
     // { slug: 'nusaniwe', title: 'Nusaniwe'},
     // { slug: 'amahusu', title: 'Amahusu'},
     // { slug: 'urimessing', title: 'Urimessing'},
 
-    // { slug: 'batu-merah', title: 'Batu Merah'},
+    { slug: 'batu-merah', title: 'Batu Merah' },
     // { slug: 'hative-kecil', title: 'Hative Kecil'},
     // { slug: 'soya', title: 'Soya'},
-    { slug: 'galala', title: 'Galala'},
+    { slug: 'galala', title: 'Galala' },
     // { slug: 'ahusen', title: 'Ahusen'},
     // { slug: 'amantelu', title: 'Amantelu'},
     // { slug: 'batu-gajah', title: 'Batu Gajah'},
     // { slug: 'batu-meja', title: 'Batu Meja'},
-    { slug: 'honipopu', title: 'Honipopu'},
-    { slug: 'karang-panjang', title: 'Karang Panjang'},
-    { slug: 'pandan-kasturi', title: 'Pandan Kasturi'},
+    { slug: 'honipopu', title: 'Honipopu' },
+    { slug: 'karang-panjang', title: 'Karang Panjang' },
+    { slug: 'pandan-kasturi', title: 'Pandan Kasturi' },
     // { slug: 'rijali', title: 'Rijali'},
     // { slug: 'uritetu', title: 'Uritetu'},
     // { slug: 'waihoka', title: 'Waihoka'},
@@ -36,8 +36,8 @@ export const DataArea = [
     // { slug: 'lateri', title: 'Lateri'},
 
     // { slug: 'hative-besar', title: 'Hative Besar'},
-    { slug: 'laha', title: 'Laha'},
-    { slug: 'poka', title: 'Poka'},
+    { slug: 'laha', title: 'Laha' },
+    { slug: 'poka', title: 'Poka' },
     // { slug: 'rumah-tiga', title: 'Rumah Tiga'},
     // { slug: 'tawiri', title: 'Tawiri'},
     // { slug: 'hunuth-durian-patah', title: 'Hunuth / Durian Patah'},
@@ -53,8 +53,8 @@ export const DataArea = [
     // { slug: 'naku', title: 'Naku'},
     // { slug: 'rutong', title: 'Rutong'},
 
-    { slug: 'suli', title: 'Suli'},
-    { slug: 'piru', title: 'Piru'}
+    { slug: 'suli', title: 'Suli' },
+    { slug: 'piru', title: 'Piru' }
 ];
 
 export const DataKos = [
@@ -352,6 +352,32 @@ export const DataKos = [
         },
         facilities: ['Lemari pakaian', 'Kasur', 'Internet', 'Listrik', 'Air bersih'],
         start_price: 700000,
+        post_url: ''
+    },
+    {
+        id: 13,
+        date_modified: '2020-06-28T05:10+19:00',
+        date_published: '2020-06-28T05:10+19:00',
+        slug: 'rumah-kontrak-tahunan-kebun-cengkeh-batu-merah-kota-ambon-perumahan-banda-eli',
+        title: 'Rumah Kontrak Tahunan Kebun Cengkeh Batu Merah Kota Ambon - Perumahan Banda Eli',
+        description: 'Dijual/dikontrakan tahunan sebuah rumah, lorong perumahan Banda Eli Kebun Cengkeh Batu Merah Kota Ambon, Bagi yang berminat dapat menghubungi pemilik.',
+        keywords: 'kebun cengkeh, batu merah, kota ambon',
+        images: [
+            'https://i.imgur.com/Jdu3CNN.png',
+            'https://i.imgur.com/Cg79CAJ.png',
+            'https://i.imgur.com/LHGdpvG.png',
+            'https://i.imgur.com/Q10Tvwe.png',
+            'https://i.imgur.com/YrIK75R.png',
+            'https://i.imgur.com/5YoIIXa.png',
+        ],
+        location_title: 'batu-merah',
+        category: 'Kontrakan',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/nailaamalia.amalia.9',
+            phone: '6285344551745'
+        },
+        facilities: ['2 kamar tidur', 'Kamar mandi dalam', 'Ruang keluarga', 'Ruang tamu', 'Ruang sholat', 'Dapur', 'parkiran mobil'],
+        start_price: 35000000,
         post_url: ''
     }
 ]
