@@ -68,8 +68,8 @@ class Detail extends React.Component {
       ]
     };
 
-    let headTitle = "";
-    data[0].location_title.split("-").map(index => headTitle += Firstupper(index)+" ")
+    let locationTitle = "";
+    data[0].location_title.split("-").map(index => locationTitle += Firstupper(index)+" ")
 
     return <>
       {
@@ -100,7 +100,7 @@ class Detail extends React.Component {
       {
         data && data[0] &&
         <div className="main-layout">
-          <HeadPage title={data[0].category +' '+headTitle} />
+          <HeadPage title={data[0].category +' '+locationTitle} />
           <Slide imagesData={data[0].images} imageTitle={data[0].title} />
           <Container className="mb-3">
             <div className="pt-3">
@@ -117,7 +117,7 @@ class Detail extends React.Component {
               </div>
               <div>
                 <p className={styles.headingtwo}>Lokasi {data[0].category}</p>
-                {data[0].location_title}
+                {locationTitle}
               </div>
               {
                 data[0].start_price > 0 &&
@@ -136,7 +136,7 @@ class Detail extends React.Component {
                   </div>
                 }
                 <small>
-                  * Data dapat berubah sewaktu-waktu, tanyakan data saat ini.
+                  * Data dapat berubah sewaktu-waktu.
                 </small>
               </div>
             </div>
