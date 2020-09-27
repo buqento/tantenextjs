@@ -21,7 +21,7 @@ class Area extends Component {
                     <div className="d-flex ml-3">
                         {
                             DataArea.map((item, index) =>
-                        <Button key={index} href={`area/${item.slug}`} variant="secondary" className="mr-3 text-nowrap" size="sm">{item.title} <Badge variant="danger">{this.count(item.slug)}</Badge></Button>
+                        <Button key={index} href={`area/${item.slug}`} variant="secondary" className="mr-3 text-nowrap" size="md">{item.title} <Badge variant="danger">{this.count(item.slug)}</Badge></Button>
                             )
                         }
                     </div>
