@@ -48,13 +48,13 @@ class Header extends Component {
             review: {
                 '@type': "Review",
                 reviewRating: {
-                  '@type': "Rating",
-                  ratingValue: 4,
-                  bestRating: 5
+                    '@type': "Rating",
+                    ratingValue: 4,
+                    bestRating: 5
                 },
                 author: {
-                  '@type': "Person",
-                  name: "Bvqento Richard"
+                    '@type': "Person",
+                    name: "Bvqento Richard"
                 }
             },
             "geo": {
@@ -65,7 +65,7 @@ class Header extends Component {
             name: "Tantekos.com",
             telephone: "+6285243322433",
             url: "https://www.tantekos.com/",
-            image:"https://github.com/buqento/tantenextjs/blob/master/static/images/Home-icon.png?raw=true",
+            image: "https://github.com/buqento/tantenextjs/blob/master/static/images/Home-icon.png?raw=true",
             priceRange: 'Rp 50.000 - Rp 15.000.000',
         }
 
@@ -87,7 +87,7 @@ class Header extends Component {
                     <meta name="application-name" content="Tantekos" />
                     <meta name="classification" content="Business, Rent House, Sewa Kost, Property, Rent Room, Info Kost, Information, Kost, Room, Cari Kost, Kost Murah, Kost Bebas, Application, Mobile Application, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
                     <meta name="keywords" content="tantekos, Info Kost, Cari kost, kost, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
-                    <script type="application/ld+json">{JSON.stringify(structureHomePage)}</script>
+                    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureHomePage) }} />
                 </NextHead>
             </>
         )

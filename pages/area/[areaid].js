@@ -53,13 +53,7 @@ class Detail extends React.Component {
         return (
             <>
                 <NextHead>
-                    {/* <script type="application/ld+json">{structureTypeBreadcrumbList}</script> */}
-                    <script 
-                    type="application/ld+json" 
-                    // dangerouslySetInnerHTML={structureTypeBreadcrumbList} 
-            dangerouslySetInnerHTML={{ __html: structureTypeBreadcrumbList }}
-                    />
-
+                    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: structureTypeBreadcrumbList }} />
                 </NextHead>
                 <div className="main-layout">
                     <HeadPage title={headTitle} />
