@@ -60,102 +60,8 @@ export const DataArea = [
 export const DataKos = [
     {
         id: 1,
-        date_modified: '2020-06-08T17:10+19:00',
-        date_published: '2020-06-08T17:10+19:00',
-        slug: 'rumah-makan-kontrak-tahunan-laha-kota-ambon',
-        title: 'Rumah Makan Kontrak Tahunan Laha Kota Ambon',
-        description: 'Dikontrakkan sebuah rumah makan, berlokasi di daerah depan bandar udara Pattimura Laha Kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
-        keywords: 'laha, teluk ambon, kota ambon',
-        images: [
-            'https://i.imgur.com/uyF2J7P.png',
-            'https://i.imgur.com/3Z3Y5G0.png'
-        ],
-        location_title: 'laha',
-        category: 'Kontrakan',
-        contact_us: {
-            facebook_url: 'https://www.facebook.com/zhul.putra.148',
-            phone: '6285256593431'
-        },
-        facilities: ['Parkiran'],
-        start_price: 0,
-        post_url: ''
-    },
-    {
-        id: 2,
-        date_modified: '2020-06-09T17:10+19:00',
-        date_published: '2020-06-09T17:10+19:00',
-        slug: 'rumah-kontrak-tahunan-suli-atas',
-        title: 'Rumah Kontrak Tahunan Suli Atas Salahutu Maluku Tengah',
-        description: 'Dikontrakkan sebuah rumah di daerah Suli Atas Salahutu Maluku Tengah. Fasilitas yang disediakan yaitu 2 kamar tidur, kamar mandi, dapur, ruang tamu, ruang keluarga, teras, garasi mobil. Bagi yang berminat dapat menghubungi pengelola.',
-        keywords: 'suli, salahutu, maluku tengah',
-        images: [
-            'https://i.imgur.com/0utQPHq.png',
-            'https://i.imgur.com/L4OSPWG.png',
-            'https://i.imgur.com/WUUNk48.png',
-            'https://i.imgur.com/rMMEKS5.png',
-            'https://i.imgur.com/JhcE4Bo.png'
-        ],
-        location_title: 'suli',
-        category: 'Kontrakan',
-        contact_us: {
-            facebook_url: 'https://www.facebook.com/Dedox002',
-            phone: ''
-        },
-        facilities: ['Kamar mandi', 'Dapur', 'Ruang tamu', 'Ruang keluarga', 'Teras', 'Garasi mobil', 'Listrik meteran (pulsa)'],
-        start_price: 0,
-        post_url: ''
-    },
-    {
-        id: 3,
-        date_modified: '2020-06-10T17:10+19:00',
-        date_published: '2020-06-10T17:10+19:00',
-        slug: 'rumah-kos-lorong-mayang-pusat-kota-ambon',
-        title: 'Rumah Kost Lorong Mayang Ahusen Sirimau Kota Ambon',
-        description: 'Kamar kost berlokasi di Pusat Kota Ambon (lorong Mayang, belakang Apotik Gideon Farma). Tersedia fasilitas AC, televisi, kulkas, lemari, springbed 2 bdn, kursi dan meja. Kamar mandi dan mini kitchen d dlm kamar. Listrik token. Bagi yang berminat dapat menghubungi pengelola.',
-        keywords: 'ahusen, sirimau, kota ambon',
-        images: [
-            'https://i.imgur.com/MGQNiuC.png',
-            'https://i.imgur.com/3b4ul2j.png',
-            'https://i.imgur.com/9n0zU4r.png',
-            'https://i.imgur.com/WvhUdBK.png'
-        ],
-        location_title: 'ahusen',
-        category: 'Kost',
-        contact_us: {
-            facebook_url: 'https://www.facebook.com/profile.php?id=100004804935380',
-            phone: ''
-        },
-        facilities: ['AC', 'televisi', 'kulkas', 'lemari', 'springbed', 'kursi dan meja', 'Kamar mandi', 'mini kitchen'],
-        start_price: 0,
-        post_url: 'https://www.facebook.com/groups/330390743737021/permalink/3134649166644484/'
-    },
-    {
-        id: 4,
-        date_modified: '2020-06-11T17:10+19:00',
-        date_published: '2020-06-11T17:10+19:00',
-        slug: 'kos-harian-bulanan-seram-bagian-barat-piru',
-        title: 'Kost Harian Bulanan Piru Seram Bagian Barat',
-        description: 'Terima kost harian dan bulanan Desa Kamal, Piru Seram Bagian Barat (dekat Pasar Waisarisa depan Puskesmas Kamal lama). Bebas tempat parkir, Air bersih, keamanan terjamin, lokasi strategis (depan jalan), dekat dengan fasilitas umum seperti sekolah, pasar, dan bank',
-        keywords: 'piru, seram bagian barat',
-        images: [
-            'https://i.imgur.com/IEclXWo.png',
-            'https://i.imgur.com/JOyd5Br.png',
-            'https://i.imgur.com/nf2RsYH.png'
-        ],
-        location_title: 'piru',
-        category: 'Kost',
-        contact_us: {
-            facebook_url: 'https://www.facebook.com/profile.php?id=100006131414651',
-            phone: '6282239502969'
-        },
-        facilities: ['Parkiran', 'Air bersih'],
-        start_price: 400000,
-        post_url: ''
-    },
-    {
-        id: 5,
-        date_modified: '2020-06-12T17:10+19:00',
-        date_published: '2020-06-12T17:10+19:00',
+        date_modified: '2020-09-14T12:57:15+00:00',
+        date_published: '2020-09-14T12:57:15+00:00',
         slug: 'kos-harian-bulanan-nyaman-strategis-almira-homestay',
         title: 'Kost Murah Harian Bulanan Silale Nusaniwe Kota Ambon Almira Homestay',
         description: 'Tersedia kost murah, nyaman dan strategis. Biaya sewa dan fasilitas bervariasi mulai dari harian (Rp100.000) dan bulanan (Rp700.000). Bebas biaya listrik dan air bersih. Berlokasi di Silale Kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
@@ -179,9 +85,103 @@ export const DataKos = [
         post_url: ''
     },
     {
+        id: 2,
+        date_modified: '2020-09-15T12:57:15+00:00',
+        date_published: '2020-09-15T12:57:15+00:00',
+        slug: 'rumah-kontrak-tahunan-suli-atas',
+        title: 'Rumah Kontrak Tahunan Suli Atas Salahutu Maluku Tengah',
+        description: 'Dikontrakkan sebuah rumah di daerah Suli Atas Salahutu Maluku Tengah. Fasilitas yang disediakan yaitu 2 kamar tidur, kamar mandi, dapur, ruang tamu, ruang keluarga, teras, garasi mobil. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'suli, salahutu, maluku tengah',
+        images: [
+            'https://i.imgur.com/0utQPHq.png',
+            'https://i.imgur.com/L4OSPWG.png',
+            'https://i.imgur.com/WUUNk48.png',
+            'https://i.imgur.com/rMMEKS5.png',
+            'https://i.imgur.com/JhcE4Bo.png'
+        ],
+        location_title: 'suli',
+        category: 'Kontrakan',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/Dedox002',
+            phone: ''
+        },
+        facilities: ['Kamar mandi', 'Dapur', 'Ruang tamu', 'Ruang keluarga', 'Teras', 'Garasi mobil', 'Listrik meteran (pulsa)'],
+        start_price: 0,
+        post_url: ''
+    },
+    {
+        id: 3,
+        date_modified: '2020-09-16T12:57:15+00:00',
+        date_published: '2020-09-16T12:57:15+00:00',
+        slug: 'rumah-kos-lorong-mayang-pusat-kota-ambon',
+        title: 'Rumah Kost Lorong Mayang Ahusen Sirimau Kota Ambon',
+        description: 'Kamar kost berlokasi di Pusat Kota Ambon (lorong Mayang, belakang Apotik Gideon Farma). Tersedia fasilitas AC, televisi, kulkas, lemari, springbed 2 bdn, kursi dan meja. Kamar mandi dan mini kitchen d dlm kamar. Listrik token. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'ahusen, sirimau, kota ambon',
+        images: [
+            'https://i.imgur.com/MGQNiuC.png',
+            'https://i.imgur.com/3b4ul2j.png',
+            'https://i.imgur.com/9n0zU4r.png',
+            'https://i.imgur.com/WvhUdBK.png'
+        ],
+        location_title: 'ahusen',
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/profile.php?id=100004804935380',
+            phone: ''
+        },
+        facilities: ['AC', 'televisi', 'kulkas', 'lemari', 'springbed', 'kursi dan meja', 'Kamar mandi', 'mini kitchen'],
+        start_price: 0,
+        post_url: 'https://www.facebook.com/groups/330390743737021/permalink/3134649166644484/'
+    },
+    {
+        id: 4,
+        date_modified: '2020-09-17T12:57:15+00:00',
+        date_published: '2020-09-17T12:57:15+00:00',
+        slug: 'kos-harian-bulanan-seram-bagian-barat-piru',
+        title: 'Kost Harian Bulanan Piru Seram Bagian Barat',
+        description: 'Terima kost harian dan bulanan Desa Kamal, Piru Seram Bagian Barat (dekat Pasar Waisarisa depan Puskesmas Kamal lama). Bebas tempat parkir, Air bersih, keamanan terjamin, lokasi strategis (depan jalan), dekat dengan fasilitas umum seperti sekolah, pasar, dan bank',
+        keywords: 'piru, seram bagian barat',
+        images: [
+            'https://i.imgur.com/IEclXWo.png',
+            'https://i.imgur.com/JOyd5Br.png',
+            'https://i.imgur.com/nf2RsYH.png'
+        ],
+        location_title: 'piru',
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/profile.php?id=100006131414651',
+            phone: '6282239502969'
+        },
+        facilities: ['Parkiran', 'Air bersih'],
+        start_price: 400000,
+        post_url: ''
+    },
+    {
+        id: 5,
+        date_modified: '2020-09-18T12:57:15+00:00',
+        date_published: '2020-09-18T12:57:15+00:00',
+        slug: 'rumah-makan-kontrak-tahunan-laha-kota-ambon',
+        title: 'Rumah Makan Kontrak Tahunan Laha Kota Ambon',
+        description: 'Dikontrakkan sebuah rumah makan, berlokasi di daerah depan bandar udara Pattimura Laha Kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'laha, teluk ambon, kota ambon',
+        images: [
+            'https://i.imgur.com/uyF2J7P.png',
+            'https://i.imgur.com/3Z3Y5G0.png'
+        ],
+        location_title: 'laha',
+        category: 'Kontrakan',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/zhul.putra.148',
+            phone: '6285256593431'
+        },
+        facilities: ['Parkiran'],
+        start_price: 0,
+        post_url: ''
+    },
+    {
         id: 6,
-        date_modified: '2020-06-13T17:10+19:00',
-        date_published: '2020-06-13T17:10+19:00',
+        date_modified: '2020-09-19T12:57:15+00:00',
+        date_published: '2020-09-19T12:57:15+00:00',
         slug: 'kos-vivi-silale',
         title: 'Kost Murah Harian Mingguan Bulanan Silale Nusaniwe Kota Ambon - Kost Vivi',
         description: 'Tersedia kamar kost harian mingguan bulanan. Tiap kamar ada jemuran, ada tempat parkir motor & mobil. Air sumur bor. Bagi yang berminat dapat menghubungi pengelola (IG @vvrimony)',
@@ -205,8 +205,8 @@ export const DataKos = [
     },
     {
         id: 7,
-        date_modified: '2020-06-20T17:10+19:00',
-        date_published: '2020-06-20T17:10+19:00',
+        date_modified: '2020-09-20T12:57:15+00:00',
+        date_published: '2020-09-20T12:57:15+00:00',
         slug: 'rumah-kontrak-kampung-jawa-kapaha-ambon',
         title: 'Rumah Kontrak Tahunan Kampung Jawa Kapaha Pandan Kasturi Kota Ambon',
         description: 'Dikontrakan sebuah rumah Kampung Jawa Kapaha Pandan Kasturi Kota Ambon. Bagi yang berminat dapat menghubungi pemilik.',
@@ -233,8 +233,8 @@ export const DataKos = [
     },
     {
         id: 8,
-        date_modified: '2020-06-21T17:10+19:00',
-        date_published: '2020-06-21T17:10+19:00',
+        date_modified: '2020-09-21T12:57:15+00:00',
+        date_published: '2020-09-21T12:57:15+00:00',
         slug: 'kos-murah-nyaman-strategis-jalan-baru-kota-ambon',
         title: 'Kost Murah Nyaman Bersih Strategis Jalan Baru Honipopu Sirimau Kota Ambon',
         description: 'Tersedia kost murah, nyaman dan strategis dekat Masjid Raya Alfatah, Masjid Jami Jalan baru Honipopu Sirimau Kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
@@ -256,8 +256,8 @@ export const DataKos = [
     },
     {
         id: 9,
-        date_modified: '2020-06-24T17:10+19:00',
-        date_published: '2020-06-24T17:10+19:00',
+        date_modified: '2020-09-22T12:57:15+00:00',
+        date_published: '2020-09-22T12:57:15+00:00',
         slug: 'kontrakan-tahunan-nyaman-bersih-strategis-jalan-baru-kota-ambon-belakang-masjid-nurul-huda',
         title: 'Kontrakan Tahunan Nyaman Bersih Strategis Jalan Baru Honipopu Sirimau Kota Ambon - Belakang Masjid Nurul Huda',
         description: 'Tersedia rumah kontrak tahunan murah nyaman dan strategis Jalan Baru Honipopu Sirimau kota Ambon (3 Lantai). Dari Mesjid Al Fatah masuk lorong di belakang Masjid Nurul Huda. Bagi yang berminat dapat menghubungi pengelola.',
@@ -283,8 +283,8 @@ export const DataKos = [
     },
     {
         id: 10,
-        date_modified: '2020-06-24T17:10+19:00',
-        date_published: '2020-06-24T17:10+19:00',
+        date_modified: '2020-09-23T12:57:15+00:00',
+        date_published: '2020-09-23T12:57:15+00:00',
         slug: 'rumah-kontrakan-tahunan-galala-hative-kecil-kota-ambon-rumah-dua-lantai',
         title: 'Rumah Kontrakan Tahunan Galala Hative Kecil Kota Ambon - Rumah Dua Lantai',
         description: 'Rumah kontrak tahunan Galala Hative Kecil Kota Ambon, Bagi yang berminat dapat menghubungi pengelola.',
@@ -309,8 +309,8 @@ export const DataKos = [
     },
     {
         id: 11,
-        date_modified: '2020-06-25T17:10+19:00',
-        date_published: '2020-06-25T17:10+19:00',
+        date_modified: '2020-09-24T12:57:15+00:00',
+        date_published: '2020-09-24T12:57:15+00:00',
         slug: 'kost-murah-nyaman-bersih-strategis-karang-panjang-kota-ambon-puncak-bogor-karpan',
         title: 'Kost Murah Nyaman Bersih Strategis Karang Panjang Sirimau Kota Ambon - Puncak Bogor Karpan',
         description: 'Tersedia kost eksklusif Puncak Bogor Karang Panjang Sirimau Kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
@@ -333,8 +333,8 @@ export const DataKos = [
     },
     {
         id: 12,
-        date_modified: '2020-06-25T17:10+19:00',
-        date_published: '2020-06-25T17:10+19:00',
+        date_modified: '2020-09-25T12:57:15+00:00',
+        date_published: '2020-09-25T12:57:15+00:00',
         slug: 'kost-murah-nyaman-bersih-strategis-poka-rumah-tiga-kota-ambon-khusus-karyawan-dan-mahasiswa',
         title: 'Kost Murah Nyaman Bersih Strategis Poka Rumah Tiga Kota Ambon - Khusus Karyawan Dan Mahasiswa',
         description: 'Tersedia kost murah untuk karyawan dan mahasiswa berlokasi di wilayah Poka Rumah Tiga Kota Ambon. Biaya sewa sudah termasuk fasilitas. Air lancar sumur bor, dapur umum luas, 4 kamar mandi luar. Bagi yang berminat dapat menghubungi pengelola',
@@ -356,8 +356,8 @@ export const DataKos = [
     },
     {
         id: 13,
-        date_modified: '2020-06-28T05:10+19:00',
-        date_published: '2020-06-28T05:10+19:00',
+        date_modified: '2020-09-28T12:57:15+00:00',
+        date_published: '2020-09-28T12:57:15+00:00',
         slug: 'rumah-kontrak-tahunan-kebun-cengkeh-batu-merah-kota-ambon-perumahan-banda-eli',
         title: 'Rumah Kontrak Tahunan Kebun Cengkeh Batu Merah Kota Ambon - Perumahan Banda Eli',
         description: 'Dijual/dikontrakan tahunan sebuah rumah, lorong perumahan Banda Eli Kebun Cengkeh Batu Merah Kota Ambon, Bagi yang berminat dapat menghubungi pemilik.',
