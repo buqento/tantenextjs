@@ -412,8 +412,8 @@ export const DataKos = [
         id: 15,
         date_modified: '2020-09-30T12:57:15+00:00',
         date_published: '2020-09-30T12:57:15+00:00',
-        slug: 'kost-eksklusif-waihaoing-nusaniwe-kota-ambon-maluku-reddoorz-koolkost-market',
-        title: 'Kost Eksklusif Waihaoing Nusaniwe Kota Ambon Maluku - RedDoorz KoolKost Market',
+        slug: 'kost-eksklusif-waihaong-nusaniwe-kota-ambon-maluku-reddoorz-koolkost-market',
+        title: 'Kost Eksklusif Waihaong Nusaniwe Kota Ambon Maluku - RedDoorz KoolKost Market',
         description: 'Tersedia kost eksklusif (RedDoorz) Waihaong Nusaniwe Kota Ambon Maluku. Harga kamar perbulan sudah all in.Bagi yang berminat dapat menghubungi pengelola',
         keywords: 'waihaong, nusaniwe, kota ambon, maluku',
         images: [
