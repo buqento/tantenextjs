@@ -4,31 +4,31 @@ export const DataArea = [
     // { slug: 'kudamati', title: 'Kudamati'},
     // { slug: 'mangga-dua', title: 'Mangga Dua'},
     // { slug: 'urimessing', title: 'Urimessing'},
-    { slug: 'waihaong', title: 'Waihaong'},
-    { slug: 'silale', title: 'Silale' },
+    { slug: 'waihaong', title: 'Waihaong', image: 'https://i.imgur.com/PA1MJ74.png' },
+    { slug: 'silale', title: 'Silale', image: 'https://i.imgur.com/pkt6aLg.png' },
     // { slug: 'latuhalat', title: 'Latuhalat'},
     // { slug: 'seilale', title: 'Seilale'},
     // { slug: 'nusaniwe', title: 'Nusaniwe'},
     // { slug: 'amahusu', title: 'Amahusu'},
     // { slug: 'urimessing', title: 'Urimessing'},
 
-    { slug: 'batu-merah', title: 'Batu Merah' },
+    { slug: 'batu-merah', title: 'Batu Merah', image: 'https://i.imgur.com/Jdu3CNN.png' },
     // { slug: 'hative-kecil', title: 'Hative Kecil'},
     // { slug: 'soya', title: 'Soya'},
-    { slug: 'galala', title: 'Galala' },
-    { slug: 'ahusen', title: 'Ahusen'},
+    { slug: 'galala', title: 'Galala', image: 'https://i.imgur.com/MEL1RGi.png' },
+    { slug: 'ahusen', title: 'Ahusen', image: 'https://i.imgur.com/MGQNiuC.png' },
     // { slug: 'amantelu', title: 'Amantelu'},
     // { slug: 'batu-gajah', title: 'Batu Gajah'},
     // { slug: 'batu-meja', title: 'Batu Meja'},
-    { slug: 'honipopu', title: 'Honipopu' },
-    { slug: 'karang-panjang', title: 'Karang Panjang' },
-    { slug: 'pandan-kasturi', title: 'Pandan Kasturi' },
+    { slug: 'honipopu', title: 'Honipopu', image: 'https://i.imgur.com/SxJCFTL.png' },
+    { slug: 'karang-panjang', title: 'Karang Panjang', image: 'https://i.imgur.com/MJPv6M5.png' },
+    { slug: 'pandan-kasturi', title: 'Pandan Kasturi', image: 'https://i.imgur.com/4g4Lbyu.png' },
     // { slug: 'rijali', title: 'Rijali'},
     // { slug: 'uritetu', title: 'Uritetu'},
     // { slug: 'waihoka', title: 'Waihoka'},
 
-    { slug: 'halong', title: 'Halong'},
-    { slug: 'passo', title: 'Passo'},
+    { slug: 'halong', title: 'Halong', image: 'https://i.imgur.com/3VnPwHM.png' },
+    { slug: 'passo', title: 'Passo', image: 'https://i.imgur.com/rpIivfJ.png' },
     // { slug: 'latta', title: 'Latta'},
     // { slug: 'nania', title: 'Nania'},
     // { slug: 'negeri-lama', title: 'Negeri Lama'},
@@ -36,11 +36,11 @@ export const DataArea = [
     // { slug: 'lateri', title: 'Lateri'},
 
     // { slug: 'hative-besar', title: 'Hative Besar'},
-    { slug: 'laha', title: 'Laha' },
-    { slug: 'poka', title: 'Poka' },
+    { slug: 'laha', title: 'Laha', image: 'https://i.imgur.com/uyF2J7P.png' },
+    { slug: 'poka', title: 'Poka', image: 'https://i.imgur.com/7v2aJ0z.png' },
     // { slug: 'rumah-tiga', title: 'Rumah Tiga'},
     // { slug: 'tawiri', title: 'Tawiri'},
-    // { slug: 'hunuth-durian-patah', title: 'Hunuth / Durian Patah'},
+    // { slug: 'hunuth-durian-patah', title: 'Hunuth', image: 'https://i.imgur.com/PA1MJ74.png' },
     // { slug: 'wayame', title: 'Wayame'},
     // { slug: 'tihu', title: 'Tihu'},
 
@@ -53,8 +53,8 @@ export const DataArea = [
     // { slug: 'naku', title: 'Naku'},
     // { slug: 'rutong', title: 'Rutong'},
 
-    { slug: 'suli', title: 'Suli' },
-    { slug: 'piru', title: 'Piru' }
+    { slug: 'suli', title: 'Suli', image: 'https://i.imgur.com/0utQPHq.png' },
+    { slug: 'piru', title: 'Piru', image: 'https://i.imgur.com/IEclXWo.png' }
 ];
 
 export const DataKos = [
