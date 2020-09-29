@@ -131,12 +131,12 @@ class Detail extends React.Component {
                   data[0].post_url !== '' &&
                   <div className="pt-3">
                     <small>
-                      <a href={data[0].post_url} target="blank">* Kunjungi link terkait</a>
+                      <a href={data[0].post_url} target="blank">* Lihat tautan original</a>
                     </small>
                   </div>
                 }
                 <small>
-                  * Data dapat berubah sewaktu-waktu.
+                  * Data dapat berubah sewaktu-waktu
                 </small>
               </div>
             </div>
