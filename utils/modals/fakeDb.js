@@ -1,7 +1,7 @@
 export const DataArea = [
     // { slug: 'benteng', title: 'Benteng'},
     // { slug: 'wainitu', title: 'Wainitu'},
-    // { slug: 'kudamati', title: 'Kudamati'},
+    { slug: 'kudamati', title: 'Kudamati', image: 'https://i.imgur.com/KynKT7D.png'},
     // { slug: 'mangga-dua', title: 'Mangga Dua'},
     // { slug: 'urimessing', title: 'Urimessing'},
     { slug: 'waihaong', title: 'Waihaong', image: 'https://i.imgur.com/PA1MJ74.png' },
@@ -450,5 +450,28 @@ export const DataKos = [
         facilities: ['2 kamar tidur', 'Ruang tamu', '1 kamar mandi', 'Dapur'],
         start_price: 13000000,
         post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/3228933590460380/'
+    },
+    {
+        id: 17,
+        date_modified: '2020-10-02T06:57:15+00:00',
+        date_published: '2020-10-02T06:57:15+00:00',
+        slug: 'kost-murah-kudamati-nusaniwe-kota-ambon-maluku-farmasi-atas-depan-gereja-christy-natalia',
+        title: 'Kost Murah Kudamati Nusaniwe Kota Ambon Maluku - Farmasi Atas Depan Gereja Christy Natalia',
+        description: 'Tersedia kost murah Kudamati Nusaniwe Kota Ambon Maluku wilayah Farmasi Atas depan Gereja Christy Natalia. Khusus untuk karyawan dan mahasiswa. Tidak menerima pasutri. Bagi yang berminat dapat menghubungi pengelola',
+        keywords: 'kudamati, nusaniwe, kota ambon, maluku',
+        images: [
+            'https://i.imgur.com/KynKT7D.png',
+            'https://i.imgur.com/dnSKIda.png',
+            'https://i.imgur.com/wuRoCNl.png'
+        ],
+        location_title: 'kudamati',
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/ferry.jhon.90',
+            phone: ''
+        },
+        facilities: ['Internet (S&K berlaku)', 'Parkiran motor', 'Lemari', 'Kasur', 'Meja', 'Kamar mandi (luar)'],
+        start_price: 500000,
+        post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/2646604255359986/'
     },
 ]
