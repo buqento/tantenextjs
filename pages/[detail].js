@@ -34,16 +34,59 @@ class Detail extends React.Component {
         }]
      }`
 
+    // const structureTypeProduct = `{
+    //   "@context": "https://schema.org",
+    //   "@type": "Product",
+    //   "name": "${data[0].title}",
+    //   "image": [${data[0].images.map(item => `"${item}"`)}],
+    //   "description": "${data[0].description}",
+    //   "sku": "TANTEKOS-${data[0].category.toUpperCase()+data[0].id}",
+    //   "brand": {
+    //     "@type": "Brand",
+    //     "name": "Tantekos"
+    //   },
+    //   "review": {
+    //     "@type": "Review",
+    //     "reviewRating": {
+    //       "@type": "Rating",
+    //       "ratingValue": "4",
+    //       "bestRating": "5"
+    //     },
+    //     "author": {
+    //       "@type": "Person",
+    //       "name": "Bvqento Richard"
+    //     }
+    //   },
+    //   "aggregateRating": {
+    //     "@type": "AggregateRating",
+    //     "ratingValue": "4.4",
+    //     "reviewCount": "89"
+    //   },
+    //   "offers": {
+    //     "@type": "Offer",
+    //     "url": "${`https://tantekos.com/${slug}`}",
+    //     "priceCurrency": "IDR",
+    //     "price": "${data[0].start_price}",
+    //     "priceValidUntil": "2025-12-25",
+    //     "itemCondition": "https://schema.org/UsedCondition",
+    //     "availability": "https://schema.org/InStock"
+    //   }
+    // }`
+
+
     const structureTypeProduct = `{
       "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "${data[0].title}",
+      "@type": "Hostel",
       "image": [${data[0].images.map(item => `"${item}"`)}],
-      "description": "${data[0].description}",
-      "sku": "TANTEKOS-${data[0].category.toUpperCase()+data[0].id}",
-      "brand": {
-        "@type": "Brand",
-        "name": "Tantekos"
+      "@id": "https://tantekos.com",
+      "name": "${data[0].title}",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "${data[0].location_title}",
+        "addressLocality": "Ambon",
+        "addressRegion": "Maluku",
+        "postalCode": "97117",
+        "addressCountry": "ID"
       },
       "review": {
         "@type": "Review",
@@ -57,21 +100,18 @@ class Detail extends React.Component {
           "name": "Bvqento Richard"
         }
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.4",
-        "reviewCount": "89"
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -3.702935,
+        "longitude": 128.163195 
       },
-      "offers": {
-        "@type": "Offer",
-        "url": "${`https://tantekos.com/${slug}`}",
-        "priceCurrency": "IDR",
-        "price": "${data[0].start_price}",
-        "priceValidUntil": "2025-12-25",
-        "itemCondition": "https://schema.org/UsedCondition",
-        "availability": "https://schema.org/InStock"
-      }
+      "url": "${`https://tantekos.com/${slug}`}",
+      "telephone": "${data[0].contact_us.phone}",
+      "servesCuisine": "Indonesian",
+      "priceRange": "$$$",
+      "acceptsReservations": "True"
     }`
+
 
     // const structureTypeNewsArticle = `{
     //   "@context": "https://schema.org",
