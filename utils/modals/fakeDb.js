@@ -27,7 +27,7 @@ export const DataArea = [
     // { slug: 'uritetu', title: 'Uritetu'},
     // { slug: 'waihoka', title: 'Waihoka'},
 
-    { slug: 'halong', title: 'Halong', image: 'https://i.imgur.com/3VnPwHM.png' },
+    { slug: 'halong', title: 'Halong', image: 'https://i.imgur.com/0lu6aHK.png' },
     { slug: 'passo', title: 'Passo', image: 'https://i.imgur.com/rpIivfJ.png' },
     // { slug: 'latta', title: 'Latta'},
     // { slug: 'nania', title: 'Nania'},
@@ -474,6 +474,32 @@ export const DataKos = [
         start_price: 500000,
         post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/2646604255359986/'
     },
+    {
+        id: 18,
+        date_modified: '2020-10-03T13:57:15+00:00',
+        date_published: '2020-10-03T13:57:15+00:00',
+        slug: 'kost-murah-bersih-nyaman-fasilitas-memadai-halong-baguala-kota-ambon-maluku-dwinner-kost-dekat-kampus-iakn-ambon',
+        title: 'Kost Murah Bersih Nyaman Fasilitas Memadai Halong Baguala Kota Ambon Maluku - Dwinner Kost Dekat Kampus IAKN Ambon',
+        description: 'Tersedia kost murah bersih nyaman fasilitas memadai Halong Baguala Kota Ambon Maluku. Khusus untuk mahasiswa dekat kampus Institut Agama Kristen Negeri Ambon. Bagi yang berminat dapat menghubungi pengelola',
+        keywords: 'halong, baguala, kota ambon, maluku',
+        images: [
+            'https://i.imgur.com/fIPgIbk.png',
+            'https://i.imgur.com/0lu6aHK.png',
+            'https://i.imgur.com/dgC7Lq3.png',
+            'https://i.imgur.com/2y2WHdp.png',
+            'https://i.imgur.com/ONTluIO.png',
+            'https://i.imgur.com/2zYVmNT.png'
+        ],
+        location_title: 'halong',
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/Desy.Kakisina',
+            phone: '+6282198999890'
+        },
+        facilities: ['Kamar Mandi (dalam/luar)', 'Springbed', 'Lemari', 'Free Wifi', 'Dapur'],
+        start_price: 500000,
+        post_url: 'https://www.facebook.com/groups/167091850628437/permalink/461429234528029/'
+    }
 ]
 
     // const structureTypeNewsArticle = `{
