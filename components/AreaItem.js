@@ -21,7 +21,7 @@ class AreaItem extends Component {
             <Link href={`area/${item.slug}`}>
                 <Card style={{ width: '140px' }} variant="top" className="mr-3">
                     <Card.Img variant="top" src={item.image} />
-                    <div className="p-1 text-center">{item.title}</div>
+                    <div className="p-3 text-center">{item.title}</div>
                 </Card>
             </Link>
         )
