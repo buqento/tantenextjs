@@ -80,13 +80,13 @@ class Header extends Component {
         return (
             <>
                 <NextHead>
-                    <title>Tantekos - Cari Kos Lebih Mudah</title>
+                    <title>Tantekos - Info Kost Kontrakan Harian Bulanan Murah Terjangkau Nyaman Strategis</title>
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                     <meta name="googlebot" content="index, follow" />
                     <meta name="robot" content="index, follow" />
                     <meta name="application-name" content="Tantekos" />
                     <meta name="classification" content="Business, Rent House, Sewa Kost, Property, Rent Room, Info Kost, Information, Kost, Room, Cari Kost, Kost Murah, Kost Bebas, Application, Mobile Application, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
-                    <meta name="keywords" content="tantekos, Info Kost, Cari kost, kost, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
+                    <meta name="keywords" content="Tantekos, Info Kost, Cari Kost, Kost, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
                     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureHomePage) }} />
                 </NextHead>
             </>
