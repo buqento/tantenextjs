@@ -11,7 +11,7 @@ class KostItem extends Component {
         item.location_title.split("-").map(index => badge += Firstupper(index) + " ")
         return (
             <Link href={item.slug}>
-                <div style={{ borderTop: '12px solid gainsboro' }}>
+                <div style={{ borderTop: '8px solid #f5f5f5' }}>
                     <Image src={item.images[0]} alt={item.title} fluid />
                     <div className="p-3">
                         <Card.Title>{item.title}</Card.Title>

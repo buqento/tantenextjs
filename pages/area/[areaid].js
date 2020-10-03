@@ -76,7 +76,7 @@ class Detail extends React.Component {
                     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureAreaPage) }} />
                 </NextHead>
                 <div className="main-layout">
-                    <HeadPage title={headTitle} />
+                    <HeadPage title={`Area ${headTitle}`} />
                     <ListKos data={data} />
                 </div>
             </>

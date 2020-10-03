@@ -39,9 +39,22 @@ a {
 }
 
 .header-page {
-  background-color: #007bff;
-  color: #fff;
+  background-color: #f8f9fa;
+  /* color: #fff; */
 }
 .scroll-section {
   overflow-y: auto;
+}
+
+.box {
+  width: 120px;
+  padding: 10px;
+  padding-right: 20px;
+}
+
+.box p {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
 }

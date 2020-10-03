@@ -4,7 +4,7 @@ export const DataArea = [
     { slug: 'kudamati', title: 'Kudamati', image: 'https://i.imgur.com/KynKT7D.png'},
     // { slug: 'mangga-dua', title: 'Mangga Dua'},
     // { slug: 'urimessing', title: 'Urimessing'},
-    { slug: 'waihaong', title: 'Waihaong', image: 'https://i.imgur.com/PA1MJ74.png' },
+    { slug: 'waihaong', title: 'Waihaong', image: 'https://i.imgur.com/dl3HaUX.png' },
     { slug: 'silale', title: 'Silale', image: 'https://i.imgur.com/pkt6aLg.png' },
     // { slug: 'latuhalat', title: 'Latuhalat'},
     // { slug: 'seilale', title: 'Seilale'},
@@ -16,13 +16,13 @@ export const DataArea = [
     // { slug: 'hative-kecil', title: 'Hative Kecil'},
     // { slug: 'soya', title: 'Soya'},
     { slug: 'galala', title: 'Galala', image: 'https://i.imgur.com/MEL1RGi.png' },
-    { slug: 'ahusen', title: 'Ahusen', image: 'https://i.imgur.com/MGQNiuC.png' },
+    { slug: 'ahusen', title: 'Ahusen', image: 'https://i.imgur.com/LHGdpvG.png' },
     // { slug: 'amantelu', title: 'Amantelu'},
     // { slug: 'batu-gajah', title: 'Batu Gajah'},
     // { slug: 'batu-meja', title: 'Batu Meja'},
     { slug: 'honipopu', title: 'Honipopu', image: 'https://i.imgur.com/SxJCFTL.png' },
-    { slug: 'karang-panjang', title: 'Karang Panjang', image: 'https://i.imgur.com/MJPv6M5.png' },
-    { slug: 'pandan-kasturi', title: 'Pandan Kasturi', image: 'https://i.imgur.com/4g4Lbyu.png' },
+    { slug: 'karang-panjang', title: 'Karpan', image: 'https://i.imgur.com/MJPv6M5.png' },
+    { slug: 'pandan-kasturi', title: 'Pd. Kasturi', image: 'https://i.imgur.com/4g4Lbyu.png' },
     // { slug: 'rijali', title: 'Rijali'},
     // { slug: 'uritetu', title: 'Uritetu'},
     // { slug: 'waihoka', title: 'Waihoka'},
@@ -36,7 +36,7 @@ export const DataArea = [
     // { slug: 'lateri', title: 'Lateri'},
 
     // { slug: 'hative-besar', title: 'Hative Besar'},
-    { slug: 'laha', title: 'Laha', image: 'https://i.imgur.com/uyF2J7P.png' },
+    { slug: 'laha', title: 'Laha', image: 'https://i.imgur.com/qi2ktEL.png' },
     { slug: 'poka', title: 'Poka', image: 'https://i.imgur.com/7v2aJ0z.png' },
     // { slug: 'rumah-tiga', title: 'Rumah Tiga'},
     // { slug: 'tawiri', title: 'Tawiri'},
@@ -54,7 +54,7 @@ export const DataArea = [
     // { slug: 'rutong', title: 'Rutong'},
 
     { slug: 'suli', title: 'Suli', image: 'https://i.imgur.com/0utQPHq.png' },
-    { slug: 'piru', title: 'Piru', image: 'https://i.imgur.com/IEclXWo.png' }
+    { slug: 'piru', title: 'Piru', image: 'https://i.imgur.com/jQtXqlw.png' }
 ];
 
 export const DataKos = [

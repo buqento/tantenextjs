@@ -16,7 +16,7 @@ class ListKos extends Component {
             <>
                 {
                     data.length > 0 ?
-                        <div style={{ borderTop: '12px solid gainsboro' }}>
+                        <div style={{ borderTop: '8px solid #f5f5f5' }}>
                             <Container className="mt-3">
                                 {
                                     listData.map((item, index) =>
