@@ -19,7 +19,7 @@ class AreaItem extends Component {
         const { item } = this.props
         return (
             <Link href={`area/${item.slug}`}>
-                <Card style={{ width: '120px' }} variant="top" className="mr-3">
+                <Card style={{ width: '140px' }} variant="top" className="mr-3">
                     <Card.Img variant="top" src={item.image} />
                     <div className="p-1 text-center">{item.title}</div>
                 </Card>
