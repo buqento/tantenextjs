@@ -69,7 +69,7 @@ class Detail extends React.Component {
         "longitude": 128.163195 
       },
       "url": "${`https://tantekos.com/${slug}`}",
-      "telephone": "${data[0] && data[0].contact_us.phone}",
+      "telephone": "${data[0] && data[0].contact_us.phone || '+6285243322433'}",
       "priceRange": "Rp50.000 - Rp1.500.000",
       "paymentAccepted": "Cash, Credit Card",
       "currenciesAccepted": "IDR",
@@ -80,7 +80,7 @@ class Detail extends React.Component {
       },
       "contactPoint" : { 
         "@type" : "ContactPoint",
-        "telephone" : "+62-852-4332-2433",
+        "telephone" : "+6285243322433",
         "contactType" : "customer service"
       } 
     }`
