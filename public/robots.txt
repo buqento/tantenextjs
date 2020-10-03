@@ -1,0 +1,3 @@
+User-Agent: *
+
+Sitemap: https://tantekos.com/sitemap.xml
