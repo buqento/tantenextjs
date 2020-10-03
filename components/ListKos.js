@@ -13,30 +13,42 @@ class ListKos extends Component {
             listData = data
         }
         return (
-            <div style={{ borderTop: '12px solid gainsboro' }}>
-                <Container className="mt-3">
-                    {
-                        listData.map((item, index) =>
-                            <div key={index} className="pb-3">
-                                <Link href={`https://tantekos.com/${item.slug}`}>
-                                    <Media>
-                                        <img
-                                            width={64}
-                                            height={64}
-                                            className="mr-3"
-                                            src={item.images[0]}
-                                            alt={item.title}
-                                        />
-                                        <Media.Body>
-                                            <p>{item.title}</p>
-                                        </Media.Body>
-                                    </Media>
-                                </Link>
+            <>
+                {
+                    data.length > 0 ?
+                        <div style={{ borderTop: '12px solid gainsboro' }}>
+                            <Container className="mt-3">
+                                {
+                                    listData.map((item, index) =>
+                                        <div key={index} className="pb-3">
+                                            <Link href={`https://tantekos.com/${item.slug}`}>
+                                                <Media>
+                                                    <img
+                                                        width={64}
+                                                        height={64}
+                                                        className="mr-3"
+                                                        src={item.images[0]}
+                                                        alt={item.title}
+                                                    />
+                                                    <Media.Body>
+                                                        <p>{item.title}</p>
+                                                    </Media.Body>
+                                                </Media>
+                                            </Link>
+                                        </div>
+                                    )
+                                }
+                            </Container>
+                        </div>
+                        :
+                        <Container className="mt-3">
+                            <div>
+                                Ups! Pencarian tidak ada hasil.
                             </div>
-                        )
-                    }
-                </Container>
-            </div>
+                            <Link href="/">Kembali ke Beranda</Link>
+                        </Container>
+                }
+            </>
         )
     }
 }

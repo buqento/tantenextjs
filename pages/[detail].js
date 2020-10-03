@@ -1,6 +1,7 @@
 import React from 'react'
 import { arrayOf, shape, string } from 'prop-types'
 import NextHead from 'next/head'
+import Link from 'next/link'
 import { Container, Card } from 'react-bootstrap'
 import Slide from '../components/Slide'
 import FooterDetail from '../components/FooterDetail'
@@ -20,7 +21,9 @@ class Detail extends React.Component {
 
   render() {
     const { slug } = this.props;
+    let notFound = false;
     const data = DataKos.filter(item => item.slug === slug)
+    if (!data[0]) notFound = true;
     const otherItems = DataKos.filter(item => item.slug !== slug)
     const structureTypeBreadcrumbList =
       `{
@@ -29,60 +32,20 @@ class Detail extends React.Component {
         "itemListElement": [{
           "@type": "ListItem",
           "position": 1,
-          "name": "${data[0].title}",
+          "name": "${data[0] && data[0].title}",
           "item": "https://tantekos.com/${slug}"
         }]
      }`
 
-    // const structureTypeProduct = `{
-    //   "@context": "https://schema.org",
-    //   "@type": "Product",
-    //   "name": "${data[0].title}",
-    //   "image": [${data[0].images.map(item => `"${item}"`)}],
-    //   "description": "${data[0].description}",
-    //   "sku": "TANTEKOS-${data[0].category.toUpperCase()+data[0].id}",
-    //   "brand": {
-    //     "@type": "Brand",
-    //     "name": "Tantekos"
-    //   },
-    //   "review": {
-    //     "@type": "Review",
-    //     "reviewRating": {
-    //       "@type": "Rating",
-    //       "ratingValue": "4",
-    //       "bestRating": "5"
-    //     },
-    //     "author": {
-    //       "@type": "Person",
-    //       "name": "Bvqento Richard"
-    //     }
-    //   },
-    //   "aggregateRating": {
-    //     "@type": "AggregateRating",
-    //     "ratingValue": "4.4",
-    //     "reviewCount": "89"
-    //   },
-    //   "offers": {
-    //     "@type": "Offer",
-    //     "url": "${`https://tantekos.com/${slug}`}",
-    //     "priceCurrency": "IDR",
-    //     "price": "${data[0].start_price}",
-    //     "priceValidUntil": "2025-12-25",
-    //     "itemCondition": "https://schema.org/UsedCondition",
-    //     "availability": "https://schema.org/InStock"
-    //   }
-    // }`
-
-
-    const structureTypeProduct = `{
+    const structureTypeHostel = `{
       "@context": "https://schema.org",
       "@type": "Hostel",
-      "image": [${data[0].images.map(item => `"${item}"`)}],
+      "image": [${data[0] && data[0].images.map(item => `"${item}"`)}],
       "@id": "https://tantekos.com",
-      "name": "${data[0].title}",
+      "name": "${data[0] && data[0].title}",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "${data[0].location_title}",
+        "streetAddress": "${data[0] && data[0].location_title}",
         "addressLocality": "Ambon",
         "addressRegion": "Maluku",
         "postalCode": "97117",
@@ -106,51 +69,42 @@ class Detail extends React.Component {
         "longitude": 128.163195 
       },
       "url": "${`https://tantekos.com/${slug}`}",
-      "telephone": "${data[0].contact_us.phone}",
-      "servesCuisine": "Indonesian",
-      "priceRange": "$$$",
-      "acceptsReservations": "True"
+      "telephone": "${data[0] && data[0].contact_us.phone}",
+      "priceRange": "Rp50.000 - Rp1.500.000",
+      "paymentAccepted": "Cash, Credit Card",
+      "currenciesAccepted": "IDR",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "reviewCount": "375"
+      },
+      "contactPoint" : { 
+        "@type" : "ContactPoint",
+        "telephone" : "+62-852-4332-2433",
+        "contactType" : "customer service"
+      } 
     }`
 
-
-    // const structureTypeNewsArticle = `{
-    //   "@context": "https://schema.org",
-    //   "@type": "NewsArticle",
-    //   "mainEntityOfPage": {
-    //     "@type": "WebPage",
-    //     "@id": "${`https://tantekos.com/${slug}`}"
-    //   },
-    //   "headline": "${data[0].title}",
-    //   "image": [${data[0].images.map(item => `"${item}"`)}],
-    //   "dateModified":"${data[0].date_modified}",
-    //   "datePublished":"${data[0].date_published}",
-    //   "author": {
-    //     "@type": "Person",
-    //     "name": "Bvqento Richard"
-    //   },
-    //   "publisher": {
-    //     "@type": "Organization",
-    //     "name": "Tantekos",
-    //     "logo": {
-    //       "@type": "ImageObject",
-    //       "url": "https://github.com/buqento/tantenextjs/blob/master/static/images/Home-icon.png?raw=true"
-    //     }
-    //   },
-    //   "articleBody": "${data[0].description}",
-    //   "url": "${`https://tantekos.com/${slug}`}"
-    // }`
-
-    const structureDetailPage = {
+    const structureDetailPage = data[0] && {
       '@graph': [
-        JSON.parse(structureTypeProduct),
+        JSON.parse(structureTypeHostel),
         JSON.parse(structureTypeBreadcrumbList)
       ]
     };
 
     let locationTitle = "";
-    data[0].location_title.split("-").map(index => locationTitle += Firstupper(index)+" ")
+    data[0] && data[0].location_title.split("-").map(index => locationTitle += Firstupper(index) + " ")
 
     return <>
+      {notFound && <>
+        <div className="main-layout">
+          <HeadPage title='Tantekos' />
+          <Container className="mt-3">
+            <div>Ups! Pencarian tidak ada hasil.</div>
+            <Link href="/">Kembali ke Beranda</Link>
+          </Container>
+        </div>
+      </>}
       {
         data && data[0] &&
         <NextHead>
@@ -179,7 +133,7 @@ class Detail extends React.Component {
       {
         data && data[0] &&
         <div className="main-layout">
-          <HeadPage title={data[0].category +' '+locationTitle} />
+          <HeadPage title={data[0].category + ' ' + locationTitle} />
           <Slide imagesData={data[0].images} imageTitle={data[0].title} />
           <Container className="mb-3">
             <div className="pt-3">

@@ -11,7 +11,6 @@ class Detail extends React.Component {
         return { slug: ctx.query.areaid }
     }
 
-
     render() {
         const { slug } = this.props;
         const data = DataKos.filter(item => item.location_title === slug)
@@ -50,10 +49,31 @@ class Detail extends React.Component {
         ]
        }`
 
+        const structureTypeItemList =
+            `{
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "Area ${headTitle}",
+            "itemListElement": [
+                ${data.map((item, index) => `{
+                    "@type": "ListItem",
+                    "position": ${index + 1},
+                    "url": "https://tantekos.com/${item.slug}"
+                }`)}
+            ]
+        }`
+
+        const structureAreaPage = {
+            '@graph': [
+                JSON.parse(structureTypeItemList),
+                JSON.parse(structureTypeBreadcrumbList)
+            ]
+        };
+
         return (
             <>
                 <NextHead>
-                    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: structureTypeBreadcrumbList }} />
+                    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureAreaPage) }} />
                 </NextHead>
                 <div className="main-layout">
                     <HeadPage title={headTitle} />
