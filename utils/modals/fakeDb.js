@@ -529,6 +529,34 @@ export const DataKos = [
         facilities: ['Ruang tamu', 'Kamar tidur', 'Ruang makan', 'Dapur', 'Kamar mandi'],
         start_price: 7500000,
         post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/3226971947323211/'
+    },
+    {
+        id: 20,
+        date_modified: '2020-10-08T06:00:15+00:00',
+        date_published: '2020-10-08T06:00:15+00:00',
+        slug: 'kost-murah-fasilitas-lengkap-batu-merah-sirimau-kota-ambon-maluku-dekat-kampus-iain-ambon-maluku',
+        title: 'Kost Murah Fasilitas Lengkap Batu Merah Sirimau Kota Ambon Maluku - Dekat Kampus IAIN Ambon',
+        description: 'Tersedia kost murah dengan fasilitas lengkap, dekat kampus IAIN Batu Merah Sirimau Kota Ambon Maluku. Bagi yang berminat dapat menghubungi pengelola',
+        keywords: 'Kost, IAIN, Batu Merah, Sirimau, Kota Ambon, Maluku',
+        images: [
+            'https://i.imgur.com/JRXy2oz.png',
+            'https://i.imgur.com/sB2Vzyx.png',
+            'https://i.imgur.com/vizs7uo.png',
+            'https://i.imgur.com/i57IYl9.png',
+            'https://i.imgur.com/hydxX8l.png',
+            'https://i.imgur.com/MjMFMxC.png',
+            'https://i.imgur.com/TeKX4u7.png'
+        ],
+        location_title: 'batu-merah',
+        location: { title: 'batu-merah', lat: '-3.682169', long: '128.223087'},
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/KOSTAMBON',
+            phone: '+6281357084715'
+        },
+        facilities: ['Spring Bed', 'Lemari Pakaian', 'Meja Belajar', 'Kursi Belajar', 'Kamar mandi dalam', 'Ruang Tamu', 'Ruang Belajar', 'Dapur', 'Ruang Santai', 'Ruang Jemur', 'Ruang Cuci', 'Parkiran'],
+        start_price: 425000,
+        post_url: 'https://kostambon.com/kost-stain/'
     }
 ]
 
