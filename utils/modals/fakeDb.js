@@ -447,7 +447,7 @@ export const DataKos = [
             facebook_url: 'https://www.facebook.com/profile.php?id=100006926223788',
             phone: '+6285243597280'
         },
-        facilities: ['2 kamar tidur', 'Ruang tamu', '1 kamar mandi', 'Dapur'],
+        facilities: ['2 kamar tidur', 'Ruang tamu', '1 Kamar mandi', 'Dapur'],
         start_price: 13000000,
         post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/3228933590460380/'
     },
@@ -499,6 +499,36 @@ export const DataKos = [
         facilities: ['Kamar Mandi (dalam/luar)', 'Springbed', 'Lemari', 'Free Wifi', 'Dapur'],
         start_price: 500000,
         post_url: 'https://www.facebook.com/groups/167091850628437/permalink/461429234528029/'
+    },
+    {
+        id: 19,
+        date_modified: '2020-10-07T12:57:15+00:00',
+        date_published: '2020-10-07T12:57:15+00:00',
+        slug: 'rumah-kontrak-tahunan-kebun-cengkeh-batu-merah-sirimau-kota-ambon-maluku-lorong-pangkalan-ojek-bengkel-hamid',
+        title: 'Rumah Kontrak Tahunan Kebun Cengkeh Batu Merah Sirimau Kota Ambon Maluku - Lorong Pangkalan Ojek Bengkel Hamid',
+        description: 'Rumah kontrakan tahunan Kebun Cengkeh Batu Merah Sirimau Kota Ambon Maluku. Tersedia dua bangunan pada lokasi yang sama. Harga sewa masing-masing berbeda dan boleh melakukan negosiasi. Lokasi aman, tenang, sejuk. Lorong samping Pangkalan Ojek di samping Bengkel Hamid Kebun Cengkeh.',
+        keywords: 'Kontrakan, Kebun Cengkeh, Batu Merah, Sirimau, Kota Ambon, Maluku',
+        images: [
+            'https://i.imgur.com/2NmrTxR.png',
+            'https://i.imgur.com/mr7RBsb.png',
+            'https://i.imgur.com/ybW5Qm1.png',
+            'https://i.imgur.com/J6kiG5J.png',
+            'https://i.imgur.com/btpRWIK.png',
+            'https://i.imgur.com/QqSPH6q.png',
+            'https://i.imgur.com/rFvoAW0.png',
+            'https://i.imgur.com/0Qr7tlI.png',
+            'https://i.imgur.com/h2J2qNi.png',
+            'https://i.imgur.com/KLPt1ZX.png'
+        ],
+        location_title: 'batu-merah',
+        category: 'Kontrakan',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/ifasiregar.siregar',
+            phone: '+6285254212248'
+        },
+        facilities: ['Ruang tamu', 'Kamar tidur', 'Ruang makan', 'Dapur', 'Kamar mandi'],
+        start_price: 7500000,
+        post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/3226971947323211/'
     }
 ]
 
