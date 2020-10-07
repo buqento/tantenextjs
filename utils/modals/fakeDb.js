@@ -130,7 +130,7 @@ export const DataKos = [
             phone: ''
         },
         facilities: ['AC', 'televisi', 'kulkas', 'lemari', 'springbed', 'kursi dan meja', 'Kamar mandi', 'mini kitchen'],
-        start_price: 0,
+        start_price: 1800000,
         post_url: 'https://www.facebook.com/groups/330390743737021/permalink/3134649166644484/'
     },
     {
