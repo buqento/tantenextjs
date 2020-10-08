@@ -32,7 +32,7 @@ export const DataArea = [
     // { slug: 'latta', title: 'Latta'},
     // { slug: 'nania', title: 'Nania'},
     // { slug: 'negeri-lama', title: 'Negeri Lama'},
-    // { slug: 'waiheru', title: 'Waiheru'},
+    { slug: 'waiheru', title: 'Waiheru', image: 'https://i.imgur.com/ts7LHY7.png'},
     // { slug: 'lateri', title: 'Lateri'},
 
     // { slug: 'hative-besar', title: 'Hative Besar'},
@@ -557,6 +557,35 @@ export const DataKos = [
         facilities: ['Spring Bed', 'Lemari Pakaian', 'Meja Belajar', 'Kursi Belajar', 'Kamar mandi dalam', 'Ruang Tamu', 'Ruang Belajar', 'Dapur', 'Ruang Santai', 'Ruang Jemur', 'Ruang Cuci', 'Parkiran'],
         start_price: 425000,
         post_url: 'https://kostambon.com/kost-stain/'
+    },
+    {
+        id: 21,
+        date_modified: '2020-11-08T06:00:15+00:00',
+        date_published: '2020-11-08T06:00:15+00:00',
+        slug: 'kost-murah-waiheru-baguala-kota-ambon-maluku-eksklusif-fasilitas-lengkap-samping-indomaret',
+        title: 'Kost Murah Waiheru Baguala Kota Ambon Maluku - Eksklusif Fasilitas Lengkap Samping Indomaret',
+        description: 'Tersedia kost murah eksklusif dengan fasilitas lengkap, samping indomaret Waiheru Baguala Kota Ambon Maluku. Sekamar bisa berdua (Suami Istri / Saudara) dan tidak ada tambahan biaya berdua. Harga sewa belum termasuk listrik. Pembayaran setiap bulan.',
+        keywords: 'Kost, Waiheru, Baguala, Kota Ambon, Maluku',
+        images: [
+            'https://i.imgur.com/ts7LHY7.png',
+            'https://i.imgur.com/migCpnK.png',
+            'https://i.imgur.com/qKNRRCg.png',
+            'https://i.imgur.com/fwpQpzh.png',
+            'https://i.imgur.com/Tun0ItU.png',
+            'https://i.imgur.com/gDhkyUk.png',
+            'https://i.imgur.com/yJMJxF6.png'
+        ],
+        location_title: 'waiheru',
+        location: { title: 'waiheru', lat: '-3.627142', long: '128.223624'},
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/KOSTAMBON',
+            phone: '+6281357084715'
+        },
+
+        facilities: ['Tempat tidur', 'Lemari Pakaian', 'Meja Belajar', 'Kipas Angin', 'Kamar mandi dalam (kloset duduk + Shower)', 'Dapur', 'Ruang Jemur', 'Ruang Cuci', 'Parkiran'],
+        start_price: 600000,
+        post_url: 'https://kostambon.com/kost-waiheru/'
     }
 ]
 
