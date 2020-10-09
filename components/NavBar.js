@@ -8,7 +8,7 @@ const NavBar = () => (
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                    <Nav.Link href="faq">FAQ</Nav.Link>
+                    <Nav.Link href="kebijakan-privasi">Kebijakan Privasi</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
