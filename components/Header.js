@@ -84,6 +84,7 @@ class Header extends Component {
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                     <meta name="googlebot" content="index, follow" />
                     <meta name="robot" content="index, follow" />
+                    <meta name="google-site-verification" content="d4hZLuJTDPSEs-Qw_uX4iUpgdeB1P5ltZP9jsXPQ2ew" />
                     <meta name="application-name" content="Tantekos" />
                     <meta name="classification" content="Business, Rent House, Sewa Kost, Property, Rent Room, Info Kost, Information, Kost, Room, Cari Kost, Kost Murah, Kost Bebas, Application, Mobile Application, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
                     <meta name="keywords" content="Tantekos, Info Kost, Cari Kost, Kost, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
