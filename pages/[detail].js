@@ -12,12 +12,23 @@ import { Kost } from '../utils/modals/Kost'
 import Currency from '../components/Currency'
 import Firstupper from '../utils/Firstupper'
 import Peta from '../components/Peta'
+import ReactGa from 'react-ga'
 
 class Detail extends React.Component {
   static async getInitialProps(ctx) {
     // const items = await fetch('https://5de747e7b1ad690014a4e0d2.mockapi.io/room')
     // const dataItems = await items.json()
     return { slug: ctx.query.detail }
+  }
+
+  componentDidMount() {
+    ReactGa.initialize('UA-132808614-2')
+    ReactGa.pageview('/detail')
+  }
+
+  componentDidUpdate() {
+    ReactGa.initialize('UA-132808614-2')
+    ReactGa.pageview('/detail')
   }
 
   render() {

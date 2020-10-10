@@ -1,7 +1,18 @@
 import React, { Component } from 'react'
 import NextHead from 'next/head'
+import ReactGa from 'react-ga'
 
 class Header extends Component {
+
+    componentDidMount() {
+        ReactGa.initialize('UA-132808614-2')
+        ReactGa.pageview('/')
+    }
+
+    componentDidUpdate() {
+        ReactGa.initialize('UA-132808614-2')
+        ReactGa.pageview('/')
+    }
 
     render() {
         const structureTypeWebsite = {
