@@ -11,6 +11,7 @@ import styles from '../styles/Home.module.css'
 import { Kost } from '../utils/modals/Kost'
 import Currency from '../components/Currency'
 import Firstupper from '../utils/Firstupper'
+import Peta from '../components/Peta'
 
 class Detail extends React.Component {
   static async getInitialProps(ctx) {
@@ -150,7 +151,7 @@ class Detail extends React.Component {
               </div>
               <div>
                 <p className={styles.headingtwo}>Lokasi {data[0].category}</p>
-                {locationTitle}
+                <Peta location={data[0].location} />
               </div>
               {
                 data[0].start_price > 0 &&
