@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import KostItem from '../components/KostItem'
-import { DataKos } from '../utils/modals/fakeDb'
+import { Kost } from '../utils/modals/Kost'
 
 class Kos extends Component {
     render() {
         return (
             <>
                 {
-                    DataKos
+                    Kost
                     .sort(function(a, b){return b.id - a.id})
                     .map((item, index) =>
                         <div key={index}>

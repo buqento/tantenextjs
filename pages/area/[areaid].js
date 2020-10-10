@@ -1,6 +1,6 @@
 import React from 'react'
 import { string } from 'prop-types'
-import { DataKos } from '../../utils/modals/fakeDb'
+import { Kost } from '../../utils/modals/Kost'
 import Firstupper from '../../utils/Firstupper'
 import HeadPage from '../../components/HeadPage'
 import ListKos from '../../components/ListKos'
@@ -13,7 +13,7 @@ class Detail extends React.Component {
 
     render() {
         const { slug } = this.props;
-        const data = DataKos.filter(item => item.location_title === slug)
+        const data = Kost.filter(item => item.location.title === slug)
         let headTitle = "";
         slug.split("-").map(index => headTitle += Firstupper(index) + " ")
 

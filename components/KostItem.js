@@ -8,7 +8,7 @@ class KostItem extends Component {
     render() {
         const { item } = this.props
         let badge = "";
-        item.location_title.split("-").map(index => badge += Firstupper(index) + " ")
+        item.location.title.split("-").map(index => badge += Firstupper(index) + " ")
         return (
             <Link href={item.slug}>
                 <div style={{ borderTop: '8px solid #f5f5f5' }}>

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { shape } from 'prop-types'
 import Link from 'next/link'
 import { Card } from 'react-bootstrap'
-import { DataKos } from '../utils/modals/fakeDb'
+import { Kost } from '../utils/modals/Kost'
 
 class AreaItem extends Component {
 
@@ -12,7 +12,7 @@ class AreaItem extends Component {
     }
 
     count(location) {
-        return DataKos.filter(item => location === item.location_title).length
+        return Kost.filter(item => location === item.location.title).length
     }
 
     render() {

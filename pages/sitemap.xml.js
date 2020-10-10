@@ -1,6 +1,6 @@
 import React from "react";
-import { DataKos } from '../utils/modals/fakeDb'
-import { DataArea } from '../utils/modals/fakeDb'
+import { Kost } from '../utils/modals/Kost'
+import { DtArea } from '../utils/modals/Area'
 
 const sitemapXml = (dataKos, dataArea) => {
   let latestPost = 0;
@@ -35,6 +35,18 @@ const sitemapXml = (dataKos, dataArea) => {
         <loc>https://tantekos.com/</loc>
         <priority>1.00</priority>
       </url>
+      <url>
+        <loc>https://tantekos.com/about</loc>
+        <priority>1.00</priority>
+      </url>
+      <url>
+        <loc>https://tantekos.com/contact</loc>
+        <priority>1.00</priority>
+      </url>
+      <url>
+        <loc>https://tantekos.com/policy</loc>
+        <priority>1.00</priority>
+      </url>
       ${areasXML}
       ${itemsXML}
     </urlset>`;
@@ -43,7 +55,7 @@ const sitemapXml = (dataKos, dataArea) => {
 class Sitemap extends React.Component {
   static async getInitialProps({ res }) {
     res.setHeader("Content-Type", "text/xml");
-    res.write(sitemapXml(DataKos, DataArea));
+    res.write(sitemapXml(Kost, DtArea));
     res.end();
   }
 }

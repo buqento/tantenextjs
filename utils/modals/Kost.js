@@ -1,63 +1,4 @@
-export const DataArea = [
-    // { slug: 'benteng', title: 'Benteng'},
-    // { slug: 'wainitu', title: 'Wainitu'},
-    { slug: 'kudamati', title: 'Kudamati', image: 'https://i.imgur.com/KynKT7D.png'},
-    // { slug: 'mangga-dua', title: 'Mangga Dua'},
-    // { slug: 'urimessing', title: 'Urimessing'},
-    { slug: 'waihaong', title: 'Waihaong', image: 'https://i.imgur.com/dl3HaUX.png' },
-    { slug: 'silale', title: 'Silale', image: 'https://i.imgur.com/pkt6aLg.png' },
-    // { slug: 'latuhalat', title: 'Latuhalat'},
-    // { slug: 'seilale', title: 'Seilale'},
-    // { slug: 'nusaniwe', title: 'Nusaniwe'},
-    // { slug: 'amahusu', title: 'Amahusu'},
-    // { slug: 'urimessing', title: 'Urimessing'},
-
-    { slug: 'batu-merah', title: 'Batu Merah', image: 'https://i.imgur.com/Jdu3CNN.png' },
-    // { slug: 'hative-kecil', title: 'Hative Kecil'},
-    // { slug: 'soya', title: 'Soya'},
-    { slug: 'galala', title: 'Galala', image: 'https://i.imgur.com/MEL1RGi.png' },
-    { slug: 'ahusen', title: 'Ahusen', image: 'https://i.imgur.com/LHGdpvG.png' },
-    // { slug: 'amantelu', title: 'Amantelu'},
-    // { slug: 'batu-gajah', title: 'Batu Gajah'},
-    // { slug: 'batu-meja', title: 'Batu Meja'},
-    { slug: 'honipopu', title: 'Honipopu', image: 'https://i.imgur.com/SxJCFTL.png' },
-    { slug: 'karang-panjang', title: 'Karpan', image: 'https://i.imgur.com/MJPv6M5.png' },
-    { slug: 'pandan-kasturi', title: 'Pd. Kasturi', image: 'https://i.imgur.com/4g4Lbyu.png' },
-    // { slug: 'rijali', title: 'Rijali'},
-    // { slug: 'uritetu', title: 'Uritetu'},
-    // { slug: 'waihoka', title: 'Waihoka'},
-
-    { slug: 'halong', title: 'Halong', image: 'https://i.imgur.com/0lu6aHK.png' },
-    { slug: 'passo', title: 'Passo', image: 'https://i.imgur.com/rpIivfJ.png' },
-    // { slug: 'latta', title: 'Latta'},
-    // { slug: 'nania', title: 'Nania'},
-    // { slug: 'negeri-lama', title: 'Negeri Lama'},
-    { slug: 'waiheru', title: 'Waiheru', image: 'https://i.imgur.com/ts7LHY7.png'},
-    // { slug: 'lateri', title: 'Lateri'},
-
-    // { slug: 'hative-besar', title: 'Hative Besar'},
-    { slug: 'laha', title: 'Laha', image: 'https://i.imgur.com/qi2ktEL.png' },
-    { slug: 'poka', title: 'Poka', image: 'https://i.imgur.com/7v2aJ0z.png' },
-    // { slug: 'rumah-tiga', title: 'Rumah Tiga'},
-    // { slug: 'tawiri', title: 'Tawiri'},
-    // { slug: 'hunuth-durian-patah', title: 'Hunuth', image: 'https://i.imgur.com/PA1MJ74.png' },
-    // { slug: 'wayame', title: 'Wayame'},
-    // { slug: 'tihu', title: 'Tihu'},
-
-    // { slug: 'ema', title: 'Ema'},
-    // { slug: 'hatalai', title: 'Hatalai'},
-    // { slug: 'hutumury', title: 'Hutumury'},
-    // { slug: 'hukurila', title: 'Hukurila'},
-    // { slug: 'kilang', title: 'Kilang'},
-    // { slug: 'leahari', title: 'Leahari'},
-    // { slug: 'naku', title: 'Naku'},
-    // { slug: 'rutong', title: 'Rutong'},
-
-    { slug: 'suli', title: 'Suli', image: 'https://i.imgur.com/0utQPHq.png' },
-    { slug: 'piru', title: 'Piru', image: 'https://i.imgur.com/jQtXqlw.png' }
-];
-
-export const DataKos = [
+export const Kost = [
     {
         id: 1,
         date_modified: '2020-09-14T12:57:15+00:00',
@@ -74,7 +15,7 @@ export const DataKos = [
             'https://i.imgur.com/Vs3KV8o.png',
             'https://i.imgur.com/5eUg5wy.png'
         ],
-        location_title: 'silale',
+        location: { title: 'silale', lat: '-3.699391', long: '128.177221'},
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/almirahomestay.almirahomestay',
@@ -99,7 +40,7 @@ export const DataKos = [
             'https://i.imgur.com/rMMEKS5.png',
             'https://i.imgur.com/JhcE4Bo.png'
         ],
-        location_title: 'suli',
+        location: { title: 'suli', lat: '-3.619747', long: '128.298092'},
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/Dedox002',
@@ -123,7 +64,7 @@ export const DataKos = [
             'https://i.imgur.com/9n0zU4r.png',
             'https://i.imgur.com/WvhUdBK.png'
         ],
-        location_title: 'ahusen',
+        location: { title: 'ahusen', lat: '-3.699571', long: '128.183046'},
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100004804935380',
@@ -146,7 +87,7 @@ export const DataKos = [
             'https://i.imgur.com/JOyd5Br.png',
             'https://i.imgur.com/nf2RsYH.png'
         ],
-        location_title: 'piru',
+        location: { title: 'piru', lat: '-3.061918', long: '128.196573'},
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100006131414651',
@@ -168,7 +109,7 @@ export const DataKos = [
             'https://i.imgur.com/uyF2J7P.png',
             'https://i.imgur.com/3Z3Y5G0.png'
         ],
-        location_title: 'laha',
+        location: { title: 'laha', lat: '-3.703492', long: '128.094226'},
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/zhul.putra.148',
@@ -193,7 +134,7 @@ export const DataKos = [
             'https://i.imgur.com/ZsrDQKA.png',
             'https://i.imgur.com/VAko5rH.png'
         ],
-        location_title: 'silale',
+        location: { title: 'silale', lat: '-3.699391', long: '128.177221'},
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/vivi.rimony',
@@ -221,7 +162,7 @@ export const DataKos = [
             'https://i.imgur.com/ELrzE90.png',
             'https://i.imgur.com/EKxK1f3.png'
         ],
-        location_title: 'pandan-kasturi',
+        location: { title: 'pandan-kasturi', lat: '-3.677343', long: '128.195243'},
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100039966772432',
@@ -244,7 +185,7 @@ export const DataKos = [
             'https://i.imgur.com/jQtXqlw.png',
             'https://i.imgur.com/FzzOpw2.png'
         ],
-        location_title: 'honipopu',
+        location: { title: 'honipopu', lat: '-3.695613', long: '128.179517'},
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/chie.m.nhirasharye',
@@ -271,7 +212,7 @@ export const DataKos = [
             'https://i.imgur.com/aaLTKFg.png',
             'https://i.imgur.com/pij3ZH4.png'
         ],
-        location_title: 'honipopu',
+        location: { title: 'honipopu', lat: '-3.695613', long: '128.179517'},
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/yudha.a.setiawan.14',
@@ -297,7 +238,7 @@ export const DataKos = [
             'https://i.imgur.com/GbP1nCU.png',
             'https://i.imgur.com/Bj2KGeC.png'
         ],
-        location_title: 'galala',
+        location: { title: 'galala', lat: '-3.665266', long: '128.200460'},
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100016477352041',
@@ -321,7 +262,7 @@ export const DataKos = [
             'https://i.imgur.com/HcpaLL2.png',
             'https://i.imgur.com/uBGiQoV.png'
         ],
-        location_title: 'karang-panjang',
+        location: { title: 'karang-panjang', lat: '-3.693829', long: '128.190608'},
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/ricky.huwaa',
@@ -344,7 +285,7 @@ export const DataKos = [
             'https://i.imgur.com/i68HYjA.png',
             'https://i.imgur.com/fhxzDWy.png'
         ],
-        location_title: 'poka',
+        location: { title: 'poka', lat: '-3.649464', long: '128.193103'},
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/azzahra.s.940',
@@ -356,8 +297,8 @@ export const DataKos = [
     },
     {
         id: 13,
-        date_modified: '2020-09-28T12:57:15+00:00',
-        date_published: '2020-09-28T12:57:15+00:00',
+        date_modified: '2020-09-26T12:57:15+00:00',
+        date_published: '2020-09-26T12:57:15+00:00',
         slug: 'rumah-kontrak-tahunan-kebun-cengkeh-batu-merah-kota-ambon-perumahan-banda-eli',
         title: 'Rumah Kontrak Tahunan Kebun Cengkeh Batu Merah Kota Ambon - Perumahan Banda Eli',
         description: 'Dijual/dikontrakan tahunan sebuah rumah, lorong perumahan Banda Eli Kebun Cengkeh Batu Merah Kota Ambon, Bagi yang berminat dapat menghubungi pemilik.',
@@ -370,7 +311,7 @@ export const DataKos = [
             'https://i.imgur.com/YrIK75R.png',
             'https://i.imgur.com/5YoIIXa.png',
         ],
-        location_title: 'batu-merah',
+        location: { title: 'batu-merah', lat: '-3.682169', long: '128.223087'},
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/nailaamalia.amalia.9',
@@ -382,8 +323,8 @@ export const DataKos = [
     },
     {
         id: 14,
-        date_modified: '2020-09-30T12:57:15+00:00',
-        date_published: '2020-09-30T12:57:15+00:00',
+        date_modified: '2020-09-27T12:57:15+00:00',
+        date_published: '2020-09-27T12:57:15+00:00',
         slug: 'kost-murah-passo-baguala-kota-ambon-maluku-wilayah-wara-lorong-pica-botol',
         title: 'Kost Murah Passo Baguala Kota Ambon Maluku - Wilayah Wara Lorong Pica Botol',
         description: 'Tersedia kost murah di Passo Baguala Kota Ambon Maluku, Wara lorong pica botol. Bagi yang berminat dapat menghubungi pengelola',
@@ -398,7 +339,7 @@ export const DataKos = [
             'https://i.imgur.com/FEBBU44.png'
 
         ],
-        location_title: 'passo',
+        location: { title: 'passo', lat: '-3.630808', long: '128.251622'},
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/aditya.adilla.1',
@@ -410,8 +351,8 @@ export const DataKos = [
     },
     {
         id: 15,
-        date_modified: '2020-09-30T12:57:15+00:00',
-        date_published: '2020-09-30T12:57:15+00:00',
+        date_modified: '2020-09-28T12:57:15+00:00',
+        date_published: '2020-09-28T12:57:15+00:00',
         slug: 'kost-eksklusif-waihaong-nusaniwe-kota-ambon-maluku-reddoorz-koolkost-market',
         title: 'Kost Eksklusif Waihaong Nusaniwe Kota Ambon Maluku - RedDoorz KoolKost Market',
         description: 'Tersedia kost eksklusif (RedDoorz) Waihaong Nusaniwe Kota Ambon Maluku. Harga kamar perbulan sudah all in.Bagi yang berminat dapat menghubungi pengelola',
@@ -420,7 +361,7 @@ export const DataKos = [
             'https://i.imgur.com/PA1MJ74.png',
             'https://i.imgur.com/dl3HaUX.png'
         ],
-        location_title: 'waihaong',
+        location: { title: 'waihaong', lat: '-3.701073', long: '128.175148'},
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100009503041037',
@@ -432,8 +373,8 @@ export const DataKos = [
     },
     {
         id: 16,
-        date_modified: '2020-09-30T12:57:15+00:00',
-        date_published: '2020-09-30T12:57:15+00:00',
+        date_modified: '2020-09-29T12:57:15+00:00',
+        date_published: '2020-09-29T12:57:15+00:00',
         slug: 'rumah-kontrak-tahunan-halong-baguala-kota-ambon-maluku-samping-kompleks-angkatan-laut',
         title: 'Rumah Kontrak Tahunan Halong Baguala Kota Ambon Maluku - Samping Kompleks Angkatan Laut',
         description: 'Rumah kontrakan tahunan Halong Baguala Kota Ambon Maluku, samping kompleks angkatan laut depan jalan besar. Bagi yang berminat dapat menghubungi pemilik.',
@@ -441,7 +382,7 @@ export const DataKos = [
         images: [
             'https://i.imgur.com/3VnPwHM.png'
         ],
-        location_title: 'halong',
+        location: { title: 'halong', lat: '-3.661955', long: '128.217942'},
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100006926223788',
@@ -453,8 +394,8 @@ export const DataKos = [
     },
     {
         id: 17,
-        date_modified: '2020-10-02T06:57:15+00:00',
-        date_published: '2020-10-02T06:57:15+00:00',
+        date_modified: '2020-09-30T06:57:15+00:00',
+        date_published: '2020-09-30T06:57:15+00:00',
         slug: 'kost-murah-kudamati-nusaniwe-kota-ambon-maluku-farmasi-atas-depan-gereja-christy-natalia',
         title: 'Kost Murah Kudamati Nusaniwe Kota Ambon Maluku - Farmasi Atas Depan Gereja Christy Natalia',
         description: 'Tersedia kost murah Kudamati Nusaniwe Kota Ambon Maluku wilayah Farmasi Atas depan Gereja Christy Natalia. Khusus untuk karyawan dan mahasiswa. Tidak menerima pasutri. Bagi yang berminat dapat menghubungi pengelola',
@@ -464,7 +405,7 @@ export const DataKos = [
             'https://i.imgur.com/dnSKIda.png',
             'https://i.imgur.com/wuRoCNl.png'
         ],
-        location_title: 'kudamati',
+        location: { title: 'kudamati', lat: '-3.708157', long: '128.171185'},
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/ferry.jhon.90',
@@ -476,8 +417,8 @@ export const DataKos = [
     },
     {
         id: 18,
-        date_modified: '2020-10-03T13:57:15+00:00',
-        date_published: '2020-10-03T13:57:15+00:00',
+        date_modified: '2020-10-01T13:57:15+00:00',
+        date_published: '2020-10-01T13:57:15+00:00',
         slug: 'kost-murah-bersih-nyaman-fasilitas-memadai-halong-baguala-kota-ambon-maluku-dwinner-kost-dekat-kampus-iakn-ambon',
         title: 'Kost Murah Bersih Nyaman Fasilitas Memadai Halong Baguala Kota Ambon Maluku - Dwinner Kost Dekat Kampus IAKN Ambon',
         description: 'Tersedia kost murah bersih nyaman fasilitas memadai Halong Baguala Kota Ambon Maluku. Khusus untuk mahasiswa dekat kampus Institut Agama Kristen Negeri Ambon. Bagi yang berminat dapat menghubungi pengelola',
@@ -490,7 +431,7 @@ export const DataKos = [
             'https://i.imgur.com/ONTluIO.png',
             'https://i.imgur.com/2zYVmNT.png'
         ],
-        location_title: 'halong',
+        location: { title: 'halong', lat: '-3.661955', long: '128.217942'},
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/Desy.Kakisina',
@@ -502,8 +443,8 @@ export const DataKos = [
     },
     {
         id: 19,
-        date_modified: '2020-10-07T12:57:15+00:00',
-        date_published: '2020-10-07T12:57:15+00:00',
+        date_modified: '2020-10-02T12:57:15+00:00',
+        date_published: '2020-10-02T12:57:15+00:00',
         slug: 'rumah-kontrak-tahunan-kebun-cengkeh-batu-merah-sirimau-kota-ambon-maluku-lorong-pangkalan-ojek-bengkel-hamid',
         title: 'Rumah Kontrak Tahunan Kebun Cengkeh Batu Merah Sirimau Kota Ambon Maluku - Lorong Pangkalan Ojek Bengkel Hamid',
         description: 'Rumah kontrakan tahunan Kebun Cengkeh Batu Merah Sirimau Kota Ambon Maluku. Tersedia dua bangunan pada lokasi yang sama. Harga sewa masing-masing berbeda dan boleh melakukan negosiasi. Lokasi aman, tenang, sejuk. Lorong samping Pangkalan Ojek di samping Bengkel Hamid Kebun Cengkeh.',
@@ -520,7 +461,7 @@ export const DataKos = [
             'https://i.imgur.com/h2J2qNi.png',
             'https://i.imgur.com/KLPt1ZX.png'
         ],
-        location_title: 'batu-merah',
+        location: { title: 'batu-merah', lat: '-3.682169', long: '128.223087'},
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/ifasiregar.siregar',
@@ -532,8 +473,8 @@ export const DataKos = [
     },
     {
         id: 20,
-        date_modified: '2020-10-08T06:00:15+00:00',
-        date_published: '2020-10-08T06:00:15+00:00',
+        date_modified: '2020-10-03T06:00:15+00:00',
+        date_published: '2020-10-03T06:00:15+00:00',
         slug: 'kost-murah-fasilitas-lengkap-batu-merah-sirimau-kota-ambon-maluku-dekat-kampus-iain-ambon-maluku',
         title: 'Kost Murah Fasilitas Lengkap Batu Merah Sirimau Kota Ambon Maluku - Dekat Kampus IAIN Ambon',
         description: 'Tersedia kost murah dengan fasilitas lengkap, dekat kampus IAIN Batu Merah Sirimau Kota Ambon Maluku. Bagi yang berminat dapat menghubungi pengelola',
@@ -547,7 +488,6 @@ export const DataKos = [
             'https://i.imgur.com/MjMFMxC.png',
             'https://i.imgur.com/TeKX4u7.png'
         ],
-        location_title: 'batu-merah',
         location: { title: 'batu-merah', lat: '-3.682169', long: '128.223087'},
         category: 'Kost',
         contact_us: {
@@ -560,11 +500,11 @@ export const DataKos = [
     },
     {
         id: 21,
-        date_modified: '2020-11-08T06:00:15+00:00',
-        date_published: '2020-11-08T06:00:15+00:00',
+        date_modified: '2020-10-04T06:00:15+00:00',
+        date_published: '2020-10-04T06:00:15+00:00',
         slug: 'kost-murah-waiheru-baguala-kota-ambon-maluku-eksklusif-fasilitas-lengkap-samping-indomaret',
         title: 'Kost Murah Waiheru Baguala Kota Ambon Maluku - Eksklusif Fasilitas Lengkap Samping Indomaret',
-        description: 'Tersedia kost murah eksklusif dengan fasilitas lengkap, samping indomaret Waiheru Baguala Kota Ambon Maluku. Sekamar bisa berdua (Suami Istri / Saudara) dan tidak ada tambahan biaya berdua. Harga sewa belum termasuk listrik. Pembayaran setiap bulan.',
+        description: 'Tersedia kost murah eksklusif dengan fasilitas lengkap, samping indomaret Waiheru Baguala Kota Ambon Maluku. Sekamar bisa berdua (Suami Istri / Saudara) dan tidak ada tambahan biaya berdua. Harga sewa belum termasuk listrik. Bagi yang berminat dapat menghubungi pengelola.',
         keywords: 'Kost, Waiheru, Baguala, Kota Ambon, Maluku',
         images: [
             'https://i.imgur.com/ts7LHY7.png',
@@ -575,7 +515,6 @@ export const DataKos = [
             'https://i.imgur.com/gDhkyUk.png',
             'https://i.imgur.com/yJMJxF6.png'
         ],
-        location_title: 'waiheru',
         location: { title: 'waiheru', lat: '-3.627142', long: '128.223624'},
         category: 'Kost',
         contact_us: {
@@ -586,72 +525,29 @@ export const DataKos = [
         facilities: ['Tempat tidur', 'Lemari Pakaian', 'Meja Belajar', 'Kipas Angin', 'Kamar mandi dalam (kloset duduk + Shower)', 'Dapur', 'Ruang Jemur', 'Ruang Cuci', 'Parkiran'],
         start_price: 600000,
         post_url: 'https://kostambon.com/kost-waiheru/'
+    },
+    {
+        id: 22,
+        date_modified: '2020-10-10T06:00:15+00:00',
+        date_published: '2020-10-10T06:00:15+00:00',
+        slug: 'kost-murah-eksklusif-teluk-ambon-hative-kecil-sirimau-kota-ambon-maluku-kost-eksklusif-aster',
+        title: 'Kost Murah Eksklusif Teluk Ambon Hative Kecil Sirimau Kota Ambon Maluku - Kost Eksklusif Aster',
+        description: 'Tersedia kost murah eksklusif dengan fasilitas lengkap (CCTV 24/7), Teluk Ambon Hative Kecil Sirimau Kota Ambon Maluku. Saudara boleh menginap dengan ijin (teman tidak diijinkan). Tidak ada tambahan biaya berdua. Harga sewa belum termasuk listrik. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Teluk Ambon, Hative Kecil, Sirimau, Kota Ambon, Maluku',
+        images: [
+            'https://i.imgur.com/DiQuXts.png',
+            'https://i.imgur.com/EZ8eY1H.png',
+            'https://i.imgur.com/EiXmS3J.png'
+        ],
+        location: { title: 'hative-kecil', lat: '-3.670760', long: '128.199914'},
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/KOSTAMBON',
+            phone: '+6281357084715'
+        },
+
+        facilities: ['AC', 'Air Panas', 'Tempat tidur', 'Lemari Pakaian', 'Meja Belajar', 'Kamar mandi dalam (kloset duduk + Shower)', 'Dapur Pribadi', 'Ruang Jemur Pribadi', 'Ruang Cuci Pribadi', 'Parkiran'],
+        start_price: 2000000,
+        post_url: 'https://kostambon.com/aster-hative-kecil/'
     }
 ]
-
-    // const structureTypeNewsArticle = `{
-    //   "@context": "https://schema.org",
-    //   "@type": "NewsArticle",
-    //   "mainEntityOfPage": {
-    //     "@type": "WebPage",
-    //     "@id": "${`https://tantekos.com/${slug}`}"
-    //   },
-    //   "headline": "${data[0].title}",
-    //   "image": [${data[0].images.map(item => `"${item}"`)}],
-    //   "dateModified":"${data[0].date_modified}",
-    //   "datePublished":"${data[0].date_published}",
-    //   "author": {
-    //     "@type": "Person",
-    //     "name": "Bvqento Richard"
-    //   },
-    //   "publisher": {
-    //     "@type": "Organization",
-    //     "name": "Tantekos",
-    //     "logo": {
-    //       "@type": "ImageObject",
-    //       "url": "https://github.com/buqento/tantenextjs/blob/master/static/images/Home-icon.png?raw=true"
-    //     }
-    //   },
-    //   "articleBody": "${data[0].description}",
-    //   "url": "${`https://tantekos.com/${slug}`}"
-    // }`
-
-
-    // const structureTypeProduct = `{
-    //   "@context": "https://schema.org",
-    //   "@type": "Product",
-    //   "name": "${data[0].title}",
-    //   "image": [${data[0].images.map(item => `"${item}"`)}],
-    //   "description": "${data[0].description}",
-    //   "sku": "TANTEKOS-${data[0].category.toUpperCase()+data[0].id}",
-    //   "brand": {
-    //     "@type": "Brand",
-    //     "name": "Tantekos"
-    //   },
-    //   "review": {
-    //     "@type": "Review",
-    //     "reviewRating": {
-    //       "@type": "Rating",
-    //       "ratingValue": "4",
-    //       "bestRating": "5"
-    //     },
-    //     "author": {
-    //       "@type": "Person",
-    //       "name": "Bvqento Richard"
-    //     }
-    //   },
-    //   "aggregateRating": {
-    //     "@type": "AggregateRating",
-    //     "ratingValue": "4.4",
-    //     "reviewCount": "89"
-    //   },
-    //   "offers": {
-    //     "@type": "Offer",
-    //     "url": "${`https://tantekos.com/${slug}`}",
-    //     "priceCurrency": "IDR",
-    //     "price": "${data[0].start_price}",
-    //     "priceValidUntil": "2025-12-25",
-    //     "itemCondition": "https://schema.org/UsedCondition",
-    //     "availability": "https://schema.org/InStock"
-    //   }
-    // }`

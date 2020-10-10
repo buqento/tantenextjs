@@ -8,7 +8,7 @@ import FooterDetail from '../components/FooterDetail'
 import ListKos from '../components/ListKos'
 import HeadPage from '../components/HeadPage'
 import styles from '../styles/Home.module.css'
-import { DataKos } from '../utils/modals/fakeDb'
+import { Kost } from '../utils/modals/Kost'
 import Currency from '../components/Currency'
 import Firstupper from '../utils/Firstupper'
 
@@ -22,9 +22,12 @@ class Detail extends React.Component {
   render() {
     const { slug } = this.props;
     let notFound = false;
-    const data = DataKos.filter(item => item.slug === slug)
+    const data = Kost.filter(item => item.slug === slug)
     if (!data[0]) notFound = true;
-    const otherItems = DataKos.filter(item => item.slug !== slug)
+    const otherItems = Kost.filter(item => item.slug !== slug)
+    let locationTitle = "";
+    data[0] && data[0].location.title.split("-").map(index => locationTitle += Firstupper(index) + " ")
+
     const structureTypeBreadcrumbList =
       `{
         "@context": "https://schema.org",
@@ -45,7 +48,7 @@ class Detail extends React.Component {
       "name": "${data[0] && data[0].title}",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "${data[0] && data[0].location_title}",
+        "streetAddress": "${locationTitle}",
         "addressLocality": "Ambon",
         "addressRegion": "Maluku",
         "postalCode": "97117",
@@ -91,9 +94,6 @@ class Detail extends React.Component {
         JSON.parse(structureTypeBreadcrumbList)
       ]
     };
-
-    let locationTitle = "";
-    data[0] && data[0].location_title.split("-").map(index => locationTitle += Firstupper(index) + " ")
 
     return <>
       {notFound && <>
