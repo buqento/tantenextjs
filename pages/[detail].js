@@ -189,7 +189,11 @@ class Detail extends React.Component {
           <div style={{ marginBottom: '55px' }}>
             <ListKos data={otherItems} category={data[0].category} />
           </div>
-          <FooterDetail className="fix-footer footer-detail" contactUs={data[0].contact_us} />
+          <FooterDetail
+            className="fix-footer footer-detail"
+            contactUs={data[0].contact_us}
+            title={data[0].title}
+          />
         </div>
       }
     </>
