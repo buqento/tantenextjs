@@ -549,5 +549,28 @@ export const Kost = [
         facilities: ['AC', 'Air Panas', 'Tempat tidur', 'Lemari Pakaian', 'Meja Belajar', 'Kamar mandi dalam (kloset duduk + Shower)', 'Dapur Pribadi', 'Ruang Jemur Pribadi', 'Ruang Cuci Pribadi', 'Parkiran'],
         start_price: 2000000,
         post_url: 'https://kostambon.com/aster-hative-kecil/'
+    },
+    {
+        id: 23,
+        date_modified: '2020-10-12T05:57:15+00:00',
+        date_published: '2020-10-12T05:57:15+00:00',
+        slug: 'rumah-kontrak-tahunan-waiheru-baguala-kota-ambon-maluku-strategis-depan-jalan-waiheru-lapiaso',
+        title: 'Rumah Kontrak Tahunan Waiheru Baguala Kota Ambon Maluku - Strategis Depan Jalan Waiheru Lapiaso',
+        description: 'Rumah kontrak tahunan Waiheru Baguala Kota Ambon Maluku, aman dan strategis di depan jalan Waiheru Lapiaso. Bagi yang berminat dapat menghubungi pemilik.',
+        keywords: 'Kost, Waiheru, Baguala, Kota Ambon, Maluku',
+        images: [
+            'https://i.imgur.com/zce64Q5.png',
+            'https://i.imgur.com/o3NT1yX.png',
+            'https://i.imgur.com/jXzMDD9.png'
+        ],
+        location: { title: 'waiheru', lat: '-3.627142', long: '128.223624'},
+        category: 'Kontrakan',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/rifanmaligana.rifanmaligana',
+            phone: '+6281388581851'
+        },
+        facilities: ['2 Kamar Tidur', 'Kamar Mandi', 'Ruang Tamu/Keluarga', 'Dapur '],
+        start_price: 10000000,
+        post_url: ''
     }
 ]
