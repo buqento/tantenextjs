@@ -11,7 +11,7 @@ export default function Peta(props) {
         longitude: long,
         width: "100%",
         height: "150px",
-        zoom: 18
+        zoom: 16
     })
 
     return (
@@ -24,6 +24,7 @@ export default function Peta(props) {
             <Marker
                 latitude={lat}
                 longitude={long}
+                className="mt-n5 pt-2"
             >
                 <img src={iconUrl} />
             </Marker>
