@@ -161,7 +161,7 @@ class Detail extends React.Component {
                 {data[0].facilities.map((item, index) => <li key={index}>{item}</li>)}
               </div>
               <div>
-                <p className={styles.headingtwo}>Lokasi {data[0].category}</p>
+                <p className={styles.headingtwo}>Lokasi {data[0].category} <small>( {locationTitle})</small></p>
                 <Peta location={data[0].location} />
               </div>
               {
