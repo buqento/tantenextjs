@@ -15,7 +15,7 @@ export const Kost = [
             'https://i.imgur.com/Vs3KV8o.png',
             'https://i.imgur.com/5eUg5wy.png'
         ],
-        location: { title: 'silale', lat: '-3.699391', long: '128.177221'},
+        location: { title: 'silale', lat: '-3.699391', long: '128.177221' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/almirahomestay.almirahomestay',
@@ -40,7 +40,7 @@ export const Kost = [
             'https://i.imgur.com/rMMEKS5.png',
             'https://i.imgur.com/JhcE4Bo.png'
         ],
-        location: { title: 'suli', lat: '-3.619747', long: '128.298092'},
+        location: { title: 'suli', lat: '-3.619747', long: '128.298092' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/Dedox002',
@@ -64,7 +64,7 @@ export const Kost = [
             'https://i.imgur.com/9n0zU4r.png',
             'https://i.imgur.com/WvhUdBK.png'
         ],
-        location: { title: 'ahusen', lat: '-3.699571', long: '128.183046'},
+        location: { title: 'ahusen', lat: '-3.699571', long: '128.183046' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100004804935380',
@@ -87,7 +87,7 @@ export const Kost = [
             'https://i.imgur.com/JOyd5Br.png',
             'https://i.imgur.com/nf2RsYH.png'
         ],
-        location: { title: 'piru', lat: '-3.061918', long: '128.196573'},
+        location: { title: 'piru', lat: '-3.061918', long: '128.196573' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100006131414651',
@@ -109,7 +109,7 @@ export const Kost = [
             'https://i.imgur.com/uyF2J7P.png',
             'https://i.imgur.com/3Z3Y5G0.png'
         ],
-        location: { title: 'laha', lat: '-3.703492', long: '128.094226'},
+        location: { title: 'laha', lat: '-3.703492', long: '128.094226' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/zhul.putra.148',
@@ -134,7 +134,7 @@ export const Kost = [
             'https://i.imgur.com/ZsrDQKA.png',
             'https://i.imgur.com/VAko5rH.png'
         ],
-        location: { title: 'silale', lat: '-3.699391', long: '128.177221'},
+        location: { title: 'silale', lat: '-3.699391', long: '128.177221' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/vivi.rimony',
@@ -162,7 +162,7 @@ export const Kost = [
             'https://i.imgur.com/ELrzE90.png',
             'https://i.imgur.com/EKxK1f3.png'
         ],
-        location: { title: 'pandan-kasturi', lat: '-3.677343', long: '128.195243'},
+        location: { title: 'pandan-kasturi', lat: '-3.677343', long: '128.195243' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100039966772432',
@@ -185,7 +185,7 @@ export const Kost = [
             'https://i.imgur.com/jQtXqlw.png',
             'https://i.imgur.com/FzzOpw2.png'
         ],
-        location: { title: 'honipopu', lat: '-3.695613', long: '128.179517'},
+        location: { title: 'honipopu', lat: '-3.695613', long: '128.179517' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/chie.m.nhirasharye',
@@ -212,7 +212,7 @@ export const Kost = [
             'https://i.imgur.com/aaLTKFg.png',
             'https://i.imgur.com/pij3ZH4.png'
         ],
-        location: { title: 'honipopu', lat: '-3.695613', long: '128.179517'},
+        location: { title: 'honipopu', lat: '-3.695613', long: '128.179517' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/yudha.a.setiawan.14',
@@ -238,7 +238,7 @@ export const Kost = [
             'https://i.imgur.com/GbP1nCU.png',
             'https://i.imgur.com/Bj2KGeC.png'
         ],
-        location: { title: 'galala', lat: '-3.665266', long: '128.200460'},
+        location: { title: 'galala', lat: '-3.665266', long: '128.200460' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100016477352041',
@@ -262,7 +262,7 @@ export const Kost = [
             'https://i.imgur.com/HcpaLL2.png',
             'https://i.imgur.com/uBGiQoV.png'
         ],
-        location: { title: 'karang-panjang', lat: '-3.693829', long: '128.190608'},
+        location: { title: 'karang-panjang', lat: '-3.693829', long: '128.190608' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/ricky.huwaa',
@@ -285,7 +285,7 @@ export const Kost = [
             'https://i.imgur.com/i68HYjA.png',
             'https://i.imgur.com/fhxzDWy.png'
         ],
-        location: { title: 'poka', lat: '-3.649464', long: '128.193103'},
+        location: { title: 'poka', lat: '-3.649464', long: '128.193103' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/azzahra.s.940',
@@ -311,7 +311,7 @@ export const Kost = [
             'https://i.imgur.com/YrIK75R.png',
             'https://i.imgur.com/5YoIIXa.png',
         ],
-        location: { title: 'batu-merah', lat: '-3.682169', long: '128.223087'},
+        location: { title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/nailaamalia.amalia.9',
@@ -339,7 +339,7 @@ export const Kost = [
             'https://i.imgur.com/FEBBU44.png'
 
         ],
-        location: { title: 'passo', lat: '-3.630808', long: '128.251622'},
+        location: { title: 'passo', lat: '-3.630808', long: '128.251622' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/aditya.adilla.1',
@@ -361,7 +361,7 @@ export const Kost = [
             'https://i.imgur.com/PA1MJ74.png',
             'https://i.imgur.com/dl3HaUX.png'
         ],
-        location: { title: 'waihaong', lat: '-3.701073', long: '128.175148'},
+        location: { title: 'waihaong', lat: '-3.701073', long: '128.175148' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100009503041037',
@@ -382,7 +382,7 @@ export const Kost = [
         images: [
             'https://i.imgur.com/3VnPwHM.png'
         ],
-        location: { title: 'halong', lat: '-3.661955', long: '128.217942'},
+        location: { title: 'halong', lat: '-3.661955', long: '128.217942' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100006926223788',
@@ -405,7 +405,7 @@ export const Kost = [
             'https://i.imgur.com/dnSKIda.png',
             'https://i.imgur.com/wuRoCNl.png'
         ],
-        location: { title: 'kudamati', lat: '-3.708157', long: '128.171185'},
+        location: { title: 'kudamati', lat: '-3.708157', long: '128.171185' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/ferry.jhon.90',
@@ -431,7 +431,7 @@ export const Kost = [
             'https://i.imgur.com/ONTluIO.png',
             'https://i.imgur.com/2zYVmNT.png'
         ],
-        location: { title: 'halong', lat: '-3.661955', long: '128.217942'},
+        location: { title: 'halong', lat: '-3.661955', long: '128.217942' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/Desy.Kakisina',
@@ -461,7 +461,7 @@ export const Kost = [
             'https://i.imgur.com/h2J2qNi.png',
             'https://i.imgur.com/KLPt1ZX.png'
         ],
-        location: { title: 'batu-merah', lat: '-3.682169', long: '128.223087'},
+        location: { title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/ifasiregar.siregar',
@@ -488,7 +488,7 @@ export const Kost = [
             'https://i.imgur.com/MjMFMxC.png',
             'https://i.imgur.com/TeKX4u7.png'
         ],
-        location: { title: 'batu-merah', lat: '-3.682169', long: '128.223087'},
+        location: { title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/KOSTAMBON',
@@ -515,7 +515,7 @@ export const Kost = [
             'https://i.imgur.com/gDhkyUk.png',
             'https://i.imgur.com/yJMJxF6.png'
         ],
-        location: { title: 'waiheru', lat: '-3.627142', long: '128.223624'},
+        location: { title: 'waiheru', lat: '-3.627142', long: '128.223624' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/KOSTAMBON',
@@ -539,7 +539,7 @@ export const Kost = [
             'https://i.imgur.com/EZ8eY1H.png',
             'https://i.imgur.com/EiXmS3J.png'
         ],
-        location: { title: 'hative-kecil', lat: '-3.670760', long: '128.199914'},
+        location: { title: 'hative-kecil', lat: '-3.670760', long: '128.199914' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/KOSTAMBON',
@@ -563,7 +563,7 @@ export const Kost = [
             'https://i.imgur.com/o3NT1yX.png',
             'https://i.imgur.com/jXzMDD9.png'
         ],
-        location: { title: 'waiheru', lat: '-3.627142', long: '128.223624'},
+        location: { title: 'waiheru', lat: '-3.627142', long: '128.223624' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/rifanmaligana.rifanmaligana',
@@ -572,5 +572,32 @@ export const Kost = [
         facilities: ['2 Kamar Tidur', 'Kamar Mandi', 'Ruang Tamu/Keluarga', 'Dapur '],
         start_price: 10000000,
         post_url: ''
+    },
+    {
+        id: 24,
+        date_modified: '2020-10-13T05:57:10+00:00',
+        date_published: '2020-10-13T05:57:10+00:00',
+        slug: 'rumah-kontrak-tahunan-kebun-cengkeh-batu-merah-kota-ambon-rumah-dua-lantai-di-gadihu',
+        title: 'Rumah Kontrak Tahunan Kebun Cengkeh Batu Merah Kota Ambon - Rumah Dua Lantai Di Gadihu',
+        description: 'Rumah kontrakan tahunan dua lantai Kebun Cengkeh Gadihu Batu Merah Kota Ambon. Rumah berukuran 9x12, dengan fasilitas lengkap dan harga terjangkau. Bagi yang berminat dapat menghubungi pemilik.',
+        keywords: 'Kebun Cengkeh, Batu Merah, Kota Ambon, Maluku',
+        images: [
+            'https://i.imgur.com/8XGuoBs.png',
+            'https://i.imgur.com/QlpGmT4.png',
+            'https://i.imgur.com/ZhMpSop.png',
+            'https://i.imgur.com/vuUx9d4.png',
+            'https://i.imgur.com/BtwkmmL.png',
+            'https://i.imgur.com/gS4vYz9.png',
+            'https://i.imgur.com/GnYHctA.png',
+        ],
+        location: { title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
+        category: 'Kontrakan',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/profile.php?id=100007324635315',
+            phone: ''
+        },
+        facilities: ['Ruang Tamu', 'Ruang keluarga', 'Ruang Makan', 'Dapur', 'Kamar Tidur', 'Kamar Mandi Dalam', 'Taman'],
+        start_price: 15000000,
+        post_url: 'https://www.facebook.com/story.php?story_fbid=2357519911168807&id=100007324635315'
     }
 ]
