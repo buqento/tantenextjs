@@ -528,8 +528,8 @@ export const Kost = [
     },
     {
         id: 22,
-        date_modified: '2020-10-10T06:00:15+00:00',
-        date_published: '2020-10-10T06:00:15+00:00',
+        date_modified: '2020-10-05T06:00:15+00:00',
+        date_published: '2020-10-05T06:00:15+00:00',
         slug: 'kost-murah-eksklusif-teluk-ambon-hative-kecil-sirimau-kota-ambon-maluku-kost-eksklusif-aster',
         title: 'Kost Murah Eksklusif Teluk Ambon Hative Kecil Sirimau Kota Ambon Maluku - Kost Eksklusif Aster',
         description: 'Tersedia kost murah eksklusif dengan fasilitas lengkap (CCTV 24/7), Teluk Ambon Hative Kecil Sirimau Kota Ambon Maluku. Saudara boleh menginap dengan ijin (teman tidak diijinkan). Tidak ada tambahan biaya berdua. Harga sewa belum termasuk listrik. Bagi yang berminat dapat menghubungi pengelola.',
@@ -552,6 +552,56 @@ export const Kost = [
     },
     {
         id: 23,
+        date_modified: '2020-10-06T13:57:15+00:00',
+        date_published: '2020-10-06T13:57:15+00:00',
+        slug: 'kost-murah-kamar-mandi-dalam-urimesing-nusaniwe-kota-ambon-maluku-belakang-kampus-pgsd',
+        title: 'Kost Murah Kamar Mandi Dalam Urimesing Nusaniwe Kota Ambon Maluku - Belakang Kampus PGSD',
+        description: 'Tersedia kost murah dua lantai kamar mandi dalam Urimesing Nusaniwe Kota Ambon Maluku. Dekat kampus PGSD bisa jalan kaki ke kampus. Masing-masing kamar ada teras, ada dapur di tiap lantai. Bagi yang berminat dapat menghubungi pengelola',
+        keywords: 'Urimesing, Nusaniwe, Kota Ambon, Maluku',
+        images: [
+            'https://i.imgur.com/tlZUq6q.png',
+            'https://i.imgur.com/x9oUf7x.png',
+            'https://i.imgur.com/JZZFJLV.png',
+            'https://i.imgur.com/uqH6xxG.png',
+            'https://i.imgur.com/bVbK6jQ.png'
+        ],
+        location: { title: 'urimessing', lat: '-3.701502', long: '128.178884' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/rara.mwl',
+            phone: '+6282248944078'
+        },
+        facilities: ['Kamar Mandi (dalam/luar)', 'Kasur', 'Dapur', 'Teras'],
+        start_price: 400000,
+        post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/2933762896644119/'
+    },
+    {
+        id: 24,
+        date_modified: '2020-10-07T13:57:15+00:00',
+        date_published: '2020-10-07T13:57:15+00:00',
+        slug: 'kost-murah-kamar-mandi-dalam-kebun-cengkeh-batu-merah-sirimau-kota-ambon-maluku-sekitar-kampus-iain',
+        title: 'Kost Murah Kamar Mandi Dalam Kebun Cengkeh Batu Merah Sirimau Kota Ambon Maluku - Sekitar Kampus IAIN',
+        description: 'Tersedia kost murah kamar mandi dalam Kebun Cengkeh Batu Merah Sirimau Kota Ambon Maluku. Dekat kampus IAIN bisa jalan kaki ke kampus. Masing-masing kamar ada teras. Bagi yang berminat dapat menghubungi pengelola',
+        keywords: 'Kebun Cengkeh, Batu Merah, Kota Ambon, Maluku',
+        images: [
+            'https://i.imgur.com/x9oUf7x.png',
+            'https://i.imgur.com/JZZFJLV.png',
+            'https://i.imgur.com/uqH6xxG.png',
+            'https://i.imgur.com/bVbK6jQ.png',
+            'https://i.imgur.com/tlZUq6q.png'
+        ],
+        location: { title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/rara.mwl',
+            phone: '+6282248944078'
+        },
+        facilities: ['Kamar Mandi (dalam/luar)', 'Teras'],
+        start_price: 400000,
+        post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/2933762896644119/'
+    },
+    {
+        id: 25,
         date_modified: '2020-10-12T05:57:15+00:00',
         date_published: '2020-10-12T05:57:15+00:00',
         slug: 'rumah-kontrak-tahunan-waiheru-baguala-kota-ambon-maluku-strategis-depan-jalan-waiheru-lapiaso',
@@ -574,7 +624,7 @@ export const Kost = [
         post_url: ''
     },
     {
-        id: 24,
+        id: 26,
         date_modified: '2020-10-13T05:57:10+00:00',
         date_published: '2020-10-13T05:57:10+00:00',
         slug: 'rumah-kontrak-tahunan-kebun-cengkeh-batu-merah-kota-ambon-rumah-dua-lantai-di-gadihu',
