@@ -133,6 +133,8 @@ class Detail extends React.Component {
           <meta property="og:type" content="website" />
           <meta property="og:url" content={`https://tantekos.com/${slug}`} />
           <meta property="og:image" content={data[0].images[0]} />
+          <meta property="og:image:width" content="300" />
+          <meta property="og:image:height" content="300" />
           <meta property="og:image:alt" content={data[0].title} />
           <meta property="og:locale" content="id_ID" />
           <meta property="og:site_name" content="Tantekos" />
