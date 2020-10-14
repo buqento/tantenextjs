@@ -668,6 +668,7 @@ export const Kost = [
             'https://i.imgur.com/Seg7E5O.png',
         ],
         location: { title: 'passo', lat: '-3.630808', long: '128.251622' },
+        category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/chintya.s.rossa.9',
             phone: '+6281240528418'
