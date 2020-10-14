@@ -3,6 +3,7 @@ import { shape } from 'prop-types'
 import Link from 'next/link'
 import { Card, Badge, Image } from 'react-bootstrap'
 import Firstupper from '../utils/Firstupper'
+import Currency from '../components/Currency'
 
 class KostItem extends Component {
     render() {
@@ -15,7 +16,7 @@ class KostItem extends Component {
                     <Image src={item.images[0]} alt={item.title} fluid />
                     <div className="p-3">
                         <Card.Title>{item.title}</Card.Title>
-                        <Badge variant="secondary">{badge}</Badge>
+                        <Badge variant="secondary">{badge}</Badge> <Badge variant="info">{Currency(item.start_price)}+</Badge>
                     </div>
                 </div>
             </Link>

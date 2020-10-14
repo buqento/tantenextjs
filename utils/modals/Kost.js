@@ -328,7 +328,7 @@ export const Kost = [
         slug: 'kost-murah-passo-baguala-kota-ambon-maluku-wilayah-wara-lorong-pica-botol',
         title: 'Kost Murah Passo Baguala Kota Ambon Maluku - Wilayah Wara Lorong Pica Botol',
         description: 'Tersedia kost murah di Passo Baguala Kota Ambon Maluku, Wara lorong pica botol. Bagi yang berminat dapat menghubungi pengelola',
-        keywords: 'passo, baguala, kota ambon, maluku',
+        keywords: 'Passo, Baguala, Kota Ambon, Maluku',
         images: [
             'https://i.imgur.com/rpIivfJ.png',
             'https://i.imgur.com/F8ZQtwK.png',
@@ -649,5 +649,31 @@ export const Kost = [
         facilities: ['Ruang Tamu', 'Ruang keluarga', 'Ruang Makan', 'Dapur', 'Kamar Tidur', 'Kamar Mandi Dalam', 'Taman'],
         start_price: 15000000,
         post_url: 'https://www.facebook.com/story.php?story_fbid=2357519911168807&id=100007324635315'
+    },
+    {
+        id: 27,
+        date_modified: '2020-10-14T06:44:15+00:00',
+        date_published: '2020-10-14T06:44:15+00:00',
+        slug: 'kost-murah-nyaman-fasilitas-lengkap-passo-baguala-kota-ambon-maluku-kost-arthomoro-passo-tream',
+        title: 'Kost Murah Nyaman Fasilitas Lengkap Passo Baguala Kota Ambon Maluku - Kost Arthomoro Passo Tream',
+        description: 'Tersedia kost tiga lantai (kost orange) murah dan nyaman dengan fasilitas lengkap, RT 029/006 Passo Tream Baguala Kota Ambon Maluku. Dekat dengan Ambon City Center, dekat warung makan, dekat pondok, dekat tempat jual air galon. Bagi yang berminat dapat menghubungi pengelola (081332499538)',
+        keywords: 'Passo, Baguala, Kota Ambon, Maluku',
+        images: [
+            'https://i.imgur.com/ntik9AS.png',
+            'https://i.imgur.com/jHFX0t4.png',
+            'https://i.imgur.com/obIlHU8.png',
+            'https://i.imgur.com/Zt5RGdl.png',
+            'https://i.imgur.com/R6VGhcX.png',
+            'https://i.imgur.com/TXrllFf.png',
+            'https://i.imgur.com/Seg7E5O.png',
+        ],
+        location: { title: 'passo', lat: '-3.630808', long: '128.251622' },
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/chintya.s.rossa.9',
+            phone: '+6281240528418'
+        },
+        facilities: ['Springbed + Seprei', 'Kipas Angin', 'Tikar', 'Lemari Pakaian', 'Dispenser + Galon', 'Kamar Mandi Dalam'],
+        start_price: 800000,
+        post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/3502681053085631/'
     }
 ]
