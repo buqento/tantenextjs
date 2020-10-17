@@ -21,7 +21,7 @@ export const DtArea = [
     // { slug: 'batu-meja', title: 'Batu Meja'},
     { slug: 'honipopu', title: 'Honipopu', image: 'https://i.imgur.com/SxJCFTL.png' },
     { slug: 'karang-panjang', title: 'Karpan', image: 'https://i.imgur.com/MJPv6M5.png' },
-    { slug: 'pandan-kasturi', title: 'Pd. Kasturi', image: 'https://i.imgur.com/4g4Lbyu.png' },
+    { slug: 'pandan-kasturi', title: 'Pandan Kasturi', image: 'https://i.imgur.com/4g4Lbyu.png' },
     // { slug: 'rijali', title: 'Rijali'},
     // { slug: 'uritetu', title: 'Uritetu'},
     // { slug: 'waihoka', title: 'Waihoka'},

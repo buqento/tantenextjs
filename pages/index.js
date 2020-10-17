@@ -3,22 +3,41 @@ import Layout from '../components/Layout'
 import Kos from './kos'
 import Header from '../components/Header'
 import Area from '../components/Area'
+import Campaign from '../components/Campaign'
 import CategoryPrice from '../components/CategoryPrice'
 
 export default function Index() {
   return (
     <Layout>
       <Header />
+
       <div className="m-3 mb-n2">
-        <span className="text-uppercase font-weight-bold">Harga mulai</span>
+        <span className="text-uppercase text-secondary font-weight-bold">Harga mulai</span>
       </div>
       <CategoryPrice />
+
       <div className="m-3 mb-n2">
-        <span className="text-uppercase font-weight-bold">Area</span>
+        <span className="text-uppercase text-secondary font-weight-bold">Area</span>
         <span className="float-right"><a href="/area">Lihat Semua</a></span>
       </div>
-      <Area />
-      <Kos />
+      <div style={{ borderBottom: '8px solid #f5f5f5' }}>
+        <Area />
+      </div>
+
+      <div className="m-3 mb-n2">
+        <span className="text-uppercase text-secondary font-weight-bold">Kost</span>
+        <span className="float-right"><a href="/search/category/Kost">Lihat Semua</a></span>
+      </div>
+      <div style={{ borderBottom: '8px solid #f5f5f5' }}>
+        <Campaign filter="Kost" />
+      </div>
+
+      <div className="m-3 mb-n2">
+        <span className="text-uppercase text-secondary font-weight-bold">Kontrakan</span>
+        <span className="float-right"><a href="/search/category/Kontrakan">Lihat Semua</a></span>
+      </div>
+      <Campaign filter="Kontrakan" />
+
     </Layout>
   )
 }
