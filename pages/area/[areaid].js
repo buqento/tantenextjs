@@ -25,7 +25,7 @@ class Detail extends React.Component {
                 "position": 1,
                 "item": {
                     "@id": "https://tantekos.com/",
-                    "name": "Home"
+                    "name": "Tantekos"
                 }
             },
             {
@@ -80,9 +80,7 @@ class Detail extends React.Component {
                     <meta property="og:description" content={`Tersedia Kost Dan Kontrakan Murah Area ${dataArea[0].title}`} />
                     <meta property="og:type" content="website" />
                     <meta property="og:url" content={`https://tantekos.com/area/${slug}`} />
-                    <meta property="og:image" content={dataArea[0].image} />
-                    <meta property="og:image:width" content="300" />
-                    <meta property="og:image:height" content="300" />
+                    <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/w=300/${dataArea[0].image}`} />
                     <meta property="og:image:alt" content={dataArea[0].title} />
                     <meta property="og:locale" content="id_ID" />
                     <meta property="og:site_name" content="Tantekos" />

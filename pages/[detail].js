@@ -55,7 +55,7 @@ class Detail extends React.Component {
     const structureTypeHostel = `{
       "@context": "https://schema.org",
       "@type": "Hostel",
-      "image": [${data[0] && data[0].images.map(item => `"${item}"`)}],
+      "image": [${data[0] && data[0].images.map(item => `"https://cdn.statically.io/img/i.imgur.com/w=300/${item}"`)}],
       "@id": "https://tantekos.com",
       "name": "${data[0] && data[0].title}",
       "address": {
@@ -80,8 +80,8 @@ class Detail extends React.Component {
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": -3.702935,
-        "longitude": 128.163195 
+        "latitude": "${data[0] && data[0].location.lat}",
+        "longitude": "${data[0] && data[0].location.long}" 
       },
       "url": "${`https://tantekos.com/${slug}`}",
       "telephone": "${data[0] && data[0].contact_us.phone || '+6285243322433'}",
@@ -132,9 +132,7 @@ class Detail extends React.Component {
           <meta property="og:description" content={data[0].description} />
           <meta property="og:type" content="website" />
           <meta property="og:url" content={`https://tantekos.com/${slug}`} />
-          <meta property="og:image" content={data[0].images[0]} />
-          <meta property="og:image:width" content="300" />
-          <meta property="og:image:height" content="300" />
+          <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/w=300/${data[0].images[0]}`} />
           <meta property="og:image:alt" content={data[0].title} />
           <meta property="og:locale" content="id_ID" />
           <meta property="og:site_name" content="Tantekos" />
