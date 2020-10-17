@@ -686,7 +686,7 @@ export const Kost = [
         description: 'Tersedia rumah kontrakan bulanan dan tahunan berlokasi di BTN Bukit Lateri Indah, Teluk Ambon Lateri Baguala Kota Ambon Maluku. Rumah sudah dipasang kanopi. Bagi yang berminat dapat menghubungi pemilik.',
         keywords: 'Kontrakan, Teluk Ambon, Lateri, Baguala, Kota Ambon, Maluku',
         images: [
-            'https://i.imgur.com/r4se1rs.webpm'
+            'https://i.imgur.com/VgDIeU0.webpm'
         ],
         location: { title: 'lateri', lat: '-3.644044', long: '128.246256' },
         category: 'Kontrakan',
