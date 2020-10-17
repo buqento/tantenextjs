@@ -8,12 +8,12 @@ export const Kost = [
         description: 'Tersedia kost murah, nyaman dan strategis. Biaya sewa dan fasilitas bervariasi mulai dari harian (Rp100.000) dan bulanan (Rp700.000). Bebas biaya listrik dan air bersih. Berlokasi di Silale Kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
         keywords: 'silale, nusaniwe, kota ambon, maluku',
         images: [
-            'https://i.imgur.com/eT62Hma.jpg',
-            'https://i.imgur.com/k8jx1CJ.jpg',
-            'https://i.imgur.com/r7RwkqL.jpg',
-            'https://i.imgur.com/qetkUPd.jpg',
-            'https://i.imgur.com/Vs3KV8o.jpg',
-            'https://i.imgur.com/5eUg5wy.jpg'
+            'https://i.imgur.com/eT62Hma.webpm',
+            'https://i.imgur.com/k8jx1CJ.webpm',
+            'https://i.imgur.com/r7RwkqL.webpm',
+            'https://i.imgur.com/qetkUPd.webpm',
+            'https://i.imgur.com/Vs3KV8o.webpm',
+            'https://i.imgur.com/5eUg5wy.webpm'
         ],
         location: { title: 'silale', lat: '-3.699391', long: '128.177221' },
         category: 'Kost',
@@ -34,11 +34,11 @@ export const Kost = [
         description: 'Dikontrakkan sebuah rumah di daerah Suli Atas Salahutu Maluku Tengah. Fasilitas yang disediakan yaitu 2 kamar tidur, kamar mandi, dapur, ruang tamu, ruang keluarga, teras, garasi mobil. Bagi yang berminat dapat menghubungi pengelola.',
         keywords: 'suli, salahutu, maluku tengah, maluku',
         images: [
-            'https://i.imgur.com/0utQPHq.jpg',
-            'https://i.imgur.com/L4OSPWG.jpg',
-            'https://i.imgur.com/WUUNk48.jpg',
-            'https://i.imgur.com/rMMEKS5.jpg',
-            'https://i.imgur.com/JhcE4Bo.jpg'
+            'https://i.imgur.com/0utQPHq.webpm',
+            'https://i.imgur.com/L4OSPWG.webpm',
+            'https://i.imgur.com/WUUNk48.webpm',
+            'https://i.imgur.com/rMMEKS5.webpm',
+            'https://i.imgur.com/JhcE4Bo.webpm'
         ],
         location: { title: 'suli', lat: '-3.619747', long: '128.298092' },
         category: 'Kontrakan',
@@ -59,10 +59,10 @@ export const Kost = [
         description: 'Kamar kost berlokasi di Pusat Kota Ambon (lorong Mayang, belakang Apotik Gideon Farma). Tersedia fasilitas AC, televisi, kulkas, lemari, springbed 2 bdn, kursi dan meja. Kamar mandi dan mini kitchen d dlm kamar. Listrik token. Bagi yang berminat dapat menghubungi pengelola.',
         keywords: 'ahusen, sirimau, kota ambon, maluku',
         images: [
-            'https://i.imgur.com/MGQNiuC.jpg',
-            'https://i.imgur.com/3b4ul2j.jpg',
-            'https://i.imgur.com/9n0zU4r.jpg',
-            'https://i.imgur.com/WvhUdBK.jpg'
+            'https://i.imgur.com/MGQNiuC.webpm',
+            'https://i.imgur.com/3b4ul2j.webpm',
+            'https://i.imgur.com/9n0zU4r.webpm',
+            'https://i.imgur.com/WvhUdBK.webpm'
         ],
         location: { title: 'ahusen', lat: '-3.699571', long: '128.183046' },
         category: 'Kost',
@@ -83,9 +83,9 @@ export const Kost = [
         description: 'Terima kost harian dan bulanan Desa Kamal, Piru Seram Bagian Barat (dekat Pasar Waisarisa depan Puskesmas Kamal lama). Bebas tempat parkir, Air bersih, keamanan terjamin, lokasi strategis (depan jalan), dekat dengan fasilitas umum seperti sekolah, pasar, dan bank',
         keywords: 'piru, seram bagian barat, maluku',
         images: [
-            'https://i.imgur.com/IEclXWo.jpg',
-            'https://i.imgur.com/JOyd5Br.jpg',
-            'https://i.imgur.com/nf2RsYH.jpg'
+            'https://i.imgur.com/IEclXWo.webpm',
+            'https://i.imgur.com/JOyd5Br.webpm',
+            'https://i.imgur.com/nf2RsYH.webpm'
         ],
         location: { title: 'piru', lat: '-3.061918', long: '128.196573' },
         category: 'Kost',
@@ -106,8 +106,8 @@ export const Kost = [
         description: 'Dikontrakkan sebuah rumah makan, berlokasi di daerah depan bandar udara Pattimura Laha Kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
         keywords: 'laha, teluk ambon, kota ambon, maluku',
         images: [
-            'https://i.imgur.com/uyF2J7P.jpg',
-            'https://i.imgur.com/3Z3Y5G0.jpg'
+            'https://i.imgur.com/uyF2J7P.webpm',
+            'https://i.imgur.com/3Z3Y5G0.webpm'
         ],
         location: { title: 'laha', lat: '-3.703492', long: '128.094226' },
         category: 'Kontrakan',
@@ -128,11 +128,11 @@ export const Kost = [
         description: 'Tersedia kamar kost harian mingguan bulanan. Tiap kamar ada jemuran, ada tempat parkir motor & mobil. Air sumur bor. Bagi yang berminat dapat menghubungi pengelola (IG @vvrimony)',
         keywords: 'silale, nusaniwe, kota ambon, maluku',
         images: [
-            'https://i.imgur.com/pkt6aLg.jpg',
-            'https://i.imgur.com/rtzs9XG.jpg',
-            'https://i.imgur.com/9ZBViea.jpg',
-            'https://i.imgur.com/ZsrDQKA.jpg',
-            'https://i.imgur.com/VAko5rH.jpg'
+            'https://i.imgur.com/pkt6aLg.webpm',
+            'https://i.imgur.com/rtzs9XG.webpm',
+            'https://i.imgur.com/9ZBViea.webpm',
+            'https://i.imgur.com/ZsrDQKA.webpm',
+            'https://i.imgur.com/VAko5rH.webpm'
         ],
         location: { title: 'silale', lat: '-3.699391', long: '128.177221' },
         category: 'Kost',
@@ -153,14 +153,14 @@ export const Kost = [
         description: 'Dikontrakan sebuah rumah Kampung Jawa Kapaha Pandan Kasturi Kota Ambon. Bagi yang berminat dapat menghubungi pemilik.',
         keywords: 'kapaha, pandan kasturi, kota ambon, maluku',
         images: [
-            'https://i.imgur.com/4g4Lbyu.jpg',
-            'https://i.imgur.com/k5lIboq.jpg',
-            'https://i.imgur.com/1Xf4l6P.jpg',
-            'https://i.imgur.com/OoyUSTr.jpg',
-            'https://i.imgur.com/jLrc8B5.jpg',
-            'https://i.imgur.com/OrnqFMU.jpg',
-            'https://i.imgur.com/ELrzE90.jpg',
-            'https://i.imgur.com/EKxK1f3.jpg'
+            'https://i.imgur.com/4g4Lbyu.webpm',
+            'https://i.imgur.com/k5lIboq.webpm',
+            'https://i.imgur.com/1Xf4l6P.webpm',
+            'https://i.imgur.com/OoyUSTr.webpm',
+            'https://i.imgur.com/jLrc8B5.webpm',
+            'https://i.imgur.com/OrnqFMU.webpm',
+            'https://i.imgur.com/ELrzE90.webpm',
+            'https://i.imgur.com/EKxK1f3.webpm'
         ],
         location: { title: 'pandan-kasturi', lat: '-3.677343', long: '128.195243' },
         category: 'Kontrakan',
@@ -181,9 +181,9 @@ export const Kost = [
         description: 'Tersedia kost murah, nyaman dan strategis dekat Masjid Raya Alfatah, Masjid Jami Jalan baru Honipopu Sirimau Kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
         keywords: 'jalan baru, honipopu, sirimau, kota ambon, maluku',
         images: [
-            'https://i.imgur.com/SxJCFTL.jpg',
-            'https://i.imgur.com/jQtXqlw.jpg',
-            'https://i.imgur.com/FzzOpw2.jpg'
+            'https://i.imgur.com/SxJCFTL.webpm',
+            'https://i.imgur.com/jQtXqlw.webpm',
+            'https://i.imgur.com/FzzOpw2.webpm'
         ],
         location: { title: 'honipopu', lat: '-3.695613', long: '128.179517' },
         category: 'Kost',
@@ -204,13 +204,13 @@ export const Kost = [
         description: 'Tersedia rumah kontrak tahunan murah nyaman dan strategis Jalan Baru Honipopu Sirimau kota Ambon (3 Lantai). Dari Mesjid Al Fatah masuk lorong di belakang Masjid Nurul Huda. Bagi yang berminat dapat menghubungi pengelola.',
         keywords: 'jalan baru, honipopu, sirimau, kota ambon, maluku',
         images: [
-            'https://i.imgur.com/20XrnCI.jpg',
-            'https://i.imgur.com/P8MvbqL.jpg',
-            'https://i.imgur.com/hzCOAzl.jpg',
-            'https://i.imgur.com/QrAzRDc.jpg',
-            'https://i.imgur.com/cFxLyzk.jpg',
-            'https://i.imgur.com/aaLTKFg.jpg',
-            'https://i.imgur.com/pij3ZH4.jpg'
+            'https://i.imgur.com/20XrnCI.webpm',
+            'https://i.imgur.com/P8MvbqL.webpm',
+            'https://i.imgur.com/hzCOAzl.webpm',
+            'https://i.imgur.com/QrAzRDc.webpm',
+            'https://i.imgur.com/cFxLyzk.webpm',
+            'https://i.imgur.com/aaLTKFg.webpm',
+            'https://i.imgur.com/pij3ZH4.webpm'
         ],
         location: { title: 'honipopu', lat: '-3.695613', long: '128.179517' },
         category: 'Kontrakan',
@@ -231,12 +231,12 @@ export const Kost = [
         description: 'Rumah kontrak tahunan Galala Hative Kecil Kota Ambon, Bagi yang berminat dapat menghubungi pengelola.',
         keywords: 'galala, hative kecil, kota ambon, maluku',
         images: [
-            'https://i.imgur.com/MEL1RGi.jpg',
-            'https://i.imgur.com/tC4UdhI.jpg',
-            'https://i.imgur.com/oPgIBaA.jpg',
-            'https://i.imgur.com/qjPFAzw.jpg',
-            'https://i.imgur.com/GbP1nCU.jpg',
-            'https://i.imgur.com/Bj2KGeC.jpg'
+            'https://i.imgur.com/MEL1RGi.webpm',
+            'https://i.imgur.com/tC4UdhI.webpm',
+            'https://i.imgur.com/oPgIBaA.webpm',
+            'https://i.imgur.com/qjPFAzw.webpm',
+            'https://i.imgur.com/GbP1nCU.webpm',
+            'https://i.imgur.com/Bj2KGeC.webpm'
         ],
         location: { title: 'galala', lat: '-3.665266', long: '128.200460' },
         category: 'Kontrakan',
@@ -257,10 +257,10 @@ export const Kost = [
         description: 'Tersedia kost eksklusif Puncak Bogor Karang Panjang Sirimau Kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
         keywords: 'karpan, karang panjang, sirimau, kota ambon, maluku',
         images: [
-            'https://i.imgur.com/MJPv6M5.jpg',
-            'https://i.imgur.com/Krh1Nlw.jpg',
-            'https://i.imgur.com/HcpaLL2.jpg',
-            'https://i.imgur.com/uBGiQoV.jpg'
+            'https://i.imgur.com/MJPv6M5.webpm',
+            'https://i.imgur.com/Krh1Nlw.webpm',
+            'https://i.imgur.com/HcpaLL2.webpm',
+            'https://i.imgur.com/uBGiQoV.webpm'
         ],
         location: { title: 'karang-panjang', lat: '-3.693829', long: '128.190608' },
         category: 'Kost',
@@ -281,9 +281,9 @@ export const Kost = [
         description: 'Tersedia kost murah untuk karyawan dan mahasiswa berlokasi di wilayah Poka Rumah Tiga Kota Ambon. Biaya sewa sudah termasuk fasilitas. Air lancar sumur bor, dapur umum luas, 4 kamar mandi luar. Bagi yang berminat dapat menghubungi pengelola',
         keywords: 'poka, rumah tiga, teluk ambon, kota ambon, maluku',
         images: [
-            'https://i.imgur.com/7v2aJ0z.jpg',
-            'https://i.imgur.com/i68HYjA.jpg',
-            'https://i.imgur.com/fhxzDWy.jpg'
+            'https://i.imgur.com/7v2aJ0z.webpm',
+            'https://i.imgur.com/i68HYjA.webpm',
+            'https://i.imgur.com/fhxzDWy.webpm'
         ],
         location: { title: 'poka', lat: '-3.649464', long: '128.193103' },
         category: 'Kost',
@@ -304,12 +304,12 @@ export const Kost = [
         description: 'Dijual/dikontrakan tahunan sebuah rumah, lorong perumahan Banda Eli Kebun Cengkeh Batu Merah Kota Ambon, Bagi yang berminat dapat menghubungi pemilik.',
         keywords: 'kebun cengkeh, batu merah, kota ambon, maluku',
         images: [
-            'https://i.imgur.com/Jdu3CNN.jpg',
-            'https://i.imgur.com/Cg79CAJ.jpg',
-            'https://i.imgur.com/LHGdpvG.jpg',
-            'https://i.imgur.com/Q10Tvwe.jpg',
-            'https://i.imgur.com/YrIK75R.jpg',
-            'https://i.imgur.com/5YoIIXa.jpg',
+            'https://i.imgur.com/Jdu3CNN.webpm',
+            'https://i.imgur.com/Cg79CAJ.webpm',
+            'https://i.imgur.com/LHGdpvG.webpm',
+            'https://i.imgur.com/Q10Tvwe.webpm',
+            'https://i.imgur.com/YrIK75R.webpm',
+            'https://i.imgur.com/5YoIIXa.webpm',
         ],
         location: { title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
         category: 'Kontrakan',
@@ -330,13 +330,13 @@ export const Kost = [
         description: 'Tersedia kost murah di Passo Baguala Kota Ambon Maluku, Wara lorong pica botol. Bagi yang berminat dapat menghubungi pengelola',
         keywords: 'Passo, Baguala, Kota Ambon, Maluku',
         images: [
-            'https://i.imgur.com/rpIivfJ.jpg',
-            'https://i.imgur.com/F8ZQtwK.jpg',
-            'https://i.imgur.com/h2yNjWv.jpg',
-            'https://i.imgur.com/qi2ktEL.jpg',
-            'https://i.imgur.com/Ws191Wa.jpg',
-            'https://i.imgur.com/j1xzlH6.jpg',
-            'https://i.imgur.com/FEBBU44.jpg'
+            'https://i.imgur.com/rpIivfJ.webpm',
+            'https://i.imgur.com/F8ZQtwK.webpm',
+            'https://i.imgur.com/h2yNjWv.webpm',
+            'https://i.imgur.com/qi2ktEL.webpm',
+            'https://i.imgur.com/Ws191Wa.webpm',
+            'https://i.imgur.com/j1xzlH6.webpm',
+            'https://i.imgur.com/FEBBU44.webpm'
 
         ],
         location: { title: 'passo', lat: '-3.630808', long: '128.251622' },
@@ -358,8 +358,8 @@ export const Kost = [
         description: 'Tersedia kost eksklusif (RedDoorz) Waihaong Nusaniwe Kota Ambon Maluku. Harga kamar perbulan sudah all in.Bagi yang berminat dapat menghubungi pengelola',
         keywords: 'waihaong, nusaniwe, kota ambon, maluku',
         images: [
-            'https://i.imgur.com/PA1MJ74.jpg',
-            'https://i.imgur.com/dl3HaUX.jpg'
+            'https://i.imgur.com/PA1MJ74.webpm',
+            'https://i.imgur.com/dl3HaUX.webpm'
         ],
         location: { title: 'waihaong', lat: '-3.701073', long: '128.175148' },
         category: 'Kost',
@@ -380,7 +380,7 @@ export const Kost = [
         description: 'Rumah kontrakan tahunan Halong Baguala Kota Ambon Maluku, samping kompleks angkatan laut depan jalan besar. Bagi yang berminat dapat menghubungi pemilik.',
         keywords: 'halong, baguala, kota ambon, maluku',
         images: [
-            'https://i.imgur.com/3VnPwHM.jpg'
+            'https://i.imgur.com/3VnPwHM.webpm'
         ],
         location: { title: 'halong', lat: '-3.661955', long: '128.217942' },
         category: 'Kontrakan',
@@ -401,9 +401,9 @@ export const Kost = [
         description: 'Tersedia kost murah Kudamati Nusaniwe Kota Ambon Maluku wilayah Farmasi Atas depan Gereja Christy Natalia. Khusus untuk karyawan dan mahasiswa. Tidak menerima pasutri. Bagi yang berminat dapat menghubungi pengelola',
         keywords: 'kudamati, nusaniwe, kota ambon, maluku',
         images: [
-            'https://i.imgur.com/KynKT7D.jpg',
-            'https://i.imgur.com/dnSKIda.jpg',
-            'https://i.imgur.com/wuRoCNl.jpg'
+            'https://i.imgur.com/KynKT7D.webpm',
+            'https://i.imgur.com/dnSKIda.webpm',
+            'https://i.imgur.com/wuRoCNl.webpm'
         ],
         location: { title: 'kudamati', lat: '-3.708157', long: '128.171185' },
         category: 'Kost',
@@ -424,12 +424,12 @@ export const Kost = [
         description: 'Tersedia kost murah bersih nyaman fasilitas memadai Halong Baguala Kota Ambon Maluku. Khusus untuk mahasiswa dekat kampus Institut Agama Kristen Negeri Ambon. Bagi yang berminat dapat menghubungi pengelola',
         keywords: 'halong, baguala, kota ambon, maluku',
         images: [
-            'https://i.imgur.com/fIPgIbk.jpg',
-            'https://i.imgur.com/0lu6aHK.jpg',
-            'https://i.imgur.com/dgC7Lq3.jpg',
-            'https://i.imgur.com/2y2WHdp.jpg',
-            'https://i.imgur.com/ONTluIO.jpg',
-            'https://i.imgur.com/2zYVmNT.jpg'
+            'https://i.imgur.com/fIPgIbk.webpm',
+            'https://i.imgur.com/0lu6aHK.webpm',
+            'https://i.imgur.com/dgC7Lq3.webpm',
+            'https://i.imgur.com/2y2WHdp.webpm',
+            'https://i.imgur.com/ONTluIO.webpm',
+            'https://i.imgur.com/2zYVmNT.webpm'
         ],
         location: { title: 'halong', lat: '-3.661955', long: '128.217942' },
         category: 'Kost',
@@ -450,16 +450,16 @@ export const Kost = [
         description: 'Rumah kontrakan tahunan Kebun Cengkeh Batu Merah Sirimau Kota Ambon Maluku. Tersedia dua bangunan pada lokasi yang sama. Harga sewa masing-masing berbeda dan boleh melakukan negosiasi. Lokasi aman, tenang, sejuk. Lorong samping Pangkalan Ojek di samping Bengkel Hamid Kebun Cengkeh.',
         keywords: 'Kontrakan, Kebun Cengkeh, Batu Merah, Sirimau, Kota Ambon, Maluku',
         images: [
-            'https://i.imgur.com/2NmrTxR.jpg',
-            'https://i.imgur.com/mr7RBsb.jpg',
-            'https://i.imgur.com/ybW5Qm1.jpg',
-            'https://i.imgur.com/J6kiG5J.jpg',
-            'https://i.imgur.com/btpRWIK.jpg',
-            'https://i.imgur.com/QqSPH6q.jpg',
-            'https://i.imgur.com/rFvoAW0.jpg',
-            'https://i.imgur.com/0Qr7tlI.jpg',
-            'https://i.imgur.com/h2J2qNi.jpg',
-            'https://i.imgur.com/KLPt1ZX.jpg'
+            'https://i.imgur.com/2NmrTxR.webpm',
+            'https://i.imgur.com/mr7RBsb.webpm',
+            'https://i.imgur.com/ybW5Qm1.webpm',
+            'https://i.imgur.com/J6kiG5J.webpm',
+            'https://i.imgur.com/btpRWIK.webpm',
+            'https://i.imgur.com/QqSPH6q.webpm',
+            'https://i.imgur.com/rFvoAW0.webpm',
+            'https://i.imgur.com/0Qr7tlI.webpm',
+            'https://i.imgur.com/h2J2qNi.webpm',
+            'https://i.imgur.com/KLPt1ZX.webpm'
         ],
         location: { title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
         category: 'Kontrakan',
@@ -480,13 +480,13 @@ export const Kost = [
         description: 'Tersedia kost murah dengan fasilitas lengkap, dekat kampus IAIN Batu Merah Sirimau Kota Ambon Maluku. Bagi yang berminat dapat menghubungi pengelola',
         keywords: 'Kost, IAIN, Batu Merah, Sirimau, Kota Ambon, Maluku',
         images: [
-            'https://i.imgur.com/JRXy2oz.jpg',
-            'https://i.imgur.com/sB2Vzyx.jpg',
-            'https://i.imgur.com/vizs7uo.jpg',
-            'https://i.imgur.com/i57IYl9.jpg',
-            'https://i.imgur.com/hydxX8l.jpg',
-            'https://i.imgur.com/MjMFMxC.jpg',
-            'https://i.imgur.com/TeKX4u7.jpg'
+            'https://i.imgur.com/JRXy2oz.webpm',
+            'https://i.imgur.com/sB2Vzyx.webpm',
+            'https://i.imgur.com/vizs7uo.webpm',
+            'https://i.imgur.com/i57IYl9.webpm',
+            'https://i.imgur.com/hydxX8l.webpm',
+            'https://i.imgur.com/MjMFMxC.webpm',
+            'https://i.imgur.com/TeKX4u7.webpm'
         ],
         location: { title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
         category: 'Kost',
@@ -507,13 +507,13 @@ export const Kost = [
         description: 'Tersedia kost murah eksklusif dengan fasilitas lengkap, samping indomaret Waiheru Baguala Kota Ambon Maluku. Sekamar bisa berdua (Suami Istri / Saudara) dan tidak ada tambahan biaya berdua. Harga sewa belum termasuk listrik. Bagi yang berminat dapat menghubungi pengelola.',
         keywords: 'Kost, Waiheru, Baguala, Kota Ambon, Maluku',
         images: [
-            'https://i.imgur.com/ts7LHY7.jpg',
-            'https://i.imgur.com/migCpnK.jpg',
-            'https://i.imgur.com/qKNRRCg.jpg',
-            'https://i.imgur.com/fwpQpzh.jpg',
-            'https://i.imgur.com/Tun0ItU.jpg',
-            'https://i.imgur.com/gDhkyUk.jpg',
-            'https://i.imgur.com/yJMJxF6.jpg'
+            'https://i.imgur.com/ts7LHY7.webpm',
+            'https://i.imgur.com/migCpnK.webpm',
+            'https://i.imgur.com/qKNRRCg.webpm',
+            'https://i.imgur.com/fwpQpzh.webpm',
+            'https://i.imgur.com/Tun0ItU.webpm',
+            'https://i.imgur.com/gDhkyUk.webpm',
+            'https://i.imgur.com/yJMJxF6.webpm'
         ],
         location: { title: 'waiheru', lat: '-3.627142', long: '128.223624' },
         category: 'Kost',
@@ -535,9 +535,9 @@ export const Kost = [
         description: 'Tersedia kost murah eksklusif dengan fasilitas lengkap (CCTV 24/7), Teluk Ambon Hative Kecil Sirimau Kota Ambon Maluku. Saudara boleh menginap dengan ijin (teman tidak diijinkan). Tidak ada tambahan biaya berdua. Harga sewa belum termasuk listrik. Bagi yang berminat dapat menghubungi pengelola.',
         keywords: 'Kost, Teluk Ambon, Hative Kecil, Sirimau, Kota Ambon, Maluku',
         images: [
-            'https://i.imgur.com/DiQuXts.jpg',
-            'https://i.imgur.com/EZ8eY1H.jpg',
-            'https://i.imgur.com/EiXmS3J.jpg'
+            'https://i.imgur.com/DiQuXts.webpm',
+            'https://i.imgur.com/EZ8eY1H.webpm',
+            'https://i.imgur.com/EiXmS3J.webpm'
         ],
         location: { title: 'hative-kecil', lat: '-3.670760', long: '128.199914' },
         category: 'Kost',
@@ -559,11 +559,11 @@ export const Kost = [
         description: 'Tersedia kost murah dua lantai kamar mandi dalam Urimesing Nusaniwe Kota Ambon Maluku. Dekat kampus PGSD bisa jalan kaki ke kampus. Masing-masing kamar ada teras, ada dapur di tiap lantai. Bagi yang berminat dapat menghubungi pengelola',
         keywords: 'Urimesing, Nusaniwe, Kota Ambon, Maluku',
         images: [
-            'https://i.imgur.com/tlZUq6q.jpg',
-            'https://i.imgur.com/x9oUf7x.jpg',
-            'https://i.imgur.com/JZZFJLV.jpg',
-            'https://i.imgur.com/uqH6xxG.jpg',
-            'https://i.imgur.com/bVbK6jQ.jpg'
+            'https://i.imgur.com/tlZUq6q.webpm',
+            'https://i.imgur.com/x9oUf7x.webpm',
+            'https://i.imgur.com/JZZFJLV.webpm',
+            'https://i.imgur.com/uqH6xxG.webpm',
+            'https://i.imgur.com/bVbK6jQ.webpm'
         ],
         location: { title: 'urimessing', lat: '-3.701502', long: '128.178884' },
         category: 'Kost',
@@ -584,11 +584,11 @@ export const Kost = [
         description: 'Tersedia kost murah kamar mandi dalam Kebun Cengkeh Batu Merah Sirimau Kota Ambon Maluku. Dekat kampus IAIN bisa jalan kaki ke kampus. Masing-masing kamar ada teras. Bagi yang berminat dapat menghubungi pengelola',
         keywords: 'Kebun Cengkeh, Batu Merah, Kota Ambon, Maluku',
         images: [
-            'https://i.imgur.com/x9oUf7x.jpg',
-            'https://i.imgur.com/JZZFJLV.jpg',
-            'https://i.imgur.com/uqH6xxG.jpg',
-            'https://i.imgur.com/bVbK6jQ.jpg',
-            'https://i.imgur.com/tlZUq6q.jpg'
+            'https://i.imgur.com/x9oUf7x.webpm',
+            'https://i.imgur.com/JZZFJLV.webpm',
+            'https://i.imgur.com/uqH6xxG.webpm',
+            'https://i.imgur.com/bVbK6jQ.webpm',
+            'https://i.imgur.com/tlZUq6q.webpm'
         ],
         location: { title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
         category: 'Kost',
@@ -609,9 +609,9 @@ export const Kost = [
         description: 'Rumah kontrak tahunan Waiheru Baguala Kota Ambon Maluku, aman dan strategis di depan jalan Waiheru Lapiaso. Bagi yang berminat dapat menghubungi pemilik.',
         keywords: 'Kost, Waiheru, Baguala, Kota Ambon, Maluku',
         images: [
-            'https://i.imgur.com/zce64Q5.jpg',
-            'https://i.imgur.com/o3NT1yX.jpg',
-            'https://i.imgur.com/jXzMDD9.jpg'
+            'https://i.imgur.com/zce64Q5.webpm',
+            'https://i.imgur.com/o3NT1yX.webpm',
+            'https://i.imgur.com/jXzMDD9.webpm'
         ],
         location: { title: 'waiheru', lat: '-3.627142', long: '128.223624' },
         category: 'Kontrakan',
@@ -632,13 +632,13 @@ export const Kost = [
         description: 'Rumah kontrakan tahunan dua lantai Kebun Cengkeh Gadihu Batu Merah Kota Ambon. Rumah berukuran 9x12, dengan fasilitas lengkap dan harga terjangkau. Bagi yang berminat dapat menghubungi pemilik.',
         keywords: 'Kebun Cengkeh, Batu Merah, Kota Ambon, Maluku',
         images: [
-            'https://i.imgur.com/8XGuoBs.jpg',
-            'https://i.imgur.com/QlpGmT4.jpg',
-            'https://i.imgur.com/ZhMpSop.jpg',
-            'https://i.imgur.com/vuUx9d4.jpg',
-            'https://i.imgur.com/BtwkmmL.jpg',
-            'https://i.imgur.com/gS4vYz9.jpg',
-            'https://i.imgur.com/GnYHctA.jpg',
+            'https://i.imgur.com/8XGuoBs.webpm',
+            'https://i.imgur.com/QlpGmT4.webpm',
+            'https://i.imgur.com/ZhMpSop.webpm',
+            'https://i.imgur.com/vuUx9d4.webpm',
+            'https://i.imgur.com/BtwkmmL.webpm',
+            'https://i.imgur.com/gS4vYz9.webpm',
+            'https://i.imgur.com/GnYHctA.webpm',
         ],
         location: { title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
         category: 'Kontrakan',
@@ -659,13 +659,13 @@ export const Kost = [
         description: 'Tersedia kost tiga lantai (kost orange) murah dan nyaman dengan fasilitas lengkap, RT 029/006 Passo Tream Baguala Kota Ambon Maluku. Dekat dengan Ambon City Center, dekat warung makan, dekat pondok, dekat tempat jual air galon. Bagi yang berminat dapat menghubungi pengelola (081332499538)',
         keywords: 'Passo, Baguala, Kota Ambon, Maluku',
         images: [
-            'https://i.imgur.com/ntik9AS.jpg',
-            'https://i.imgur.com/jHFX0t4.jpg',
-            'https://i.imgur.com/obIlHU8.jpg',
-            'https://i.imgur.com/Zt5RGdl.jpg',
-            'https://i.imgur.com/R6VGhcX.jpg',
-            'https://i.imgur.com/TXrllFf.jpg',
-            'https://i.imgur.com/Seg7E5O.jpg',
+            'https://i.imgur.com/ntik9AS.webpm',
+            'https://i.imgur.com/jHFX0t4.webpm',
+            'https://i.imgur.com/obIlHU8.webpm',
+            'https://i.imgur.com/Zt5RGdl.webpm',
+            'https://i.imgur.com/R6VGhcX.webpm',
+            'https://i.imgur.com/TXrllFf.webpm',
+            'https://i.imgur.com/Seg7E5O.webpm',
         ],
         location: { title: 'passo', lat: '-3.630808', long: '128.251622' },
         category: 'Kost',

@@ -65,7 +65,6 @@ class Detail extends React.Component {
                 JSON.parse(structureTypeBreadcrumbList)
             ]
         };
-        console.log(dataArea[0])
         return (
             <>
                 <NextHead>
