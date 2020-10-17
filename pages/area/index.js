@@ -12,7 +12,15 @@ class AreaList extends React.Component {
             </div>
             <div className="pb-3">
             {
-                DtArea.map((item, index) =>
+                DtArea
+                .sort(function (a, b) {
+                    var nameA = a.slug.toUpperCase();
+                    var nameB = b.slug.toUpperCase();
+                    if (nameA < nameB) return -1;
+                    if (nameA > nameB) return 1;
+                    return 0;
+                })
+                .map((item, index) =>
                     <div key={index} className="pt-3 pl-3 pr-3">
                         <Link href={`area/${item.slug}`}>
                             <Card variant="top">

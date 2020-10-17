@@ -638,7 +638,7 @@ export const Kost = [
             'https://i.imgur.com/vuUx9d4.webpm',
             'https://i.imgur.com/BtwkmmL.webpm',
             'https://i.imgur.com/gS4vYz9.webpm',
-            'https://i.imgur.com/GnYHctA.webpm',
+            'https://i.imgur.com/GnYHctA.webpm'
         ],
         location: { title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
         category: 'Kontrakan',
@@ -665,7 +665,7 @@ export const Kost = [
             'https://i.imgur.com/Zt5RGdl.webpm',
             'https://i.imgur.com/R6VGhcX.webpm',
             'https://i.imgur.com/TXrllFf.webpm',
-            'https://i.imgur.com/Seg7E5O.webpm',
+            'https://i.imgur.com/Seg7E5O.webpm'
         ],
         location: { title: 'passo', lat: '-3.630808', long: '128.251622' },
         category: 'Kost',
@@ -676,5 +676,26 @@ export const Kost = [
         facilities: ['Springbed + Seprei', 'Kipas Angin', 'Tikar', 'Lemari Pakaian', 'Dispenser + Galon', 'Kamar Mandi Dalam'],
         start_price: 800000,
         post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/3502681053085631/'
+    },
+    {
+        id: 28,
+        date_modified: '2020-10-17T08:57:10+00:00',
+        date_published: '2020-10-17T08:57:10+00:00',
+        slug: 'rumah-kontrak-bulanan-dan-tahunan-teluk-ambon-lateri-baguala-kota-ambon-maluku-rumah-type-45-btn-bukit-lateri-indah',
+        title: 'Rumah Kontrak Bulanan Dan Tahunan Teluk Ambon Lateri Baguala Kota Ambon Maluku - Rumah Type 45 BTN Bukit Lateri Indah',
+        description: 'Tersedia rumah kontrakan bulanan dan tahunan berlokasi di BTN Bukit Lateri Indah, Teluk Ambon Lateri Baguala Kota Ambon Maluku. Rumah sudah dipasang kanopi. Bagi yang berminat dapat menghubungi pemilik.',
+        keywords: 'Kontrakan, Teluk Ambon, Lateri, Baguala, Kota Ambon, Maluku',
+        images: [
+            'https://i.imgur.com/r4se1rs.webpm'
+        ],
+        location: { title: 'lateri', lat: '-3.644044', long: '128.246256' },
+        category: 'Kontrakan',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/richiie.richiie.161',
+            phone: '+6281343961994'
+        },
+        facilities: ['2 Kamar Tidur', '1 Kamar Mandi'],
+        start_price: 3000000,
+        post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/3235544559799283/'
     }
 ]

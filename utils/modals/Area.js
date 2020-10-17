@@ -32,7 +32,7 @@ export const DtArea = [
     // { slug: 'nania', title: 'Nania'},
     // { slug: 'negeri-lama', title: 'Negeri Lama'},
     { slug: 'waiheru', title: 'Waiheru', image: 'https://i.imgur.com/ts7LHY7.webpm'},
-    // { slug: 'lateri', title: 'Lateri'},
+    { slug: 'lateri', title: 'Lateri', image: 'https://i.imgur.com/r4se1rs.webpm'},
 
     // { slug: 'hative-besar', title: 'Hative Besar'},
     { slug: 'laha', title: 'Laha', image: 'https://i.imgur.com/qi2ktEL.webpm' },
