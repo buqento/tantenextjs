@@ -11,7 +11,7 @@ export default function Peta(props) {
         longitude: long,
         width: "100%",
         height: "150px",
-        zoom: 16
+        zoom: 12
     })
 
     return (

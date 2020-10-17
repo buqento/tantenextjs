@@ -16,7 +16,7 @@ class KostItem extends Component {
                     <Image src={item.images[0]} alt={item.title} fluid />
                     <div className="p-3">
                         <Card.Title>{item.title}</Card.Title>
-                        <Badge variant="secondary">{badge}</Badge> <Badge variant="info">{Currency(item.start_price)}+</Badge>
+                        <Badge variant="info">{badge}</Badge> <Badge variant="secondary">{`${Currency(item.start_price)}<`}</Badge>
                     </div>
                 </div>
             </Link>
