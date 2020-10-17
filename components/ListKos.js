@@ -24,10 +24,8 @@ class ListKos extends Component {
                                             <Link href={`https://tantekos.com/${item.slug}`}>
                                                 <Media>
                                                     <img
-                                                        width={64}
-                                                        height={64}
                                                         className="mr-3"
-                                                        src={item.images[0]}
+                                                        src={`https://cdn.statically.io/img/i.imgur.com/w=64/${item.images[0]}`}
                                                         alt={item.title}
                                                     />
                                                     <Media.Body>

@@ -24,7 +24,7 @@ class AreaList extends React.Component {
                     <div key={index} className="pt-3 pl-3 pr-3">
                         <Link href={`area/${item.slug}`}>
                             <Card variant="top">
-                                <Card.Img variant="top" src={item.image} />
+                                <Card.Img variant="top" src={`https://cdn.statically.io/img/i.imgur.com/w=414/${item.image}`} />
                                 <div className="p-2 font-weight-bold text-center text-uppercase">{item.title}</div>
                             </Card>
                         </Link>
