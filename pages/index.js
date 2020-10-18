@@ -11,7 +11,7 @@ export default function Index() {
       <Header />
 
       <div className="m-3 mb-n2">
-        <span className="text-uppercase text-secondary font-weight-bold">Harga mulai</span>
+        <span className="text-uppercase text-secondary font-weight-bold">Harga Maksimal</span>
       </div>
       <CategoryPrice />
 

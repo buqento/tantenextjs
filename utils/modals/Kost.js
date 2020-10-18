@@ -697,5 +697,31 @@ export const Kost = [
         facilities: ['2 Kamar Tidur', '1 Kamar Mandi'],
         start_price: 3000000,
         post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/3235544559799283/'
-    }
+    },
+    {
+        id: 29,
+        date_modified: '2020-10-18T07:44:15+00:00',
+        date_published: '2020-10-18T07:44:15+00:00',
+        slug: 'kost-eksklusif-murah-nyaman-fasilitas-lengkap-simpang-lima-matamalagi-sorong-utara-kota-sorong-papua-barat-pasific889-homestay',
+        title: 'Kost Eksklusif Murah Nyaman Fasilitas Lengkap Simpang Lima Matamalagi Sorong Utara Kota Sorong Papua Barat - Pasific889 Homestay',
+        description: 'Tersedia kost eksklusif Km 10 Simpang Lima Matamalagi Sorong Utara Kota Sorong Papua Barat. Harga sewa mulai dari harian 300rb, mingguan 1,5jt, bulanan 3jt. Mayoritas penghuni karyawan/ti dan mahasiswa. Waktu bertamu 06.00 - 24.00. 10 Kamar dengan luas 20m2 dan 25m2. Sekamar boleh berdua (lengkapi surat nikah/KK untuk pasangan). Bagi yang berminat dapat menghubungi pengelola (087838130048 atau pasific889homestay@gmail.com)',
+        keywords: 'Malaingkedi, Sorong Utara, Kota Sorong, Papua Barat',
+        images: [
+            'DlD89ZQ.webpm',
+            '0NQ6toF.webpm',
+            'OI0wVC7.webpm',
+            'XKqJVkk.webpm',
+            '3ukBj91.webpm',
+            'zzIfLCa.webpm'
+        ],
+        location: { title: 'kota-sorong', lat: '-0.883504', long: '131.298135' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/Pasific889',
+            phone: '+6282359142888'
+        },
+        facilities: ['Tv Cable - Flat Tv 32"', 'Spring Bed 160x200', 'Lemari Pakaian', 'AC', 'Water Heater', 'Terrace', 'Kamar Mandi', 'Dapur Pribadi', 'Parkiran' ],
+        start_price: 300000,
+        post_url: 'https://www.facebook.com/story.php?story_fbid=2073262346230510&id=1913071195582960'
+    },
 ]
