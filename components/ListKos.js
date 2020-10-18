@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { arrayOf, shape, string } from 'prop-types'
 import Link from 'next/link'
-import { Media, Container } from 'react-bootstrap'
+import { Card, Container } from 'react-bootstrap'
 
 class ListKos extends Component {
     render() {
@@ -13,40 +13,34 @@ class ListKos extends Component {
             listData = data
         }
         return (
-            <>
-                {
-                    data.length > 0 ?
-                        <div style={{ borderTop: '8px solid #f5f5f5' }}>
-                            <Container className="mt-3">
+            <div className="container pb-3">
+                <div className="row">
+                    {
+                        data.length > 0 ?
+                            <>
                                 {
                                     listData.map((item, index) =>
-                                        <div key={index} className="pb-3">
+                                        <div key={index} className="col-6 pt-3">
                                             <Link href={`https://tantekos.com/${item.slug}`}>
-                                                <Media>
-                                                    <img
-                                                        className="mr-3"
-                                                        src={`https://cdn.statically.io/img/i.imgur.com/w=64/${item.images[0]}`}
-                                                        alt={item.title}
-                                                    />
-                                                    <Media.Body>
-                                                        <p>{item.title}</p>
-                                                    </Media.Body>
-                                                </Media>
+                                                <Card variant="top">
+                                                    <Card.Img variant="top" src={`https://cdn.statically.io/img/i.imgur.com/w=155/${item.images[0]}`} />
+                                                    <div className="m-2 text-center kost-title">{item.title}</div>
+                                                </Card>
                                             </Link>
                                         </div>
                                     )
                                 }
-                            </Container>
-                        </div>
-                        :
-                        <Container className="mt-3">
-                            <div>
-                                Ups! Pencarian tidak ada hasil.
+                            </>
+                            :
+                            <Container className="mt-3">
+                                <div>
+                                    Ups! Pencarian tidak ada hasil.
                             </div>
-                            <Link href="/">Kembali ke Beranda</Link>
-                        </Container>
-                }
-            </>
+                                <Link href="/">Kembali ke Beranda</Link>
+                            </Container>
+                    }
+                </div>
+            </div>
         )
     }
 }

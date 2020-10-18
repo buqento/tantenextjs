@@ -10,27 +10,29 @@ class AreaList extends React.Component {
             <div className="main-layout">
                 <HeadPage title="Semua Area" />
             </div>
-            <div className="pb-3">
-            {
-                DtArea
-                .sort(function (a, b) {
-                    var nameA = a.slug.toUpperCase();
-                    var nameB = b.slug.toUpperCase();
-                    if (nameA < nameB) return -1;
-                    if (nameA > nameB) return 1;
-                    return 0;
-                })
-                .map((item, index) =>
-                    <div key={index} className="pt-3 pl-3 pr-3">
-                        <Link href={`area/${item.slug}`}>
-                            <Card variant="top">
-                                <Card.Img variant="top" src={`https://cdn.statically.io/img/i.imgur.com/w=414/${item.image}`} />
-                                <div className="p-2 font-weight-bold text-center text-uppercase">{item.title}</div>
-                            </Card>
-                        </Link>
-                    </div>
-                )
-            }
+            <div className="container pb-3">
+                <div className="row">
+                    {
+                        DtArea
+                            .sort(function (a, b) {
+                                var nameA = a.slug.toUpperCase();
+                                var nameB = b.slug.toUpperCase();
+                                if (nameA < nameB) return -1;
+                                if (nameA > nameB) return 1;
+                                return 0;
+                            })
+                            .map((item, index) =>
+                                <div key={index} className="col-6 pt-3">
+                                    <Link href={`area/${item.slug}`}>
+                                        <Card variant="top">
+                                            <Card.Img variant="top" src={`https://cdn.statically.io/img/i.imgur.com/w=155/${item.image}`} />
+                                            <div className="m-2 text-center text-uppercase">{item.title}</div>
+                                        </Card>
+                                    </Link>
+                                </div>
+                            )
+                    }
+                </div>
             </div>
         </>
     }

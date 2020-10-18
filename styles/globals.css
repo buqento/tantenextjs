@@ -59,26 +59,10 @@ a {
   overflow: hidden;
 }
 
-.product-title {
-  font-weight: bold;
-  /*! autoprefixer: off */
+
+.kost-title {
   -webkit-box-orient: vertical;
-  /* autoprefixer: on */
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
-
-  margin: 0 8px 2px 8px;
-  &.loading {
-    margin: 4px 8px 2px 8px;
-    font-size: 0;
-  }
-
-  font-size: 10px;
-  line-height: 12px;
-  @include media-breakpoint-up(xl) {
-    font-size: 11.54px;
-    line-height: 13.85px;
-  }
-  @extend .align-left;
+  -webkit-line-clamp: 4;
 }

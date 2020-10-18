@@ -15,7 +15,7 @@ export const Kost = [
             'Vs3KV8o.webpm',
             '5eUg5wy.webpm'
         ],
-        location: { title: 'silale', lat: '-3.699391', long: '128.177221' },
+        location: { province: 'maluku', title: 'silale', lat: '-3.699391', long: '128.177221' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/almirahomestay.almirahomestay',
@@ -40,7 +40,7 @@ export const Kost = [
             'rMMEKS5.webpm',
             'JhcE4Bo.webpm'
         ],
-        location: { title: 'suli', lat: '-3.619747', long: '128.298092' },
+        location: { province: 'maluku', title: 'suli', lat: '-3.619747', long: '128.298092' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/Dedox002',
@@ -64,7 +64,7 @@ export const Kost = [
             '9n0zU4r.webpm',
             'WvhUdBK.webpm'
         ],
-        location: { title: 'ahusen', lat: '-3.699571', long: '128.183046' },
+        location: { province: 'maluku', title: 'ahusen', lat: '-3.699571', long: '128.183046' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100004804935380',
@@ -87,7 +87,7 @@ export const Kost = [
             'JOyd5Br.webpm',
             'nf2RsYH.webpm'
         ],
-        location: { title: 'piru', lat: '-3.061918', long: '128.196573' },
+        location: { province: 'maluku', title: 'piru', lat: '-3.061918', long: '128.196573' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100006131414651',
@@ -109,7 +109,7 @@ export const Kost = [
             'uyF2J7P.webpm',
             '3Z3Y5G0.webpm'
         ],
-        location: { title: 'laha', lat: '-3.703492', long: '128.094226' },
+        location: { province: 'maluku', title: 'laha', lat: '-3.703492', long: '128.094226' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/zhul.putra.148',
@@ -134,7 +134,7 @@ export const Kost = [
             'ZsrDQKA.webpm',
             'VAko5rH.webpm'
         ],
-        location: { title: 'silale', lat: '-3.699391', long: '128.177221' },
+        location: { province: 'maluku', title: 'silale', lat: '-3.699391', long: '128.177221' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/vivi.rimony',
@@ -162,7 +162,7 @@ export const Kost = [
             'ELrzE90.webpm',
             'EKxK1f3.webpm'
         ],
-        location: { title: 'pandan-kasturi', lat: '-3.677343', long: '128.195243' },
+        location: { province: 'maluku', title: 'pandan-kasturi', lat: '-3.677343', long: '128.195243' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100039966772432',
@@ -185,7 +185,7 @@ export const Kost = [
             'jQtXqlw.webpm',
             'FzzOpw2.webpm'
         ],
-        location: { title: 'honipopu', lat: '-3.695613', long: '128.179517' },
+        location: { province: 'maluku', title: 'honipopu', lat: '-3.695613', long: '128.179517' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/chie.m.nhirasharye',
@@ -212,7 +212,7 @@ export const Kost = [
             'aaLTKFg.webpm',
             'pij3ZH4.webpm'
         ],
-        location: { title: 'honipopu', lat: '-3.695613', long: '128.179517' },
+        location: { province: 'maluku', title: 'honipopu', lat: '-3.695613', long: '128.179517' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/yudha.a.setiawan.14',
@@ -238,7 +238,7 @@ export const Kost = [
             'GbP1nCU.webpm',
             'Bj2KGeC.webpm'
         ],
-        location: { title: 'galala', lat: '-3.665266', long: '128.200460' },
+        location: { province: 'maluku', title: 'galala', lat: '-3.665266', long: '128.200460' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100016477352041',
@@ -262,7 +262,7 @@ export const Kost = [
             'HcpaLL2.webpm',
             'uBGiQoV.webpm'
         ],
-        location: { title: 'karang-panjang', lat: '-3.693829', long: '128.190608' },
+        location: { province: 'maluku', title: 'karang-panjang', lat: '-3.693829', long: '128.190608' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/ricky.huwaa',
@@ -285,7 +285,7 @@ export const Kost = [
             'i68HYjA.webpm',
             'fhxzDWy.webpm'
         ],
-        location: { title: 'poka', lat: '-3.649464', long: '128.193103' },
+        location: { province: 'maluku', title: 'poka', lat: '-3.649464', long: '128.193103' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/azzahra.s.940',
@@ -311,7 +311,7 @@ export const Kost = [
             'YrIK75R.webpm',
             '5YoIIXa.webpm',
         ],
-        location: { title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
+        location: { province: 'maluku', title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/nailaamalia.amalia.9',
@@ -339,7 +339,7 @@ export const Kost = [
             'FEBBU44.webpm'
 
         ],
-        location: { title: 'passo', lat: '-3.630808', long: '128.251622' },
+        location: { province: 'maluku', title: 'passo', lat: '-3.630808', long: '128.251622' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/aditya.adilla.1',
@@ -361,7 +361,7 @@ export const Kost = [
             'PA1MJ74.webpm',
             'dl3HaUX.webpm'
         ],
-        location: { title: 'waihaong', lat: '-3.701073', long: '128.175148' },
+        location: { province: 'maluku', title: 'waihaong', lat: '-3.701073', long: '128.175148' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100009503041037',
@@ -382,7 +382,7 @@ export const Kost = [
         images: [
             '3VnPwHM.webpm'
         ],
-        location: { title: 'halong', lat: '-3.661955', long: '128.217942' },
+        location: { province: 'maluku', title: 'halong', lat: '-3.661955', long: '128.217942' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100006926223788',
@@ -405,7 +405,7 @@ export const Kost = [
             'dnSKIda.webpm',
             'wuRoCNl.webpm'
         ],
-        location: { title: 'kudamati', lat: '-3.708157', long: '128.171185' },
+        location: { province: 'maluku', title: 'kudamati', lat: '-3.708157', long: '128.171185' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/ferry.jhon.90',
@@ -431,7 +431,7 @@ export const Kost = [
             'ONTluIO.webpm',
             '2zYVmNT.webpm'
         ],
-        location: { title: 'halong', lat: '-3.661955', long: '128.217942' },
+        location: { province: 'maluku', title: 'halong', lat: '-3.661955', long: '128.217942' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/Desy.Kakisina',
@@ -461,7 +461,7 @@ export const Kost = [
             'h2J2qNi.webpm',
             'KLPt1ZX.webpm'
         ],
-        location: { title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
+        location: { province: 'maluku', title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/ifasiregar.siregar',
@@ -488,7 +488,7 @@ export const Kost = [
             'MjMFMxC.webpm',
             'TeKX4u7.webpm'
         ],
-        location: { title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
+        location: { province: 'maluku', title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/KOSTAMBON',
@@ -515,7 +515,7 @@ export const Kost = [
             'gDhkyUk.webpm',
             'yJMJxF6.webpm'
         ],
-        location: { title: 'waiheru', lat: '-3.627142', long: '128.223624' },
+        location: { province: 'maluku', title: 'waiheru', lat: '-3.627142', long: '128.223624' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/KOSTAMBON',
@@ -539,7 +539,7 @@ export const Kost = [
             'EZ8eY1H.webpm',
             'EiXmS3J.webpm'
         ],
-        location: { title: 'hative-kecil', lat: '-3.670760', long: '128.199914' },
+        location: { province: 'maluku', title: 'hative-kecil', lat: '-3.670760', long: '128.199914' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/KOSTAMBON',
@@ -565,7 +565,7 @@ export const Kost = [
             'uqH6xxG.webpm',
             'bVbK6jQ.webpm'
         ],
-        location: { title: 'urimessing', lat: '-3.701502', long: '128.178884' },
+        location: { province: 'maluku', title: 'urimessing', lat: '-3.701502', long: '128.178884' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/rara.mwl',
@@ -590,7 +590,7 @@ export const Kost = [
             'bVbK6jQ.webpm',
             'tlZUq6q.webpm'
         ],
-        location: { title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
+        location: { province: 'maluku', title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/rara.mwl',
@@ -613,7 +613,7 @@ export const Kost = [
             'o3NT1yX.webpm',
             'jXzMDD9.webpm'
         ],
-        location: { title: 'waiheru', lat: '-3.627142', long: '128.223624' },
+        location: { province: 'maluku', title: 'waiheru', lat: '-3.627142', long: '128.223624' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/rifanmaligana.rifanmaligana',
@@ -640,7 +640,7 @@ export const Kost = [
             'gS4vYz9.webpm',
             'GnYHctA.webpm'
         ],
-        location: { title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
+        location: { tprovince: 'maluku', itle: 'batu-merah', lat: '-3.682169', long: '128.223087' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100007324635315',
@@ -667,7 +667,7 @@ export const Kost = [
             'TXrllFf.webpm',
             'Seg7E5O.webpm'
         ],
-        location: { title: 'passo', lat: '-3.630808', long: '128.251622' },
+        location: { province: 'maluku', title: 'passo', lat: '-3.630808', long: '128.251622' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/chintya.s.rossa.9',
@@ -688,7 +688,7 @@ export const Kost = [
         images: [
             'VgDIeU0.webpm'
         ],
-        location: { title: 'lateri', lat: '-3.644044', long: '128.246256' },
+        location: { province: 'maluku', title: 'lateri', lat: '-3.644044', long: '128.246256' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/richiie.richiie.161',
@@ -714,7 +714,7 @@ export const Kost = [
             '3ukBj91.webpm',
             'zzIfLCa.webpm'
         ],
-        location: { title: 'kota-sorong', lat: '-0.883504', long: '131.298135' },
+        location: { province: 'papua', title: 'kota-sorong', lat: '-0.883504', long: '131.298135' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/Pasific889',
@@ -736,7 +736,7 @@ export const Kost = [
             'OIZx8du.webpm',
             'zyXAy4J.webpm'
         ],
-        location: { title: 'jayapura-selatan', lat: '-2.577319', long: '140.691014' },
+        location: { province: 'papua', title: 'jayapura-selatan', lat: '-2.577319', long: '140.691014' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/edisron.sigiro.7',
