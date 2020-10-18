@@ -724,4 +724,26 @@ export const Kost = [
         start_price: 300000,
         post_url: 'https://www.facebook.com/story.php?story_fbid=2073262346230510&id=1913071195582960'
     },
+    {
+        id: 30,
+        date_modified: '2020-10-18T15:44:15+00:00',
+        date_published: '2020-10-18T15:44:15+00:00',
+        slug: 'kost-murah-beringin-entrop-jayapura-selatan-kota-jayapura-belakang-sma-negeri-4-jayapura',
+        title: 'Tersedia Kost Murah Jl Beringin Entrop Jayapura Selatan Kota Jayapura - Belakang SMA Negeri 4 Jayapura',
+        description: 'Tersedia kost murah Jl Beringin Entrop Jayapura Selatan Kota Jayapura (Belakang SMA Negeri 4 Jayapura). Air lancar dan bebas banjir. Bagi yang berminat dapat menghubungi pengelola',
+        keywords: 'Jl. Beringin, Entrop, Jayapura Selatan, Kota Jayapura, Papua',
+        images: [
+            'OIZx8du.webpm',
+            'zyXAy4J.webpm'
+        ],
+        location: { title: 'jayapura-selatan', lat: '-2.577319', long: '140.691014' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/edisron.sigiro.7',
+            phone: '+6281240913576'
+        },
+        facilities: ['Ruang Tamu', 'Kamar Mandi Dalam', 'Dapur'],
+        start_price: 1100000,
+        post_url: 'https://m.facebook.com/groups/185755601762444?view=permalink&id=1254765504861443'
+    },
 ]
