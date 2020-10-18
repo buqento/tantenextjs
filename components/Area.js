@@ -11,13 +11,14 @@ class Area extends Component {
                     <div className="d-flex ml-3">
                         {
                             DtArea
-                                .sort(function (a, b) {
-                                    var nameA = a.slug.toUpperCase();
-                                    var nameB = b.slug.toUpperCase();
-                                    if (nameA < nameB) return -1;
-                                    if (nameA > nameB) return 1;
-                                    return 0;
-                                })
+                                // .sort(function (a, b) {
+                                //     var nameA = a.slug.toUpperCase();
+                                //     var nameB = b.slug.toUpperCase();
+                                //     if (nameA < nameB) return -1;
+                                //     if (nameA > nameB) return 1;
+                                //     return 0;
+                                // })
+                                .sort( () => .5 - Math.random() )
                                 .slice(0, 5)
                                 .map((item, index) => <AreaItem item={item} key={index} />)
                         }

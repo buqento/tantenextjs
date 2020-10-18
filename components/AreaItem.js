@@ -10,7 +10,7 @@ class AreaItem extends Component {
             <Link href={`area/${item.slug}`}>
                 <Card style={{ width: '140px' }} variant="top" className="mr-3">
                     <Card.Img variant="top" src={`https://cdn.statically.io/img/i.imgur.com/w=138/${item.image}`} />
-                    <div className="p-2 text-center text-uppercase">{item.title}</div>
+                    <div className="pt-2 pb-2 text-center text-uppercase">{item.title}</div>
                 </Card>
             </Link>
         )
