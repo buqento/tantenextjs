@@ -20,8 +20,7 @@ class Slide extends Component {
                 imagesData && imagesData.map((item, index) =>
                     <SwiperSlide key={index}>
                         <img 
-                        width="375px"
-                        src={`https://cdn.statically.io/img/i.imgur.com/w=375/${item}`}
+                        src={`https://cdn.statically.io/img/i.imgur.com/w=414/${item}`}
                         alt={`${imageTitle} 
                         ${index+1}`} 
                         style={{maxHeight: '414px'}} />
