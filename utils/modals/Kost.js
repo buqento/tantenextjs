@@ -746,4 +746,30 @@ export const Kost = [
         start_price: 1100000,
         post_url: 'https://m.facebook.com/groups/185755601762444?view=permalink&id=1254765504861443'
     },
+    {
+        id: 31,
+        date_modified: '2020-10-18T19:44:15+00:00',
+        date_published: '2020-10-18T19:44:15+00:00',
+        slug: 'kost-murah-bersih-dan-aman-jalan-kali-acai-awiyo-abepura-kota-jayapura-papua-kost-bang-haji',
+        title: 'Kost Murah Bersih Dan Aman Jalan Kali Acai Awiyo Abepura Kota Jayapura Papua - Kost Bang Haji',
+        description: 'Tersedia kost murah bersih dan aman Jalan Kali Acai Awiyo Abepura Kota Jayapura Papua. Ukuran kamar 4x4, air bersih lancar. Bagi yang berminat dapat menghubungi pengelola',
+        keywords: 'Jl. Kali Acai, Awiyo, Abepura, Kota Jayapura, Papua',
+        images: [
+            'L7JVrMH.webpm',
+            '7kNRdz6.webpm',
+            'EQUQS9E.webpm',
+            'ZRf4Idu.webpm',
+            'Si8tsk6.webpm',
+            'FnIjYih.webpm'
+        ],
+        location: { province: 'papua', title: 'abepura', lat: '-2.610406', long: '140.674623' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/profile.php?id=100009350404182',
+            phone: '+62813431946626'
+        },
+        facilities: ['WiFi', 'Air Bersih', 'Listrik Gratis', 'Dapur Umum', 'Kamar Mandi Umum', 'Parkiran Motor'],
+        start_price: 850000,
+        post_url: ''
+    }
 ]

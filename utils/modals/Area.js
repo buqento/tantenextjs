@@ -56,5 +56,6 @@ export const DtArea = [
     { slug: 'piru', title: 'Piru', image: 'jQtXqlw.webpm' },
 
     { slug: 'kota-sorong', title: 'Kota Sorong', image: 'DlD89ZQ.webpm' },
-    { slug: 'jayapura-selatan', title: 'Jayapura Selatan', image: 'OIZx8du.webpm' }
+    { slug: 'jayapura-selatan', title: 'Jayapura Selatan', image: 'OIZx8du.webpm' },
+    { slug: 'abepura', title: 'Abepura', image: 'L7JVrMH.webpm' }
 ];
