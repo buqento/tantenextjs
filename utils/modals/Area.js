@@ -38,7 +38,7 @@ export const DtArea = [
     { slug: 'laha', title: 'Laha', image: 'qi2ktEL.webpm' },
     { slug: 'poka', title: 'Poka', image: '7v2aJ0z.webpm' },
     //  { slug: 'rumah-tiga', title: 'Rumah Tiga'},
-     { slug: 'tawiri', title: 'Tawiri'},
+    //  { slug: 'tawiri', title: 'Tawiri'},
      { slug: 'hunuth-durian-patah', title: 'Hunuth', image: 'PA1MJ74.webpm' },
     //  { slug: 'wayame', title: 'Wayame'},
     //  { slug: 'tihu', title: 'Tihu'},
