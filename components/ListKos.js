@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { arrayOf, shape, string } from 'prop-types'
 import Link from 'next/link'
-import { Card, Container } from 'react-bootstrap'
+import { Card, Container, ListGroup, ListGroupItem } from 'react-bootstrap'
+import Currency from './Currency'
 
 class ListKos extends Component {
     render() {
@@ -24,6 +25,9 @@ class ListKos extends Component {
                                             <Link href={`https://tantekos.com/${item.slug}`}>
                                                 <Card variant="top">
                                                     <Card.Img variant="top" src={`https://cdn.statically.io/img/i.imgur.com/w=155/${item.images[0]}`} />
+                                                    <ListGroup className="list-group-flush text-center">
+                                                        <ListGroupItem variant="secondary font-weight-bold">{Currency(item.start_price)}</ListGroupItem>
+                                                    </ListGroup>
                                                     <div className="m-2 text-center kost-title">{item.title}</div>
                                                 </Card>
                                             </Link>

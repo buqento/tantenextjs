@@ -795,5 +795,33 @@ export const Kost = [
         facilities: ['Kamar Tidur', 'Kamar Mandi'],
         start_price: 1000000,
         post_url: ''
+    },
+    {
+        id: 33,
+        date_modified: '2020-10-20T04:44:15+00:00',
+        date_published: '2020-10-20T04:44:15+00:00',
+        slug: 'kost-harian-murah-jl-perkutut-vim-abepura-kota-jayapura-papua-komplek-pendidikan-kristen-kotaraja-dalam',
+        title: 'Kost Harian Murah Jl Perkutut Vim Abepura Kota Jayapura Papua - Komplek Pendidikan Kristen Kotaraja Dalam',
+        description: 'Disewakan rumah kost harian murah (kost batu penjuru), Jl Perkutut Vim Abepura Kota Jayapura Papua (Belakang SMP YPK Kotaraja). Fasilitas lengkap dengan luas 3x4m. Menerima pasutri/keluarga.  Bagi yang berminat dapat menghubungi pengelola',
+        keywords: 'Jl. Perkutut, Vim, Abepura, Kota Jayapura, Papua',
+        images: [
+            'UihijtR.webpm',
+            'xeoJl1f.webpm',
+            '9BRwV4w.webpm',
+            'N4ebNXt.webpm',
+            'zRUx3Dn.webpm',
+            'kDY0Qze.webpm',
+            'AC0jXg7.webpm',
+            'DurMoiz.webpm'
+        ],
+        location: { province: 'papua', title: 'abepura', lat: '-2.597008', long: '140.671848' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/hary.parinding',
+            phone: '+6285334906600'
+        },
+        facilities: ['Tempat Tidur', 'Lemari', 'Meja dan Kursi', 'AC', 'Kamar Mandi Dalam', 'Parkiran'],
+        start_price: 150000,
+        post_url: ''
     }
 ]
