@@ -186,6 +186,7 @@ class Detail extends React.Component {
               </div>
             </div>
           </Container>
+          <div style={{ borderTop: '8px solid #f5f5f5' }} />
           <div style={{ marginBottom: '55px' }}>
             <ListKos data={otherItems} category={data[0].category} />
           </div>

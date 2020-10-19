@@ -771,5 +771,29 @@ export const Kost = [
         facilities: ['WiFi', 'Air Bersih', 'Listrik Gratis', 'Dapur Umum', 'Kamar Mandi Umum', 'Parkiran Motor'],
         start_price: 850000,
         post_url: ''
+    },
+    {
+        id: 32,
+        date_modified: '2020-10-19T05:44:15+00:00',
+        date_published: '2020-10-19T05:44:15+00:00',
+        slug: 'kost-murah-koya-barat-kota-jayapura-papua-depan-bank-papua-fasilitas-lengkap-strategis-dan-aman',
+        title: 'Kost Murah Koya Barat Kota Jayapura Papua - Depan Bank Papua Fasilitas Lengkap Strategis Dan Aman',
+        description: 'Disewakan rumah kost murah, area Koya Barat Kota Jayapura Papua depan Bank Papua. Fasilitas lengkap lokasi strategis dan aman. Bagi yang berminat dapat menghubungi pengelola',
+        keywords: 'Koya Barat, Kota Jayapura, Papua',
+        images: [
+            'HEiqNVG.webpm',
+            'Sj8hkC1.webpm',
+            'EPdRPIA.webpm',
+            'IIRisBf.webpm'
+        ],
+        location: { province: 'papua', title: 'koya-barat', lat: '-2.678178', long: '140.805093' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/dimas.ananda.5688476',
+            phone: '+6282399581625'
+        },
+        facilities: ['Kamar Tidur', 'Kamar Mandi'],
+        start_price: 1000000,
+        post_url: ''
     }
 ]
