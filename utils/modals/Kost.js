@@ -640,7 +640,7 @@ export const Kost = [
             'gS4vYz9.webpm',
             'GnYHctA.webpm'
         ],
-        location: { tprovince: 'maluku', itle: 'batu-merah', lat: '-3.682169', long: '128.223087' },
+        location: { province: 'maluku', title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100007324635315',
