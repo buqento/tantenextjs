@@ -8,12 +8,16 @@ export const Kost = [
         description: 'Tersedia kost murah, nyaman dan strategis. Biaya sewa dan fasilitas bervariasi mulai dari harian (Rp100.000) dan bulanan (Rp700.000). Bebas biaya listrik dan air bersih. Berlokasi di Silale Kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
         keywords: 'Silale, Nusaniwe, Kota Ambon, Maluku',
         images: [
-            'eT62Hma.webpm',
-            'k8jx1CJ.webpm',
-            'r7RwkqL.webpm',
-            'qetkUPd.webpm',
-            'Vs3KV8o.webpm',
-            '5eUg5wy.webpm'
+            'i2aQSZ9.webpm',
+            'EpcOaDD.webpm',
+            'rtX3zp9.webpm',
+            'aS1T3Qr.webpm',
+            'a0WTCT7.webpm',
+            'ndT7tel.webpm',
+            'kyo9flm.webpm',
+            'cmdaELQ.webpm',
+            'ZZVWFnC.webpm',
+            'l6j2C01.webpm'
         ],
         location: { province: 'maluku', title: 'silale', lat: '-3.699391', long: '128.177221' },
         category: 'Kost',
