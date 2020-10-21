@@ -1,11 +1,21 @@
 import React from "react";
 import { Kost } from '../utils/modals/Kost'
 import { DtArea } from '../utils/modals/Area'
+import { Price } from '../utils/modals/Price'
 
-const sitemapXml = (dataKos, dataArea) => {
+const sitemapXml = (dataKos, dataArea, dataPrice) => {
   let latestPost = 0;
   let itemsXML = "";
   let areasXML = "";
+  let priceXML = "";
+
+  dataPrice.map(price => {
+    const priceURL = `https://tantekos.com/search/price/${price.max_price}`;
+    priceXML += `
+      <url>
+        <loc>${priceURL}</loc>
+      </url>`;
+  });
 
   dataArea.map(area => {
     const areaURL = `https://tantekos.com/area/${area.slug}`;
@@ -48,6 +58,7 @@ const sitemapXml = (dataKos, dataArea) => {
         <priority>1.00</priority>
       </url>
       ${areasXML}
+      ${priceXML}
       ${itemsXML}
     </urlset>`;
 };
@@ -55,7 +66,7 @@ const sitemapXml = (dataKos, dataArea) => {
 class Sitemap extends React.Component {
   static async getInitialProps({ res }) {
     res.setHeader("Content-Type", "text/xml");
-    res.write(sitemapXml(Kost, DtArea));
+    res.write(sitemapXml(Kost, DtArea, Price));
     res.end();
   }
 }
