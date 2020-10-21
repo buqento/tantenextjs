@@ -830,7 +830,7 @@ export const Kost = [
         date_published: '2020-10-21T06:44:15+00:00',
         slug: 'kost-murah-jl-raya-tanah-hitam-awiyo-abepura-kota-jayapura-papua-sewa-bulanan-atau-tahunan',
         title: 'Kost Murah Jl Raya Tanah Hitam Awiyo Abepura Kota Jayapura Papua - Sewa Bulanan Atau Tahunan',
-        description: 'Disewakan rumah kost bulanan atau tahunan, berlokasi di Jl Raya Tanah Hitam Awiyo Abepura Kota Jayapura Papua. Bagi yang berminat dapat menghubungi pengelola',
+        description: 'Disewakan rumah kost bulanan atau tahunan, berlokasi di Jl Raya Tanah Hitam Awiyo Abepura Kota Jayapura Papua. Bagi yang berminat dapat menghubungi pengelola.',
         keywords: 'Kost, Jl. Raya Tanah Hitam, Awiyo, Abepura, Kota Jayapura, Papua',
         images: [
             'JG2Y63O.webpm',
@@ -846,7 +846,7 @@ export const Kost = [
             facebook_url: 'https://www.facebook.com/hasriati.hasriati.754',
             phone: '+6282199662083'
         },
-        facilities: ['Tempat Tidur', 'Lemari', 'Meja dan Kursi', 'AC', 'Kamar Mandi Dalam', 'Parkiran'],
+        facilities: ['Teras', 'Kamar Tidur', 'Ruang Tamu', 'Kamar Mandi', 'Parkiran'],
         start_price: 2500000,
         post_url: 'https://m.facebook.com/groups/185755601762444?view=permalink&id=1267358460268814'
     }
