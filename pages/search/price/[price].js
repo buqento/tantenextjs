@@ -70,7 +70,7 @@ class Detail extends React.Component {
                     <meta property="og:description" content={`Tersedia Kost Dan Kontrakan Murah Harga Mulai ${Currency(price[0].min_price)} - ${Currency(price[0].max_price)}. Informasi Lengkap Dapat Menghubungi Pengelola.`} />
                     <meta property="og:type" content="website" />
                     <meta property="og:url" content={`https://tantekos.com/search/price/${slug}`} />
-                    <meta property="og:image" content="https://cdn.statically.io/img/i.imgur.com/w=300/eT62Hma.webpm" />
+                    <meta property="og:image" content="https://cdn.statically.io/img/i.imgur.com/w=300/i2aQSZ9.webpm" />
                     <meta property="og:image:alt" content={`Kost Dan Kontrakan Murah Harga Mulai ${Currency(price[0].min_price)} - ${Currency(price[0].max_price)}`} />
                     <meta property="og:locale" content="id_ID" />
                     <meta property="og:site_name" content="Tantekos" />

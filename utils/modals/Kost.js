@@ -63,10 +63,10 @@ export const Kost = [
         description: 'Kamar kost berlokasi di Pusat Kota Ambon (lorong Mayang, belakang Apotik Gideon Farma). Tersedia fasilitas AC, televisi, kulkas, lemari, springbed 2 bdn, kursi dan meja. Kamar mandi dan mini kitchen d dlm kamar. Listrik token. Bagi yang berminat dapat menghubungi pengelola.',
         keywords: 'ahusen, sirimau, kota ambon, maluku',
         images: [
-            'MGQNiuC.webpm',
-            '3b4ul2j.webpm',
-            '9n0zU4r.webpm',
-            'WvhUdBK.webpm'
+            'm34PnKU.webpm',
+            'a2lDcKY.webpm',
+            'CMpjidk.webpm',
+            'uDaXfek.webpm'
         ],
         location: { province: 'maluku', title: 'ahusen', lat: '-3.699571', long: '128.183046' },
         category: 'Kost',

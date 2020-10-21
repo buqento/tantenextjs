@@ -2,7 +2,7 @@ import React from 'react'
 import { arrayOf, shape, string } from 'prop-types'
 import NextHead from 'next/head'
 import Link from 'next/link'
-import { Container, Card } from 'react-bootstrap'
+import { Container, Card, Badge } from 'react-bootstrap'
 import Slide from '../components/Slide'
 import FooterDetail from '../components/FooterDetail'
 import ListKos from '../components/ListKos'
@@ -13,6 +13,7 @@ import Currency from '../components/Currency'
 import Firstupper from '../utils/Firstupper'
 import Peta from '../components/Peta'
 import ReactGa from 'react-ga'
+import moment from 'moment';
 
 class Detail extends React.Component {
   static async getInitialProps(ctx) {
@@ -149,6 +150,7 @@ class Detail extends React.Component {
           <Slide imagesData={data[0].images} imageTitle={data[0].title} />
           <Container className="mb-3">
             <div className="pt-3">
+              <Badge variant="secondary">{moment(data[0].date_modified).fromNow()}  </Badge>
               <h1>
                 <Card.Title>{data[0].title}</Card.Title>
               </h1>
