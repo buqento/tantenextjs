@@ -79,13 +79,13 @@ export const Kost = [
         date_modified: '2020-09-17T12:57:15+00:00',
         date_published: '2020-09-17T12:57:15+00:00',
         slug: 'kos-harian-bulanan-seram-bagian-barat-piru',
-        title: 'Kost Harian Bulanan Piru Seram Bagian Barat',
-        description: 'Terima kost harian dan bulanan Desa Kamal, Piru Seram Bagian Barat (dekat Pasar Waisarisa depan Puskesmas Kamal lama). Bebas tempat parkir, Air bersih, keamanan terjamin, lokasi strategis (depan jalan), dekat dengan fasilitas umum seperti sekolah, pasar, dan bank',
+        title: 'Kost Harian Bulanan Murah Dan Nyaman Kamal Piru Seram Bagian Barat - Strategis Depan Jalan Utama',
+        description: 'Terima kost harian dan bulanan murah dan nyaman, di daerah Kamal Piru Seram Bagian Barat (dekat Pasar Waisarisa depan Puskesmas Kamal lama). Bebas tempat parkir, Air bersih, keamanan terjamin, lokasi strategis (depan jalan), dekat dengan fasilitas umum seperti sekolah, pasar, dan bank',
         keywords: 'piru, seram bagian barat, maluku',
         images: [
-            'IEclXWo.webpm',
-            'JOyd5Br.webpm',
-            'nf2RsYH.webpm'
+            'aOMEmjQ.webpm',
+            'IWWQXCs.webpm',
+            'dLANXEB.webpm'
         ],
         location: { province: 'maluku', title: 'piru', lat: '-3.061918', long: '128.196573' },
         category: 'Kost',
@@ -102,12 +102,12 @@ export const Kost = [
         date_modified: '2020-09-18T12:57:15+00:00',
         date_published: '2020-09-18T12:57:15+00:00',
         slug: 'rumah-makan-kontrak-tahunan-laha-kota-ambon',
-        title: 'Rumah Makan Kontrak Tahunan Laha Kota Ambon',
+        title: 'Rumah Makan Kontrak Tahunan Laha Teluk Ambon Kota Ambon Maluku',
         description: 'Dikontrakkan sebuah rumah makan, berlokasi di daerah depan bandar udara Pattimura Laha Kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
         keywords: 'laha, teluk ambon, kota ambon, maluku',
         images: [
-            'uyF2J7P.webpm',
-            '3Z3Y5G0.webpm'
+            'AcV5Ete.webpm',
+            'UEFfO5t.webpm'
         ],
         location: { province: 'maluku', title: 'laha', lat: '-3.703492', long: '128.094226' },
         category: 'Kontrakan',
@@ -823,5 +823,31 @@ export const Kost = [
         facilities: ['Tempat Tidur', 'Lemari', 'Meja dan Kursi', 'AC', 'Kamar Mandi Dalam', 'Parkiran'],
         start_price: 150000,
         post_url: ''
+    },
+    {
+        id: 34,
+        date_modified: '2020-10-21T06:44:15+00:00',
+        date_published: '2020-10-21T06:44:15+00:00',
+        slug: 'kost-murah-jl-raya-tanah-hitam-awiyo-abepura-kota-jayapura-papua-sewa-bulanan-atau-tahunan',
+        title: 'Kost Murah Jl Raya Tanah Hitam Awiyo Abepura Kota Jayapura Papua - Sewa Bulanan Atau Tahunan',
+        description: 'Disewakan rumah kost bulanan atau tahunan, berlokasi di Jl Raya Tanah Hitam Awiyo Abepura Kota Jayapura Papua. Bagi yang berminat dapat menghubungi pengelola',
+        keywords: 'Kost, Jl. Raya Tanah Hitam, Awiyo, Abepura, Kota Jayapura, Papua',
+        images: [
+            'JG2Y63O.webpm',
+            'YLgnNtr.webpm',
+            'dxwGg5g.webpm',
+            'zVONFu0.webpm',
+            'o2GhCpE.webpm',
+            '6qfWe24.webpm'
+        ],
+        location: { province: 'papua', title: 'abepura', lat: '-2.615348', long: '140.674379' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/hasriati.hasriati.754',
+            phone: '+6282199662083'
+        },
+        facilities: ['Tempat Tidur', 'Lemari', 'Meja dan Kursi', 'AC', 'Kamar Mandi Dalam', 'Parkiran'],
+        start_price: 2500000,
+        post_url: 'https://m.facebook.com/groups/185755601762444?view=permalink&id=1267358460268814'
     }
 ]
