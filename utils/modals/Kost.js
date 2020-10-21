@@ -4,7 +4,7 @@ export const Kost = [
         date_modified: '2020-09-14T12:57:15+00:00',
         date_published: '2020-09-14T12:57:15+00:00',
         slug: 'kos-harian-bulanan-nyaman-strategis-almira-homestay',
-        title: 'Kost Murah Harian Bulanan Silale Nusaniwe Kota Ambon Almira Homestay',
+        title: 'Kost Murah Harian Bulanan Nyaman Dan Strategis Silale Nusaniwe Kota Ambon - Almira Homestay',
         description: 'Tersedia kost murah, nyaman dan strategis. Biaya sewa dan fasilitas bervariasi mulai dari harian (Rp100.000) dan bulanan (Rp700.000). Bebas biaya listrik dan air bersih. Berlokasi di Silale Kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
         keywords: 'Silale, Nusaniwe, Kota Ambon, Maluku',
         images: [
