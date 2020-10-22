@@ -3,23 +3,16 @@ import { arrayOf, shape, string } from 'prop-types'
 import Link from 'next/link'
 import { Card, Container, ListGroup, ListGroupItem } from 'react-bootstrap'
 import Currency from './Currency'
-import Pagination from "react-js-pagination";
 
 class ListKos extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { activePage: 1, countPerPage: 10 };
-    }
-    handlePageChange(pageNumber) { this.setState({ activePage: pageNumber }); }
     render() {
         const { data, category } = this.props
-        const { activePage, countPerPage } = this.state
         let listData = [];
-        category !== null ? listData = data.filter(i => i.category === category) : listData = data
-        let lastId = 10;
-        let firstId = 1;
-        lastId = activePage * countPerPage
-        firstId = lastId - countPerPage + 1
+        if (category !== null) {
+            listData = data.filter(i => i.category === category)
+        } else {
+            listData = data
+        }
         return (
             <div className="container pb-3">
                 <div className="row">
@@ -27,21 +20,19 @@ class ListKos extends Component {
                         data.length > 0 ?
                             <>
                                 {
-                                    listData
-                                        .filter(item => item.id >= firstId && item.id <= lastId)
-                                        .map((item, index) =>
-                                            <div key={index} className="col-6 pt-3">
-                                                <Link href={`https://tantekos.com/${item.slug}`}>
-                                                    <Card variant="top">
-                                                        <Card.Img variant="top" src={`https://cdn.statically.io/img/i.imgur.com/w=155/${item.images[0]}`} />
-                                                        <ListGroup className="list-group-flush text-center">
-                                                            <ListGroupItem variant="secondary font-weight-bold">{Currency(item.start_price)}</ListGroupItem>
-                                                        </ListGroup>
-                                                        <div className="m-2 text-center kost-title">{item.title}</div>
-                                                    </Card>
-                                                </Link>
-                                            </div>
-                                        )
+                                    listData.map((item, index) =>
+                                        <div key={index} className="col-6 pt-3">
+                                            <Link href={`https://tantekos.com/${item.slug}`}>
+                                                <Card variant="top">
+                                                    <Card.Img variant="top" src={`https://cdn.statically.io/img/i.imgur.com/w=155/${item.images[0]}`} />
+                                                    <ListGroup className="list-group-flush text-center">
+                                                        <ListGroupItem variant="secondary font-weight-bold">{Currency(item.start_price)}</ListGroupItem>
+                                                    </ListGroup>
+                                                    <div className="m-2 text-center kost-title">{item.title}</div>
+                                                </Card>
+                                            </Link>
+                                        </div>
+                                    )
                                 }
                             </>
                             :
@@ -52,15 +43,6 @@ class ListKos extends Component {
                                 <Link href="/">Kembali ke Beranda</Link>
                             </Container>
                     }
-                </div>
-                <div className="d-flex justify-content-center mt-3">
-                    <Pagination
-                        activePage={this.state.activePage}
-                        itemsCountPerPage={countPerPage}
-                        totalItemsCount={data.length}
-                        pageRangeDisplayed={5}
-                        onChange={this.handlePageChange.bind(this)}
-                    />
                 </div>
             </div>
         )

@@ -2,7 +2,7 @@ import React from 'react'
 import { string } from 'prop-types'
 import { Kost } from '../../../utils/modals/Kost'
 import HeadPage from '../../../components/HeadPage'
-import ListKos from '../../../components/ListKos'
+import ListKosAll from '../../../components/ListKosAll'
 
 class Detail extends React.Component {
     static async getInitialProps(ctx) {
@@ -16,7 +16,7 @@ class Detail extends React.Component {
             <>                
                 <div className="main-layout">
                     <HeadPage title={`Semua ${slug}`} />
-                    <ListKos data={data} />
+                    <ListKosAll data={data} />
                 </div>
             </>
         )

@@ -14,7 +14,6 @@ class Detail extends React.Component {
     render() {
         const { slug } = this.props;
         const price = Price.filter(item => item.max_price === parseInt(slug))
-        console.log(price)
         const data = Kost.filter(item => (item.start_price >= price[0].min_price && item.start_price <= slug))
 
         const structureTypeBreadcrumbList =
