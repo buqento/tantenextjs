@@ -853,5 +853,31 @@ export const Kost = [
         facilities: ['Teras', 'Kamar Tidur', 'Ruang Tamu', 'Kamar Mandi', 'Parkiran'],
         start_price: 2500000,
         post_url: 'https://m.facebook.com/groups/185755601762444?view=permalink&id=1267358460268814'
+    },
+    {
+        id: 35,
+        date_modified: '2020-10-22T07:10:15+00:00',
+        date_published: '2020-10-22T07:10:15+00:00',
+        slug: 'kost-murah-bulanan-jl-argapura-argapura-jayapura-selatan-kota-jayapura-papua-lingkungan-nyaman-dan-fasilitas-lengkap',
+        title: 'Kost Murah Bulanan Jl Argapura Argapura Jayapura Selatan Kota Jayapura Papua - Lingkungan Nyaman Dan Fasilitas Lengkap',
+        description: 'Disewakan rumah kost bulanan, berlokasi di Jl Argapura Argapura Jayapura Selatan Kota Jayapura Papua (samping kantor Pelni). Gratis air bersih dan parkiran luas. Bagi yang berminat dapat menghubungi pengelola (+6281344486099).',
+        keywords: 'Kost, Jl. Argapura, Argapura, Jayapura Selatan, Kota Jayapura, Papua',
+        images: [
+            'v3l8sl2.webpm',
+            'w9oCsML.webpm',
+            'SdqIs5Z.webpm',
+            'tD54Qmb.webpm',
+            '95lFUs3.webpm',
+            'dz2M9dJ.webpm'
+        ],
+        location: { province: 'papua', title: 'jayapura-selatan', lat: '-2.555164', long: '140.713266' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/groups/566421207451383/user/100001261883571/',
+            phone: '+6285231115599'
+        },
+        facilities: ['AC', 'Springbed', 'Lemari', 'Jaringan Tv Kabel', 'Listrik Token', 'Dapur Umum', 'Parkir Mobil & Motor', 'Wc Umum', 'Free Air PDAM'],
+        start_price: 1000000,
+        post_url: ''
     }
 ]
