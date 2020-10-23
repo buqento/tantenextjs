@@ -3,6 +3,8 @@ import HeadPage from '../components/HeadPage'
 import { Container } from 'react-bootstrap'
 
 export default function Index() {
+
+  console.log(window.location.href)
   return (
     <div className="main-layout">
 

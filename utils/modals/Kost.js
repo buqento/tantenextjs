@@ -879,5 +879,29 @@ export const Kost = [
         facilities: ['AC', 'Springbed', 'Lemari', 'Jaringan Tv Kabel', 'Listrik Token', 'Dapur Umum', 'Parkir Mobil & Motor', 'Wc Umum', 'Free Air PDAM'],
         start_price: 1000000,
         post_url: ''
+    },
+    {
+        id: 36,
+        date_modified: '2020-10-23T07:10:15+00:00',
+        date_published: '2020-10-23T07:10:15+00:00',
+        slug: 'kost-murah-eksklusif-strategis-di-pusat-kota-abepura-kota-jayapura-papua-reddoorz-akavi-homestay',
+        title: 'Kost Murah Eksklusif Strategis Di Pusat Kota Abepura Kota Jayapura Papua - Reddoorz Akavi Homestay',
+        description: 'Terima kost eksklusif berlokasi di pusat Kota Abepura Kota Jayapura Papua, strategis menjangkau semua lokasi perkantoran, mall, perbankan dll. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Jl. Raya Tanah Hitam, Awiyo, Abepura, Kota Jayapura, Papua',
+        images: [
+            '6xh69zQ.webpm',
+            'JWlRD77.webpm',
+            'fnaqHTk.webpm',
+            'ECV31Nn.webpm'
+        ],
+        location: { province: 'papua', title: 'abepura', lat: '-2.615348', long: '140.674379' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/profile.php?id=100005614756116',
+            phone: '+6285240000220'
+        },
+        facilities: ['Listrik', 'PAM', 'Tempat Parkir', 'Free WIFI', 'Sprei & Handuk (Setiap Hari)', 'AC', 'TV Flat Satelit', 'Kamar Mandi Dalam (Pakai Shower)', 'sikat Gigi', 'Sisir', 'Pasta Gigi', 'Shampo'],
+        start_price: 300000,
+        post_url: 'https://www.facebook.com/commerce/listing/1732383290260491/?media_id=0&ref=share_attachment'
     }
 ]
