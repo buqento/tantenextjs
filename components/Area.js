@@ -19,7 +19,7 @@ class Area extends Component {
                                 //     return 0;
                                 // })
                                 .sort( () => .5 - Math.random() )
-                                .slice(0, 5)
+                                .slice(0, 10)
                                 .map((item, index) => <AreaItem item={item} key={index} />)
                         }
                     </div>

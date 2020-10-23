@@ -59,7 +59,7 @@ export const Kost = [
         date_modified: '2020-09-16T12:57:15+00:00',
         date_published: '2020-09-16T12:57:15+00:00',
         slug: 'rumah-kos-lorong-mayang-pusat-kota-ambon',
-        title: 'Rumah Kost Lorong Mayang Ahusen Sirimau Kota Ambon',
+        title: 'Kost Murah Fasilitas Lengkap Area Lorong Mayang Ahusen Sirimau Kota Ambon - Belakang Apotik Gideon',
         description: 'Kamar kost berlokasi di Pusat Kota Ambon (lorong Mayang, belakang Apotik Gideon Farma). Tersedia fasilitas AC, televisi, kulkas, lemari, springbed 2 bdn, kursi dan meja. Kamar mandi dan mini kitchen d dlm kamar. Listrik token. Bagi yang berminat dapat menghubungi pengelola.',
         keywords: 'ahusen, sirimau, kota ambon, maluku',
         images: [
@@ -734,7 +734,7 @@ export const Kost = [
         date_published: '2020-10-18T15:44:15+00:00',
         slug: 'kost-murah-beringin-entrop-jayapura-selatan-kota-jayapura-belakang-sma-negeri-4-jayapura',
         title: 'Tersedia Kost Murah Jl Beringin Entrop Jayapura Selatan Kota Jayapura - Belakang SMA Negeri 4 Jayapura',
-        description: 'Tersedia kost murah Jl Beringin Entrop Jayapura Selatan Kota Jayapura (Belakang SMA Negeri 4 Jayapura). Air lancar dan bebas banjir. Bagi yang berminat dapat menghubungi pengelola',
+        description: 'Tersedia kost murah Jl Beringin Entrop Jayapura Selatan Kota Jayapura (Belakang SMA Negeri 4 Jayapura). Air lancar dan bebas banjir. Bagi yang berminat dapat menghubungi pengelola.',
         keywords: 'Jl. Beringin, Entrop, Jayapura Selatan, Kota Jayapura, Papua',
         images: [
             'OIZx8du.webpm',
@@ -903,5 +903,33 @@ export const Kost = [
         facilities: ['Listrik', 'PAM', 'Tempat Parkir', 'Free WIFI', 'Sprei & Handuk (Setiap Hari)', 'AC', 'TV Flat Satelit', 'Kamar Mandi Dalam (Pakai Shower)', 'sikat Gigi', 'Sisir', 'Pasta Gigi', 'Shampo'],
         start_price: 300000,
         post_url: 'https://www.facebook.com/commerce/listing/1732383290260491/?media_id=0&ref=share_attachment'
+    },
+    {
+        id: 37,
+        date_modified: '2020-10-24T05:44:15+00:00',
+        date_published: '2020-10-24T05:44:15+00:00',
+        slug: 'kost-murah-fasilitas-lengkap-bayar-tahunan-area-jaya-asri-entrop-jayapura-selatan-kota-jayapura-rekomendasi-bagi-yang-belum-menikah',
+        title: 'Kost Murah Fasilitas Lengkap Bayar Tahunan Area Jaya Asri Entrop Jayapura Selatan Kota Jayapura - Rekomendasi Bagi Yang Belum Menikah',
+        description: 'Tersedia kost murah bayar tahunan area Jaya Asri Entrop Jayapura Selatan Kota Jayapura. Kost 3 lantai dengan fasilitas lengkap, cocok untuk karyawan/pegawai laki-laki yang belum menikah. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Jl Jaya Asri, Entrop, Jayapura Selatan, Kota Jayapura, Papua',
+        images: [
+            'O9jSoBP.webpm',
+            '6X6vPyS.webpm',
+            'cJyHP2W.webpm',
+            'ANoQ1SW.webpm',
+            'v0SuIOM.webpm',
+            'Np1qMeB.webpm',
+            '3gyYba6.webpm',
+            'IysAZNt.webpm'
+        ],
+        location: { province: 'papua', title: 'jayapura-selatan', lat: '-2.568657', long: '140.689252' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/groups/566421207451383/user/100050692100137/',
+            phone: ''
+        },
+        facilities: ['AC', 'Tabung Gas 5Kg',  'Wifi', 'Tv Kabel', 'Air Bersih (Lancar 24/7)', 'Parkiran Motor'],
+        start_price: 36000000,
+        post_url: ''
     }
 ]
