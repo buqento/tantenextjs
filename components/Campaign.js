@@ -14,7 +14,8 @@ class Campaign extends Component {
                         {
                             Kost
                                 .filter(item => item.category === filter)
-                                .sort(function(a, b){return b.id - a.id})
+                                // .sort(function(a, b){return b.id - a.id})
+                                .sort( () => .5 - Math.random() )
                                 .slice(0, 5)
                                 .map((item, index) => <CampaignItem key={index} item={item} />
                                 )
