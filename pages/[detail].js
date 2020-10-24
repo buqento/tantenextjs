@@ -110,12 +110,8 @@ class Detail extends React.Component {
 
     return <>
       {notFound && <>
-        <div className="main-layout">
-          <HeadPage title='Tantekos' />
-          <Container className="mt-3">
-            <div>Ups! Pencarian tidak ada hasil.</div>
-            <Link href="/">Kembali ke Beranda</Link>
-          </Container>
+        <div className="container-center text-center">
+          <p>404 | Halaman Tidak Ditemukan</p>
         </div>
       </>}
       {

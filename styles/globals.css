@@ -124,3 +124,13 @@ ul.pagination li a.active {
 }
 
 /* Paggination */
+
+.container-center {
+  line-height: 100vh;
+  height: 100vh;
+}
+
+.container-center p {
+  display: inline-block;
+  vertical-align: middle;
+}

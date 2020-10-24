@@ -13,9 +13,14 @@ class Detail extends React.Component {
     }
     render() {
         const { slug } = this.props;
-        const price = Price.filter(item => item.max_price === parseInt(slug))
-        const data = Kost.filter(item => (item.start_price >= price[0].min_price && item.start_price <= slug))
-
+        let data = null
+        let maxPrice = parseInt(slug)
+        const price = Price.filter(item => item.max_price === maxPrice)
+        if (price.length > 0) {
+            data = Kost.filter(item => (item.start_price >= price[0].min_price && item.start_price <= maxPrice))
+        } else {
+            data = Kost.filter(item => (item.start_price >= 0 && item.start_price <= maxPrice))
+        }
         const structureTypeBreadcrumbList =
             `{
                 "@context": "https://schema.org",
@@ -57,20 +62,20 @@ class Detail extends React.Component {
         return (
             <>
                 <NextHead>
-                    <title>Kost Dan Kontrakan Murah Harga Mulai {Currency(price[0].min_price)} - {Currency(price[0].max_price)}</title>
+                    <title>Kost Dan Kontrakan Murah Harga Mulai {data && price[0] && Currency(price[0].min_price)} - {data && price[0] && Currency(price[0].max_price)}</title>
                     <meta name="googlebot" content="index, follow" />
                     <meta name="robot" content="index, follow" />
                     <meta name="application-name" content="Tantekos" />
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                    <meta name="title" content={`Kost Dan Kontrakan Murah Harga Mulai ${Currency(price[0].min_price)} - ${Currency(price[0].max_price)}`} />
-                    <meta name="description" content={`Tersedia Kost Dan Kontrakan Murah Harga Mulai ${Currency(price[0].min_price)} - ${Currency(price[0].max_price)}. Informasi Lengkap Dapat Menghubungi Pengelola.`} />
+                    <meta name="title" content={`Kost Dan Kontrakan Murah Harga Mulai ${data && price[0] && Currency(price[0].min_price)} - ${data && price[0] && Currency(price[0].max_price)}`} />
+                    <meta name="description" content={`Tersedia Kost Dan Kontrakan Murah Harga Mulai ${data && price[0] && Currency(price[0].min_price)} - ${data && price[0] && Currency(price[0].max_price)}. Informasi Lengkap Dapat Menghubungi Pengelola.`} />
                     <meta name="keywords" content="tantekos, Info Kost, Cari kost, kost, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
-                    <meta property="og:title" content={`Kost Dan Kontrakan Murah Harga Mulai ${Currency(price[0].min_price)} - ${Currency(price[0].max_price)}`} />
-                    <meta property="og:description" content={`Tersedia Kost Dan Kontrakan Murah Harga Mulai ${Currency(price[0].min_price)} - ${Currency(price[0].max_price)}. Informasi Lengkap Dapat Menghubungi Pengelola.`} />
+                    <meta property="og:title" content={`Kost Dan Kontrakan Murah Harga Mulai ${data && price[0] && Currency(price[0].min_price)} - ${data && price[0] && Currency(price[0].max_price)}`} />
+                    <meta property="og:description" content={`Tersedia Kost Dan Kontrakan Murah Harga Mulai ${data && price[0] && Currency(price[0].min_price)} - ${data && price[0] && Currency(price[0].max_price)}. Informasi Lengkap Dapat Menghubungi Pengelola.`} />
                     <meta property="og:type" content="website" />
                     <meta property="og:url" content={`https://tantekos.com/search/price/${slug}`} />
                     <meta property="og:image" content="https://cdn.statically.io/img/i.imgur.com/w=300/i2aQSZ9.webpm" />
-                    <meta property="og:image:alt" content={`Kost Dan Kontrakan Murah Harga Mulai ${Currency(price[0].min_price)} - ${Currency(price[0].max_price)}`} />
+                    <meta property="og:image:alt" content={`Kost Dan Kontrakan Murah Harga Mulai ${data && price[0] && Currency(price[0].min_price)} - ${data && price[0] && Currency(price[0].max_price)}`} />
                     <meta property="og:locale" content="id_ID" />
                     <meta property="og:site_name" content="Tantekos" />
                     <meta name="keyphrases" content="Info Kost, Cari Kost, Sewa Kost, Kost Bebas, Kost Murah, Kost pasutri, Aplikasi Kost, Aplikasi Pencarian Kost, Aplikasi Info Kost, APlikasi Cari Kost, Kost, Tantekost, Tantekosapp, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
@@ -79,8 +84,8 @@ class Detail extends React.Component {
                     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureAreaPage) }} />
                 </NextHead>
                 <div className="main-layout">
-                    <HeadPage title={`${Currency(price[0].min_price)} - ${Currency(parseInt(slug))}`} />
-                    <ListKos data={data} />
+                    <HeadPage title={`${data && price[0] && Currency(price[0].min_price) || 0} - ${data && price[0] && Currency(parseInt(slug)) || Currency(parseInt(slug))}`} />
+                    <ListKos data={data || []} />
                 </div>
             </>
         )

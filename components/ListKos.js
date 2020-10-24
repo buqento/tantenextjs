@@ -36,11 +36,10 @@ class ListKos extends Component {
                                 }
                             </>
                             :
-                            <Container className="mt-3">
-                                <div>
-                                    Ups! Pencarian tidak ada hasil.
-                            </div>
-                                <Link href="/">Kembali ke Beranda</Link>
+                            <Container>
+                                <div className="container-center text-center">
+                                    <Link href="/">Kembali ke Beranda</Link>
+                                </div>
                             </Container>
                     }
                 </div>
