@@ -173,7 +173,7 @@ export const Kost = [
             phone: '+6282331324783'
         },
         facilities: ['Kamar tidur', 'Ruang tamu', 'Dapur', 'Kamar mandi'],
-        start_price: 0,
+        start_price: 12000000,
         post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/3223648417655564/'
     },
     {

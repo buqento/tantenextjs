@@ -47,8 +47,11 @@ class AreaList extends React.Component {
                                 <div key={index} className="col-6 pt-3">
                                     <Link href={`area/${item.slug}`}>
                                         <Card variant="top">
-                                            <Card.Img variant="top" src={`https://cdn.statically.io/img/i.imgur.com/w=155/${item.image}`} alt="item.title" />
-                                            <div className="m-2 text-center text-uppercase">{item.title}</div>
+                                            <Card.Img variant="top" src={`https://cdn.statically.io/img/i.imgur.com/w=155/${item.image}`} alt={`Kost Dan Kontrakan Murah Di ${item.title} ${item.province}`} />
+                                            <div className="mt-2 mr-2 mb-0 ml-2 text-center">{item.title}</div>
+                                            <div className="mt-0 mr-2 mb-2 ml-2 text-center text-uppercase text-secondary">
+                                                <small>{item.province}</small>
+                                            </div>
                                         </Card>
                                     </Link>
                                 </div>

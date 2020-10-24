@@ -16,7 +16,7 @@ class CategoryPrice extends Component {
                                 <div key={index}>
                                     <Link href={`search/price/${item.max_price}`}>
                                         <Badge pill variant="secondary" className="mr-3 pt-2 pl-3 pr-3">
-                                            <h5>{Currency(item.max_price)}</h5>
+                                            <h5>{Currency(item.max_price, false)}</h5>
                                         </Badge>
                                     </Link>
                                 </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import { arrayOf, shape, string } from 'prop-types'
 import NextHead from 'next/head'
 import Link from 'next/link'
-import { Container, Card, Badge } from 'react-bootstrap'
+import { Container, Card } from 'react-bootstrap'
 import Slide from '../components/Slide'
 import FooterDetail from '../components/FooterDetail'
 import ListKos from '../components/ListKos'
@@ -150,7 +150,7 @@ class Detail extends React.Component {
           <Slide imagesData={data[0].images} imageTitle={data[0].title} />
           <Container className="mb-3">
             <div className="pt-3">
-              <Badge variant="secondary">{moment(data[0].date_modified).fromNow()}  </Badge>
+              <small>{moment(data[0].date_modified).fromNow()}</small>
               <h1>
                 <Card.Title>{data[0].title}</Card.Title>
               </h1>
@@ -170,7 +170,7 @@ class Detail extends React.Component {
                 data[0].start_price > 0 &&
                 <div>
                   <p className={styles.headingtwo}>Harga {data[0].category} Mulai</p>
-                  {Currency(data[0].start_price)}
+                  <span>{Currency(data[0].start_price)}</span>
                 </div>
               }
               <div className="border-top mt-3">

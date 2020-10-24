@@ -14,13 +14,10 @@ class HeadPage extends Component {
         )
     }
 }
-
 HeadPage.propTypes = {
     title: string
 }
-
 HeadPage.defaultProps = {
     title: 'Detail'
 }
-
 export default HeadPage;

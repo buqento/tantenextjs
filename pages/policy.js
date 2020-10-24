@@ -8,7 +8,7 @@ export default function Index() {
 
       <HeadPage title="Kebijakan Privasi" />
 
-      <Container className="mt-3">
+      <Container className="mt-3 text-center">
 
         <h1>Kebijakan Privasi</h1>
 

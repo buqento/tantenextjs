@@ -16,7 +16,7 @@ export default function Index() {
       <CategoryPrice />
 
       <div className="m-3 mb-n2">
-        <span className="text-uppercase text-secondary font-weight-bold">Area</span>
+        <span className="text-uppercase text-secondary font-weight-bold">Area Hunian</span>
         <span className="float-right"><a href="/area">Lihat Semua</a></span>
       </div>
       <div style={{ borderBottom: '8px solid #f5f5f5' }}>
