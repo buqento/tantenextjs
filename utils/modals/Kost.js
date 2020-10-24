@@ -127,7 +127,7 @@ export const Kost = [
         id: 6,
         date_modified: '2020-09-19T12:57:15+00:00',
         date_published: '2020-09-19T12:57:15+00:00',
-        slug: 'kos-vivi-silale',
+        slug: 'kost-murah-harian-mingguan-bulanan-silale-nusaniwe-kota-ambon-kost-vivi-silale',
         title: 'Kost Murah Harian Mingguan Bulanan Silale Nusaniwe Kota Ambon - Kost Vivi',
         description: 'Tersedia kamar kost harian mingguan bulanan. Tiap kamar ada jemuran, ada tempat parkir motor & mobil. Air sumur bor. Bagi yang berminat dapat menghubungi pengelola (IG @vvrimony)',
         keywords: 'silale, nusaniwe, kota ambon, maluku',

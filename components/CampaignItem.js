@@ -13,7 +13,7 @@ class AreaItem extends Component {
         return (
             <Link href={item.slug}>
                 <Card style={{ width: '140px' }} variant="top" className="mr-3">
-                    <Card.Img variant="top" src={`https://cdn.statically.io/img/i.imgur.com/w=138/${item.images[0]}`} />
+                    <Card.Img variant="top" src={`https://cdn.statically.io/img/i.imgur.com/w=138/${item.images[0]}`} alt="item.title" />
                     <div className="pt-2 pr-2 pl-2 text-center font-weight-bold">{Currency(item.start_price)}</div>
                     <div className="pb-2 text-center text-secondary"><small>{locationTitle}</small></div>
                 </Card>

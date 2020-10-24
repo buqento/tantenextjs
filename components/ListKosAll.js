@@ -33,7 +33,7 @@ class ListKosAll extends Component {
                                             <div key={index} className="col-6 pt-3">
                                                 <Link href={`https://tantekos.com/${item.slug}`}>
                                                     <Card variant="top">
-                                                        <Card.Img variant="top" src={`https://cdn.statically.io/img/i.imgur.com/w=155/${item.images[0]}`} />
+                                                        <Card.Img variant="top" src={`https://cdn.statically.io/img/i.imgur.com/w=155/${item.images[0]}`} alt="item.title" />
                                                         <ListGroup className="list-group-flush text-center">
                                                             <ListGroupItem variant="secondary font-weight-bold">{Currency(item.start_price)}</ListGroupItem>
                                                         </ListGroup>
