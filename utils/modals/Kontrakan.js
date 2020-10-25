@@ -274,5 +274,33 @@ export const Kontrakan = [
         facilities: ['2 Kamar Tidur', '1 Kamar Mandi'],
         start_price: 3000000,
         post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/3235544559799283/'
+    },
+    {
+        id: 12,
+        date_modified: '2020-10-26T05:57:10+00:00',
+        date_published: '2020-10-26T05:57:10+00:00',
+        slug: 'rumah-kontrak-murah-bulanan-dan-tahunan-di-jalan-yahim-dobonsolo-sentani-jayapura-papua-rumah-type-36-btn-graha-mas-permai',
+        title: 'Rumah Kontrak Murah Bulanan Dan Tahunan Di Jalan Yahim Dobonsolo Sentani Jayapura Papua - Rumah Type 36 BTN Graha Mas Permai',
+        description: 'Tersedia rumah kontrakan bulanan dan tahunan berlokasi di Jl Yahim Dobonsolo Sentani Jayapura Papua (BTN Graha Mas Permai). Fasilitas lengkap dan berlokasi di daerah bebas banjir. Sewa bulanan minimal per tiga bulan. Bagi yang berminat dapat menghubungi pemilik.',
+        keywords: 'Kontrakan, Jl. Yahim, Dobonsolo, Sentani, Jayapura, Papua',
+        images: [
+            'xroVcg8.webpm',
+            'sLt5LoP.webpm',
+            'u1xRMXb.webpm',
+            '7zwMzVY.webpm',
+            'kTxpb3o.webpm',
+            '0xAAwDp.webpm',
+            'lC5se66.webpm',
+            'H3zhilk.webpm'
+        ],
+        location: { province: 'papua', title: 'sentani', lat: '-2.576834', long: '140.506950' },
+        category: 'Kontrakan',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/groups/631657273666514/user/100000301038419/',
+            phone: '+6285244866128'
+        },
+        facilities: ['2 Kamar Tidur', 'Lemari Pakaian', 'Ruang Tamu (Sofa Rotan)', 'Rak Tv (Tv 40")', 'Kamar Mandi', 'Sumur Bor', 'Dapur', 'Parkiran Mobil & Motor', 'Pagar Teralis Keliling'],
+        start_price: 1500000,
+        post_url: 'https://www.facebook.com/commerce/listing/660917214597258'
     }
 ]

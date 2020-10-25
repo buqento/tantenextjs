@@ -146,10 +146,8 @@ class Detail extends React.Component {
           <Slide imagesData={data[0].images} imageTitle={data[0].title} />
           <Container className="mb-3">
             <div className="pt-3">
-              <small>{moment(data[0].date_modified).fromNow()}</small>
-              <h1>
-                <Card.Title>{data[0].title}</Card.Title>
-              </h1>
+              <small className="text-secondary">{moment(data[0].date_modified).fromNow()}</small>
+              <h1 className="heading">{data[0].title}</h1>
               <div className="pt-1">
                 <p className={styles.headingtwo}>Deskripsi {data[0].category}</p>
                 {data[0].description}
