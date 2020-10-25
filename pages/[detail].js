@@ -1,7 +1,6 @@
 import React from 'react'
 import { arrayOf, shape, string } from 'prop-types'
 import NextHead from 'next/head'
-import Link from 'next/link'
 import { Container, Card } from 'react-bootstrap'
 import Slide from '../components/Slide'
 import FooterDetail from '../components/FooterDetail'
@@ -9,6 +8,7 @@ import ListKos from '../components/ListKos'
 import HeadPage from '../components/HeadPage'
 import styles from '../styles/Home.module.css'
 import { Kost } from '../utils/modals/Kost'
+import { Kontrakan } from '../utils/modals/Kontrakan'
 import Currency from '../components/Currency'
 import Firstupper from '../utils/Firstupper'
 import Peta from '../components/Peta'
@@ -35,12 +35,12 @@ class Detail extends React.Component {
   render() {
     const { slug } = this.props;
     let notFound = false;
-    const data = Kost.filter(item => item.slug === slug)
+    let data = Kost.filter(item => item.slug === slug)
+    if(data.length < 1){data = Kontrakan.filter(item => item.slug === slug)}
     if (!data[0]) notFound = true;
     const otherItems = Kost.filter(item => item.slug !== slug)
     let locationTitle = "";
     data[0] && data[0].location.title.split("-").map(index => locationTitle += Firstupper(index) + " ")
-
     const structureTypeBreadcrumbList =
       `{
         "@context": "https://schema.org",

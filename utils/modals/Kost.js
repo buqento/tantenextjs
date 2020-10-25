@@ -31,31 +31,6 @@ export const Kost = [
     },
     {
         id: 2,
-        date_modified: '2020-09-15T12:57:15+00:00',
-        date_published: '2020-09-15T12:57:15+00:00',
-        slug: 'rumah-kontrak-tahunan-suli-atas',
-        title: 'Rumah Kontrak Tahunan Suli Atas Salahutu Maluku Tengah',
-        description: 'Dikontrakkan sebuah rumah di daerah Suli Atas Salahutu Maluku Tengah. Fasilitas yang disediakan yaitu 2 kamar tidur, kamar mandi, dapur, ruang tamu, ruang keluarga, teras, garasi mobil. Bagi yang berminat dapat menghubungi pengelola.',
-        keywords: 'suli, salahutu, maluku tengah, maluku',
-        images: [
-            '0utQPHq.webpm',
-            'L4OSPWG.webpm',
-            'WUUNk48.webpm',
-            'rMMEKS5.webpm',
-            'JhcE4Bo.webpm'
-        ],
-        location: { province: 'maluku', title: 'suli', lat: '-3.619747', long: '128.298092' },
-        category: 'Kontrakan',
-        contact_us: {
-            facebook_url: 'https://www.facebook.com/Dedox002',
-            phone: ''
-        },
-        facilities: ['Kamar mandi', 'Dapur', 'Ruang tamu', 'Ruang keluarga', 'Teras', 'Garasi mobil', 'Listrik meteran (pulsa)'],
-        start_price: 0,
-        post_url: ''
-    },
-    {
-        id: 3,
         date_modified: '2020-09-16T12:57:15+00:00',
         date_published: '2020-09-16T12:57:15+00:00',
         slug: 'rumah-kos-lorong-mayang-pusat-kota-ambon',
@@ -79,7 +54,7 @@ export const Kost = [
         post_url: 'https://www.facebook.com/groups/330390743737021/permalink/3134649166644484/'
     },
     {
-        id: 4,
+        id: 3,
         date_modified: '2020-09-17T12:57:15+00:00',
         date_published: '2020-09-17T12:57:15+00:00',
         slug: 'kos-harian-bulanan-seram-bagian-barat-piru',
@@ -102,29 +77,7 @@ export const Kost = [
         post_url: ''
     },
     {
-        id: 5,
-        date_modified: '2020-09-18T12:57:15+00:00',
-        date_published: '2020-09-18T12:57:15+00:00',
-        slug: 'rumah-makan-kontrak-tahunan-laha-kota-ambon',
-        title: 'Rumah Makan Kontrak Tahunan Laha Teluk Ambon Kota Ambon Maluku',
-        description: 'Dikontrakkan sebuah rumah makan, berlokasi di daerah depan bandar udara Pattimura Laha Kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
-        keywords: 'laha, teluk ambon, kota ambon, maluku',
-        images: [
-            'AcV5Ete.webpm',
-            'UEFfO5t.webpm'
-        ],
-        location: { province: 'maluku', title: 'laha', lat: '-3.703492', long: '128.094226' },
-        category: 'Kontrakan',
-        contact_us: {
-            facebook_url: 'https://www.facebook.com/zhul.putra.148',
-            phone: '+6285256593431'
-        },
-        facilities: ['Parkiran'],
-        start_price: 0,
-        post_url: ''
-    },
-    {
-        id: 6,
+        id: 4,
         date_modified: '2020-09-19T12:57:15+00:00',
         date_published: '2020-09-19T12:57:15+00:00',
         slug: 'kost-murah-harian-mingguan-bulanan-silale-nusaniwe-kota-ambon-kost-vivi-silale',
@@ -149,35 +102,7 @@ export const Kost = [
         post_url: 'https://m.facebook.com/marketplace/item/278742183320768/'
     },
     {
-        id: 7,
-        date_modified: '2020-09-20T12:57:15+00:00',
-        date_published: '2020-09-20T12:57:15+00:00',
-        slug: 'rumah-kontrak-kampung-jawa-kapaha-ambon',
-        title: 'Rumah Kontrak Tahunan Kampung Jawa Kapaha Pandan Kasturi Kota Ambon',
-        description: 'Dikontrakan sebuah rumah Kampung Jawa Kapaha Pandan Kasturi Kota Ambon. Bagi yang berminat dapat menghubungi pemilik.',
-        keywords: 'kapaha, pandan kasturi, kota ambon, maluku',
-        images: [
-            '4g4Lbyu.webpm',
-            'k5lIboq.webpm',
-            '1Xf4l6P.webpm',
-            'OoyUSTr.webpm',
-            'jLrc8B5.webpm',
-            'OrnqFMU.webpm',
-            'ELrzE90.webpm',
-            'EKxK1f3.webpm'
-        ],
-        location: { province: 'maluku', title: 'pandan-kasturi', lat: '-3.677343', long: '128.195243' },
-        category: 'Kontrakan',
-        contact_us: {
-            facebook_url: 'https://www.facebook.com/profile.php?id=100039966772432',
-            phone: '+6282331324783'
-        },
-        facilities: ['Kamar tidur', 'Ruang tamu', 'Dapur', 'Kamar mandi'],
-        start_price: 12000000,
-        post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/3223648417655564/'
-    },
-    {
-        id: 8,
+        id: 5,
         date_modified: '2020-09-21T12:57:15+00:00',
         date_published: '2020-09-21T12:57:15+00:00',
         slug: 'kos-murah-nyaman-strategis-jalan-baru-kota-ambon',
@@ -200,60 +125,7 @@ export const Kost = [
         post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/3309832139037191/'
     },
     {
-        id: 9,
-        date_modified: '2020-09-22T12:57:15+00:00',
-        date_published: '2020-09-22T12:57:15+00:00',
-        slug: 'kontrakan-tahunan-nyaman-bersih-strategis-jalan-baru-kota-ambon-belakang-masjid-nurul-huda',
-        title: 'Kontrakan Tahunan Nyaman Bersih Strategis Jalan Baru Honipopu Sirimau Kota Ambon - Belakang Masjid Nurul Huda',
-        description: 'Tersedia rumah kontrak tahunan murah nyaman dan strategis Jalan Baru Honipopu Sirimau kota Ambon (3 Lantai). Dari Mesjid Al Fatah masuk lorong di belakang Masjid Nurul Huda. Bagi yang berminat dapat menghubungi pengelola.',
-        keywords: 'jalan baru, honipopu, sirimau, kota ambon, maluku',
-        images: [
-            '20XrnCI.webpm',
-            'P8MvbqL.webpm',
-            'hzCOAzl.webpm',
-            'QrAzRDc.webpm',
-            'cFxLyzk.webpm',
-            'aaLTKFg.webpm',
-            'pij3ZH4.webpm'
-        ],
-        location: { province: 'maluku', title: 'honipopu', lat: '-3.695613', long: '128.179517' },
-        category: 'Kontrakan',
-        contact_us: {
-            facebook_url: 'https://www.facebook.com/yudha.a.setiawan.14',
-            phone: '+6282195753215'
-        },
-        facilities: ['Air Sumur Bor', '2 Kamar Tidur', '1 Kamar Mandi'],
-        start_price: 12000000,
-        post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/2998202270200181/'
-    },
-    {
-        id: 10,
-        date_modified: '2020-09-23T12:57:15+00:00',
-        date_published: '2020-09-23T12:57:15+00:00',
-        slug: 'rumah-kontrakan-tahunan-galala-hative-kecil-kota-ambon-rumah-dua-lantai',
-        title: 'Rumah Kontrakan Tahunan Galala Hative Kecil Kota Ambon - Rumah Dua Lantai',
-        description: 'Rumah kontrak tahunan Galala Hative Kecil Kota Ambon, Bagi yang berminat dapat menghubungi pengelola.',
-        keywords: 'galala, hative kecil, kota ambon, maluku',
-        images: [
-            'MEL1RGi.webpm',
-            'tC4UdhI.webpm',
-            'oPgIBaA.webpm',
-            'qjPFAzw.webpm',
-            'GbP1nCU.webpm',
-            'Bj2KGeC.webpm'
-        ],
-        location: { province: 'maluku', title: 'galala', lat: '-3.665266', long: '128.200460' },
-        category: 'Kontrakan',
-        contact_us: {
-            facebook_url: 'https://www.facebook.com/profile.php?id=100016477352041',
-            phone: '+6281294962895'
-        },
-        facilities: ['2 lantai', '3 ruang tamu utama', '6 kamar tidur', '3 kamar mandi (lantai 1)', '2 ruang tidur (lantai 2)', '1 kamar mandi dan ruang tamu (lantai 2)'],
-        start_price: 40000000,
-        post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/3444397455580658/'
-    },
-    {
-        id: 11,
+        id: 6,
         date_modified: '2020-09-24T12:57:15+00:00',
         date_published: '2020-09-24T12:57:15+00:00',
         slug: 'kost-murah-nyaman-bersih-strategis-karang-panjang-kota-ambon-puncak-bogor-karpan',
@@ -277,7 +149,7 @@ export const Kost = [
         post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/3231991046821301/'
     },
     {
-        id: 12,
+        id: 7,
         date_modified: '2020-09-25T12:57:15+00:00',
         date_published: '2020-09-25T12:57:15+00:00',
         slug: 'kost-murah-nyaman-bersih-strategis-poka-rumah-tiga-kota-ambon-khusus-karyawan-dan-mahasiswa',
@@ -300,33 +172,7 @@ export const Kost = [
         post_url: ''
     },
     {
-        id: 13,
-        date_modified: '2020-09-26T12:57:15+00:00',
-        date_published: '2020-09-26T12:57:15+00:00',
-        slug: 'rumah-kontrak-tahunan-kebun-cengkeh-batu-merah-kota-ambon-perumahan-banda-eli',
-        title: 'Rumah Kontrak Tahunan Kebun Cengkeh Batu Merah Kota Ambon - Perumahan Banda Eli',
-        description: 'Dijual/dikontrakan tahunan sebuah rumah, lorong perumahan Banda Eli Kebun Cengkeh Batu Merah Kota Ambon, Bagi yang berminat dapat menghubungi pemilik.',
-        keywords: 'kebun cengkeh, batu merah, kota ambon, maluku',
-        images: [
-            'Jdu3CNN.webpm',
-            'Cg79CAJ.webpm',
-            'LHGdpvG.webpm',
-            'Q10Tvwe.webpm',
-            'YrIK75R.webpm',
-            '5YoIIXa.webpm',
-        ],
-        location: { province: 'maluku', title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
-        category: 'Kontrakan',
-        contact_us: {
-            facebook_url: 'https://www.facebook.com/nailaamalia.amalia.9',
-            phone: '+6285344551745'
-        },
-        facilities: ['2 kamar tidur', 'Kamar mandi dalam', 'Ruang keluarga', 'Ruang tamu', 'Ruang sholat', 'Dapur', 'parkiran mobil'],
-        start_price: 35000000,
-        post_url: ''
-    },
-    {
-        id: 14,
+        id: 8,
         date_modified: '2020-09-27T12:57:15+00:00',
         date_published: '2020-09-27T12:57:15+00:00',
         slug: 'kost-murah-passo-baguala-kota-ambon-maluku-wilayah-wara-lorong-pica-botol',
@@ -354,7 +200,7 @@ export const Kost = [
         post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/2899760603377682/'
     },
     {
-        id: 15,
+        id: 9,
         date_modified: '2020-09-28T12:57:15+00:00',
         date_published: '2020-09-28T12:57:15+00:00',
         slug: 'kost-eksklusif-waihaong-nusaniwe-kota-ambon-maluku-reddoorz-koolkost-market',
@@ -376,28 +222,7 @@ export const Kost = [
         post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/3226104740743265/'
     },
     {
-        id: 16,
-        date_modified: '2020-09-29T12:57:15+00:00',
-        date_published: '2020-09-29T12:57:15+00:00',
-        slug: 'rumah-kontrak-tahunan-halong-baguala-kota-ambon-maluku-samping-kompleks-angkatan-laut',
-        title: 'Rumah Kontrak Tahunan Halong Baguala Kota Ambon Maluku - Samping Kompleks Angkatan Laut',
-        description: 'Rumah kontrakan tahunan Halong Baguala Kota Ambon Maluku, samping kompleks angkatan laut depan jalan besar. Bagi yang berminat dapat menghubungi pemilik.',
-        keywords: 'halong, baguala, kota ambon, maluku',
-        images: [
-            '3VnPwHM.webpm'
-        ],
-        location: { province: 'maluku', title: 'halong', lat: '-3.661955', long: '128.217942' },
-        category: 'Kontrakan',
-        contact_us: {
-            facebook_url: 'https://www.facebook.com/profile.php?id=100006926223788',
-            phone: '+6285243597280'
-        },
-        facilities: ['2 kamar tidur', 'Ruang tamu', '1 Kamar mandi', 'Dapur'],
-        start_price: 13000000,
-        post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/3228933590460380/'
-    },
-    {
-        id: 17,
+        id: 10,
         date_modified: '2020-09-30T06:57:15+00:00',
         date_published: '2020-09-30T06:57:15+00:00',
         slug: 'kost-murah-kudamati-nusaniwe-kota-ambon-maluku-farmasi-atas-depan-gereja-christy-natalia',
@@ -420,7 +245,7 @@ export const Kost = [
         post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/2646604255359986/'
     },
     {
-        id: 18,
+        id: 11,
         date_modified: '2020-10-01T13:57:15+00:00',
         date_published: '2020-10-01T13:57:15+00:00',
         slug: 'kost-murah-bersih-nyaman-fasilitas-memadai-halong-baguala-kota-ambon-maluku-dwinner-kost-dekat-kampus-iakn-ambon',
@@ -446,37 +271,7 @@ export const Kost = [
         post_url: 'https://www.facebook.com/groups/167091850628437/permalink/461429234528029/'
     },
     {
-        id: 19,
-        date_modified: '2020-10-02T12:57:15+00:00',
-        date_published: '2020-10-02T12:57:15+00:00',
-        slug: 'rumah-kontrak-tahunan-kebun-cengkeh-batu-merah-sirimau-kota-ambon-maluku-lorong-pangkalan-ojek-bengkel-hamid',
-        title: 'Rumah Kontrak Tahunan Kebun Cengkeh Batu Merah Sirimau Kota Ambon Maluku - Lorong Pangkalan Ojek Bengkel Hamid',
-        description: 'Rumah kontrakan tahunan Kebun Cengkeh Batu Merah Sirimau Kota Ambon Maluku. Tersedia dua bangunan pada lokasi yang sama. Harga sewa masing-masing berbeda dan boleh melakukan negosiasi. Lokasi aman, tenang, sejuk. Lorong samping Pangkalan Ojek di samping Bengkel Hamid Kebun Cengkeh.',
-        keywords: 'Kontrakan, Kebun Cengkeh, Batu Merah, Sirimau, Kota Ambon, Maluku',
-        images: [
-            '2NmrTxR.webpm',
-            'mr7RBsb.webpm',
-            'ybW5Qm1.webpm',
-            'J6kiG5J.webpm',
-            'btpRWIK.webpm',
-            'QqSPH6q.webpm',
-            'rFvoAW0.webpm',
-            '0Qr7tlI.webpm',
-            'h2J2qNi.webpm',
-            'KLPt1ZX.webpm'
-        ],
-        location: { province: 'maluku', title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
-        category: 'Kontrakan',
-        contact_us: {
-            facebook_url: 'https://www.facebook.com/ifasiregar.siregar',
-            phone: '+6285254212248'
-        },
-        facilities: ['Ruang tamu', 'Kamar tidur', 'Ruang makan', 'Dapur', 'Kamar mandi'],
-        start_price: 7500000,
-        post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/3226971947323211/'
-    },
-    {
-        id: 20,
+        id: 12,
         date_modified: '2020-10-03T06:00:15+00:00',
         date_published: '2020-10-03T06:00:15+00:00',
         slug: 'kost-murah-fasilitas-lengkap-batu-merah-sirimau-kota-ambon-maluku-dekat-kampus-iain-ambon-maluku',
@@ -503,7 +298,7 @@ export const Kost = [
         post_url: 'https://kostambon.com/kost-stain/'
     },
     {
-        id: 21,
+        id: 13,
         date_modified: '2020-10-04T06:00:15+00:00',
         date_published: '2020-10-04T06:00:15+00:00',
         slug: 'kost-murah-waiheru-baguala-kota-ambon-maluku-eksklusif-fasilitas-lengkap-samping-indomaret',
@@ -531,7 +326,7 @@ export const Kost = [
         post_url: 'https://kostambon.com/kost-waiheru/'
     },
     {
-        id: 22,
+        id: 14,
         date_modified: '2020-10-05T06:00:15+00:00',
         date_published: '2020-10-05T06:00:15+00:00',
         slug: 'kost-murah-eksklusif-teluk-ambon-hative-kecil-sirimau-kota-ambon-maluku-kost-eksklusif-aster',
@@ -555,7 +350,7 @@ export const Kost = [
         post_url: 'https://kostambon.com/aster-hative-kecil/'
     },
     {
-        id: 23,
+        id: 15,
         date_modified: '2020-10-06T13:57:15+00:00',
         date_published: '2020-10-06T13:57:15+00:00',
         slug: 'kost-murah-kamar-mandi-dalam-urimesing-nusaniwe-kota-ambon-maluku-belakang-kampus-pgsd',
@@ -580,7 +375,7 @@ export const Kost = [
         post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/2933762896644119/'
     },
     {
-        id: 24,
+        id: 16,
         date_modified: '2020-10-07T13:57:15+00:00',
         date_published: '2020-10-07T13:57:15+00:00',
         slug: 'kost-murah-kamar-mandi-dalam-kebun-cengkeh-batu-merah-sirimau-kota-ambon-maluku-sekitar-kampus-iain',
@@ -605,57 +400,7 @@ export const Kost = [
         post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/2933762896644119/'
     },
     {
-        id: 25,
-        date_modified: '2020-10-12T05:57:15+00:00',
-        date_published: '2020-10-12T05:57:15+00:00',
-        slug: 'rumah-kontrak-tahunan-waiheru-baguala-kota-ambon-maluku-strategis-depan-jalan-waiheru-lapiaso',
-        title: 'Rumah Kontrak Tahunan Waiheru Baguala Kota Ambon Maluku - Strategis Depan Jalan Waiheru Lapiaso',
-        description: 'Rumah kontrak tahunan Waiheru Baguala Kota Ambon Maluku, aman dan strategis di depan jalan Waiheru Lapiaso. Bagi yang berminat dapat menghubungi pemilik.',
-        keywords: 'Kost, Waiheru, Baguala, Kota Ambon, Maluku',
-        images: [
-            'zce64Q5.webpm',
-            'o3NT1yX.webpm',
-            'jXzMDD9.webpm'
-        ],
-        location: { province: 'maluku', title: 'waiheru', lat: '-3.627142', long: '128.223624' },
-        category: 'Kontrakan',
-        contact_us: {
-            facebook_url: 'https://www.facebook.com/rifanmaligana.rifanmaligana',
-            phone: '+6281388581851'
-        },
-        facilities: ['2 Kamar Tidur', 'Kamar Mandi', 'Ruang Tamu/Keluarga', 'Dapur '],
-        start_price: 10000000,
-        post_url: ''
-    },
-    {
-        id: 26,
-        date_modified: '2020-10-13T05:57:10+00:00',
-        date_published: '2020-10-13T05:57:10+00:00',
-        slug: 'rumah-kontrak-tahunan-kebun-cengkeh-batu-merah-kota-ambon-rumah-dua-lantai-di-gadihu',
-        title: 'Rumah Kontrak Tahunan Kebun Cengkeh Batu Merah Kota Ambon - Rumah Dua Lantai Di Gadihu',
-        description: 'Rumah kontrakan tahunan dua lantai Kebun Cengkeh Gadihu Batu Merah Kota Ambon. Rumah berukuran 9x12, dengan fasilitas lengkap dan harga terjangkau. Bagi yang berminat dapat menghubungi pemilik.',
-        keywords: 'Kebun Cengkeh, Batu Merah, Kota Ambon, Maluku',
-        images: [
-            '8XGuoBs.webpm',
-            'QlpGmT4.webpm',
-            'ZhMpSop.webpm',
-            'vuUx9d4.webpm',
-            'BtwkmmL.webpm',
-            'gS4vYz9.webpm',
-            'GnYHctA.webpm'
-        ],
-        location: { province: 'maluku', title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
-        category: 'Kontrakan',
-        contact_us: {
-            facebook_url: 'https://www.facebook.com/profile.php?id=100007324635315',
-            phone: ''
-        },
-        facilities: ['Ruang Tamu', 'Ruang keluarga', 'Ruang Makan', 'Dapur', 'Kamar Tidur', 'Kamar Mandi Dalam', 'Taman'],
-        start_price: 15000000,
-        post_url: 'https://www.facebook.com/story.php?story_fbid=2357519911168807&id=100007324635315'
-    },
-    {
-        id: 27,
+        id: 17,
         date_modified: '2020-10-14T06:44:15+00:00',
         date_published: '2020-10-14T06:44:15+00:00',
         slug: 'kost-murah-nyaman-fasilitas-lengkap-passo-baguala-kota-ambon-maluku-kost-arthomoro-passo-tream',
@@ -682,28 +427,7 @@ export const Kost = [
         post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/3502681053085631/'
     },
     {
-        id: 28,
-        date_modified: '2020-10-17T08:57:10+00:00',
-        date_published: '2020-10-17T08:57:10+00:00',
-        slug: 'rumah-kontrak-bulanan-dan-tahunan-teluk-ambon-lateri-baguala-kota-ambon-maluku-rumah-type-45-btn-bukit-lateri-indah',
-        title: 'Rumah Kontrak Bulanan Dan Tahunan Teluk Ambon Lateri Baguala Kota Ambon Maluku - Rumah Type 45 BTN Bukit Lateri Indah',
-        description: 'Tersedia rumah kontrakan bulanan dan tahunan berlokasi di BTN Bukit Lateri Indah, Teluk Ambon Lateri Baguala Kota Ambon Maluku. Rumah sudah dipasang kanopi. Bagi yang berminat dapat menghubungi pemilik.',
-        keywords: 'Kontrakan, Teluk Ambon, Lateri, Baguala, Kota Ambon, Maluku',
-        images: [
-            'VgDIeU0.webpm'
-        ],
-        location: { province: 'maluku', title: 'lateri', lat: '-3.644044', long: '128.246256' },
-        category: 'Kontrakan',
-        contact_us: {
-            facebook_url: 'https://www.facebook.com/richiie.richiie.161',
-            phone: '+6281343961994'
-        },
-        facilities: ['2 Kamar Tidur', '1 Kamar Mandi'],
-        start_price: 3000000,
-        post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/3235544559799283/'
-    },
-    {
-        id: 29,
+        id: 18,
         date_modified: '2020-10-18T07:44:15+00:00',
         date_published: '2020-10-18T07:44:15+00:00',
         slug: 'kost-eksklusif-murah-nyaman-fasilitas-lengkap-simpang-lima-matamalagi-sorong-utara-kota-sorong-papua-barat-pasific889-homestay',
@@ -729,7 +453,7 @@ export const Kost = [
         post_url: 'https://www.facebook.com/story.php?story_fbid=2073262346230510&id=1913071195582960'
     },
     {
-        id: 30,
+        id: 19,
         date_modified: '2020-10-18T15:44:15+00:00',
         date_published: '2020-10-18T15:44:15+00:00',
         slug: 'kost-murah-beringin-entrop-jayapura-selatan-kota-jayapura-belakang-sma-negeri-4-jayapura',
@@ -751,7 +475,7 @@ export const Kost = [
         post_url: 'https://m.facebook.com/groups/185755601762444?view=permalink&id=1254765504861443'
     },
     {
-        id: 31,
+        id: 20,
         date_modified: '2020-10-18T19:44:15+00:00',
         date_published: '2020-10-18T19:44:15+00:00',
         slug: 'kost-murah-bersih-dan-aman-jalan-kali-acai-awiyo-abepura-kota-jayapura-papua-kost-bang-haji',
@@ -777,7 +501,7 @@ export const Kost = [
         post_url: ''
     },
     {
-        id: 32,
+        id: 21,
         date_modified: '2020-10-19T05:44:15+00:00',
         date_published: '2020-10-19T05:44:15+00:00',
         slug: 'kost-murah-koya-barat-kota-jayapura-papua-depan-bank-papua-fasilitas-lengkap-strategis-dan-aman',
@@ -801,7 +525,7 @@ export const Kost = [
         post_url: ''
     },
     {
-        id: 33,
+        id: 22,
         date_modified: '2020-10-20T04:44:15+00:00',
         date_published: '2020-10-20T04:44:15+00:00',
         slug: 'kost-harian-murah-jl-perkutut-vim-abepura-kota-jayapura-papua-komplek-pendidikan-kristen-kotaraja-dalam',
@@ -829,7 +553,7 @@ export const Kost = [
         post_url: ''
     },
     {
-        id: 34,
+        id: 23,
         date_modified: '2020-10-21T06:44:15+00:00',
         date_published: '2020-10-21T06:44:15+00:00',
         slug: 'kost-murah-jl-raya-tanah-hitam-awiyo-abepura-kota-jayapura-papua-sewa-bulanan-atau-tahunan',
@@ -855,7 +579,7 @@ export const Kost = [
         post_url: 'https://m.facebook.com/groups/185755601762444?view=permalink&id=1267358460268814'
     },
     {
-        id: 35,
+        id: 24,
         date_modified: '2020-10-22T07:10:15+00:00',
         date_published: '2020-10-22T07:10:15+00:00',
         slug: 'kost-murah-bulanan-jl-argapura-argapura-jayapura-selatan-kota-jayapura-papua-lingkungan-nyaman-dan-fasilitas-lengkap',
@@ -881,7 +605,7 @@ export const Kost = [
         post_url: ''
     },
     {
-        id: 36,
+        id: 25,
         date_modified: '2020-10-23T07:10:15+00:00',
         date_published: '2020-10-23T07:10:15+00:00',
         slug: 'kost-murah-eksklusif-strategis-di-pusat-kota-abepura-kota-jayapura-papua-reddoorz-akavi-homestay',
@@ -905,7 +629,7 @@ export const Kost = [
         post_url: 'https://www.facebook.com/commerce/listing/1732383290260491/?media_id=0&ref=share_attachment'
     },
     {
-        id: 37,
+        id: 26,
         date_modified: '2020-10-24T05:44:15+00:00',
         date_published: '2020-10-24T05:44:15+00:00',
         slug: 'kost-murah-fasilitas-lengkap-bayar-tahunan-area-jaya-asri-entrop-jayapura-selatan-kota-jayapura-rekomendasi-bagi-yang-belum-menikah',
