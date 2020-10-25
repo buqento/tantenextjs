@@ -4,7 +4,7 @@ import NextHead from 'next/head'
 import { Container, Card } from 'react-bootstrap'
 import Slide from '../components/Slide'
 import FooterDetail from '../components/FooterDetail'
-import ListKos from '../components/ListKos'
+import ListKosAll from '../components/ListKosAll'
 import HeadPage from '../components/HeadPage'
 import styles from '../styles/Home.module.css'
 import { Kost } from '../utils/modals/Kost'
@@ -186,7 +186,7 @@ class Detail extends React.Component {
           </Container>
           <div style={{ borderTop: '8px solid #f5f5f5' }} />
           <div style={{ marginBottom: '55px' }}>
-            <ListKos data={otherItems} category={data[0].category} />
+            <ListKosAll data={otherItems} category={data[0].category} />
           </div>
           <FooterDetail
             className="fix-footer footer-detail"

@@ -448,7 +448,7 @@ export const Kost = [
             facebook_url: 'https://www.facebook.com/Pasific889',
             phone: '+6282359142888'
         },
-        facilities: ['Tv Cable - Flat Tv 32"', 'Spring Bed 160x200', 'Lemari Pakaian', 'AC', 'Water Heater', 'Terrace', 'Kamar Mandi', 'Dapur Pribadi', 'Parkiran' ],
+        facilities: ['Tv Cable - Flat Tv 32"', 'Spring Bed 160x200', 'Lemari Pakaian', 'AC', 'Water Heater', 'Terrace', 'Kamar Mandi', 'Dapur Pribadi', 'Parkiran'],
         start_price: 300000,
         post_url: 'https://www.facebook.com/story.php?story_fbid=2073262346230510&id=1913071195582960'
     },
@@ -652,8 +652,36 @@ export const Kost = [
             facebook_url: 'https://www.facebook.com/groups/566421207451383/user/100050692100137/',
             phone: ''
         },
-        facilities: ['AC', 'Tabung Gas 5Kg',  'Wifi', 'Tv Kabel', 'Air Bersih (Lancar 24/7)', 'Parkiran Motor'],
+        facilities: ['AC', 'Tabung Gas 5Kg', 'Wifi', 'Tv Kabel', 'Air Bersih (Lancar 24/7)', 'Parkiran Motor'],
         start_price: 36000000,
         post_url: ''
+    },
+    {
+        id: 27,
+        date_modified: '2020-10-25T08:44:15+00:00',
+        date_published: '2020-10-25T08:44:15+00:00',
+        slug: 'kost-murah-harian-bulanan-fasilitas-lengkap-gang-kemiri-entrop-jayapura-selatan-kota-jayapura-papua-homestay-kemiri-bebas-banjir-dan-preman',
+        title: 'Kost Murah Harian Bulanan Fasilitas Lengkap Gang Kemiri Entrop Jayapura Selatan Kota Jayapura Papua - Homestay Kemiri Bebas Banjir Dan Preman',
+        description: 'Tersedia kost murah 3 lantai bayar harian dan bulanan, lokasi Gang Kemiri Entrop Jayapura Selatan Kota Jayapura Papua. Lokasi strategis di pusat kota, dengan perbankan, Rumah Sakit, Pertokoan, Mall Sekolah, Kampus, Pasar Tradisional dll. Bangunan 3 lantai, aman nyaman bebas banjir dan preman. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Gang Kemiri, Entrop, Jayapura Selatan, Kota Jayapura, Papua',
+        images: [
+            'lkljWCS.webpm',
+            'UzLsVvo.webpm',
+            'yQLLUgU.webpm',
+            'V33cpZh.webpm',
+            'Fxc1kXO.webpm',
+            'ANTTWoU.webpm',
+            'uGQpdMi.webpm',
+            'pgbihDi.webpm'
+        ],
+        location: { province: 'papua', title: 'jayapura-selatan', lat: '-2.576510', long: '140.691657' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://web.facebook.com/groups/631657273666514/user/100005715855035/',
+            phone: '+6285244364924'
+        },
+        facilities: ['Tv', 'AC', 'Spring Bed', 'Lemari Pakaian', 'Meja Kerja', 'Nakas', 'Wc Dalam (Pakai Shower)'],
+        start_price: 200000,
+        post_url: 'https://web.facebook.com/groups/631657273666514/permalink/1768606489971581/'
     }
 ]
