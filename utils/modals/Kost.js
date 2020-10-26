@@ -731,7 +731,7 @@ export const Kost = [
             phone: '+6282153525599'
         },
         facilities: ['Tempat Tidur', 'Lemari', 'Kamar Mandi Dalam', 'Dapur Umum', 'Air Bersih (Lancar)', 'Sewa WiFi (60k/bln)', 'Listrik (Token Setiap Kamar)', 'Tempat Jemuran', 'Parkiran Motor'],
-        start_price: 6000000,
+        start_price: 600000,
         post_url: 'https://www.facebook.com/commerce/listing/352980949266315'
     }
 ]
