@@ -43,9 +43,7 @@ export default function Index() {
       <div className="m-3 mb-n2">
         <span className="text-uppercase text-secondary font-weight-bold">Komunitas Facebook</span>
       </div>
-      <div style={{ borderBottom: '8px solid #f5f5f5' }}>
-        <GroupSocial />
-      </div>
+      <GroupSocial />
 
     </Layout>
   )

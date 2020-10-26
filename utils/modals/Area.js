@@ -1,6 +1,6 @@
 export const DtArea = [
     //  { slug: 'benteng', title: 'Benteng'},
-    //  { slug: 'wainitu', title: 'Wainitu'},
+    { location: { lat: '-3.704887', long: '128.168884' }, province: 'maluku', slug: 'wainitu', title: 'Wainitu', image: 'KynKT7D.webpm' },
     { location: { lat: '-3.708157', long: '128.171185' }, province: 'maluku', slug: 'kudamati', title: 'Kudamati', image: 'KynKT7D.webpm' },
     //  { slug: 'mangga-dua', title: 'Mangga Dua'},
     { location: { lat: '-3.701502', long: '128.178884' }, province: 'maluku', slug: 'urimessing', title: 'Urimessing', image: 'x9oUf7x.webpm' },

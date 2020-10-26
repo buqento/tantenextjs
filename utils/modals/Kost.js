@@ -708,4 +708,30 @@ export const Kost = [
         start_price: 900000,
         post_url: 'https://www.facebook.com/commerce/listing/1213687682347500'
     },
+    {
+        id: 29,
+        date_modified: '2020-10-27T06:11:15+00:00',
+        date_published: '2020-10-27T06:11:15+00:00',
+        slug: 'kost-murah-sewa-bulanan-lokasi-wainitu-nusaniwe-kota-ambon-maluku-kost-khusus-putra-putri',
+        title: 'Kost Murah Sewa Bulanan Lokasi Wainitu Nusaniwe Kota Ambon Maluku - Kost Khusus Putra-Putri',
+        description: 'Disewakan rumah kost murah, JL. Nona S Sopacua Wainitu Nusaniwe Kota Ambon Maluku. Lokasi strategis di belakang Gereja ROCK Ambon, bersih dan aman. Khusus putra & putri (tidak menerima keluarga). Bagi yang berminat dapat menghubungi pengelola',
+        keywords: 'JL. Nona S Sopacua, Wainitu, Nusaniwe, Kota Ambon, Maluku',
+        images: [
+            'Hmyzr94.webpm',
+            'p2aEZD9.webpm',
+            'Hdlxzh4.webpm',
+            'j6SIu5u.webpm',
+            'Fzd3EFf.webpm',
+            'garkRDK.webpm'
+        ],
+        location: { province: 'maluku', title: 'wainitu', lat: '-3.704887', long: '128.168884' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/groups/1971214283169784/user/100025728288040/',
+            phone: '+6282153525599'
+        },
+        facilities: ['Tempat Tidur', 'Lemari', 'Kamar Mandi Dalam', 'Dapur Umum', 'Air Bersih (Lancar)', 'Sewa WiFi (60k/bln)', 'Listrik (Token Setiap Kamar)', 'Tempat Jemuran', 'Parkiran Motor'],
+        start_price: 6000000,
+        post_url: 'https://www.facebook.com/commerce/listing/352980949266315'
+    }
 ]
