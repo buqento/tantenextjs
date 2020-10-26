@@ -683,5 +683,29 @@ export const Kost = [
         facilities: ['Tv', 'AC', 'Spring Bed', 'Lemari Pakaian', 'Meja Kerja', 'Nakas', 'Wc Dalam (Pakai Shower)'],
         start_price: 200000,
         post_url: 'https://web.facebook.com/groups/631657273666514/permalink/1768606489971581/'
-    }
+    },
+    {
+        id: 28,
+        date_modified: '2020-10-27T05:22:15+00:00',
+        date_published: '2020-10-27T05:22:15+00:00',
+        slug: 'kost-murah-sewa-bulanan-lokasi-koya-barat-kota-jayapura-papua-lokasi-strategis-bersih-dan-aman',
+        title: 'Kost Murah Sewa Bulanan Lokasi Koya Barat Kota Jayapura Papua - Lokasi Strategis Bersih Dan Aman',
+        description: 'Disewakan rumah kost murah sewa perbulan, area Koya Barat Kota Jayapura Papua. Lokasi strategis, bersih dan aman. Bagi yang berminat dapat menghubungi pengelola',
+        keywords: 'Koya Barat, Kota Jayapura, Papua',
+        images: [
+            'YGz4oKy.webpm',
+            'ssk9Asz.webpm',
+            'qumqHkE.webpm',
+            'CKqlWP7.webpm'
+        ],
+        location: { province: 'papua', title: 'koya-barat', lat: '-2.678178', long: '140.805093' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/profile.php?id=100048332203207',
+            phone: ''
+        },
+        facilities: ['Kamar Tidur', 'Kamar Mandi', 'Dapur'],
+        start_price: 900000,
+        post_url: 'https://www.facebook.com/commerce/listing/1213687682347500'
+    },
 ]

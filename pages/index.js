@@ -4,6 +4,7 @@ import Header from '../components/Header'
 import Area from '../components/Area'
 import Campaign from '../components/Campaign'
 import CategoryPrice from '../components/CategoryPrice'
+import GroupSocial from '../components/GroupSocial'
 
 export default function Index() {
   return (
@@ -35,7 +36,16 @@ export default function Index() {
         <span className="text-uppercase text-secondary font-weight-bold">Kontrakan</span>
         <span className="float-right"><a href="/search/category/Kontrakan">Lihat Semua</a></span>
       </div>
-      <Campaign filter="Kontrakan" />
+      <div style={{ borderBottom: '8px solid #f5f5f5' }}>
+        <Campaign filter="Kontrakan" />
+      </div>
+
+      <div className="m-3 mb-n2">
+        <span className="text-uppercase text-secondary font-weight-bold">Komunitas Facebook</span>
+      </div>
+      <div style={{ borderBottom: '8px solid #f5f5f5' }}>
+        <GroupSocial />
+      </div>
 
     </Layout>
   )

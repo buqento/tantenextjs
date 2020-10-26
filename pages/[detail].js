@@ -1,7 +1,7 @@
 import React from 'react'
 import { arrayOf, shape, string } from 'prop-types'
 import NextHead from 'next/head'
-import { Container, Card } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import Slide from '../components/Slide'
 import FooterDetail from '../components/FooterDetail'
 import ListKosAll from '../components/ListKosAll'
@@ -147,8 +147,8 @@ class Detail extends React.Component {
           <Container className="mb-3">
             <div className="pt-3">
               <small className="text-secondary">{moment(data[0].date_modified).fromNow()}</small>
-              <h1 className="heading">{data[0].title}</h1>
-              <div className="pt-1">
+              <h1 className="heading mt-0">{data[0].title}</h1>
+              <div>
                 <p className={styles.headingtwo}>Deskripsi {data[0].category}</p>
                 {data[0].description}
               </div>
