@@ -733,5 +733,29 @@ export const Kost = [
         facilities: ['Tempat Tidur', 'Lemari', 'Kamar Mandi Dalam', 'Dapur Umum', 'Air Bersih (Lancar)', 'Sewa WiFi (60k/bln)', 'Listrik (Token Setiap Kamar)', 'Tempat Jemuran', 'Parkiran Motor'],
         start_price: 600000,
         post_url: 'https://www.facebook.com/commerce/listing/352980949266315'
-    }
+    },
+    {
+        id: 30,
+        date_modified: '2020-10-28T06:44:15+00:00',
+        date_published: '2020-10-28T06:44:15+00:00',
+        slug: 'kost-murah-bersih-dan-aman-sewa-bulanan-lokasi-abepura-kota-jayapura-papua-jalan-baru-kali-acai',
+        title: 'Kost Murah Bersih Dan Aman Sewa Bulanan Lokasi Abepura Kota Jayapura Papua - Jalan Baru Kali Acai',
+        description: 'Tersedia kost murah bersih dan aman Lokasi Jalan Baru Kali Acai Abepura Kota Jayapura Papua. Bebas biaya listrik dan air bersih. Bagi yang berminat dapat menghubungi pengelola',
+        keywords: 'Jl. Kali Acai, Abepura, Kota Jayapura, Papua',
+        images: [
+            'GSnj8iF.webpm',
+            'JkGlYFS.webpm',
+            'MJnBxDb.webpm',
+            '3ZvuOkZ.webpm'
+        ],
+        location: { province: 'papua', title: 'abepura', lat: '-2.610406', long: '140.674623' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/groups/185755601762444/user/100006016904008/',
+            phone: '+6281248124222'
+        },
+        facilities: ['Kamar Mandi', 'Dapur', 'Kamar Tidur', 'Ruang Tamu'],
+        start_price: 1100000,
+        post_url: 'https://www.facebook.com/commerce/listing/331373214762496'
+    },
 ]
