@@ -190,6 +190,7 @@ class Detail extends React.Component {
             className="fix-footer footer-detail"
             contactUs={data[0].contact_us}
             title={data[0].title}
+            postUrl={data[0].post_url}
           />
         </div>
       }

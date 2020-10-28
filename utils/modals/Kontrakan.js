@@ -302,5 +302,27 @@ export const Kontrakan = [
         facilities: ['2 Kamar Tidur', 'Lemari Pakaian', 'Ruang Tamu (Sofa Rotan)', 'Rak Tv (Tv 40")', 'Kamar Mandi', 'Sumur Bor', 'Dapur', 'Parkiran Mobil & Motor', 'Pagar Teralis Keliling'],
         start_price: 1500000,
         post_url: 'https://www.facebook.com/commerce/listing/660917214597258'
+    },
+    {
+        id: 13,
+        date_modified: '2020-10-28T20:57:10+00:00',
+        date_published: '2020-10-28T20:57:10+00:00',
+        slug: 'rumah-kontrak-murah-tahunan-di-lateri-baguala-kota-ambon-maluku-perumahan-bliss-village-lateri',
+        title: 'Rumah Kontrak Murah Tahunan Di Lateri Baguala Kota Ambon Maluku - Perumahan Bliss Village Lateri',
+        description: 'Tersedia rumah kontrakan tahunan berlokasi kompleks Perumahan Bliss Village Lateri Baguala Kota Ambon Maluku. Bagi yang berminat dapat menghubungi pemilik.',
+        keywords: 'Kontrakan, Lateri, Baguala, Kota Ambon, Maluku',
+        images: [
+            'fB2PULB.webpm',
+            'CMmNxyx.webpm'
+        ],
+        location: { province: 'maluku', title: 'lateri', lat: '-3.651112', long: '128.245387' },
+        category: 'Kontrakan',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/groups/1822235571130196/user/100004691173692/',
+            phone: ''
+        },
+        facilities: ['Kamar Tidur', 'Ruang Tamu', 'Kamar Mandi', 'Dapur', 'Parkiran'],
+        start_price: 35000000,
+        post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/3543593142327755/'
     }
 ]

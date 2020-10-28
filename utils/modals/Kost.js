@@ -757,5 +757,5 @@ export const Kost = [
         facilities: ['Kamar Mandi', 'Dapur', 'Kamar Tidur', 'Ruang Tamu'],
         start_price: 1100000,
         post_url: 'https://www.facebook.com/commerce/listing/331373214762496'
-    },
+    }
 ]
