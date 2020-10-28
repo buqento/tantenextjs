@@ -14,6 +14,7 @@ import Firstupper from '../utils/Firstupper'
 import Peta from '../components/Peta'
 import ReactGa from 'react-ga'
 import moment from 'moment';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 
 class Detail extends React.Component {
   static async getInitialProps(ctx) {
@@ -174,7 +175,7 @@ class Detail extends React.Component {
                   data[0].post_url !== '' &&
                   <div className="pt-3">
                     <small>
-                      <a href={data[0].post_url} target="blank">* Pelajari selengkapnya tautan asli </a>
+                      <a href={data[0].post_url} target="blank">* Pelajari selengkapnya tautan asli <FaExternalLinkAlt className="ml-1" /> </a>
                     </small>
                   </div>
                 }
