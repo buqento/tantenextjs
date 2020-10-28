@@ -59,5 +59,6 @@ export const DtArea = [
     { location: { lat: '-2.577319', long: '140.691014' }, province: 'papua', slug: 'jayapura-selatan', title: 'Jayapura Selatan', image: 'OIZx8du.webpm' },
     { location: { lat: '-2.610406', long: '140.674623' }, province: 'papua', slug: 'abepura', title: 'Abepura', image: 'L7JVrMH.webpm' },
     { location: { lat: '-2.678178', long: '140.805093' }, province: 'papua', slug: 'koya-barat', title: 'Koya Barat', image: 'HEiqNVG.webpm' },
-    { location: { lat: '-2.576834', long: '140.506950' }, province: 'papua', slug: 'sentani', title: 'Sentani', image: 'xroVcg8.webpm' }
+    { location: { lat: '-2.576834', long: '140.506950' }, province: 'papua', slug: 'sentani', title: 'Sentani', image: 'xroVcg8.webpm' },
+    { location: { lat: '-2.604502', long: '140.658539' }, province: 'papua', slug: 'kota-jayapura', title: 'Kota Jayapura', image: 'yWQkA69.webpm' }
 ];

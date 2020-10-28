@@ -4,7 +4,6 @@ import { shape } from 'prop-types'
 import { FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function Peta(props) {
-    // const iconUrl = '/static/images/map-icon.png'
     const lat = parseFloat(props.location.lat)
     const long = parseFloat(props.location.long)
     const [viewport, setViewport] = useState({
@@ -28,7 +27,6 @@ export default function Peta(props) {
                 offsetLeft={-18} 
                 offsetTop={-25}
             >
-                {/* <img src={iconUrl} alt="Icon Map" /> */}
                 <FaMapMarkerAlt size={30} />
             </Marker>
         </ReactMapGl>

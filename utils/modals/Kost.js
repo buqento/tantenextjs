@@ -715,7 +715,7 @@ export const Kost = [
         slug: 'kost-murah-sewa-bulanan-lokasi-wainitu-nusaniwe-kota-ambon-maluku-kost-khusus-putra-putri',
         title: 'Kost Murah Sewa Bulanan Lokasi Wainitu Nusaniwe Kota Ambon Maluku - Kost Khusus Putra-Putri',
         description: 'Disewakan rumah kost murah, JL. Nona S Sopacua Wainitu Nusaniwe Kota Ambon Maluku. Lokasi strategis di belakang Gereja ROCK Ambon, bersih dan aman. Khusus putra & putri (tidak menerima keluarga). Bagi yang berminat dapat menghubungi pengelola',
-        keywords: 'JL. Nona S Sopacua, Wainitu, Nusaniwe, Kota Ambon, Maluku',
+        keywords: 'Kost, JL. Nona S Sopacua, Wainitu, Nusaniwe, Kota Ambon, Maluku',
         images: [
             'Hmyzr94.webpm',
             'p2aEZD9.webpm',
@@ -740,8 +740,8 @@ export const Kost = [
         date_published: '2020-10-28T06:44:15+00:00',
         slug: 'kost-murah-bersih-dan-aman-sewa-bulanan-lokasi-abepura-kota-jayapura-papua-jalan-baru-kali-acai',
         title: 'Kost Murah Bersih Dan Aman Sewa Bulanan Lokasi Abepura Kota Jayapura Papua - Jalan Baru Kali Acai',
-        description: 'Tersedia kost murah bersih dan aman Lokasi Jalan Baru Kali Acai Abepura Kota Jayapura Papua. Bebas biaya listrik dan air bersih. Bagi yang berminat dapat menghubungi pengelola',
-        keywords: 'Jl. Kali Acai, Abepura, Kota Jayapura, Papua',
+        description: 'Tersedia kost murah bersih dan aman Lokasi Jalan Baru Kali Acai Abepura Kota Jayapura Papua. Bebas biaya listrik dan air bersih. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Jl. Kali Acai, Abepura, Kota Jayapura, Papua',
         images: [
             'GSnj8iF.webpm',
             'JkGlYFS.webpm',
@@ -757,5 +757,30 @@ export const Kost = [
         facilities: ['Kamar Mandi', 'Dapur', 'Kamar Tidur', 'Ruang Tamu'],
         start_price: 1100000,
         post_url: 'https://www.facebook.com/commerce/listing/331373214762496'
+    },
+    {
+        id: 31,
+        date_modified: '2020-10-29T04:44:15+00:00',
+        date_published: '2020-10-29T04:44:15+00:00',
+        slug: 'kost-putri-murah-fasilitas-lengkap-lokasi-padang-bulan-hedam-heram-kota-jayapura-papua-kost-merchy-sekitar-perumahan-dosen-kampus-ustj',
+        title: 'Kost Putri Murah Fasilitas Lengkap Lokasi Padang Bulan Hedam Heram Kota Jayapura Papua - Kost Merchy Sekitar Perumahan Dosen Kampus USTJ',
+        description: 'Tersedia kost murah dengan fasilitas lengkap. Lokasi Padang Bulan Hedam Heram Kota Jayapura Papua (Belakang perumahan dosen kampus USTJ). Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Padang Bulan, Jayapura, Hedam, Heram, Kota Jayapura, Papua',
+        images: [
+            'yWQkA69.webpm',
+            'WjxhbU0.webpm',
+            'mSgAmjJ.webpm',
+            '5bDe5r0.webpm',
+            'up2OhKk.webpm'
+        ],
+        location: { province: 'papua', title: 'kota-jayapura', lat: '-2.604502', long: '140.658539' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/meylandmelissa.rorey',
+            phone: '+6281248080162'
+        },
+        facilities: ['Kamar Tidur (Kasur & Meja)', 'Toilet', 'Ruang Makan', 'Dapur', 'Teras', 'Parkiran (Motor & Mobil)'],
+        start_price: 1500000,
+        post_url: 'https://www.facebook.com/commerce/listing/349762889689193'
     }
 ]
