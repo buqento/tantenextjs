@@ -36,7 +36,7 @@ class Detail extends React.Component {
     const { slug } = this.props;
     let notFound = false;
     let data = Kost.filter(item => item.slug === slug)
-    if(data.length < 1){data = Kontrakan.filter(item => item.slug === slug)}
+    if (data.length < 1) { data = Kontrakan.filter(item => item.slug === slug) }
     if (!data[0]) notFound = true;
     const otherItems = Kost.filter(item => item.slug !== slug)
     let locationTitle = "";
@@ -131,6 +131,8 @@ class Detail extends React.Component {
           <meta property="og:url" content={`https://tantekos.com/${slug}`} />
           <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/w=300/${data[0].images[0]}`} />
           <meta property="og:image:alt" content={data[0].title} />
+          <meta property="og:image:width" content="300" />
+          <meta property="og:image:height" content="300" />
           <meta property="og:locale" content="id_ID" />
           <meta property="og:site_name" content="Tantekos" />
           <meta name="keyphrases" content="Info Kost, Cari Kost, Sewa Kost, Kost Bebas, Kost Murah, Kost pasutri, Aplikasi Kost, Aplikasi Pencarian Kost, Aplikasi Info Kost, APlikasi Cari Kost, Kost, Tantekost, Tantekosapp, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
