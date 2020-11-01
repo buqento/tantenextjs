@@ -329,7 +329,7 @@ export const Kontrakan = [
         id: 14,
         date_modified: '2020-11-01T13:57:10+00:00',
         date_published: '2020-11-01T13:57:10+00:00',
-        slug: 'rumah-kontrak-murah-tahunan-lokasi-strategis-hative-kecil-sirimau-kota-ambon-maluku-fasilitas lengkap-dekat-jembatan-merah-putih',
+        slug: 'rumah-kontrak-murah-tahunan-lokasi-strategis-hative-kecil-sirimau-kota-ambon-maluku-fasilitas-lengkap-dekat-jembatan-merah-putih',
         title: 'Rumah Kontrak Murah Tahunan Lokasi Strategis Hative Kecil Sirimau Kota Ambon Maluku - Fasilitas Lengkap Dekat Jembatan Merah Putih',
         description: 'Tersedia rumah kontrakan tahunan berlokasi di Hative Kecil Sirimau Kota Ambon Maluku. Lingkungan tenang, aman dan sejuk cocok untuk keluarga atau perusahaan. Strategis dan dekat dengan pusat perbelanjaan dan swalayan (MCM, Indomaret, Alfamidi). Bagi yang berminat dapat menghubungi pemilik.',
         keywords: 'Kontrakan, Hative Kecil, Sirimau, Kota Ambon, Maluku',
