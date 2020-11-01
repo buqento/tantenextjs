@@ -29,6 +29,7 @@ class ListKosAll extends Component {
                             <>
                                 {
                                     listData
+                                        .reverse()
                                         .filter(item => item.id >= firstId && item.id <= lastId)
                                         .map((item, index) =>
                                             <div key={index} className="col-6 pt-3">

@@ -21,6 +21,13 @@ class CategoryPrice extends Component {
                                     </Link>
                                 </div>
                             )}
+                        <div>
+                            <Link href={`search/price/5000000`}>
+                                <Badge pill variant="secondary" className="mr-3 pt-2 pl-3 pr-3">
+                                    <h5>{Currency(5000000, false)}+</h5>
+                                </Badge>
+                            </Link>
+                        </div>
                     </div>
                 </DragScroll>
             </div>
