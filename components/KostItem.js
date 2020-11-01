@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Card, Badge, Image } from 'react-bootstrap'
 import Firstupper from '../utils/Firstupper'
 import Currency from '../components/Currency'
+import Generatelink from '../utils/Generatelink'
 
 class KostItem extends Component {
     render() {
@@ -11,7 +12,7 @@ class KostItem extends Component {
         let badge = "";
         item.location.title.split("-").map(index => badge += Firstupper(index) + " ")
         return (
-            <Link href={item.slug}>
+            <Link href={Generatelink(item.title)}>
                 <div style={{ borderTop: '8px solid #f5f5f5' }}>
                     <Image src={item.images[0]} alt={item.title} fluid />
                     <div className="p-3">

@@ -15,6 +15,7 @@ import Peta from '../components/Peta'
 import ReactGa from 'react-ga'
 import moment from 'moment';
 import { FaExternalLinkAlt } from 'react-icons/fa';
+import Generatelink from '../utils/Generatelink'
 
 class Detail extends React.Component {
   static async getInitialProps(ctx) {
@@ -36,10 +37,10 @@ class Detail extends React.Component {
   render() {
     const { slug } = this.props;
     let notFound = false;
-    let data = Kost.filter(item => item.slug === slug)
-    if (data.length < 1) { data = Kontrakan.filter(item => item.slug === slug) }
+    let data = Kost.filter(item => Generatelink(item.title) === slug)
+    if (data.length < 1) { data = Kontrakan.filter(item => Generatelink(item.title) === slug) }
     if (!data[0]) notFound = true;
-    const otherItems = Kost.filter(item => item.slug !== slug)
+    const otherItems = Kost.filter(item => Generatelink(item.title) !== slug)
     let locationTitle = "";
     data[0] && data[0].location.title.split("-").map(index => locationTitle += Firstupper(index) + " ")
     const structureTypeBreadcrumbList =
@@ -138,7 +139,7 @@ class Detail extends React.Component {
           <meta property="og:site_name" content="Tantekos" />
           <meta name="keyphrases" content="Info Kost, Cari Kost, Sewa Kost, Kost Bebas, Kost Murah, Kost pasutri, Aplikasi Kost, Aplikasi Pencarian Kost, Aplikasi Info Kost, APlikasi Cari Kost, Kost, Tantekost, Tantekosapp, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
           <meta name="classification" content="Business, Rent House, Sewa Kost, Property, Rent Room, Info Kost, Information, Kost, Room, Cari Kost, Kost Murah, Kost Bebas, Application, Mobile Application, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
-          <link rel="canonical" content={`https://tantekos.com/${data[0].slug}`} />
+          <link rel="canonical" content={`https://tantekos.com/${slug}`} />
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureDetailPage) }} />
         </NextHead>
       }

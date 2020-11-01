@@ -2,10 +2,13 @@ import React from "react";
 import { Kost } from '../utils/modals/Kost'
 import { DtArea } from '../utils/modals/Area'
 import { Price } from '../utils/modals/Price'
+import Generatelink from '../utils/Generatelink'
+import { Kontrakan } from "../utils/modals/Kontrakan";
 
-const sitemapXml = (dataKos, dataArea, dataPrice) => {
+const sitemapXml = (dataKos, dataKontrakan, dataArea, dataPrice) => {
   let latestPost = 0;
   let itemsXML = "";
+  let kontrakanXML = "";
   let areasXML = "";
   let priceXML = "";
 
@@ -18,7 +21,7 @@ const sitemapXml = (dataKos, dataArea, dataPrice) => {
   });
 
   dataArea.map(area => {
-    const areaURL = `https://tantekos.com/area/${area.slug}`;
+    const areaURL = `https://tantekos.com/area/${Generatelink(area.title)}`;
     areasXML += `
       <url>
         <loc>${areaURL}</loc>
@@ -30,8 +33,22 @@ const sitemapXml = (dataKos, dataArea, dataPrice) => {
     if (!latestPost || postDate > latestPost) {
       latestPost = postDate;
     }
-    const itemURL = `https://tantekos.com/${post.slug}`;
+    const itemURL = `https://tantekos.com/${Generatelink(post.title)}`;
     itemsXML += `
+      <url>
+        <loc>${itemURL}</loc>
+        <lastmod>${postDate}</lastmod>
+        <priority>0.50</priority>
+      </url>`;
+  });
+
+  dataKontrakan.map(post => {
+    const postDate = post.date_modified;
+    if (!latestPost || postDate > latestPost) {
+      latestPost = postDate;
+    }
+    const itemURL = `https://tantekos.com/${Generatelink(post.title)}`;
+    kontrakanXML += `
       <url>
         <loc>${itemURL}</loc>
         <lastmod>${postDate}</lastmod>
@@ -60,13 +77,14 @@ const sitemapXml = (dataKos, dataArea, dataPrice) => {
       ${areasXML}
       ${priceXML}
       ${itemsXML}
+      ${kontrakanXML}
     </urlset>`;
 };
 
 class Sitemap extends React.Component {
   static async getInitialProps({ res }) {
     res.setHeader("Content-Type", "text/xml");
-    res.write(sitemapXml(Kost, DtArea, Price));
+    res.write(sitemapXml(Kost, Kontrakan, DtArea, Price));
     res.end();
   }
 }

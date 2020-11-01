@@ -4,6 +4,7 @@ import HeadPage from '../../components/HeadPage'
 import { Card } from 'react-bootstrap'
 import Link from 'next/link'
 import NextHead from 'next/head'
+import Generatelink from '../../utils/Generatelink'
 
 class AreaList extends React.Component {
     render() {
@@ -37,15 +38,15 @@ class AreaList extends React.Component {
                     {
                         DtArea
                             .sort(function (a, b) {
-                                var nameA = a.slug.toUpperCase();
-                                var nameB = b.slug.toUpperCase();
+                                var nameA = Generatelink(a.title.toUpperCase());
+                                var nameB = Generatelink(b.title.toUpperCase());
                                 if (nameA < nameB) return -1;
                                 if (nameA > nameB) return 1;
                                 return 0;
                             })
                             .map((item, index) =>
                                 <div key={index} className="col-6 pt-3">
-                                    <Link href={`area/${item.slug}`}>
+                                    <Link href={`area/${Generatelink(item.title)}`}>
                                         <Card variant="top">
                                             <Card.Img variant="top" src={`https://cdn.statically.io/img/i.imgur.com/w=155/${item.image}`} alt={`Kost Dan Kontrakan Murah Di ${item.title} ${item.province}`} />
                                             <div className="mt-2 mr-2 mb-0 ml-2 text-center font-weight-bold">{item.title}</div>

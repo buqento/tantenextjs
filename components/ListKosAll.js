@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Card, Container, ListGroup, ListGroupItem } from 'react-bootstrap'
 import Currency from './Currency'
 import Pagination from "react-js-pagination";
+import Generatelink from '../utils/Generatelink'
 
 class ListKosAll extends Component {
     constructor(props) {
@@ -31,7 +32,7 @@ class ListKosAll extends Component {
                                         .filter(item => item.id >= firstId && item.id <= lastId)
                                         .map((item, index) =>
                                             <div key={index} className="col-6 pt-3">
-                                                <Link href={`https://tantekos.com/${item.slug}`}>
+                                                <Link href={`https://tantekos.com/${Generatelink(item.title)}`}>
                                                     <Card variant="top">
                                                         <Card.Img variant="top" src={`https://cdn.statically.io/img/i.imgur.com/w=155/${item.images[0]}`} alt={item.title} />
                                                         <ListGroup className="list-group-flush text-center">
