@@ -324,5 +324,36 @@ export const Kontrakan = [
         facilities: ['Kamar Tidur', 'Ruang Tamu', 'Kamar Mandi', 'Dapur', 'Parkiran'],
         start_price: 35000000,
         post_url: 'https://www.facebook.com/groups/1822235571130196/permalink/3543593142327755/'
+    },
+    {
+        id: 14,
+        date_modified: '2020-11-01T13:57:10+00:00',
+        date_published: '2020-11-01T13:57:10+00:00',
+        slug: 'rumah-kontrak-murah-tahunan-lokasi-strategis-hative-kecil-sirimau-kota-ambon-maluku-fasilitas lengkap-dekat-jembatan-merah-putih',
+        title: 'Rumah Kontrak Murah Tahunan Lokasi Strategis Hative Kecil Sirimau Kota Ambon Maluku - Fasilitas Lengkap Dekat Jembatan Merah Putih',
+        description: 'Tersedia rumah kontrakan tahunan berlokasi di Hative Kecil Sirimau Kota Ambon Maluku. Lingkungan tenang, aman dan sejuk cocok untuk keluarga atau perusahaan. Strategis dan dekat dengan pusat perbelanjaan dan swalayan (MCM, Indomaret, Alfamidi). Bagi yang berminat dapat menghubungi pemilik.',
+        keywords: 'Kontrakan, Hative Kecil, Sirimau, Kota Ambon, Maluku',
+        images: [
+            'QTkcWpr.webpm',
+            'mGGIf4R.webpm',
+            'i8TIEvL.webpm',
+            '4rIONjv.webpm',
+            'RoefyHX.webpm',
+            '0iz1rtZ.webpm',
+            'lLDKpft.webpm',
+            'd4rjxR6.webpm',
+            'RN8BXGy.webpm',
+            'oHVcZfJ.webpm',
+            'yIupmJT.webpm'
+        ],
+        location: { province: 'maluku', title: 'hative-kecil', lat: '-3.668750', long: '128.198784' },
+        category: 'Kontrakan',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/sandy.hukunala/',
+            phone: '+6281343482777'
+        },
+        facilities: ['Kamar Tidur (Kamar Mandi Dalam)', 'Kamar Mandi Umum (shower & closet duduk)', 'Dapur Luas + Tempat Pencucian', 'Halaman Luas', 'Parkiran', 'Tempat Jemuran', 'Listrik 2200', 'Air Bersih (PDAM) Lancar'],
+        start_price: 40000000,
+        post_url: ''
     }
 ]
