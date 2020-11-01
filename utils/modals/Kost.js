@@ -751,5 +751,28 @@ export const Kost = [
         facilities: ['Kamar Tidur (Kasur & Meja)', 'Toilet', 'Ruang Makan', 'Dapur', 'Teras', 'Parkiran (Motor & Mobil)'],
         start_price: 1500000,
         post_url: 'https://www.facebook.com/commerce/listing/349762889689193'
+    },
+    {
+        id: 32,
+        date_modified: '2020-11-02T04:44:15+00:00',
+        date_published: '2020-11-02T04:44:15+00:00',
+        title: 'Kost Bulanan Murah Fasilitas Lengkap Lokasi Tanah Hitam Awiyo Abepura Kota Jayapura Papua - Perumahan Permata Indah',
+        description: 'Tersedia kost murah dengan fasilitas lengkap. Lokasi Perumahan Permata Indah Tanah Hitam Awiyo Abepura Kota Jayapura Papua. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Jl. Tanah hitam, Awiyo, Abepura, Kota Jayapura, Papua',
+        images: [
+            'EF1Qt25.webpm',
+            'YKfNowD.webpm',
+            'Bm6njzU.webpm',
+            'Jbjio4r.webpm'
+        ],
+        location: { province: 'papua', title: 'abepura', lat: '-2.614637', long: '140.679416' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/groups/631657273666514/user/100014530715412/',
+            phone: '+6281247820786'
+        },
+        facilities: ['Kulkas', 'Ac', 'Lemari Pakaian', 'Lemari Tv', 'Meja Rias', 'Kamar Mandi (Shower & Kloset Duduk', 'Free Wifi'],
+        start_price: 3000000,
+        post_url: ''
     }
 ]

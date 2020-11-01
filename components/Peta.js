@@ -27,7 +27,7 @@ export default function Peta(props) {
                 offsetLeft={-18} 
                 offsetTop={-25}
             >
-                <FaMapMarkerAlt size={30} />
+                <FaMapMarkerAlt size={30} className="text-danger" />
             </Marker>
         </ReactMapGl>
     )
