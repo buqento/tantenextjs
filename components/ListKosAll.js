@@ -59,7 +59,7 @@ class ListKosAll extends Component {
                     <Pagination
                         activePage={this.state.activePage}
                         itemsCountPerPage={countPerPage}
-                        totalItemsCount={data.length}
+                        totalItemsCount={listData.length}
                         pageRangeDisplayed={5}
                         onChange={this.handlePageChange.bind(this)}
                     />
