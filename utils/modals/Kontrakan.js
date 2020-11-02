@@ -341,5 +341,31 @@ export const Kontrakan = [
         facilities: ['Kamar Tidur (Kamar Mandi Dalam)', 'Kamar Mandi Umum (shower & closet duduk)', 'Dapur Luas + Tempat Pencucian', 'Halaman Luas', 'Parkiran', 'Tempat Jemuran', 'Listrik 2200', 'Air Bersih (PDAM) Lancar'],
         start_price: 40000000,
         post_url: ''
+    },
+    {
+        id: 15,
+        date_modified: '2020-11-03T05:57:10+00:00',
+        date_published: '2020-11-03T05:57:10+00:00',
+        title: 'Rumah Kontrak Tahunan Fasilitas Lengkap Lokasi Strategis Gang Mubara Perumnas III Kota Jayapura Papua',
+        description: 'Tersedia rumah kontrakan tahunan berlokasi di Gang Mubara Perumnas III Kota Jayapura Papua. Lokasi aman, fasilitas lengkap, bersih dan nyaman. Bagi yang berminat dapat menghubungi pemilik.',
+        keywords: 'Kontrakan, Jl. Kambolker Perumnas III, Yabansai, Heram, Kota Jayapura, Papua 99224',
+        images: [
+            'YUsDgdz.webpm',
+            'VhLJnrn.webpm',
+            'poN5AqI.webpm',
+            'vKpcsN2.webpm',
+            'Q16gqov.webpm',
+            'KOV4Gq7.webpm',
+            '8VUWm8w.webpm'
+        ],
+        location: { province: 'papua', title: 'kota-jayapura', lat: '-2.581143', long: '140.646829' },
+        category: 'Kontrakan',
+        contact_us: {
+            facebook_url: '',
+            phone: '+6281244332477'
+        },
+        facilities: ['4 Kamar Tidur', 'Ruang Tamu', 'Dapur', 'Teras', 'Parkiran Luas', 'Kamar Mandi', 'Tempat Mencuci', 'Air Bersih', 'Listrik Prabayar', 'Full Keramik'],
+        start_price: 33000000,
+        post_url: 'https://www.facebook.com/commerce/listing/361320638437142'
     }
 ]

@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import Header from '../components/Header'
-import Area from '../components/Area'
+import Provinsi from '../components/Provinsi'
 import Campaign from '../components/Campaign'
 import CategoryPrice from '../components/CategoryPrice'
 import GroupSocial from '../components/GroupSocial'
@@ -21,7 +21,7 @@ export default function Index() {
         <span className="float-right"><a href="/area">Lihat Semua</a></span>
       </div>
       <div style={{ borderBottom: '8px solid #f5f5f5' }}>
-        <Area />
+        <Provinsi />
       </div>
 
       <div className="m-3 mb-n2">

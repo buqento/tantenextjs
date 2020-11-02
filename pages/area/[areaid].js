@@ -1,6 +1,7 @@
 import React from 'react'
 import { string } from 'prop-types'
 import { Kost } from '../../utils/modals/Kost'
+import { Kontrakan } from '../../utils/modals/Kontrakan'
 import { DtArea } from '../../utils/modals/Area'
 import HeadPage from '../../components/HeadPage'
 import ListKos from '../../components/ListKos'
@@ -14,7 +15,7 @@ class Detail extends React.Component {
 
     render() {
         const { slug } = this.props;
-        const data = Kost.filter(item => item.location.title === slug)
+        const data = Kost.concat(Kontrakan).filter(item => item.location.title === slug)
         const dataArea = DtArea.filter(item => Generatelink(item.title) === slug)
         const structureTypeBreadcrumbList =
             `{
