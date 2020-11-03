@@ -367,5 +367,28 @@ export const Kontrakan = [
         facilities: ['4 Kamar Tidur', 'Ruang Tamu', 'Dapur', 'Teras', 'Parkiran Luas', 'Kamar Mandi', 'Tempat Mencuci', 'Air Bersih', 'Listrik Prabayar', 'Full Keramik'],
         start_price: 33000000,
         post_url: 'https://www.facebook.com/commerce/listing/361320638437142'
+    },
+    {
+        id: 16,
+        date_modified: '2020-11-04T05:57:10+00:00',
+        date_published: '2020-11-04T05:57:10+00:00',
+        title: 'Rumah Kontrak Tahunan Fasilitas Lengkap Lokasi Entrop Jayapura Selatan Kota Jayapura Papua - Perumahan Villa Megapura Permai',
+        description: 'Tersedia rumah kontrakan tahunan berlokasi di Entrop Jayapura Selatan Kota Jayapura Papua. Perumahan Villa Megapura Permai(dekat pos polisi kampung buton) Jalan Alternatif vuria. Bangunan rumah tipe 45, fasilitas lengkap, lingkungan bersih, ramai dan nyaman. Bagi yang berminat dapat menghubungi pemilik.',
+        keywords: 'Kontrakan, Entrop, Jayapura Selatan, Kota Jayapura, Papua 99224',
+        images: [
+            'NN6v6Dg.webpm',
+            'chiivZA.webpm',
+            'Y1XCea3.webpm',
+            'BRQShGO.webpm'
+        ],
+        location: { province: 'papua', title: 'jayapura-selatan', lat: '-2.584088', long: '140.678155' },
+        category: 'Kontrakan',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/cindy.dyra',
+            phone: '+6281228302856'
+        },
+        facilities: ['2 Kamar Tidur (Kamar Mandi & Kloset Duduk)', '1 Kamar Mandi (WC Jongkok)', 'Dapur', 'Ruang Tamu', 'Garasi', 'Teras', 'Pagar Rumah', 'Pagar di Komplek', 'PDAM + Tandon 1200L', 'Listrik Token'],
+        start_price: 30000000,
+        post_url: 'https://www.facebook.com/commerce/listing/808774633294694'
     }
 ]
