@@ -792,7 +792,7 @@ export const Kost = [
             'OBGaa5s.webpm',
             '6nhAXgh.webpm'
         ],
-        location: { province: 'bali', title: 'kota-denpasar', lat: '-8.652405', long: '115.190853' },
+        location: { province: 'bali', title: 'denpasar-baru', lat: '-8.652405', long: '115.190853' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/DitaElektembem',
@@ -823,5 +823,54 @@ export const Kost = [
         facilities: ['Tempat Tidur', 'Lemari Pakaian', 'Kursi', 'Kamar Mandi (Kloset Duduk)'],
         start_price: 750000,
         post_url: 'https://www.facebook.com/photo?fbid=10221164840368540&set=pcb.1436248256766239'
+    },
+    {
+        id: 35,
+        date_modified: '2020-11-05T04:04:15+00:00',
+        date_published: '2020-11-05T04:04:15+00:00',
+        title: 'Kost Bulanan Di Sanur Denpasar Selatan Kota Denpasar Bali - Murah Dan Nyaman Fasilitas Lengkap Pondok Giok',
+        description: 'Tersedia kost murah (Pondok Giok) di Sanur, Denpasar Selatan, Kota Denpasar, Bali. 5 menit ke pasar swalayan, pasar tradisional, KFC, McD, Renon Plaza, Pantai. Fasilitas lengkap, Free Wifi, keamanan terjamin cctv 24/7. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Gg. Giok No.1, Sanur, Denpasar Selatan, Kota Denpasar, Bali 80228',
+        images: [		
+            'k1K0Ssb.webpm',
+            '5NVGGO0.webpm',
+            'PJHMogg.webpm',
+            'XpDZ2pa.webpm',
+            'QxAeeF0.webpm'
+        ],
+        location: { province: 'bali', title: 'denpasar-selatan', lat: '-8.679915', long: '115.252679' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/wsulendra',
+            phone: '+6281338001992',
+        },
+        facilities: ['Ac','Kamar Mandi Dalam (Kloset Duduk)', 'Dapur', 'Ruang Jemur', 'Free Wifi', 'PAM', 'Teras Depan', 'Parkir Sepeda Motor' ],
+        start_price: 900000,
+        post_url: 'https://www.facebook.com/commerce/listing/270054954447455/'
+    },
+    {
+        id: 36,
+        date_modified: '2020-11-05T04:24:15+00:00',
+        date_published: '2020-11-05T04:24:15+00:00',
+        title: 'Kost Bulanan Murah Di Ubung Kaja Denpasar Utara Kota Denpasar Bali - Lokasi Strategis Nyaman Fasilitas Lengkap',
+        description: 'Tersedia kost murah di Ubung Kaja Denpasar Utara Kota Denpasar Bali. Fasilitas lengkap, lokasi strategis, suasana nyaman dan cocok untuk istirahat. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Ubung Kaja, Kec. Denpasar Utara, Kota Denpasar, Bali 80115', 
+        images: [		
+            'n32236L.webpm',
+            'Fb12nKb.webpm',
+            '9TB6jK7.webpm',
+            'tNdHJw0.webpm',
+            'FiE4m3d.webpm',
+            'fBJgQKT.webpm'
+        ],
+        location: { province: 'bali', title: 'denpasar-utara', lat: '-8.613691', long: '115.197887' }, 
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/groups/1768380166810959/user/100000035548156/',
+            phone: '+628113868822'
+        },
+        facilities: ['Listrik (Token)', 'Pompa Air dan PDAM', 'Kamar Tidur (Antena TV Dalam)', 'Parkiran Luas', 'Kasur (Spring Bed)'],
+        start_price: 600000,
+        post_url: 'https://www.facebook.com/commerce/listing/657483518273013/'
     }
 ]

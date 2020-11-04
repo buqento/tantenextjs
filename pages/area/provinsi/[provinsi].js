@@ -1,15 +1,25 @@
 import React from 'react'
 import { string } from 'prop-types'
 import { DtArea } from '../../../utils/modals/Area'
+import { Kost } from '../../../utils/modals/Kost'
+import { Kontrakan } from '../../../utils/modals/Kontrakan'
 import HeadPage from '../../../components/HeadPage'
 import NextHead from 'next/head'
 import Generatelink from '../../../utils/Generatelink'
 import Firstupper from '../../../utils/Firstupper'
-import { ListGroup } from 'react-bootstrap'
+import { Badge, ListGroup } from 'react-bootstrap'
 
 class Detail extends React.Component {
     static async getInitialProps(ctx) {
         return { slug: ctx.query.provinsi }
+    }
+    constructor(props) {
+        super(props)
+        this.getAmount = this.getAmount.bind(this)
+    }
+    getAmount(location) {
+        console.log(location);
+        return Kost.concat(Kontrakan).filter(item => item.location.title === location).length;
     }
     render() {
         const { slug } = this.props;
@@ -51,7 +61,14 @@ class Detail extends React.Component {
                                 })
                                 .filter(item => item.province === slug)
                                 .map((item, index) =>
-                                    <ListGroup.Item action href={`../../area/${Generatelink(item.title)}`} key={index}>{item.title}</ListGroup.Item>
+                                    <ListGroup.Item action href={`../../area/${Generatelink(item.title)}`} key={index}>
+                                        <span>
+                                            {item.title}
+                                        </span>
+                                        <span className="float-right">
+                                            <Badge variant="secondary">{this.getAmount(Generatelink(item.title))}</Badge>
+                                        </span>
+                                    </ListGroup.Item>
                                 )
                         }
                     </ListGroup>

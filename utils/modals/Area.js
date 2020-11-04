@@ -19,7 +19,7 @@ export const DtArea = [
     //  { slug: 'batu-gajah', title: 'Batu Gajah'},
     //  { slug: 'batu-meja', title: 'Batu Meja'},
     { location: { lat: '-3.695613', long: '128.179517' }, province: 'maluku', title: 'Honipopu', image: 'SxJCFTL.webpm' },
-    { location: { lat: '-3.693829', long: '128.190608' }, province: 'maluku', title: 'Karpan', image: 'MJPv6M5.webpm' },
+    // { location: { lat: '-3.693829', long: '128.190608' }, province: 'maluku', title: 'Karpang Panjang', image: 'MJPv6M5.webpm' },
     { location: { lat: '-3.677343', long: '128.195243' }, province: 'maluku', title: 'Pandan Kasturi', image: '4g4Lbyu.webpm' },
     //  { slug: 'rijali', title: 'Rijali'},
     //  { slug: 'uritetu', title: 'Uritetu'},
@@ -57,7 +57,9 @@ export const DtArea = [
     { location: { lat: '-2.576834', long: '140.506950' }, province: 'papua', title: 'Sentani', image: 'xroVcg8.webpm' },
     { location: { lat: '-2.604502', long: '140.658539' }, province: 'papua', title: 'Kota Jayapura', image: 'yWQkA69.webpm' },
     
-    { location: { lat: '-8.654131', long: '115.188625' }, province: 'bali', title: 'Kota Denpasar', image: 'QSGnE9M.webpm' },
+    { location: { lat: '-8.654131', long: '115.188625' }, province: 'bali', title: 'Denpasar Utara', image: 'n32236L.webpm' },
+    { location: { lat: '-8.654131', long: '115.188625' }, province: 'bali', title: 'Denpasar Selatan', image: 'k1K0Ssb.webpm' },
+    { location: { lat: '-8.654131', long: '115.188625' }, province: 'bali', title: 'Denpasar Baru', image: 'QSGnE9M.webpm' },
     
     { location: { lat: '-6.195744', long: '106.882137' }, province: 'jakarta', title: 'Jakarta Selatan', image: 'ggQMToK.webpm' }
 ];
