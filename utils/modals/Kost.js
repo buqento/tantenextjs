@@ -872,5 +872,29 @@ export const Kost = [
         facilities: ['Listrik (Token)', 'Pompa Air dan PDAM', 'Kamar Tidur (Antena TV Dalam)', 'Parkiran Luas', 'Kasur (Spring Bed)'],
         start_price: 600000,
         post_url: 'https://www.facebook.com/commerce/listing/657483518273013/'
+    },
+    {
+        id: 37,
+        date_modified: '2020-11-05T05:24:15+00:00',
+        date_published: '2020-11-05T05:24:15+00:00',
+        title: 'Kost Bulanan Murah Di Poka Rumah Tiga Teluk Ambon Kota Ambon Maluku - Kost Dekat Kampus Universitas Pattimura',
+        description: 'Tersedia kost murah di Poka Rumah Tiga Teluk Ambon Kota Ambon Maluku. Fasilitas lengkap, lokasi strategis dekat Kampus Universitas Pattimura Ambon, suasana nyaman dan cocok untuk mahasiswa. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Poka, Rumah Tiga, Teluk Ambon, Kota Ambon, Maluku', 
+        images: [		
+            'EwEUeyB.webpm',
+            'YHVrMNB.webpm',
+            '7rxz6Jg.webpm',
+            'vs2N5La.webpm',
+            'kf3lInD.webpm'
+        ],
+        location: { province: 'maluku', title: 'poka', campus: 'Universitas Pattimura', lat: '-3.657295', long: '128.192382' }, 
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: '+6285244353770'
+        },
+        facilities: ['Air Bersih (Free)', 'Dapur Umum', 'Kamar Mandi Umum', 'WiFi'],
+        start_price: 450000,
+        post_url: 'https://www.facebook.com/groups/tantekos/permalink/3560730573947345'
     }
 ]
