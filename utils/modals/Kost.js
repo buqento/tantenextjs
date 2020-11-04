@@ -774,5 +774,54 @@ export const Kost = [
         facilities: ['Kulkas', 'Ac', 'Lemari Pakaian', 'Lemari Tv', 'Meja Rias', 'Kamar Mandi (Shower & Kloset Duduk', 'Free Wifi'],
         start_price: 3000000,
         post_url: ''
+    },
+    {
+        id: 33,
+        date_modified: '2020-11-04T04:44:15+00:00',
+        date_published: '2020-11-04T04:44:15+00:00',
+        title: 'Kost Bulanan Murah Fasilitas Lengkap Lingkungan Aman Dan Nyaman Lokasi Padangsambian Kota Denpasar Bali',
+        description: 'Tersedia kost murah dengan fasilitas lengkap, lingkungan aman dan nyaman. Lokasi Padangsambian Kota Denpasar Bali. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Jl. Padang Udayana Gg. X No.5, Padangsambian, Denpasar Baru, Kota Denpasar, Bali 80118',
+        images: [
+            'QSGnE9M.webpm',
+            'ohuczot.webpm',
+            'E4Os41y.webpm',
+            'Lhn7Hyr.webpm',
+            'IxHszaq.webpm',
+            'RFTbrpG.webpm',
+            'OBGaa5s.webpm',
+            '6nhAXgh.webpm'
+        ],
+        location: { province: 'bali', title: 'kota-denpasar', lat: '-8.652405', long: '115.190853' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/DitaElektembem',
+            phone: '+628775791459',
+        },
+        facilities: ['Kasur', 'AC', 'Meja', 'Kamar Mandi', 'Include listrik 25 kWh', 'Parkiran'],
+        start_price: 700000,
+        post_url: 'https://www.facebook.com/photo?fbid=2821371194771983&set=pcb.2821374598104976'
+    },
+    {
+        id: 34,
+        date_modified: '2020-11-04T06:44:15+00:00',
+        date_published: '2020-11-04T06:44:15+00:00',
+        title: 'Kost Bulanan Murah Lingkungan Aman Dan Nyaman Lokasi Strategis LRT Velodrome Senayan Kebayoran Baru Jakarta Selatan',
+        description: 'Tersedia kost murah dengan lingkungan aman dan nyaman. Lokasi strategis dekat LRT Velodrome Senayan Kebayoran Baru Jakarta Selatan Daerah Khusus Ibukota Jakarta. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Senayan, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 13220',
+        images: [
+            'ggQMToK.webpm',
+            'J9FxGq2.webpm',
+            'fRqYx9l.webpm'
+        ],
+        location: { province: 'jakarta', title: 'jakarta-selatan', lat: '-6.193219', long: '106.891675' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: '+6281381766131',
+        },
+        facilities: ['Tempat Tidur', 'Lemari Pakaian', 'Kursi', 'Kamar Mandi (Kloset Duduk)'],
+        start_price: 750000,
+        post_url: 'https://www.facebook.com/photo?fbid=10221164840368540&set=pcb.1436248256766239'
     }
 ]

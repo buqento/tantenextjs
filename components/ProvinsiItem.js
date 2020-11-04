@@ -10,7 +10,7 @@ class AreaItem extends Component {
         return (
             <Link href={`area/provinsi/${Generatelink(item.title)}`}>
                     <Badge pill variant="secondary" className="mr-3 pt-2 pl-3 pr-3">
-                        <h4>Wilayah {item.title}</h4>
+                        <h5>{item.title}</h5>
                     </Badge>
             </Link>
         )

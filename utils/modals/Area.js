@@ -10,7 +10,6 @@ export const DtArea = [
     //  { slug: 'seilale', title: 'Seilale'},
     //  { slug: 'nusaniwe', title: 'Nusaniwe'},
     //  { slug: 'amahusu', title: 'Amahusu'},
-
     { location: { lat: '-3.682169', long: '128.223087' }, province: 'maluku', title: 'Batu Merah', image: 'Jdu3CNN.webpm' },
     { location: { lat: '-3.670760', long: '128.199914' }, province: 'maluku', title: 'Hative Kecil', image: 'DiQuXts.webpm' },
     //  { slug: 'soya', title: 'Soya'},
@@ -25,7 +24,6 @@ export const DtArea = [
     //  { slug: 'rijali', title: 'Rijali'},
     //  { slug: 'uritetu', title: 'Uritetu'},
     //  { slug: 'waihoka', title: 'Waihoka'},
-
     { location: { lat: '-3.661955', long: '128.217942' }, province: 'maluku', title: 'Halong', image: '0lu6aHK.webpm' },
     { location: { lat: '-3.630808', long: '128.251622' }, province: 'maluku', title: 'Passo', image: 'rpIivfJ.webpm' },
     //  { slug: 'latta', title: 'Latta'},
@@ -33,7 +31,6 @@ export const DtArea = [
     //  { slug: 'negeri-lama', title: 'Negeri Lama'},
     { location: { lat: '-3.627142', long: '128.223624' }, province: 'maluku', title: 'Waiheru', image: 'ts7LHY7.webpm' },
     { location: { lat: '-3.644044', long: '128.246256' }, province: 'maluku', title: 'Lateri', image: 'VgDIeU0.webpm' },
-
     //  { slug: 'hative-besar', title: 'Hative Besar'},
     { location: { lat: '-3.703492', long: '128.094226' }, province: 'maluku', title: 'Laha', image: 'qi2ktEL.webpm' },
     { location: { lat: '-3.649464', long: '128.193103' }, province: 'maluku', title: 'Poka', image: '7v2aJ0z.webpm' },
@@ -42,7 +39,6 @@ export const DtArea = [
     // { location: { lat: '-2.678178', long: '140.805093' }, slug: 'hunuth-durian-patah', title: 'Hunuth', image: 'PA1MJ74.webpm' },
     //  { slug: 'wayame', title: 'Wayame'},
     //  { slug: 'tihu', title: 'Tihu'},
-
     //  { slug: 'ema', title: 'Ema'},
     //  { slug: 'hatalai', title: 'Hatalai'},
     //  { slug: 'hutumury', title: 'Hutumury'},
@@ -51,7 +47,6 @@ export const DtArea = [
     //  { slug: 'leahari', title: 'Leahari'},
     //  { slug: 'naku', title: 'Naku'},
     //  { slug: 'rutong', title: 'Rutong'},
-
     { location: { lat: '-3.619747', long: '128.298092' }, province: 'maluku', title: 'Suli', image: '0utQPHq.webpm' },
     { location: { lat: '-3.061918', long: '128.196573' }, province: 'maluku', title: 'Piru', image: 'jQtXqlw.webpm' },
 
@@ -60,5 +55,9 @@ export const DtArea = [
     { location: { lat: '-2.610406', long: '140.674623' }, province: 'papua', title: 'Abepura', image: 'L7JVrMH.webpm' },
     { location: { lat: '-2.678178', long: '140.805093' }, province: 'papua', title: 'Koya Barat', image: 'HEiqNVG.webpm' },
     { location: { lat: '-2.576834', long: '140.506950' }, province: 'papua', title: 'Sentani', image: 'xroVcg8.webpm' },
-    { location: { lat: '-2.604502', long: '140.658539' }, province: 'papua', title: 'Kota Jayapura', image: 'yWQkA69.webpm' }
+    { location: { lat: '-2.604502', long: '140.658539' }, province: 'papua', title: 'Kota Jayapura', image: 'yWQkA69.webpm' },
+    
+    { location: { lat: '-8.654131', long: '115.188625' }, province: 'bali', title: 'Kota Denpasar', image: 'QSGnE9M.webpm' },
+    
+    { location: { lat: '-6.195744', long: '106.882137' }, province: 'jakarta', title: 'Jakarta Selatan', image: 'ggQMToK.webpm' }
 ];
