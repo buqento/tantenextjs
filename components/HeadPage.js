@@ -7,7 +7,7 @@ class HeadPage extends Component {
     render() {
         const { title } = this.props;
         return (
-            <div className="d-flex p-3 header-page font-weight-bold">
+            <div className="d-flex p-3 bg-gray-100 font-weight-bold">
                 <div><Link href="/"><FaChevronLeft size={24} /></Link></div>
                 <div className="ml-3">{title}</div>
             </div>

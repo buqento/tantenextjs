@@ -1,6 +1,7 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../styles/globals.css'
+import '../styles/styles.css'
 import 'swiper/swiper.scss'
 import { shape, func } from 'prop-types'
 

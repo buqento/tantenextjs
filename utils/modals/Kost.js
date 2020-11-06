@@ -831,7 +831,7 @@ export const Kost = [
         title: 'Kost Bulanan Di Sanur Denpasar Selatan Kota Denpasar Bali - Murah Dan Nyaman Fasilitas Lengkap Pondok Giok',
         description: 'Tersedia kost murah (Pondok Giok) di Sanur, Denpasar Selatan, Kota Denpasar, Bali. 5 menit ke pasar swalayan, pasar tradisional, KFC, McD, Renon Plaza, Pantai. Fasilitas lengkap, Free Wifi, keamanan terjamin cctv 24/7. Bagi yang berminat dapat menghubungi pengelola.',
         keywords: 'Kost, Gg. Giok No.1, Sanur, Denpasar Selatan, Kota Denpasar, Bali 80228',
-        images: [		
+        images: [
             'k1K0Ssb.webpm',
             '5NVGGO0.webpm',
             'PJHMogg.webpm',
@@ -844,7 +844,7 @@ export const Kost = [
             facebook_url: 'https://www.facebook.com/wsulendra',
             phone: '+6281338001992',
         },
-        facilities: ['Ac','Kamar Mandi Dalam (Kloset Duduk)', 'Dapur', 'Ruang Jemur', 'Free Wifi', 'PAM', 'Teras Depan', 'Parkir Sepeda Motor' ],
+        facilities: ['Ac', 'Kamar Mandi Dalam (Kloset Duduk)', 'Dapur', 'Ruang Jemur', 'Free Wifi', 'PAM', 'Teras Depan', 'Parkir Sepeda Motor'],
         start_price: 900000,
         post_url: 'https://www.facebook.com/commerce/listing/270054954447455/'
     },
@@ -854,8 +854,8 @@ export const Kost = [
         date_published: '2020-11-05T04:24:15+00:00',
         title: 'Kost Bulanan Murah Di Ubung Kaja Denpasar Utara Kota Denpasar Bali - Lokasi Strategis Nyaman Fasilitas Lengkap',
         description: 'Tersedia kost murah di Ubung Kaja Denpasar Utara Kota Denpasar Bali. Fasilitas lengkap, lokasi strategis, suasana nyaman dan cocok untuk istirahat. Bagi yang berminat dapat menghubungi pengelola.',
-        keywords: 'Kost, Ubung Kaja, Kec. Denpasar Utara, Kota Denpasar, Bali 80115', 
-        images: [		
+        keywords: 'Kost, Ubung Kaja, Kec. Denpasar Utara, Kota Denpasar, Bali 80115',
+        images: [
             'n32236L.webpm',
             'Fb12nKb.webpm',
             '9TB6jK7.webpm',
@@ -863,7 +863,7 @@ export const Kost = [
             'FiE4m3d.webpm',
             'fBJgQKT.webpm'
         ],
-        location: { province: 'bali', title: 'denpasar-utara', lat: '-8.613691', long: '115.197887' }, 
+        location: { province: 'bali', title: 'denpasar-utara', lat: '-8.613691', long: '115.197887' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/groups/1768380166810959/user/100000035548156/',
@@ -879,15 +879,15 @@ export const Kost = [
         date_published: '2020-11-05T05:24:15+00:00',
         title: 'Kost Bulanan Murah Di Poka Rumah Tiga Teluk Ambon Kota Ambon Maluku - Kost Dekat Kampus Universitas Pattimura',
         description: 'Tersedia kost murah di Poka Rumah Tiga Teluk Ambon Kota Ambon Maluku. Fasilitas lengkap, lokasi strategis dekat Kampus Universitas Pattimura Ambon, suasana nyaman dan cocok untuk mahasiswa. Bagi yang berminat dapat menghubungi pengelola.',
-        keywords: 'Kost, Poka, Rumah Tiga, Teluk Ambon, Kota Ambon, Maluku', 
-        images: [		
+        keywords: 'Kost, Poka, Rumah Tiga, Teluk Ambon, Kota Ambon, Maluku',
+        images: [
             'EwEUeyB.webpm',
             'YHVrMNB.webpm',
             '7rxz6Jg.webpm',
             'vs2N5La.webpm',
             'kf3lInD.webpm'
         ],
-        location: { province: 'maluku', title: 'poka', campus: 'Universitas Pattimura', lat: '-3.657295', long: '128.192382' }, 
+        location: { province: 'maluku', title: 'poka', campus: 'Universitas Pattimura', lat: '-3.657295', long: '128.192382' },
         category: 'Kost',
         contact_us: {
             facebook_url: '',
@@ -896,5 +896,33 @@ export const Kost = [
         facilities: ['Air Bersih (Free)', 'Dapur Umum', 'Kamar Mandi Umum', 'WiFi'],
         start_price: 450000,
         post_url: 'https://www.facebook.com/groups/tantekos/permalink/3560730573947345'
+    },
+    {
+        id: 38,
+        date_modified: '2020-11-06T06:44:15+00:00',
+        date_published: '2020-11-06T06:44:15+00:00',
+        title: 'Rumah Kontrakan Bulanan Tahunan Di Pemogan Denpasar Selatan Kota Denpasar Bali - Bangunan Baru Fasilitas Lengkap',
+        description: 'Tersedia rumah kontrakan bulanan dan tahunan berlokasi di Jl. Mekar Blok A XII Kavling 3A No. 3, Pemogan, Kecamatan Denpasar Selatan, Kota Denpasar, Bali. Sewa bulanan Rp2.200.000 atau pertahun Rp22.000.000. Bagi yang berminat dapat menghubungi pengelola di nomor +628123846913 atau +6281338673571.',
+        keywords: 'Kontrakan, Pemogan, Denpasar Selatan, Kota Denpasar, Bali 80221',
+        images: [
+            'oVLBXXH.webpm',
+            'orNBkW7.webpm',
+            'ey40O8I.webpm',
+            'Axpn9pp.webpm',
+            'PjO6yma.webpm',
+            'W2TGFrc.webpm',
+            'yNerfMu.webpm',
+            'UZtZaTs.webpm',
+            '8h2KwJ5.webpm'
+        ],
+        location: { province: 'Bali', title: 'Denpasar Selatan', lat: '-8.704436', long: '115.202400' },
+        category: 'Kontrakan',
+        contact_us: {
+            facebook_url: '',
+            phone: '+628123846913'
+        },
+        facilities: ['2 Kamar Tidur (2,5x3)', 'Ruang Keluarga (2,5x4)', 'Garasi Mobil (3x4,5)', 'Ruang Jemur (1x2,5)', 'Dapur (Bak Sink)', 'Kamar Mandi (Toilet Duduk Flush)', 'Wastafel Sikat Gigi & Shower', 'Listrik Token 1300kWh'],
+        start_price: 2200000,
+        post_url: 'https://www.facebook.com/groups/1768380166810959/permalink/2735039980144968/'
     }
 ]

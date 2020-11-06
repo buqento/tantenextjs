@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { shape } from 'prop-types'
 import Link from 'next/link'
-import { Badge } from 'react-bootstrap'
 import Generatelink from '../utils/Generatelink'
 
 class AreaItem extends Component {
@@ -9,9 +8,9 @@ class AreaItem extends Component {
         const { item } = this.props
         return (
             <Link href={`area/provinsi/${Generatelink(item.title)}`}>
-                    <Badge pill variant="secondary" className="mr-3 pt-2 pl-3 pr-3">
-                        <h5>{item.title}</h5>
-                    </Badge>
+                <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 mr-2 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                    <h5>{item.title}</h5>
+                </button>
             </Link>
         )
     }

@@ -6,7 +6,7 @@ import Slide from '../components/Slide'
 import FooterDetail from '../components/FooterDetail'
 import ListKosAll from '../components/ListKosAll'
 import HeadPage from '../components/HeadPage'
-import styles from '../styles/Home.module.css'
+// import styles from '../styles/Home.module.css'
 import { Kost } from '../utils/modals/Kost'
 import { Kontrakan } from '../utils/modals/Kontrakan'
 import Currency from '../components/Currency'
@@ -151,23 +151,23 @@ class Detail extends React.Component {
           <Container className="mb-3">
             <div className="pt-3">
               <small className="text-secondary">{moment(data[0].date_modified).fromNow()}</small>
-              <h1 className="heading mt-0">{data[0].title}</h1>
-              <div>
-                <p className={styles.headingtwo}>Deskripsi {data[0].category}</p>
+              <h1 className="mt-0 mb-3 text-xl">{data[0].title}</h1>
+              <div className="mb-3">
+                <p className="font-bold">Deskripsi {data[0].category}</p>
                 {data[0].description}
               </div>
-              <div>
-                <p className={styles.headingtwo}>Fasilitas {data[0].category}</p>
+              <div className="mb-3">
+                <p className="font-bold">Fasilitas {data[0].category}</p>
                 {data[0].facilities.map((item, index) => <li key={index}>{item}</li>)}
               </div>
-              <div>
-                <p className={styles.headingtwo}>Lokasi {data[0].category} <small>( {locationTitle})</small></p>
+              <div className="mb-3">
+                <p className="font-bold">Lokasi {data[0].category} <small>( {locationTitle})</small></p>
                 <Peta location={data[0].location} />
               </div>
               {
                 data[0].start_price > 0 &&
-                <div>
-                  <p className={styles.headingtwo}>Harga {data[0].category} Mulai</p>
+                <div className="mb-3">
+                  <p className="font-bold">Harga {data[0].category} Mulai</p>
                   <span>{Currency(data[0].start_price)}</span>
                 </div>
               }
@@ -176,7 +176,7 @@ class Detail extends React.Component {
                   data[0].post_url !== '' &&
                   <div className="pt-3">
                     <small>
-                      <a href={data[0].post_url} target="blank">* Pelajari selengkapnya tautan asli <FaExternalLinkAlt className="ml-1" /> </a>
+                      <a href={data[0].post_url} target="blank">* Lihat tautan asli <FaExternalLinkAlt className="ml-1 inline" /> </a>
                     </small>
                   </div>
                 }
@@ -187,11 +187,10 @@ class Detail extends React.Component {
             </div>
           </Container>
           <div style={{ borderTop: '8px solid #f5f5f5' }} />
-          <div style={{ marginBottom: '55px' }}>
+          <div>
             <ListKosAll data={otherItems} category={data[0].category} />
           </div>
           <FooterDetail
-            className="fix-footer footer-detail"
             contactUs={data[0].contact_us}
             title={data[0].title}
             postUrl={data[0].post_url}

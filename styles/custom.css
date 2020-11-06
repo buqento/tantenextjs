@@ -1,0 +1,68 @@
+.scroll-section {
+    overflow-y: auto;
+}
+.container-center {
+    line-height: 100vh;
+}
+.container-center p {
+    display: inline-block;
+    vertical-align: middle;
+}
+.clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.pagination {
+    justify-content: center;
+}  
+ul {
+    list-style: none;
+    padding: 0;
+}  
+ul.pagination li {
+    display: inline-block;
+    width: 30px;
+    border: 1px solid #e2e2e2;
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}  
+ul.pagination li a {
+    text-decoration: none;
+    color: #6c757d;
+    font-size: 20px;
+}  
+ul.pagination li.active a {
+    color: white;
+}
+ul.pagination li.active {
+    background-color: #6c757d;
+}  
+ul.pagination li a:hover,
+ul.pagination li a.active {
+    color: white;
+}
+.page-selection {
+    width: 48px;
+    height: 30px;
+    color: #6c757d;
+}
+.pagination-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}

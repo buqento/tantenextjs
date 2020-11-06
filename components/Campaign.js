@@ -12,7 +12,7 @@ class Campaign extends Component {
         filter === 'Kost' ? data = Kost : data = Kontrakan
         return (
             <div className="mt-3 mb-3">
-                <DragScroll className="scroll-section d-flex pl-16">
+                <DragScroll className="scroll-section d-flex">
                     <div className="d-flex ml-3">
                         {
                             data

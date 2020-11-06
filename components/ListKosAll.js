@@ -37,9 +37,9 @@ class ListKosAll extends Component {
                                                     <Card variant="top">
                                                         <Card.Img variant="top" src={`https://cdn.statically.io/img/i.imgur.com/w=155/${item.images[0]}`} alt={item.title} />
                                                         <ListGroup className="list-group-flush text-center">
-                                                            <ListGroupItem variant="secondary font-weight-bold">{Currency(item.start_price, false)}</ListGroupItem>
+                                                            <ListGroupItem className="font-bold">{Currency(item.start_price, false)}</ListGroupItem>
                                                         </ListGroup>
-                                                        <div className="m-2 text-center kost-title">{item.title}</div>
+                                                        <div className="m-2 text-center leading-tight clamp-3">{item.title}</div>
                                                     </Card>
                                                 </Link>
                                             </div>
