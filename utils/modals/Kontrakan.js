@@ -390,5 +390,33 @@ export const Kontrakan = [
         facilities: ['2 Kamar Tidur (Kamar Mandi & Kloset Duduk)', '1 Kamar Mandi (WC Jongkok)', 'Dapur', 'Ruang Tamu', 'Garasi', 'Teras', 'Pagar Rumah', 'Pagar di Komplek', 'PDAM + Tandon 1200L', 'Listrik Token'],
         start_price: 30000000,
         post_url: 'https://www.facebook.com/commerce/listing/808774633294694'
+    },
+    {
+        id: 17,
+        date_modified: '2020-11-06T06:44:15+00:00',
+        date_published: '2020-11-06T06:44:15+00:00',
+        title: 'Rumah Kontrakan Bulanan Tahunan Di Pemogan Denpasar Selatan Kota Denpasar Bali - Bangunan Baru Fasilitas Lengkap',
+        description: 'Tersedia rumah kontrakan bulanan dan tahunan berlokasi di Jl. Mekar Blok A XII Kavling 3A No. 3, Pemogan, Kecamatan Denpasar Selatan, Kota Denpasar, Bali. Sewa bulanan Rp2.200.000 atau pertahun Rp22.000.000. Bagi yang berminat dapat menghubungi pengelola di nomor +628123846913 atau +6281338673571.',
+        keywords: 'Kontrakan, Pemogan, Denpasar Selatan, Kota Denpasar, Bali 80221',
+        images: [
+            'oVLBXXH.webpm',
+            'orNBkW7.webpm',
+            'ey40O8I.webpm',
+            'Axpn9pp.webpm',
+            'PjO6yma.webpm',
+            'W2TGFrc.webpm',
+            'yNerfMu.webpm',
+            'UZtZaTs.webpm',
+            '8h2KwJ5.webpm'
+        ],
+        location: { province: 'Bali', title: 'Denpasar Selatan', lat: '-8.704436', long: '115.202400' },
+        category: 'Kontrakan',
+        contact_us: {
+            facebook_url: '',
+            phone: '+628123846913'
+        },
+        facilities: ['2 Kamar Tidur (2,5x3)', 'Ruang Keluarga (2,5x4)', 'Garasi Mobil (3x4,5)', 'Ruang Jemur (1x2,5)', 'Dapur (Bak Sink)', 'Kamar Mandi (Toilet Duduk Flush)', 'Wastafel Sikat Gigi & Shower', 'Listrik Token 1300kWh'],
+        start_price: 2200000,
+        post_url: 'https://www.facebook.com/groups/1768380166810959/permalink/2735039980144968/'
     }
 ]
