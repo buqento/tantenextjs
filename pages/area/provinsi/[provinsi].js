@@ -18,7 +18,6 @@ class Detail extends React.Component {
         this.getAmount = this.getAmount.bind(this)
     }
     getAmount(location) {
-        console.log(location);
         return Kost.concat(Kontrakan).filter(item => item.location.title === location).length;
     }
     render() {

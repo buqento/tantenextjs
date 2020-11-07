@@ -163,13 +163,6 @@ class Detail extends React.Component {
                 <p className="font-bold">Lokasi {data[0].category} <small>( {locationTitle})</small></p>
                 <Peta location={data[0].location} />
               </div>
-              {
-                data[0].start_price > 0 &&
-                <div className="mb-3">
-                  <p className="font-bold">Harga {data[0].category} Mulai</p>
-                  <span>{Currency(data[0].start_price)}</span>
-                </div>
-              }
               <div className="border-top mt-3">
                 {
                   data[0].post_url !== '' &&
@@ -189,6 +182,7 @@ class Detail extends React.Component {
             <ListKosOthers data={otherItems} category={data[0].category} location={data[0].location} />
           </div>
           <FooterDetail
+            startPrice={data[0].start_price}
             contactUs={data[0].contact_us}
             title={data[0].title}
             postUrl={data[0].post_url}

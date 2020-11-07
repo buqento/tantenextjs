@@ -916,7 +916,7 @@ export const Kost = [
             '2C08EFX.webpm',
             'iixUQc6.webpm'
         ],
-        location: { province: 'Bali', title: 'Denpasar Selatan', lat: '-8.694242', long: '115.233261' },
+        location: { province: 'Bali', title: 'denpasar-selatan', lat: '-8.694242', long: '115.233261' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/kostgriyapetanu/',
