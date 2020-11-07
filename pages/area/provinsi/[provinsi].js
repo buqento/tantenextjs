@@ -1,12 +1,12 @@
 import React from 'react'
 import { string } from 'prop-types'
 import { DtArea } from '../../../utils/modals/Area'
+import { DtProvinsi } from '../../../utils/modals/Provinsi'
 import { Kost } from '../../../utils/modals/Kost'
 import { Kontrakan } from '../../../utils/modals/Kontrakan'
 import HeadPage from '../../../components/HeadPage'
 import NextHead from 'next/head'
 import Generatelink from '../../../utils/Generatelink'
-import Firstupper from '../../../utils/Firstupper'
 import { Badge, ListGroup } from 'react-bootstrap'
 
 class Detail extends React.Component {
@@ -22,7 +22,7 @@ class Detail extends React.Component {
     }
     render() {
         const { slug } = this.props;
-        const areaTitle = Firstupper(slug)
+        const areaTitle = DtProvinsi.filter(item => Generatelink(item.title) === slug)[0].title
         return (
             <>
                 <NextHead>
@@ -47,7 +47,7 @@ class Detail extends React.Component {
                     <link rel="canonical" content={`https://tantekos.com/area/provinsi/${slug}`} />
                 </NextHead>
                 <div className="main-layout">
-                    <HeadPage title={`Kost & Kontrakan ${Firstupper(slug)}`} />
+                    <HeadPage title={`Kost & Kontrakan ${areaTitle}`} />
                     <ListGroup variant="flush">
                         {
                             DtArea
@@ -58,7 +58,7 @@ class Detail extends React.Component {
                                     if (nameA > nameB) return 1;
                                     return 0;
                                 })
-                                .filter(item => item.province === slug)
+                                .filter(item => Generatelink(item.province) === slug)
                                 .map((item, index) =>
                                     <ListGroup.Item action href={`../../area/${Generatelink(item.title)}`} key={index}>
                                         <span>

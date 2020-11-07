@@ -8,7 +8,7 @@ class AreaItem extends Component {
         const { item } = this.props
         return (
             <Link href={`area/provinsi/${Generatelink(item.title)}`}>
-                <button className="bg-transparent hover:bg-indigo-500 text-indigo-700 font-semibold hover:text-indigo-400 py-2 px-4 border border-indigo-500 hover:border-transparent rounded mr-2">
+                <button className="whitespace-no-wrap bg-transparent hover:bg-indigo-500 text-indigo-700 font-semibold hover:text-indigo-400 py-2 px-3 border border-indigo-500 hover:border-transparent rounded mr-2">
                     {item.title}
                 </button>
             </Link>

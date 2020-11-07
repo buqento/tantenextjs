@@ -1006,7 +1006,7 @@ export const Kost = [
             facebook_url: '',
             phone: '+6281334216872'
         },
-        facilities: ['Luas Tanah 500 m2', '3 Kamar Tidur (AC)', '3 Kamar Mandi', 'Furnished', 'Swimming Pool', 'Water Heater', 'Ruang Tamu', 'Kebun yang Luas', 'Dapur', 'WiFi', 'Listrik 5500', 'Air Bersih', 'Parkir'],
+        facilities: ['Luas Tanah 500 m2', '3 Kamar Tidur (AC)', '3 Kamar Mandi', 'Furnished', 'Swimming Pool', 'Water Heater', 'Ruang Tamu', 'Kebun yang Luas', 'Dapur', 'WiFi', 'Listrik 5500', 'Air Bersih', 'Parkiran'],
         start_price: 135000000,
         post_url: 'https://www.facebook.com/photo?fbid=1697820030392216&set=pcb.2736775009971465'
     }
