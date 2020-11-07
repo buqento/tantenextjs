@@ -29,7 +29,7 @@ class ListKos extends Component {
                                                     <ListGroup className="list-group-flush text-center">
                                                         <ListGroupItem className="font-bold">{Currency(item.start_price, false)}</ListGroupItem>
                                                     </ListGroup>
-                                                    <div className="m-2 text-center leading-tight clamp-3">{item.title}</div>
+                                                    <div className="m-2 text-center leading-snug clamp-3">{item.title}</div>
                                                 </Card>
                                             </Link>
                                         </div>

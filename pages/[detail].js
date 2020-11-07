@@ -8,7 +8,6 @@ import ListKosOthers from '../components/ListKosOthers'
 import HeadPage from '../components/HeadPage'
 import { Kost } from '../utils/modals/Kost'
 import { Kontrakan } from '../utils/modals/Kontrakan'
-import Currency from '../components/Currency'
 import Firstupper from '../utils/Firstupper'
 import Peta from '../components/Peta'
 import ReactGa from 'react-ga'
@@ -41,7 +40,7 @@ class Detail extends React.Component {
     if (!data[0]) notFound = true;
     const otherItems = Kost.concat(Kontrakan).filter(item => Generatelink(item.title) !== slug && item.location.title === data[0].location.title)
     let locationTitle = "";
-    data[0] && data[0].location.title.split("-").map(index => locationTitle += Firstupper(index) + " ")   
+    data[0] && data[0].location.title.split("-").map(index => locationTitle += Firstupper(index) + " ")
     const structureTypeBreadcrumbList =
       `{
         "@context": "https://schema.org",
@@ -176,17 +175,15 @@ class Detail extends React.Component {
               </div>
             </div>
           </Container>
-          <div className="border-b-8 border-gray-200" />
+          {
+            otherItems.length > 0 &&
+            <div>
+              <div className="border-b-8 border-gray-200" />
 
-          <div>
-            <ListKosOthers data={otherItems} category={data[0].category} location={data[0].location} />
-          </div>
-          <FooterDetail
-            startPrice={data[0].start_price}
-            contactUs={data[0].contact_us}
-            title={data[0].title}
-            postUrl={data[0].post_url}
-          />
+              <ListKosOthers data={otherItems} category={data[0].category} location={data[0].location} />
+            </div>
+          }
+          <FooterDetail data={data[0]} />
         </div>
       }
     </>

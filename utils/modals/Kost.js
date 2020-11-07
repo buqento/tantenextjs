@@ -781,7 +781,7 @@ export const Kost = [
         date_published: '2020-11-04T04:44:15+00:00',
         title: 'Kost Bulanan Murah Fasilitas Lengkap Lingkungan Aman Dan Nyaman Lokasi Padangsambian Kota Denpasar Bali',
         description: 'Tersedia kost murah dengan fasilitas lengkap, lingkungan aman dan nyaman. Lokasi Padangsambian Kota Denpasar Bali. Bagi yang berminat dapat menghubungi pengelola.',
-        keywords: 'Kost, Jl. Padang Udayana Gg. X No.5, Padangsambian, Denpasar Baru, Kota Denpasar, Bali 80118',
+        keywords: 'Kost, Jl. Padang Udayana Gg. X No.5, Padangsambian, Denpasar Barat, Kota Denpasar, Bali 80118',
         images: [
             'QSGnE9M.webpm',
             'ohuczot.webpm',
@@ -792,7 +792,7 @@ export const Kost = [
             'OBGaa5s.webpm',
             '6nhAXgh.webpm'
         ],
-        location: { province: 'bali', title: 'denpasar-baru', lat: '-8.652405', long: '115.190853' },
+        location: { province: 'bali', title: 'denpasar-barat', lat: '-8.652405', long: '115.190853' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/DitaElektembem',
@@ -925,5 +925,32 @@ export const Kost = [
         facilities: ['Kamar Kosongan', 'Kamar Mandi Dalam', 'Closet Duduk & Shower', 'Dapur', 'AC', 'Parkiran'],
         start_price: 1000000,
         post_url: 'https://www.facebook.com/kostgriyapetanu/photos/pcb.799055714227973/799055250894686/'
+    },
+    {
+        id: 39,
+        date_modified: '2020-11-07T10:44:15+00:00',
+        date_published: '2020-11-07T10:44:15+00:00',
+        title: 'Rumah Kost Bulanan Di Kroya Dalung Kuta Utara Badung Bali - Lokasi Strategis Fasilitas Lengkap',
+        description: 'Tersedia rumah kost berlokasi di Jl. Kroya Dalung Kuta Utara Badung Bali. Lokasi sangat strategis (5 Menit ke Pemda Badung, 10 Menit ke RSUD Mangusada, 10 Menit ke Canggu, 10 Menit ke Gatsu Barat, 20 Menit ke Tanah Lot, 20 Menit ke Polres Badung).  Bangunan baru, tersedia 8 kamar. Harga bervariasi (1,3Jt/bulan dan 1,5Jt/bulan pakai AC). Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Kroya, Dalung, Kuta Utara, Badung, Bali',
+        images: [
+            'lCO7Q4Y.webpm',
+            'eyoubnE.webpm',
+            'Hr4Kgw4.webpm',
+            'ayIZaEK.webpm',
+            'KwC4gIo.webpm',
+            'gbZNQRY.webpm',
+            'GpOIwbs.webpm'
+        ],
+        location: { province: 'bali', title: 'kuta-utara', lat: '-8.606427', long: '115.169768' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: '+6281339695090'
+
+        },
+        facilities: ['Lemari', 'Dipan', 'Bantal', 'Kasur', 'Parkir Luas', 'AC/Non AC', 'Listrik 1300KWh'],
+        start_price: 1300000,
+        post_url: 'https://www.facebook.com/photo?fbid=4544419498932848&set=pcb.2736438830005083'
     }
 ]
