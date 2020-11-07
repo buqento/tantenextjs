@@ -3,7 +3,7 @@ import Footer from '../components/Footer'
 import HeadPage from '../components/HeadPage'
 const Layout = (props) => (
     <div className="main-layout">
-        <HeadPage homepage title="Tantekos" />
+        <HeadPage page="home" title="Tantekos" />
         <div>
             {props.children}
         </div>

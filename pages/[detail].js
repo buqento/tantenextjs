@@ -143,7 +143,7 @@ class Detail extends React.Component {
       {
         data && data[0] &&
         <div className="main-layout">
-          <HeadPage title={data[0].category + ' ' + locationTitle} />
+          <HeadPage page="detail" title={data[0].category + ' ' + locationTitle} />
           <Slide imagesData={data[0].images} imageTitle={data[0].title} />
           <div className="container mb-3">
             <div className="pt-3">
