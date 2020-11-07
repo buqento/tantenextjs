@@ -976,5 +976,31 @@ export const Kost = [
         facilities: ['Kamar Tidur', 'Kamar Mandi', 'Dapur', 'Include PDAM', 'Exclude PLN'],
         start_price: 500000,
         post_url: 'https://www.facebook.com/photo?fbid=185045116556902&set=pcb.2736800539968912'
+    },
+    {
+        id: 41,
+        date_modified: '2020-11-08T05:44:15+00:00',
+        date_published: '2020-11-08T05:44:15+00:00',
+        title: 'Kost Murah Sewa Bulanan Di Air Kuning Batu Merah Sirimau Kota Ambon Maluku - Fasilitas Lengkap Rekomendasi Keluarga Kecil Atau Single',
+        description: 'Tersedia rumah kost dengan fasilitas lengkap berlokasi di Air Kuning Batu Merah Sirimau Kota Ambon Maluku. Kost ini direkomendasikan untuk yang masih single atau keluarga kecil. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Batu Merah, Sirimau, Kota Ambon, Maluku',
+        images: [
+            'LnZePrH.webpm',
+            '1E5XW5W.webpm',
+            'VkmoJn0.webpm',
+            'QaHMnmB.webpm',
+            'l05IgRS.webpm',
+            'ensJQpa.webpm'
+        ],
+        location: { province: 'maluku', title: 'batu-merah', lat: '-3.680191', long: '128.198923' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: '+6285298573452'
+
+        },
+        facilities: ['Kamar Tidur', 'Kamar Mandi', 'Dapur', 'Air PDAM'],
+        start_price: 1000000,
+        post_url: 'https://www.facebook.com/groups/tantekos/permalink/3566512020035867/'
     }
 ]

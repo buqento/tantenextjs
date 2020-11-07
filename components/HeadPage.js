@@ -5,7 +5,6 @@ import Router from 'next/router'
 class HeadPage extends Component {
     render() {
         const { page, title } = this.props;
-
         return (
             <div className={`flex p-3 text-gray-700 font-bold ${page === 'home' && 'bg-gray-100 text-2xl'}`}>
                 {
