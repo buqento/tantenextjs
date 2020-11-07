@@ -1,24 +1,19 @@
 import React from 'react'
 import HeadPage from '../components/HeadPage'
 import { Container } from 'react-bootstrap'
-
 export default function Index() {
   return (
     <div className="main-layout">
-
       <HeadPage title="Kontak Kami" />
-
-      <Container className="mt-3 text-center">
-
-        <h1>Kontak Kami</h1>
-        <p>Jika Anda memiliki pertanyaan atau saran untuk pengembangan layanan kami, jangan ragu untuk menghubungi kami melalui layanan:</p>
-        <p>Email: tantekos@gmail.com</p>
-        <p>Telepon: +62 878-7203-3154</p>
-        <p>Halaman Facebook: <a href="https://www.facebook.com/groups/tantekos" target="blank">Tantekos</a></p>
-        <p>Instagram: <a href="https://www.instagram.com/tantekos_official" target="blank">Tantekos Official</a></p>
-
+      <Container className="text-center leading-relaxed">
+        <h1 className="text-2xl py-3">Kontak Kami</h1>
+        <p>Jika Anda memiliki pertanyaan atau saran untuk pengembangan layanan kami, jangan ragu untuk menghubungi kami melalui layanan kami.</p>
+        <p><strong>tantekos@gmail.com</strong></p>
+        <p><strong>+62 878-7203-3154</strong></p>
+        <p className="text-indigo-700 font-bold">
+          <a href="https://www.facebook.com/groups/tantekos" target="blank">Facebook</a> &middot; <a href="https://www.instagram.com/tantekos_official" target="blank">Instagram</a>
+        </p>
       </Container>
-
     </div>
   )
 }

@@ -418,5 +418,38 @@ export const Kontrakan = [
         facilities: ['2 Kamar Tidur (2,5x3)', 'Ruang Keluarga (2,5x4)', 'Garasi Mobil (3x4,5)', 'Ruang Jemur (1x2,5)', 'Dapur (Bak Sink)', 'Kamar Mandi (Toilet Duduk Flush)', 'Wastafel Sikat Gigi & Shower', 'Listrik Token 1300kWh'],
         start_price: 2200000,
         post_url: 'https://www.facebook.com/groups/1768380166810959/permalink/2735039980144968/'
+    },
+    {
+        id: 41,
+        date_modified: '2020-11-07T17:44:15+00:00',
+        date_published: '2020-11-07T17:44:15+00:00',
+        title: 'Rumah Kontrakan Tahunan Di Benoa Kecamatan Kuta Selatan Kabupaten Badung Bali - Fasilitas Lengkap',
+        description: 'Tersedia rumah kontrakan berlokasi di Jl. Siligita Gg Jambu Benoa Kecamatan Kuta Selatan Kabupaten Badung Bali. Lokasi sangat strategis (3 menit berkendara ke Pepito, 4 menit berkendara ke RS Surya Husada, 5 menit berkendara ke Nusa Dua Shopping Center, 4 menit berkendara ke Coco Mart, 10 menit berkendara ke Geger Beach, 20 menit berkendara ke Melasti Beach, 8 menit berkendara ke Mengiat Beach, 8 menit berkendara ke Bali Collection Shopping Center, 15 menit berkendara ke Ngurah Rai International Airport). Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kontrakan, Benoa, Kuta Selatan, Badung, Bali 80361',
+        images: [
+            'nEnffzx.webpm',
+            'wScD1aM.webpm',
+            'G3Y8bZi.webpm',
+            'sjmw4gu.webpm',
+            'ZnfdJpA.webpm',
+            'pYwASpe.webpm',
+            '7V5TpvS.webpm',
+            'OD6LLCX.webpm',
+            '4178FqC.webpm',
+            'qiZptcS.webpm',
+            'hRl6LWr.webpm',
+            'BDysbzc.webpm',
+            'hTrwfiT.webpm',
+            '3cfmcPB.webpm'
+        ],
+        location: { province: 'bali', title: 'kuta-selatan', lat: '-8.795202', long: '115.214893' },
+        category: 'Kontrakan',
+        contact_us: {
+            facebook_url: '',
+            phone: '+6281334216872'
+        },
+        facilities: ['Luas Tanah 500 m2', '3 Kamar Tidur (AC)', '3 Kamar Mandi', 'Furnished', 'Swimming Pool', 'Water Heater', 'Ruang Tamu', 'Kebun yang Luas', 'Dapur', 'WiFi', 'Listrik 5500', 'Air Bersih', 'Parkiran'],
+        start_price: 135000000,
+        post_url: 'https://www.facebook.com/photo?fbid=1697820030392216&set=pcb.2736775009971465'
     }
 ]
