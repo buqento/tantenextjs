@@ -765,7 +765,7 @@ export const Kost = [
             'Bm6njzU.webpm',
             'Jbjio4r.webpm'
         ],
-        location: { province: 'papua', title: 'abepura', lat: '-2.614637', long: '140.679416' },
+        location: { province: 'papua', title: 'Abepura', lat: '-2.614637', long: '140.679416' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/groups/631657273666514/user/100014530715412/',
@@ -792,7 +792,7 @@ export const Kost = [
             'OBGaa5s.webpm',
             '6nhAXgh.webpm'
         ],
-        location: { province: 'bali', title: 'denpasar-barat', lat: '-8.652405', long: '115.190853' },
+        location: { province: 'bali', title: 'Denpasar Barat', lat: '-8.652405', long: '115.190853' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/DitaElektembem',
@@ -814,7 +814,7 @@ export const Kost = [
             'J9FxGq2.webpm',
             'fRqYx9l.webpm'
         ],
-        location: { province: 'jakarta', title: 'jakarta-selatan', lat: '-6.193219', long: '106.891675' },
+        location: { province: 'jakarta', title: 'Jakarta Selatan', lat: '-6.193219', long: '106.891675' },
         category: 'Kost',
         contact_us: {
             facebook_url: '',
@@ -838,7 +838,7 @@ export const Kost = [
             'XpDZ2pa.webpm',
             'QxAeeF0.webpm'
         ],
-        location: { province: 'bali', title: 'denpasar-selatan', lat: '-8.679915', long: '115.252679' },
+        location: { province: 'bali', title: 'Denpasar Selatan', lat: '-8.679915', long: '115.252679' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/wsulendra',
@@ -863,7 +863,7 @@ export const Kost = [
             'FiE4m3d.webpm',
             'fBJgQKT.webpm'
         ],
-        location: { province: 'bali', title: 'denpasar-utara', lat: '-8.613691', long: '115.197887' },
+        location: { province: 'bali', title: 'Denpasar Utara', lat: '-8.613691', long: '115.197887' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/groups/1768380166810959/user/100000035548156/',
@@ -887,7 +887,7 @@ export const Kost = [
             'vs2N5La.webpm',
             'kf3lInD.webpm'
         ],
-        location: { province: 'maluku', title: 'poka', campus: 'Universitas Pattimura', lat: '-3.657295', long: '128.192382' },
+        location: { province: 'maluku', title: 'Poka', campus: 'Universitas Pattimura', lat: '-3.657295', long: '128.192382' },
         category: 'Kost',
         contact_us: {
             facebook_url: '',
@@ -916,7 +916,7 @@ export const Kost = [
             '2C08EFX.webpm',
             'iixUQc6.webpm'
         ],
-        location: { province: 'Bali', title: 'denpasar-selatan', lat: '-8.694242', long: '115.233261' },
+        location: { province: 'Bali', title: 'Denpasar Selatan', lat: '-8.694242', long: '115.233261' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/kostgriyapetanu/',
@@ -942,7 +942,7 @@ export const Kost = [
             'gbZNQRY.webpm',
             'GpOIwbs.webpm'
         ],
-        location: { province: 'bali', title: 'kuta-utara', lat: '-8.606427', long: '115.169768' },
+        location: { province: 'bali', title: 'Kuta Utara', lat: '-8.606427', long: '115.169768' },
         category: 'Kost',
         contact_us: {
             facebook_url: '',
@@ -966,7 +966,7 @@ export const Kost = [
             'zKNwtF3.webpm',
             '84dwRfC.webpm'
         ],
-        location: { province: 'bali', title: 'denpasar-selatan', lat: '-8.676260', long: '115.236910' },
+        location: { province: 'bali', title: 'Denpasar Selatan', lat: '-8.676260', long: '115.236910' },
         category: 'Kost',
         contact_us: {
             facebook_url: '',
@@ -992,7 +992,7 @@ export const Kost = [
             'l05IgRS.webpm',
             'ensJQpa.webpm'
         ],
-        location: { province: 'maluku', title: 'batu-merah', lat: '-3.680191', long: '128.198923' },
+        location: { province: 'maluku', title: 'Batu Merah', lat: '-3.680191', long: '128.198923' },
         category: 'Kost',
         contact_us: {
             facebook_url: '',

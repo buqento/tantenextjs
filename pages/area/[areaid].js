@@ -15,7 +15,7 @@ class Detail extends React.Component {
 
     render() {
         const { slug } = this.props;
-        const data = Kost.concat(Kontrakan).filter(item => item.location.title === slug)
+        const data = Kost.concat(Kontrakan).filter(item => Generateslug(item.location.title) === slug)
         const dataArea = DtArea.filter(item => Generateslug(item.title) === slug)
         const structureTypeBreadcrumbList =
             `{

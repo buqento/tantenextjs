@@ -12,12 +12,15 @@ class ListKosOthers extends Component {
     }
     handlePageChange(pageNumber) { this.setState({ activePage: pageNumber }); }
     render() {
-        const { data, category } = this.props
+        const { data, category, location } = this.props
         const { countPerPage } = this.state
         let listData = [];
         category !== null ? listData = data.filter(i => i.category === category) : listData = data
         return (
             <div className="container pb-3">
+                <div className="pt-3 font-bold">
+                    {`${category} lain di ${location.title}`}
+                </div>
                 <div className="row">
                     {
                         listData
@@ -54,10 +57,12 @@ class ListKosOthers extends Component {
 }
 ListKosOthers.propTypes = {
     data: arrayOf(shape({})),
-    category: string
+    category: string,
+    location: string
 }
 ListKosOthers.defaultProps = {
     data: null,
-    category: null
+    category: null,
+    location: null
 }
 export default ListKosOthers;

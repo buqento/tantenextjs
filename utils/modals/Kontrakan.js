@@ -332,7 +332,7 @@ export const Kontrakan = [
             'oHVcZfJ.webpm',
             'yIupmJT.webpm'
         ],
-        location: { province: 'maluku', title: 'hative-kecil', lat: '-3.668750', long: '128.198784' },
+        location: { province: 'maluku', title: 'Hative Kecil', lat: '-3.668750', long: '128.198784' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/sandy.hukunala/',
@@ -358,7 +358,7 @@ export const Kontrakan = [
             'KOV4Gq7.webpm',
             '8VUWm8w.webpm'
         ],
-        location: { province: 'papua', title: 'kota-jayapura', lat: '-2.581143', long: '140.646829' },
+        location: { province: 'papua', title: 'Kota Jayapura', lat: '-2.581143', long: '140.646829' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: '',
@@ -381,7 +381,7 @@ export const Kontrakan = [
             'Y1XCea3.webpm',
             'BRQShGO.webpm'
         ],
-        location: { province: 'papua', title: 'jayapura-selatan', lat: '-2.584088', long: '140.678155' },
+        location: { province: 'papua', title: 'Jayapura Selatan', lat: '-2.584088', long: '140.678155' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/cindy.dyra',
@@ -442,7 +442,7 @@ export const Kontrakan = [
             'hTrwfiT.webpm',
             '3cfmcPB.webpm'
         ],
-        location: { province: 'bali', title: 'kuta-selatan', lat: '-8.795202', long: '115.214893' },
+        location: { province: 'bali', title: 'Kuta Selatan', lat: '-8.795202', long: '115.214893' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: '',

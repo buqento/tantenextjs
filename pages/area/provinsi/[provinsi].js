@@ -17,7 +17,7 @@ class Detail extends React.Component {
         this.getAmount = this.getAmount.bind(this)
     }
     getAmount(location) {
-        return Kost.concat(Kontrakan).filter(item => item.location.title === location).length;
+        return Kost.concat(Kontrakan).filter(item => Generateslug(item.location.title) === location).length;
     }
     render() {
         const { slug } = this.props;
