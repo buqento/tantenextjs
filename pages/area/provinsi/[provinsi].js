@@ -6,8 +6,7 @@ import { Kost } from '../../../utils/modals/Kost'
 import { Kontrakan } from '../../../utils/modals/Kontrakan'
 import HeadPage from '../../../components/HeadPage'
 import NextHead from 'next/head'
-import Generatelink from '../../../utils/Generatelink'
-import { Badge, ListGroup } from 'react-bootstrap'
+import Generateslug from '../../../utils/Generateslug'
 
 class Detail extends React.Component {
     static async getInitialProps(ctx) {
@@ -22,7 +21,7 @@ class Detail extends React.Component {
     }
     render() {
         const { slug } = this.props;
-        const areaTitle = DtProvinsi.filter(item => Generatelink(item.title) === slug)[0].title
+        const areaTitle = DtProvinsi.filter(item => Generateslug(item.title) === slug)[0].title
         return (
             <>
                 <NextHead>
@@ -48,29 +47,31 @@ class Detail extends React.Component {
                 </NextHead>
                 <div className="main-layout">
                     <HeadPage title={`Kost & Kontrakan ${areaTitle}`} />
-                    <ListGroup variant="flush">
+                    <div className="container divide-y sm:divide-y-2 md:divide-y-4 lg:divide-y-8 xl:divide-y-0 divide-gray-400">
                         {
                             DtArea
                                 .sort(function (a, b) {
-                                    var nameA = Generatelink(a.title.toUpperCase());
-                                    var nameB = Generatelink(b.title.toUpperCase());
+                                    var nameA = Generateslug(a.title.toUpperCase());
+                                    var nameB = Generateslug(b.title.toUpperCase());
                                     if (nameA < nameB) return -1;
                                     if (nameA > nameB) return 1;
                                     return 0;
                                 })
-                                .filter(item => Generatelink(item.province) === slug)
+                                .filter(item => Generateslug(item.province) === slug)
                                 .map((item, index) =>
-                                    <ListGroup.Item action href={`../../area/${Generatelink(item.title)}`} key={index}>
-                                        <span>
-                                            {item.title}
-                                        </span>
-                                        <span className="float-right">
-                                            <Badge variant="secondary">{this.getAmount(Generatelink(item.title))}</Badge>
-                                        </span>
-                                    </ListGroup.Item>
+                                    <div className="py-2 px-3" key={index}>
+                                        <a href={`../../area/${Generateslug(item.title)}`}>
+                                            <div>
+                                                <span>{item.title}</span>
+                                                <span className="float-right text-xs font-semibold inline-block py-1 px-2 uppercase text-indigo-600 bg-indigo-200 uppercase last:mr-0 mr-1">
+                                                    {this.getAmount(Generateslug(item.title))}
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </div>
                                 )
                         }
-                    </ListGroup>
+                    </div>
                 </div>
             </>
         )

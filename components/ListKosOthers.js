@@ -3,7 +3,7 @@ import { arrayOf, shape, string } from 'prop-types'
 import Link from 'next/link'
 import Currency from './Currency'
 import Pagination from "react-js-pagination";
-import Generatelink from '../utils/Generatelink'
+import Generateslug from '../utils/Generateslug'
 
 class ListKosOthers extends Component {
     constructor(props) {
@@ -24,8 +24,8 @@ class ListKosOthers extends Component {
                             .reverse()
                             .map((item, index) =>
                                 <div key={index} className="col-6 pt-3">
-                                    <Link href={`https://tantekos.com/${Generatelink(item.title)}`}>
-                                        <div className="rounded overflow-hidden shadow-sm">
+                                    <Link href={`https://tantekos.com/${Generateslug(item.title)}`}>
+                                        <div className="rounded overflow-hidden shadow-sm border">
                                             <img className="w-full" src={`https://cdn.statically.io/img/i.imgur.com/w=125/${item.images[0]}`} alt={item.title} />
                                             <div className="px-3 py-3 text-center">
                                                 <div className="px-2 font-bold">{Currency(item.start_price, false)}</div>

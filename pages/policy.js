@@ -1,11 +1,10 @@
 import React from 'react'
 import HeadPage from '../components/HeadPage'
-import { Container } from 'react-bootstrap'
 export default function Index() {
   return (
     <div className="main-layout">
       <HeadPage title="Kebijakan Privasi" />
-      <Container className="text-center leading-relaxed">
+      <div className="container text-center leading-relaxed">
         <h1 className="text-2xl py-3">Kebijakan Privasi</h1>
         <p>Kami bangga membangun aplikasi Tantekos sebagai aplikasi Gratis. Layanan ini disediakan tanpa biaya dan dimaksudkan untuk digunakan sebagaimana adanya.</p>
         <p>Halaman ini digunakan untuk memberi tahu pengunjung mengenai kebijakan kami dengan pengumpulan, penggunaan, dan pengungkapan Informasi Pribadi jika ada yang memutuskan untuk menggunakan Layanan kami.</p>
@@ -18,7 +17,7 @@ export default function Index() {
         <p className="mt-3 font-bold">Hubungi Kami</p>
         <p>Jika Anda memiliki pertanyaan atau saran tentang Kebijakan Privasi kami, jangan ragu untuk menghubungi kami melalui layanan <a href="contact" className="text-indigo-700">kontak kami</a>.</p>
         <p className="my-3 pt-2 font-bold border-t-2">TANTEKOS</p>
-      </Container>
+      </div>
     </div>
   )
 }

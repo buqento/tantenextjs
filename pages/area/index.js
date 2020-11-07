@@ -1,10 +1,9 @@
 import React from 'react'
 import { DtArea } from '../../utils/modals/Area'
 import HeadPage from '../../components/HeadPage'
-import { Card } from 'react-bootstrap'
 import Link from 'next/link'
 import NextHead from 'next/head'
-import Generatelink from '../../utils/Generatelink'
+import Generateslug from '../../utils/Generateslug'
 
 class AreaList extends React.Component {
     render() {
@@ -38,22 +37,22 @@ class AreaList extends React.Component {
                     {
                         DtArea
                             .sort(function (a, b) {
-                                var nameA = Generatelink(a.title.toUpperCase());
-                                var nameB = Generatelink(b.title.toUpperCase());
+                                var nameA = Generateslug(a.title.toUpperCase());
+                                var nameB = Generateslug(b.title.toUpperCase());
                                 if (nameA < nameB) return -1;
                                 if (nameA > nameB) return 1;
                                 return 0;
                             })
                             .map((item, index) =>
                                 <div key={index} className="col-6 pt-3">
-                                    <Link href={`area/${Generatelink(item.title)}`}>
-                                        <Card variant="top">
-                                            <Card.Img variant="top" src={`https://cdn.statically.io/img/i.imgur.com/w=155/${item.image}`} alt={`Kost Dan Kontrakan Murah Di ${item.title} ${item.province}`} />
-                                            <div className="mt-2 mr-2 mb-0 ml-2 text-center font-bold clamp-1">{item.title}</div>
-                                            <div className="mt-0 mr-2 mb-2 ml-2 text-center text-uppercase text-current">
-                                                <small>{item.province}</small>
+                                    <Link href={`area/${Generateslug(item.title)}`}>
+                                        <div className="rounded overflow-hidden shadow-sm border">
+                                            <img className="w-full" src={`https://cdn.statically.io/img/i.imgur.com/w=125/${item.image}`} alt={item.title} />
+                                            <div className="px-3 py-3 text-center">
+                                                <div className="px-2 font-bold clamp-1">{item.title}</div>
+                                                <div className="text-current uppercase leading-tight clamp-1"><small>{item.province}</small></div>
                                             </div>
-                                        </Card>
+                                        </div>
                                     </Link>
                                 </div>
                             )

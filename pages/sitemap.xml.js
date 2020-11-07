@@ -2,7 +2,7 @@ import React from "react";
 import { Kost } from '../utils/modals/Kost'
 import { DtArea } from '../utils/modals/Area'
 import { Price } from '../utils/modals/Price'
-import Generatelink from '../utils/Generatelink'
+import Generateslug from '../utils/Generateslug'
 import { Kontrakan } from "../utils/modals/Kontrakan";
 
 const sitemapXml = (dataKos, dataKontrakan, dataArea, dataPrice) => {
@@ -21,7 +21,7 @@ const sitemapXml = (dataKos, dataKontrakan, dataArea, dataPrice) => {
   });
 
   dataArea.map(area => {
-    const areaURL = `https://tantekos.com/area/${Generatelink(area.title)}`;
+    const areaURL = `https://tantekos.com/area/${Generateslug(area.title)}`;
     areasXML += `
       <url>
         <loc>${areaURL}</loc>
@@ -33,7 +33,7 @@ const sitemapXml = (dataKos, dataKontrakan, dataArea, dataPrice) => {
     if (!latestPost || postDate > latestPost) {
       latestPost = postDate;
     }
-    const itemURL = `https://tantekos.com/${Generatelink(post.title)}`;
+    const itemURL = `https://tantekos.com/${Generateslug(post.title)}`;
     itemsXML += `
       <url>
         <loc>${itemURL}</loc>
@@ -47,7 +47,7 @@ const sitemapXml = (dataKos, dataKontrakan, dataArea, dataPrice) => {
     if (!latestPost || postDate > latestPost) {
       latestPost = postDate;
     }
-    const itemURL = `https://tantekos.com/${Generatelink(post.title)}`;
+    const itemURL = `https://tantekos.com/${Generateslug(post.title)}`;
     kontrakanXML += `
       <url>
         <loc>${itemURL}</loc>

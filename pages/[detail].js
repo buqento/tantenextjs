@@ -1,7 +1,6 @@
 import React from 'react'
 import { arrayOf, shape, string } from 'prop-types'
 import NextHead from 'next/head'
-import { Container } from 'react-bootstrap'
 import Slide from '../components/Slide'
 import FooterDetail from '../components/FooterDetail'
 import ListKosOthers from '../components/ListKosOthers'
@@ -13,7 +12,7 @@ import Peta from '../components/Peta'
 import ReactGa from 'react-ga'
 import moment from 'moment';
 import { FaExternalLinkAlt } from 'react-icons/fa';
-import Generatelink from '../utils/Generatelink'
+import Generateslug from '../utils/Generateslug'
 
 class Detail extends React.Component {
   static async getInitialProps(ctx) {
@@ -35,10 +34,10 @@ class Detail extends React.Component {
   render() {
     const { slug } = this.props;
     let notFound = false;
-    let data = Kost.filter(item => Generatelink(item.title) === slug)
-    if (data.length < 1) { data = Kontrakan.filter(item => Generatelink(item.title) === slug) }
+    let data = Kost.filter(item => Generateslug(item.title) === slug)
+    if (data.length < 1) { data = Kontrakan.filter(item => Generateslug(item.title) === slug) }
     if (!data[0]) notFound = true;
-    const otherItems = Kost.concat(Kontrakan).filter(item => Generatelink(item.title) !== slug && item.location.title === data[0].location.title)
+    const otherItems = Kost.concat(Kontrakan).filter(item => Generateslug(item.title) !== slug && item.location.title === data[0].location.title)
     let locationTitle = "";
     data[0] && data[0].location.title.split("-").map(index => locationTitle += Firstupper(index) + " ")
     const structureTypeBreadcrumbList =
@@ -146,7 +145,7 @@ class Detail extends React.Component {
         <div className="main-layout">
           <HeadPage title={data[0].category + ' ' + locationTitle} />
           <Slide imagesData={data[0].images} imageTitle={data[0].title} />
-          <Container className="mb-3">
+          <div className="container mb-3">
             <div className="pt-3">
               <small className="text-gray-600">{moment(data[0].date_modified).fromNow()}</small>
               <h1 className="mt-0 mb-3 text-xl">{data[0].title}</h1>
@@ -174,7 +173,7 @@ class Detail extends React.Component {
                 </small>
               </div>
             </div>
-          </Container>
+          </div>
           {
             otherItems.length > 0 &&
             <div>

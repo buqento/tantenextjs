@@ -6,7 +6,7 @@ import { DtArea } from '../../utils/modals/Area'
 import HeadPage from '../../components/HeadPage'
 import ListKos from '../../components/ListKos'
 import NextHead from 'next/head'
-import Generatelink from '../../utils/Generatelink'
+import Generateslug from '../../utils/Generateslug'
 
 class Detail extends React.Component {
     static async getInitialProps(ctx) {
@@ -16,7 +16,7 @@ class Detail extends React.Component {
     render() {
         const { slug } = this.props;
         const data = Kost.concat(Kontrakan).filter(item => item.location.title === slug)
-        const dataArea = DtArea.filter(item => Generatelink(item.title) === slug)
+        const dataArea = DtArea.filter(item => Generateslug(item.title) === slug)
         const structureTypeBreadcrumbList =
             `{
           "@context": "https://schema.org",
@@ -57,7 +57,7 @@ class Detail extends React.Component {
                 ${data.map((item, index) => `{
                     "@type": "ListItem",
                     "position": ${index + 1},
-                    "url": "https://tantekos.com/${Generatelink(item.title)}"
+                    "url": "https://tantekos.com/${Generateslug(item.title)}"
                 }`)}
             ]
         }`

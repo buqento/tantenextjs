@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Button } from 'react-bootstrap'
 import { shape } from 'prop-types'
 import { FaPhoneSquareAlt } from 'react-icons/fa';
 import ReactGa from 'react-ga'
@@ -34,7 +33,7 @@ class FooterDetail extends Component {
                 </div>
                 <div className="mr-2 text-gray-700 text-center self-center">
                     {
-                        data.contact_us && data.contact_us.phone !== '' ? <Button variant="success" onClick={() => this.handleCall(data.contact_us.phone)}><FaPhoneSquareAlt size={20} className="mr-2 inline" />Telepon</Button> : <Button variant="secondary" disabled><FaPhoneSquareAlt size={20} className="mr-2 inline" />Telepon</Button>
+                        data.contact_us && data.contact_us.phone !== '' ? <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded" onClick={() => this.handleCall(data.contact_us.phone)}><FaPhoneSquareAlt size={20} className="mr-2 inline" />Telepon</button> : <button className="bg-blue-500 text-white font-bold py-2 px-3 rounded opacity-50 cursor-not-allowed"><FaPhoneSquareAlt size={20} className="mr-2 inline" />Telepon</button>
                     }
                 </div>
             </div>
