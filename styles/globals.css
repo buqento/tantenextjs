@@ -9,3 +9,6 @@ body {
   max-width: 411px;
   margin: auto;
 }
+a:hover {
+  text-decoration: none;
+}

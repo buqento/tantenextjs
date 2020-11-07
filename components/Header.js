@@ -91,7 +91,7 @@ class Header extends Component {
         return (
             <>
                 <NextHead>
-                    <title>Tantekos - Info Kost Kontrakan Harian Bulanan Murah Terjangkau Nyaman Strategis</title>
+                    <title>Cari Kost Dan Kontrakan Harian Bulanan Tahunan Murah Terjangkau Nyaman Strategis</title>
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                     <meta name="googlebot" content="index, follow" />
                     <meta name="robot" content="index, follow" />

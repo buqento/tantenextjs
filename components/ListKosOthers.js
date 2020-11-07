@@ -6,7 +6,7 @@ import Currency from './Currency'
 import Pagination from "react-js-pagination";
 import Generatelink from '../utils/Generatelink'
 
-class ListKosAll extends Component {
+class ListKosOthers extends Component {
     constructor(props) {
         super(props);
         this.state = { activePage: 1, countPerPage: 10 };
@@ -14,14 +14,9 @@ class ListKosAll extends Component {
     handlePageChange(pageNumber) { this.setState({ activePage: pageNumber }); }
     render() {
         const { data, category } = this.props
-        const { activePage, countPerPage } = this.state
+        const { countPerPage } = this.state
         let listData = [];        
         category !== null ? listData = data.filter(i => i.category === category) : listData = data
-        console.log(listData);
-        let lastId = 10;
-        let firstId = 1;
-        lastId = activePage * countPerPage
-        firstId = lastId - countPerPage + 1
         return (
             <div className="container pb-3">
                 <div className="row">
@@ -31,7 +26,6 @@ class ListKosAll extends Component {
                                 {
                                     listData
                                         .reverse()
-                                        .filter(item => item.id >= firstId && item.id <= lastId)
                                         .map((item, index) =>
                                             <div key={index} className="col-6 pt-3">
                                                 <Link href={`https://tantekos.com/${Generatelink(item.title)}`}>
@@ -72,14 +66,14 @@ class ListKosAll extends Component {
     }
 }
 
-ListKosAll.propTypes = {
+ListKosOthers.propTypes = {
     data: arrayOf(shape({})),
     category: string
 }
 
-ListKosAll.defaultProps = {
+ListKosOthers.defaultProps = {
     data: null,
     category: null
 }
 
-export default ListKosAll;
+export default ListKosOthers;

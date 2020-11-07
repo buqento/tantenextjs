@@ -4,9 +4,8 @@ import NextHead from 'next/head'
 import { Container } from 'react-bootstrap'
 import Slide from '../components/Slide'
 import FooterDetail from '../components/FooterDetail'
-import ListKosAll from '../components/ListKosAll'
+import ListKosOthers from '../components/ListKosOthers'
 import HeadPage from '../components/HeadPage'
-// import styles from '../styles/Home.module.css'
 import { Kost } from '../utils/modals/Kost'
 import { Kontrakan } from '../utils/modals/Kontrakan'
 import Currency from '../components/Currency'
@@ -40,9 +39,9 @@ class Detail extends React.Component {
     let data = Kost.filter(item => Generatelink(item.title) === slug)
     if (data.length < 1) { data = Kontrakan.filter(item => Generatelink(item.title) === slug) }
     if (!data[0]) notFound = true;
-    const otherItems = Kost.concat(Kontrakan).filter(item => Generatelink(item.title) !== slug)
+    const otherItems = Kost.concat(Kontrakan).filter(item => Generatelink(item.title) !== slug && item.location.title === data[0].location.title)
     let locationTitle = "";
-    data[0] && data[0].location.title.split("-").map(index => locationTitle += Firstupper(index) + " ")
+    data[0] && data[0].location.title.split("-").map(index => locationTitle += Firstupper(index) + " ")   
     const structureTypeBreadcrumbList =
       `{
         "@context": "https://schema.org",
@@ -150,7 +149,7 @@ class Detail extends React.Component {
           <Slide imagesData={data[0].images} imageTitle={data[0].title} />
           <Container className="mb-3">
             <div className="pt-3">
-              <small className="text-secondary">{moment(data[0].date_modified).fromNow()}</small>
+              <small className="text-gray-600">{moment(data[0].date_modified).fromNow()}</small>
               <h1 className="mt-0 mb-3 text-xl">{data[0].title}</h1>
               <div className="mb-3">
                 <p className="font-bold">Deskripsi {data[0].category}</p>
@@ -174,10 +173,8 @@ class Detail extends React.Component {
               <div className="border-top mt-3">
                 {
                   data[0].post_url !== '' &&
-                  <div className="pt-3">
-                    <small>
-                      <a href={data[0].post_url} target="blank">* Lihat tautan asli <FaExternalLinkAlt className="ml-1 inline" /> </a>
-                    </small>
+                  <div className="pt-3 text-sm text-indigo-700">
+                    <a href={data[0].post_url} target="blank">* Lihat tautan asli <FaExternalLinkAlt className="ml-1 inline" /> </a>
                   </div>
                 }
                 <small>
@@ -186,9 +183,10 @@ class Detail extends React.Component {
               </div>
             </div>
           </Container>
-          <div style={{ borderTop: '8px solid #f5f5f5' }} />
+          <div className="border-b-8 border-gray-200" />
+
           <div>
-            <ListKosAll data={otherItems} category={data[0].category} />
+            <ListKosOthers data={otherItems} category={data[0].category} location={data[0].location} />
           </div>
           <FooterDetail
             contactUs={data[0].contact_us}

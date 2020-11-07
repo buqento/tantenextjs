@@ -896,5 +896,34 @@ export const Kost = [
         facilities: ['Air Bersih (Free)', 'Dapur Umum', 'Kamar Mandi Umum', 'WiFi'],
         start_price: 450000,
         post_url: 'https://www.facebook.com/groups/tantekos/permalink/3560730573947345'
+    },
+    {
+        id: 38,
+        date_modified: '2020-11-07T06:44:15+00:00',
+        date_published: '2020-11-07T06:44:15+00:00',
+        title: 'Rumah Kost Bulanan Di Tukad Petanu Panjer Denpasar Selatan Kota Denpasar Bali - Fasilitas Lengkap Kost Griya Petanu',
+        description: 'Tersedia rumah kost berlokasi di Jl. Tukad Petanu No.34 Panjer Denpasar Selatan Kota Denpasar Bali.Lokasi sangat strategis di samping jalan utama, lingkungan nyaman dan bersih serta dekat dgn pusat kota, sekolahan, rumah sakit, tempat olahraga, airport juga pusat pemerintahan kota.Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Tukad Petanu, Panjer, Denpasar Selatan, Kota Denpasar, Bali',
+        images: [
+            'DEcaI8U.webpm',
+            '0Pld90m.webpm',
+            'cUbQuxF.webpm',
+            'f6JfIXX.webpm',
+            'cJr6zUO.webpm',
+            'FADEeQx.webpm',
+            'PLMWbSX.webpm',
+            'T2ZNNvf.webpm',
+            '2C08EFX.webpm',
+            'iixUQc6.webpm'
+        ],
+        location: { province: 'Bali', title: 'Denpasar Selatan', lat: '-8.694242', long: '115.233261' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/kostgriyapetanu/',
+            phone: '+6281353559995',
+        },
+        facilities: ['Kamar Kosongan', 'Kamar Mandi Dalam', 'Closet Duduk & Shower', 'Dapur', 'AC', 'Parkiran'],
+        start_price: 1000000,
+        post_url: 'https://www.facebook.com/kostgriyapetanu/photos/pcb.799055714227973/799055250894686/'
     }
 ]

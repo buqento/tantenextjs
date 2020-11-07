@@ -11,31 +11,31 @@ export default function Index() {
       <Header />
 
       <div className="m-3 mb-n2">
-        <span className="text-uppercase text-secondary font-weight-bold">Area Hunian</span>
-        <span className="float-right"><a href="/area">Lihat Semua</a></span>
+        <span className="text-uppercase text-current font-bold">Area Kost &amp; Kontrakan</span>
+        <span className="float-right text-indigo-700"><a href="/area">Lihat Semua</a></span>
       </div>
-      <div style={{ borderBottom: '8px solid #f5f5f5' }}>
+      <div className="border-b-8 border-gray-200">
         <Provinsi />
       </div>
 
       <div className="m-3 mb-n2">
-        <span className="text-uppercase text-secondary font-weight-bold">Kost</span>
-        <span className="float-right"><a href="/search/category/Kost">Lihat Semua</a></span>
+        <span className="text-uppercase text-current font-bold">Kost</span>
+        <span className="float-right text-indigo-700"><a href="/search/category/Kost">Lihat Semua</a></span>
       </div>
-      <div style={{ borderBottom: '8px solid #f5f5f5' }}>
+      <div className="border-b-8 border-gray-200">
         <Campaign filter="Kost" />
       </div>
 
       <div className="m-3 mb-n2">
-        <span className="text-uppercase text-secondary font-weight-bold">Kontrakan</span>
-        <span className="float-right"><a href="/search/category/Kontrakan">Lihat Semua</a></span>
+        <span className="text-uppercase text-current font-bold">Kontrakan</span>
+        <span className="float-right text-indigo-700"><a href="/search/category/Kontrakan">Lihat Semua</a></span>
       </div>
-      <div style={{ borderBottom: '8px solid #f5f5f5' }}>
+      <div className="border-b-8 border-gray-200">
         <Campaign filter="Kontrakan" />
       </div>
 
       <div className="m-3 mb-n2">
-        <span className="text-uppercase text-secondary font-weight-bold">Komunitas Facebook</span>
+        <span className="text-uppercase text-current font-bold">Komunitas Facebook</span>
       </div>
       <GroupSocial />
 
