@@ -1000,7 +1000,7 @@ export const Kost = [
             'hTrwfiT.webpm',
             '3cfmcPB.webpm'
         ],
-        location: { province: 'bali', title: 'Kuta Selatan', lat: '-8.795202', long: '115.214893' },
+        location: { province: 'bali', title: 'kuta-selatan', lat: '-8.795202', long: '115.214893' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: '',
