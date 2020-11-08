@@ -1079,5 +1079,31 @@ export const Kost = [
         facilities: ['Ruang Tamu', 'Kamar Tidur', 'Kamar Mandi', 'Dapur', 'Air Bersih PDAM'],
         start_price: 1150000,
         post_url: 'https://www.facebook.com/groups/631657273666514/permalink/1788414144657482'
+    },
+    {
+        id: 45,
+        date_modified: '2020-11-08T15:04:15+00:00',
+        date_published: '2020-11-08T15:04:15+00:00',
+        title: 'Kost Murah Sewa Bulanan Di Waiheru Baguala Kota Ambon Maluku - Kos Syariah Berkah Samping Balai Perikanan Budidaya Laut Ambon',
+        description: 'Tersedia kost berlokasi di Jl Laksdya Leo Wattimena Waiheru Baguala Kota Ambon Maluku. Belakang Indomaret, dengan fasilitas lengkap dan harga bervariasi mulai Rp500.000. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Jl. Laksdya Leo Wattimena, Waiheru, Baguala, Kota Ambon, Maluku',
+        images: [
+            'KnvC6fA.webpm',
+            'Vjusny3.webpm',
+            'EK9CuJQ.webpm',
+            'odjZEgF.webpm',
+            'TjUoV6b.webpm',
+            'V7q3kRv.webpm',
+            'PrW4Ugh.webpm'
+        ],
+        location: { province: 'Maluku', title: 'Waiheru', lat: '-3.631602', long: '128.214898' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: ''
+        },
+        facilities: ['Tempat Jemuran', 'Mesin Pengering Pakaian', 'Parkiran Motor', 'Kamar Mandi Dalam'],
+        start_price: 500000,
+        post_url: 'https://www.facebook.com/groups/1971214283169784/permalink/2580399685584571/?sale_post_id=2580399685584571'
     }
 ]
