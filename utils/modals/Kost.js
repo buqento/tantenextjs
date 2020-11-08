@@ -424,7 +424,7 @@ export const Kost = [
             '3ukBj91.webpm',
             'zzIfLCa.webpm'
         ],
-        location: { province: 'papua', title: 'Kota Sorong', lat: '-0.883504', long: '131.298135' },
+        location: { province: 'papua barat', title: 'Kota Sorong', lat: '-0.883504', long: '131.298135' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/Pasific889',
