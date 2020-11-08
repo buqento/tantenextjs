@@ -126,5 +126,7 @@ export const DtArea = [
     // { location: { lat: '', long: '' }, province: 'bali', title: 'tembuku', image: 'QSGnE9M.webpm' },
     // { location: { lat: '', long: '' }, province: 'bali', title: 'ubud', image: 'QSGnE9M.webpm' },
    
-    { location: { lat: '-6.195744', long: '106.882137' }, province: 'jakarta', title: 'Jakarta Selatan', image: 'ggQMToK.webpm' }
+    // https://id.wikipedia.org/wiki/Daftar_kecamatan_dan_kelurahan_di_Daerah_Khusus_Ibukota_Jakarta
+    { location: { lat: '-6.195094', long: '106.943008' }, province: 'Jakarta Timur', title: 'Cakung', image: 'kudalZc.webpm' },
+    { location: { lat: '-6.195744', long: '106.882137' }, province: 'Jakarta Selatan', title: 'Kebayoran Baru', image: 'ggQMToK.webpm' }
 ];

@@ -814,7 +814,7 @@ export const Kost = [
             'J9FxGq2.webpm',
             'fRqYx9l.webpm'
         ],
-        location: { province: 'jakarta', title: 'Jakarta Selatan', lat: '-6.193219', long: '106.891675' },
+        location: { province: 'Jakarta Selatan', title: 'Kebayoran Baru', lat: '-6.193219', long: '106.891675' },
         category: 'Kost',
         contact_us: {
             facebook_url: '',
@@ -1105,5 +1105,28 @@ export const Kost = [
         facilities: ['Tempat Jemuran', 'Mesin Pengering Pakaian', 'Parkiran Motor', 'Kamar Mandi Dalam'],
         start_price: 500000,
         post_url: 'https://www.facebook.com/groups/1971214283169784/permalink/2580399685584571/?sale_post_id=2580399685584571'
+    },
+    {
+        id: 46,
+        date_modified: '2020-11-08T16:04:15+00:00',
+        date_published: '2020-11-08T16:04:15+00:00',
+        title: 'Kost Murah Sewa Bulanan Di Pulo Gebang Cakung Kota Jakarta Timur Daerah Khusus Ibukota Jakarta - Kost Putri Perum Aneka Elok',
+        description: 'Tersedia kost berlokasi di Jl. Komarudin Pulo Gebang Cakung Kota Jakarta Timur Daerah Khusus Ibukota Jakarta. Perum Aneka Elok, lokasi strategis dekat dengan SD, SMP, SMA, masjid dan (Terminal Pulo Gebang). Lingkungan bersih dan nyaman. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Jl. Komarudin Lama, Pulo Gebang, Cakung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13950',
+        images: [
+            'kudalZc.webpm',
+            'Xny4UJF.webpm',
+            'k4NsWFc.webpm',
+            'nZLPPrY.webpm'
+        ],
+        location: { province: 'Jakarta Timur', title: 'Cakung', lat: '-6.195094', long: '106.943008' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: '+628129684877'
+        },
+        facilities: ['Wastafel (Cuci piring)', 'Kamar Mandi Dalam', 'Dapur', 'Parkiran Motor'],
+        start_price: 600000,
+        post_url: 'https://www.facebook.com/groups/144807136294173/permalink/889951848446361/?sale_post_id=889951848446361'
     }
 ]
