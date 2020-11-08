@@ -1157,7 +1157,7 @@ export const Kost = [
         date_modified: '2020-11-09T05:04:15+00:00',
         date_published: '2020-11-09T05:04:15+00:00',
         title: 'Kost Murah Sewa Bulanan Di Jalan Gang Murdai 1 Cempaka Putih Jakarta Pusat Daerah Khusus Ibukota Jakarta - Kost Putri Fasilitas Lengkap',
-        description: 'Tersedia kost di Jalan Gang Murdai 1 Cempaka Putih,Jakarta Pusat, Daerah Khusus Ibukota Jakarta. Kost putri dua lantai, dengan fasilitas lengkap serta lingkungan bersih dan nyaman. Bagi yang berminat dapat menghubungi pengelola.',
+        description: 'Tersedia kost di Jalan Gang Murdai 1 Cempaka Putih Jakarta Pusat Daerah Khusus Ibukota Jakarta. Kost putri dua lantai, dengan fasilitas lengkap serta lingkungan bersih dan nyaman. Bagi yang berminat dapat menghubungi pengelola.',
         keywords: 'Kost, Jalan Gang Murdai 1, Cempaka Putih, Jakarta Pusat Daerah Khusus Ibukota Jakarta',
         images: [
             '0p4mMG1.webpm',
