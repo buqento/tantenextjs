@@ -1055,5 +1055,29 @@ export const Kost = [
         facilities: ['Kosongan', 'Free WiFi', 'Free Air (Bijak Penggunaan)', 'Listrik Token', 'Parkiran Motor', 'Max 2 Orang/ Kamar'],
         start_price: 400000,
         post_url: 'https://www.facebook.com/photo?fbid=3836821669663615&set=pcb.2735216180127348'
+    },
+    {
+        id: 44,
+        date_modified: '2020-11-08T14:44:15+00:00',
+        date_published: '2020-11-08T14:44:15+00:00',
+        title: 'Kost Murah Sewa Bulanan Di Hamadi Pante Tobati Jayapura Selatan Kota Jayapura Papua',
+        description: 'Tersedia kost berlokasi di Hamadi Pante Tobati Jayapura Selatan Kota Jayapura Papua. Jl Baru Pantai Hamadi lewati pos pembayaran karcis sebelum lorong tiga ada pagar seng. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Jl. Hamadi Pante, Tobati, Jayapura Selatan, Kota Jayapura, Papua',
+        images: [
+            'oZv7Epo.webpm',
+            'Ut9N8Cp.webpm',
+            'aAognD7.webpm',
+            'rHbHj3Z.webpm',
+            '7MczJZ2.webpm'
+        ],
+        location: { province: 'Papua', title: 'Jayapura Selatan', lat: '-2.576235', long: '140.707795' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: '+6281354134043'
+        },
+        facilities: ['Ruang Tamu', 'Kamar Tidur', 'Kamar Mandi', 'Dapur', 'Air Bersih PDAM'],
+        start_price: 1150000,
+        post_url: 'https://www.facebook.com/groups/631657273666514/permalink/1788414144657482'
     }
 ]
