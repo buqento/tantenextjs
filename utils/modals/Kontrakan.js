@@ -451,5 +451,28 @@ export const Kontrakan = [
         facilities: ['Luas Tanah 500 m2', '3 Kamar Tidur (AC)', '3 Kamar Mandi', 'Furnished', 'Swimming Pool', 'Water Heater', 'Ruang Tamu', 'Kebun yang Luas', 'Dapur', 'WiFi', 'Listrik 5500', 'Air Bersih', 'Parkiran'],
         start_price: 135000000,
         post_url: 'https://www.facebook.com/photo?fbid=1697820030392216&set=pcb.2736775009971465'
+    },
+    {
+        id: 42,
+        date_modified: '2020-11-08T19:44:15+00:00',
+        date_published: '2020-11-09T19:44:15+00:00',
+        title: 'Rumah Kontrakan Murah Tahunan Di Bintaro Pesanggrahan Jakarta Selatan Daerah Khusus Ibukota Jakarta - Bangunan Baru Satu Petakan',
+        description: 'Tersedia rumah kontrakan murah tahunan berlokasi di Jl H Mahbub RT11/RW9 Bintaro Pesanggrahan Jakarta Selatan Daerah Khusus Ibukota Jakarta. Bangunan masih baru satu petakan. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kontrakan, Jl H Mahbub, Bintaro, Pesanggrahan, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12330',
+        images: [
+            'HD2R7Qv.webpm',
+            'Jh7q4KA.webpm',
+            'MqOKmBo.webpm',
+            'sjd1Fia.webpm'
+        ],
+        location: { province: 'Jakarta Selatan', title: 'Pesanggrahan', lat: '-6.265128', long: '106.762563' },
+        category: 'Kontrakan',
+        contact_us: {
+            facebook_url: '',
+            phone: '+6281286907923'
+        },
+        facilities: ['Kamar Mandi Dalam', 'Listrik Token Sendiri'],
+        start_price: 650000,
+        post_url: 'https://www.facebook.com/groups/144807136294173/permalink/891126871662192/'
     }
 ]
