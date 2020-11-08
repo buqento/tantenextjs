@@ -1128,5 +1128,28 @@ export const Kost = [
         facilities: ['Wastafel (Cuci piring)', 'Kamar Mandi Dalam', 'Dapur', 'Parkiran Motor'],
         start_price: 600000,
         post_url: 'https://www.facebook.com/groups/144807136294173/permalink/889951848446361/?sale_post_id=889951848446361'
+    },
+    {
+        id: 47,
+        date_modified: '2020-11-08T19:04:15+00:00',
+        date_published: '2020-11-08T19:04:15+00:00',
+        title: 'Kost Murah Sewa Bulanan Di Matraman Dalam 3 Pegangsaan  Menteng Jakarta Pusat Daerah Khusus Ibukota Jakarta - Fasilitas Lengkap Bersih Nyaman',
+        description: 'Tersedia kost di Jl Matraman Dalam 3 RT.014/07 No.41 Pegangsaan Menteng Jakarta Pusat Daerah Khusus Ibukota Jakarta (Dekat Masjid Jami Matraman/BPJS Kesehatan/Tugu Proklamasi). Lingkungan bersih dan nyaman. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Jl. Matraman Dalam, Pegangsaan, Menteng, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10320',
+        images: [
+            'RCPEZKW.webpm',
+            '0BJdAlK.webpm',
+            'HxDS0Vk.webpm',
+            'myrYmG5.webpm'
+        ],
+        location: { province: 'Jakarta Pusat', title: 'Menteng', lat: '-6.202250', long: '106.850641' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: '+6281210176666'
+        },
+        facilities: ['Kamar Mandi Dalam', 'Parkiran Motor', 'Exhaus Fan', 'Kasur', 'Lemari', 'Jemuran'],
+        start_price: 900000,
+        post_url: 'https://www.facebook.com/groups/144807136294173/permalink/889837041791175/'
     }
 ]
