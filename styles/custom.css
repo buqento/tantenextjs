@@ -66,3 +66,11 @@ ul.pagination li a.active {
     justify-content: space-between;
     margin-top: 10px;
 }
+
+.mapboxgl-map .mapboxgl-control-container .mapboxgl-ctrl-bottom-left{
+    display: none;
+}
+
+.mapboxgl-map .mapboxgl-control-container .mapboxgl-ctrl-bottom-right{
+    display: none;
+}
