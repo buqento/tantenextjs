@@ -37,7 +37,7 @@ class Detail extends React.Component {
     let data = Kost.filter(item => Generateslug(item.title) === slug)
     if (data.length < 1) { data = Kontrakan.filter(item => Generateslug(item.title) === slug) }
     if (!data[0]) notFound = true;
-    const otherItems = Kost.concat(Kontrakan).filter(item => Generateslug(item.title) !== slug && item.location.title === Generateslug(data[0].location.title))
+    const otherItems = Kost.concat(Kontrakan).filter(item => Generateslug(item.title) !== slug && Generateslug(item.location.title) === Generateslug(data[0].location.title))
     let locationTitle = "";
     data[0] && data[0].location.title.split("-").map(index => locationTitle += Firstupper(index) + " ")
     const structureTypeBreadcrumbList =
@@ -179,7 +179,7 @@ class Detail extends React.Component {
             <div>
               <div className="border-b-8 border-gray-200" />
 
-              <ListKosOthers data={otherItems} category={data[0].category} location={data[0].location} />
+              <ListKosOthers data={otherItems} item={data[0]} />
             </div>
           }
           <FooterDetail data={data[0]} />

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { arrayOf, shape, string } from 'prop-types'
+import { arrayOf, shape } from 'prop-types'
 import Link from 'next/link'
 import Currency from './Currency'
 import Pagination from "react-js-pagination";
@@ -12,14 +12,14 @@ class ListKosOthers extends Component {
     }
     handlePageChange(pageNumber) { this.setState({ activePage: pageNumber }); }
     render() {
-        const { data, category, location } = this.props
+        const { data, item } = this.props
         const { countPerPage } = this.state
         let listData = [];
-        category !== null ? listData = data.filter(i => i.category === category) : listData = data
+        item.category !== null ? listData = data.filter(i => i.category === item.category) : listData = data
         return (
             <div className="container pb-3">
                 <div className="pt-3 font-bold">
-                    {`${category} lain di ${location.title}`}
+                    {`${item.category} lain di ${item.location.title}`}
                 </div>
                 <div className="row">
                     {
@@ -42,7 +42,7 @@ class ListKosOthers extends Component {
                 </div>
                 <div className="d-flex justify-content-center mt-3">
                     {
-                        listData.length > 0 && <Pagination
+                        listData.length > countPerPage && <Pagination
                             activePage={this.state.activePage}
                             itemsCountPerPage={countPerPage}
                             totalItemsCount={listData.length}
@@ -57,12 +57,10 @@ class ListKosOthers extends Component {
 }
 ListKosOthers.propTypes = {
     data: arrayOf(shape({})),
-    category: string,
-    location: string
+    item: shape({})
 }
 ListKosOthers.defaultProps = {
     data: null,
-    category: null,
-    location: null
+    item: null,
 }
 export default ListKosOthers;

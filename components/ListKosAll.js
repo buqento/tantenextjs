@@ -16,7 +16,6 @@ class ListKosAll extends Component {
         const { activePage, countPerPage } = this.state
         let listData = [];
         category !== null ? listData = data.filter(i => i.category === category) : listData = data
-        console.log(listData);
         let lastId = 10;
         let firstId = 1;
         lastId = activePage * countPerPage

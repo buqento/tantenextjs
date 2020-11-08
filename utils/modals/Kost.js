@@ -18,7 +18,7 @@ export const Kost = [
             'ZZVWFnC.webpm',
             'l6j2C01.webpm'
         ],
-        location: { province: 'maluku', title: 'silale', lat: '-3.699391', long: '128.177221' },
+        location: { province: 'maluku', title: 'Silale', lat: '-3.699391', long: '128.177221' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/almirahomestay.almirahomestay',
@@ -34,14 +34,14 @@ export const Kost = [
         date_published: '2020-09-16T12:57:15+00:00',
         title: 'Kost Murah Fasilitas Lengkap Area Lorong Mayang Ahusen Sirimau Kota Ambon - Belakang Apotik Gideon',
         description: 'Kamar kost berlokasi di Pusat Kota Ambon (lorong Mayang, belakang Apotik Gideon Farma). Tersedia fasilitas AC, televisi, kulkas, lemari, springbed 2 bdn, kursi dan meja. Kamar mandi dan mini kitchen d dlm kamar. Listrik token. Bagi yang berminat dapat menghubungi pengelola.',
-        keywords: 'ahusen, sirimau, kota ambon, maluku',
+        keywords: 'Ahusen, sirimau, kota ambon, maluku',
         images: [
             'm34PnKU.webpm',
             'a2lDcKY.webpm',
             'CMpjidk.webpm',
             'uDaXfek.webpm'
         ],
-        location: { province: 'maluku', title: 'ahusen', lat: '-3.699571', long: '128.183046' },
+        location: { province: 'maluku', title: 'Ahusen', lat: '-3.699571', long: '128.183046' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100004804935380',
@@ -57,13 +57,13 @@ export const Kost = [
         date_published: '2020-09-17T12:57:15+00:00',
         title: 'Kost Harian Bulanan Murah Dan Nyaman Kamal Piru Seram Bagian Barat - Strategis Depan Jalan Utama',
         description: 'Terima kost harian dan bulanan murah dan nyaman, di daerah Kamal Piru Seram Bagian Barat (dekat Pasar Waisarisa depan Puskesmas Kamal lama). Bebas tempat parkir, Air bersih, keamanan terjamin, lokasi strategis (depan jalan), dekat dengan fasilitas umum seperti sekolah, pasar, dan bank',
-        keywords: 'piru, seram bagian barat, maluku',
+        keywords: 'Piru, seram bagian barat, maluku',
         images: [
             'aOMEmjQ.webpm',
             'IWWQXCs.webpm',
             'dLANXEB.webpm'
         ],
-        location: { province: 'maluku', title: 'piru', lat: '-3.061918', long: '128.196573' },
+        location: { province: 'maluku', title: 'Piru', lat: '-3.061918', long: '128.196573' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100006131414651',
@@ -87,7 +87,7 @@ export const Kost = [
             'ZsrDQKA.webpm',
             'VAko5rH.webpm'
         ],
-        location: { province: 'maluku', title: 'silale', lat: '-3.699391', long: '128.177221' },
+        location: { province: 'maluku', title: 'Silale', lat: '-3.699391', long: '128.177221' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/vivi.rimony',
@@ -103,13 +103,13 @@ export const Kost = [
         date_published: '2020-09-21T12:57:15+00:00',
         title: 'Kost Murah Nyaman Bersih Strategis Jalan Baru Honipopu Sirimau Kota Ambon',
         description: 'Tersedia kost murah, nyaman dan strategis dekat Masjid Raya Alfatah, Masjid Jami Jalan baru Honipopu Sirimau Kota Ambon. Bagi yang berminat dapat menghubungi pengelola.',
-        keywords: 'jalan baru, honipopu, sirimau, kota ambon, maluku',
+        keywords: 'jalan baru, Honipopu, sirimau, kota ambon, maluku',
         images: [
             'SxJCFTL.webpm',
             'jQtXqlw.webpm',
             'FzzOpw2.webpm'
         ],
-        location: { province: 'maluku', title: 'honipopu', lat: '-3.695613', long: '128.179517' },
+        location: { province: 'maluku', title: 'Honipopu', lat: '-3.695613', long: '128.179517' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/chie.m.nhirasharye',
@@ -132,7 +132,7 @@ export const Kost = [
             'HcpaLL2.webpm',
             'uBGiQoV.webpm'
         ],
-        location: { province: 'maluku', title: 'karang-panjang', lat: '-3.693829', long: '128.190608' },
+        location: { province: 'maluku', title: 'Karang Panjang', lat: '-3.693829', long: '128.190608' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/ricky.huwaa',
@@ -154,7 +154,7 @@ export const Kost = [
             'i68HYjA.webpm',
             'fhxzDWy.webpm'
         ],
-        location: { province: 'maluku', title: 'poka', lat: '-3.649464', long: '128.193103' },
+        location: { province: 'maluku', title: 'Poka', lat: '-3.649464', long: '128.193103' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/azzahra.s.940',
@@ -181,7 +181,7 @@ export const Kost = [
             'FEBBU44.webpm'
 
         ],
-        location: { province: 'maluku', title: 'passo', lat: '-3.630808', long: '128.251622' },
+        location: { province: 'maluku', title: 'Passo', lat: '-3.630808', long: '128.251622' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/aditya.adilla.1',
@@ -197,12 +197,12 @@ export const Kost = [
         date_published: '2020-09-28T12:57:15+00:00',
         title: 'Kost Eksklusif Waihaong Nusaniwe Kota Ambon Maluku - RedDoorz KoolKost Market',
         description: 'Tersedia kost eksklusif (RedDoorz) Waihaong Nusaniwe Kota Ambon Maluku. Harga kamar perbulan sudah all in.Bagi yang berminat dapat menghubungi pengelola',
-        keywords: 'waihaong, nusaniwe, kota ambon, maluku',
+        keywords: 'Waihaong, nusaniwe, kota ambon, maluku',
         images: [
             'PA1MJ74.webpm',
             'dl3HaUX.webpm'
         ],
-        location: { province: 'maluku', title: 'waihaong', lat: '-3.701073', long: '128.175148' },
+        location: { province: 'maluku', title: 'Waihaong', lat: '-3.701073', long: '128.175148' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100009503041037',
@@ -218,13 +218,13 @@ export const Kost = [
         date_published: '2020-09-30T06:57:15+00:00',
         title: 'Kost Murah Kudamati Nusaniwe Kota Ambon Maluku - Farmasi Atas Depan Gereja Christy Natalia',
         description: 'Tersedia kost murah Kudamati Nusaniwe Kota Ambon Maluku wilayah Farmasi Atas depan Gereja Christy Natalia. Khusus untuk karyawan dan mahasiswa. Tidak menerima pasutri. Bagi yang berminat dapat menghubungi pengelola',
-        keywords: 'kudamati, nusaniwe, kota ambon, maluku',
+        keywords: 'Kudamati, nusaniwe, kota ambon, maluku',
         images: [
             'KynKT7D.webpm',
             'dnSKIda.webpm',
             'wuRoCNl.webpm'
         ],
-        location: { province: 'maluku', title: 'kudamati', lat: '-3.708157', long: '128.171185' },
+        location: { province: 'maluku', title: 'Kudamati', lat: '-3.708157', long: '128.171185' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/ferry.jhon.90',
@@ -240,7 +240,7 @@ export const Kost = [
         date_published: '2020-10-01T13:57:15+00:00',
         title: 'Kost Murah Bersih Nyaman Fasilitas Memadai Halong Baguala Kota Ambon Maluku - Dwinner Kost Dekat Kampus IAKN Ambon',
         description: 'Tersedia kost murah bersih nyaman fasilitas memadai Halong Baguala Kota Ambon Maluku. Khusus untuk mahasiswa dekat kampus Institut Agama Kristen Negeri Ambon. Bagi yang berminat dapat menghubungi pengelola',
-        keywords: 'halong, baguala, kota ambon, maluku',
+        keywords: 'Halong, baguala, kota ambon, maluku',
         images: [
             'fIPgIbk.webpm',
             '0lu6aHK.webpm',
@@ -249,7 +249,7 @@ export const Kost = [
             'ONTluIO.webpm',
             '2zYVmNT.webpm'
         ],
-        location: { province: 'maluku', title: 'halong', lat: '-3.661955', long: '128.217942' },
+        location: { province: 'maluku', title: 'Halong', lat: '-3.661955', long: '128.217942' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/Desy.Kakisina',
@@ -275,7 +275,7 @@ export const Kost = [
             'MjMFMxC.webpm',
             'TeKX4u7.webpm'
         ],
-        location: { province: 'maluku', title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
+        location: { province: 'maluku', title: 'Batu Merah', lat: '-3.682169', long: '128.223087' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/KOSTAMBON',
@@ -301,7 +301,7 @@ export const Kost = [
             'gDhkyUk.webpm',
             'yJMJxF6.webpm'
         ],
-        location: { province: 'maluku', title: 'waiheru', lat: '-3.627142', long: '128.223624' },
+        location: { province: 'maluku', title: 'Waiheru', lat: '-3.627142', long: '128.223624' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/KOSTAMBON',
@@ -310,7 +310,7 @@ export const Kost = [
 
         facilities: ['Tempat tidur', 'Lemari Pakaian', 'Meja Belajar', 'Kipas Angin', 'Kamar mandi dalam (kloset duduk + Shower)', 'Dapur', 'Ruang Jemur', 'Ruang Cuci', 'Parkiran'],
         start_price: 600000,
-        post_url: 'https://kostambon.com/kost-waiheru/'
+        post_url: 'https://kostambon.com/kost-Waiheru/'
     },
     {
         id: 14,
@@ -324,7 +324,7 @@ export const Kost = [
             'EZ8eY1H.webpm',
             'EiXmS3J.webpm'
         ],
-        location: { province: 'maluku', title: 'hative-kecil', lat: '-3.670760', long: '128.199914' },
+        location: { province: 'maluku', title: 'Hative Kecil', lat: '-3.670760', long: '128.199914' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/KOSTAMBON',
@@ -349,7 +349,7 @@ export const Kost = [
             'uqH6xxG.webpm',
             'bVbK6jQ.webpm'
         ],
-        location: { province: 'maluku', title: 'urimessing', lat: '-3.701502', long: '128.178884' },
+        location: { province: 'maluku', title: 'Urimessing', lat: '-3.701502', long: '128.178884' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/rara.mwl',
@@ -373,7 +373,7 @@ export const Kost = [
             'bVbK6jQ.webpm',
             'tlZUq6q.webpm'
         ],
-        location: { province: 'maluku', title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
+        location: { province: 'maluku', title: 'Batu Merah', lat: '-3.682169', long: '128.223087' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/rara.mwl',
@@ -399,7 +399,7 @@ export const Kost = [
             'TXrllFf.webpm',
             'Seg7E5O.webpm'
         ],
-        location: { province: 'maluku', title: 'passo', lat: '-3.630808', long: '128.251622' },
+        location: { province: 'maluku', title: 'Passo', lat: '-3.630808', long: '128.251622' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/chintya.s.rossa.9',
@@ -424,7 +424,7 @@ export const Kost = [
             '3ukBj91.webpm',
             'zzIfLCa.webpm'
         ],
-        location: { province: 'papua', title: 'kota-sorong', lat: '-0.883504', long: '131.298135' },
+        location: { province: 'papua', title: 'Kota Sorong', lat: '-0.883504', long: '131.298135' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/Pasific889',
@@ -445,7 +445,7 @@ export const Kost = [
             'OIZx8du.webpm',
             'zyXAy4J.webpm'
         ],
-        location: { province: 'papua', title: 'jayapura-selatan', lat: '-2.577319', long: '140.691014' },
+        location: { province: 'papua', title: 'Jayapura Selatan', lat: '-2.577319', long: '140.691014' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/edisron.sigiro.7',
@@ -470,7 +470,7 @@ export const Kost = [
             'Si8tsk6.webpm',
             'FnIjYih.webpm'
         ],
-        location: { province: 'papua', title: 'abepura', lat: '-2.610406', long: '140.674623' },
+        location: { province: 'papua', title: 'Abepura', lat: '-2.610406', long: '140.674623' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100009350404182',
@@ -493,7 +493,7 @@ export const Kost = [
             'EPdRPIA.webpm',
             'IIRisBf.webpm'
         ],
-        location: { province: 'papua', title: 'koya-barat', lat: '-2.678178', long: '140.805093' },
+        location: { province: 'papua', title: 'Koya Barat', lat: '-2.678178', long: '140.805093' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/dimas.ananda.5688476',
@@ -520,7 +520,7 @@ export const Kost = [
             'AC0jXg7.webpm',
             'DurMoiz.webpm'
         ],
-        location: { province: 'papua', title: 'abepura', lat: '-2.597008', long: '140.671848' },
+        location: { province: 'papua', title: 'Abepura', lat: '-2.597008', long: '140.671848' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/hary.parinding',
@@ -545,7 +545,7 @@ export const Kost = [
             'o2GhCpE.webpm',
             '6qfWe24.webpm'
         ],
-        location: { province: 'papua', title: 'abepura', lat: '-2.615348', long: '140.674379' },
+        location: { province: 'papua', title: 'Abepura', lat: '-2.615348', long: '140.674379' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/hasriati.hasriati.754',
@@ -570,7 +570,7 @@ export const Kost = [
             '95lFUs3.webpm',
             'dz2M9dJ.webpm'
         ],
-        location: { province: 'papua', title: 'jayapura-selatan', lat: '-2.555164', long: '140.713266' },
+        location: { province: 'papua', title: 'Jayapura Selatan', lat: '-2.555164', long: '140.713266' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/groups/566421207451383/user/100001261883571/',
@@ -593,7 +593,7 @@ export const Kost = [
             'fnaqHTk.webpm',
             'ECV31Nn.webpm'
         ],
-        location: { province: 'papua', title: 'abepura', lat: '-2.615348', long: '140.674379' },
+        location: { province: 'papua', title: 'Abepura', lat: '-2.615348', long: '140.674379' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100005614756116',
@@ -620,7 +620,7 @@ export const Kost = [
             '3gyYba6.webpm',
             'IysAZNt.webpm'
         ],
-        location: { province: 'papua', title: 'jayapura-selatan', lat: '-2.568657', long: '140.689252' },
+        location: { province: 'papua', title: 'Jayapura Selatan', lat: '-2.568657', long: '140.689252' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/groups/566421207451383/user/100050692100137/',
@@ -647,7 +647,7 @@ export const Kost = [
             'uGQpdMi.webpm',
             'pgbihDi.webpm'
         ],
-        location: { province: 'papua', title: 'jayapura-selatan', lat: '-2.576510', long: '140.691657' },
+        location: { province: 'papua', title: 'Jayapura Selatan', lat: '-2.576510', long: '140.691657' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://web.facebook.com/groups/631657273666514/user/100005715855035/',
@@ -670,7 +670,7 @@ export const Kost = [
             'qumqHkE.webpm',
             'CKqlWP7.webpm'
         ],
-        location: { province: 'papua', title: 'koya-barat', lat: '-2.678178', long: '140.805093' },
+        location: { province: 'papua', title: 'Koya Barat', lat: '-2.678178', long: '140.805093' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100048332203207',
@@ -695,7 +695,7 @@ export const Kost = [
             'Fzd3EFf.webpm',
             'garkRDK.webpm'
         ],
-        location: { province: 'maluku', title: 'wainitu', lat: '-3.704887', long: '128.168884' },
+        location: { province: 'maluku', title: 'Wainitu', lat: '-3.704887', long: '128.168884' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/groups/1971214283169784/user/100025728288040/',
@@ -718,7 +718,7 @@ export const Kost = [
             'MJnBxDb.webpm',
             '3ZvuOkZ.webpm'
         ],
-        location: { province: 'papua', title: 'abepura', lat: '-2.610406', long: '140.674623' },
+        location: { province: 'papua', title: 'Abepura', lat: '-2.610406', long: '140.674623' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/groups/185755601762444/user/100006016904008/',
@@ -742,7 +742,7 @@ export const Kost = [
             '5bDe5r0.webpm',
             'up2OhKk.webpm'
         ],
-        location: { province: 'papua', title: 'kota-jayapura', lat: '-2.604502', long: '140.658539' },
+        location: { province: 'papua', title: 'Kota Jayapura', lat: '-2.604502', long: '140.658539' },
         category: 'Kost',
         contact_us: {
             facebook_url: 'https://www.facebook.com/meylandmelissa.rorey',
@@ -1002,5 +1002,58 @@ export const Kost = [
         facilities: ['Kamar Tidur', 'Kamar Mandi', 'Dapur', 'Air PDAM'],
         start_price: 1000000,
         post_url: 'https://www.facebook.com/groups/tantekos/permalink/3566512020035867/'
+    },
+    {
+        id: 42,
+        date_modified: '2020-11-08T07:44:15+00:00',
+        date_published: '2020-11-08T07:44:15+00:00',
+        title: 'Rumah Kost Bulanan Di Pedungan Denpasar Selatan Kota Denpasar Bali - Ambengan Residence Fasilitas Lengkap',
+        description: 'Tersedia rumah kost (Ambengan Residence) berlokasi di Pedungan Denpasar Selatan Kota Denpasar Bali. Lokasi strategis dekat SMP PGRI 4 Pesanggaran. 10 - 20 menit ke Sanur, Kuta, Tol Mandara, Nusa Dua, Sesetan, Teuku Umar, Sunset Road. Dekat persewaan mobil, one gate system, no pet, max 2 orang, lingkungan bersih, nyaman dan aman, kamar bersih dan besar. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Pedungan, Denpasar Selatan, Denpasar, Bali 80223',
+        images: [
+            'Szr7uIS.webpm',
+            'dC2lUy0.webpm',
+            '1Di7QFl.webpm',
+            'okvcxJL.webpm'
+        ],
+        location: { province: 'Bali', title: 'Denpasar Selatan', lat: '-8.711703', long: '115.211917' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/trisna.prama',
+            phone: '+628113985270'
+
+        },
+        facilities: ['AC', 'Lemari', 'Kasur (Sprei, Bantal, Selimut, Bed Cover)', 'Meja TV', 'Meja Nakas', 'Kitchen Set Atas', 'Rak Plastik Untuk Piring', 'Tempat Tissue', 'Dispenser', 'Tong Sampah Plastik', 'Ember', 'Jemuran', 'Air', 'Kamar Mandi Dalam + Shower', 'Listrik Token', 'Parkir Motor Depan Kamar'],
+        start_price: 1000000,
+        post_url: 'https://www.facebook.com/photo/?fbid=4641344075879300&set=pcb.4641419259205115'
+    },
+    {
+        id: 43,
+        date_modified: '2020-11-08T07:44:15+00:00',
+        date_published: '2020-11-08T07:44:15+00:00',
+        title: 'Rumah Kost Murah Sewa Bulanan Di Wisma Nusa Permai Benoa Kuta Selatan Badung Bali - Fasilitas Lengkap',
+        description: 'Tersedia rumah kost berlokasi di Jl. Wisma Nusa Permai A44, Benoa Kuta Selatan Kabupaten Badung Bali. Total ada 6 kamar dan baru direnovasi. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Benoa, Kuta Selatan, Badung, Bali 80361',
+        images: [
+            '5QKIDVo.webpm',
+            '9pYBkQO.webpm',
+            'gOn9E9I.webpm',
+            '58WUD0G.webpm',
+            '6LnciJz.webpm',
+            'sPEPhC7.webpm',
+            'bIIxQM0.webpm',
+            'Yipj2HH.webpm',
+            '3vCTcfA.webpm'
+        ],
+        location: { province: 'Bali', title: 'Kuta Selatan', lat: '-8.801792', long: '115.207699' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: '+6281237093148'
+
+        },
+        facilities: ['Kosongan', 'Free WiFi', 'Free Air (Bijak Penggunaan)', 'Listrik Token', 'Parkiran Motor', 'Max 2 Orang/ Kamar'],
+        start_price: 400000,
+        post_url: 'https://www.facebook.com/photo?fbid=3836821669663615&set=pcb.2735216180127348'
     }
 ]

@@ -13,7 +13,7 @@ export const Kontrakan = [
             'rMMEKS5.webpm',
             'JhcE4Bo.webpm'
         ],
-        location: { province: 'maluku', title: 'suli', lat: '-3.619747', long: '128.298092' },
+        location: { province: 'maluku', title: 'Suli', lat: '-3.619747', long: '128.298092' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/Dedox002',
@@ -61,7 +61,7 @@ export const Kontrakan = [
             'ELrzE90.webpm',
             'EKxK1f3.webpm'
         ],
-        location: { province: 'maluku', title: 'pandan-kasturi', lat: '-3.677343', long: '128.195243' },
+        location: { province: 'maluku', title: 'Pandan Kasturi', lat: '-3.677343', long: '128.195243' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100039966772432',
@@ -87,7 +87,7 @@ export const Kontrakan = [
             'aaLTKFg.webpm',
             'pij3ZH4.webpm'
         ],
-        location: { province: 'maluku', title: 'honipopu', lat: '-3.695613', long: '128.179517' },
+        location: { province: 'maluku', title: 'Honipopu', lat: '-3.695613', long: '128.179517' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/yudha.a.setiawan.14',
@@ -112,7 +112,7 @@ export const Kontrakan = [
             'GbP1nCU.webpm',
             'Bj2KGeC.webpm'
         ],
-        location: { province: 'maluku', title: 'galala', lat: '-3.665266', long: '128.200460' },
+        location: { province: 'maluku', title: 'Galala', lat: '-3.665266', long: '128.200460' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100016477352041',
@@ -137,7 +137,7 @@ export const Kontrakan = [
             'YrIK75R.webpm',
             '5YoIIXa.webpm',
         ],
-        location: { province: 'maluku', title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
+        location: { province: 'maluku', title: 'Batu Merah', lat: '-3.682169', long: '128.223087' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/nailaamalia.amalia.9',
@@ -157,7 +157,7 @@ export const Kontrakan = [
         images: [
             '3VnPwHM.webpm'
         ],
-        location: { province: 'maluku', title: 'halong', lat: '-3.661955', long: '128.217942' },
+        location: { province: 'maluku', title: 'Halong', lat: '-3.661955', long: '128.217942' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100006926223788',
@@ -186,7 +186,7 @@ export const Kontrakan = [
             'h2J2qNi.webpm',
             'KLPt1ZX.webpm'
         ],
-        location: { province: 'maluku', title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
+        location: { province: 'maluku', title: 'Batu Merah', lat: '-3.682169', long: '128.223087' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/ifasiregar.siregar',
@@ -208,7 +208,7 @@ export const Kontrakan = [
             'o3NT1yX.webpm',
             'jXzMDD9.webpm'
         ],
-        location: { province: 'maluku', title: 'waiheru', lat: '-3.627142', long: '128.223624' },
+        location: { province: 'maluku', title: 'Waiheru', lat: '-3.627142', long: '128.223624' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/rifanmaligana.rifanmaligana',
@@ -234,7 +234,7 @@ export const Kontrakan = [
             'gS4vYz9.webpm',
             'GnYHctA.webpm'
         ],
-        location: { province: 'maluku', title: 'batu-merah', lat: '-3.682169', long: '128.223087' },
+        location: { province: 'maluku', title: 'Batu Merah', lat: '-3.682169', long: '128.223087' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/profile.php?id=100007324635315',
@@ -254,7 +254,7 @@ export const Kontrakan = [
         images: [
             'VgDIeU0.webpm'
         ],
-        location: { province: 'maluku', title: 'lateri', lat: '-3.644044', long: '128.246256' },
+        location: { province: 'maluku', title: 'Lateri', lat: '-3.644044', long: '128.246256' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/richiie.richiie.161',
@@ -281,7 +281,7 @@ export const Kontrakan = [
             'lC5se66.webpm',
             'H3zhilk.webpm'
         ],
-        location: { province: 'papua', title: 'sentani', lat: '-2.576834', long: '140.506950' },
+        location: { province: 'papua', title: 'Sentani', lat: '-2.576834', long: '140.506950' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/groups/631657273666514/user/100000301038419/',
@@ -302,7 +302,7 @@ export const Kontrakan = [
             'fB2PULB.webpm',
             'CMmNxyx.webpm'
         ],
-        location: { province: 'maluku', title: 'lateri', lat: '-3.651112', long: '128.245387' },
+        location: { province: 'maluku', title: 'Lateri', lat: '-3.651112', long: '128.245387' },
         category: 'Kontrakan',
         contact_us: {
             facebook_url: 'https://www.facebook.com/groups/1822235571130196/user/100004691173692/',
