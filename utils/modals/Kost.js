@@ -1135,7 +1135,7 @@ export const Kost = [
         date_published: '2020-11-08T19:04:15+00:00',
         title: 'Kost Murah Sewa Bulanan Di Matraman Dalam 3 Pegangsaan  Menteng Jakarta Pusat Daerah Khusus Ibukota Jakarta - Fasilitas Lengkap Bersih Nyaman',
         description: 'Tersedia kost di Jl Matraman Dalam 3 RT.014/07 No.41 Pegangsaan Menteng Jakarta Pusat Daerah Khusus Ibukota Jakarta (Dekat Masjid Jami Matraman/BPJS Kesehatan/Tugu Proklamasi). Lingkungan bersih dan nyaman. Bagi yang berminat dapat menghubungi pengelola.',
-        keywords: 'Kost, Jl. Matraman Dalam, Pegangsaan, Menteng, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10320',
+        keywords: 'Kost, Jl. Matraman Dalam, Pegangsaan, Menteng, Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10320',
         images: [
             'RCPEZKW.webpm',
             '0BJdAlK.webpm',
@@ -1151,5 +1151,27 @@ export const Kost = [
         facilities: ['Kamar Mandi Dalam', 'Parkiran Motor', 'Exhaus Fan', 'Kasur', 'Lemari', 'Jemuran'],
         start_price: 900000,
         post_url: 'https://www.facebook.com/groups/144807136294173/permalink/889837041791175/'
+    },
+    {
+        id: 48,
+        date_modified: '2020-11-09T05:04:15+00:00',
+        date_published: '2020-11-09T05:04:15+00:00',
+        title: 'Kost Murah Sewa Bulanan Di Jalan Gang Murdai 1 Cempaka Putih Jakarta Pusat Daerah Khusus Ibukota Jakarta - Kost Putri Fasilitas Lengkap',
+        description: 'Tersedia kost di Jalan Gang Murdai 1 Cempaka Putih,Jakarta Pusat, Daerah Khusus Ibukota Jakarta. Kost putri dua lantai, dengan fasilitas lengkap serta lingkungan bersih dan nyaman. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Jalan Gang Murdai 1, Cempaka Putih, Jakarta Pusat Daerah Khusus Ibukota Jakarta',
+        images: [
+            '0p4mMG1.webpm',
+            'FDHiDjR.webpm',
+            'qTG9U7z.webpm'
+        ],
+        location: { province: 'Jakarta Pusat', title: 'Cempaka Putih', lat: '-6.184476', long: '106.865415' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: '+6289676781877'
+        },
+        facilities: ['Kamar Mandi', 'Kamar Tidur'],
+        start_price: 550000,
+        post_url: 'https://www.facebook.com/groups/144807136294173/permalink/889641291810750/?sale_post_id=889641291810750'
     }
 ]

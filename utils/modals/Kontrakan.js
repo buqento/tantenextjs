@@ -474,5 +474,28 @@ export const Kontrakan = [
         facilities: ['Kamar Mandi Dalam', 'Listrik Token Sendiri'],
         start_price: 650000,
         post_url: 'https://www.facebook.com/groups/144807136294173/permalink/891126871662192/'
+    },
+    {
+        id: 43,
+        date_modified: '2020-11-09T04:44:15+00:00',
+        date_published: '2020-11-09T04:44:15+00:00',
+        title: 'Rumah Kontrakan Murah Tahunan Di Lapangan Pors Serdang Kemayoran Jakarta Pusat Daerah Khusus Ibukota Jakarta - Belakang SDN Serdang 01 Pagi',
+        description: 'Tersedia rumah kontrakan tahunan berlokasi di Jl Lapangan Pors Serdang Kemayoran Jakarta Pusat Daerah Khusus Ibukota Jakarta. Belakang SDN Serdang 01 Pagi, lingkungan bersih dan nyaman. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kontrakan, Jl. Serdang Raya, Serdang, Kemayoran, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10640',
+        images: [
+            'uW6SNjG.webpm',
+            'kIjafR8.webpm',
+            'Rc3A632.webpm',
+            '81QBdyf.webpm'
+        ],
+        location: { province: 'Jakarta Pusat', title: 'Kemayoran', lat: '-6.161197', long: '106.863593' },
+        category: 'Kontrakan',
+        contact_us: {
+            facebook_url: '',
+            phone: '+6285694556532'
+        },
+        facilities: ['Kamar Mandi (Ember)', 'Kamar Tidur', 'Dapur'],
+        start_price: 23000000,
+        post_url: 'https://www.facebook.com/groups/144807136294173/permalink/888247101950169/?sale_post_id=888247101950169'
     }
 ]

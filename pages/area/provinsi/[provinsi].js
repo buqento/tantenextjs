@@ -46,7 +46,7 @@ class Detail extends React.Component {
                     <link rel="canonical" content={`https://tantekos.com/area/provinsi/${slug}`} />
                 </NextHead>
                 <div className="main-layout">
-                    <HeadPage title={`Kost & Kontrakan ${areaTitle}`} />
+                    <HeadPage title={`Kost & Kontrakan di ${areaTitle}`} />
                     <div className="container divide-y sm:divide-y-2 md:divide-y-4 lg:divide-y-8 xl:divide-y-0 divide-gray-400">
                         {
                             DtArea
