@@ -10,7 +10,7 @@ export default function Index() {
       <Header />
       <div className="m-3 mb-n2">
         <span className="text-uppercase text-current font-bold">Area Kost &amp; Kontrakan</span>
-        <span className="float-right text-indigo-700"><a href="/area">Lihat Semua</a></span>
+        <span className="float-right text-indigo-700"><a href="/area/provinsi/all">Lihat Semua</a></span>
       </div>
       <div className="border-b-8 border-gray-200">
         <Provinsi />
