@@ -37,7 +37,7 @@ class Detail extends React.Component {
     let data = Kost.filter(item => Generateslug(item.title) === slug)
     if (data.length < 1) { data = Kontrakan.filter(item => Generateslug(item.title) === slug) }
     if (!data[0]) notFound = true;
-    const otherItems = Kost.concat(Kontrakan).filter(item => Generateslug(item.title) !== slug && Generateslug(item.location.title) === Generateslug(data[0].location.title))
+    const otherItems = Kost.concat(Kontrakan).filter(item => Generateslug(item.title) !== slug && Generateslug(item.location.title) === Generateslug(data[0].location.title) && data[0].category === item.category)
     let locationTitle = "";
     data[0] && data[0].location.title.split("-").map(index => locationTitle += Firstupper(index) + " ")
     const structureTypeBreadcrumbList =
