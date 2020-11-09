@@ -95,7 +95,7 @@ export const DtArea = [
     // { location: { lat: '', long: '' }, province: 'bali', title: 'kubutambahan', image: 'QSGnE9M.webpm' },
     { location: { lat: '-8.795202', long: '115.214893' }, province: 'bali', title: 'Kuta Selatan', image: 'nEnffzx.webpm' },
     { location: { lat: '-8.606427', long: '115.169768' }, province: 'bali', title: 'Kuta Utara', image: 'lCO7Q4Y.webpm' },
-    // { location: { lat: '', long: '' }, province: 'bali', title: 'kuta', image: 'QSGnE9M.webpm' },
+    { location: { lat: '-8.708062', long: '115.170499' }, province: 'bali', title: 'Kuta', image: 'BFDPIj2.webpm' },
     // { location: { lat: '', long: '' }, province: 'bali', title: 'manggis', image: 'QSGnE9M.webpm' },
     // { location: { lat: '', long: '' }, province: 'bali', title: 'marga', image: 'QSGnE9M.webpm' },
     // { location: { lat: '', long: '' }, province: 'bali', title: 'melaya', image: 'QSGnE9M.webpm' },

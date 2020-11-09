@@ -65,7 +65,7 @@ class Detail extends React.Component {
                                     })
                                     .filter(item => Generateslug(item.province) === slug)
                                     .map((item, index) =>
-                                        <div className="py-2 px-3" key={index}>
+                                        <div className="py-3 px-3" key={index}>
                                             <a href={`../../area/${Generateslug(item.title)}`}>
                                                 <div>
                                                     <span>{item.title}</span>
@@ -79,11 +79,11 @@ class Detail extends React.Component {
                                 :
                                 DtProvinsi
                                     .map((item, index) =>
-                                        <div className="py-2 px-3" key={index}>
+                                        <div className="py-3 px-3" key={index}>
                                             <a href={`../../area/provinsi/${Generateslug(item.title)}`}>
                                                 <div>
                                                     <span>{item.title}</span>
-                                                    <span className="float-right text-xs font-semibold inline-block py-1 px-2 uppercase text-indigo-600 bg-indigo-200 uppercase last:mr-0 mr-1">
+                                                    <span className="float-right text-xs font-semibold inline-block py-1 px-2 text-indigo-600 bg-indigo-200 uppercase last:mr-0 mr-1">
                                                         {this.getAmount(Generateslug(item.title))}
                                                     </span>
                                                 </div>
