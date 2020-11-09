@@ -1173,5 +1173,35 @@ export const Kost = [
         facilities: ['Kamar Mandi', 'Kamar Tidur'],
         start_price: 550000,
         post_url: 'https://www.facebook.com/groups/144807136294173/permalink/889641291810750/?sale_post_id=889641291810750'
+    },
+    {
+        id: 49,	
+        date_modified: '2020-11-10T04:44:15+00:00',
+        date_published: '2020-11-10T04:44:15+00:00',
+        title: 'Kost Murah Sewa Bulanan Di Pemecutan Klod Denpasar Barat Kota Denpasar Bali - Fasilitas Lengkap Kost Graha Demak',
+        description: 'Tersedia rumah kost dengan fasilitas lengkap berlokasi di Gg. Pura Demak II No.23, Pemecutan Klod, Denpasar Barat, Kota Denpasar, Bali. Harga Normal: Rp1.400.000/bulan, namun selama pandemi mendapat keringanan harga menjadi Rp1.100.000/bulan (sudah termasuk air). Satu kamar maksimal dua orang (No-Kids-and-No-Pets). Khusus bulanan, tidak menerima harian dan mingguan. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Pemecutan Klod, Denpasar Barat, Kota Denpasar, Bali',
+        images: [
+            'uBXD2Cn.webpm',
+            '1OXC0Wu.webpm',
+            'IXviXbN.webpm',
+            'kPvwoOr.webpm',
+            'hintmKc.webpm',
+            'ta4G73g.webpm',
+            'kRzAj23.webpm',
+            'WY1bpyu.webpm',
+            'NoeFkfj.webpm'
+        ],
+        location: { province: 'bali', title: 'Denpasar Barat', lat: '-8.679831', long: '115.191740' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: '+6281238700352'
+
+        },
+        facilities: ['AC', 'Led TV', 'Free WiFi', 'Set Bed 160x200','2 Bantal & 1 Guling + Sprei', 'Kitchen Sink', 'Gorden/Gordyn', 'Listrik Token PraBayar', 'Kamar (Toilet, Kloset Duduk, Shower)', 'Akses 24 Jam'],
+
+        start_price: 1100000,
+        post_url: 'https://www.facebook.com/commerce/listing/366638861254571/'
     }
 ]

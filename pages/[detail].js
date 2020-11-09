@@ -158,7 +158,7 @@ class Detail extends React.Component {
                 {data[0].facilities.map((item, index) => <li key={index}>{item}</li>)}
               </div>
               <div className="mb-3">
-                <p className="font-bold">Lokasi {data[0].category} <small>( {locationTitle})</small></p>
+                <p className="pb-1 font-bold">Lokasi {data[0].category} <small>( {locationTitle})</small></p>
                 <Peta location={data[0].location} />
               </div>
               <div className="border-top mt-3">
