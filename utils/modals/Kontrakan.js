@@ -497,5 +497,32 @@ export const Kontrakan = [
         facilities: ['Kamar Mandi (Ember)', 'Kamar Tidur', 'Dapur'],
         start_price: 23000000,
         post_url: 'https://www.facebook.com/groups/144807136294173/permalink/888247101950169/?sale_post_id=888247101950169'
+    },
+    {
+        id: 44,
+        date_modified: '2020-11-10T05:35:15+00:00',
+        date_published: '2020-11-10T05:35:15+00:00',
+        title: 'Rumah Kontrakan Murah Di Meruyung Limo Kota Depok Jawa Barat - Sewa Bulanan Rumah Petakan',
+        description: 'Tersedia rumah kontrakan tahunan berlokasi di Jl. Tengki I, Gg. Garuda, Meruyung, Kecamatan Limo, Kota Depok, Jawa Barat. Rumah petakan, halaman luas mobil bisa masuk. Lingkungan bersih dan nyaman. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kontrakan, Jl. Tengki I, Meruyung, Limo, Kota Depok, Jawa Barat 16514',
+        images: [
+            'nLujVPR.webpm',
+            '3Chr6FC.webpm',
+            'FApBdBm.webpm',
+            'uVO8LiJ.webpm',
+            'lpmJGat.webpm',
+            'lr5L1Qi.webpm',
+            'S0lc7G4.webpm',
+            'CoJoETQ.webpm'
+        ],
+        location: { province: 'Jawa Barat', title: 'Limo', lat: '-6.374155', long: '106.775153' },
+        category: 'Kontrakan',
+        contact_us: {
+            facebook_url: '',
+            phone: '+6281319501048'
+        },
+        facilities: ['Teras', 'Ruang Tamu', 'Kamar Tidur', 'Dapur', 'Toilet', 'Listrik 1.300 Watt'],
+        start_price: 750000,
+        post_url: 'https://www.facebook.com/groups/144807136294173/permalink/889661325142080/'
     }
 ]
