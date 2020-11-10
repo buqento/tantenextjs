@@ -128,6 +128,7 @@ export const DtArea = [
 
     // https://id.wikipedia.org/wiki/Daftar_kecamatan_dan_kelurahan_di_Daerah_Khusus_Ibukota_Jakarta
     { location: { lat: '-6.195094', long: '106.943008' }, province: 'Jakarta Timur', title: 'Cakung', image: 'kudalZc.webpm' },
+    { location: { lat: '-6.215143', long: '106.887876' }, province: 'Jakarta Timur', title: 'Jatinegara', image: 'kudalZc.webpm' },
 
     { location: { lat: '-6.195744', long: '106.882137' }, province: 'Jakarta Selatan', title: 'Kebayoran Baru', image: 'ggQMToK.webpm' },
     { location: { lat: '-6.265128', long: '106.762563' }, province: 'Jakarta Selatan', title: 'Pesanggrahan', image: 'HD2R7Qv.webpm' },
@@ -135,6 +136,7 @@ export const DtArea = [
     { location: { lat: '-6.202250', long: '106.850641' }, province: 'Jakarta Pusat', title: 'Menteng', image: 'RCPEZKW.webpm' },
     { location: { lat: '-6.184476', long: '106.865415' }, province: 'Jakarta Pusat', title: 'Cempaka Putih', image: 'FDHiDjR.webpm' },
     { location: { lat: '-6.161197', long: '106.863593' }, province: 'Jakarta Pusat', title: 'Kemayoran', image: 'uW6SNjG.webpm' },
+    { location: { lat: '-6.177400', long: '106.844342' }, province: 'Jakarta Pusat', title: 'Senen', image: 'xLMvnh4.webpm' },
 
     { location: { lat: '-6.374155', long: '106.775153' }, province: 'Jawa Barat', title: 'Limo', image: 'nLujVPR.webpm' }
 ];

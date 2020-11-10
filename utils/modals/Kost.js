@@ -1175,7 +1175,7 @@ export const Kost = [
         post_url: 'https://www.facebook.com/groups/144807136294173/permalink/889641291810750/?sale_post_id=889641291810750'
     },
     {
-        id: 49,	
+        id: 49,
         date_modified: '2020-11-10T05:05:15Z',
         date_published: '2020-11-10T04:44:15Z',
         title: 'Kost Murah Sewa Bulanan Di Pemecutan Klod Denpasar Barat Kota Denpasar Bali - Fasilitas Lengkap Kost Graha Demak',
@@ -1189,6 +1189,7 @@ export const Kost = [
             'hintmKc.webpm',
             'ta4G73g.webpm',
             'kRzAj23.webpm',
+
             'WY1bpyu.webpm',
             'NoeFkfj.webpm'
         ],
@@ -1199,13 +1200,13 @@ export const Kost = [
             phone: '+6281238700352'
 
         },
-        facilities: ['AC', 'Led TV', 'Free WiFi', 'Set Bed 160x200','2 Bantal & 1 Guling + Sprei', 'Kitchen Sink', 'Gorden/Gordyn', 'Listrik Token PraBayar', 'Kamar (Toilet, Kloset Duduk, Shower)', 'Akses 24 Jam'],
+        facilities: ['AC', 'Led TV', 'Free WiFi', 'Set Bed 160x200', '2 Bantal & 1 Guling + Sprei', 'Kitchen Sink', 'Gorden/Gordyn', 'Listrik Token PraBayar', 'Kamar (Toilet, Kloset Duduk, Shower)', 'Akses 24 Jam'],
 
         start_price: 1100000,
         post_url: 'https://www.facebook.com/commerce/listing/366638861254571/'
     },
     {
-        id: 50,	
+        id: 50,
         date_modified: '2020-11-10T05:12:15Z',
         date_published: '2020-11-10T05:12:15Z',
         title: 'Kost Murah Sewa Bulanan Di Legian Kuta Kabupaten Badung Bali - Fasilitas Lengkap Wiras House',
@@ -1230,5 +1231,55 @@ export const Kost = [
 
         start_price: 500000,
         post_url: 'https://www.facebook.com/photo?fbid=182419780174449&set=pcb.2738101686505464'
+    },
+    {
+        id: 51,
+        date_modified: '2020-11-11T05:12:15Z',
+        date_published: '2020-11-11T05:12:15Z',
+        title: 'Kost Murah Sewa Bulanan Di Kramat Senen Jakarta Pusat Daerah Khusus Ibukota Jakarta - Lokasi Strategis Tiga Lantai',
+        description: 'Tersedia kost murah sewa bulanan berlokasi di Jl. Kembang Sepatu No.32, RT.11/RW.1, Kramat, Kecamatan Senen, Jakarta Pusat, Daerah Khusus Ibukota Jakarta. Lokasi strategis di depan jalan utama (dekat Stasiun Pasar Senen dan Halte Busway Senen). Masing-masing penghuni pegang kunci gerbang, lingkungan nyaman. Harga sewa bervariasi (kamar kecil: Rp600.000, kamar besar: Rp700.000), tambah penghuni: Rp100.000/orang. Putri di lantai 2, putra di lantai 3. Bagi yang berminat dapat menghubungi pengelola (08811159900, 081287816506).',
+        keywords: 'Kost, Jl. Kembang Sepatu, Kramat, Senen, Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10450',
+        images: [
+            'xLMvnh4.webpm',
+            'JcafFx6.webpm',
+            '96UiNK0.webpm',
+            'gpxbPKo.webpm',
+            '21ZPjF5.webpm',
+            'LFa4Gpg.webpm'
+        ],
+        location: { province: 'Jakarta Pusat', title: 'Senen', lat: '-6.177400', long: '106.844342' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: '+628174962701'
+        },
+        facilities: ['Token Listrik (Tiap Kamar)', 'Kamar Mandi (Closet Duduk, Shower)', 'Balkon Luas (Untuk Jemur)', 'Kamar Kecil 250x170', 'Kamar Besar 300x170', 'Ac'],
+        start_price: 600000,
+        post_url: 'https://www.facebook.com/groups/144807136294173/permalink/889964801778399/?sale_post_id=889964801778399'
+    },
+    {
+        id: 52,
+        date_modified: '2020-11-11T05:32:15Z',
+        date_published: '2020-11-11T05:32:15Z',
+        title: 'Kost Murah Sewa Bulanan Di Muara Cipinang Jatinegara Jakarta Timur Daerah Khusus Ibukota Jakarta - Lokasi Strategis Dua Lantai',
+        description: 'Tersedia kost murah sewa bulanan berlokasi di Muara Cipinang, Jatinegara, Jakarta Timur, Daerah Khusus Ibukota Jakarta. Harga sewa bervariasi (perorang kamar Non AC 850rb, Pasutri non ac 1.1jt, Kamar AC Perorang 1.1jt, Pasutri kamar AC 1.3 jt plus 2 kasur (kasur lipat & kasur empuk). Tamu 24/7 jam harap lapor, kalau ada teman bukan lawan jenis saudara atau orang tua boleh menginap sehari atau dua hari, kecuali lawan jenis tdk boleh. Batas tamu jam 23.00 WIB (Kunci pagar dipegang masing-masing). Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Muara Cipinang, Jatinegara, Jakarta Timur, Daerah Khusus Ibukota Jakarta',
+        images: [
+            'Djwgo8r.webpm',
+            'xEMwBhl.webpm',
+            'tu7VbZb.webpm',
+            'sOgAeC1.webpm',
+            'la4LjIg.webpm',
+            'nfVQ82T.webpm'
+        ],
+        location: { province: 'Jakarta Timur', title: 'Jatinegara', lat: '-6.215143', long: '106.887876' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/nanang.thea',
+            phone: '+6281287858581'
+        },
+        facilities: ['Cctv', 'Kipas Angin', 'Lemari Pakaian', 'Kasur & Bantal', 'Rak Sepatu', 'Kamar Mandi Dalam', 'Free Wifi', 'Free Air Bersih (Sanyo Jetpam)', 'Free Uang Sampah'],
+        start_price: 850000,
+        post_url: 'https://www.facebook.com/groups/540355519688855/permalink/1437499559974442/'
     }
 ]
