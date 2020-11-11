@@ -1304,6 +1304,6 @@ export const Kost = [
         },
         facilities: ['Ruang Tamu', '1 Kamar Tidur', 'Dapur', 'Kamar Mandi Dalam', 'Air Bersih (Lancar)', 'Parkiran Mobil'],
         start_price: 1500000,
-        post_url: ''
+        post_url: 'https://www.facebook.com/groups/185755601762444/permalink/1146426449028683/'
     }
 ]
