@@ -1,24 +1,30 @@
 import React, { Component } from 'react'
-import DragScroll from './DragScroll'
 import { DtProvinsi } from '../utils/modals/Provinsi'
-import ProvinsiItem from './ProvinsiItem'
-
+import Link from 'next/link'
+import Generateslug from '../utils/Generateslug'
+import { AiOutlineArrowRight } from 'react-icons/ai'
 class Area extends Component {
     render() {
         return (
-            <div className="mt-3 mb-3">
-                <DragScroll className="scroll-section flex">
-                    <div className="flex ml-3">
-                        {
-                            DtProvinsi
-                                .slice(0, 10)
-                                .map((item, index) => <ProvinsiItem item={item} key={index} />)
-                        }
+            <div className="container grid grid-cols-2 gap-3 my-3 text-indigo-700">
+                {
+                    DtProvinsi
+                        .slice(0, 5)
+                        .sort(() => .5 - Math.random())
+                        .map((item, index) =>
+                            <div key={index} className="border border-indigo-500 text-center py-3 align-middle">
+                                <Link href={`area/provinsi/${Generateslug(item.title)}`}>{item.title}</Link>
+                            </div>
+                        )
+                }
+                <Link href="area/provinsi/all">
+                    <div key={6} className="border border-indigo-500 text-center py-3 px-3">
+                        <span className="inline">Lihat Semua</span>
+                        <AiOutlineArrowRight className="inline ml-1 mb-1" />
                     </div>
-                </DragScroll>
+                </Link>
             </div>
         )
     }
 }
-
 export default Area

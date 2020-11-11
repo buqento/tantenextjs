@@ -1281,5 +1281,29 @@ export const Kost = [
         facilities: ['Cctv', 'Kipas Angin', 'Lemari Pakaian', 'Kasur & Bantal', 'Rak Sepatu', 'Kamar Mandi Dalam', 'Free Wifi', 'Free Air Bersih (Sanyo Jetpam)', 'Free Uang Sampah'],
         start_price: 850000,
         post_url: 'https://www.facebook.com/groups/540355519688855/permalink/1437499559974442/'
+    },
+    {
+        id: 53,
+        date_modified: '2020-11-11T05:54:15Z',
+        date_published: '2020-11-11T05:54:15Z',
+        title: 'Kost Murah Sewa Bulanan Di Kotaraja Wahno Abepura Jayapura Papua - Furia Alam Indah Fasilitas Lengkap',
+        description: 'Tersedia kost murah sewa bulanan berlokasi di Furia Alam Indah, Kotaraja, Wahno, Abepura, Jayapura, Papua. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Furia Alam Indah, Kotaraja, Wahno, Abepura, Jayapura, Papua',
+        images: [
+            'bMRS5Q7.webpm',
+            'PJP1cBi.webpm',
+            'JGKaNO2.webpm',
+            '8mykh1z.webpm',
+            'ek7Pcl8.webpm'
+        ],
+        location: { province: 'Papua', title: 'Abepura', lat: '-2.592337', long: '140.674417' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: '+6281344586613'
+        },
+        facilities: ['Ruang Tamu', '1 Kamar Tidur', 'Dapur', 'Kamar Mandi Dalam', 'Air Bersih (Lancar)', 'Parkiran Mobil'],
+        start_price: 1500000,
+        post_url: ''
     }
 ]

@@ -33,7 +33,7 @@ class AreaList extends React.Component {
                 <HeadPage title="Semua Area" />
             </div>
             <div className="container pb-3">
-                <div className="row">
+                <div className="grid grid-cols-2 gap-2">
                     {
                         DtArea
                             .sort(function (a, b) {
@@ -44,7 +44,7 @@ class AreaList extends React.Component {
                                 return 0;
                             })
                             .map((item, index) =>
-                                <div key={index} className="col-6 pt-3">
+                                <div key={index}>
                                     <Link href={`area/${Generateslug(item.title)}`}>
                                         <div className="rounded overflow-hidden shadow-sm border">
                                             <img className="w-full" src={`https://cdn.statically.io/img/i.imgur.com/w=125/${item.image}`} alt={item.title} />

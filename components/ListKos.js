@@ -15,13 +15,13 @@ class ListKos extends Component {
         }
         return (
             <div className="container pb-3">
-                <div className="row">
+                <div className="grid grid-cols-2 gap-2">
                     {
                         data.length > 0 &&
                         <>
                             {
                                 listData.map((item, index) =>
-                                    <div key={index} className="col-6 pt-3">
+                                    <div key={index}>
                                         <Link href={`https://tantekos.com/${Generateslug(item.title)}`}>
                                             <div className="rounded overflow-hidden shadow-sm border">
                                                 <img className="w-full" src={`https://cdn.statically.io/img/i.imgur.com/w=125/${item.images[0]}`} alt={item.title} />
