@@ -1360,8 +1360,8 @@ export const Kost = [
     },
     {
         id: 56,
-        date_modified: '2020-11-13T07:44:15Z',
-        date_published: '2020-11-13T07:44:15Z',
+        date_modified: '2020-11-13T04:44:15Z',
+        date_published: '2020-11-13T04:44:15Z',
         title: 'Kost Murah Sewa Bulanan Di Kota Baru Abepura Jayapura Papua - Belakang Toko Citra',
         description: 'Tersedia rumah kost sewa bulanan berlokasi di belakang Toko Citra, Kota Baru, Abepura, Kota Jayapura, Papua. Bagi yang berminat dapat menghubungi pengelola.',
         keywords: 'Kost, Kota Baru, Abepura, Kota Jayapura, Papua 99351',
@@ -1378,5 +1378,62 @@ export const Kost = [
         facilities: ['Kamar Tidur (3.5 x 3.5)', 'Kamar Mandi Umum', 'Dapur Umum', 'Parkiran Motor'],
         start_price: 800000,
         post_url: 'https://www.facebook.com/groups/631657273666514/permalink/1792427547589475/?sale_post_id=1792427547589475'
+    },
+    {
+        id: 57,
+        date_modified: '2020-11-13T04:56:15Z',
+        date_published: '2020-11-13T04:56:15Z',
+        title: 'Kost Eksklusif Sewa Mingguan Dan Bulanan Di Gandaria Utara Kebayoran Baru  Jakarta Selatan Daerah Khusus Ibukota Jakarta - Bale Residence Radio Dalam',
+        description: 'Tersedia kost eksklusif sewa mingguan dan bulanan berlokasi di Jl. H. Salim 1 No16 RT04/RW14, Gandaria Utara, Kebayoran Baru, Jakarta Selatan, Daerah Khusus Ibukota Jakarta. Lokasi strategis (800m dari PIM, 1km dari ITC Fatmawati, 3km dari Gandaria City). Harga sewa bervariasi (Rp1.000.000/minggu & Rp3.250.000/bulan), tidak termasuk listrik. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Jl. H. Salim 1 No16 RT04/RW14, Gandaria Utara, Kebayoran Baru, Jakarta Selatan, Daerah Khusus Ibukota Jakarta',
+        images: [
+            'yV9jNgZ.webpm',
+            'yO5pGx6.webpm',
+            '8mttBDZ.webpm',
+            'g4ivpaO.webpm',
+            'OyiEh7d.webpm',
+            '5uov6ZZ.webpm',
+            'FzBgnIZ.webpm',
+            'ihLGqK4.webpm',
+            'WvKGwvN.webpm',
+            'bI8QDQS.webpm',
+            'eNPbP8E.webpm',
+            'JqbhX6E.webpm',
+            '9gHyQwe.webpm'
+        ],
+        location: { province: 'Jakarta Selatan', title: 'Kebayoran Baru', lat: '-6.260935', long: '106.790024' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: ''
+        },
+        facilities: ['TV', 'AC', 'Kamar Mandi Dalam (Shower)', 'Closet Duduk', 'Wastafel', 'Water Heater', 'Kasur', 'Lemari Pakaian', 'Meja & Kursi'],
+        start_price: 1000000,
+        post_url: 'https://www.facebook.com/groups/631657273666514/permalink/1792427547589475/?sale_post_id=1792427547589475'
+    },
+    {
+        id: 58,
+        date_modified: '2020-11-13T05:44:15Z',
+        date_published: '2020-11-13T05:44:15Z',
+        title: 'Kost Murah Sewa Bulanan Di Renon Denpasar Selatan Kota Denpasar Bali - Fasilitas Lengkap Dekat Lapangan Niti Mandala',
+        description: 'Tersedia rumah kost dengan fasilitas lengkap berlokasi di Jl. Tukad Banyuning Gg B No. 9, Renon, Denpasar Selatan, Kota Denpasar, Bali. Lokasi strategis dekat Lapangan Niti Mandala dan Pantai Sanur. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Renon, Denpasar Selatan, Denpasar, Bali',
+        images: [
+            'D0rVhM9.webpm',
+            'F2SPCX7.webpm',
+            'PrUztvV.webpm',
+            'WVd1kXQ.webpm',
+            'JtOMlKS.webpm',
+            'eyUkh3J.webpm'
+        ],
+        location: { province: 'bali', title: 'Denpasar Selatan', lat: '-8.678767', long: '115.235967' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/agusfirmanarumansyah',
+            phone: '+6281338464444'
+        },
+        facilities: ['Kamar Tidur 4x5', 'Kamar Mandi Dalam', 'Dapur Dalam Luas', 'Teras', 'Tempat Jemur Pakaian', 'Gorden', 'Garasi Mobil'],
+        start_price: 1000000,
+        post_url: 'https://www.facebook.com/commerce/listing/673175980003648/'
     }
 ]
