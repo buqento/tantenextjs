@@ -1357,5 +1357,26 @@ export const Kost = [
         facilities: ['Kamar Kosongan', 'AC', 'Include Air', 'Kamar Mandi Dalam', 'Closet Duduk, Shower, Wastafel', 'Dapur', 'Teras Depan', 'Teras Belakang', 'Listrik Token', 'Parkir Luas (Khusus Motor)'],
         start_price: 1000000,
         post_url: 'https://www.facebook.com/commerce/listing/2408506986118798/'
+    },
+    {
+        id: 56,
+        date_modified: '2020-11-13T07:44:15Z',
+        date_published: '2020-11-13T07:44:15Z',
+        title: 'Kost Murah Sewa Bulanan Di Kota Baru Abepura Jayapura Papua - Belakang Toko Citra',
+        description: 'Tersedia rumah kost sewa bulanan berlokasi di belakang Toko Citra, Kota Baru, Abepura, Kota Jayapura, Papua. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Kota Baru, Abepura, Kota Jayapura, Papua 99351',
+        images: [
+            '4A6kEVv.webpm',
+            'LB1WEAf.webpm'
+        ],
+        location: { province: 'Papua', title: 'Abepura', lat: '-2.610391', long: '140.664055' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: ''
+        },
+        facilities: ['Kamar Tidur (3.5 x 3.5)', 'Kamar Mandi Umum', 'Dapur Umum', 'Parkiran Motor'],
+        start_price: 800000,
+        post_url: 'https://www.facebook.com/groups/631657273666514/permalink/1792427547589475/?sale_post_id=1792427547589475'
     }
 ]
