@@ -78,6 +78,13 @@ class Detail extends React.Component {
                                     )
                                 :
                                 DtProvinsi
+                                    .sort(function (a, b) {
+                                        var nameA = Generateslug(a.title.toUpperCase());
+                                        var nameB = Generateslug(b.title.toUpperCase());
+                                        if (nameA < nameB) return -1;
+                                        if (nameA > nameB) return 1;
+                                        return 0;
+                                    })
                                     .map((item, index) =>
                                         <div className="py-3 px-3" key={index}>
                                             <a href={`../../area/provinsi/${Generateslug(item.title)}`}>

@@ -1305,5 +1305,57 @@ export const Kost = [
         facilities: ['Ruang Tamu', '1 Kamar Tidur', 'Dapur', 'Kamar Mandi Dalam', 'Air Bersih (Lancar)', 'Parkiran Mobil'],
         start_price: 1500000,
         post_url: 'https://www.facebook.com/groups/185755601762444/permalink/1146426449028683/'
+    },
+    {
+        id: 54,
+        date_modified: '2020-11-12T06:54:15Z',
+        date_published: '2020-11-12T06:54:15Z',
+        title: 'Kost Murah Sewa Bulanan Di Semper Barat Cilincing Jakarta Utara Daerah Khusus Ibukota Jakarta - Dua Lantai Fasilitas Lengkap',
+        description: 'Tersedia kost murah sewa bulanan berlokasi di Jl. Kemuning No.9, RT3/RW10, Semper Barat, Kecamatan Cilincing, Jakarta Utara, Daerah Khusus Ibukota Jakarta (Patokan Warung Mama Nur). Dekat SDN 05 Negeri & SMA Sari Putra. Bangunan dua lantai, fasilitas lengkap (include Air & Listrik Token). Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Jl. Kemuning No.9, RT3/RW10, Semper Barat, Kecamatan Cilincing, Jakarta Utara, Daerah Khusus Ibukota Jakarta',
+        images: [
+            '2AQB4hh.webpm',
+            'YngjShl.webpm',
+            'ahrzCG4.webpm',
+            'moGdVxY.webpm'
+        ],
+        location: { province: 'Jakarta Utara', title: 'Cilincing', lat: '-6.114833', long: '106.921758' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: '+6285214800800'
+        },
+        facilities: ['3 Bilik (Ruang Tamu, Ruang Tidur, Dapur)', 'Kamar Mandi Dalam', 'Include Air & Listrik Token', 'Parkiran', 'Cctv 24/7', 'Westafel', 'Akses 24 Jam'],
+        start_price: 1100000,
+        post_url: 'https://www.facebook.com/groups/144807136294173/permalink/889343108507235/'
+    },
+    {
+        id: 55,
+        date_modified: '2020-11-12T07:44:15Z',
+        date_published: '2020-11-12T07:44:15Z',
+        title: 'Kost Murah Sewa Bulanan Di Renon Denpasar Selatan Kota Denpasar Bali - Fasilitas Lengkap Dekat STIKES Bali - Kost Mentaya',
+        description: 'Tersedia rumah kost dengan fasilitas lengkap berlokasi di Jl. Tukad Balian, Gg. Nyuh Gading No. 8, Renon, Denpasar Selatan, Kota Denpasar, Bali. Lokasi strategis dekat STIKES Bali. Lingkungan tenang dan nyaman. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Renon, Denpasar Selatan, Denpasar, Bali',
+        images: [
+            'ogyClPW.webpm',
+            'fNST6Ro.webpm',
+            'PQF4LIg.webpm',
+            'PDZxUhA.webpm',
+            '54RhPoM.webpm',
+            'dqPyxam.webpm',
+            'mNfDxzQ.webpm',
+            'J93BE1Z.webpm',
+            'xMK8RZP.webpm',
+            '9I6s4Se.webpm'
+        ],
+        location: { province: 'bali', title: 'Denpasar Selatan', lat: '-8.697071', long: '115.241175' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: '+6282236331898'
+        },
+        facilities: ['Kamar Kosongan', 'AC', 'Include Air', 'Kamar Mandi Dalam', 'Closet Duduk, Shower, Wastafel', 'Dapur', 'Teras Depan', 'Teras Belakang', 'Listrik Token', 'Parkir Luas (Khusus Motor)'],
+        start_price: 1000000,
+        post_url: 'https://www.facebook.com/commerce/listing/2408506986118798/'
     }
 ]

@@ -17,7 +17,7 @@ class Campaign extends Component {
                         {
                             data
                                 .sort(function (a, b) { return b.id - a.id })
-                                .slice(0, 5)
+                                .slice(0, 8)
                                 .map((item, index) => <CampaignItem key={index} item={item} />)
                         }
                     </div>

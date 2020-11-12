@@ -137,6 +137,8 @@ export const DtArea = [
     { location: { lat: '-6.184476', long: '106.865415' }, province: 'Jakarta Pusat', title: 'Cempaka Putih', image: 'FDHiDjR.webpm' },
     { location: { lat: '-6.161197', long: '106.863593' }, province: 'Jakarta Pusat', title: 'Kemayoran', image: 'uW6SNjG.webpm' },
     { location: { lat: '-6.177400', long: '106.844342' }, province: 'Jakarta Pusat', title: 'Senen', image: 'xLMvnh4.webpm' },
+    
+    { location: { lat: '-6.114833', long: '106.921758' }, province: 'Jakarta Utara', title: 'Cilincing', image: '2AQB4hh.webpm' },
 
     { location: { lat: '-6.374155', long: '106.775153' }, province: 'Jawa Barat', title: 'Limo', image: 'nLujVPR.webpm' }
 ];

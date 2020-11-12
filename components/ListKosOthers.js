@@ -4,7 +4,6 @@ import Link from 'next/link'
 import Currency from './Currency'
 import Pagination from "react-js-pagination";
 import Generateslug from '../utils/Generateslug'
-
 class ListKosOthers extends Component {
     constructor(props) {
         super(props);
@@ -17,11 +16,11 @@ class ListKosOthers extends Component {
         let listData = [];
         item.category !== null ? listData = data.filter(i => i.category === item.category) : listData = data
         return (
-            <div className="container pb-3">
+            <div className="container">
                 <div className="py-3 font-bold">
                     {`${item.category} lain di ${item.location.title}`}
                 </div>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-2 gap-2 mb-3">
                     {
                         listData
                             .reverse()
@@ -40,17 +39,18 @@ class ListKosOthers extends Component {
                             )
                     }
                 </div>
-                <div className="d-flex justify-content-center mt-3">
-                    {
-                        listData.length > countPerPage && <Pagination
+                {
+                    listData.length > countPerPage &&
+                    <div className="mb-3">
+                        <Pagination
                             activePage={this.state.activePage}
                             itemsCountPerPage={countPerPage}
                             totalItemsCount={listData.length}
                             pageRangeDisplayed={5}
                             onChange={this.handlePageChange.bind(this)}
                         />
-                    }
-                </div>
+                    </div>
+                }
             </div>
         )
     }
