@@ -887,7 +887,7 @@ export const Kost = [
             'vs2N5La.webpm',
             'kf3lInD.webpm'
         ],
-        location: { province: 'maluku', title: 'Poka', campus: 'Universitas Pattimura', lat: '-3.657295', long: '128.192382' },
+        location: { province: 'maluku', title: 'Poka', near: 'Universitas Pattimura', lat: '-3.657295', long: '128.192382' },
         category: 'Kost',
         contact_us: {
             facebook_url: '',
@@ -1437,7 +1437,7 @@ export const Kost = [
         post_url: 'https://www.facebook.com/commerce/listing/673175980003648/'
     },
     {
-        id: 59,	
+        id: 59,
         date_modified: '2020-11-14T02:44:15Z',
         date_published: '2020-11-14T02:44:15Z',
         title: 'Kost Murah Sewa Bulanan Di Pemogan Denpasar Selatan Kota Denpasar Bali - Fasilitas Lengkap Dekat Kuta',
@@ -1464,7 +1464,7 @@ export const Kost = [
         post_url: 'https://www.facebook.com/commerce/listing/420756988941125/'
     },
     {
-        id: 60,	
+        id: 60,
         date_modified: '2020-11-14T03:44:15Z',
         date_published: '2020-11-14T03:44:15Z',
         title: 'Kost Murah Di Kali Acai Kota Baru Abepura Jayapura Papua - Depan Gereja GPDI PISGA Kotaraja',
@@ -1485,5 +1485,47 @@ export const Kost = [
         facilities: ['Ruang Tamu', 'Kamar Tidur', 'Dapur & Kamar Mandi Dalam', 'Listrik Prabayar', 'Air Bersih Lancar', 'Parkiran Motor'],
         start_price: 1500000,
         post_url: 'https://www.facebook.com/groups/631657273666514/permalink/1792722660893297/?sale_post_id=1792722660893297'
+    },
+    {
+        id: 61,
+        date_modified: '2020-11-14T05:06:15Z',
+        date_published: '2020-11-14T05:06:15Z',
+        title: 'Kost Murah Sewa Bulanan Di Pemogan Denpasar Selatan Kota Denpasar Bali - Fasilitas Lengkap - Kost Prana Sakah',
+        description: 'Tersedia rumah kost dengan fasilitas lengkap berlokasi di Jalan Sunia Negara, Gang Bedugul Putih II, no.8A, Pemogan, Kec. Denpasar Selatan, Kota Denpasar, Bali. Lokasi strategis dekat Bypass Ngurah Rai. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Pemogan, Denpasar Selatan, Denpasar, Bali',
+        images: [
+            'Ks3qhNv.webpm',
+            'xScR2sc.webpm'
+        ],
+        location: { province: 'bali', title: 'Denpasar Selatan', lat: '-8.714864', long: '115.202649' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/yan.lucky',
+            phone: '+6287861086868'
+        },
+        facilities: ['Kamar Mandi Dalam', 'Kasur', 'Tempat Cuci Piring (di Halaman Kost)', 'No Pets', 'Listrik Rp2.000/kWh', 'Belum Termasuk Air'],
+        start_price: 400000,
+        post_url: 'https://www.facebook.com/commerce/listing/272850120837287/'
+    },
+    {
+        id: 62,
+        date_modified: '2020-11-14T05:18:15Z',
+        date_published: '2020-11-14T05:18:15Z',
+        title: 'Kost Murah Sewa Bulanan Di Renon Denpasar Selatan Kota Denpasar Bali - Fasilitas Lengkap Dekat STIKOM Bali & Universitas Udayana',
+        description: 'Tersedia rumah kost dengan fasilitas lengkap berlokasi di Jl. Tukad Penet, Renon, Denpasar Selatan, Kota Denpasar, Bali. Kost hanya memiliki empat kamar sehingga cocok untuk yang mencari suasana tenang. Lokasi strategis, dekat dengan pasar/ mall plaza/ bundaran Renon, STIKOM Bali, Kampus Unud Sudirman, MCD sanur, KFC, Pantai Sanur, dll. Perkamar bisa ditempati dua orang. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Renon, Denpasar Selatan, Kota Denpasar, Bali',
+        images: [
+            'vgNsggV.webpm',
+            'Be7qdIW.webpm'
+        ],
+        location: { province: 'bali', title: 'Denpasar Selatan', near: 'STIKOM Bali', lat: '-8.67556', long: '115.244793' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/yuyuaba',
+            phone: '+6281930830848'
+        },
+        facilities: ['Kamar Tidur 4x6', 'Kamar Mandi Dalam', 'Air Panas & Wastafel', 'Gudang/Tempat Jemur', 'Kitchen Set Pribadi (penyedot asap)', 'TV LED', 'AC', 'Spring Bed (Bantal Guling & Tidur)', 'Meja Kursi', 'Lemari Pakaian'],
+        start_price: 1500000,
+        post_url: 'https://m.facebook.com/photo.php?fbid=3839439916089096&id=100000693755427&set=gm.1843717812432903&source=57'
     }
 ]
