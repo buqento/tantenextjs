@@ -1435,5 +1435,55 @@ export const Kost = [
         facilities: ['Kamar Tidur 4x5', 'Kamar Mandi Dalam', 'Dapur Dalam Luas', 'Teras', 'Tempat Jemur Pakaian', 'Gorden', 'Garasi Mobil'],
         start_price: 1000000,
         post_url: 'https://www.facebook.com/commerce/listing/673175980003648/'
+    },
+    {
+        id: 59,	
+        date_modified: '2020-11-14T02:44:15Z',
+        date_published: '2020-11-14T02:44:15Z',
+        title: 'Kost Murah Sewa Bulanan Di Pemogan Denpasar Selatan Kota Denpasar Bali - Fasilitas Lengkap Dekat Kuta',
+        description: 'Tersedia rumah kost dengan fasilitas lengkap berlokasi di Jl. Mekar II Blok D VI Pemogan, Denpasar Selatan, Kota Denpasar, Bali. Lokasi strategis, 15 menit ke Sunset Road, Imam Bonjol, Airport, Kuta, dan Seminyak. Boleh membawa keluarga dan anak. Bagi yang berminat dapat menghubungi pengelola di nomor: +628123846913 / +6281338673571',
+        keywords: 'Kost, Pemogan, Denpasar Selatan, Denpasar, Bali',
+        images: [
+            '1gaWisn.webpm',
+            'S7LgZA8.webpm',
+            'k5Fe0Bc.webpm',
+            'BKK1Wjb.webpm',
+            'zMw7SgN.webpm',
+            'S21zPEB.webpm',
+            'I7Yzsbz.webpm'
+        ],
+        location: { province: 'bali', title: 'Denpasar Selatan', lat: '-8.709331', long: '115.206520' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: '+628123846913'
+
+        },
+        facilities: ['Kamar Mandi Dalam (Shower, Closet Duduk Flush)', 'Dapur Dalam Dengan Bak Sink', 'Kamar Tidur 3,2x5', 'Garasi Mobil Beratap (3,2x4,5)', 'Pintu Pagar Pribadi Masing-Masing Kamar', 'Listrik Token 1300 kWh', 'Free Air dan Iuran Sampah'],
+        start_price: 1200000,
+        post_url: 'https://www.facebook.com/commerce/listing/420756988941125/'
+    },
+    {
+        id: 60,	
+        date_modified: '2020-11-14T03:44:15Z',
+        date_published: '2020-11-14T03:44:15Z',
+        title: 'Kost Murah Di Kali Acai Kota Baru Abepura Jayapura Papua - Depan Gereja GPDI PISGA Kotaraja',
+        description: 'Tersedia rumah kost berlokasi di Jl. Kali Acai, Kota Baru, Abepura, Kota Jayapura, Papua. Bagi yang berminat dapat menghubungi pengelola',
+        keywords: 'Kost, Jl. Kali Acai, Kota Baru, Abepura, Kota Jayapura, Papua 99351',
+        images: [
+            'AaravLs.webpm',
+            '9f18H9h.webpm',
+            'ySVGFkE.webpm',
+            'JRVAe7H.webpm'
+        ],
+        location: { province: 'papua', title: 'Abepura', lat: '-2.608635', long: '140.667831' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: '+6281344697175'
+        },
+        facilities: ['Ruang Tamu', 'Kamar Tidur', 'Dapur & Kamar Mandi Dalam', 'Listrik Prabayar', 'Air Bersih Lancar', 'Parkiran Motor'],
+        start_price: 1500000,
+        post_url: 'https://www.facebook.com/groups/631657273666514/permalink/1792722660893297/?sale_post_id=1792722660893297'
     }
 ]

@@ -20,17 +20,24 @@ class Detail extends React.Component {
     // const dataItems = await items.json()
     return { slug: ctx.query.detail }
   }
-
   componentDidMount() {
-    ReactGa.initialize('UA-132808614-2')
-    ReactGa.pageview('/detail')
+    if(window.location.hostname !== 'localhost'){
+      ReactGa.initialize('UA-132808614-2')
+      ReactGa.pageview('/detail')
+      console.log('ga run')
+    }else{
+      console.log('in localhost')
+    }
   }
-
   componentDidUpdate() {
-    ReactGa.initialize('UA-132808614-2')
-    ReactGa.pageview('/detail')
+    if(window.location.hostname !== 'localhost'){
+      ReactGa.initialize('UA-132808614-2')
+      ReactGa.pageview('/detail')
+      console.log('ga run')
+    }else{
+      console.log('in localhost')
+    }
   }
-
   render() {
     const { slug } = this.props;
     let notFound = false;
@@ -51,7 +58,6 @@ class Detail extends React.Component {
           "item": "https://tantekos.com/${slug}"
         }]
      }`
-
     const structureTypeHostel = `{
       "@context": "https://schema.org",
       "@type": "Hostel",
@@ -99,14 +105,12 @@ class Detail extends React.Component {
         "contactType" : "customer service"
       } 
     }`
-
     const structureDetailPage = data[0] && {
       '@graph': [
         JSON.parse(structureTypeHostel),
         JSON.parse(structureTypeBreadcrumbList)
       ]
     };
-
     return <>
       {notFound && <>
         <div className="container-center text-center">
@@ -188,12 +192,10 @@ class Detail extends React.Component {
     </>
   }
 }
-
 Detail.propTypes = {
   allItems: arrayOf(shape({})),
   slug: string
 }
-
 Detail.defaultProps = {
   allItems: null,
   slug: ''

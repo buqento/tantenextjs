@@ -8,7 +8,6 @@ class FooterDetail extends Component {
     constructor(props) {
         super(props);
         this.handleCall = this.handleCall.bind(this);
-        this.handleFacebook = this.handleFacebook.bind(this);
     }
     handleCall(phone) {
         ReactGa.event({
@@ -16,12 +15,6 @@ class FooterDetail extends Component {
             action: phone
         })
         window.open('tel:' + phone);
-    }
-    handleFacebook(title) {
-        ReactGa.event({
-            category: 'Facebook Button',
-            action: title
-        })
     }
     render() {
         const { data } = this.props;
@@ -40,13 +33,10 @@ class FooterDetail extends Component {
         )
     }
 }
-
 FooterDetail.propTypes = {
     data: shape({}),
 }
-
 FooterDetail.defaultProps = {
     data: null
 }
-
 export default FooterDetail;

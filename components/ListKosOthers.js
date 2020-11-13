@@ -20,7 +20,7 @@ class ListKosOthers extends Component {
                 <div className="py-3 font-bold">
                     {`${item.category} lain di ${item.location.title}`}
                 </div>
-                <div className="grid grid-cols-2 gap-2 mb-3">
+                <div className="grid grid-cols-2 gap-3 mb-3">
                     {
                         listData
                             .reverse()

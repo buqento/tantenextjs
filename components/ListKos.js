@@ -15,7 +15,7 @@ class ListKos extends Component {
         }
         return (
             <div className="container pb-3">
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-2 gap-3">
                     {
                         data.length > 0 &&
                         <>
