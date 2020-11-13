@@ -24,18 +24,12 @@ class Detail extends React.Component {
     if(window.location.hostname !== 'localhost'){
       ReactGa.initialize('UA-132808614-2')
       ReactGa.pageview('/detail')
-      console.log('ga run')
-    }else{
-      console.log('in localhost')
     }
   }
   componentDidUpdate() {
     if(window.location.hostname !== 'localhost'){
       ReactGa.initialize('UA-132808614-2')
       ReactGa.pageview('/detail')
-      console.log('ga run')
-    }else{
-      console.log('in localhost')
     }
   }
   render() {
