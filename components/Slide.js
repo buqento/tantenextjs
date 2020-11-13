@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { string, arrayOf } from 'prop-types'
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/swiper-bundle.css'
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
 
@@ -11,9 +12,7 @@ class Slide extends Component {
         return <Swiper
             spaceBetween={10}
             slidesPerView={1}
-            navigation
             pagination={{ clickable: true }}
-            scrollbar={{ draggable: true }}
             autoplay
         >
             {
