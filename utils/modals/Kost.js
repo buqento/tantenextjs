@@ -1571,5 +1571,80 @@ export const Kost = [
         facilities: ['Ukuran 3.5x3m', 'Kamar Mandi Dalam', 'Closet Duduk', 'Wifi', 'Parkiran'],
         start_price: 850000,
         post_url: 'https://www.facebook.com/groups/infokostjogja/permalink/2890533097833012/'
+    },
+    {
+        id: 65,
+        date_modified: '2020-11-15T05:41:15Z',
+        date_published: '2020-11-15T05:41:15Z',
+        title: 'Kost Murah Sewa Bulanan Di Kavling Agraria Duren Sawit Jakarta Timur Daerah Khusus Ibukota Jakarta - RKost Fasilitas Lengkap',
+        description: 'Kost murah sewa bulanan di Kavling Agraria Duren Sawit Jakarta Timur Daerah Khusus Ibukota Jakarta. Fasilitas lengkap dan lokasi strategis (dekat Superindo, jalur mikrolet M19, M26, dan M29). Pasangan wajib menunjukan surat bukti menikah. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Jl. Kav. Agraria 156, RT.2/RW.16, Duren Sawit, Kec. Duren Sawit, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13440',
+        images: [
+            'Pxa0chJ.webpm',
+            'dnjy6Bz.webpm',
+            'xyC9pbH.webpm',
+            '35Ce8P5.webpm',
+            'U2o6IGx.webpm',
+            'mZ9hXPO.webpm',
+            'gZfWS9y.webpm',
+            'gpdYlB5.webpm',
+            'axYGS87.webpm'
+        ],
+        location: { province: 'Jakarta Timur', title: 'Duren Sawit', near: '', lat: '-6.247318', long: '106.913526' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: '+6281218000800'
+        },
+        facilities: ['Listrik token (900 watt)', 'Kamar Mandi Dalam', 'Tempat Tidur dan Lemari', 'AC', 'Parkiran Motor/Mobil', 'WIFI 75 Mbps (Biznet)'],
+        start_price: 1300000,
+        post_url: 'https://www.facebook.com/groups/144807136294173/permalink/885603042214575/'
+    },
+    {
+        id: 66,	
+        date_modified: '2020-11-15T05:44:15Z',
+        date_published: '2020-11-15T05:44:15Z',
+        title: 'Kost Murah Sewa Bulanan Di Pemogan Denpasar Selatan Kota Denpasar Bali - Fasilitas Lengkap',
+        description: 'Tersedia rumah kost dengan fasilitas lengkap berlokasi di Gg. Ganesha depan No. 9, Pemogan, Kecamatan Denpasar Selatan, Kota Denpasar, Bali. Bangunan baru, bersih, dan aman. Ada dua tipe kamar yaitu isian dengan harga Rp1.800.000, fasilitas: AC, kasur, TV, kamar mandi dalam; kosongan dengan harga Rp1.300.000, fasilitas: dipan dan kamar mandi dalam. No Pets and Kids. Bisa harian dengan harga Rp150.000/malam. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Pemogan, Denpasar Selatan, Denpasar, Bali',
+        images: [
+            'P5KHWny.webpm',
+            '9oc7DGx.webpm',
+            'lgcHOSz.webpm'
+        ],
+        location: { province: 'bali', title: 'Denpasar Selatan', near: '', lat: '-8.701765', long: '115.191199' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/kira.godlike',
+            phone: '+6285847720120'
+        },
+        facilities: ['AC/Non AC', 'Kasur/Dipan Saja', 'TV', 'Kamar Mandi Dalam', 'Free WiFi', 'CCTV 24/7'],
+        start_price: 1300000,
+        post_url: 'https://www.facebook.com/commerce/listing/289182998949069/'
+    },
+    {
+        id: 67,	
+        date_modified: '2020-11-15T05:50:15Z',
+        date_published: '2020-11-15T05:50:15Z',
+        title: 'Kost Murah Sewa Bulanan Di Entrop Jayapura Selatan Kota Jayapura Papua - Belakang SMA Negeri 4 Jayapura',
+        description: 'Tersedia kost murah sewa bulanan dengan fasilitas lengkap berlokasi di Entrop Jayapura Selatan Kota Jayapura Papua (belakang SMA Negeri 4 Jayapura). Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Entrop, Jayapura Selatan, Kota Jayapura, Papua 99221',
+        images: [
+            't2Dlyn7.webpm',
+            '7wxtlVB.webpm',
+            'pV3JhVN.webpm',
+            'U9RaBsh.webpm',
+            'DJTavt6.webpm',
+            'vBBk9nQ.webpm'
+        ],
+        location: { province: 'papua', title: 'Jayapura Selatan', near: '', lat: '-2.576770', long: '140.691293' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/guspriyo.haripandya',
+            phone: '+6282238765149'
+        },
+        facilities: ['Ruang Tamu', 'Ruang Dapur', 'Kamar Tidur', 'Kamar Mandi', 'Listrik Prabayar 1.300', 'Air Bersih (Sumur Bor)'],
+        start_price: 1000000,
+        post_url: 'https://www.facebook.com/commerce/listing/566526464181455'
     }
 ]

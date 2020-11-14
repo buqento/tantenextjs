@@ -2,8 +2,6 @@ import React from 'react'
 import { string } from 'prop-types'
 import { DtArea } from '../../../utils/modals/Area'
 import { DtProvinsi } from '../../../utils/modals/Provinsi'
-import { Kost } from '../../../utils/modals/Kost'
-import { Kontrakan } from '../../../utils/modals/Kontrakan'
 import HeadPage from '../../../components/HeadPage'
 import NextHead from 'next/head'
 import Generateslug from '../../../utils/Generateslug'
@@ -15,16 +13,7 @@ class Detail extends React.Component {
     }
     constructor(props) {
         super(props)
-        this.getAmount = this.getAmount.bind(this)
         this.handleCollapse = this.handleCollapse.bind(this)
-    }
-    getAmount(location) {
-        const { slug } = this.props
-        const amount = slug !== 'all' ?
-            Kost.concat(Kontrakan).filter(item => Generateslug(item.location.title) === location).length
-            :
-            Kost.concat(Kontrakan).filter(item => Generateslug(item.location.province) === location).length
-        return amount
     }
     handleCollapse(id) {
         document.getElementById(id).checked = true;
