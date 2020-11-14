@@ -7,6 +7,7 @@ import { Kontrakan } from '../../../utils/modals/Kontrakan'
 import HeadPage from '../../../components/HeadPage'
 import NextHead from 'next/head'
 import Generateslug from '../../../utils/Generateslug'
+import { AiOutlineArrowRight } from 'react-icons/ai'
 
 class Detail extends React.Component {
     static async getInitialProps(ctx) {
@@ -15,14 +16,18 @@ class Detail extends React.Component {
     constructor(props) {
         super(props)
         this.getAmount = this.getAmount.bind(this)
+        this.handleCollapse = this.handleCollapse.bind(this)
     }
     getAmount(location) {
         const { slug } = this.props
-        const amount = slug !== 'all' ? 
-        Kost.concat(Kontrakan).filter(item => Generateslug(item.location.title) === location).length
-        :
-        Kost.concat(Kontrakan).filter(item => Generateslug(item.location.province) === location).length
-        return amount 
+        const amount = slug !== 'all' ?
+            Kost.concat(Kontrakan).filter(item => Generateslug(item.location.title) === location).length
+            :
+            Kost.concat(Kontrakan).filter(item => Generateslug(item.location.province) === location).length
+        return amount
+    }
+    handleCollapse(id) {
+        document.getElementById(id).checked = true;
     }
     render() {
         const { slug } = this.props;
@@ -69,9 +74,7 @@ class Detail extends React.Component {
                                             <a href={`../../area/${Generateslug(item.title)}`}>
                                                 <div>
                                                     <span>{item.title}</span>
-                                                    <span className="float-right text-xs font-semibold inline-block py-1 px-2 uppercase text-indigo-600 bg-indigo-200 uppercase last:mr-0 mr-1">
-                                                        {this.getAmount(Generateslug(item.title))}
-                                                    </span>
+                                                    <span className="float-right"><AiOutlineArrowRight className="inline ml-1 mb-1" /></span>
                                                 </div>
                                             </a>
                                         </div>
@@ -85,16 +88,33 @@ class Detail extends React.Component {
                                         if (nameA > nameB) return 1;
                                         return 0;
                                     })
-                                    .map((item, index) =>
-                                        <div className="py-3 px-3" key={index}>
-                                            <a href={`../../area/provinsi/${Generateslug(item.title)}`}>
-                                                <div>
-                                                    <span>{item.title}</span>
-                                                    <span className="float-right text-xs font-semibold inline-block py-1 px-2 text-indigo-600 bg-indigo-200 uppercase last:mr-0 mr-1">
-                                                        {this.getAmount(Generateslug(item.title))}
-                                                    </span>
-                                                </div>
-                                            </a>
+                                    .map((itemProvinsi, index) =>
+                                        <div className="tab w-full overflow-hidden" key={index}>
+                                            <input className="absolute opacity-0" id={index} type="radio" name="tabs2" />
+                                            <label className="block py-2 leading-normal cursor-pointer" onClick={() => this.handleCollapse(index)}>{itemProvinsi.title}</label>
+                                            <div className="tab-content overflow-hidden leading-normal">
+                                                {
+                                                    DtArea
+                                                        .sort(function (a, b) {
+                                                            var nameA = Generateslug(a.title.toUpperCase());
+                                                            var nameB = Generateslug(b.title.toUpperCase());
+                                                            if (nameA < nameB) return -1;
+                                                            if (nameA > nameB) return 1;
+                                                            return 0;
+                                                        })
+                                                        .filter(item => Generateslug(item.province) === Generateslug(itemProvinsi.title))
+                                                        .map((item, index) =>
+                                                            <div className="py-3 px-3" key={index}>
+                                                                <a href={`../../area/${Generateslug(item.title)}`}>
+                                                                    <div className=" text-indigo-700">
+                                                                        <span>{item.title}</span>
+                                                                        <span className="float-right"><a href="/search/category/Kost"><AiOutlineArrowRight className="inline ml-1 mb-1" /></a></span>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        )
+                                                }
+                                            </div>
                                         </div>
                                     )
                         }
