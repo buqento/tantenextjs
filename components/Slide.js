@@ -10,20 +10,21 @@ class Slide extends Component {
     render() {
         const { imagesData, imageTitle } = this.props;
         return <Swiper
-            spaceBetween={10}
-            slidesPerView={1}
-            pagination={{ clickable: true }}
+            spaceBetween={6}
+            slidesPerView={2}
+            // pagination={{ clickable: true }}
+            navigation
             autoplay
         >
             {
                 imagesData && imagesData.map((item, index) =>
                     <SwiperSlide key={index}>
                         <img 
-                        width="414px"
-                        src={`https://cdn.statically.io/img/i.imgur.com/w=414/${item}`}
+                        width="200px"
+                        src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item}`}
                         alt={`${imageTitle} 
                         ${index+1}`} 
-                        style={{maxHeight: '414px'}} />
+                        style={{maxHeight: '200px'}} />
                     </SwiperSlide>
                 )
             }

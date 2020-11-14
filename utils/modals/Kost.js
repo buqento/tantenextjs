@@ -1527,5 +1527,49 @@ export const Kost = [
         facilities: ['Kamar Tidur 4x6', 'Kamar Mandi Dalam', 'Air Panas & Wastafel', 'Gudang/Tempat Jemur', 'Kitchen Set Pribadi (penyedot asap)', 'TV LED', 'AC', 'Spring Bed (Bantal Guling & Tidur)', 'Meja Kursi', 'Lemari Pakaian'],
         start_price: 1500000,
         post_url: 'https://m.facebook.com/photo.php?fbid=3839439916089096&id=100000693755427&set=gm.1843717812432903&source=57'
+    },
+    {
+        id: 63,
+        date_modified: '2020-11-14T13:18:15Z',
+        date_published: '2020-11-14T13:18:15Z',
+        title: 'Kost Murah Di Sonosewu Ngestiharjo Kasihan Bantul Daerah Istimewa Yogyakarta - Kost Muslimah Dekat UPY',
+        description: 'Tersedia rumah kost berlokasi di Sonosewu, Ngestiharjo, Kecamatan Kasihan, Bantul, Daerah Istimewa Yogyakarta. Lokasi strategis (10 menitan ke malioboro, dekat superindo, alfamart, indomaret, ATM, warung makan). Harga sewa bervariasi (Rp450.000/bulan, Rp1.300.000/3 bulan, & Rp4.500.000/tahun). Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Sonosewu, Ngestiharjo, Kec. Kasihan, Bantul, Daerah Istimewa Yogyakarta',
+        images: [
+            'sNY3ZmC.webpm',
+            'TJKUG3m.webpm',
+            'VZSpJCy.webpm'
+        ],
+        location: { province: 'Yogyakarta', title: 'Kasihan', near: 'Universitas PGRI Yogyakarta', lat: '-7.805685', long: '110.341278' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: '+62895380583961'
+        },
+        facilities: ['Kasur & Bantal', 'Lemari Pakaian', 'Dipan', 'Free Biaya Listrik', 'Free Biaya Sampah', 'Akses 24 Jam', 'Kunci Gerbang', 'Mesin Cuci Bersama'],
+        start_price: 450000,
+        post_url: 'https://www.facebook.com/groups/infokostjogja/permalink/2889594821260173/'
+    },
+    {
+        id: 64,
+        date_modified: '2020-11-14T13:48:15Z',
+        date_published: '2020-11-14T13:48:15Z',
+        title: 'Kost Murah Di Condongcatur Depok Kabupaten Sleman Daerah Istimewa Yogyakarta - Purple Space And Kost',
+        description: 'Tersedia sebuah hunian kost yang bisa dijadikan tempat kerja ada 8 space+Homestay (Purple Space And Kost). Lokasi di Condongcatur, Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta. Sewa harian/mingguan/bulanan dengan harga bervariasi mulai Rp850.000 & Rp1.250.000 (Ac). Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Jl. Munggur 114-100, Sanggrahan, Condongcatur, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281',
+        images: [
+            'Vu0Orr2.webpm',
+            'Ez8qEog.webpm',
+            'PkA1jK0.webpm'
+        ],
+        location: { province: 'Yogyakarta', title: 'Depok', near: '', lat: '-7.754988', long: '110.399352' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/TJNetwork',
+            phone: '+6282243891588'
+        },
+        facilities: ['Ukuran 3.5x3m', 'Kamar Mandi Dalam', 'Closet Duduk', 'Wifi', 'Parkiran'],
+        start_price: 850000,
+        post_url: 'https://www.facebook.com/groups/infokostjogja/permalink/2890533097833012/'
     }
 ]
