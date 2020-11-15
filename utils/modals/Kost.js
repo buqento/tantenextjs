@@ -1601,7 +1601,7 @@ export const Kost = [
         post_url: 'https://www.facebook.com/groups/144807136294173/permalink/885603042214575/'
     },
     {
-        id: 66,	
+        id: 66,
         date_modified: '2020-11-15T05:44:15Z',
         date_published: '2020-11-15T05:44:15Z',
         title: 'Kost Murah Sewa Bulanan Di Pemogan Denpasar Selatan Kota Denpasar Bali - Fasilitas Lengkap',
@@ -1623,7 +1623,7 @@ export const Kost = [
         post_url: 'https://www.facebook.com/commerce/listing/289182998949069/'
     },
     {
-        id: 67,	
+        id: 67,
         date_modified: '2020-11-15T05:50:15Z',
         date_published: '2020-11-15T05:50:15Z',
         title: 'Kost Murah Sewa Bulanan Di Entrop Jayapura Selatan Kota Jayapura Papua - Belakang SMA Negeri 4 Jayapura',
@@ -1646,5 +1646,83 @@ export const Kost = [
         facilities: ['Ruang Tamu', 'Ruang Dapur', 'Kamar Tidur', 'Kamar Mandi', 'Listrik Prabayar 1.300', 'Air Bersih (Sumur Bor)'],
         start_price: 1000000,
         post_url: 'https://www.facebook.com/commerce/listing/566526464181455'
+    },
+    {
+        id: 68,
+        date_modified: '2020-11-16T05:26:15Z',
+        date_published: '2020-11-16T05:6:15Z',
+        title: 'Kost Murah Sewa Bulanan Di Pertanian Tengah Klender Duren Sawit Jakarta Timur Daerah Khusus Ibukota Jakarta - Wisma Blue House',
+        description: 'Tersedia kost murah sewa bulanan dengan fasilitas lengkap berlokasi di Jl. Pertanian Tengah No.42, RT.3/RW.2, Klender, Duren Sawit, Jakarta Timur, Daerah Khusus Ibukota Jakarta. Lokasi strategis dekat Stasiun KA Klender. Harga sewa bervariasi (Kamar mandi dalam + AC / Kamar mandi dlm non AC). Bagi yang berminat dapat menghubungi pengelola (tidak melayani SMS).',
+        keywords: 'Kost, Klender, Duren Sawit, Jakarta Timur, Daerah Khusus Ibukota Jakarta, Wisma Blue House',
+        images: [
+            'lAsG5Uv.webpm',
+            'eIh4Xyq.webpm',
+            'D537XE2.webpm',
+            'iKPcj0L.webpm',
+            'N5ivNri.webpm',
+            '63opTjr.webpm',
+            'Z5RJn95.webpm',
+            'BKZMWJI.webpm',
+            'b9I6pDe.webpm',
+            't2S9byD.webpm',
+            'u3MaWu0.webpm'
+        ],
+        location: { province: 'Jakarta Timur', title: 'Duren Sawit', near: '', lat: '-6.215629', long: '106.898864' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/indekos.bluehouse',
+            phone: '+6282211181222'
+        },
+        facilities: ['Tempat Tidur', 'Lemari Pakaian', 'Gantungan Baju', 'Ex Fan', 'Wastafel + Kaca Muka', 'Meja', 'Closet Duduk + Shower', 'Kulkas', 'Dispenser', 'Mesin Cuci', 'Dapur', 'Ruang Jemur Pakaian', 'Meja Strika', 'Ruang Tamu', 'Garasi Mobil & Motor Luas', 'Wifi & Cctv 24/7'],
+        start_price: 1000000,
+        post_url: 'https://www.facebook.com/groups/144807136294173/permalink/891137464994466/'
+    },
+    {
+        id: 69,
+        date_modified: '2020-11-16T05:44:15Z',
+        date_published: '2020-11-16T05:44:15Z',
+        title: 'Kost Murah Sewa Bulanan Di Ungasan Kuta Selatan Badung Bali - Fasilitas Lengkap - Jordan Guest House',
+        description: 'Tersedia rumah kost dengan fasilitas lengkap berlokasi di Ungasan, Kec. Kuta Selatan, Kabupaten Badung, Bali. Harga sewa bervariasi, ada dua tipe kamar. Tipe 1 (harga Rp1.300.000/bulan. Fasilitas: tempat tidur, AC, kolam renang, lemari, WiFi, dan dapur sharing). Tipe 2 (harga Rp1.600.000/bulan. Fasilitas: tempat tidur dengan kelambu, AC, lemari, kolam renang, WiFi, air panas, listrik include, dan dapur sharing). Dapur sharing equipment lengkap (kompor, kulkas, toaster, blender, piring, dll). Tidak bisa berkeluarga dengan anak kecil. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Pemogan, Kuta Selatan, Badung, Bali',
+        images: [
+            'gJ8eFsU.webpm',
+            '2bcfd9C.webpm',
+            'PBls3D3.webpm',
+            'nNQDnyR.webpm'
+        ],
+        location: { province: 'bali', title: 'Kuta Selatan', near: '', lat: '-8.824440', long: '115.145401' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: 'https://www.facebook.com/adi.bukit',
+            phone: '+6281805516676'
+        },
+        facilities: ['Tempat Tidur (Kelambu/Tanpa Kelambu)', 'AC', 'Lemari', 'Kolam Renang', 'WiFi', 'Air Panas', 'Listrik', 'Dapur Sharing Equipment Lengkap'],
+        start_price: 1300000,
+        post_url: 'https://www.facebook.com/commerce/listing/283601122970133/'
+    },
+    {
+        id: 70,
+        date_modified: '2020-11-16T06:12:15Z',
+        date_published: '2020-11-16T06:12:15Z',
+        title: 'Kost Murah Sewa Bulanan Di Panjer Denpasar Selatan Denpasar Bali - Fasilitas Lengkap Dekat Renon',
+        description: 'Tersedia rumah kost dengan fasilitas lengkap berlokasi di Jl. Waturenggong Gg.17C, Panjer, Kecamatan Denpasar Selatan, Kota Denpasar, Bali. Free WiFi (super kencang). Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Panjer, Denpasar Selatan, Denpasar, Bali',
+        images: [
+            'XC3Su4a.webpm',
+            '3UqdNnX.webpm',
+            'szZ8tVC.webpm',
+            'PWk4xsq.webpm',
+            '5nmZ0vb.webpm',
+            '01JptSt.webpm'
+        ],
+        location: { province: 'bali', title: 'Denpasar Selatan', near: '', lat: '-8.677930', long: '115.224029' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: '+6281339537029'
+        },
+        facilities: ['Kamar Mandi Dalam', 'Dapur Dalam', 'WiFi', 'Garasi Motor', 'Listrik Token'],
+        start_price: 650000,
+        post_url: 'https://www.facebook.com/commerce/listing/772804779965472/'
     }
 ]
