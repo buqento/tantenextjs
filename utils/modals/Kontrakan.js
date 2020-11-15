@@ -524,5 +524,29 @@ export const Kontrakan = [
         facilities: ['Teras', 'Ruang Tamu', 'Kamar Tidur', 'Dapur', 'Toilet', 'Listrik 1.300 Watt'],
         start_price: 750000,
         post_url: 'https://www.facebook.com/groups/144807136294173/permalink/889661325142080/'
+    },
+    {
+        id: 45,
+        date_modified: '2020-11-15T09:35:15Z',
+        date_published: '2020-11-15T09:35:15Z',
+        title: 'Rumah Kontrakan Murah Di Tapos Cimanggis Depok Jawa Barat - Dekat Emeralda Golf Club',
+        description: 'Tersedia rumah kontrakan tahunan berlokasi di Tapos, Cimanggis, Depok, Jawa Barat (dekat Emeralda Golf Club). Lingkungan bersih dan nyaman. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kontrakan, Emeralda Golf Club, Tapos, Cimanggis, Depok, Jawa Barat',
+        images: [
+            'RdhYwc2.webpm',
+            '5gpjREf.webpm',
+            '80bKWWj.webpm',
+            '3thwMrN.webpm',
+            'nIGol2d.webpm'
+        ],
+        location: { province: 'Jawa Barat', title: 'Tapos', lat: '-6.419886', long: '106.891092' },
+        category: 'Kontrakan',
+        contact_us: {
+            facebook_url: '',
+            phone: '+6289646851788'
+        },
+        facilities: ['2 Kamar Tidur', 'Ruang Tamu', 'Dapur', 'Kamar Mandi', 'Teras', 'Parkiran'],
+        start_price: 1000000,
+        post_url: 'https://www.facebook.com/groups/144807136294173/permalink/889637955144417/'
     }
 ]
