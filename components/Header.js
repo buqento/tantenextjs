@@ -92,6 +92,7 @@ class Header extends Component {
             <>
                 <NextHead>
                     <title>Cari Kost Dan Kontrakan Harian Bulanan Tahunan Murah Terjangkau Nyaman Strategis</title>
+                    <meta name="description" content="Tersedia Kost Dan Kontrakan Harian Bulanan Tahunan Murah Terjangkau Nyaman Strategis Di Sekitar Anda" />
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                     <meta name="googlebot" content="index, follow" />
                     <meta name="robot" content="index, follow" />

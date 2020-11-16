@@ -5,6 +5,6 @@ export default function Footer() {
         <div className="text-sm text-indigo-700">
             <Link href="about">Tentang Kami</Link> &middot; <Link href="contact">Kontak</Link> &middot; <Link href="policy">Kebijakan Privasi</Link>
         </div>
-        <small className="text-gray-500">&copy; {new Date().getFullYear()} Tantekos, All rights reserved.</small>
+        <small className="text-gray-700">&copy; {new Date().getFullYear()} Tantekos, All rights reserved.</small>
     </div>
 }

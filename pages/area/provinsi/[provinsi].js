@@ -45,7 +45,7 @@ class Detail extends React.Component {
                     <link rel="canonical" content={`https://tantekos.com/area/provinsi/${slug}`} />
                 </NextHead>
                 <div className="main-layout">
-                    <HeadPage title={`Kost & Kontrakan di ${areaTitle}`} />
+                    <HeadPage nohead title={`Kost & Kontrakan di ${areaTitle}`} />
                     <div className="container divide-y sm:divide-y-2 md:divide-y-4 lg:divide-y-8 xl:divide-y-0 divide-gray-400">
                         {
                             slug != 'all' ?
@@ -80,7 +80,7 @@ class Detail extends React.Component {
                                     .map((itemProvinsi, index) =>
                                         <div className="tab w-full overflow-hidden" key={index}>
                                             <input className="absolute opacity-0" id={index} type="radio" name="tabs2" />
-                                            <label className="block py-2 leading-normal cursor-pointer" onClick={() => this.handleCollapse(index)}>{itemProvinsi.title}</label>
+                                            <label htmlFor={index} className="block py-2 leading-normal cursor-pointer" onClick={() => this.handleCollapse(index)}>{itemProvinsi.title}</label>
                                             <div className="tab-content overflow-hidden leading-normal">
                                                 {
                                                     DtArea

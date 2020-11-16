@@ -21,13 +21,13 @@ class Detail extends React.Component {
     return { slug: ctx.query.detail }
   }
   componentDidMount() {
-    if(window.location.hostname !== 'localhost'){
+    if (window.location.hostname !== 'localhost') {
       ReactGa.initialize('UA-132808614-2')
       ReactGa.pageview('/detail')
     }
   }
   componentDidUpdate() {
-    if(window.location.hostname !== 'localhost'){
+    if (window.location.hostname !== 'localhost') {
       ReactGa.initialize('UA-132808614-2')
       ReactGa.pageview('/detail')
     }
@@ -145,7 +145,7 @@ class Detail extends React.Component {
           <Slide imagesData={data[0].images} imageTitle={data[0].title} />
           <div className="container mb-3">
             <div className="pt-3">
-              <small className="text-gray-600">{moment(data[0].date_modified).fromNow()}</small>
+              <small className="text-gray-700">{moment(data[0].date_modified).fromNow()}</small>
               <h1 className="mt-0 mb-3 text-xl">{data[0].title}</h1>
               <div className="mb-3">
                 <p className="font-bold">Deskripsi {data[0].category}</p>
@@ -153,7 +153,9 @@ class Detail extends React.Component {
               </div>
               <div className="mb-3">
                 <p className="font-bold">Fasilitas {data[0].category}</p>
-                {data[0].facilities.map((item, index) => <li key={index}>{item}</li>)}
+                <ul className="mx-4">
+                  {data[0].facilities.map((item, index) => <li className="list-disc" key={index}>{item}</li>)}
+                </ul>
               </div>
               <div className="mb-3">
                 <p className="pb-1 font-bold">Lokasi {data[0].category} <small>( {locationTitle})</small></p>
@@ -163,7 +165,7 @@ class Detail extends React.Component {
                 {
                   data[0].post_url !== '' &&
                   <div className="pt-3 text-sm text-indigo-700">
-                    <a href={data[0].post_url} target="blank">* Lihat tautan asli <FaExternalLinkAlt className="ml-1 inline" /> </a>
+                    <a href={data[0].post_url} target="blank" rel="noreferrer">* Lihat tautan asli <FaExternalLinkAlt className="ml-1 inline" /> </a>
                   </div>
                 }
                 <small>
