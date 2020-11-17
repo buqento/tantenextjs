@@ -10,7 +10,7 @@ class Slide extends Component {
     render() {
         const { imagesData, imageTitle } = this.props;
         return <Swiper
-            spaceBetween={6}
+            spaceBetween={3}
             slidesPerView={2}
             // pagination={{ clickable: true }}
             navigation
@@ -24,7 +24,8 @@ class Slide extends Component {
                         src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item}`}
                         alt={`${imageTitle} 
                         ${index+1}`} 
-                        style={{maxHeight: '200px'}} />
+                        style={{maxHeight: '200px'}}
+                        />
                     </SwiperSlide>
                 )
             }
