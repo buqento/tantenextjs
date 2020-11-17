@@ -1724,5 +1724,82 @@ export const Kost = [
         facilities: ['Kamar Mandi Dalam', 'Dapur Dalam', 'WiFi', 'Garasi Motor', 'Listrik Token'],
         start_price: 650000,
         post_url: 'https://www.facebook.com/commerce/listing/772804779965472/'
+    },
+    {
+        id: 71,	
+        date_modified: '2020-11-17T06:44:15Z',
+        date_published: '2020-11-17T06:44:15Z',
+        title: 'Kost Murah Sewa Bulanan Di Panjer Denpasar Selatan Denpasar Bali - Fasilitas Lengkap Nyaman Dan Adem Dekat Renon',
+        description: 'Tersedia rumah kost dengan fasilitas lengkap berlokasi di Jl. Moh Yamin, Panjer, Kecamatan Denpasar Selatan, Kota Denpasar, Bali. Kost yang terletak di pusat kota Denpasar Renon, sangat strategis, dekat tempat makan, supermarket, dan kantor. Kost tenang, aman, dan nyaman (NO PARTY). Owner kost sangat ramah. Untuk penambahan fasilitas seperti AC, bisa info langsung ke Owner Kost. Penambahan fasilitas akan dikenakan biaya tambahan sewa bulanan. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Panjer, Denpasar Selatan, Denpasar, Bali',
+        images: [
+            '1cJw9lB.webpm',
+            'IAGW2li.webpm',
+            'avuOxL8.webpm',
+            'PVwiNPk.webpm',
+            'MzdsEUl.webpm',
+            'r1jVYdC.webpm',
+            'ZPH7xYZ.webpm'
+        ],
+        location: { province: 'bali', title: 'Denpasar Selatan', near: '', lat: '-8.668412', long: '115.238657' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: '+6282232484883'
+        },
+        facilities: ['Parkir Luas (parkir dalam)', 'Free WiFi', 'Balcony Pribadi (kamar lantai 1)', 'Kamar dengan Kasur, Lemari, Kipas, Meja', 'Kamar Mandi Dalam', 'Dapur Dalam (Ada Pembatas Pintu)', 'Kos Bangunan 2 Lantai', 'Exclude Listrik (2500 kWh)'],
+        start_price: 1200000,
+        post_url: 'https://www.facebook.com/commerce/listing/449195336065538/'
+    },
+    {
+        id: 72,	
+        date_modified: '2020-11-17T07:36:15Z',
+        date_published: '2020-11-17T07:36:15Z',
+        title: 'Kost Murah Sewa Bulanan Di Pemecutan Klod Denpasar Barat Denpasar Bali - Fasilitas Lengkap',
+        description: 'Tersedia rumah kost dengan fasilitas lengkap berlokasi di Jl. Pura Demak XXI No. 1, Pemecutan Klod, Kec. Denpasar Barat, Kota Denpasar, Bali. Kost nyaman sekali, hanya 8 kamar. Harga belum termasuk biaya listrik bulanan, pemakaian token (beli sendiri). Akses jalan aspal 6 meter. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Pemecutan Klod, Denpasar Barat, Denpasar, Bali',
+        images: [
+            '2cN7A42.webpm',
+            'jWETYbT.webpm',
+            'pkKMIJ0.webpm',
+            'dKSIjhu.webpm',
+            '9xzMwcK.webpm',
+            'RZ6mZKT.webpm'
+        ],
+        location: { province: 'bali', title: 'Denpasar Barat', near: '', lat: '-8.677245', long: '115.195614' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: '+6281238751029'
+        },
+        facilities: ['Spring Bed', 'Water Heater', 'AC', 'Meja Rias', 'Lemari', 'Kitchen', 'Kulkas', 'Free WiFi', 'Ruang Jemur Pakaian', 'Parkir Kendaraan (Motor/Mobil) Luas', 'Listrik Token', 'Akses Jalan Aspal 6 Meter'],
+        start_price: 1500000,
+        post_url: 'https://www.facebook.com/commerce/listing/689436052001508/'
+    },
+    {
+        id: 73,	
+        date_modified: '2020-11-17T07:44:15Z',
+        date_published: '2020-11-17T07:44:15Z',
+        title: 'Kost Murah Sewa Bulanan Di Santa Rosa Argapura Jayapura Selatan Papua - Kost Dua Lantai Fasilitas Lengkap',
+        description: 'Tersedia kost dengan fasilitas lengkap berlokasi di Jl. Nangka Santa Rosa, Argapura, Jayapura Selatan, Papua. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Jl. Nangka Santa Rosa, Argapura, Jayapura Selatan, Papua',
+        images: [
+            'vyei3YX.webpm',
+            'QMLauHm.webpm',
+            'rJcRny4.webpm',
+            'rr3MNej.webpm',
+            'B37ILfv.webpm',
+            'lDDjx74.webpm',
+            '4R3enID.webpm'
+        ],
+        location: { province: 'papua', title: 'Jayapura Selatan', near: '', lat: '-2.559500', long: '140.710898' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: '+6282248085286'
+        },
+        facilities: ['Kamar Tidur', 'Ruang Tamu', 'Kamar Mandi Dalam', 'Listrik Token', 'Parkiran Mobil/Motor', 'Pagar Keliling'],
+        start_price: 1350000,
+        post_url: 'https://www.facebook.com/groups/631657273666514/permalink/1796794883819408/?sale_post_id=1796794883819408'
     }
 ]

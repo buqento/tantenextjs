@@ -9,16 +9,16 @@ class Area extends Component {
             <div className="container grid grid-cols-2 gap-3 my-3 text-indigo-700">
                 {
                     DtProvinsi
-                        .slice(0, 5)
+                        .slice(0, 7)
                         .sort(() => .5 - Math.random())
                         .map((item, index) =>
-                            <div key={index} className="border border-indigo-500 text-center py-3 align-middle">
+                            <div key={index} className="rounded-xl border border-indigo-500 text-center py-3 align-middle font-bold">
                                 <Link href={`area/provinsi/${Generateslug(item.title)}`}>{item.title}</Link>
                             </div>
                         )
                 }
                 <Link href="area/provinsi/all">
-                    <div key={6} className="border border-indigo-500 text-center py-3 px-3">
+                    <div key={6} className="text-center py-3 px-3">
                         <span className="inline">Lihat Semua</span>
                         <AiOutlineArrowRight className="inline ml-1 mb-1" />
                     </div>
