@@ -11,6 +11,7 @@
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "bootstrap": "^4.5.3",
+    "firebase": "^8.0.2",
     "mapbox-gl": "^1.12.0",
     "moment": "^2.29.1",
     "next": "^10.0.0",
@@ -29,5 +30,17 @@
     "eslint-plugin-react": "^7.21.5",
     "postcss-preset-env": "^6.7.0",
     "tailwindcss": "^1.9.6"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buqento/tantenextjs.git"
+  },
+  "author": "bvqento",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/buqento/tantenextjs/issues"
+  },
+  "homepage": "https://github.com/buqento/tantenextjs#readme"
 }

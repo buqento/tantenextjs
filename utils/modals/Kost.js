@@ -1801,5 +1801,51 @@ export const Kost = [
         facilities: ['Kamar Tidur', 'Ruang Tamu', 'Kamar Mandi Dalam', 'Listrik Token', 'Parkiran Mobil/Motor', 'Pagar Keliling'],
         start_price: 1350000,
         post_url: 'https://www.facebook.com/groups/631657273666514/permalink/1796794883819408/?sale_post_id=1796794883819408'
+    },
+    {
+        id: 74,	
+        date_modified: '2020-11-18T08:44:15Z',
+        date_published: '2020-11-18T08:44:15Z',
+        title: 'Kost Murah Sewa Bulanan Di Padangsambian Kaja Denpasar Barat Denpasar Bali - Fasilitas Lengkap',
+        description: 'Tersedia rumah kost dengan fasilitas lengkap berlokasi di Jl. Kebo Iwa Selatan Gg. Kelapa Gading, Padangsambian Kaja, Kec. Denpasar Barat, Kota Denpasar, Bali. Bangunan kost baru dengan lantai granit dan bersih. Terdapat dua tipe: Tipe Biasa (Rp650.000 untuk 1 orang, Rp700.000 untuk 2 orang) dan Tipe Family (Rp1.500.000). Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Padangsambian Kaja, Denpasar Barat, Denpasar, Bali',
+        images: [
+            'rPTOFUM.webpm',
+            'Rf4LLmZ.webpm',
+            'fs54Q46.webpm',
+            '9FBI5UC.webpm'
+        ],
+        location: { province: 'Bali', title: 'Denpasar Barat', near: '', lat: '-8.641976', long: '115.185938' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: '+6282247949526'
+        },
+        facilities: ['Kamar Mandi Dalam', 'Dapur', 'Free Air', 'Listrik Rp3.000/kWh'],
+        start_price: 650000,
+        post_url: 'https://www.facebook.com/commerce/listing/3494606597289754/'
+    },
+    {
+        id: 75,	
+        date_modified: '2020-11-18T08:50:15Z',
+        date_published: '2020-11-18T08:50:15Z',
+        title: 'Kost Murah Sewa Bulanan Di Pedungan Denpasar Selatan Denpasar Bali - Fasilitas Lengkap Nyaman Aman Tenang',
+        description: 'Tersedia rumah kost dengan fasilitas lengkap berlokasi di Jl. Pulau Bungin 1, Pedungan, Kec. Denpasar Selatan, Kota Denpasar, Bali. Lingkungan aman, nyaman, dan tenang. Bisa untuk keluarga. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Pedungan, Denpasar Selatan, Denpasar, Bali',
+        images: [
+            'QVlJZlu.webpm',
+            'inBniYB.webpm',
+            'kt9tpSy.webpm',
+            'cWAfrOx.webpm'
+        ],
+        location: { province: 'bali', title: 'Denpasar Selatan', near: '', lat: '-8.685114', long: '115.205985' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: '+6287871537988'
+        },
+        facilities: ['Kamar ukuran 4x4', 'Springbed 160x200', 'AC', 'TV', 'Meja TV', 'Lemari  3 Pintu', 'Meja Rias', 'Kulkas', 'Dapur Dalam', 'Kamar Mandi Dalam', 'Parkir Sepeda Motor', 'Listrik Token', 'Free Air', 'CCTV', 'WiFi 24 Jam'],
+        start_price: 1500000,
+        post_url: 'https://www.facebook.com/commerce/listing/373070237355237/'
     }
 ]
