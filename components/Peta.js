@@ -4,8 +4,8 @@ import { shape } from 'prop-types'
 import { FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function Peta(props) {
-    const lat = parseFloat(props.location.lat)
-    const long = parseFloat(props.location.long)
+    const lat = parseFloat(props.location.lat_lng.w_)
+    const long = parseFloat(props.location.lat_lng.T_)
     const [viewport, setViewport] = useState({
         latitude: lat,
         longitude: long,

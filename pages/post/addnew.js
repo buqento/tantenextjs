@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import fire from '../../config/fire-config';
+import Generateslug from '../../utils/Generateslug'
 
 const Addnew = () => {
     const strToArray = (str) => {return str.trim().split(", ")}
@@ -7,11 +8,11 @@ const Addnew = () => {
     const [description, setDescription] = useState("")
     const [keywords, setKeywords] = useState("")
     const [images, setImages] = useState("")
-    const [province, setProvince] = useState("")
-    const [district, setDistrict] = useState("")
+    const [province, setProvince] = useState("Bali")
+    const [district, setDistrict] = useState("Denpasar Utara")
     const [near, setNear] = useState("")
     const [lat_lng, setLatlng] = useState("")
-    const [category, setCategory] = useState("")
+    const [category, setCategory] = useState("Kost")
     const [contact_phone, setContactPhone] = useState("")
     const [contact_fb, setContactFb] = useState("")
     const [facilities, setFacilities] = useState("")
@@ -23,6 +24,7 @@ const Addnew = () => {
             .add({
                 date_modified: Date.now(),
                 date_published: Date.now(),
+                slug: Generateslug(title),
                 title: title,
                 description: description,
                 keywords: keywords,
@@ -73,6 +75,8 @@ const Addnew = () => {
                     <option>Bali</option>
                     <option>Papua</option>
                     <option>Maluku</option>
+                    <option>Jawa Barat</option>
+                    <option>Jakarta Pusat</option>
                 </select>
             </div>
             <div className="mb-4">
@@ -86,6 +90,18 @@ const Addnew = () => {
                     <option>Kuta Selatan</option>
                     <option>Kuta Utara</option>
                     <option>Kuta</option>
+                    
+                    <option>Leitimur Selatan</option>
+                    <option>Teluk Ambon</option>
+                    <option>Baguala</option>
+                    <option>Sirimau</option>
+                    <option>Nusaniwe</option>  
+
+                    <option>Tapos</option>                    
+                    <option>Limo</option>    
+                    
+                    <option>Kemayoran</option>    
+                                    
                 </select>
             </div>
             <div className="mb-4">

@@ -3,28 +3,44 @@ import { arrayOf, shape, string } from 'prop-types'
 import NextHead from 'next/head'
 import Slide from '../components/Slide'
 import FooterDetail from '../components/FooterDetail'
-import ListKosOthers from '../components/ListKosOthers'
 import HeadPage from '../components/HeadPage'
-import { Kost } from '../utils/modals/Kost'
-import { Kontrakan } from '../utils/modals/Kontrakan'
-import Firstupper from '../utils/Firstupper'
 import Peta from '../components/Peta'
 import ReactGa from 'react-ga'
 import moment from 'moment';
 import { FaExternalLinkAlt } from 'react-icons/fa';
-import Generateslug from '../utils/Generateslug'
+import fire from '../config/fire-config';
 
 class Detail extends React.Component {
   static async getInitialProps(ctx) {
-    // const items = await fetch('https://5de747e7b1ad690014a4e0d2.mockapi.io/room')
-    // const dataItems = await items.json()
     return { slug: ctx.query.detail }
   }
+  constructor(props) {
+    super(props)
+    this.state = {
+      detail: null,
+      notFound: false
+    }
+  }
   componentDidMount() {
+    const { slug } = this.props;
     if (window.location.hostname !== 'localhost') {
       ReactGa.initialize('UA-132808614-2')
       ReactGa.pageview('/detail')
     }
+    fire
+      .firestore()
+      .collection("kosts")
+      .where("slug", "==", slug)
+      .get()
+      .then((snapshot) => {
+        // if (snapshot.exists) {
+        //   console.log("No such document!");
+        //   this.setState({ notFound: true })
+        // }
+        snapshot.docs.forEach(doc => {
+          this.setState({ detail: doc.data() })
+        })
+      })
   }
   componentDidUpdate() {
     if (window.location.hostname !== 'localhost') {
@@ -33,14 +49,9 @@ class Detail extends React.Component {
     }
   }
   render() {
+    const { detail, notFound } = this.state;
     const { slug } = this.props;
-    let notFound = false;
-    let data = Kost.filter(item => Generateslug(item.title) === slug)
-    if (data.length < 1) { data = Kontrakan.filter(item => Generateslug(item.title) === slug) }
-    if (!data[0]) notFound = true;
-    const otherItems = Kost.concat(Kontrakan).filter(item => Generateslug(item.title) !== slug && Generateslug(item.location.title) === Generateslug(data[0].location.title) && data[0].category === item.category)
-    let locationTitle = "";
-    data[0] && data[0].location.title.split("-").map(index => locationTitle += Firstupper(index) + " ")
+    // const otherItems = Kost.concat(Kontrakan).filter(item => Generateslug(item.title) !== slug && Generateslug(item.location.title) === Generateslug(data[0].location.title) && data[0].category === item.category)
     const structureTypeBreadcrumbList =
       `{
         "@context": "https://schema.org",
@@ -48,19 +59,19 @@ class Detail extends React.Component {
         "itemListElement": [{
           "@type": "ListItem",
           "position": 1,
-          "name": "${data[0] && data[0].title}",
+          "name": "${detail && detail.title}",
           "item": "https://tantekos.com/${slug}"
         }]
      }`
     const structureTypeHostel = `{
       "@context": "https://schema.org",
       "@type": "Hostel",
-      "image": [${data[0] && data[0].images.map(item => `"https://cdn.statically.io/img/i.imgur.com/w=300/${item}"`)}],
+      "image": [${detail && detail.images.map(item => `"https://cdn.statically.io/img/i.imgur.com/w=300/${item}"`)}],
       "@id": "https://tantekos.com",
-      "name": "${data[0] && data[0].title}",
+      "name": "${detail && detail.title}",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "${locationTitle}",
+        "streetAddress": "${detail && detail.location.district}",
         "addressLocality": "Ambon",
         "addressRegion": "Maluku",
         "postalCode": "97117",
@@ -80,11 +91,11 @@ class Detail extends React.Component {
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "${data[0] && data[0].location.lat}",
-        "longitude": "${data[0] && data[0].location.long}" 
+        "latitude": "${detail && detail.location.lat_lng.w_}",
+        "longitude": "${detail && detail.location.lat_lng.T_}" 
       },
       "url": "${`https://tantekos.com/${slug}`}",
-      "telephone": "${data[0] && data[0].contact_us.phone || '+6285243322433'}",
+      "telephone": "${detail && detail.contact_us.phone || '+6285243322433'}",
       "priceRange": "Rp50.000 - Rp1.500.000",
       "paymentAccepted": "Cash, Credit Card",
       "currenciesAccepted": "IDR",
@@ -99,7 +110,7 @@ class Detail extends React.Component {
         "contactType" : "customer service"
       } 
     }`
-    const structureDetailPage = data[0] && {
+    const structureDetailPage = detail && {
       '@graph': [
         JSON.parse(structureTypeHostel),
         JSON.parse(structureTypeBreadcrumbList)
@@ -112,22 +123,22 @@ class Detail extends React.Component {
         </div>
       </>}
       {
-        data && data[0] &&
+        detail && !notFound &&
         <NextHead>
-          <title>{data[0].title}</title>
+          <title>{detail.title}</title>
           <meta name="googlebot" content="index, follow" />
           <meta name="robot" content="index, follow" />
           <meta name="application-name" content="Tantekos" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <meta name="title" content={data[0].title} />
-          <meta name="description" content={data[0].description} />
-          <meta name="keywords" content={`tantekos, Info Kost, Cari kost, kost, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian, ${data[0].keywords}`} />
-          <meta property="og:title" content={data[0].title} />
-          <meta property="og:description" content={data[0].description} />
+          <meta name="title" content={detail.title} />
+          <meta name="description" content={detail.description} />
+          <meta name="keywords" content={`tantekos, Info Kost, Cari kost, kost, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian, ${detail.keywords}`} />
+          <meta property="og:title" content={detail.title} />
+          <meta property="og:description" content={detail.description} />
           <meta property="og:type" content="website" />
           <meta property="og:url" content={`https://tantekos.com/${slug}`} />
-          <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/w=300/${data[0].images[0]}`} />
-          <meta property="og:image:alt" content={data[0].title} />
+          <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/w=300/${detail.images[0]}`} />
+          <meta property="og:image:alt" content={detail.title} />
           <meta property="og:image:width" content="300" />
           <meta property="og:image:height" content="300" />
           <meta property="og:locale" content="id_ID" />
@@ -139,33 +150,33 @@ class Detail extends React.Component {
         </NextHead>
       }
       {
-        data && data[0] &&
+        detail &&
         <div className="main-layout">
-          <HeadPage page="detail" title={data[0].category + ' di ' + locationTitle} />
-          <Slide imagesData={data[0].images} imageTitle={data[0].title} />
+          <HeadPage page="detail" title={detail.category + ' di ' + detail.location.district} />
+          <Slide imagesData={detail.images} imageTitle={detail.title} />
           <div className="container mb-3">
             <div className="pt-3">
-              <small className="text-gray-700">{moment(data[0].date_modified).fromNow()}</small>
-              <h1 className="mt-0 mb-3 text-xl">{data[0].title}</h1>
+              <small className="text-gray-700">{moment(detail.date_modified).fromNow()}</small>
+              <h1 className="mt-0 mb-3 text-xl">{detail.title}</h1>
               <div className="mb-3">
-                <p className="font-bold">Deskripsi {data[0].category}</p>
-                {data[0].description}
+                <p className="font-bold">Deskripsi {detail.category}</p>
+                {detail.description}
               </div>
               <div className="mb-3">
-                <p className="font-bold">Fasilitas {data[0].category}</p>
+                <p className="font-bold">Fasilitas {detail.category}</p>
                 <ul className="mx-4">
-                  {data[0].facilities.map((item, index) => <li className="list-disc" key={index}>{item}</li>)}
+                  {detail && detail.facilities && detail.facilities.map((item, index) => <li className="list-disc" key={index}>{item}</li>)}
                 </ul>
               </div>
               <div className="mb-3">
-                <p className="pb-1 font-bold">Lokasi {data[0].category} <small>( {locationTitle})</small></p>
-                <Peta location={data[0].location} />
+                <p className="pb-1 font-bold">Lokasi {detail.category} <small>( {detail.location.province})</small></p>
+                <Peta location={detail.location} />
               </div>
               <div className="border-top mt-3">
                 {
-                  data[0].post_url !== '' &&
+                  detail.post_url !== '' &&
                   <div className="pt-3 text-sm text-indigo-700">
-                    <a href={data[0].post_url} target="blank" rel="noreferrer">* Lihat tautan asli <FaExternalLinkAlt className="ml-1 inline" /> </a>
+                    <a href={detail.post_url} target="blank" rel="noreferrer">* Lihat tautan asli <FaExternalLinkAlt className="ml-1 inline" /> </a>
                   </div>
                 }
                 <small>
@@ -174,15 +185,7 @@ class Detail extends React.Component {
               </div>
             </div>
           </div>
-          {
-            otherItems.length > 0 &&
-            <div>
-              <div className="border-b-8 border-gray-200" />
-
-              <ListKosOthers data={otherItems} item={data[0]} />
-            </div>
-          }
-          <FooterDetail data={data[0]} />
+          <FooterDetail data={detail} />
         </div>
       }
     </>
@@ -194,6 +197,6 @@ Detail.propTypes = {
 }
 Detail.defaultProps = {
   allItems: null,
-  slug: ''
+  slug: null
 }
 export default Detail;
