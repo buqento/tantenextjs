@@ -2,14 +2,18 @@ import React, { useState } from 'react'
 import fire from '../../config/fire-config';
 
 const Addnew = () => {
+    const strToArray = (str) => {return str.trim().split(", ")}
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
     const [keywords, setKeywords] = useState("")
-    const [images, setImages] = useState("2cN7A42.webpm")
-    const [province, setProvince] = useState("Bali")
-    const [district, setDistrict] = useState("Denpasar Utara")
-    const [category, setCategory] = useState("Kost")
-    const [contact_us, setContactUs] = useState("")
+    const [images, setImages] = useState("")
+    const [province, setProvince] = useState("")
+    const [district, setDistrict] = useState("")
+    const [near, setNear] = useState("")
+    const [lat_lng, setLatlng] = useState("")
+    const [category, setCategory] = useState("")
+    const [contact_phone, setContactPhone] = useState("")
+    const [contact_fb, setContactFb] = useState("")
     const [facilities, setFacilities] = useState("")
     const [start_price, setStartPrice] = useState("")
     const [post_url, setPostUrl] = useState("")
@@ -17,22 +21,21 @@ const Addnew = () => {
         e.preventDefault();
         fire.firestore().collection("kosts")
             .add({
-                // id: 72,	
                 date_modified: Date.now(),
                 date_published: Date.now(),
                 title: title,
                 description: description,
                 keywords: keywords,
-                images: ['2cN7A42.webpm'],
-                location: { province: province, district: district, near: '', latitude: -8.677245, longitude: 115.195614 },
+                images: strToArray(images),
+                location: { province: province, district: district, near: near, lat_lng: new fire.firestore.GeoPoint(Number(strToArray(lat_lng)[0]), Number(strToArray(lat_lng)[1])) },
                 category: category,
-                contact_us: { facebook_url: '', phone: contact_us },
-                facilities: [facilities],
+                contact_us: { facebook_url: contact_fb, phone: contact_phone },
+                facilities: strToArray(facilities),
                 start_price: start_price,
                 post_url: post_url,
                 is_active: false
             })
-            .then(() => { alert('contact saved') })
+            .then(() => { alert('Data saved') })
             .catch((error) => { alert(error.message) })
 
         setTitle("")
@@ -41,14 +44,17 @@ const Addnew = () => {
         setImages("")
         setProvince("")
         setDistrict("")
+        setNear("")
+        setLatlng("")
         setCategory("")
-        setContactUs("")
+        setContactPhone("")
+        setContactFb("")
         setFacilities("")
         setStartPrice("")
         setPostUrl("")
     }
     return (
-        <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={handleSubmit}>
+        <form className="bg-white px-8 py-8" onSubmit={handleSubmit}>
 
             <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="category">category</label>
@@ -60,7 +66,7 @@ const Addnew = () => {
                 </select>
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="province">Province</label>
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="province">province</label>
                 <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state"
                     value={province}
                     onChange={(e) => setProvince(e.target.value)}>
@@ -81,6 +87,20 @@ const Addnew = () => {
                     <option>Kuta Utara</option>
                     <option>Kuta</option>
                 </select>
+            </div>
+            <div className="mb-4">
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="near">near</label>
+                <input className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none" id="near" type="text" placeholder="near"
+                    value={near}
+                    onChange={(e) => setNear(e.target.value)}
+                />
+            </div>
+            <div className="mb-4">
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="lat_lng">lat_lng</label>
+                <input className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none" id="lat_lng" type="text" placeholder="lat_lng"
+                    value={lat_lng}
+                    onChange={(e) => setLatlng(e.target.value)}
+                />
             </div>
             <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="title">title</label>
@@ -110,10 +130,17 @@ const Addnew = () => {
                 />
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact_us">contact_us</label>
-                <input className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none" id="contact_us" type="text" placeholder="contact_us"
-                    value={contact_us}
-                    onChange={(e) => setContactUs(e.target.value)}
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact_fb">contact_fb</label>
+                <input className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none" id="contact_fb" type="text" placeholder="contact_fb"
+                    value={contact_fb}
+                    onChange={(e) => setContactFb(e.target.value)}
+                />
+            </div>
+            <div className="mb-4">
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact_phone">contact_phone</label>
+                <input className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none" id="contact_phone" type="text" placeholder="contact_phone"
+                    value={contact_phone}
+                    onChange={(e) => setContactPhone(e.target.value)}
                 />
             </div>
             <div className="mb-4">

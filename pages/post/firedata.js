@@ -22,24 +22,34 @@ class Firedata extends React.Component {
     render() {
         const { kosts } = this.state
         return (
-            <div className="container">
-                <div className="grid grid-cols-2 gap 3">
-                    <div><Addnew /></div>
-                    <div className="grid grid-cols-2 gap-3">
-                        {
-                            kosts
-                                .map((kost, index) =>
-                                    <div key={index} className="rounded-xl overflow-hidden shadow-sm border">
-                                        <img className="w-full" src={`https://cdn.statically.io/img/i.imgur.com/w=200/${kost.images[0]}`} alt={kost.title} />
-                                        <div className="px-3 py-3 text-center">
-                                            <div className="px-2 font-bold">{Currency(kost.start_price, false)}</div>
-                                            <div className="text-current leading-none clamp-1"><small>{kost.location.title}</small></div>
-                                            <div className="text-current uppercase leading-none clamp-1"><small>{kost.location.province}</small></div>
-                                        </div>
+            <div className="container grid grid-cols-2 gap-3 py-3">
+                <div><Addnew /></div>
+                <div className="py-3">
+                    {
+                        kosts
+                            .sort(
+                                function compare(a, b) {
+                                    const dtModifiedA = a.date_modified;
+                                    const dtModifiedB = b.date_modified;
+                                    let comparison = 0;
+                                    if (dtModifiedA < dtModifiedB) {
+                                        comparison = 1;
+                                    } else if (dtModifiedA > dtModifiedB) {
+                                        comparison = -1;
+                                    }
+                                    return comparison;
+                                }
+                            )
+                            .map((kost, index) =>
+                                <div key={index} className="rounded-xl overflow-hidden shadow-md my-3">
+                                    <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${kost.images[0]}`} alt={kost.title} />
+                                    <div className="px-3 py-3">
+                                        <div className="font-bold">{Currency(kost.start_price, false)}</div>
+                                        <div className="text-current leading-none clamp-1"><small>{kost.title}</small></div>
                                     </div>
-                                )
-                        }
-                    </div>
+                                </div>
+                            )
+                    }
                 </div>
             </div>
         )

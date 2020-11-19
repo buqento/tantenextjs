@@ -1726,7 +1726,7 @@ export const Kost = [
         post_url: 'https://www.facebook.com/commerce/listing/772804779965472/'
     },
     {
-        id: 71,	
+        id: 71,
         date_modified: '2020-11-17T06:44:15Z',
         date_published: '2020-11-17T06:44:15Z',
         title: 'Kost Murah Sewa Bulanan Di Panjer Denpasar Selatan Denpasar Bali - Fasilitas Lengkap Nyaman Dan Adem Dekat Renon',
@@ -1752,7 +1752,7 @@ export const Kost = [
         post_url: 'https://www.facebook.com/commerce/listing/449195336065538/'
     },
     {
-        id: 72,	
+        id: 72,
         date_modified: '2020-11-17T07:36:15Z',
         date_published: '2020-11-17T07:36:15Z',
         title: 'Kost Murah Sewa Bulanan Di Pemecutan Klod Denpasar Barat Denpasar Bali - Fasilitas Lengkap',
@@ -1777,7 +1777,7 @@ export const Kost = [
         post_url: 'https://www.facebook.com/commerce/listing/689436052001508/'
     },
     {
-        id: 73,	
+        id: 73,
         date_modified: '2020-11-17T07:44:15Z',
         date_published: '2020-11-17T07:44:15Z',
         title: 'Kost Murah Sewa Bulanan Di Santa Rosa Argapura Jayapura Selatan Papua - Kost Dua Lantai Fasilitas Lengkap',
@@ -1803,7 +1803,7 @@ export const Kost = [
         post_url: 'https://www.facebook.com/groups/631657273666514/permalink/1796794883819408/?sale_post_id=1796794883819408'
     },
     {
-        id: 74,	
+        id: 74,
         date_modified: '2020-11-18T08:44:15Z',
         date_published: '2020-11-18T08:44:15Z',
         title: 'Kost Murah Sewa Bulanan Di Padangsambian Kaja Denpasar Barat Denpasar Bali - Fasilitas Lengkap',
@@ -1826,7 +1826,7 @@ export const Kost = [
         post_url: 'https://www.facebook.com/commerce/listing/3494606597289754/'
     },
     {
-        id: 75,	
+        id: 75,
         date_modified: '2020-11-18T08:50:15Z',
         date_published: '2020-11-18T08:50:15Z',
         title: 'Kost Murah Sewa Bulanan Di Pedungan Denpasar Selatan Denpasar Bali - Fasilitas Lengkap Nyaman Aman Tenang',
@@ -1847,5 +1847,55 @@ export const Kost = [
         facilities: ['Kamar ukuran 4x4', 'Springbed 160x200', 'AC', 'TV', 'Meja TV', 'Lemari  3 Pintu', 'Meja Rias', 'Kulkas', 'Dapur Dalam', 'Kamar Mandi Dalam', 'Parkir Sepeda Motor', 'Listrik Token', 'Free Air', 'CCTV', 'WiFi 24 Jam'],
         start_price: 1500000,
         post_url: 'https://www.facebook.com/commerce/listing/373070237355237/'
+    },
+    {
+        id: 76,
+        date_modified: '2020-11-19T06:44:15Z',
+        date_published: '2020-11-19T06:44:15Z',
+        title: 'Kost Murah Sewa Bulanan Di Peguyangan Kaja Denpasar Utara Denpasar Bali - Fasilitas Lengkap Dekat Ubung Dan Nangka Utara',
+        description: 'Tersedia rumah kost dengan fasilitas lengkap berlokasi di Jl. Tunjung Tutur Gg. Menuri, Peguyangan Kaja, Kec. Denpasar Utara, Kota Denpasar, Bali. Lingkungan aman, nyaman, dan tenang. Bagi yang berminat dapat menghubungi pengelola.',
+        keywords: 'Kost, Paguyangan Kaja, Denpasar Utara, Denpasar, Bali',
+        images: [
+            'n6UrYRj.webpm',
+            '8I6ACrt.webpm',
+            'cb4cLwJ.webpm',
+            'nXrvdsr.webpm',
+            'CkKSzI6.webpm',
+            'Ln0EJbk.webpm'
+        ],
+        location: { province: 'bali', title: 'Denpasar Utara', near: '', lat: '-8.606166', long: '115.204173' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: '+6281999075613'
+        },
+        facilities: ['Kamar Kosongan', 'Kamar Mandi Dalam', 'Dapur Dalam (Dengan Bak Sink)', 'Air & Sampah Rp20.000/kepala', 'Listrik Rp2.000/kWh (Max untuk 2 orang)'],
+        start_price: 450000,
+        post_url: 'https://www.facebook.com/commerce/listing/1752238941623939/'
+    },
+    {
+        id: 77,
+        date_modified: '2020-11-19T06:56:15Z',
+        date_published: '2020-11-19T06:56:15Z',
+        title: 'Kost Murah Sewa Bulanan Di Sidakarya Denpasar Selatan Denpasar Bali - Fasilitas Lengkap dan Nyaman',
+        description: 'Tersedia rumah kost dengan fasilitas lengkap berlokasi di Jl. Mertasari Gg. Bambu II Blok D No. 6, Sidakarya, Kec. Denpasar Selatan, Kota Denpasar, Bali. Bangunan baru lengkap dengan shower, dapur dan halaman depan luas. Lingkungan nyaman karena gang buntu. Bagi yang berminat dapat menghubungi pengelola di +628113862190/ +6288219228139.',
+        keywords: 'Kost, Sidakarya, Denpasar Selatan, Denpasar, Bali',
+        images: [
+            'OLobV0o.webpm',
+            '7WKVnpq.webpm',
+            'Js0T75K.webpm',
+            'aIjMvcI.webpm',
+            'oHfseiP.webpm',
+            'R5UwRiS.webpm'
+        ],
+        location: { province: 'bali', title: 'Denpasar Selatan', near: '', lat: '-8.708106', long: '115.231562' },
+        category: 'Kost',
+        contact_us: {
+            facebook_url: '',
+            phone: '+628113862190'
+        },
+        facilities: ['Kamar Kosongan 3x4,5', 'Kamar Mandi Dalam', 'Shower & Closet Duduk', 'Dapur Dalam (Dengan Bak Sink)', 'Include Air', 'Gorden', 'Tempat Parkir Luas', 'Listrik Token'],
+        start_price: 650000,
+        post_url: 'https://www.facebook.com/photo/?fbid=192915912403693&set=pcb.2743394962642803'
     }
 ]
