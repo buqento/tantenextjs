@@ -30,7 +30,19 @@ class Campaign extends Component {
                     <div className="flex ml-3">
                         {
                             data && data
-                                .sort(function (a, b) { return b.id - a.id })
+                                .sort(
+                                    function compare(a, b) {
+                                        const dtModifiedA = a.date_modified;
+                                        const dtModifiedB = b.date_modified;
+                                        let comparison = 0;
+                                        if (dtModifiedA < dtModifiedB) {
+                                            comparison = 1;
+                                        } else if (dtModifiedA > dtModifiedB) {
+                                            comparison = -1;
+                                        }
+                                        return comparison;
+                                    }
+                                )
                                 .slice(0, 8)
                                 .map((item, index) => <CampaignItem key={index} item={item} />)
                         }

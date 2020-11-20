@@ -87,6 +87,7 @@ const Addnew = () => {
                     <option>Denpasar Utara</option>
                     <option>Denpasar Selatan</option>
                     <option>Denpasar Barat</option>
+                    <option>Denpasar Timur</option>
                     <option>Kuta Selatan</option>
                     <option>Kuta Utara</option>
                     <option>Kuta</option>
@@ -100,8 +101,13 @@ const Addnew = () => {
                     <option>Tapos</option>                    
                     <option>Limo</option>    
                     
-                    <option>Kemayoran</option>    
-                                    
+                    <option>Kemayoran</option>   
+
+                    <option>Jayapura Selatan</option>    
+                    <option>Abepura</option>    
+                    <option>Koya Barat</option>    
+                    <option>Sentani</option>    
+                    <option>Kota Jayapura</option>
                 </select>
             </div>
             <div className="mb-4">
