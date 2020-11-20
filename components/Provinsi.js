@@ -12,7 +12,7 @@ class Area extends Component {
                         .slice(0, 7)
                         .sort(() => .5 - Math.random())
                         .map((item, index) =>
-                            <div key={index} className="rounded-xl border border-indigo-500 text-center py-3 align-middle font-bold">
+                            <div key={index} className="shadow-md rounded-xl border border-indigo-500 text-center py-3 align-middle font-bold">
                                 <Link href={`area/provinsi/${Generateslug(item.title)}`}>{item.title}</Link>
                             </div>
                         )
