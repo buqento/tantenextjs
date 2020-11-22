@@ -1,66 +1,83 @@
 import React from 'react'
 import { string } from 'prop-types'
-import { Kost } from '../../utils/modals/Kost'
-import { Kontrakan } from '../../utils/modals/Kontrakan'
 import { DtArea } from '../../utils/modals/Area'
 import HeadPage from '../../components/HeadPage'
 import ListKos from '../../components/ListKos'
 import NextHead from 'next/head'
 import Generateslug from '../../utils/Generateslug'
+import fire from '../../config/fire-config'
+import Titlecase from '../../utils/Titlecase'
 
 class Detail extends React.Component {
     static async getInitialProps(ctx) {
         return { slug: ctx.query.areaid }
     }
-
-    render() {
+    constructor(props) {
+        super(props)
+        this.state = {
+            data: null
+        }
+    }
+    componentDidMount() {
         const { slug } = this.props;
-        const data = Kost.concat(Kontrakan).filter(item => Generateslug(item.location.title) === slug)
+        fire.firestore().collection('kosts')
+            .where("location.district", "==", Titlecase(slug))
+            .onSnapshot(snap => {
+                const data = snap.docs.map(doc => ({
+                    id: doc.id,
+                    ...doc.data()
+                }))
+                this.setState({ data })
+            })
+    }
+    render() {
+        const { data } = this.state;
+        const { slug } = this.props;
         const dataArea = DtArea.filter(item => Generateslug(item.title) === slug)
         const structureTypeBreadcrumbList =
             `{
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "item": {
-                    "@id": "https://tantekos.com/",
-                    "name": "Tantekos"
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "item": {
+                        "@id": "https://tantekos.com/",
+                        "name": "Tantekos"
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "item": {
+                        "@id": "https://tantekos.com/area",
+                        "name": "Area"
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "item": {
+                        "@id": "https://tantekos.com/area/${slug}",
+                        "name": "${dataArea[0].title}"
+                    }
                 }
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "item": {
-                    "@id": "https://tantekos.com/area",
-                    "name": "Area"
-                }
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "item": {
-                    "@id": "https://tantekos.com/area/${slug}",
-                    "name": "${dataArea[0].title}"
-                }
-            }
-        ]
-       }`
+            ]
+           }`
         const structureTypeItemList =
             `{
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            "name": "Area ${dataArea[0].title}",
-            "itemListElement": [
-                ${data.map((item, index) => `{
-                    "@type": "ListItem",
-                    "position": ${index + 1},
-                    "url": "https://tantekos.com/${Generateslug(item.title)}"
-                }`)}
-            ]
-        }`
+                "@context": "https://schema.org",
+                "@type": "ItemList",
+                "name": "Area ${dataArea[0].title}",
+                "itemListElement": [
+                    ${data && data.map((item, index) => `{
+                        "@type": "ListItem",
+                        "position": ${index + 1},
+                        "url": "https://tantekos.com/${Generateslug(item.title)}"
+                    }`)}
+                ]
+            }`
         const structureAreaPage = {
             '@graph': [
                 JSON.parse(structureTypeItemList),
@@ -92,19 +109,17 @@ class Detail extends React.Component {
                     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureAreaPage) }} />
                 </NextHead>
                 <div className="main-layout">
-                    <HeadPage title={`Area ${dataArea[0].title}`} />
-                    <ListKos data={data} />
+                    <HeadPage title={`Area ${Titlecase(slug)}`} />
+                    {data && <ListKos data={data} />}
                 </div>
             </>
         )
     }
 }
-
 Detail.propTypes = {
     slug: string
 }
-
 Detail.defaultProps = {
-    slug: ''
+    slug: null
 }
 export default Detail;

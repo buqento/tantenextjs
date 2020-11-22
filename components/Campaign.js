@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import DragScroll from './DragScroll'
 import CampaignItem from './CampaignItem'
 import { string } from 'prop-types'
-import fire from '../config/fire-config';
+import fire from '../config/fire-config'
 
 class Campaign extends Component {
     constructor(props) {
