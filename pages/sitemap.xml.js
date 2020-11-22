@@ -1,14 +1,14 @@
 import React from "react";
-import { Kost } from '../utils/modals/Kost'
 import { DtArea } from '../utils/modals/Area'
 import { Price } from '../utils/modals/Price'
 import Generateslug from '../utils/Generateslug'
-import { Kontrakan } from "../utils/modals/Kontrakan";
+// import fire from '../config/fire-config'
+// import Titlecase from '../utils/Titlecase'
 
 const sitemapXml = (dataKos, dataKontrakan, dataArea, dataPrice) => {
-  let latestPost = 0;
-  let itemsXML = "";
-  let kontrakanXML = "";
+  // let latestPost = 0;
+  // let itemsXML = "";
+  // let kontrakanXML = "";
   let areasXML = "";
   let priceXML = "";
 
@@ -28,33 +28,33 @@ const sitemapXml = (dataKos, dataKontrakan, dataArea, dataPrice) => {
       </url>`;
   });
 
-  dataKos.map(post => {
-    const postDate = post.date_modified;
-    if (!latestPost || postDate > latestPost) {
-      latestPost = postDate;
-    }
-    const itemURL = `https://tantekos.com/${Generateslug(post.title)}`;
-    itemsXML += `
-      <url>
-        <loc>${itemURL}</loc>
-        <lastmod>${postDate}</lastmod>
-        <priority>0.50</priority>
-      </url>`;
-  });
+  // dataKos.map(post => {
+  //   const postDate = post.date_modified;
+  //   if (!latestPost || postDate > latestPost) {
+  //     latestPost = postDate;
+  //   }
+  //   const itemURL = `https://tantekos.com/${Generateslug(post.title)}`;
+  //   itemsXML += `
+  //     <url>
+  //       <loc>${itemURL}</loc>
+  //       <lastmod>${postDate}</lastmod>
+  //       <priority>0.50</priority>
+  //     </url>`;
+  // });
 
-  dataKontrakan.map(post => {
-    const postDate = post.date_modified;
-    if (!latestPost || postDate > latestPost) {
-      latestPost = postDate;
-    }
-    const itemURL = `https://tantekos.com/${Generateslug(post.title)}`;
-    kontrakanXML += `
-      <url>
-        <loc>${itemURL}</loc>
-        <lastmod>${postDate}</lastmod>
-        <priority>0.50</priority>
-      </url>`;
-  });
+  // dataKontrakan.map(post => {
+  //   const postDate = post.date_modified;
+  //   if (!latestPost || postDate > latestPost) {
+  //     latestPost = postDate;
+  //   }
+  //   const itemURL = `https://tantekos.com/${Generateslug(post.title)}`;
+  //   kontrakanXML += `
+  //     <url>
+  //       <loc>${itemURL}</loc>
+  //       <lastmod>${postDate}</lastmod>
+  //       <priority>0.50</priority>
+  //     </url>`;
+  // });
 
   return `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -76,17 +76,17 @@ const sitemapXml = (dataKos, dataKontrakan, dataArea, dataPrice) => {
       </url>
       ${areasXML}
       ${priceXML}
-      ${itemsXML}
-      ${kontrakanXML}
     </urlset>`;
 };
 
 class Sitemap extends React.Component {
   static async getInitialProps({ res }) {
     res.setHeader("Content-Type", "text/xml");
-    res.write(sitemapXml(Kost, Kontrakan, DtArea, Price));
+    res.write(sitemapXml(DtArea, Price));
     res.end();
   }
+
+
 }
 
 export default Sitemap;
