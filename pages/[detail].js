@@ -137,10 +137,10 @@ class Detail extends React.Component {
           <meta property="og:description" content={detail.description} />
           <meta property="og:type" content="website" />
           <meta property="og:url" content={`https://tantekos.com/${slug}`} />
-          <meta property="og:image" content="https://i.imgur.com/YwRu6Be.jpg" />
+          <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/w=600/${detail.images[0]}`} />
           <meta property="og:image:alt" content={detail.title} />
-          <meta property="og:image:width" content="300" />
-          <meta property="og:image:height" content="300" />
+          <meta property="og:image:width" content="600" />
+          <meta property="og:image:height" content="600" />
           <meta property="og:locale" content="id_ID" />
           <meta property="og:site_name" content="Tantekos" />
           <meta name="keyphrases" content="Info Kost, Cari Kost, Sewa Kost, Kost Bebas, Kost Murah, Kost pasutri, Aplikasi Kost, Aplikasi Pencarian Kost, Aplikasi Info Kost, APlikasi Cari Kost, Kost, Tantekost, Tantekosapp, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
