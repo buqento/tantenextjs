@@ -14,14 +14,14 @@ export default function Index() {
       </div>
       <div className="m-3 mb-n2">
         <span className="text-uppercase text-current font-bold">Kost</span>
-        <span className="float-right text-indigo-700"><a href="/search/category/Kost">Lihat Semua<AiOutlineArrowRight className="inline ml-1 mb-1" /></a></span>
+        <span className="float-right text-indigo-700"><a href="/search/category/kost">Lihat Semua<AiOutlineArrowRight className="inline ml-1 mb-1" /></a></span>
       </div>
       <div className="border-b-8 border-gray-200">
         <Campaign filter="Kost" />
       </div>
       <div className="m-3 mb-n2">
         <span className="text-uppercase text-current font-bold">Kontrakan</span>
-        <span className="float-right text-indigo-700"><a href="/search/category/Kontrakan">Lihat Semua<AiOutlineArrowRight className="inline ml-1 mb-1" /></a></span>
+        <span className="float-right text-indigo-700"><a href="/search/category/kontrakan">Lihat Semua<AiOutlineArrowRight className="inline ml-1 mb-1" /></a></span>
       </div>
       <div className="border-b-8 border-gray-200">
         <Campaign filter="Kontrakan" />

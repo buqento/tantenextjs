@@ -5,6 +5,7 @@ import { DtProvinsi } from '../../../utils/modals/Provinsi'
 import HeadPage from '../../../components/HeadPage'
 import NextHead from 'next/head'
 import Generateslug from '../../../utils/Generateslug'
+import Titlecase from '../../../utils/Titlecase'
 import { AiOutlineArrowRight } from 'react-icons/ai'
 
 class Detail extends React.Component {
@@ -20,7 +21,7 @@ class Detail extends React.Component {
     }
     render() {
         const { slug } = this.props;
-        const areaTitle = slug !== 'all' ? DtProvinsi.filter(item => Generateslug(item.title) === slug)[0].title : 'Indonesia'
+        const areaTitle = slug !== 'all' ? Titlecase(slug) : 'Indonesia'
         return (
             <>
                 <NextHead>
@@ -51,8 +52,8 @@ class Detail extends React.Component {
                             slug != 'all' ?
                                 DtArea
                                     .sort(function (a, b) {
-                                        var nameA = Generateslug(a.title.toUpperCase());
-                                        var nameB = Generateslug(b.title.toUpperCase());
+                                        var nameA = Generateslug(a.district.toUpperCase());
+                                        var nameB = Generateslug(b.district.toUpperCase());
                                         if (nameA < nameB) return -1;
                                         if (nameA > nameB) return 1;
                                         return 0;
@@ -60,9 +61,9 @@ class Detail extends React.Component {
                                     .filter(item => Generateslug(item.province) === slug)
                                     .map((item, index) =>
                                         <div className="py-3 px-3" key={index}>
-                                            <a href={`../../area/${Generateslug(item.title)}`}>
+                                            <a href={`../../area/${Generateslug(item.district)}`}>
                                                 <div>
-                                                    <span>{item.title}</span>
+                                                    <span>{item.district}</span>
                                                     <span className="float-right"><AiOutlineArrowRight className="inline ml-1 mb-1" /></span>
                                                 </div>
                                             </a>
@@ -85,8 +86,8 @@ class Detail extends React.Component {
                                                 {
                                                     DtArea
                                                         .sort(function (a, b) {
-                                                            var nameA = Generateslug(a.title.toUpperCase());
-                                                            var nameB = Generateslug(b.title.toUpperCase());
+                                                            var nameA = Generateslug(a.district.toUpperCase());
+                                                            var nameB = Generateslug(b.district.toUpperCase());
                                                             if (nameA < nameB) return -1;
                                                             if (nameA > nameB) return 1;
                                                             return 0;
@@ -94,9 +95,9 @@ class Detail extends React.Component {
                                                         .filter(item => Generateslug(item.province) === Generateslug(itemProvinsi.title))
                                                         .map((item, index) =>
                                                             <div className="py-3 px-3" key={index}>
-                                                                <a href={`../../area/${Generateslug(item.title)}`}>
+                                                                <a href={`../../area/${Generateslug(item.district)}`}>
                                                                     <div className=" text-indigo-700">
-                                                                        <span>{item.title}</span>
+                                                                        <span>{item.district}</span>
                                                                         <span className="float-right"><a href="/search/category/Kost"><AiOutlineArrowRight className="inline ml-1 mb-1" /></a></span>
                                                                     </div>
                                                                 </a>

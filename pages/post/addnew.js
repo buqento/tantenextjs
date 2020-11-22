@@ -74,9 +74,14 @@ const Addnew = () => {
                     onChange={(e) => setProvince(e.target.value)}>
                     <option>Bali</option>
                     <option>Papua</option>
+                    <option>Papua Barat</option>
                     <option>Maluku</option>
                     <option>Jawa Barat</option>
                     <option>Jakarta Pusat</option>
+                    <option>Jakarta Selatan</option>
+                    <option>Jakarta Timur</option>
+                    <option>Jakarta Utara</option>
+                    <option>Yogyakarta</option>
                 </select>
             </div>
             <div className="mb-4">
@@ -91,7 +96,21 @@ const Addnew = () => {
                     <option>Kuta Selatan</option>
                     <option>Kuta Utara</option>
                     <option>Kuta</option>
-                    
+
+                    <option>Kebayoran Baru</option>
+                    <option>Pesanggrahan</option>
+                    <option>Cakung</option>
+                    <option>Jatinegara</option>
+                    <option>Duren Sawit</option>
+                    <option>Menteng</option>
+                    <option>Cempaka Putih</option>
+                    <option>Kemayoran</option>
+                    <option>Senen</option>
+                    <option>Cilincing</option>
+
+                    <option>Depok</option>
+                    <option>Kasihan</option>
+
                     <option>Leitimur Selatan</option>
                     <option>Teluk Ambon</option>
                     <option>Baguala</option>
@@ -108,6 +127,7 @@ const Addnew = () => {
                     <option>Koya Barat</option>    
                     <option>Sentani</option>    
                     <option>Kota Jayapura</option>
+                    <option>Kota Sorong</option>
                 </select>
             </div>
             <div className="mb-4">
@@ -118,20 +138,12 @@ const Addnew = () => {
                 />
             </div>
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="lat_lng">lat_lng</label>
-                <input className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none" id="lat_lng" type="text" placeholder="lat_lng"
-                    value={lat_lng}
-                    onChange={(e) => setLatlng(e.target.value)}
-                />
-            </div>
-            <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="title">title</label>
                 <input className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none" id="title" type="text" placeholder="title"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                 />
             </div>
-
             <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="description">description</label>
                 <textarea className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none" rows={5} placeholder="description" value={description}
@@ -149,6 +161,13 @@ const Addnew = () => {
                 <input className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none" id="images" type="text" placeholder="images"
                     value={images}
                     onChange={(e) => setImages(e.target.value)}
+                />
+            </div>
+            <div className="mb-4">
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="lat_lng">lat_lng</label>
+                <input className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none" id="lat_lng" type="text" placeholder="lat_lng"
+                    value={lat_lng}
+                    onChange={(e) => setLatlng(e.target.value)}
                 />
             </div>
             <div className="mb-4">

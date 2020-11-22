@@ -55,7 +55,7 @@ class Firedata extends React.Component {
                                     return comparison;
                                 }
                             )
-                            .slice(0, 10)
+                            .slice(0, 15)
                             .map((kost, index) =>
                                 <div key={index} className="w-full overflow-hidden shadow-md my-3">
                                     <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${kost.images[0]}`} alt={kost.title} className="float-left mr-3" />

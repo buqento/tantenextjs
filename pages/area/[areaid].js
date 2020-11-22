@@ -33,7 +33,7 @@ class Detail extends React.Component {
     render() {
         const { data } = this.state;
         const { slug } = this.props;
-        const dataArea = DtArea.filter(item => Generateslug(item.title) === slug)
+        const dataArea = DtArea.filter(item => Generateslug(item.district) === slug)
         const structureTypeBreadcrumbList =
             `{
               "@context": "https://schema.org",
@@ -60,7 +60,7 @@ class Detail extends React.Component {
                     "position": 3,
                     "item": {
                         "@id": "https://tantekos.com/area/${slug}",
-                        "name": "${dataArea[0].title}"
+                        "name": "${dataArea[0].district}"
                     }
                 }
             ]
@@ -69,7 +69,7 @@ class Detail extends React.Component {
             `{
                 "@context": "https://schema.org",
                 "@type": "ItemList",
-                "name": "Area ${dataArea[0].title}",
+                "name": "Area ${dataArea[0].district}",
                 "itemListElement": [
                     ${data && data.map((item, index) => `{
                         "@type": "ListItem",
@@ -87,20 +87,20 @@ class Detail extends React.Component {
         return (
             <>
                 <NextHead>
-                    <title>Tantekos - Area {dataArea[0].title}</title>
+                    <title>Tantekos - Kost &amp; Kontrakan di {dataArea[0].district}</title>
                     <meta name="googlebot" content="index, follow" />
                     <meta name="robot" content="index, follow" />
                     <meta name="application-name" content="Tantekos" />
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                    <meta name="title" content={`Kost Dan Kontrakan Murah Area ${dataArea[0].title}`} />
-                    <meta name="description" content={`Tersedia Kost Dan Kontrakan Murah Area ${dataArea[0].title}`} />
-                    <meta name="keywords" content={`tantekos, Info Kost, Cari kost, kost, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian, ${dataArea[0].title}`} />
-                    <meta property="og:title" content={`Kost Dan Kontrakan Murah Area ${dataArea[0].title}`} />
-                    <meta property="og:description" content={`Tersedia Kost Dan Kontrakan Murah Area ${dataArea[0].title}`} />
+                    <meta name="title" content={`Kost Dan Kontrakan Murah Area ${dataArea[0].district}`} />
+                    <meta name="description" content={`Tersedia Kost Dan Kontrakan Murah Area ${dataArea[0].district}`} />
+                    <meta name="keywords" content={`tantekos, Info Kost, Cari kost, kost, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian, ${dataArea[0].district}`} />
+                    <meta property="og:title" content={`Kost Dan Kontrakan Murah Area ${dataArea[0].district}`} />
+                    <meta property="og:description" content={`Tersedia Kost Dan Kontrakan Murah Area ${dataArea[0].district}`} />
                     <meta property="og:type" content="website" />
                     <meta property="og:url" content={`https://tantekos.com/area/${slug}`} />
                     <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/w=300/${dataArea[0].image}`} />
-                    <meta property="og:image:alt" content={dataArea[0].title} />
+                    <meta property="og:image:alt" content={dataArea[0].district} />
                     <meta property="og:locale" content="id_ID" />
                     <meta property="og:site_name" content="Tantekos" />
                     <meta name="keyphrases" content="Info Kost, Cari Kost, Sewa Kost, Kost Bebas, Kost Murah, Kost pasutri, Aplikasi Kost, Aplikasi Pencarian Kost, Aplikasi Info Kost, APlikasi Cari Kost, Kost, Tantekost, Tantekosapp, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
@@ -109,7 +109,7 @@ class Detail extends React.Component {
                     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureAreaPage) }} />
                 </NextHead>
                 <div className="main-layout">
-                    <HeadPage title={`Area ${Titlecase(slug)}`} />
+                    <HeadPage title={`Kost & Kontrakan di ${Titlecase(slug)}`} />
                     {data && <ListKos data={data} />}
                 </div>
             </>

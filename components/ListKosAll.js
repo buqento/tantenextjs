@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 import { arrayOf, shape, string } from 'prop-types'
 import Link from 'next/link'
 import Currency from './Currency'
-import Pagination from "react-js-pagination";
 import Generateslug from '../utils/Generateslug'
-
 class ListKosAll extends Component {
     constructor(props) {
         super(props);
@@ -12,73 +10,53 @@ class ListKosAll extends Component {
     }
     handlePageChange(pageNumber) { this.setState({ activePage: pageNumber }); }
     render() {
-        const { data, category } = this.props
-        const { activePage, countPerPage } = this.state
-        let listData = [];
-        category !== null ? listData = data.filter(i => i.category === category) : listData = data
-        let lastId = 10;
-        let firstId = 1;
-        lastId = activePage * countPerPage
-        firstId = lastId - countPerPage + 1
+        const { data } = this.props
         return (
             <div className="container pb-3">
                 <div className="grid grid-cols-2 gap-3">
                     {
-                        data.length > 0 ?
-                            <>
-                                {
-                                    listData
-                                        .reverse()
-                                        .filter(item => item.id >= firstId && item.id <= lastId)
-                                        .map((item, index) =>
-                                            <div key={index}>
-                                                <Link href={`https://tantekos.com/${Generateslug(item.title)}`}>
-                                                    <div className="rounded-xl overflow-hidden shadow-md">
-                                                        <img className="w-full" src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} />
-                                                        <div className="px-3 py-3 text-center">
-                                                            <div className="px-2 font-bold">{Currency(item.start_price, false)}</div>
-                                                            {/* <div className="text-current leading-tight clamp-3"><small>{item.title}</small></div> */}
-                                                            <div className="text-current leading-none clamp-1"><small>{item.location.title}</small></div>
-                                                            <div className="text-current uppercase leading-none clamp-1"><small>{item.location.province}</small></div>
-
-                                                        </div>
-                                                    </div>
-                                                </Link>
-                                            </div>
-                                        )
+                        data
+                            .sort(
+                                function compare(a, b) {
+                                    const dtModifiedA = a.date_modified;
+                                    const dtModifiedB = b.date_modified;
+                                    let comparison = 0;
+                                    if (dtModifiedA < dtModifiedB) {
+                                        comparison = 1;
+                                    } else if (dtModifiedA > dtModifiedB) {
+                                        comparison = -1;
+                                    }
+                                    return comparison;
                                 }
-                            </>
-                            :
-                            <div className="mt-3">
-                                <div>Ups! Pencarian tidak ada hasil.</div>
-                                <Link href="/">Kembali ke Beranda</Link>
-                            </div>
-                    }
-                </div>
-                <div className="d-flex justify-content-center mt-3">
-                    {
-                        listData.length > 0 && <Pagination
-                            activePage={this.state.activePage}
-                            itemsCountPerPage={countPerPage}
-                            totalItemsCount={listData.length}
-                            pageRangeDisplayed={5}
-                            onChange={this.handlePageChange.bind(this)}
-                        />
+                            )
+                            .map((item, index) =>
+                                <div key={index}>
+                                    <Link href={`https://tantekos.com/${Generateslug(item.title)}`}>
+                                        <div className="rounded-xl overflow-hidden shadow-md">
+                                            <img className="w-full" src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} />
+                                            <div className="px-3 py-3 text-center">
+                                                <div className="px-2 font-bold">{Currency(item.start_price, false)}</div>
+                                                {/* <div className="text-current leading-tight clamp-3"><small>{item.title}</small></div> */}
+                                                <div className="text-current leading-none clamp-1"><small>{item.location.district}</small></div>
+                                                <div className="text-current uppercase leading-none clamp-1"><small>{item.location.province}</small></div>
+
+                                            </div>
+                                        </div>
+                                    </Link>
+                                </div>
+                            )
                     }
                 </div>
             </div>
         )
     }
 }
-
 ListKosAll.propTypes = {
     data: arrayOf(shape({})),
     category: string
 }
-
 ListKosAll.defaultProps = {
     data: null,
     category: null
 }
-
 export default ListKosAll;
