@@ -1,6 +1,5 @@
 import React from "react";
 import { DtArea } from '../utils/modals/Area'
-import { Price } from '../utils/modals/Price'
 import Generateslug from '../utils/Generateslug'
 // import fire from '../config/fire-config'
 // import Titlecase from '../utils/Titlecase'
