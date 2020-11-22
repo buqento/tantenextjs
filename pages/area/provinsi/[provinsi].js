@@ -46,7 +46,7 @@ class Detail extends React.Component {
                 </NextHead>
                 <div className="main-layout">
                     <HeadPage nohead title={`Kost & Kontrakan di ${areaTitle}`} />
-                    <div className="container divide-y sm:divide-y-2 md:divide-y-4 lg:divide-y-8 xl:divide-y-0 divide-gray-400">
+                    <div className="container divide-y divide-gray-400">
                         {
                             slug != 'all' ?
                                 DtArea
@@ -80,7 +80,7 @@ class Detail extends React.Component {
                                     .map((itemProvinsi, index) =>
                                         <div className="tab w-full overflow-hidden" key={index}>
                                             <input className="absolute opacity-0" id={index} type="radio" name="tabs2" />
-                                            <label htmlFor={index} className="block py-2 leading-normal cursor-pointer" onClick={() => this.handleCollapse(index)}>{itemProvinsi.title}</label>
+                                            <label htmlFor={index} className="block pt-3 pb-2 leading-normal cursor-pointer" onClick={() => this.handleCollapse(index)}>{itemProvinsi.title}</label>
                                             <div className="tab-content overflow-hidden leading-normal">
                                                 {
                                                     DtArea

@@ -89,7 +89,7 @@ ul.pagination li a.active {
 /* Label formatting when open */
 .tab input:checked + label{
     font-size: 1.25rem;
-    padding: 1.25rem;
+    /* padding: 1.25rem; */
 }
 /* Icon */
 .tab label::after {
@@ -108,19 +108,22 @@ ul.pagination li a.active {
 }
 /* Icon formatting - closed */
 .tab input[type=checkbox] + label::after {
-    content: "+";
+    content: "\2198";
     font-weight:bold;
 }
 .tab input[type=radio] + label::after {
-    content: "+";
+    content: "\276F";
+    transform: rotate(90deg);
     color: grey;
+    font-size: 1rem;
+
 }
 /* Icon formatting - open */
 .tab input[type=checkbox]:checked + label::after {
-    transform: rotate(315deg);
-    color: #f8fafc;
+    /* transform: rotate(315deg); */
+    color: white;
 }
 .tab input[type=radio]:checked + label::after {
-    transform: rotateX(180deg);
-    color: #f8fafc;
+    /* transform: rotateX(180deg); */
+    color: white;
 }
