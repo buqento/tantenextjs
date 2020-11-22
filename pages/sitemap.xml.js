@@ -5,23 +5,14 @@ import Generateslug from '../utils/Generateslug'
 // import fire from '../config/fire-config'
 // import Titlecase from '../utils/Titlecase'
 
-const sitemapXml = (dataKos, dataKontrakan, dataArea, dataPrice) => {
+const sitemapXml = (dataArea) => {
   // let latestPost = 0;
   // let itemsXML = "";
   // let kontrakanXML = "";
   let areasXML = "";
-  let priceXML = "";
-
-  dataPrice.map(price => {
-    const priceURL = `https://tantekos.com/search/price/${price.max_price}`;
-    priceXML += `
-      <url>
-        <loc>${priceURL}</loc>
-      </url>`;
-  });
 
   dataArea.map(area => {
-    const areaURL = `https://tantekos.com/area/${Generateslug(area.title)}`;
+    const areaURL = `https://tantekos.com/area/${Generateslug(area.district)}`;
     areasXML += `
       <url>
         <loc>${areaURL}</loc>
@@ -75,18 +66,15 @@ const sitemapXml = (dataKos, dataKontrakan, dataArea, dataPrice) => {
         <priority>1.00</priority>
       </url>
       ${areasXML}
-      ${priceXML}
     </urlset>`;
 };
 
 class Sitemap extends React.Component {
   static async getInitialProps({ res }) {
     res.setHeader("Content-Type", "text/xml");
-    res.write(sitemapXml(DtArea, Price));
+    res.write(sitemapXml(DtArea));
     res.end();
   }
-
-
 }
 
 export default Sitemap;
