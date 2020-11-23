@@ -131,7 +131,7 @@ class Detail extends React.Component {
           <meta property="og:description" content={detail.description} />
           <meta property="og:type" content="website" />
           <meta property="og:url" content={`https://tantekos.com/${slug}`} />
-          <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/w=600/${detail.images[0]}`} />
+          <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/w=300/${detail.images[0]}`} />
           <meta property="og:image:alt" content={detail.title} />
           <meta property="og:image:width" content="600" />
           <meta property="og:image:height" content="600" />
@@ -143,6 +143,42 @@ class Detail extends React.Component {
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureDetailPage) }} />
         </NextHead>
       }
+      {
+        !detail &&
+        <div>
+          <div className="animate-pulse mx-3 my-3 w-40 h-6 bg-gray-300" />
+
+          <div className="animate-pulse w-full h-40 bg-gray-300" />
+          <div className="container">
+
+            <div className="py-3">
+              <div className="animate-pulse px-2 my-1 w-16 h-4 bg-gray-300" />
+              <div className="animate-pulse px-2 my-1 w-full h-6 bg-gray-300" />
+              <div className="animate-pulse px-2 my-1 w-48 h-6 bg-gray-300" />
+            </div>
+
+            <div className="mb-6">
+              <div className="animate-pulse px-2 my-1 w-32 h-4 bg-gray-300" />
+              <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
+              <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
+              <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
+              <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
+              <div className="animate-pulse px-2 my-1 w-48 h-4 bg-gray-300" />
+            </div>
+
+            <div className="mb-3">
+              <div className="animate-pulse px-2 my-1 w-32 h-4 bg-gray-300" />
+              <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
+              <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
+              <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
+              <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
+              <div className="animate-pulse px-2 my-1 w-48 h-4 bg-gray-300" />
+            </div>
+
+          </div>
+        </div>
+      }
+
       {
         detail &&
         <div className="main-layout">

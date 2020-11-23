@@ -110,7 +110,7 @@ class Detail extends React.Component {
                 </NextHead>
                 <div className="main-layout">
                     <HeadPage title={`Kost & Kontrakan di ${Titlecase(slug)}`} />
-                    {data && <ListKos data={data} />}
+                    <ListKos data={data} />
                 </div>
             </>
         )

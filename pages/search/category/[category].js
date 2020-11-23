@@ -32,7 +32,7 @@ class Detail extends React.Component {
         return (
             <div className="main-layout">
                 <HeadPage title={`Semua ${slug}`} />
-                {data && <ListKosAll data={data} />}
+                <ListKosAll data={data} />
             </div>
         )
     }
