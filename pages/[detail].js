@@ -17,8 +17,7 @@ class Detail extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      detail: null,
-      notFound: false
+      detail: null
     }
   }
   componentDidMount() {
@@ -49,7 +48,7 @@ class Detail extends React.Component {
     }
   }
   render() {
-    const { detail, notFound } = this.state;
+    const { detail } = this.state;
     const { slug } = this.props;
     // const otherItems = Kost.concat(Kontrakan).filter(item => Generateslug(item.title) !== slug && Generateslug(item.location.title) === Generateslug(data[0].location.title) && data[0].category === item.category)
     const structureTypeBreadcrumbList =
@@ -117,13 +116,8 @@ class Detail extends React.Component {
       ]
     };
     return <>
-      {notFound && <>
-        <div className="container-center text-center">
-          <p>404 | Halaman Tidak Ditemukan</p>
-        </div>
-      </>}
       {
-        detail && !notFound &&
+        detail &&
         <NextHead>
           <title>{detail.title}</title>
           <meta name="googlebot" content="index, follow" />
