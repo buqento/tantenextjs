@@ -199,7 +199,7 @@ class Detail extends React.Component {
                 </ul>
               </div>
               <div className="mb-3">
-                <p className="pb-1 font-bold">Lokasi {detail.category} <small>( {detail.location.province})</small></p>
+                <p className="pb-1 font-bold">Lokasi {detail.category} <small>({detail.location.district}, {detail.location.province})</small></p>
                 <Peta location={detail.location} />
               </div>
               <div className="border-top mt-3">
