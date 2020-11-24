@@ -16,7 +16,6 @@ class Campaign extends Component {
         const { filter } = this.props;
         fire.firestore()
             .collection('kosts').where("category", "==", filter)
-            .limit(10)
             .onSnapshot(snap => {
                 const data = snap.docs.map(doc => ({
                     id: doc.id,
@@ -63,6 +62,7 @@ class Campaign extends Component {
                                                 return comparison;
                                             }
                                         )
+                                        .slice(0, 10)
                                         .map((item, index) => <CampaignItem key={index} item={item} />)
                                 }
                             </div>
