@@ -4,7 +4,6 @@ import NextHead from 'next/head'
 import Slide from '../components/Slide'
 import FooterDetail from '../components/FooterDetail'
 import HeadPage from '../components/HeadPage'
-import Peta from '../components/Peta'
 import ReactGa from 'react-ga'
 import moment from 'moment';
 import { FaExternalLinkAlt } from 'react-icons/fa';
@@ -18,23 +17,14 @@ class Detail extends React.Component {
     super(props)
     this.state = {
       detail: null
-    }      
+    }
   }
   componentDidMount() {
-    if (window.location.hostname !== 'localhost') {
-      ReactGa.initialize('UA-132808614-2')
-      ReactGa.pageview('/detail')
-    }
-  }
-  componentDidUpdate() {
-    if (window.location.hostname !== 'localhost') {
-      ReactGa.initialize('UA-132808614-2')
-      ReactGa.pageview('/detail')
-    }
-  }
-  render() {
-    const { detail } = this.state;
     const { slug } = this.props;
+    if (window.location.hostname !== 'localhost') {
+      ReactGa.initialize('UA-132808614-2')
+      ReactGa.pageview('/detail')
+    }
     let kostsRef = fire.firestore().collection('kosts');
     kostsRef.where('slug', '==', slug).get()
       .then(snapshot => {
@@ -47,6 +37,16 @@ class Detail extends React.Component {
       .catch(err => {
         console.log('Error getting documents', err);
       });
+  }
+  componentDidUpdate() {
+    if (window.location.hostname !== 'localhost') {
+      ReactGa.initialize('UA-132808614-2')
+      ReactGa.pageview('/detail')
+    }
+  }
+  render() {
+    const { detail } = this.state;
+    const { slug } = this.props;
     // const otherItems = Kost.concat(Kontrakan).filter(item => Generateslug(item.title) !== slug && Generateslug(item.location.title) === Generateslug(data[0].location.title) && data[0].category === item.category)
     const structureTypeBreadcrumbList =
       `{
@@ -197,7 +197,6 @@ class Detail extends React.Component {
               </div>
               <div className="mb-3">
                 <p className="pb-1 font-bold">Lokasi {detail.category} <small>({detail.location.district}, {detail.location.province})</small></p>
-                <Peta location={detail.location} />
               </div>
               <div className="border-top mt-3">
                 {
