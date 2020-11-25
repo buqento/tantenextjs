@@ -27,15 +27,14 @@ class Detail extends React.Component {
       ReactGa.pageview('/detail')
     }
     let kostsRef = fire.firestore().collection('kosts');
-    kostsRef.where('slug', '==', slug).get().then(snapshot => {
-      if (snapshot.empty) {
-        console.log('No matching documents.');
-        return;
-      }
-      snapshot.forEach(doc => {
-        this.setState({ detail: doc.data() })
-      });
-    })
+    kostsRef.where('slug', '==', slug).get()
+      .then(snapshot => {
+        if (snapshot.empty) {
+          console.log('No matching documents.');
+          return;
+        }
+        this.setState({ detail: snapshot.docs[0].data() })
+      })
       .catch(err => {
         console.log('Error getting documents', err);
       });
