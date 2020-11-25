@@ -19,25 +19,40 @@ class Detail extends React.Component {
     this.state = {
       detail: null
     }
-  }
-  componentDidMount() {
-    const { slug } = this.props;
-    if (window.location.hostname !== 'localhost') {
-      ReactGa.initialize('UA-132808614-2')
-      ReactGa.pageview('/detail')
-    }
+
     let kostsRef = fire.firestore().collection('kosts');
-    kostsRef.where('slug', '==', slug).get()
+    kostsRef.where('slug', '==', 'kost-murah-sewa-bulanan-di-pemogan-denpasar-selatan-denpasar-bali-fasilitas-lengkap-aman-dan-nyaman').get()
       .then(snapshot => {
         if (snapshot.empty) {
           console.log('No matching documents.');
           return;
         }
+        console.log(snapshot.docs[0].data())
         this.setState({ detail: snapshot.docs[0].data() })
       })
       .catch(err => {
         console.log('Error getting documents', err);
       });
+      
+  }
+  componentDidMount() {
+    // const { slug } = this.props;
+    if (window.location.hostname !== 'localhost') {
+      ReactGa.initialize('UA-132808614-2')
+      ReactGa.pageview('/detail')
+    }
+    // let kostsRef = fire.firestore().collection('kosts');
+    // kostsRef.where('slug', '==', slug).get()
+    //   .then(snapshot => {
+    //     if (snapshot.empty) {
+    //       console.log('No matching documents.');
+    //       return;
+    //     }
+    //     this.setState({ detail: snapshot.docs[0].data() })
+    //   })
+    //   .catch(err => {
+    //     console.log('Error getting documents', err);
+    //   });
   }
   componentDidUpdate() {
     if (window.location.hostname !== 'localhost') {
