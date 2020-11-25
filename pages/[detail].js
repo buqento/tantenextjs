@@ -26,20 +26,19 @@ class Detail extends React.Component {
       ReactGa.initialize('UA-132808614-2')
       ReactGa.pageview('/detail')
     }
-    fire
-      .firestore()
-      .collection("kosts")
-      .where("slug", "==", slug)
-      .get()
-      .then((snapshot) => {
-        // if (snapshot.exists) {
-        //   console.log("No such document!");
-        //   this.setState({ notFound: true })
-        // }
-        snapshot.docs.forEach(doc => {
-          this.setState({ detail: doc.data() })
-        })
-      })
+    let kostsRef = fire.firestore().collection('kosts');
+    kostsRef.where('slug', '==', slug).get().then(snapshot => {
+      if (snapshot.empty) {
+        console.log('No matching documents.');
+        return;
+      }
+      snapshot.forEach(doc => {
+        this.setState({ detail: doc.data() })
+      });
+    })
+      .catch(err => {
+        console.log('Error getting documents', err);
+      });
   }
   componentDidUpdate() {
     if (window.location.hostname !== 'localhost') {

@@ -21,6 +21,7 @@ class Slide extends Component {
                     <SwiperSlide key={index}>
                         <img 
                         width="200px"
+                        height="200px"
                         src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item}`}
                         alt={`${imageTitle} 
                         ${index+1}`} 
