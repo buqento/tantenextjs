@@ -15,13 +15,6 @@ class Campaign extends React.Component {
     }
     async componentDidMount() {
         const { filter } = this.props
-        // let allData = []
-        // const querySnapshot = await fire.firestore().collection('kosts').get()
-        // querySnapshot.forEach(doc => {
-        //     allData.push(doc.data())
-        // })
-        // localStorage.setItem('data', JSON.stringify(allData))
-        // console.log(JSON.parse(localStorage.getItem('data')));
         const docRef = await fire
             .firestore().collection('kosts').where("category", "==", filter)
         docRef.onSnapshot(snap => {

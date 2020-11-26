@@ -1,7 +1,7 @@
 import React from 'react'
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-import { arrayOf, shape, string } from 'prop-types'
+import { shape, string } from 'prop-types'
 import NextHead from 'next/head'
 import Slide from '../components/Slide'
 import FooterDetail from '../components/FooterDetail'
@@ -9,6 +9,7 @@ import HeadPage from '../components/HeadPage'
 import ReactGa from 'react-ga'
 import moment from 'moment';
 import { FaExternalLinkAlt } from 'react-icons/fa';
+import ListKosOthers from '../components/ListKosOthers';
 
 class Detail extends React.Component {
   static async getInitialProps(ctx) {
@@ -20,9 +21,20 @@ class Detail extends React.Component {
         ...doc.docs[0].data(),
       }))
       .catch(err => console.log(err))
-    return { slug: ctx.query.detail, detail: data }
+    let otherData = []
+    const querySnapshot = await firebase.firestore().collection('kosts')
+      .where('slug', '!=', ctx.query.detail)
+      // .limit(5)
+      .get()
+    querySnapshot.forEach(doc => {
+      otherData.push(doc.data())
+    })
+    return { slug: ctx.query.detail, detail: data, otherdata: otherData }
   }
-  componentDidMount() {
+  state = {
+    otherData: null
+  }
+  async componentDidMount() {
     if (window.location.hostname !== 'localhost') {
       ReactGa.initialize('UA-132808614-2')
       ReactGa.pageview('/detail')
@@ -35,8 +47,7 @@ class Detail extends React.Component {
     }
   }
   render() {
-    const { slug, detail } = this.props;
-    // const otherItems = Kost.concat(Kontrakan).filter(item => Generateslug(item.title) !== slug && Generateslug(item.location.title) === Generateslug(data[0].location.title) && data[0].category === item.category)
+    const { slug, detail, otherdata } = this.props
     const structureTypeBreadcrumbList =
       `{
         "@context": "https://schema.org",
@@ -192,6 +203,7 @@ class Detail extends React.Component {
                   * Data dapat berubah sewaktu-waktu
                 </small>
               </div>
+              <ListKosOthers data={otherdata} detail={detail} />
             </div>
           </div>
           <FooterDetail data={detail} />
@@ -201,7 +213,7 @@ class Detail extends React.Component {
   }
 }
 Detail.propTypes = {
-  detail: arrayOf(shape({})),
+  detail: shape({}),
   slug: string
 }
 Detail.defaultProps = {

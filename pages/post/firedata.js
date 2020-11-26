@@ -2,6 +2,8 @@ import React from 'react'
 import fire from '../../config/fire-config';
 import Currency from '../../components/Currency'
 import Addnew from './addnew'
+import Link from 'next/link'
+import Generateslug from '../../utils/Generateslug'
 
 class Firedata extends React.Component {
     constructor(props) {
@@ -11,8 +13,8 @@ class Firedata extends React.Component {
         }
     }
 
-    componentDidMount() {
-        fire.firestore().collection('kosts')
+    async componentDidMount() {
+        await fire.firestore().collection('kosts')
             .onSnapshot(snap => {
                 const kosts = snap.docs.map(doc => ({
                     id: doc.id,
@@ -57,14 +59,16 @@ class Firedata extends React.Component {
                             )
                             .slice(0, 15)
                             .map((kost, index) =>
-                                <div key={index} className="w-full overflow-hidden shadow-md my-3">
-                                    <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${kost.images[0]}`} alt={kost.title} className="float-left mr-3" />
-                                    <div className="mx-3 my-3">
-                                        <div className="font-bold">{Currency(kost.start_price, false)}</div>
-                                        <div className="text-current leading-none clamp-1"><small>{kost.title}</small></div>
-                                        <div className="text-current leading-none clamp-1"><small>{kost.location.district} - {kost.location.province}</small></div>
+                                <Link key={index} href={`../${Generateslug(kost.title)}`}>
+                                    <div className="w-full overflow-hidden shadow-md my-3">
+                                        <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${kost.images[0]}`} alt={kost.title} className="float-left mr-3" />
+                                        <div className="mx-3 my-3">
+                                            <div className="font-bold">{Currency(kost.start_price, false)}</div>
+                                            <div className="text-current leading-none clamp-1"><small>{kost.title}</small></div>
+                                            <div className="text-current leading-none clamp-1"><small>{kost.location.district} - {kost.location.province}</small></div>
+                                        </div>
                                     </div>
-                                </div>
+                                </Link>
                             )
                     }
                 </div>
