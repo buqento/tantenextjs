@@ -1,36 +1,45 @@
-import React, { Component } from 'react'
+import React from 'react'
 import DragScroll from './DragScroll'
 import CampaignItem from './CampaignItem'
 import { string } from 'prop-types'
 import fire from '../config/fire-config'
 
-class Campaign extends Component {
+class Campaign extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             data: null,
+            load: true,
             skeletonArr: [1, 2, 3]
         }
     }
-    componentDidMount() {
-        const { filter } = this.props;
-        fire.firestore()
-            .collection('kosts').where("category", "==", filter)
-            .onSnapshot(snap => {
-                const data = snap.docs.map(doc => ({
-                    id: doc.id,
-                    ...doc.data()
-                }))
-                this.setState({ data })
-            })
+    async componentDidMount() {
+        const { filter } = this.props
+        // let allData = []
+        // const querySnapshot = await fire.firestore().collection('kosts').get()
+        // querySnapshot.forEach(doc => {
+        //     allData.push(doc.data())
+        // })
+        // localStorage.setItem('data', JSON.stringify(allData))
+        // console.log(JSON.parse(localStorage.getItem('data')));
+        const docRef = await fire
+            .firestore().collection('kosts').where("category", "==", filter)
+        docRef.onSnapshot(snap => {
+            const data = snap.docs.map(doc => ({
+                id: doc.id,
+                ...doc.data()
+            }))
+            this.setState({ data, load: false })
+        })
+        docRef.get().catch(err => console.log(err))
     }
     render() {
-        const { data, skeletonArr } = this.state;
+        const { data, load, skeletonArr } = this.state;
         return (
             <div className="my-3">
                 <DragScroll className="scroll-section flex">
                     {
-                        !data ?
+                        load ?
                             <div className="flex ml-3">
                                 {
                                     skeletonArr.map((item, index) =>
@@ -48,7 +57,7 @@ class Campaign extends Component {
                             :
                             <div className="flex ml-3">
                                 {
-                                    data
+                                    !load && data && data
                                         .sort(
                                             function compare(a, b) {
                                                 const dtModifiedA = a.date_modified;
@@ -74,6 +83,7 @@ class Campaign extends Component {
 }
 Campaign.propTypes = {
     filter: string
+
 }
 Campaign.defaultProps = {
     filter: null

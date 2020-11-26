@@ -1,4 +1,6 @@
 import React from 'react'
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 import { arrayOf, shape, string } from 'prop-types'
 import NextHead from 'next/head'
 import Slide from '../components/Slide'
@@ -7,16 +9,17 @@ import HeadPage from '../components/HeadPage'
 import ReactGa from 'react-ga'
 import moment from 'moment';
 import { FaExternalLinkAlt } from 'react-icons/fa';
-import fire from '../config/fire-config';
 
 class Detail extends React.Component {
   static async getInitialProps(ctx) {
-    const data = await fire
+    const data = await firebase
       .firestore().collection('kosts')
       .where('slug', '==', ctx.query.detail)
-      .get().then(doc => ({
+      .get()
+      .then(doc => ({
         ...doc.docs[0].data(),
-      }));
+      }))
+      .catch(err => console.log(err))
     return { slug: ctx.query.detail, detail: data }
   }
   componentDidMount() {
@@ -54,8 +57,8 @@ class Detail extends React.Component {
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "${detail && detail.location.district}",
-        "addressLocality": "Ambon",
-        "addressRegion": "Maluku",
+        "addressLocality": "",
+        "addressRegion": "${detail && detail.location.province}",
         "postalCode": "97117",
         "addressCountry": "ID"
       },
@@ -130,16 +133,13 @@ class Detail extends React.Component {
         !detail &&
         <div>
           <div className="animate-pulse mx-3 my-3 w-40 h-6 bg-gray-300" />
-
           <div className="animate-pulse w-full h-40 bg-gray-300" />
           <div className="container">
-
             <div className="py-3">
               <div className="animate-pulse px-2 my-1 w-16 h-4 bg-gray-300" />
               <div className="animate-pulse px-2 my-1 w-full h-6 bg-gray-300" />
               <div className="animate-pulse px-2 my-1 w-48 h-6 bg-gray-300" />
             </div>
-
             <div className="mb-6">
               <div className="animate-pulse px-2 my-1 w-32 h-4 bg-gray-300" />
               <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
@@ -148,7 +148,6 @@ class Detail extends React.Component {
               <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
               <div className="animate-pulse px-2 my-1 w-48 h-4 bg-gray-300" />
             </div>
-
             <div className="mb-3">
               <div className="animate-pulse px-2 my-1 w-32 h-4 bg-gray-300" />
               <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
@@ -157,11 +156,9 @@ class Detail extends React.Component {
               <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
               <div className="animate-pulse px-2 my-1 w-48 h-4 bg-gray-300" />
             </div>
-
           </div>
         </div>
       }
-
       {
         detail &&
         <div className="main-layout">

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { arrayOf, shape, string } from 'prop-types'
+import { arrayOf, shape, string, bool } from 'prop-types'
 import Link from 'next/link'
 import Currency from './Currency'
 import Generateslug from '../utils/Generateslug'
@@ -10,14 +10,14 @@ class ListKosAll extends Component {
     }
     handlePageChange(pageNumber) { this.setState({ activePage: pageNumber }); }
     render() {
-        const { data } = this.props
+        const { data, load } = this.props
         const skeletonArr = [1, 2, 3, 4, 5]
         return (
             <div className="container pb-3">
                 <div className="grid grid-cols-2 gap-3">
                     {
-                        !data &&
-                        skeletonArr.map((item, index) =>
+                        load &&
+                        skeletonArr.map((index) =>
                             <div key={index}>
                                 <div className="shadow-md rounded-xl overflow-hidden">
                                     <div className="animate-pulse w-full h-40 bg-gray-300" />
@@ -30,7 +30,7 @@ class ListKosAll extends Component {
                         )
                     }
                     {
-                        data && data
+                        !load && data && data
                             .sort(
                                 function compare(a, b) {
                                     const dtModifiedA = a.date_modified;
@@ -51,10 +51,8 @@ class ListKosAll extends Component {
                                             <img className="w-full" src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} />
                                             <div className="px-3 py-3 text-center">
                                                 <div className="px-2 font-bold">{Currency(item.start_price, false)}</div>
-                                                {/* <div className="text-current leading-tight clamp-3"><small>{item.title}</small></div> */}
                                                 <div className="text-current leading-none clamp-1"><small>{item.location.district}</small></div>
                                                 <div className="text-current uppercase leading-none clamp-1"><small>{item.location.province}</small></div>
-
                                             </div>
                                         </div>
                                     </Link>
@@ -68,10 +66,12 @@ class ListKosAll extends Component {
 }
 ListKosAll.propTypes = {
     data: arrayOf(shape({})),
-    category: string
+    category: string,
+    load: bool
 }
 ListKosAll.defaultProps = {
     data: null,
-    category: null
+    category: null,
+    load: true
 }
 export default ListKosAll;

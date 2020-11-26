@@ -18,17 +18,18 @@ class Detail extends React.Component {
             data: null
         }
     }
-    componentDidMount() {
+    async componentDidMount() {
         const { slug } = this.props;
-        fire.firestore().collection('kosts')
+        const docRef = await fire.firestore().collection('kosts')
             .where("location.district", "==", Titlecase(slug))
-            .onSnapshot(snap => {
-                const data = snap.docs.map(doc => ({
-                    id: doc.id,
-                    ...doc.data()
-                }))
-                this.setState({ data })
-            })
+        docRef.onSnapshot(snap => {
+            const data = snap.docs.map(doc => ({
+                id: doc.id,
+                ...doc.data()
+            }))
+            this.setState({ data })
+        })
+        docRef.get().catch(err => console.log(err))
     }
     render() {
         const { data } = this.state;
