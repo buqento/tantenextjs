@@ -82,6 +82,7 @@ export const DtArea = [
     // { location: { lat: '', long: '' }, province: 'bali', district: 'ubud', image: 'QSGnE9M.webpm' },
 
     // https://id.wikipedia.org/wiki/Daftar_kecamatan_dan_kelurahan_di_Daerah_Khusus_Ibukota_Jakarta
+    { location: { lat_lng: '-6.1825053347203704, 106.76768614065962' }, province: 'Jakarta Barat', district: 'Kebon Jeruk', image: 'kudalZc.webpm' },
     { location: { lat: '-6.195094', long: '106.943008' }, province: 'Jakarta Timur', district: 'Cakung', image: 'kudalZc.webpm' },
     { location: { lat: '-6.215143', long: '106.887876' }, province: 'Jakarta Timur', district: 'Jatinegara', image: 'Djwgo8r.webpm' },
     { location: { lat: '-6.247318', long: '106.913526' }, province: 'Jakarta Timur', district: 'Duren Sawit', image: 'Pxa0chJ.webpm' },
@@ -93,7 +94,7 @@ export const DtArea = [
     { location: { lat: '-6.184476', long: '106.865415' }, province: 'Jakarta Pusat', district: 'Cempaka Putih', image: 'FDHiDjR.webpm' },
     { location: { lat: '-6.161197', long: '106.863593' }, province: 'Jakarta Pusat', district: 'Kemayoran', image: 'uW6SNjG.webpm' },
     { location: { lat: '-6.177400', long: '106.844342' }, province: 'Jakarta Pusat', district: 'Senen', image: 'xLMvnh4.webpm' },
-    
+
     { location: { lat: '-6.114833', long: '106.921758' }, province: 'Jakarta Utara', district: 'Cilincing', image: '2AQB4hh.webpm' },
 
     { location: { lat: '-6.374155', long: '106.775153' }, province: 'Jawa Barat', district: 'Limo', image: 'nLujVPR.webpm' },

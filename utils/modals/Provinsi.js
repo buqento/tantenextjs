@@ -8,5 +8,6 @@ export const DtProvinsi = [
     {id: 7, title: 'Papua Barat'},
     {id: 8, title: 'Jawa Barat'},
     {id: 9, title: 'Jakarta Utara'},
-    {id: 10, title: 'Yogyakarta'}
+    {id: 10, title: 'Yogyakarta'},
+    {id: 11, title: 'Jakarta Barat'}
 ]
