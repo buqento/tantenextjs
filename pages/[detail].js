@@ -201,11 +201,11 @@ class Detail extends React.Component {
   }
 }
 Detail.propTypes = {
-  allItems: arrayOf(shape({})),
+  detail: arrayOf(shape({})),
   slug: string
 }
 Detail.defaultProps = {
-  allItems: null,
+  detail: null,
   slug: null
 }
 export default Detail;
