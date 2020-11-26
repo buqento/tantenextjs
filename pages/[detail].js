@@ -11,32 +11,19 @@ import fire from '../config/fire-config';
 
 class Detail extends React.Component {
   static async getInitialProps(ctx) {
-    return { slug: ctx.query.detail }
-  }
-  constructor(props) {
-    super(props)
-    this.state = {
-      detail: null
-    }
+    const data = await fire
+      .firestore().collection('kosts')
+      .where('slug', '==', ctx.query.detail)
+      .get().then(doc => ({
+        ...doc.docs[0].data(),
+      }));
+    return { slug: ctx.query.detail, detail: data }
   }
   componentDidMount() {
-    const { slug } = this.props;
     if (window.location.hostname !== 'localhost') {
       ReactGa.initialize('UA-132808614-2')
       ReactGa.pageview('/detail')
     }
-    let kostsRef = fire.firestore().collection('kosts');
-    kostsRef.where('slug', '==', slug).get()
-      .then(snapshot => {
-        if (snapshot.empty) {
-          console.log('No matching documents.');
-          return;
-        }
-        this.setState({ detail: snapshot.docs[0].data() })
-      })
-      .catch(err => {
-        console.log('Error getting documents', err);
-      });
   }
   componentDidUpdate() {
     if (window.location.hostname !== 'localhost') {
@@ -45,8 +32,7 @@ class Detail extends React.Component {
     }
   }
   render() {
-    const { detail } = this.state;
-    const { slug } = this.props;
+    const { slug, detail } = this.props;
     // const otherItems = Kost.concat(Kontrakan).filter(item => Generateslug(item.title) !== slug && Generateslug(item.location.title) === Generateslug(data[0].location.title) && data[0].category === item.category)
     const structureTypeBreadcrumbList =
       `{
