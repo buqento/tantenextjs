@@ -1,7 +1,7 @@
 import React from 'react'
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-import { shape, string } from 'prop-types'
+import { string } from 'prop-types'
 import NextHead from 'next/head'
 import Slide from '../components/Slide'
 import FooterDetail from '../components/FooterDetail'
@@ -12,27 +12,11 @@ import { FaExternalLinkAlt } from 'react-icons/fa';
 import ListKosOthers from '../components/ListKosOthers';
 
 class Detail extends React.Component {
-  static async getInitialProps(ctx) {
-    const data = await firebase
-      .firestore().collection('kosts')
-      .where('slug', '==', ctx.query.detail)
-      .get()
-      .then(doc => ({
-        ...doc.docs[0].data(),
-      }))
-      .catch(err => console.log(err))
-    let otherData = []
-    const querySnapshot = await firebase.firestore().collection('kosts')
-      .where('slug', '!=', ctx.query.detail)
-      // .limit(5)
-      .get()
-    querySnapshot.forEach(doc => {
-      otherData.push(doc.data())
-    })
-    return { slug: ctx.query.detail, detail: data, otherdata: otherData }
-  }
-  state = {
-    otherData: null
+  constructor(props) {
+    super(props)
+    this.state = {
+      otherData: null
+    }
   }
   async componentDidMount() {
     if (window.location.hostname !== 'localhost') {
@@ -47,7 +31,9 @@ class Detail extends React.Component {
     }
   }
   render() {
-    const { slug, detail, otherdata } = this.props
+    const { slug, details, otherdatas } = this.props
+    const detail = JSON.parse(details)
+    const otherdata = JSON.parse(otherdatas)
     const structureTypeBreadcrumbList =
       `{
         "@context": "https://schema.org",
@@ -62,14 +48,14 @@ class Detail extends React.Component {
     const structureTypeHostel = `{
       "@context": "https://schema.org",
       "@type": "Hostel",
-      "image": [${detail && detail.images.map(item => `"https://cdn.statically.io/img/i.imgur.com/w=300/${item}"`)}],
+      "image": [${detail && detail.images && detail.images.map(item => `"https://cdn.statically.io/img/i.imgur.com/w=300/${item}"`)}],
       "@id": "https://tantekos.com",
       "name": "${detail && detail.title}",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "${detail && detail.location.district}",
+        "streetAddress": "${detail && detail.location && detail.location.district}",
         "addressLocality": "",
-        "addressRegion": "${detail && detail.location.province}",
+        "addressRegion": "${detail && detail.location && detail.location.province}",
         "postalCode": "97117",
         "addressCountry": "ID"
       },
@@ -87,11 +73,11 @@ class Detail extends React.Component {
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "${detail && detail.location.lat_lng.w_}",
-        "longitude": "${detail && detail.location.lat_lng.T_}" 
+        "latitude": "${detail && detail.location && detail.location.lat_lng.w_}",
+        "longitude": "${detail && detail.location && detail.location.lat_lng.T_}" 
       },
       "url": "${`https://tantekos.com/${slug}`}",
-      "telephone": "${detail && detail.contact_us.phone || '+6285243322433'}",
+      "telephone": "${detail && detail.contact_us && detail.contact_us.phone || '+6285243322433'}",
       "priceRange": "Rp50.000 - Rp1.500.000",
       "paymentAccepted": "Cash, Credit Card",
       "currenciesAccepted": "IDR",
@@ -108,8 +94,8 @@ class Detail extends React.Component {
     }`
     const structureDetailPage = detail && {
       '@graph': [
-        JSON.parse(structureTypeHostel),
-        JSON.parse(structureTypeBreadcrumbList)
+        structureTypeHostel,
+        structureTypeBreadcrumbList
       ]
     };
     return <>
@@ -128,7 +114,7 @@ class Detail extends React.Component {
           <meta property="og:description" content={detail.description} />
           <meta property="og:type" content="website" />
           <meta property="og:url" content={`https://tantekos.com/${slug}`} />
-          <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/w=300/${detail.images[0]}`} />
+          <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/w=300/${detail.images && detail.images[0]}`} />
           <meta property="og:image:alt" content={detail.title} />
           <meta property="og:image:width" content="300" />
           <meta property="og:image:height" content="300" />
@@ -190,7 +176,7 @@ class Detail extends React.Component {
                 </ul>
               </div>
               <div className="mb-3">
-                <p className="pb-1 font-bold">Lokasi {detail.category} <small>({detail.location.district}, {detail.location.province})</small></p>
+                <p className="pb-1 font-bold">Lokasi {detail.category} <small>({detail.location && detail.location.district}, {detail.location && detail.location.province})</small></p>
               </div>
               <div className="border-top mt-3">
                 {
@@ -212,12 +198,38 @@ class Detail extends React.Component {
     </>
   }
 }
+export const getServerSideProps = async (context) => {
+  const detail = await firebase
+    .firestore().collection('kosts')
+    .where('slug', '==', context.query.detail)
+    .get()
+    .then(doc => ({
+      ...doc.docs[0].data(),
+    }))
+    .catch(err => console.log(err))
+  let otherData = []
+  const querySnapshot = await firebase.firestore().collection('kosts')
+    .where('slug', '!=', context.query.detail)
+    .get()
+  querySnapshot.forEach(doc => {
+    otherData.push(doc.data())
+  })
+  return {
+    props: {
+      slug: context.query.detail,
+      details: JSON.stringify(detail),
+      otherdatas: JSON.stringify(otherData)
+    },
+  };
+};
 Detail.propTypes = {
-  detail: shape({}),
+  details: string,
+  otherdatas: string,
   slug: string
 }
 Detail.defaultProps = {
-  detail: null,
+  details: null,
+  otherdatas: null,
   slug: null
 }
 export default Detail;
