@@ -29,23 +29,14 @@ class ListKosOthers extends Component {
                                 .reverse()
                                 .map((kost, index) =>
                                     <Link key={index} href={`../${Generateslug(kost.title)}`}>
-                                        <div className="rounded-xl w-full overflow-hidden shadow-md mb-3">
-                                            <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${kost.images[0]}`} alt={kost.title} className="float-left mr-3" />
+                                        <div className="rounded-xl w-full overflow-hidden mb-3">
+                                            <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${kost.images[0]}`} alt={kost.title} className="float-left mr-2" />
                                             <div className="mx-3">
                                                 <div className="font-bold">{Currency(kost.start_price, false)}</div>
-                                                <div className="text-current leading-none clamp-3"><small>{kost.title}</small></div>
+                                                <div className="leading-none clamp-3"><small>{kost.title}</small></div>
                                                 <small className="text-gray-700">{moment(kost.date_modified).fromNow()}</small>
                                             </div>
                                         </div>
-                                        {/* <Link href={`https://tantekos.com/${Generateslug(item.title)}`}>
-                                        <div className="rounded-xl overflow-hidden ">
-                                            <img className="w-full" src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} />
-                                            <div className="px-3 py-3 text-center">
-                                                <div className="px-2 font-bold">{Currency(item.start_price, false)}</div>
-                                                <div className="text-current leading-tight clamp-3"><small>{item.title}</small></div>
-                                            </div>
-                                        </div>
-                                    </Link> */}
                                     </Link>
                                 )
                         }

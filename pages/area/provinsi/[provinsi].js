@@ -81,7 +81,7 @@ class Detail extends React.Component {
                                     .map((itemProvinsi, index) =>
                                         <div className="tab w-full overflow-hidden" key={index}>
                                             <input className="absolute opacity-0" id={index} type="radio" name="tabs2" />
-                                            <label htmlFor={index} className="block pt-3 pb-2 leading-normal cursor-pointer" onClick={() => this.handleCollapse(index)}>{itemProvinsi.title}</label>
+                                            <label htmlFor={index} className="block pt-3 pb-2 leading-normal cursor-pointer uppercase" onClick={() => this.handleCollapse(index)}>{itemProvinsi.title}</label>
                                             <div className="tab-content overflow-hidden leading-normal">
                                                 {
                                                     DtArea
@@ -96,7 +96,7 @@ class Detail extends React.Component {
                                                         .map((item, index) =>
                                                             <div className="py-3 px-3" key={index}>
                                                                 <a href={`../../area/${Generateslug(item.district)}`}>
-                                                                    <div className=" text-indigo-700">
+                                                                    <div>
                                                                         <span>{item.district}</span>
                                                                         <span className="float-right"><a href="/search/category/Kost"><AiOutlineArrowRight className="inline ml-1 mb-1" /></a></span>
                                                                     </div>

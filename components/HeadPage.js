@@ -6,7 +6,7 @@ class HeadPage extends Component {
     render() {
         const { nohead, page, title, style } = this.props;
         return (
-            <div className={`flex p-3 text-gray-700 font-bold ${page === 'home' && 'bg-gray-100 text-2xl'}`}>
+            <div className={`flex p-3 text-gray-700 font-bold ${page === 'home' && 'text-2xl'}`}>
                 {
                     page !== 'home' &&
                     <div className="mr-3" onClick={page === 'detail' ? () => Router.push('/') : () => Router.back()}>

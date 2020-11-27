@@ -31,7 +31,7 @@ class Detail extends React.Component {
     }
   }
   render() {
-    const { slug, details, otherdatas } = this.props
+    const { slug, details, otherdatas, alldatas } = this.props
     const detail = JSON.parse(details)
     const otherdata = JSON.parse(otherdatas)
     const structureTypeBreadcrumbList =

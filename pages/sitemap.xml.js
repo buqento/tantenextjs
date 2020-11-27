@@ -1,14 +1,12 @@
 import React from "react";
 import { DtArea } from '../utils/modals/Area'
 import Generateslug from '../utils/Generateslug'
-// import fire from '../config/fire-config'
-// import Titlecase from '../utils/Titlecase'
+import firebase from 'firebase/app';
 
-const sitemapXml = (dataArea) => {
-  // let latestPost = 0;
-  // let itemsXML = "";
-  // let kontrakanXML = "";
-  let areasXML = "";
+const sitemapXml = (dataArea, dataKostKontrakan) => {
+  let latestPost = 0;
+  let areasXML = ""
+  let kostkontrakanXML = ""
 
   dataArea.map(area => {
     const areaURL = `https://tantekos.com/area/${Generateslug(area.district)}`;
@@ -18,33 +16,19 @@ const sitemapXml = (dataArea) => {
       </url>`;
   });
 
-  // dataKos.map(post => {
-  //   const postDate = post.date_modified;
-  //   if (!latestPost || postDate > latestPost) {
-  //     latestPost = postDate;
-  //   }
-  //   const itemURL = `https://tantekos.com/${Generateslug(post.title)}`;
-  //   itemsXML += `
-  //     <url>
-  //       <loc>${itemURL}</loc>
-  //       <lastmod>${postDate}</lastmod>
-  //       <priority>0.50</priority>
-  //     </url>`;
-  // });
-
-  // dataKontrakan.map(post => {
-  //   const postDate = post.date_modified;
-  //   if (!latestPost || postDate > latestPost) {
-  //     latestPost = postDate;
-  //   }
-  //   const itemURL = `https://tantekos.com/${Generateslug(post.title)}`;
-  //   kontrakanXML += `
-  //     <url>
-  //       <loc>${itemURL}</loc>
-  //       <lastmod>${postDate}</lastmod>
-  //       <priority>0.50</priority>
-  //     </url>`;
-  // });
+  dataKostKontrakan.map(post => {
+    const postDate = post.date_modified;
+    if (!latestPost || postDate > latestPost) {
+      latestPost = postDate;
+    }
+    const itemURL = `https://tantekos.com/${Generateslug(post.title)}`;
+    kostkontrakanXML += `
+      <url>
+        <loc>${itemURL}</loc>
+        <lastmod>${postDate}</lastmod>
+        <priority>0.50</priority>
+      </url>`;
+  });
 
   return `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -64,16 +48,18 @@ const sitemapXml = (dataArea) => {
         <loc>https://tantekos.com/policy</loc>
         <priority>1.00</priority>
       </url>
+      ${kostkontrakanXML}
       ${areasXML}
     </urlset>`;
 };
 
-class Sitemap extends React.Component {
-  static async getInitialProps({ res }) {
-    res.setHeader("Content-Type", "text/xml");
-    res.write(sitemapXml(DtArea));
-    res.end();
-  }
-}
-
+class Sitemap extends React.Component { }
+export const getServerSideProps = async ({ res }) => {
+  let DtKostKontrakan = []
+  const querySnapshot = await firebase.firestore().collection('kosts').get()
+  querySnapshot.forEach(doc => { DtKostKontrakan.push(doc.data()) })
+  res.setHeader("Content-Type", "text/xml");
+  res.write(sitemapXml(DtArea, DtKostKontrakan));
+  res.end();
+};
 export default Sitemap;
