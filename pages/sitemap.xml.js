@@ -53,13 +53,14 @@ const sitemapXml = (dataArea, dataKostKontrakan) => {
     </urlset>`;
 };
 
-class Sitemap extends React.Component { }
-export const getServerSideProps = async ({ res }) => {
-  let DtKostKontrakan = []
-  const querySnapshot = await fire.firestore().collection('kosts').get()
-  querySnapshot.forEach(doc => { DtKostKontrakan.push(doc.data()) })
-  res.setHeader("Content-Type", "text/xml");
-  res.write(sitemapXml(DtArea, DtKostKontrakan));
-  res.end();
-};
+class Sitemap extends React.Component {
+  static async getInitialProps({ res }) {
+    let DtKostKontrakan = []
+    const querySnapshot = await fire.firestore().collection('kosts').get()
+    querySnapshot.forEach(doc => { DtKostKontrakan.push(doc.data()) })
+    res.setHeader("Content-Type", "text/xml");
+    res.write(sitemapXml(DtArea, DtKostKontrakan));
+    res.end();
+  }
+}
 export default Sitemap;
