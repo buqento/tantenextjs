@@ -3,6 +3,7 @@ import NextHead from 'next/head'
 import { string } from 'prop-types'
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import Slide from '../components/Slide'
+import Peta from '../components/Peta'
 import FooterDetail from '../components/FooterDetail'
 import HeadPage from '../components/HeadPage'
 import ReactGa from 'react-ga'
@@ -30,7 +31,7 @@ class Detail extends React.Component {
     }
   }
   render() {
-    const { slug, details, otherdatas, alldatas } = this.props
+    const { slug, details, otherdatas } = this.props
     const detail = JSON.parse(details)
     const otherdata = JSON.parse(otherdatas)
     const structureTypeBreadcrumbList =
@@ -62,7 +63,7 @@ class Detail extends React.Component {
         "@type": "Review",
         "reviewRating": {
           "@type": "Rating",
-          "ratingValue": "4",
+          "ratingValue": "${Math.floor(Math.random() * 5) + 1}",
           "bestRating": "5"
         },
         "author": {
@@ -72,8 +73,8 @@ class Detail extends React.Component {
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "${detail && detail.location && detail.location.lat_lng.w_}",
-        "longitude": "${detail && detail.location && detail.location.lat_lng.T_}" 
+        "latitude": "${detail && detail.location && detail.location.lat_lng.latitude}",
+        "longitude": "${detail && detail.location && detail.location.lat_lng.longitude}" 
       },
       "url": "${`https://tantekos.com/${slug}`}",
       "telephone": "${detail && detail.contact_us && detail.contact_us.phone || '+6285243322433'}",
@@ -82,7 +83,7 @@ class Detail extends React.Component {
       "currenciesAccepted": "IDR",
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.5",
+        "ratingValue": "${Math.floor(Math.random() * 5) + 1}",
         "reviewCount": "375"
       },
       "contactPoint" : { 
@@ -93,8 +94,8 @@ class Detail extends React.Component {
     }`
     const structureDetailPage = detail && {
       '@graph': [
-        structureTypeHostel,
-        structureTypeBreadcrumbList
+        JSON.parse(structureTypeHostel),
+        JSON.parse(structureTypeBreadcrumbList)
       ]
     };
     return <>
@@ -176,6 +177,8 @@ class Detail extends React.Component {
               </div>
               <div className="mb-3">
                 <p className="pb-1 font-bold">Lokasi {detail.category} <small>({detail.location && detail.location.district}, {detail.location && detail.location.province})</small></p>
+                <Peta location={detail && detail.location} />
+
               </div>
               <div className="border-top mt-3">
                 {
