@@ -1,28 +1,45 @@
 import React from 'react'
-import firebase from 'firebase/app';
-import 'firebase/firestore';
-import { string } from 'prop-types'
+import { arrayOf, shape, string } from 'prop-types'
 import NextHead from 'next/head'
 import Slide from '../components/Slide'
 import FooterDetail from '../components/FooterDetail'
 import HeadPage from '../components/HeadPage'
+import Peta from '../components/Peta'
 import ReactGa from 'react-ga'
 import moment from 'moment';
 import { FaExternalLinkAlt } from 'react-icons/fa';
-import ListKosOthers from '../components/ListKosOthers';
+import fire from '../config/fire-config';
 
 class Detail extends React.Component {
+  static async getInitialProps(ctx) {
+    return { slug: ctx.query.detail }
+  }
   constructor(props) {
     super(props)
     this.state = {
-      otherData: null
+      detail: null
     }
   }
-  async componentDidMount() {
+  componentDidMount() {
+    const { slug } = this.props;
     if (window.location.hostname !== 'localhost') {
       ReactGa.initialize('UA-132808614-2')
       ReactGa.pageview('/detail')
     }
+    fire
+      .firestore()
+      .collection("kosts")
+      .where("slug", "==", slug)
+      .get()
+      .then((snapshot) => {
+        // if (snapshot.exists) {
+        //   console.log("No such document!");
+        //   this.setState({ notFound: true })
+        // }
+        snapshot.docs.forEach(doc => {
+          this.setState({ detail: doc.data() })
+        })
+      })
   }
   componentDidUpdate() {
     if (window.location.hostname !== 'localhost') {
@@ -31,9 +48,9 @@ class Detail extends React.Component {
     }
   }
   render() {
-    const { slug, details, otherdatas, alldatas } = this.props
-    const detail = JSON.parse(details)
-    const otherdata = JSON.parse(otherdatas)
+    const { detail } = this.state;
+    const { slug } = this.props;
+    // const otherItems = Kost.concat(Kontrakan).filter(item => Generateslug(item.title) !== slug && Generateslug(item.location.title) === Generateslug(data[0].location.title) && data[0].category === item.category)
     const structureTypeBreadcrumbList =
       `{
         "@context": "https://schema.org",
@@ -48,14 +65,14 @@ class Detail extends React.Component {
     const structureTypeHostel = `{
       "@context": "https://schema.org",
       "@type": "Hostel",
-      "image": [${detail && detail.images && detail.images.map(item => `"https://cdn.statically.io/img/i.imgur.com/w=300/${item}"`)}],
+      "image": [${detail && detail.images.map(item => `"https://cdn.statically.io/img/i.imgur.com/w=300/${item}"`)}],
       "@id": "https://tantekos.com",
       "name": "${detail && detail.title}",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "${detail && detail.location && detail.location.district}",
-        "addressLocality": "",
-        "addressRegion": "${detail && detail.location && detail.location.province}",
+        "streetAddress": "${detail && detail.location.district}",
+        "addressLocality": "Ambon",
+        "addressRegion": "Maluku",
         "postalCode": "97117",
         "addressCountry": "ID"
       },
@@ -73,11 +90,11 @@ class Detail extends React.Component {
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "${detail && detail.location && detail.location.lat_lng.w_}",
-        "longitude": "${detail && detail.location && detail.location.lat_lng.T_}" 
+        "latitude": "${detail && detail.location.lat_lng.w_}",
+        "longitude": "${detail && detail.location.lat_lng.T_}" 
       },
       "url": "${`https://tantekos.com/${slug}`}",
-      "telephone": "${detail && detail.contact_us && detail.contact_us.phone || '+6285243322433'}",
+      "telephone": "${detail && detail.contact_us.phone || '+6285243322433'}",
       "priceRange": "Rp50.000 - Rp1.500.000",
       "paymentAccepted": "Cash, Credit Card",
       "currenciesAccepted": "IDR",
@@ -94,8 +111,8 @@ class Detail extends React.Component {
     }`
     const structureDetailPage = detail && {
       '@graph': [
-        structureTypeHostel,
-        structureTypeBreadcrumbList
+        JSON.parse(structureTypeHostel),
+        JSON.parse(structureTypeBreadcrumbList)
       ]
     };
     return <>
@@ -114,10 +131,10 @@ class Detail extends React.Component {
           <meta property="og:description" content={detail.description} />
           <meta property="og:type" content="website" />
           <meta property="og:url" content={`https://tantekos.com/${slug}`} />
-          <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/w=300/${detail.images && detail.images[0]}`} />
+          <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/w=300/${detail.images[0]}`} />
           <meta property="og:image:alt" content={detail.title} />
-          <meta property="og:image:width" content="300" />
-          <meta property="og:image:height" content="300" />
+          <meta property="og:image:width" content="600" />
+          <meta property="og:image:height" content="600" />
           <meta property="og:locale" content="id_ID" />
           <meta property="og:site_name" content="Tantekos" />
           <meta name="keyphrases" content="Info Kost, Cari Kost, Sewa Kost, Kost Bebas, Kost Murah, Kost pasutri, Aplikasi Kost, Aplikasi Pencarian Kost, Aplikasi Info Kost, APlikasi Cari Kost, Kost, Tantekost, Tantekosapp, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
@@ -130,13 +147,16 @@ class Detail extends React.Component {
         !detail &&
         <div>
           <div className="animate-pulse mx-3 my-3 w-40 h-6 bg-gray-300" />
+
           <div className="animate-pulse w-full h-40 bg-gray-300" />
           <div className="container">
+
             <div className="py-3">
               <div className="animate-pulse px-2 my-1 w-16 h-4 bg-gray-300" />
               <div className="animate-pulse px-2 my-1 w-full h-6 bg-gray-300" />
               <div className="animate-pulse px-2 my-1 w-48 h-6 bg-gray-300" />
             </div>
+
             <div className="mb-6">
               <div className="animate-pulse px-2 my-1 w-32 h-4 bg-gray-300" />
               <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
@@ -145,6 +165,7 @@ class Detail extends React.Component {
               <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
               <div className="animate-pulse px-2 my-1 w-48 h-4 bg-gray-300" />
             </div>
+
             <div className="mb-3">
               <div className="animate-pulse px-2 my-1 w-32 h-4 bg-gray-300" />
               <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
@@ -153,9 +174,11 @@ class Detail extends React.Component {
               <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
               <div className="animate-pulse px-2 my-1 w-48 h-4 bg-gray-300" />
             </div>
+
           </div>
         </div>
       }
+
       {
         detail &&
         <div className="main-layout">
@@ -176,7 +199,8 @@ class Detail extends React.Component {
                 </ul>
               </div>
               <div className="mb-3">
-                <p className="pb-1 font-bold">Lokasi {detail.category} <small>({detail.location && detail.location.district}, {detail.location && detail.location.province})</small></p>
+                <p className="pb-1 font-bold">Lokasi {detail.category} <small>({detail.location.district}, {detail.location.province})</small></p>
+                <Peta location={detail.location} />
               </div>
               <div className="border-top mt-3">
                 {
@@ -189,7 +213,6 @@ class Detail extends React.Component {
                   * Data dapat berubah sewaktu-waktu
                 </small>
               </div>
-              <ListKosOthers data={otherdata} detail={detail} />
             </div>
           </div>
           <FooterDetail data={detail} />
@@ -198,38 +221,12 @@ class Detail extends React.Component {
     </>
   }
 }
-export const getServerSideProps = async (context) => {
-  const detail = await firebase
-    .firestore().collection('kosts')
-    .where('slug', '==', context.query.detail)
-    .get()
-    .then(doc => ({
-      ...doc.docs[0].data(),
-    }))
-    .catch(err => console.log(err))
-  let otherData = []
-  const querySnapshot = await firebase.firestore().collection('kosts')
-    .where('slug', '!=', context.query.detail)
-    .get()
-  querySnapshot.forEach(doc => {
-    otherData.push(doc.data())
-  })
-  return {
-    props: {
-      slug: context.query.detail,
-      details: JSON.stringify(detail),
-      otherdatas: JSON.stringify(otherData)
-    },
-  };
-};
 Detail.propTypes = {
-  details: string,
-  otherdatas: string,
+  allItems: arrayOf(shape({})),
   slug: string
 }
 Detail.defaultProps = {
-  details: null,
-  otherdatas: null,
+  allItems: null,
   slug: null
 }
 export default Detail;
