@@ -53,6 +53,16 @@ class ListKosAll extends Component {
                                                 <div className="px-2 font-bold">{Currency(item.start_price, false)}</div>
                                                 <div className="text-current leading-none clamp-1"><small>{item.location.district}</small></div>
                                                 <div className="text-current uppercase leading-none clamp-1"><small>{item.location.province}</small></div>
+                                                <div>
+                                                    {
+                                                        item.facilities.includes("AC") &&
+                                                        <span className="rounded text-xs font-semibold inline-block px-1 text-indigo-500 bg-gray-200 mr-1">AC</span>
+                                                    }
+                                                    {
+                                                        item.facilities.includes("Kamar Mandi Dalam") &&
+                                                        <span className="rounded text-xs font-semibold inline-block px-1 text-indigo-500 bg-gray-200">KM. Dalam</span>
+                                                    }
+                                                </div>
                                             </div>
                                         </div>
                                     </Link>
