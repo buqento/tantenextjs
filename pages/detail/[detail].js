@@ -206,7 +206,6 @@ export const getServerSideProps = async (context) => {
     .then(doc => ({
       ...doc.docs[0].data(),
     }))
-    .catch(err => console.log(err))
   // let otherData = []
   // const querySnapshot = await firebase.firestore().collection('kosts')
   //   .where('slug', '!=', context.query.detail)
