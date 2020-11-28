@@ -38,11 +38,26 @@ class ListKos extends Component {
                                 listData.map((item, index) =>
                                     <div key={index}>
                                         <Link href={`https://tantekos.com/${Generateslug(item.title)}`}>
-                                            <div className="shadow-md rounded-xl overflow-hidden">
+                                            <div className="h-full shadow-md rounded-xl overflow-hidden">
                                                 <img className="w-full" src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} />
                                                 <div className="px-3 py-3 text-center">
                                                     <div className="px-2 font-bold">{Currency(item.start_price, false)}</div>
                                                     <div className="text-current leading-tight clamp-3"><small>{item.title}</small></div>
+                                                    <div>
+                                                        {
+                                                            item.facilities.includes("AC") &&
+                                                            <span className="rounded text-xs font-semibold inline-block px-1 text-indigo-500 bg-gray-200 mr-1">AC</span>
+                                                        }
+                                                        {
+                                                            item.facilities.includes("Wifi") &&
+                                                            <span className="rounded text-xs font-semibold inline-block px-1 text-indigo-500 bg-gray-200 mr-1">WiFi</span>
+                                                        }
+                                                        {
+                                                            item.facilities.includes("Kamar Mandi Dalam") &&
+                                                            <span className="rounded text-xs font-semibold inline-block px-1 text-indigo-500 bg-gray-200">KM. Dalam</span>
+                                                        }
+                                                    </div>
+
                                                 </div>
                                             </div>
                                         </Link>
