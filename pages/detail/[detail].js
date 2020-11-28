@@ -1,6 +1,4 @@
 import React from 'react'
-import firebase from 'firebase/app';
-import 'firebase/firestore';
 import { string } from 'prop-types'
 import NextHead from 'next/head'
 import Slide from '../../components/Slide'
@@ -32,9 +30,9 @@ class Detail extends React.Component {
     }
   }
   render() {
-    const { slug, details } = this.props
+    const { slug, details, otherdatas, alldatas } = this.props
     const detail = JSON.parse(details)
-    // const otherdata = JSON.parse(otherdatas)
+    const otherdata = JSON.parse(otherdatas)
     const structureTypeBreadcrumbList =
       `{
         "@context": "https://schema.org",
@@ -190,7 +188,7 @@ class Detail extends React.Component {
                   * Data dapat berubah sewaktu-waktu
                 </small>
               </div>
-              {/* <ListKosOthers data={otherdata} detail={detail} /> */}
+              <ListKosOthers data={otherdata} detail={detail} />
             </div>
           </div>
           <FooterDetail data={detail} />
@@ -207,29 +205,30 @@ export const getServerSideProps = async (context) => {
     .then(doc => ({
       ...doc.docs[0].data(),
     }))
-  // let otherData = []
-  // const querySnapshot = await firebase.firestore().collection('kosts')
-  //   .where('slug', '!=', context.query.detail)
-  //   .get()
-  // querySnapshot.forEach(doc => {
-  //   otherData.push(doc.data())
-  // })
+    .catch(err => console.log(err))
+  let otherData = []
+  const querySnapshot = await fire.firestore().collection('kosts')
+    .where('slug', '!=', context.query.detail)
+    .get()
+  querySnapshot.forEach(doc => {
+    otherData.push(doc.data())
+  })
   return {
     props: {
       slug: context.query.detail,
-      details: JSON.stringify(detail)
-      // otherdatas: JSON.stringify(otherData)
+      details: JSON.stringify(detail),
+      otherdatas: JSON.stringify(otherData)
     },
   };
 };
 Detail.propTypes = {
   details: string,
-  // otherdatas: string,
+  otherdatas: string,
   slug: string
 }
 Detail.defaultProps = {
   details: null,
-  // otherdatas: null,
+  otherdatas: null,
   slug: null
 }
 export default Detail;
