@@ -10,6 +10,7 @@ import ReactGa from 'react-ga'
 import moment from 'moment';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import ListKosOthers from '../../components/ListKosOthers';
+import fire from '../../config/fire-config';
 
 class Detail extends React.Component {
   constructor(props) {
@@ -199,7 +200,7 @@ class Detail extends React.Component {
   }
 }
 export const getServerSideProps = async (context) => {
-  const detail = await firebase
+  const detail = await fire
     .firestore().collection('kosts')
     .where('slug', '==', context.query.detail)
     .get()
