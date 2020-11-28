@@ -1,7 +1,7 @@
 import React from "react";
 import { DtArea } from '../utils/modals/Area'
 import Generateslug from '../utils/Generateslug'
-import firebase from 'firebase/app';
+import fire from '../config/fire-config';
 
 const sitemapXml = (dataArea, dataKostKontrakan) => {
   let latestPost = 0;
@@ -56,7 +56,7 @@ const sitemapXml = (dataArea, dataKostKontrakan) => {
 class Sitemap extends React.Component { }
 export const getServerSideProps = async ({ res }) => {
   let DtKostKontrakan = []
-  const querySnapshot = await firebase.firestore().collection('kosts').get()
+  const querySnapshot = await fire.firestore().collection('kosts').get()
   querySnapshot.forEach(doc => { DtKostKontrakan.push(doc.data()) })
   res.setHeader("Content-Type", "text/xml");
   res.write(sitemapXml(DtArea, DtKostKontrakan));
