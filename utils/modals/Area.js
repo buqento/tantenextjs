@@ -78,7 +78,7 @@ export const DtArea = [
     // { lat_lng: ', ', province: 'bali', district: 'tejakula', image: 'QSGnE9M.webp' },
     // { lat_lng: ', ', province: 'bali', district: 'tembuku', image: 'QSGnE9M.webp' },
     // { lat_lng: ', ', province: 'bali', district: 'ubud', image: 'QSGnE9M.webp' },
-
+    
     // https://id.wikipedia.org/wiki/Daftar_kecamatan_dan_kelurahan_di_Daerah_Khusus_Ibukota_Jakarta
     { lat_lng: '-6.1825053347203704, 106.76768614065962', province: 'Jakarta Barat', district: 'Kebon Jeruk', image: 'UTvGu65.webp' },
     { lat_lng: '-6.195094, 106.943008', province: 'Jakarta Timur', district: 'Cakung', image: 'kudalZc.webp' },
@@ -86,6 +86,7 @@ export const DtArea = [
     { lat_lng: '-6.247318, 106.913526', province: 'Jakarta Timur', district: 'Duren Sawit', image: 'Pxa0chJ.webp' },
     { lat_lng: '-6.195744, 106.882137', province: 'Jakarta Selatan', district: 'Kebayoran Baru', image: 'ggQMToK.webp' },
     { lat_lng: '-6.265128, 106.762563', province: 'Jakarta Selatan', district: 'Pesanggrahan', image: 'HD2R7Qv.webp' },
+    { lat_lng: '-6.270254800873329, 106.80304142813166', province: 'Jakarta Selatan', district: 'Cilandak', image: 'v8whjL0.webp' },
     { lat_lng: '-6.202250, 106.850641', province: 'Jakarta Pusat', district: 'Menteng', image: 'RCPEZKW.webp' },
     { lat_lng: '-6.184476, 106.865415', province: 'Jakarta Pusat', district: 'Cempaka Putih', image: 'FDHiDjR.webp' },
     { lat_lng: '-6.161197, 106.863593', province: 'Jakarta Pusat', district: 'Kemayoran', image: 'uW6SNjG.webp' },

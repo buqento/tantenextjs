@@ -99,6 +99,7 @@ const Addnew = () => {
 
                     <option>Kebayoran Baru</option>
                     <option>Pesanggrahan</option>
+                    <option>Cilandak</option>
                     <option>Cakung</option>
                     <option>Jatinegara</option>
                     <option>Duren Sawit</option>
