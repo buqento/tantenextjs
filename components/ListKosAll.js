@@ -4,11 +4,6 @@ import Link from 'next/link'
 import Currency from './Currency'
 import Generateslug from '../utils/Generateslug'
 class ListKosAll extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { activePage: 1, countPerPage: 10 };
-    }
-    handlePageChange(pageNumber) { this.setState({ activePage: pageNumber }); }
     render() {
         const { data, load } = this.props
         const skeletonArr = [1, 2, 3, 4, 5]
