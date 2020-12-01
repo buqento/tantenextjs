@@ -11,7 +11,7 @@ class AreaItem extends Component {
             <Link href={Generateslug(item.title)}>
                 <div className="rounded-xl overflow-hidden shadow-md mr-3 mb-2">
                     <img src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} style={{ maxWidth: 'unset' }} />
-                    <div className="px-3 py-3 text-center">
+                    <div className="px-2 py-3 text-center">
                         <div className="px-2 font-bold">{Currency(item.start_price, false)}</div>
                         <div className="text-current leading-none clamp-1"><small>{item.location.district}, {item.location.province}</small></div>
                         <div>
