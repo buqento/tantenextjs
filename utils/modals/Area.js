@@ -81,6 +81,7 @@ export const DtArea = [
     
     // https://id.wikipedia.org/wiki/Daftar_kecamatan_dan_kelurahan_di_Daerah_Khusus_Ibukota_Jakarta
     { lat_lng: '-6.1825053347203704, 106.76768614065962', province: 'Jakarta Barat', district: 'Kebon Jeruk', image: 'UTvGu65.webp' },
+    { lat_lng: '-6.206725260936711, 106.75932410783896', province: 'Jakarta Barat', district: 'Kembangan', image: 'QNYAhVu.webp' },
     { lat_lng: '-6.195094, 106.943008', province: 'Jakarta Timur', district: 'Cakung', image: 'kudalZc.webp' },
     { lat_lng: '-6.215143, 106.887876', province: 'Jakarta Timur', district: 'Jatinegara', image: 'Djwgo8r.webp' },
     { lat_lng: '-6.247318, 106.913526', province: 'Jakarta Timur', district: 'Duren Sawit', image: 'Pxa0chJ.webp' },
