@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 class Area extends Component {
     render() {
         return (
-            <div className="my-3 mx-3 divide-y-2 divide-gray-150">
+            <div className="my-3 mx-3 divide-y-2 divide-gray-100">
                 <div className="py-2 px-3">
                     <a href="https://www.facebook.com/groups/485414032435519" target="blank">
                         Rumah/Kost/Kontrakan DKI Jakarta
