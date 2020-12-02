@@ -12,13 +12,13 @@ class Slide extends Component {
         return <Swiper
             spaceBetween={3}
             slidesPerView={2}
-            // pagination={{ clickable: true }}
-            navigation
+            pagination={{ clickable: true }}
+            // navigation
             autoplay
         >
             {
                 imagesData && imagesData.map((item, index) =>
-                    <SwiperSlide key={index}>
+                    <SwiperSlide key={index} className="text-left">
                         <img 
                         width="200px"
                         height="200px"
