@@ -1,7 +1,9 @@
 import React from 'react'
 import NextHead from 'next/head'
+import Router from 'next/router'
 import { string } from 'prop-types'
 import { FaExternalLinkAlt } from 'react-icons/fa';
+import { AiOutlineArrowLeft } from 'react-icons/ai'
 import Slide from '../components/Slide'
 import Peta from '../components/Peta'
 import FooterDetail from '../components/FooterDetail'
@@ -14,15 +16,22 @@ import fire from '../config/fire-config';
 class Detail extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      otherData: null
-    }
+    this.state = { otherData: null, scrollTop: 0 }
+    this.myRef = React.createRef()
+  }
+  onScroll = () => {
+    const scrollTop = this.myRef.current.scrollTop
+    this.setState({ scrollTop: scrollTop })
   }
   async componentDidMount() {
     if (window.location.hostname !== 'localhost') {
       ReactGa.initialize('UA-132808614-2')
       ReactGa.pageview('/detail')
     }
+    window.addEventListener('scroll', this.onScroll, false);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll, false);
   }
   componentDidUpdate() {
     if (window.location.hostname !== 'localhost') {
@@ -32,6 +41,7 @@ class Detail extends React.Component {
   }
   render() {
     const { slug, details, otherdatas } = this.props
+    const { scrollTop } = this.state
     const detail = JSON.parse(details)
     const otherdata = JSON.parse(otherdatas)
     const structureTypeBreadcrumbList =
@@ -158,42 +168,47 @@ class Detail extends React.Component {
       }
       {
         detail &&
-        <div className="main-layout">
-          <HeadPage page="detail" title={detail.category + ' di ' + detail.location.district} />
-          <Slide imagesData={detail.images} imageTitle={detail.title} />
-          <div className="container mb-3">
-            <div className="pt-3">
-              <small className="text-gray-700">{moment(detail.date_modified).fromNow()}</small>
-              <h1 className="mt-0 mb-3 text-xl">{detail.title}</h1>
-              <div className="mb-3">
-                <p className="font-bold">Deskripsi {detail.category}</p>
-                {detail.description}
-              </div>
-              <div className="mb-3">
-                <p className="font-bold">Fasilitas {detail.category}</p>
-                <ul className="mx-4">
-                  {detail && detail.facilities && detail.facilities.map((item, index) => <li className="list-disc" key={index}>{item}</li>)}
-                </ul>
-              </div>
-              <div className="mb-3">
-                <p className="pb-1 font-bold">Lokasi {detail.category} <small>({detail.location && detail.location.district}, {detail.location && detail.location.province})</small></p>
-                <Peta location={detail && detail.location} />
-              </div>
-              <div className="border-top mt-3">
-                {
-                  detail.post_url !== '' &&
-                  <div className="pt-3 text-sm text-indigo-700">
-                    <a href={detail.post_url} target="blank" rel="noreferrer">* Lihat tautan asli <FaExternalLinkAlt className="ml-1 inline" /> </a>
-                  </div>
-                }
-                <small>
-                  * Data dapat berubah sewaktu-waktu
-                </small>
-              </div>
-              <ListKosOthers data={otherdata} detail={detail} />
+        <div ref={this.myRef} onScroll={this.onScroll} style={{ height: '100vh', overflow: 'scroll' }}>
+          <div className="main-layout">
+            <div className="sticky top-0 z-10 p-1">
+              {scrollTop >= 35 ? <div class="bg-gray-100 shadow-md rounded-full mx-2 h-10 w-10 flex items-center justify-center" onClick={() => Router.push('/')}><AiOutlineArrowLeft /></div>
+                : <HeadPage page="detail" title={detail.category + ' di ' + detail.location.district} />}
             </div>
+            <Slide imagesData={detail.images} imageTitle={detail.title} />
+            <div className="container mb-3">
+              <div className="pt-3">
+                <small className="text-gray-700">{moment(detail.date_modified).fromNow()}</small>
+                <h1 className="mt-0 mb-3 text-xl">{detail.title}</h1>
+                <div className="mb-3">
+                  <p className="font-bold">Deskripsi {detail.category}</p>
+                  {detail.description}
+                </div>
+                <div className="mb-3">
+                  <p className="font-bold">Fasilitas {detail.category}</p>
+                  <ul className="mx-4">
+                    {detail && detail.facilities && detail.facilities.map((item, index) => <li className="list-disc" key={index}>{item}</li>)}
+                  </ul>
+                </div>
+                <div className="mb-3">
+                  <p className="pb-1 font-bold">Lokasi {detail.category} <small>({detail.location && detail.location.district}, {detail.location && detail.location.province})</small></p>
+                  <Peta location={detail && detail.location} />
+                </div>
+                <div className="border-top mt-3">
+                  {
+                    detail.post_url !== '' &&
+                    <div className="pt-3 text-sm text-indigo-700">
+                      <a href={detail.post_url} target="blank" rel="noreferrer">* Lihat tautan asli <FaExternalLinkAlt className="ml-1 inline" /> </a>
+                    </div>
+                  }
+                  <small>
+                    * Data dapat berubah sewaktu-waktu
+                </small>
+                </div>
+                <ListKosOthers data={otherdata} detail={detail} />
+              </div>
+            </div>
+            <FooterDetail data={detail} />
           </div>
-          <FooterDetail data={detail} />
         </div>
       }
     </>
