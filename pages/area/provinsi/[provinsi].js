@@ -6,7 +6,7 @@ import HeadPage from '../../../components/HeadPage'
 import NextHead from 'next/head'
 import Generateslug from '../../../utils/Generateslug'
 import Titlecase from '../../../utils/Titlecase'
-import { AiOutlineArrowRight } from 'react-icons/ai'
+import { BiChevronRight } from 'react-icons/bi'
 
 class Detail extends React.Component {
     static async getInitialProps(ctx) {
@@ -46,7 +46,7 @@ class Detail extends React.Component {
                     <link rel="canonical" content={`https://tantekos.com/area/provinsi/${slug}`} />
                 </NextHead>
                 <div className="main-layout">
-                    <HeadPage nohead title={`Kost & Kontrakan di ${areaTitle}`} />
+                    <HeadPage title={`Kost & Kontrakan di ${areaTitle}`} />
                     <div className="container divide-y divide-gray-400">
                         {
                             slug != 'all' ?
@@ -64,7 +64,7 @@ class Detail extends React.Component {
                                             <a href={`../../area/${Generateslug(item.district)}`}>
                                                 <div>
                                                     <span>{item.district}</span>
-                                                    <span className="float-right"><AiOutlineArrowRight className="inline ml-1 mb-1" /></span>
+                                                    <span className="float-right"><BiChevronRight size={28} className="inline ml-1 mb-1" /></span>
                                                 </div>
                                             </a>
                                         </div>
@@ -98,7 +98,7 @@ class Detail extends React.Component {
                                                                 <a href={`../../area/${Generateslug(item.district)}`}>
                                                                     <div>
                                                                         <span>{item.district}</span>
-                                                                        <span className="float-right"><a href="/search/category/Kost"><AiOutlineArrowRight className="inline ml-1 mb-1" /></a></span>
+                                                                        <span className="float-right"><a href="/search/category/Kost"><BiChevronRight size={28} className="inline ml-1 mb-1" /></a></span>
                                                                     </div>
                                                                 </a>
                                                             </div>

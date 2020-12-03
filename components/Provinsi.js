@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { DtProvinsi } from '../utils/modals/Provinsi'
 import Link from 'next/link'
 import Generateslug from '../utils/Generateslug'
-import { AiOutlineArrowRight } from 'react-icons/ai'
+import { BiChevronRight } from 'react-icons/bi'
 class Area extends Component {
     render() {
         return (
@@ -22,7 +22,7 @@ class Area extends Component {
                 <Link href="area/provinsi/all">
                     <div key={6} className="text-center py-3 px-3 text-indigo-700">
                         <span className="inline">Lihat Semua</span>
-                        <AiOutlineArrowRight className="inline ml-1 mb-1" />
+                        <BiChevronRight size={28} className="inline ml-1 mb-1" />
                     </div>
                 </Link>
             </div>

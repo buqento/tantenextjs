@@ -2,16 +2,16 @@ import React from 'react'
 import NextHead from 'next/head'
 import Router from 'next/router'
 import { string } from 'prop-types'
-import { FaExternalLinkAlt } from 'react-icons/fa';
-import { AiOutlineArrowLeft } from 'react-icons/ai'
+import { FaExternalLinkAlt } from 'react-icons/fa'
+import { BiChevronLeft } from "react-icons/bi"
 import Slide from '../components/Slide'
 import Peta from '../components/Peta'
 import FooterDetail from '../components/FooterDetail'
 import HeadPage from '../components/HeadPage'
 import ReactGa from 'react-ga'
-import moment from 'moment';
-import ListKosOthers from '../components/ListKosOthers';
-import fire from '../config/fire-config';
+import moment from 'moment'
+import ListKosOthers from '../components/ListKosOthers'
+import fire from '../config/fire-config'
 
 class Detail extends React.Component {
   constructor(props) {
@@ -171,7 +171,7 @@ class Detail extends React.Component {
         <div ref={this.myRef} onScroll={this.onScroll} style={{ height: '100vh', overflow: 'scroll' }}>
           <div className="main-layout">
             <div className="sticky top-0 z-10 p-1">
-              {scrollTop >= 35 ? <div class="bg-gray-100 shadow-md rounded-full mx-2 h-10 w-10 flex items-center justify-center" onClick={() => Router.push('/')}><AiOutlineArrowLeft /></div>
+              {scrollTop >= 35 ? <div class="bg-gray-100 shadow-md rounded-full mx-2 h-12 w-12 flex items-center justify-center" onClick={() => Router.push('/')}><BiChevronLeft size={40} /></div>
                 : <HeadPage page="detail" title={detail.category + ' di ' + detail.location.district} />}
             </div>
             <Slide imagesData={detail.images} imageTitle={detail.title} />
