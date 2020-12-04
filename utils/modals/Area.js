@@ -95,6 +95,7 @@ export const DtArea = [
     { lat_lng: '-6.114833, 106.921758', province: 'Jakarta Utara', district: 'Cilincing', image: '2AQB4hh.webp' },
     { lat_lng: '-6.374155, 106.775153', province: 'Jawa Barat', district: 'Limo', image: 'nLujVPR.webp' },
     { lat_lng: '-6.419886, 106.891092', province: 'Jawa Barat', district: 'Tapos', image: 'nLujVPR.webp' },
+    { lat_lng: '-7.7823779893635505, 110.39077823899649', province: 'Yogyakarta', district: 'Gondokusuman', image: 'Vu0Orr2.webp' },
     { lat_lng: '-7.754988, 110.399352', province: 'Yogyakarta', district: 'Depok', image: 'Vu0Orr2.webp' },
     { lat_lng: '-7.805685, 110.341278', province: 'Yogyakarta', district: 'Kasihan', image: 'sNY3ZmC.webp' }
 ];
