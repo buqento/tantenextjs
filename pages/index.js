@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import Header from '../components/Header'
 import Provinsi from '../components/Provinsi'
+import Campus from '../components/Campus'
 import Campaign from '../components/Campaign'
 import GroupSocial from '../components/GroupSocial'
 import { BiChevronRight } from "react-icons/bi"
@@ -26,6 +27,13 @@ export default function Index() {
       </div>
       <div className="border-b-8 border-gray-200">
         <Campaign filter="Kontrakan" />
+      </div>
+      <div className="m-3">
+        <span className="text-uppercase text-current font-bold">Dekat Kampus</span>
+        <span className="float-right text-indigo-700"><a href="/area/kampus">Lihat Semua<BiChevronRight size={28} className="inline ml-1 mb-1" /></a></span>
+      </div>
+      <div className="border-b-8 border-gray-200">
+        <Campus />
       </div>
       <div className="m-3 mb-n2">
         <span className="text-uppercase text-current font-bold">Grup Facebook</span>

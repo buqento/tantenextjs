@@ -9,8 +9,8 @@ class Area extends Component {
             <div className="container grid grid-cols-2 gap-3 my-3">
                 {
                     DtProvinsi
-                        .slice(0, 7)
                         .sort(() => .5 - Math.random())
+                        .slice(0, 7)
                         .map((item, index) =>
                             <Link key={index} href={`area/provinsi/${Generateslug(item.title)}`}>
                                 <div className="rounded-xl bg-gray-200 text-center py-3 align-middle text-gray-900 uppercase">
