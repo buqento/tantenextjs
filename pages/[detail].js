@@ -183,12 +183,42 @@ class Detail extends React.Component {
                   <p className="font-bold">Deskripsi {detail.category}</p>
                   {detail.description}
                 </div>
-                <div className="mb-3">
-                  <p className="font-bold">Fasilitas {detail.category}</p>
-                  <ul className="mx-4">
-                    {detail && detail.facilities && detail.facilities.map((item, index) => <li className="list-disc" key={index}>{item}</li>)}
-                  </ul>
-                </div>
+                {
+                  detail && detail.facility && detail.facility.room.length > 0 && detail.facility.room[0] !== "" &&
+                  <div className="mb-3">
+                    <p className="font-bold">Fasilitas Kamar</p>
+                    <ul className="mx-4">
+                      {detail.facility.room.map((item, index) => <li className="list-disc" key={index}>{item}</li>)}
+                    </ul>
+                  </div>
+                }
+                {
+                  detail && detail.facility && detail.facility.bathroom.length > 0 && detail.facility.bathroom[0] !== "" &&
+                  <div className="mb-3">
+                    <p className="font-bold">Fasilitas Kamar Mandi</p>
+                    <ul className="mx-4">
+                      {detail.facility.bathroom.map((item, index) => <li className="list-disc" key={index}>{item}</li>)}
+                    </ul>
+                  </div>
+                }
+                {
+                  detail && detail.facility && detail.facility.share.length > 0 && detail.facility.share[0] !== "" &&
+                  <div className="mb-3">
+                    <p className="font-bold">Fasilitas Bersama</p>
+                    <ul className="mx-4">
+                      {detail.facility.share.map((item, index) => <li className="list-disc" key={index}>{item}</li>)}
+                    </ul>
+                  </div>
+                }
+                {
+                  detail && detail.facility && detail.facility.building.length > 0 && detail.facility.building[0] !== "" &&
+                  <div className="mb-3">
+                    <p className="font-bold">Fasilitas</p>
+                    <ul className="mx-4">
+                      {detail.facility.building.map((item, index) => <li className="list-disc" key={index}>{item}</li>)}
+                    </ul>
+                  </div>
+                }
                 <div className="mb-3">
                   <p className="pb-1 font-bold">Lokasi {detail.category} <small>({detail.location && detail.location.district}, {detail.location && detail.location.province})</small></p>
                   <Peta location={detail && detail.location} />
