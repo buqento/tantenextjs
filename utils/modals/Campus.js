@@ -7,5 +7,7 @@ export const Campus = [
     { id: 6, name: 'Universitas PGRI Yogyakarta', province: 'Yogyakarta' },
     { id: 7, name: 'Universitas Pattimura', province: 'Maluku' },
     { id: 8, name: 'Universitas Udayana', province: 'Bali' },
-    { id: 9, name: 'Universitas Warmadewa', province: 'Bali' }
+    { id: 9, name: 'Universitas Warmadewa', province: 'Bali' },
+    { id: 9, name: 'Universitas Ahmad Dahlan', province: 'Yogyakarta' },
+    { id: 9, name: 'Universitas Teknologi Yogyakarta', province: 'Yogyakarta' }
 ]
