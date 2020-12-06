@@ -12,6 +12,7 @@ import ReactGa from 'react-ga'
 import moment from 'moment'
 import ListKosOthers from '../components/ListKosOthers'
 import fire from '../config/fire-config'
+import Titlecase from '../utils/Titlecase'
 
 class Detail extends React.Component {
   constructor(props) {
@@ -178,7 +179,7 @@ class Detail extends React.Component {
             <div className="container mb-3">
               <div className="pt-3">
                 <small className="text-gray-700">{moment(detail.date_modified).fromNow()}</small>
-                <h1 className="mt-0 mb-3 text-xl">{detail.title}</h1>
+                <h1 className="mt-0 mb-3 text-xl">{Titlecase(detail.title, ' ')}</h1>
                 <div className="mb-3">
                   <p className="font-bold">Deskripsi {detail.category}</p>
                   {detail.description}
