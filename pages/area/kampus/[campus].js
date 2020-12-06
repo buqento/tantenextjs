@@ -6,21 +6,19 @@ import ListKos from '../../../components/ListKos'
 import Generateslug from '../../../utils/Generateslug'
 import fire from '../../../config/fire-config'
 import Titlecase from '../../../utils/Titlecase'
+import { Campus } from '../../../utils/modals/Campus'
 
 class CampusId extends React.Component {
-    static async getInitialProps(ctx) {
-        return { slug: ctx.query.campus }
-    }
+    static async getInitialProps(ctx) { return { slug: ctx.query.campus } }
     constructor(props) {
         super(props)
-        this.state = {
-            data: null
-        }
+        this.state = { data: null }
     }
     async componentDidMount() {
-        const { slug } = this.props;
+        const { slug } = this.props
+        const campus = Campus.filter(campus => campus.slug === slug)
         const docRef = await fire.firestore().collection('kosts')
-            .where("location.near", "array-contains", Titlecase(slug))
+            .where("location.near", "array-contains", campus[0].name)
         docRef.onSnapshot(snap => {
             const data = snap.docs.map(doc => ({
                 id: doc.id,

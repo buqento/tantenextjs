@@ -137,36 +137,6 @@ class Detail extends React.Component {
         </NextHead>
       }
       {
-        !detail &&
-        <div>
-          <div className="animate-pulse mx-3 my-3 w-40 h-6 bg-gray-300" />
-          <div className="animate-pulse w-full h-40 bg-gray-300" />
-          <div className="container">
-            <div className="py-3">
-              <div className="animate-pulse px-2 my-1 w-16 h-4 bg-gray-300" />
-              <div className="animate-pulse px-2 my-1 w-full h-6 bg-gray-300" />
-              <div className="animate-pulse px-2 my-1 w-48 h-6 bg-gray-300" />
-            </div>
-            <div className="mb-6">
-              <div className="animate-pulse px-2 my-1 w-32 h-4 bg-gray-300" />
-              <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
-              <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
-              <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
-              <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
-              <div className="animate-pulse px-2 my-1 w-48 h-4 bg-gray-300" />
-            </div>
-            <div className="mb-3">
-              <div className="animate-pulse px-2 my-1 w-32 h-4 bg-gray-300" />
-              <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
-              <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
-              <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
-              <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
-              <div className="animate-pulse px-2 my-1 w-48 h-4 bg-gray-300" />
-            </div>
-          </div>
-        </div>
-      }
-      {
         detail &&
         <div ref={this.myRef} onScroll={this.onScroll} style={{ height: '100vh', overflow: 'scroll' }}>
           <div className="main-layout">
