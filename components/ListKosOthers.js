@@ -28,15 +28,15 @@ class ListKosOthers extends Component {
                                                 <div className="leading-none clamp-3"><small>{kost.title}</small></div>
                                                 <div>
                                                     {
-                                                        kost.facilities.includes("AC") &&
+                                                        kost.facility.room.includes("AC") &&
                                                         <span className="rounded text-xs font-semibold inline-block px-1 text-indigo-500 bg-gray-200 mr-1">AC</span>
                                                     }
                                                     {
-                                                        kost.facilities.includes("Wifi") &&
+                                                        kost.facility.room.includes("Wifi") &&
                                                         <span className="rounded text-xs font-semibold inline-block px-1 text-indigo-500 bg-gray-200 mr-1">WiFi</span>
                                                     }
                                                     {
-                                                        kost.facilities.includes("Kamar Mandi Dalam") &&
+                                                        kost.facility.room.includes("Kamar Mandi Dalam") &&
                                                         <span className="rounded text-xs font-semibold inline-block px-1 text-indigo-500 bg-gray-200">KM. Dalam</span>
                                                     }
                                                 </div>
