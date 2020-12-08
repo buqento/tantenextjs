@@ -13,7 +13,7 @@ class Area extends Component {
                         .slice(0, 7)
                         .map((item, index) =>
                             <Link key={index} href={`area/provinsi/${Generateslug(item.title)}`}>
-                                <div className="rounded-xl bg-gray-200 text-center py-3 align-middle text-gray-900 uppercase">
+                                <div className="rounded-xl bg-gray-200 hover:bg-indigo-600 hover:text-white hover:font-bold text-center py-3 align-middle text-gray-900 uppercase">
                                     {item.title}
                                 </div>
                             </Link>

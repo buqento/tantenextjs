@@ -94,7 +94,7 @@ class Detail extends React.Component {
                                                         })
                                                         .filter(item => Generateslug(item.province) === Generateslug(itemProvinsi.title))
                                                         .map((item, index) =>
-                                                            <div className="py-3 px-3" key={index}>
+                                                            <div className="py-3 px-3 bg-gray-100 border-bottom" key={index}>
                                                                 <a href={`../../area/${Generateslug(item.district)}`}>
                                                                     <div>
                                                                         <span>{item.district}</span>

@@ -12,7 +12,7 @@ class ComponentCampus extends Component {
                         .slice(0, 8)
                         .map((item, index) =>
                             <Link key={index} href={`area/kampus/${Generateslug(item.name)}`}>
-                                <div className="rounded-xl bg-gray-200 text-center py-3 px-2 align-middle text-gray-900">
+                                <div className="rounded-xl bg-gray-200 hover:bg-indigo-600 hover:text-white hover:font-bold text-center py-3 px-2 align-middle text-gray-900">
                                     <span className="clamp-2">{item.name}</span>
                                 </div>
                             </Link>

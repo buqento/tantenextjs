@@ -26,7 +26,7 @@ class FooterDetail extends Component {
                 </div>
                 <div className="mr-2 text-gray-700 text-center self-center">
                     {
-                        data.contact_us && data.contact_us.phone !== '' ? <button className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-3 rounded" onClick={() => this.handleCall(data.contact_us.phone)}><FaPhoneSquareAlt size={20} className="mr-2 inline" />Telepon</button> : <button className="bg-blue-700 text-white font-bold py-2 px-3 rounded opacity-50 cursor-not-allowed"><FaPhoneSquareAlt size={20} className="mr-2 inline" />Telepon</button>
+                        data.contact_us && data.contact_us.phone !== '' ? <button className="bg-indigo-700 hover:bg-indigo-600 text-white font-bold py-2 px-3 rounded" onClick={() => this.handleCall(data.contact_us.phone)}><FaPhoneSquareAlt size={20} className="mr-2 inline" />Telepon</button> : <button className="bg-indigo-500 text-white font-bold py-2 px-3 rounded opacity-50 cursor-not-allowed"><FaPhoneSquareAlt size={20} className="mr-2 inline" />Telepon</button>
                     }
                 </div>
             </div>
