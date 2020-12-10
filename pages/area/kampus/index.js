@@ -23,9 +23,9 @@ class AllCampus extends React.Component {
                                 .map((item, index) =>
                                     <div className="py-3 px-3" key={index}>
                                         <a href={`../../area/kampus/${Generateslug(item.name)}`}>
-                                            <div>
-                                                <span>{item.name}</span>
-                                                <span className="float-right"><BiChevronRight size={28} className="inline ml-1 mb-1" /></span>
+                                            <div className="d-flex">
+                                                <span className="w-full">{item.name}</span>
+                                                <span className="ml-0.5 float-right self-center"><BiChevronRight size={28} className="inline ml-1 mb-1" /></span>
                                             </div>
                                         </a>
                                     </div>

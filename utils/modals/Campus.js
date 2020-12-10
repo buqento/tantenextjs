@@ -15,5 +15,6 @@ export const Campus = [
     { id: 14, slug: 'sekolah-tinggi-seni-rupa-dan-desain-visi', name: 'Sekolah Tinggi Seni Rupa dan Desain Visi', province: 'Yogyakarta' },
     { id: 15, slug: 'institut-transportasi-dan-logistik-trisakti', name: 'Institut Transportasi dan Logistik Trisakti', province: 'Jakarta Timur' },
     { id: 16, slug: 'universitas-kristen-indonesia', name: 'Universitas Kristen Indonesia', province: 'Jakarta Timur' },
-    { id: 17, slug: 'universitas-muhammadiyah-yogyakarta', name: 'Universitas Muhammadiyah Yogyakarta', province: 'Yogyakarta' }
+    { id: 17, slug: 'universitas-muhammadiyah-yogyakarta', name: 'Universitas Muhammadiyah Yogyakarta', province: 'Yogyakarta' },
+    { id: 18, slug: 'universitas-pembangunan-nasional-veteran-yogyakarta', name: 'Universitas Pembangunan Nasional Veteran Yogyakarta', province: 'Yogyakarta' }
 ]
