@@ -17,5 +17,6 @@ export const Campus = [
     { id: 16, slug: 'universitas-kristen-indonesia', name: 'Universitas Kristen Indonesia', province: 'Jakarta Timur' },
     { id: 17, slug: 'universitas-muhammadiyah-yogyakarta', name: 'Universitas Muhammadiyah Yogyakarta', province: 'Yogyakarta' },
     { id: 18, slug: 'universitas-pembangunan-nasional-veteran-yogyakarta', name: 'Universitas Pembangunan Nasional Veteran Yogyakarta', province: 'Yogyakarta' },
-    { id: 19, slug: 'institut-teknologi-yogyakarta', name: 'Institut Teknologi Yogyakarta', province: 'Yogyakarta' }
+    { id: 19, slug: 'institut-teknologi-yogyakarta', name: 'Institut Teknologi Yogyakarta', province: 'Yogyakarta' },
+    { id: 20, slug: 'sekolah-tinggi-pariwisata-ambarrukmo-aogyakarta', name: 'Sekolah Tinggi Pariwisata Ambarrukmo Yogyakarta', province: 'Yogyakarta' }
 ]

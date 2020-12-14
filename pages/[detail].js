@@ -195,9 +195,9 @@ class Detail extends React.Component {
                 </div>
                 <div className="border-top mt-3">
                   {
-                    detail.post_url !== '' &&
+                    detail.contact_us.facebook_url !== '' &&
                     <div className="pt-3 text-sm text-indigo-700">
-                      <a href={detail.post_url} target="blank" rel="noreferrer">* Lihat tautan asli <FaExternalLinkAlt className="ml-1 inline" /> </a>
+                      <a href={detail.contact_us.facebook_url} target="blank" rel="noreferrer">* Hubungi pengiklan <FaExternalLinkAlt className="ml-1 inline" /> </a>
                     </div>
                   }
                   <small>
