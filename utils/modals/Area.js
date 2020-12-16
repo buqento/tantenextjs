@@ -103,5 +103,6 @@ export const DtArea = [
     { lat_lng: '-7.838758522321435, 110.39787329173812', province: 'Yogyakarta', district: 'Banguntapan', image: 'RKPhGex.webp' },
     { lat_lng: '-7.805685, 110.341278', province: 'Yogyakarta', district: 'Kasihan', image: 'sNY3ZmC.webp' },
     { lat_lng: '-7.734881295183593, 110.36539638911239', province: 'Yogyakarta', district: 'Mlati', image: 'rynHYfJ.webp' },
-    { lat_lng: '-7.8376265736638215, 110.47481548466482', province: 'Yogyakarta', district: 'Piyungan', image: 'rlxLoyL.webp' }
+    { lat_lng: '-7.8376265736638215, 110.47481548466482', province: 'Yogyakarta', district: 'Piyungan', image: 'rlxLoyL.webp' },
+    { lat_lng: '-7.697635582654034, 110.42207710059971', province: 'Yogyakarta', district: 'Ngaglik', image: 'ktOsVKy.webp' }
 ];
