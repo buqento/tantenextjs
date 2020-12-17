@@ -5,18 +5,18 @@ import HeadPage from '../../../components/HeadPage'
 import ListKos from '../../../components/ListKos'
 import Generateslug from '../../../utils/Generateslug'
 import fire from '../../../config/fire-config'
-import Titlecase from '../../../utils/Titlecase'
 import { Campus } from '../../../utils/modals/Campus'
 
 class CampusId extends React.Component {
     static async getInitialProps(ctx) { return { slug: ctx.query.campus } }
     constructor(props) {
         super(props)
-        this.state = { data: null }
+        this.state = { data: null, campusName: null }
     }
     async componentDidMount() {
         const { slug } = this.props
         const campus = Campus.filter(campus => campus.slug === slug)
+        this.setState({campusName:campus[0].name})
         const docRef = await fire.firestore().collection('kosts')
             .where("location.near", "array-contains", campus[0].name)
         docRef.onSnapshot(snap => {
@@ -29,9 +29,8 @@ class CampusId extends React.Component {
         docRef.get().catch(err => console.log(err))
     }
     render() {
-        const { data } = this.state
+        const { data, campusName } = this.state
         const { slug } = this.props
-        const title = Titlecase(slug)
         const structureTypeBreadcrumbList =
             `{
               "@context": "https://schema.org",
@@ -66,7 +65,7 @@ class CampusId extends React.Component {
                     "position": 4,
                     "item": {
                         "@id": "https://tantekos.com/area/kampus/${slug}",
-                        "name": "${title}"
+                        "name": "${campusName}"
                     }
                 }
             ]
@@ -75,7 +74,7 @@ class CampusId extends React.Component {
             `{
                 "@context": "https://schema.org",
                 "@type": "ItemList",
-                "name": "Dekat Kampus ${title}",
+                "name": "Dekat Kampus ${campusName}",
                 "itemListElement": [
                     ${data && data.map((item, index) => `{
                         "@type": "ListItem",
@@ -93,20 +92,20 @@ class CampusId extends React.Component {
         return (
             <>
                 <NextHead>
-                    <title>Tantekos - Kost &amp; Kontrakan Dekat Kampus {title}</title>
+                    <title>Tantekos - Kost &amp; Kontrakan Dekat Kampus {campusName}</title>
                     <meta name="googlebot" content="index, follow" />
                     <meta name="robot" content="index, follow" />
                     <meta name="application-name" content="Tantekos" />
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                    <meta name="title" content={`Kost Dan Kontrakan Murah Dekat Kampus ${title}`} />
-                    <meta name="description" content={`Tersedia Kost Dan Kontrakan Murah Area ${title}`} />
-                    <meta name="keywords" content={`tantekos, Info Kost, Cari kost, kost, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian, ${title}`} />
-                    <meta property="og:title" content={`Kost Dan Kontrakan Murah Dekat Kampus ${title}`} />
-                    <meta property="og:description" content={`Tersedia Kost Dan Kontrakan Murah Dekat Kampus ${title}`} />
+                    <meta name="title" content={`Kost Dan Kontrakan Murah Dekat Kampus ${campusName}`} />
+                    <meta name="description" content={`Tersedia Kost Dan Kontrakan Murah Area ${campusName}`} />
+                    <meta name="keywords" content={`tantekos, Info Kost, Cari kost, kost, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian, ${campusName}`} />
+                    <meta property="og:title" content={`Kost Dan Kontrakan Murah Dekat Kampus ${campusName}`} />
+                    <meta property="og:description" content={`Tersedia Kost Dan Kontrakan Murah Dekat Kampus ${campusName}`} />
                     <meta property="og:type" content="website" />
                     <meta property="og:url" content={`https://tantekos.com/area/${slug}`} />
                     <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/w=300/${data && data.length > 0 && data[0].image}`} />
-                    <meta property="og:image:alt" content={title} />
+                    <meta property="og:image:alt" content={campusName} />
                     <meta property="og:locale" content="id_ID" />
                     <meta property="og:site_name" content="Tantekos" />
                     <meta name="keyphrases" content="Info Kost, Cari Kost, Sewa Kost, Kost Bebas, Kost Murah, Kost pasutri, Aplikasi Kost, Aplikasi Pencarian Kost, Aplikasi Info Kost, APlikasi Cari Kost, Kost, Tantekost, Tantekosapp, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
@@ -115,7 +114,7 @@ class CampusId extends React.Component {
                     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureAreaPage) }} />
                 </NextHead>
                 <div className="main-layout">
-                    <HeadPage title={`Kost & Kontrakan Dekat ${Titlecase(slug)}`} />
+                    <HeadPage title={`Kost & Kontrakan Dekat ${campusName}`} />
                     <ListKos data={data} />
                 </div>
             </>
