@@ -14,7 +14,7 @@ class ListKosAll extends Component {
                         load &&
                         skeletonArr.map((index) =>
                             <div key={index}>
-                                <div className="shadow-md rounded-xl overflow-hidden">
+                                <div className="border rounded-xl overflow-hidden">
                                     <div className="animate-pulse w-full h-40 bg-gray-300" />
                                     <div className="px-3 py-3">
                                         <div className="animate-pulse px-2 my-1 w-32 h-4 bg-gray-300" />
@@ -42,7 +42,7 @@ class ListKosAll extends Component {
                             .map((item, index) =>
                                 <div key={index}>
                                     <Link href={`https://tantekos.com/${Generateslug(item.title)}`}>
-                                        <div className="h-full rounded-xl overflow-hidden shadow-md">
+                                        <div className="h-full rounded-xl overflow-hidden border">
                                             <img className="w-full" src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} />
                                             <div className="px-3 py-3 text-center">
                                                 <div className="px-2 font-bold">{Currency(item.start_price, false)}</div>

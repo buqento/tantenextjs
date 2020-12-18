@@ -46,7 +46,7 @@ class AreaList extends React.Component {
                             .map((item, index) =>
                                 <div key={index}>
                                     <Link href={`area/${Generateslug(item.district)}`}>
-                                        <div className="rounded overflow-hidden shadow-sm border">
+                                        <div className="rounded overflow-hidden border">
                                             <img className="w-full" src={`https://cdn.statically.io/img/i.imgur.com/w=125/${item.image}`} alt={item.district} />
                                             <div className="px-3 py-3 text-center">
                                                 <div className="px-2 font-bold clamp-1">{item.district}</div>

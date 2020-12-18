@@ -36,7 +36,7 @@ class Campaign extends React.Component {
                             <div className="flex ml-3">
                                 {
                                     skeletonArr.map((item, index) =>
-                                        <div key={index} className="rounded-xl overflow-hidden shadow-md mr-3 mb-2" style={{ width: '200px' }}>
+                                        <div key={index} className="rounded-xl overflow-hidden border mr-3 mb-2" style={{ width: '200px' }}>
                                             <div className="animate-pulse w-full h-48 bg-gray-300" />
                                             <div className="px-3 py-3">
                                                 <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
