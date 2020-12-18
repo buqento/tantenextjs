@@ -7,7 +7,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Link from 'next/link'
 import Generateslug from '../../../utils/Generateslug'
 import Currency from '.../../../components/Currency'
-
+import { BiMap } from 'react-icons/bi'
 class Detail extends React.Component {
     static async getInitialProps(ctx) {
         return { slug: ctx.query.category }
@@ -79,19 +79,20 @@ class Detail extends React.Component {
                                         <img className="w-full" src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} />
                                         <div className="px-3 py-3 text-center">
                                             <div className="px-2 text-xl font-bold">{Currency(item.start_price, false)}</div>
-                                            <div className="text-current leading-none clamp-1"><small>{item.location.district}, {item.location.province}</small></div>
+                                            <div className="text-current leading-none clamp-1">
+                                                <BiMap className="inline mr-1" /><span><small>{item.location.district}, {item.location.province}</small></span></div>
                                             <div>
                                                 {
                                                     item.facility.room.includes("AC") &&
-                                                    <span className="rounded text-xs font-semibold inline-block px-1 text-indigo-500 bg-gray-200 mr-1">AC</span>
+                                                    <span className="rounded text-xs font-semibold inline-block px-1 text-green-600 border mr-1">AC</span>
                                                 }
                                                 {
                                                     item.facility.room.includes("Wifi") &&
-                                                    <span className="rounded text-xs font-semibold inline-block px-1 text-indigo-500 bg-gray-200 mr-1">WiFi</span>
+                                                    <span className="rounded text-xs font-semibold inline-block px-1 text-green-600 border mr-1">WiFi</span>
                                                 }
                                                 {
                                                     item.facility.room.includes("Kamar Mandi Dalam") &&
-                                                    <span className="rounded text-xs font-semibold inline-block px-1 text-indigo-500 bg-gray-200">KM. Dalam</span>
+                                                    <span className="rounded text-xs font-semibold inline-block px-1 text-green-600 border">KM. Dalam</span>
                                                 }
                                             </div>
                                         </div>

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { DtProvinsi } from '../utils/modals/Provinsi'
 import Link from 'next/link'
 import Generateslug from '../utils/Generateslug'
-import { BiChevronRight } from 'react-icons/bi'
+import { BiChevronRight, BiMap } from 'react-icons/bi'
 class Area extends Component {
     render() {
         return (
@@ -13,14 +13,16 @@ class Area extends Component {
                         .slice(0, 7)
                         .map((item, index) =>
                             <Link key={index} href={`area/provinsi/${Generateslug(item.title)}`}>
-                                <div className="rounded-xl bg-gray-200 hover:bg-indigo-600 hover:text-white hover:font-bold text-center py-3 align-middle text-gray-900 uppercase">
-                                    {item.title}
+                                <div className="rounded-xl bg-gray-200 hover:bg-indigo-600 hover:text-white hover:font-bold pt-2 px-3 h-60 align-middle uppercase clamp-1 border">
+                                    <div className="pb-1">
+                                        <BiMap className="inline mr-1 mb-1" /><span>{item.title}</span>
+                                    </div>
                                 </div>
                             </Link>
                         )
                 }
                 <Link href="area/provinsi/all">
-                    <div key={6} className="text-center py-3 px-3 text-indigo-700">
+                    <div key={6} className="text-center pt-1 px-3 text-indigo-700">
                         <span className="inline">Lihat Semua</span>
                         <BiChevronRight size={28} className="inline ml-1 mb-1" />
                     </div>

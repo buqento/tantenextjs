@@ -46,18 +46,17 @@ class ListKos extends Component {
                                                     <div>
                                                         {
                                                             item.facility.room.includes("AC") &&
-                                                            <span className="rounded text-xs font-semibold inline-block px-1 text-indigo-500 border mr-1">AC</span>
+                                                            <span className="rounded text-xs font-semibold inline-block px-1 text-green-600 border mr-1">AC</span>
                                                         }
                                                         {
                                                             item.facility.room.includes("Wifi") &&
-                                                            <span className="rounded text-xs font-semibold inline-block px-1 text-indigo-500 border mr-1">WiFi</span>
+                                                            <span className="rounded text-xs font-semibold inline-block px-1 text-green-600 border mr-1">WiFi</span>
                                                         }
                                                         {
                                                             item.facility.room.includes("Kamar Mandi Dalam") &&
-                                                            <span className="rounded text-xs font-semibold inline-block px-1 text-indigo-500 border">KM. Dalam</span>
+                                                            <span className="rounded text-xs font-semibold inline-block px-1 text-green-600 border">KM. Dalam</span>
                                                         }
                                                     </div>
-
                                                 </div>
                                             </div>
                                         </Link>

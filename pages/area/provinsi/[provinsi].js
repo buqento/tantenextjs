@@ -6,7 +6,7 @@ import HeadPage from '../../../components/HeadPage'
 import NextHead from 'next/head'
 import Generateslug from '../../../utils/Generateslug'
 import Titlecase from '../../../utils/Titlecase'
-import { BiChevronRight } from 'react-icons/bi'
+import { BiChevronRight, BiMap } from 'react-icons/bi'
 
 class Detail extends React.Component {
     static async getInitialProps(ctx) {
@@ -81,7 +81,8 @@ class Detail extends React.Component {
                                     .map((itemProvinsi, index) =>
                                         <div className="tab w-full overflow-hidden" key={index}>
                                             <input className="absolute opacity-0" id={index} type="radio" name="tabs2" />
-                                            <label htmlFor={index} className="block pt-3 pb-2 leading-normal cursor-pointer uppercase" onClick={() => this.handleCollapse(index)}>{itemProvinsi.title}</label>
+                                            <label htmlFor={index} className="block pt-3 pb-2 leading-normal cursor-pointer uppercase" onClick={() => this.handleCollapse(index)}>
+                                            <BiMap className="inline mr-1 mb-1" /><span>{itemProvinsi.title}</span></label>
                                             <div className="tab-content overflow-hidden leading-normal">
                                                 {
                                                     DtArea
