@@ -3,11 +3,9 @@ import NextHead from 'next/head'
 import Router from 'next/router'
 import { string } from 'prop-types'
 import { FaExternalLinkAlt } from 'react-icons/fa'
-import { BiChevronLeft } from "react-icons/bi"
 import Slide from '../components/Slide'
 import Peta from '../components/Peta'
 import FooterDetail from '../components/FooterDetail'
-import HeadPage from '../components/HeadPage'
 import ReactGa from 'react-ga'
 import moment from 'moment'
 import ListKosOthers from '../components/ListKosOthers'
@@ -16,22 +14,14 @@ import fire from '../config/fire-config'
 class Detail extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { otherData: null, scrollTop: 0 }
+    this.state = { otherData: null }
     this.myRef = React.createRef()
-  }
-  onScroll = () => {
-    const scrollTop = this.myRef.current.scrollTop
-    this.setState({ scrollTop: scrollTop })
   }
   async componentDidMount() {
     if (window.location.hostname !== 'localhost') {
       ReactGa.initialize('UA-132808614-2')
       ReactGa.pageview('/detail')
     }
-    window.addEventListener('scroll', this.onScroll, false);
-  }
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.onScroll, false);
   }
   componentDidUpdate() {
     if (window.location.hostname !== 'localhost') {
@@ -41,7 +31,6 @@ class Detail extends React.Component {
   }
   render() {
     const { slug, details, otherdatas } = this.props
-    const { scrollTop } = this.state
     const detail = JSON.parse(details)
     const otherdata = JSON.parse(otherdatas)
     const structureTypeBreadcrumbList =
@@ -138,77 +127,78 @@ class Detail extends React.Component {
       }
       {
         detail &&
-        <div ref={this.myRef} onScroll={this.onScroll} style={{ height: '100vh', overflow: 'scroll' }}>
-          <div className="main-layout">
-            <div className="sticky top-0 z-10 p-1">
-              {scrollTop >= 35 ? <div className="bg-indigo-700 text-white shadow-md rounded-full mx-2 h-12 w-12 flex items-center justify-center" onClick={() => Router.push('/')}><BiChevronLeft size={40} /></div>
-                : <HeadPage page="detail" title={detail.category + ' di ' + detail.location.district + ', ' + detail.location.province} />}
-            </div>
-            <Slide imagesData={detail.images} imageTitle={detail.title} />
-            <div className="container mb-3">
-              <div className="pt-3">
-                <small className="text-gray-700">{moment(detail.date_modified).fromNow()}</small>
-                <h1 className="mt-0 mb-3 text-xl capitalize">{detail.title}</h1>
-                <div className="mb-3">
-                  <p className="font-bold">Deskripsi {detail.category}</p>
-                  {detail.description}
-                </div>
-                {
-                  detail && detail.facility && detail.facility.room.length > 0 && detail.facility.room[0] !== "" &&
-                  <div className="mb-3">
-                    <p className="font-bold">Fasilitas Kamar</p>
-                    <ul className="mx-4">
-                      {detail.facility.room.map((item, index) => <li className="list-disc" key={index}>{item}</li>)}
-                    </ul>
-                  </div>
-                }
-                {
-                  detail && detail.facility && detail.facility.bathroom.length > 0 && detail.facility.bathroom[0] !== "" &&
-                  <div className="mb-3">
-                    <p className="font-bold">Fasilitas Kamar Mandi</p>
-                    <ul className="mx-4">
-                      {detail.facility.bathroom.map((item, index) => <li className="list-disc" key={index}>{item}</li>)}
-                    </ul>
-                  </div>
-                }
-                {
-                  detail && detail.facility && detail.facility.share.length > 0 && detail.facility.share[0] !== "" &&
-                  <div className="mb-3">
-                    <p className="font-bold">Fasilitas Bersama</p>
-                    <ul className="mx-4">
-                      {detail.facility.share.map((item, index) => <li className="list-disc" key={index}>{item}</li>)}
-                    </ul>
-                  </div>
-                }
-                {
-                  detail && detail.facility && detail.facility.building.length > 0 && detail.facility.building[0] !== "" &&
-                  <div className="mb-3">
-                    <p className="font-bold">Fasilitas</p>
-                    <ul className="mx-4">
-                      {detail.facility.building.map((item, index) => <li className="list-disc" key={index}>{item}</li>)}
-                    </ul>
-                  </div>
-                }
-                <div className="mb-3">
-                  <p className="pb-1 font-bold">Lokasi {detail.category} <small>({detail.location && detail.location.district}, {detail.location && detail.location.province})</small></p>
-                  <Peta location={detail && detail.location} />
-                </div>
-                <div className="border-top mt-3">
-                  {
-                    detail.contact_us.facebook_url !== '' &&
-                    <div className="pt-3 text-sm text-indigo-700">
-                      <a href={detail.contact_us.facebook_url} target="blank" rel="noreferrer">* Hubungi pengiklan <FaExternalLinkAlt className="ml-1 inline" /> </a>
-                    </div>
-                  }
-                  <small>
-                    * Data dapat berubah sewaktu-waktu
-                </small>
-                </div>
-                <ListKosOthers data={otherdata} detail={detail} />
+        <div className="main-layout">
+          <Slide imagesData={detail.images} imageTitle={detail.title} />
+          <nav className="sticky top-0 z-10 bg-white text-gray-500">
+            <ol className="list-reset py-3 pl-2 flex">
+              <li className="px-2 mr-2 bg-indigo-600 font-bold rounded-full border text-white" onClick={() => Router.push('/')}>Home</li>
+              <li>/</li>
+              <li className="px-2 mr-2 clamp-1">{detail.title}</li>
+            </ol>
+          </nav>
+          <div className="container mb-3">
+            <div>
+              <small className="text-gray-700">{moment(detail.date_modified).fromNow()}</small>
+              <h1 className="mt-0 mb-3 text-xl capitalize">{detail.title}</h1>
+              <div className="mb-3">
+                <p className="font-bold">Deskripsi {detail.category}</p>
+                {detail.description}
               </div>
+              {
+                detail && detail.facility && detail.facility.room.length > 0 && detail.facility.room[0] !== "" &&
+                <div className="mb-3">
+                  <p className="font-bold">Fasilitas Kamar</p>
+                  <ul className="mx-4">
+                    {detail.facility.room.map((item, index) => <li className="list-disc" key={index}>{item}</li>)}
+                  </ul>
+                </div>
+              }
+              {
+                detail && detail.facility && detail.facility.bathroom.length > 0 && detail.facility.bathroom[0] !== "" &&
+                <div className="mb-3">
+                  <p className="font-bold">Fasilitas Kamar Mandi</p>
+                  <ul className="mx-4">
+                    {detail.facility.bathroom.map((item, index) => <li className="list-disc" key={index}>{item}</li>)}
+                  </ul>
+                </div>
+              }
+              {
+                detail && detail.facility && detail.facility.share.length > 0 && detail.facility.share[0] !== "" &&
+                <div className="mb-3">
+                  <p className="font-bold">Fasilitas Bersama</p>
+                  <ul className="mx-4">
+                    {detail.facility.share.map((item, index) => <li className="list-disc" key={index}>{item}</li>)}
+                  </ul>
+                </div>
+              }
+              {
+                detail && detail.facility && detail.facility.building.length > 0 && detail.facility.building[0] !== "" &&
+                <div className="mb-3">
+                  <p className="font-bold">Fasilitas</p>
+                  <ul className="mx-4">
+                    {detail.facility.building.map((item, index) => <li className="list-disc" key={index}>{item}</li>)}
+                  </ul>
+                </div>
+              }
+              <div className="mb-3">
+                <p className="pb-1 font-bold">Lokasi {detail.category} <small>({detail.location && detail.location.district}, {detail.location && detail.location.province})</small></p>
+                <Peta location={detail && detail.location} />
+              </div>
+              <div className="border-top mt-3">
+                {
+                  detail.contact_us.facebook_url !== '' &&
+                  <div className="pt-3 text-sm text-indigo-700">
+                    <a href={detail.contact_us.facebook_url} target="blank" rel="noreferrer">* Hubungi pengiklan <FaExternalLinkAlt className="ml-1 inline" /> </a>
+                  </div>
+                }
+                <small>
+                  * Data dapat berubah sewaktu-waktu
+                </small>
+              </div>
+              <ListKosOthers data={otherdata} detail={detail} />
             </div>
-            <FooterDetail data={detail} />
           </div>
+          <FooterDetail data={detail} />
         </div>
       }
     </>
