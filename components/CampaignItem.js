@@ -11,7 +11,7 @@ class CampaignItem extends Component {
             <Link href={`/${Generateslug(item.title)}`}>
                 <div className={`rounded-xl overflow-hidden border ${customStyle}`}>
                     <img src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} style={{ maxWidth: 'unset' }} />
-                    <div className="px-2 py-3 text-center">
+                    <div className="px-2 pt-2 pb-3 text-center">
                         <div className="px-2 text-xl font-bold">{Currency(item.start_price, false)}</div>
                         <div className="text-current leading-none clamp-1">
                             <BiMap className="inline mr-1" /><span><small>{item.location.district}, {item.location.province}</small></span>

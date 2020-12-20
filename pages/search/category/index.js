@@ -79,8 +79,8 @@ class Detail extends React.Component {
             <div className="main-layout">
                 <HeadPage title={`Semua Kost & Kontrakan`} ref={elem => (this.gate = elem)} />
                 <div className="sticky top-0 text-center">
-                    <button onClick={this.toggleFilter} className="bg-indigo-700 w-max text-white font-bold px-2 mt-2 rounded-full border">
-                        <BiFilterAlt className="inline mb-1 mr-2" />Saring</button>
+                    <button onClick={this.toggleFilter} className={`bg-indigo-${isFilter ? 700 : 400} w-max text-white px-2 py-2 mt-3 rounded-full focus:outline-none`}>
+                        <BiFilterAlt className="inline mb-1 mr-1" />Saring</button>
                 </div>
                 {
                     isFilter && <Child callbackFromParent={this.myCallback} />

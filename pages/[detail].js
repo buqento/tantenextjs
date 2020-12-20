@@ -129,14 +129,14 @@ class Detail extends React.Component {
         detail &&
         <div className="main-layout">
           <Slide imagesData={detail.images} imageTitle={detail.title} />
-          <nav className="sticky top-0 z-10 bg-white text-gray-700">
+          <nav className="sticky top-0 z-10 bg-white text-gray-700 border-bottom">
             <ol className="list-reset py-3 pl-3 flex">
-              <li className="px-2 mr-2 bg-indigo-600 font-bold rounded-full border text-white" onClick={() => Router.push('/')}>Home</li>
+              <li className="px-2 mr-2 bg-indigo-700 font-bold rounded-full border text-white" onClick={() => Router.push('/')}>Home</li>
               <li>/</li>
               <li className="px-2 mr-2 clamp-1">{detail.title}</li>
             </ol>
           </nav>
-          <div className="container mb-3">
+          <div className="container mt-2 mb-3">
             <div>
               <small className="text-gray-700">{moment(detail.date_modified).fromNow()}</small>
               <h1 className="mt-0 mb-3 text-xl capitalize">{detail.title}</h1>

@@ -13,7 +13,7 @@ class Area extends Component {
                         .slice(0, 7)
                         .map((item, index) =>
                             <Link key={index} href={`area/provinsi/${Generateslug(item.title)}`}>
-                                <div className="rounded-xl bg-gray-200 hover:bg-indigo-600 hover:text-white hover:font-bold pt-2 px-3 h-60 align-middle uppercase clamp-1 border">
+                                <div className="rounded-xl bg-gray-200 hover:bg-indigo-700 hover:text-white hover:font-bold pt-2 px-3 h-60 align-middle uppercase clamp-1 border">
                                     <div className="pb-1">
                                         <BiMap className="inline mr-1 mb-1" /><span>{item.title}</span>
                                     </div>

@@ -29,9 +29,9 @@ class Search extends React.Component {
         const { category, province } = this.state;
         return <>
             <form className="bg-white px-4 py-2 border-bottom" onSubmit={this.handleSearch}>
-                <div className="mb-4">
+                <div className="mb-2">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="category">Kategori</label>
-                    <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state"
+                    <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state"
                         value={category}
                         name="category"
                         onChange={this.handleChange}>
@@ -39,9 +39,9 @@ class Search extends React.Component {
                         <option>Kontrakan</option>
                     </select>
                 </div>
-                <div className="mb-4">
+                <div className="mb-2">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="province">Area</label>
-                    <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state"
+                    <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state"
                         name="province"
                         value={province}
                         onChange={this.handleChange}>
@@ -69,7 +69,7 @@ class Search extends React.Component {
                         onChange={this.toggleAc}
                     /> AC
                 </div> */}
-                <button className="bg-blue-700 hover:bg-blue-600 focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">Terapkan</button>
+                <button className="bg-indigo-700 hover:bg-indigo-600 focus:outline-none text-white font-bold py-2 px-3 my-2 rounded" type="submit">Terapkan</button>
             </form>
         </>
     }
