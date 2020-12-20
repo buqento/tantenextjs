@@ -14,7 +14,8 @@ class Detail extends React.Component {
             more: true,
             data: [],
             last: {},
-            isFilter: false
+            isFilter: false,
+            showFilterForm: false
         }
         this.fetchMoreData = this.fetchMoreData.bind(this)
     }
@@ -37,7 +38,7 @@ class Detail extends React.Component {
     }
     toggleFilter = () => {
         const { isFilter } = this.state
-        this.setState({ isFilter: !isFilter })
+        this.setState({ isFilter: !isFilter, showFilterForm: true })
         const elementTop = this.gate.offsetTop;
         window.scrollTo(0, elementTop);
     }
@@ -49,7 +50,7 @@ class Detail extends React.Component {
             const data = snapshot.docs.map(doc => ({
                 ...doc.data()
             }))
-            this.setState({ data, isFilter: true })
+            this.setState({ data, isFilter: true, showFilterForm: false })
         })
     }
     fetchMoreData() {
@@ -74,17 +75,15 @@ class Detail extends React.Component {
         }
     }
     render() {
-        const { data, more, isFilter } = this.state;
+        const { data, more, isFilter, showFilterForm } = this.state;
         return (
             <div className="main-layout">
                 <HeadPage title={`Semua Kost & Kontrakan`} ref={elem => (this.gate = elem)} />
                 <div className="sticky top-0 text-center z-40">
-                    <button onClick={this.toggleFilter} className={`bg-indigo-${isFilter ? 700 : 500} w-max text-white px-2 py-2 mt-3 rounded-full focus:outline-none`}>
+                    <button onClick={this.toggleFilter} className="bg-indigo-700 w-max text-white px-2 py-2 mt-3 rounded-full focus:outline-none">
                         <BiFilterAlt className="inline mb-1 mr-1" />Saring</button>
                 </div>
-                {
-                    isFilter && <Child callbackFromParent={this.myCallback} />
-                }
+                {showFilterForm && <Child callbackFromParent={this.myCallback} />}
                 {
                     !isFilter ?
                         <InfiniteScroll
