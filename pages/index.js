@@ -3,9 +3,9 @@ import Layout from '../components/Layout'
 import Header from '../components/Header'
 import Provinsi from '../components/Provinsi'
 import Campus from '../components/Campus'
-import Campaign from '../components/Campaign'
 import GroupSocial from '../components/GroupSocial'
 import { BiChevronRight } from "react-icons/bi"
+import Feeds from '../components/Feeds'
 
 export default function Index() {
   return (
@@ -15,18 +15,11 @@ export default function Index() {
         <Provinsi />
       </div>
       <div className="m-3">
-        <span className="text-uppercase text-current font-bold">Kost</span>
-        <span className="float-right text-indigo-700"><a href="/search/category/kost">Lihat Semua<BiChevronRight size={28} className="inline ml-1 mb-1" /></a></span>
+        <span className="text-uppercase text-current font-bold">Terbaru</span>
+        <span className="float-right text-indigo-700"><a href="/search/category">Lihat Semua<BiChevronRight size={28} className="inline ml-1 mb-1" /></a></span>
       </div>
       <div className="border-b-8 border-gray-200">
-        <Campaign filter="Kost" />
-      </div>
-      <div className="m-3">
-        <span className="text-uppercase text-current font-bold">Kontrakan</span>
-        <span className="float-right text-indigo-700"><a href="/search/category/kontrakan">Lihat Semua<BiChevronRight size={28} className="inline ml-1 mb-1" /></a></span>
-      </div>
-      <div className="border-b-8 border-gray-200">
-        <Campaign filter="Kontrakan" />
+        <Feeds />
       </div>
       <div className="m-3">
         <span className="text-uppercase text-current font-bold">Dekat Kampus</span>

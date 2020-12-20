@@ -1,22 +1,17 @@
 import React from 'react'
 import fire from '../../../config/fire-config'
-import { string } from 'prop-types'
 import HeadPage from '../../../components/HeadPage'
-import Firstupper from '../../../utils/Firstupper'
 import InfiniteScroll from "react-infinite-scroll-component";
 import Link from 'next/link'
 import Generateslug from '../../../utils/Generateslug'
 import Currency from '.../../../components/Currency'
 import { BiMap } from 'react-icons/bi'
-class Detail extends React.Component {
-    static async getInitialProps(ctx) {
-        return { slug: ctx.query.category }
-    }
+class Category extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             limitPerPage: 10,
-            collectionLength: 100,
+            collectionLength: 0,
             more: true,
             data: [],
             last: {}
@@ -24,10 +19,12 @@ class Detail extends React.Component {
         this.fetchMoreData = this.fetchMoreData.bind(this)
     }
     async componentDidMount() {
-        const { slug } = this.props
         const { limitPerPage } = this.state
         const docRef = await fire
-            .firestore().collection('kosts').where("category", "==", Firstupper(slug))
+            .firestore().collection('kosts').orderBy('date_modified', 'desc')
+        docRef.get().then(snapshot => {
+            this.setState({ collectionLength: snapshot.docs.length })
+        }).catch(err => console.log(err))
         docRef.limit(limitPerPage).onSnapshot(snap => {
             const last = snap.docs[snap.docs.length - 1]
             const data = snap.docs.map(doc => ({
@@ -40,6 +37,8 @@ class Detail extends React.Component {
     }
     fetchMoreData() {
         const { limitPerPage, last, data, collectionLength } = this.state
+        console.log('data=>',data.length);
+        console.log('collectionLength=>',collectionLength);
         if (collectionLength !== data.length) {
             const docRef = fire
                 .firestore().collection('kosts')
@@ -60,11 +59,10 @@ class Detail extends React.Component {
         }
     };
     render() {
-        const { slug } = this.props;
         const { data, more } = this.state;
         return (
             <div className="main-layout">
-                <HeadPage title={`Semua ${slug}`} />
+                <HeadPage title={`Semua Kost & Kontrakan`} />
                 <InfiniteScroll
                     dataLength={data.length}
                     next={this.fetchMoreData}
@@ -79,9 +77,6 @@ class Detail extends React.Component {
                                         <img className="w-full" src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} />
                                         <div className="px-3 py-3 text-center">
                                             <div className="px-2 text-xl font-bold">{Currency(item.start_price, false)}</div>
-                                            <div>
-                                                {item.type[0]}
-                                            </div>
                                             <div className="text-current leading-none clamp-1">
                                                 <BiMap className="inline mr-1" /><span><small>{item.location.district}, {item.location.province}</small></span></div>
                                             <div>
@@ -109,10 +104,4 @@ class Detail extends React.Component {
         )
     }
 }
-Detail.propTypes = {
-    slug: string
-}
-Detail.defaultProps = {
-    slug: ''
-}
-export default Detail;
+export default Category;

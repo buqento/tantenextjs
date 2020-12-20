@@ -129,8 +129,8 @@ class Detail extends React.Component {
         detail &&
         <div className="main-layout">
           <Slide imagesData={detail.images} imageTitle={detail.title} />
-          <nav className="sticky top-0 z-10 bg-white text-gray-500">
-            <ol className="list-reset py-3 pl-2 flex">
+          <nav className="sticky top-0 z-10 bg-white text-gray-700">
+            <ol className="list-reset py-3 pl-3 flex">
               <li className="px-2 mr-2 bg-indigo-600 font-bold rounded-full border text-white" onClick={() => Router.push('/')}>Home</li>
               <li>/</li>
               <li className="px-2 mr-2 clamp-1">{detail.title}</li>
@@ -142,7 +142,7 @@ class Detail extends React.Component {
               <h1 className="mt-0 mb-3 text-xl capitalize">{detail.title}</h1>
               <div className="mb-3">
                 <p className="font-bold">Deskripsi {detail.category}</p>
-                {detail.description}
+                <p>{detail.description}</p>
               </div>
               {
                 detail && detail.facility && detail.facility.room.length > 0 && detail.facility.room[0] !== "" &&
