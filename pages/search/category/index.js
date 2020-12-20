@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import fire from '../../../config/fire-config'
 import HeadPage from '../../../components/HeadPage'
-import InfiniteScroll from "react-infinite-scroll-component"
+import InfiniteScroll from 'react-infinite-scroll-component'
 import CampaignItem from '../../../components/CampaignItem'
+import { BiFilterAlt } from 'react-icons/bi'
+import Child from '../../../components/Child'
 class Detail extends React.Component {
     constructor(props) {
         super(props)
@@ -11,7 +13,8 @@ class Detail extends React.Component {
             collectionLength: 0,
             more: true,
             data: [],
-            last: {}
+            last: {},
+            isFilter: false
         }
         this.fetchMoreData = this.fetchMoreData.bind(this)
     }
@@ -31,6 +34,23 @@ class Detail extends React.Component {
             this.setState({ data, last })
         })
         docRef.get().catch(err => console.log(err))
+    }
+    toggleFilter = () => {
+        const { isFilter } = this.state
+        this.setState({ isFilter: !isFilter })
+        const elementTop = this.gate.offsetTop;
+        window.scrollTo(0, elementTop);
+    }
+    myCallback = (dataFromChild) => {
+        const dt = fire.firestore().collection('kosts')
+            .where('category', '==', dataFromChild.category)
+            .where('location.province', '==', dataFromChild.province)
+        dt.onSnapshot(snapshot => {
+            const data = snapshot.docs.map(doc => ({
+                ...doc.data()
+            }))
+            this.setState({ data, isFilter: true })
+        })
     }
     fetchMoreData() {
         const { limitPerPage, last, data, collectionLength } = this.state
@@ -52,23 +72,38 @@ class Detail extends React.Component {
         } else {
             this.setState({ more: false })
         }
-    };
+    }
     render() {
-        const { data, more } = this.state;
+        const { data, more, isFilter } = this.state;
         return (
             <div className="main-layout">
-                <HeadPage title={`Semua Kost & Kontrakan`} />
-                <InfiniteScroll
-                    dataLength={data.length}
-                    next={this.fetchMoreData}
-                    hasMore={more}
-                    loader={<div className="py-3 text-center">Loading data...</div>}
-                >
-                    <div className="grid grid-cols-2 gap-3 mx-3 my-3">
-                        {data.map((item, index) => <CampaignItem key={index} item={item} />
-                        )}
-                    </div>
-                </InfiniteScroll>
+                <HeadPage title={`Semua Kost & Kontrakan`} ref={elem => (this.gate = elem)} />
+                <div className="sticky top-0 text-center">
+                    <button onClick={this.toggleFilter} className="bg-indigo-700 w-max text-white font-bold px-2 mt-2 rounded-full border">
+                        <BiFilterAlt className="inline mb-1 mr-2" />Saring</button>
+                </div>
+                {
+                    isFilter && <Child callbackFromParent={this.myCallback} />
+                }
+                {
+                    !isFilter ?
+                        <InfiniteScroll
+                            dataLength={data.length}
+                            next={this.fetchMoreData}
+                            hasMore={more}
+                            loader={<div className="py-3 text-center">Loading data...</div>}
+                        >
+                            <div className="grid grid-cols-2 gap-3 mx-3 my-3">
+                                {data.map((item, index) => <CampaignItem key={index} item={item} />
+                                )}
+                            </div>
+                        </InfiniteScroll>
+                        :
+                        <div className="grid grid-cols-2 gap-3 mx-3 my-3">
+                            {data.map((item, index) => <CampaignItem key={index} item={item} />
+                            )}
+                        </div>
+                }
             </div>
         )
     }
