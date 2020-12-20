@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
-import { shape } from 'prop-types'
+import { shape, string } from 'prop-types'
 import Link from 'next/link'
 import Currency from './Currency'
 import Generateslug from '../utils/Generateslug'
 import { BiMap } from 'react-icons/bi'
-class AreaItem extends Component {
+class CampaignItem extends Component {
     render() {
-        const { item } = this.props
+        const { item, customStyle } = this.props
         return (
             <Link href={Generateslug(item.title)}>
-                <div className="rounded-xl overflow-hidden border mr-3 mb-2">
+                <div className={`rounded-xl overflow-hidden border ${customStyle}`}>
                     <img src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} style={{ maxWidth: 'unset' }} />
                     <div className="px-2 py-3 text-center">
                         <div className="px-2 text-xl font-bold">{Currency(item.start_price, false)}</div>
@@ -36,10 +36,12 @@ class AreaItem extends Component {
         )
     }
 }
-AreaItem.propTypes = {
-    item: shape({})
+CampaignItem.propTypes = {
+    item: shape({}),
+    customStyle: string
 }
-AreaItem.defaultProps = {
-    item: null
+CampaignItem.defaultProps = {
+    item: null,
+    customStyle: null
 }
-export default AreaItem;
+export default CampaignItem;

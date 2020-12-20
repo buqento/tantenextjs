@@ -65,7 +65,7 @@ class Campaign extends React.Component {
                                             }
                                         )
                                         .slice(0, 10)
-                                        .map((item, index) => <CampaignItem key={index} item={item} />)
+                                        .map((item, index) => <CampaignItem key={index} item={item} customStyle="mr-3 mb-2" />)
                                 }
                             </div>
                     }
@@ -76,7 +76,6 @@ class Campaign extends React.Component {
 }
 Campaign.propTypes = {
     filter: string
-
 }
 Campaign.defaultProps = {
     filter: null

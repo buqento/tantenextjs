@@ -49,7 +49,7 @@ class Feeds extends React.Component {
                             <div className="flex ml-3">
                                 {
                                     !load && data && data
-                                        .map((item, index) => <CampaignItem key={index} item={item} />)
+                                        .map((item, index) => <CampaignItem key={index} item={item} customStyle="mr-3 mb-2" />)
                                 }
                             </div>
                     }

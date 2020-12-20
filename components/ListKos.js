@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { arrayOf, shape, string } from 'prop-types'
-import Link from 'next/link'
-import Currency from './Currency'
-import Generateslug from '../utils/Generateslug'
+import CampaignItem from './CampaignItem'
 
 class ListKos extends Component {
     render() {
@@ -35,33 +33,7 @@ class ListKos extends Component {
                         data && data.length > 0 &&
                         <>
                             {
-                                listData.map((item, index) =>
-                                    <div key={index}>
-                                        <Link href={`https://tantekos.com/${Generateslug(item.title)}`}>
-                                            <div className="h-full border rounded-xl overflow-hidden">
-                                                <img className="w-full" src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} />
-                                                <div className="px-3 py-3 text-center">
-                                                    <div className="px-2 text-xl font-bold">{Currency(item.start_price, false)}</div>
-                                                    <div className="text-current leading-tight clamp-3"><small>{item.title}</small></div>
-                                                    <div>
-                                                        {
-                                                            item.facility.room.includes("AC") &&
-                                                            <span className="rounded text-xs font-semibold inline-block px-1 text-green-700 border mr-1">AC</span>
-                                                        }
-                                                        {
-                                                            item.facility.room.includes("Wifi") &&
-                                                            <span className="rounded text-xs font-semibold inline-block px-1 text-green-700 border mr-1">WiFi</span>
-                                                        }
-                                                        {
-                                                            item.facility.room.includes("Kamar Mandi Dalam") &&
-                                                            <span className="rounded text-xs font-semibold inline-block px-1 text-green-700 border">KM. Dalam</span>
-                                                        }
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </Link>
-                                    </div>
-                                )
+                                listData.map((item, index) => <CampaignItem key={index} item={item} />)
                             }
                         </>
                     }
