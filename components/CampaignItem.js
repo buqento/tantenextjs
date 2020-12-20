@@ -8,7 +8,7 @@ class CampaignItem extends Component {
     render() {
         const { item, customStyle } = this.props
         return (
-            <Link href={Generateslug(item.title)}>
+            <Link href={`/${Generateslug(item.title)}`}>
                 <div className={`rounded-xl overflow-hidden border ${customStyle}`}>
                     <img src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} style={{ maxWidth: 'unset' }} />
                     <div className="px-2 py-3 text-center">
