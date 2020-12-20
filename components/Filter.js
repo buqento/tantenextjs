@@ -1,7 +1,7 @@
 import React from 'react'
 import Generateslug from '../utils/Generateslug'
 import { DtProvinsi } from '../utils/modals/Provinsi'
-class Search extends React.Component {
+class Filter extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -74,4 +74,4 @@ class Search extends React.Component {
         </>
     }
 }
-export default Search;
+export default Filter;

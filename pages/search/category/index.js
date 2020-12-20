@@ -4,7 +4,7 @@ import HeadPage from '../../../components/HeadPage'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import CampaignItem from '../../../components/CampaignItem'
 import { BiFilterAlt } from 'react-icons/bi'
-import Child from '../../../components/Child'
+import Filter from '../../../components/Filter'
 class Detail extends React.Component {
     constructor(props) {
         super(props)
@@ -15,7 +15,8 @@ class Detail extends React.Component {
             data: [],
             last: {},
             isFilter: false,
-            showFilterForm: false
+            showFilterForm: false,
+            dataCallback: null
         }
         this.fetchMoreData = this.fetchMoreData.bind(this)
     }
@@ -42,15 +43,15 @@ class Detail extends React.Component {
         const elementTop = this.gate.offsetTop;
         window.scrollTo(0, elementTop);
     }
-    myCallback = (dataFromChild) => {
+    filterCallback = (dataCallback) => {
         const dt = fire.firestore().collection('kosts')
-            .where('category', '==', dataFromChild.category)
-            .where('location.province', '==', dataFromChild.province)
+            .where('category', '==', dataCallback.category)
+            .where('location.province', '==', dataCallback.province)
         dt.onSnapshot(snapshot => {
             const data = snapshot.docs.map(doc => ({
                 ...doc.data()
             }))
-            this.setState({ data, isFilter: true, showFilterForm: false })
+            this.setState({ data, isFilter: true, showFilterForm: false, dataCallback })
         })
     }
     fetchMoreData() {
@@ -75,15 +76,15 @@ class Detail extends React.Component {
         }
     }
     render() {
-        const { data, more, isFilter, showFilterForm } = this.state;
+        const { data, more, isFilter, showFilterForm, dataCallback } = this.state;
         return (
             <div className="main-layout">
-                <HeadPage title={`Semua Kost & Kontrakan`} ref={elem => (this.gate = elem)} />
+                <HeadPage title={`${dataCallback ? dataCallback.category+' di '+ dataCallback.province : 'Semua Kost & Kontrakan'}`} ref={elem => (this.gate = elem)} />
                 <div className="sticky top-0 text-center z-40">
                     <button onClick={this.toggleFilter} className="bg-indigo-700 w-max text-white px-2 py-2 mt-3 rounded-full focus:outline-none">
                         <BiFilterAlt className="inline mb-1 mr-1" />Saring</button>
                 </div>
-                {showFilterForm && <Child callbackFromParent={this.myCallback} />}
+                {showFilterForm && <Filter callbackFromParent={this.filterCallback} />}
                 {
                     !isFilter ?
                         <InfiniteScroll
