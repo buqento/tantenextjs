@@ -16,7 +16,7 @@ export default function Index() {
       </div>
       <div className="m-3">
         <span className="text-uppercase text-current font-bold">Terbaru</span>
-        <span className="float-right text-indigo-700"><a href="/search/category">Lihat Semua<BiChevronRight size={28} className="inline ml-1 mb-1" /></a></span>
+        <span className="float-right text-indigo-700"><a href="/search">Lihat Semua<BiChevronRight size={28} className="inline ml-1 mb-1" /></a></span>
       </div>
       <div className="border-b-8 border-gray-200">
         <Feeds />

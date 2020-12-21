@@ -22,5 +22,7 @@ export const Campus = [
     { id: 21, slug: 'politeknik-negeri-bali', name: 'Politeknik Negeri Bali', province: 'Bali' },
     { id: 22, slug: 'politeknik-atk-yogyakarta', name: 'Politeknik ATK Yogyakarta', province: 'Yogyakarta' },
     { id: 23, slug: 'sekolah-tinggi-ilmu-kesehatan-akbidyo', name: 'Sekolah Tinggi Ilmu Kesehatan AKBIDYO', province: 'Yogyakarta' },
-    { id: 24, slug: 'institut-seni-indonesia-yogyakarta', name: 'Institut Seni Indonesia Yogyakarta', province: 'Yogyakarta' }
+    { id: 24, slug: 'institut-seni-indonesia-yogyakarta', name: 'Institut Seni Indonesia Yogyakarta', province: 'Yogyakarta' },
+    { id: 25, slug: 'stikes-wira-medika-bali', name: 'STIKes Wira Medika Bali', province: 'Bali' },
+    { id: 26, slug: 'institut-pariwisata-dan-bisnis-internasional', name: 'Institut Pariwisata dan Bisnis Internasional', province: 'Bali' }
 ]

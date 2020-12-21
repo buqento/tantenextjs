@@ -1,10 +1,10 @@
 import React, { useRef } from 'react'
-import fire from '../../../config/fire-config'
-import HeadPage from '../../../components/HeadPage'
+import fire from '../../config/fire-config'
+import HeadPage from '../../components/HeadPage'
 import InfiniteScroll from 'react-infinite-scroll-component'
-import CampaignItem from '../../../components/CampaignItem'
+import CampaignItem from '../../components/CampaignItem'
 import { BiFilterAlt } from 'react-icons/bi'
-import Filter from '../../../components/Filter'
+import Filter from '../../components/Filter'
 class Detail extends React.Component {
     constructor(props) {
         super(props)
@@ -47,6 +47,7 @@ class Detail extends React.Component {
         const dt = fire.firestore().collection('kosts')
             .where('category', '==', dataCallback.category)
             .where('location.province', '==', dataCallback.province)
+            .orderBy('date_modified', 'desc')
         dt.onSnapshot(snapshot => {
             const data = snapshot.docs.map(doc => ({
                 ...doc.data()
