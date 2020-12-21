@@ -22,7 +22,10 @@ class FooterDetail extends Component {
             <div className="sticky flex bottom-0 bg-gray-100 p-1 w-100">
                 <div className="flex-auto pl-2 pr-4">
                     <div className="text-xs text-gray-700">Harga {data.category} Mulai</div>
-                    <div className="text-2xl font-bold">{Currency(data.start_price)}</div>
+                    <div>
+                        <span className="text-2xl font-bold">{Currency(data.price.start_from)}</span>
+                        <span className="text-xs text-gray-700">/{data.price.duration}</span>
+                    </div>
                 </div>
                 <div className="mr-2 text-gray-700 text-center self-center">
                     {

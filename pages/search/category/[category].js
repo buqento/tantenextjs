@@ -78,7 +78,7 @@ class Detail extends React.Component {
                                     <div className="h-full rounded-xl overflow-hidden border">
                                         <img className="w-full" src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} />
                                         <div className="px-3 py-3 text-center">
-                                            <div className="px-2 text-xl font-bold">{Currency(item.start_price, false)}</div>
+                                            <div className="px-2 text-xl font-bold">{Currency(item.price.start_from, false)}</div>
                                             <div>
                                                 {item.type[0]}
                                             </div>
