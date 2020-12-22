@@ -1,20 +1,24 @@
 import React, { Component } from 'react'
-import { BiChevronLeft } from 'react-icons/bi'
+import { BiChevronLeft, BiSearch, BiSearchAlt } from 'react-icons/bi'
 import { string, bool } from 'prop-types'
 import Router from 'next/router'
 class HeadPage extends Component {
     render() {
         const { nohead, page, title, style } = this.props;
         return (
-            <div className={`flex p-2 text-gray-700 font-bold ${page === 'home' && 'text-2xl'}`}>
+            <div className={`bg-white p-3 text-gray-700 font-bold ${page === 'home' && 'sticky top-0 text-2xl border-bottom'}`}>
                 {
                     page !== 'home' &&
-                    <div className="mr-3" onClick={page === 'detail' ? () => Router.push('/') : () => Router.back()}>
-                        <BiChevronLeft size={40} />
-                    </div>
+                    <span onClick={page === 'detail' ? () => Router.push('/') : () => Router.back()}>
+                        <BiChevronLeft size={40} className="inline pb-1 mr-3" />
+                    </span>
                 }
+                {!nohead ? <span>{title}</span> : <span className={style}>{title}</span>}
                 {
-                    !nohead ? <div className="self-center">{title}</div> : <h1 className={style}>{title}</h1>
+                    page === 'home' &&
+                    <div className="inline p-1 border rounded-full float-right">
+                        <a href="/search"><BiSearchAlt size={30} className="text-indigo-700" /></a>
+                    </div>
                 }
             </div>
         )

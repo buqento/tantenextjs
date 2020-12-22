@@ -27,7 +27,7 @@ class Feeds extends React.Component {
     render() {
         const { data, load, skeletonArr } = this.state;
         return (
-            <div className="my-3">
+            <div className="mb-3">
                 <DragScroll className="scroll-section flex">
                     {
                         load ?

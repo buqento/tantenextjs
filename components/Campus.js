@@ -5,7 +5,7 @@ import Generateslug from '../utils/Generateslug'
 class ComponentCampus extends Component {
     render() {
         return (
-            <div className="container grid grid-cols-2 gap-3 my-3">
+            <div className="container grid grid-cols-2 gap-3">
                 {
                     Campus
                         .sort(() => .5 - Math.random())
