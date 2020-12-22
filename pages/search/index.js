@@ -44,11 +44,23 @@ class Detail extends React.Component {
         window.scrollTo(0, elementTop);
     }
     filterCallback = (dataCallback) => {
+        console.log(dataCallback);
         const dt = fire.firestore().collection('kosts')
-            .where('category', '==', dataCallback.category)
-            .where('location.province', '==', dataCallback.province)
-            .orderBy('date_modified', 'desc')
-        dt.onSnapshot(snapshot => {
+        let conditions
+        if (dataCallback.facilityRoom === '---Semua---') {
+            conditions = dt
+                .where('category', '==', dataCallback.category)
+                .where('location.province', '==', dataCallback.province)
+                .where('location.district', '==', dataCallback.district)
+            // .orderBy('date_modified', 'desc')
+        } else {
+            conditions = dt
+                .where('category', '==', dataCallback.category)
+                .where('location.province', '==', dataCallback.province)
+                .where('location.district', '==', dataCallback.district)
+                .where('facility.room', 'array-contains', dataCallback.facilityRoom)
+        }
+        conditions.onSnapshot(snapshot => {
             const data = snapshot.docs.map(doc => ({
                 ...doc.data()
             }))
@@ -78,32 +90,41 @@ class Detail extends React.Component {
     }
     render() {
         const { data, more, isFilter, showFilterForm, dataCallback } = this.state;
+        console.log(isFilter);
+        console.log(showFilterForm);
+        let titleHead = 'Semua Kost & Kontrakan'
+        if (isFilter) {
+            titleHead = 'Saring Pencarian Data'
+        }
+        if (dataCallback) {
+            titleHead = dataCallback.category + ' di ' + dataCallback.province + ', ' + dataCallback.district
+        }
         return (
             <div className="main-layout">
-                <HeadPage title={`${dataCallback ? dataCallback.category+' di '+ dataCallback.province : 'Semua Kost & Kontrakan'}`} ref={elem => (this.gate = elem)} />
-                <div className="sticky top-0 text-center z-40">
-                    <button onClick={this.toggleFilter} className="bg-indigo-700 w-max text-white px-2 py-2 mt-3 rounded-full focus:outline-none">
-                        <BiFilterAlt className="inline mb-1 mr-1" />Saring</button>
-                </div>
-                {showFilterForm && <Filter callbackFromParent={this.filterCallback} />}
+                <HeadPage title={titleHead} ref={elem => (this.gate = elem)} />
+                {
+                    <div className="fixed inset-x-0 bottom-0 mb-3 text-center z-40">
+                        <button onClick={this.toggleFilter} className={`shadow-lg bg-${!isFilter ? 'indigo' : 'green'}-700 w-max text-white px-2 py-2 mt-3 rounded-full hover:bg-green-700 focus:outline-none`}>
+                            <BiFilterAlt className="inline mb-1 mr-1" />Saring</button>
+                    </div>
+                }
+                {isFilter && <Filter callbackFromParent={this.filterCallback} />}
                 {
                     !isFilter ?
                         <InfiniteScroll
                             dataLength={data.length}
                             next={this.fetchMoreData}
                             hasMore={more}
-                            loader={<div className="py-3 text-center">Loading data...</div>}
+                            loader={<div className="py-3 text-center"></div>}
                         >
-                            <div className="grid grid-cols-2 gap-3 mx-3 my-3">
+                            <div className="grid grid-cols-2 gap-3 mx-3 mb-3">
                                 {data.map((item, index) => <CampaignItem key={index} item={item} />
                                 )}
                             </div>
                         </InfiniteScroll>
                         :
-                        <div className="grid grid-cols-2 gap-3 mx-3 my-3">
-                            {data.map((item, index) => <CampaignItem key={index} item={item} />
-                            )}
-                        </div>
+                        !showFilterForm && data.length > 0 && <div className="grid grid-cols-2 gap-3 mx-3 my-3">{data.map((item, index) => <CampaignItem key={index} item={item} />
+                        )}</div>
                 }
             </div>
         )

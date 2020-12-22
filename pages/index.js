@@ -11,9 +11,7 @@ export default function Index() {
   return (
     <Layout>
       <Header />
-      <div className="shadow-sm p-1 m-2">
-        <Provinsi />
-      </div>
+      <Provinsi />
       <div className="sticky top-0 py-3 px-3 bg-white">
         <span className="text-uppercase text-current font-bold">Terbaru</span>
         <span className="float-right text-indigo-700"><a href="/search">Lihat Semua<BiChevronRight size={28} className="inline ml-1 mb-1" /></a></span>
@@ -21,14 +19,12 @@ export default function Index() {
       <div>
         <Feeds />
       </div>
-      <div className="shadow-sm m-2">
-        <div className="sticky top-0 py-3 px-3 bg-white">
-          <span className="text-uppercase text-current font-bold">Dekat Kampus</span>
-          <span className="float-right text-indigo-700"><a href="/area/kampus">Lihat Semua<BiChevronRight size={28} className="inline ml-1 mb-1" /></a></span>
-        </div>
-        <div className="pb-3">
-          <Campus />
-        </div>
+      <div className="sticky top-0 py-3 px-3 bg-white">
+        <span className="text-uppercase text-current font-bold">Dekat Kampus</span>
+        <span className="float-right text-indigo-700"><a href="/area/kampus">Lihat Semua<BiChevronRight size={28} className="inline ml-1 mb-1" /></a></span>
+      </div>
+      <div className="pb-3">
+        <Campus />
       </div>
       <div className="m-3 mb-n2">
         <span className="text-uppercase text-current font-bold">Grup Facebook</span>
