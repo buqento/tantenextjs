@@ -104,7 +104,7 @@ class Detail extends React.Component {
                 <HeadPage title={titleHead} ref={elem => (this.gate = elem)} />
                 {
                     <div className="fixed inset-x-0 bottom-0 mb-3 text-center z-40">
-                        <button onClick={this.toggleFilter} className={`shadow-lg bg-${!isFilter ? 'indigo' : 'green'}-700 w-max text-white px-2 py-2 mt-3 rounded-full hover:bg-green-700 focus:outline-none`}>
+                        <button onClick={this.toggleFilter} className={`shadow-lg bg-${!isFilter ? 'indigo text-white' : 'white text-black'}-700 w-max px-2 py-2 mt-3 rounded-full hover:bg-white-700 focus:outline-none`}>
                             <BiFilterAlt className="inline mb-1 mr-1" />Saring</button>
                     </div>
                 }
