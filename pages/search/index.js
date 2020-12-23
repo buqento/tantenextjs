@@ -44,16 +44,24 @@ class Detail extends React.Component {
         window.scrollTo(0, elementTop);
     }
     filterCallback = (dataCallback) => {
-        console.log(dataCallback);
         const dt = fire.firestore().collection('kosts')
         let conditions
-        if (dataCallback.facilityRoom === '---Semua---') {
+        if (dataCallback.district === '---Semua---' && dataCallback.facilityRoom === '---Semua---') {
+            conditions = dt
+                .where('category', '==', dataCallback.category)
+                .where('location.province', '==', dataCallback.province)
+        } else if (dataCallback.district !== '---Semua---' && dataCallback.facilityRoom === '---Semua---') {
+
             conditions = dt
                 .where('category', '==', dataCallback.category)
                 .where('location.province', '==', dataCallback.province)
                 .where('location.district', '==', dataCallback.district)
-            // .orderBy('date_modified', 'desc')
-        } else {
+        } else if (dataCallback.district === '---Semua---' && dataCallback.facilityRoom !== '---Semua---') {
+            conditions = dt
+                .where('category', '==', dataCallback.category)
+                .where('location.province', '==', dataCallback.province)
+                .where('facility.room', 'array-contains', dataCallback.facilityRoom)
+        } else if (dataCallback.district !== '---Semua---' && dataCallback.facilityRoom !== '---Semua---') {
             conditions = dt
                 .where('category', '==', dataCallback.category)
                 .where('location.province', '==', dataCallback.province)
@@ -90,21 +98,22 @@ class Detail extends React.Component {
     }
     render() {
         const { data, more, isFilter, showFilterForm, dataCallback } = this.state;
-        console.log(isFilter);
-        console.log(showFilterForm);
         let titleHead = 'Semua Kost & Kontrakan'
         if (isFilter) {
             titleHead = 'Saring Pencarian Data'
         }
-        if (dataCallback) {
-            titleHead = dataCallback.category + ' di ' + dataCallback.province + ', ' + dataCallback.district
+        if (dataCallback && dataCallback.district === '---Semua---') {
+            titleHead = dataCallback.category + ' di ' + dataCallback.province
+        }
+        if (dataCallback && dataCallback.district !== '---Semua---') {
+            titleHead = dataCallback.category + ' di ' + dataCallback.district + ', ' + dataCallback.province
         }
         return (
             <div className="main-layout">
                 <HeadPage title={titleHead} ref={elem => (this.gate = elem)} />
                 {
                     <div className="fixed inset-x-0 bottom-0 mb-3 text-center z-40">
-                        <button onClick={this.toggleFilter} className={`shadow-lg ${!isFilter ? 'bg-indigo-700 text-white' : 'bg-white-700 text-black'} w-max px-2 py-2 mt-3 rounded-full hover:bg-white-700 focus:outline-none`}>
+                        <button onClick={this.toggleFilter} className={`${!isFilter ? 'bg-indigo-700 text-white' : 'bg-white text-black border'} shadow-lg w-max px-2 py-2 mt-3 rounded-full hover:bg-white-700 focus:outline-none`}>
                             <BiFilterAlt className="inline mb-1 mr-1" />Saring</button>
                     </div>
                 }

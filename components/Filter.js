@@ -8,7 +8,7 @@ class Filter extends React.Component {
         this.state = {
             category: 'Kost',
             province: 'Yogyakarta',
-            district: 'Sleman',
+            district: '---Semua---',
             facilityRoom: '---Semua---',
             ac: true,
             data: [],
@@ -51,7 +51,7 @@ class Filter extends React.Component {
                         </select>
                     </div>
                     <div className="mb-2">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="province">Area</label>
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="province">Wilayah</label>
                         <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state"
                             name="province"
                             value={province}
@@ -70,11 +70,12 @@ class Filter extends React.Component {
                         </select>
                     </div>
                     <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="district">district</label>
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="district">Area</label>
                         <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state"
                             name="district"
                             value={district}
                             onChange={this.handleChange}>
+                            <option>---Semua---</option>
                             {
                                 DtArea
                                     .sort(function (a, b) {
