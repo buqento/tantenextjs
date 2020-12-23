@@ -39,7 +39,7 @@ class Filter extends React.Component {
         return <>
             {
                 showHideForm &&
-                <form className="bg-white px-3 py-2 border-bottom" onSubmit={this.handleSearch}>
+                <form className="bg-white px-3 pb-2 border-bottom" onSubmit={this.handleSearch}>
                     <div className="mb-2">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="category">Kategori</label>
                         <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state"
@@ -69,7 +69,7 @@ class Filter extends React.Component {
                             }
                         </select>
                     </div>
-                    <div className="mb-4">
+                    <div className="mb-2">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="district">Area</label>
                         <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state"
                             name="district"
@@ -121,7 +121,7 @@ class Filter extends React.Component {
                         onChange={this.toggleAc}
                     /> AC
                 </div> */}
-                    <button className="bg-indigo-700 hover:bg-indigo-600 focus:outline-none text-white font-bold py-2 px-3 my-2 mr-3 rounded" type="submit">Terapkan</button>
+                    <button className="bg-indigo-700 hover:bg-indigo-600 focus:outline-none text-white font-bold py-2 px-3 my-2 mr-3 rounded w-full uppercase" type="submit">Terapkan</button>
                 </form>
             }
         </>
