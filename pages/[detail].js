@@ -138,7 +138,7 @@ class Detail extends React.Component {
           </nav>
           <div className="container mt-2 mb-3">
             <div>
-              <small className="text-gray-700">{moment(detail.date_modified).fromNow()}</small>
+              <small className="text-gray-700">{moment(detail.date_modified).lang('id').fromNow()}</small>
               <h1 className="mt-0 mb-3 text-xl capitalize">{detail.title}</h1>
               <div className="mb-3">
                 <p className="font-bold">Deskripsi {detail.category}</p>
