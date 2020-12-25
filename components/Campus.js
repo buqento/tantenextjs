@@ -9,7 +9,7 @@ class ComponentCampus extends Component {
                 {
                     Campus
                         .sort(() => .5 - Math.random())
-                        .slice(0, 8)
+                        .slice(0, 10)
                         .map((item, index) =>
                             <Link key={index} href={`area/kampus/${Generateslug(item.name)}`}>
                                 <div className="rounded-xl bg-gray-200 hover:bg-indigo-700 hover:text-white border text-center py-3 px-2 align-middle text-gray-900">
