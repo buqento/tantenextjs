@@ -17,7 +17,7 @@ export default function Index() {
           <div className="rounded-xl align-middle border rouded text-center text-indigo-700 uppercase mb-3 py-2 mx-3">Lihat Semua</div>
         </a>
       </div>
-      <div className="sticky top-0 py-3 px-3 bg-white">
+      <div className="sticky top-0 py-3 px-3 bg-white z-10">
         <span className="text-uppercase text-current font-bold">Terbaru</span>
       </div>
       <div className="border-bottom">
@@ -26,7 +26,7 @@ export default function Index() {
           <div className="rounded-xl align-middle border rouded text-center text-indigo-700 uppercase mb-3 py-2 mx-3">Lihat Semua</div>
         </a>
       </div>
-      <div className="sticky top-0 py-3 px-3 bg-white">
+      <div className="sticky top-0 py-3 px-3 bg-white z-10">
         <span className="text-uppercase text-current font-bold">Dekat Kampus</span>
       </div>
       <div className="border-bottom">
