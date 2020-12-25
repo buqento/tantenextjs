@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { shape } from 'prop-types'
-import { FaPhoneAlt } from 'react-icons/fa';
+import { FaPhoneAlt } from 'react-icons/fa'
 import ReactGa from 'react-ga'
-import Currency from '../components/Currency'
-
+import Cash from '../utils/Cash'
 class FooterDetail extends Component {
     constructor(props) {
         super(props);
@@ -23,7 +22,7 @@ class FooterDetail extends Component {
                 <div className="flex-auto pl-2 pr-4">
                     <div className="text-xs text-gray-700">Harga {data.category} Mulai</div>
                     <div>
-                        <span className="text-2xl font-bold">{Currency(data.price.start_from)}</span>
+                        <span className="text-2xl font-bold">{Cash(data.price.start_from)}</span>
                         <span className="text-xs text-gray-700">/{data.price.duration}</span>
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { shape, string } from 'prop-types'
 import Link from 'next/link'
-import Currency from './Currency'
+import Cash from '../utils/Cash'
 import Generateslug from '../utils/Generateslug'
 import { BiMap } from 'react-icons/bi'
 class CampaignItem extends Component {
@@ -14,7 +14,7 @@ class CampaignItem extends Component {
                     <div className="px-2 pt-2 pb-3 text-center">
                         <div className="px-2 text-xl">
                             <span className="font-bold">
-                                {Currency(item.price.start_from, false)}
+                                {Cash(item.price.start_from, false)}
                             </span>
                             <span className="text-xs text-gray-700">/{item.price.duration}</span>
                         </div>
