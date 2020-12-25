@@ -21,12 +21,6 @@ class Area extends Component {
                             </Link>
                         )
                 }
-                {/* <Link href="area/provinsi/all">
-                    <div key={6} className="text-center pt-1 px-3 text-indigo-700">
-                        <span className="inline">Lihat Semua</span>
-                        <BiChevronRight size={28} className="inline ml-1 mb-1" />
-                    </div>
-                </Link> */}
             </div>
         )
     }

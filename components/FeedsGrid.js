@@ -8,7 +8,7 @@ class FeedsGrid extends React.Component {
         this.state = {
             data: null,
             load: true,
-            skeletonArr: [1, 2, 3]
+            skeletonArr: [1, 2, 3, 4]
         }
     }
     async componentDidMount() {
@@ -19,7 +19,7 @@ class FeedsGrid extends React.Component {
                 id: doc.id,
                 ...doc.data()
             }))
-            this.setState({ data, load: false })
+            this.setState({ data, load: true })
         })
         docRef.get().catch(err => console.log(err))
     }
@@ -29,10 +29,10 @@ class FeedsGrid extends React.Component {
             <div className="mb-3">
                     {
                         load ?
-                            <div className="flex ml-3">
+                            <div className="grid grid-cols-2 gap-3">
                                 {
                                     skeletonArr.map((item, index) =>
-                                        <div key={index} className="rounded-xl overflow-hidden border mr-3 mb-2" style={{ width: '200px' }}>
+                                        <div key={index} className="rounded-xl overflow-hidden border" style={{ width: '200px' }}>
                                             <div className="animate-pulse w-full h-48 bg-gray-300" />
                                             <div className="px-3 py-3">
                                                 <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
