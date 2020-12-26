@@ -188,7 +188,7 @@ class Detail extends React.Component {
                 {
                   detail.contact_us.facebook_url !== '' &&
                   <div className="pt-3 text-sm text-indigo-700">
-                    <a href={detail.contact_us.facebook_url} target="blank" rel="noreferrer">* Hubungi pengiklan <FaExternalLinkAlt className="ml-1 inline" /> </a>
+                    <a href={detail.contact_us.facebook_url} target="blank" rel="noreferrer">* Lihat informasi pengiklan <FaExternalLinkAlt className="mb-1 inline" /> </a>
                   </div>
                 }
                 <small>
@@ -196,6 +196,11 @@ class Detail extends React.Component {
                 </small>
               </div>
               <ListKosOthers data={otherdata} detail={detail} />
+              <div className="border-top">
+                <a href="/search">
+                  <div className="rounded-xl align-middle border rouded text-center text-indigo-700 uppercase my-3 py-2 mx-3">Lihat {detail && detail.category} Lainnya</div>
+                </a>
+              </div>
             </div>
           </div>
           <FooterDetail data={detail} />

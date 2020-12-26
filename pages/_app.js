@@ -5,13 +5,14 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'swiper/swiper.scss'
 import '../styles/globals.css'
 import '../styles/styles.css'
+import { BiLoaderCircle } from 'react-icons/bi'
 
 function MyApp({ Component, pageProps }) {
 
   const [loading, setLoading] = React.useState(false);
   React.useEffect(() => {
     const start = () => { setLoading(true) }
-    const end = () => { setLoading(false) }
+    const end = () => { setLoading(true) }
     Router.events.on("routeChangeStart", start);
     Router.events.on("routeChangeComplete", end);
     Router.events.on("routeChangeError", end);
@@ -25,7 +26,12 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       {
-        loading ? <div className="container-center text-center">Loading...</div>
+        loading ?
+          <div className="container-center text-center">
+            <div className="text-center">
+              <div><BiLoaderCircle size={22} className="animate-spin inline mr-1 mb-1" />Sedang diproses</div>
+            </div>
+          </div>
           : <Component {...pageProps} />
       }
     </>
