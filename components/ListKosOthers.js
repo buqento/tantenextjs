@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { arrayOf, shape } from 'prop-types'
 import Link from 'next/link'
-import Currency from './Currency'
+import Cash from '../utils/Cash'
 import Generateslug from '../utils/Generateslug'
 class ListKosOthers extends Component {
     render() {
@@ -24,7 +24,9 @@ class ListKosOthers extends Component {
                                         <div className="w-full overflow-hidden mb-3">
                                             <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${kost.images[0]}`} alt={kost.title} className="float-left mr-2" />
                                             <div className="mx-3">
-                                                <div className="text-lg">{Currency(kost.price.start_from, false)}</div>
+                                                <div className="text-lg">
+                                                    {Cash(kost.price.start_from)}/<span className="text-xs">{kost.price.duration}</span>
+                                                </div>
                                                 <div className="leading-none clamp-3"><small>{kost.title}</small></div>
                                                 <div>
                                                     {
