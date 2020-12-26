@@ -26,5 +26,7 @@ export const Campus = [
     { id: 25, slug: 'stikes-wira-medika-bali', name: 'STIKes Wira Medika Bali', province: 'Bali' },
     { id: 26, slug: 'institut-pariwisata-dan-bisnis-internasional', name: 'Institut Pariwisata dan Bisnis Internasional', province: 'Bali' },
     { id: 27, slug: 'universitas-aisyiyah-yogyakarta', name: 'Universitas Aisyiyah Yogyakarta', province: 'Yogyakarta' },
-    { id: 28, slug: 'universitas-respati-yogyakarta', name: 'Universitas Respati Yogyakarta', province: 'Yogyakarta' }
+    { id: 28, slug: 'universitas-respati-yogyakarta', name: 'Universitas Respati Yogyakarta', province: 'Yogyakarta' },
+    { id: 29, slug: 'universitas-sarjanawiyata-tamansiswa', name: 'Universitas Sarjanawiyata Tamansiswa', province: 'Yogyakarta' },
+    { id: 30, slug: 'Universitas Mercu Buana Meruya', name: 'Universitas Mercu Buana Meruya', province: 'Jakarta Barat' }
 ]
