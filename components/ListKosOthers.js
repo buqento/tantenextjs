@@ -14,7 +14,7 @@ class ListKosOthers extends Component {
                     listData.length > 0 &&
                     <div className="border-t-8 border-gray-200 mt-3">
                         <div className="py-3 font-bold">
-                            {`${detail.category} lain di ${detail.location.district}`}
+                            {`${detail.category} lain di ${detail.location.district}, ${detail.location.province}`}
                         </div>
                         {
                             listData
