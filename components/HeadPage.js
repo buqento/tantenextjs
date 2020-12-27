@@ -6,14 +6,14 @@ class HeadPage extends Component {
     render() {
         const { nohead, page, title, style } = this.props;
         return (
-            <div className={`bg-white p-3 text-gray-700 font-bold ${page === 'home' && 'sticky top-0 text-2xl border-bottom'}`}>
+            <div className={`bg-white pt-3 pr-3 pb-3 text-gray-700 font-bold ${page === 'home' && 'sticky top-0 text-2xl border-bottom'}`}>
                 {
                     page !== 'home' &&
                     <span onClick={page === 'detail' ? () => Router.push('/') : () => Router.back()}>
-                        <BiChevronLeft size={40} className="inline pb-1 mr-3" />
+                        <BiChevronLeft size={40} className="inline pb-1 mr-1" />
                     </span>
                 }
-                {!nohead ? <span>{title}</span> : <span className={style}>{title}</span>}
+                {!nohead ? <h1 className="inline">{title}</h1> : <h1 className={style}>{title}</h1>}
                 {
                     page === 'home' &&
                     <div className="inline p-1 border rounded-full float-right">

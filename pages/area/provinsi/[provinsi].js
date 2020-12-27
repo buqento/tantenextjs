@@ -21,7 +21,7 @@ class Detail extends React.Component {
     }
     render() {
         const { slug } = this.props;
-        const areaTitle = slug !== 'all' ? Titlecase(slug) : 'Indonesia'
+        const areaTitle = slug !== 'all' ? 'Area ' + Titlecase(slug) : 'Semua Wilayah'
         return (
             <>
                 <NextHead>
@@ -46,7 +46,7 @@ class Detail extends React.Component {
                     <link rel="canonical" content={`https://tantekos.com/area/provinsi/${slug}`} />
                 </NextHead>
                 <div className="main-layout">
-                    <HeadPage title={`Kost & Kontrakan di ${areaTitle}`} />
+                    <HeadPage title={areaTitle} />
                     <div className="container divide-y divide-gray-400">
                         {
                             slug != 'all' ?
@@ -82,7 +82,7 @@ class Detail extends React.Component {
                                         <div className="tab w-full overflow-hidden" key={index}>
                                             <input className="absolute opacity-0" id={index} type="radio" name="tabs2" />
                                             <label htmlFor={index} className="block pt-3 pb-2 leading-normal cursor-pointer uppercase" onClick={() => this.handleCollapse(index)}>
-                                            <BiMap className="inline mr-1 mb-1" /><span>{itemProvinsi.title}</span></label>
+                                                <BiMap className="inline mr-1 mb-1" /><span>{itemProvinsi.title}</span></label>
                                             <div className="tab-content overflow-hidden leading-normal">
                                                 {
                                                     DtArea
