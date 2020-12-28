@@ -18,7 +18,7 @@ export const Campus = [
     { id: 17, slug: 'universitas-muhammadiyah-yogyakarta', name: 'Universitas Muhammadiyah Yogyakarta', province: 'Yogyakarta' },
     { id: 18, slug: 'universitas-pembangunan-nasional-veteran-yogyakarta', name: 'Universitas Pembangunan Nasional Veteran Yogyakarta', province: 'Yogyakarta' },
     { id: 19, slug: 'institut-teknologi-yogyakarta', name: 'Institut Teknologi Yogyakarta', province: 'Yogyakarta' },
-    { id: 20, slug: 'sekolah-tinggi-pariwisata-ambarrukmo-aogyakarta', name: 'Sekolah Tinggi Pariwisata Ambarrukmo Yogyakarta', province: 'Yogyakarta' },
+    { id: 20, slug: 'sekolah-tinggi-pariwisata-ambarrukmo-yogyakarta', name: 'Sekolah Tinggi Pariwisata Ambarrukmo Yogyakarta', province: 'Yogyakarta' },
     { id: 21, slug: 'politeknik-negeri-bali', name: 'Politeknik Negeri Bali', province: 'Bali' },
     { id: 22, slug: 'politeknik-atk-yogyakarta', name: 'Politeknik ATK Yogyakarta', province: 'Yogyakarta' },
     { id: 23, slug: 'sekolah-tinggi-ilmu-kesehatan-akbidyo', name: 'Sekolah Tinggi Ilmu Kesehatan AKBIDYO', province: 'Yogyakarta' },
@@ -28,5 +28,6 @@ export const Campus = [
     { id: 27, slug: 'universitas-aisyiyah-yogyakarta', name: 'Universitas Aisyiyah Yogyakarta', province: 'Yogyakarta' },
     { id: 28, slug: 'universitas-respati-yogyakarta', name: 'Universitas Respati Yogyakarta', province: 'Yogyakarta' },
     { id: 29, slug: 'universitas-sarjanawiyata-tamansiswa', name: 'Universitas Sarjanawiyata Tamansiswa', province: 'Yogyakarta' },
-    { id: 30, slug: 'Universitas Mercu Buana Meruya', name: 'Universitas Mercu Buana Meruya', province: 'Jakarta Barat' }
+    { id: 30, slug: 'universitas-mercu-buana-meruya', name: 'Universitas Mercu Buana Meruya', province: 'Jakarta Barat' },
+    { id: 31, slug: 'stie-ykpn-yogyakarta', name: 'STIE YKPN Yogyakarta', province: 'Jakarta Barat' }
 ]

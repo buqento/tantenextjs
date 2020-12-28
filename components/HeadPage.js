@@ -6,7 +6,7 @@ class HeadPage extends Component {
     render() {
         const { nohead, page, title, style } = this.props;
         return (
-            <div className={`bg-white pt-3 pr-3 pb-3 text-gray-700 font-bold ${page === 'home' && 'sticky top-0 text-2xl border-bottom'}`}>
+            <div className={`bg-white pt-3 pr-3 mb-3 text-gray-700 font-bold clamp-1 ${page === 'home' && 'sticky top-0 text-2xl border-bottom'}`}>
                 {
                     page !== 'home' &&
                     <span onClick={page === 'detail' ? () => Router.push('/') : () => Router.back()}>
@@ -16,8 +16,8 @@ class HeadPage extends Component {
                 {!nohead ? <h1 className="inline">{title}</h1> : <h1 className={style}>{title}</h1>}
                 {
                     page === 'home' &&
-                    <div className="inline p-1 border rounded-full float-right">
-                        <a href="/search"><BiSearchAlt size={30} className="text-indigo-700" /></a>
+                    <div className="inline p-1 mb-2 border rounded-full float-right">
+                        <a href="/search"><BiSearchAlt size={24} className="text-indigo-700" /></a>
                     </div>
                 }
             </div>

@@ -11,7 +11,7 @@ class CampaignItem extends Component {
             <Link href={`/${Generateslug(item.title)}`}>
                 <div className={`rounded-xl overflow-hidden border ${customStyle}`}>
                     <img src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} style={{ maxWidth: 'unset' }} />
-                    <div className="px-2 pt-2 pb-3 text-center">
+                    <div className="px-2 pt-2 pb-2 text-center">
                         <div className="px-2 text-xl">
                             <span className="font-bold">
                                 {Cash(item.price.start_from, false)}
@@ -35,7 +35,7 @@ class CampaignItem extends Component {
                                 <span className="rounded text-xs font-semibold inline-block px-1 text-green-700 border">KM. Dalam</span>
                             }
                         </div>
-                        <div className="border-top pt-2 mt-3">
+                        <div className="border-top pt-2 mt-2">
                             {
                                 item.type.includes("Campur") &&
                                 <span className="rounded text-xs font-semibold inline-block px-1 text-blue-700 border mr-1 uppercase">Campur</span>

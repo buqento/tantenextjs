@@ -114,7 +114,7 @@ class CampusId extends React.Component {
                     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureAreaPage) }} />
                 </NextHead>
                 <div className="main-layout">
-                    <HeadPage title={`Kost & Kontrakan Dekat ${campusName}`} />
+                    <HeadPage title={`Dekat ${campusName}`} />
                     <ListKos data={data} />
                 </div>
             </>
