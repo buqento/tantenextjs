@@ -35,6 +35,27 @@ class CampaignItem extends Component {
                                 <span className="rounded text-xs font-semibold inline-block px-1 text-green-700 border">KM. Dalam</span>
                             }
                         </div>
+                        {
+                            item.type[0] !== "" &&
+                            <div className="border-top pt-2 mt-3">
+                                {
+                                    item.type.includes("Campur") &&
+                                    <span className="rounded text-xs font-semibold inline-block px-1 text-blue-700 border mr-1 uppercase">Campur</span>
+                                }
+                                {
+                                    item.type.includes("Putri") &&
+                                    <span className="rounded text-xs font-semibold inline-block px-1 text-blue-700 border mr-1 uppercase">Putri</span>
+                                }
+                                {
+                                    item.type.includes("Putra") &&
+                                    <span className="rounded text-xs font-semibold inline-block px-1 text-blue-700 border mr-1 uppercase">Putra</span>
+                                }
+                                {
+                                    item.type.includes("Pasutri") &&
+                                    <span className="rounded text-xs font-semibold inline-block px-1 text-blue-700 border mr-1 uppercase">Pasutri</span>
+                                }
+                            </div>
+                        }
                     </div>
                 </div>
             </Link>
