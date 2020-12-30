@@ -71,6 +71,7 @@ class Detail extends React.Component {
         }
         conditions.onSnapshot(snapshot => {
             const data = snapshot.docs.map(doc => ({
+                id: doc.id,
                 ...doc.data()
             }))
             this.setState({ data, isFilter: true, showFilterForm: false, dataCallback })
