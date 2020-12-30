@@ -4,15 +4,29 @@ import Link from 'next/link'
 import Cash from '../utils/Cash'
 import Generateslug from '../utils/Generateslug'
 import { BiMap } from 'react-icons/bi'
+import { MdFavorite } from 'react-icons/md'
 class CampaignItem extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { like: false }
+    }
+    componentDidMount() {
+        const { item } = this.props
+        let userFav = localStorage.getItem('favorites')
+        let userdataFav
+        if (userFav === null) { userdataFav = [] } else { userdataFav = JSON.parse(userFav) }
+        const findFav = userdataFav.filter(i => i.id === item.id).length
+        if (findFav > 0) this.setState({ like: true })
+    }
     render() {
+        const { like } = this.state;
         const { item, customStyle } = this.props
         const handleLastView = (item) => {
             let lastView = localStorage.getItem('lastview')
             let data
             if (lastView === null) { data = [] } else { data = JSON.parse(lastView) }
             const findData = data.filter(i => i.id === item.id).length
-            if (data.length > 5) {data.shift()}
+            if (data.length > 5) { data.shift() }
             if (findData === 0) {
                 data.push(item)
                 localStorage.setItem('lastview', JSON.stringify(data))
@@ -25,6 +39,7 @@ class CampaignItem extends Component {
                     <div className="px-2 pt-2 pb-2 text-center">
                         <div className="px-2 text-xl">
                             <span className="font-bold">
+                                {like && <MdFavorite className="inline text-pink-500 mb-1 mr-1" />}
                                 {Cash(item.price.start_from, false)}
                             </span>
                             <span className="text-xs text-gray-700">/{item.price.duration}</span>

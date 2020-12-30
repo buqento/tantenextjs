@@ -63,7 +63,7 @@ class FooterDetail extends Component {
                     </div>
                 </div>
                 <div className="mr-2 text-gray-700 text-center self-center">
-                    <button className={`${like ? 'text-pink-500' : 'text-black'} bg-white font-bold py-2 px-2 border rounded mr-1 uppercase focus:outline-none`} onClick={like ? () => this.handleUnfavorite() : () => this.handleFavorite()}>{like ? <MdFavorite className="mr-1 inline" size={22} /> : <MdFavoriteBorder className="mr-1 inline" size={22} />}Suka</button>
+                    <button className={`${like ? 'text-pink-500' : 'text-black'} bg-white font-bold py-2 px-2 border rounded mr-1 uppercase focus:outline-none`} onClick={like ? () => this.handleUnfavorite() : () => this.handleFavorite()}>{like ? <MdFavorite className="mr-1 mb-1 inline" size={22} /> : <MdFavoriteBorder className="mr-1 mb-1 inline" size={22} />}Suka</button>
                     {
                         data.contact_us && data.contact_us.phone !== '' ? <button className="bg-indigo-700 hover:bg-indigo-600 text-white font-bold py-2 px-2 rounded uppercase focus:outline-none" onClick={() => this.handleCall(data.contact_us.phone)}><FaPhoneAlt className="mr-2 inline" />Telepon</button> : <button className="bg-indigo-500 text-white font-bold py-2 px-2 rounded opacity-50 cursor-not-allowed uppercase focus:outline-none"><FaPhoneAlt className="mr-2 inline" />Telepon</button>
                     }

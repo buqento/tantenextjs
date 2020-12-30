@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { BiChevronLeft, BiSearch, BiSearchAlt } from 'react-icons/bi'
+import { BiChevronLeft, BiSearchAlt } from 'react-icons/bi'
+import { MdFavoriteBorder } from 'react-icons/md'
 import { string, bool } from 'prop-types'
 import Router from 'next/router'
 class HeadPage extends Component {
@@ -16,9 +17,14 @@ class HeadPage extends Component {
                 {!nohead ? <h1 className="inline">{title}</h1> : <h1 className={style}>{title}</h1>}
                 {
                     page === 'home' &&
-                    <div className="inline p-1 mb-2 border rounded-full float-right">
-                        <a href="/search"><BiSearchAlt size={24} className="text-indigo-700" /></a>
-                    </div>
+                    <>
+                        <div className="inline p-1 ml-2 mb-2 border rounded-full float-right">
+                            <a href="/search"><BiSearchAlt size={24} className="text-indigo-700" /></a>
+                        </div>
+                        <div className="inline p-1 mb-2 border rounded-full float-right">
+                            <a href="/favorites"><MdFavoriteBorder size={24} className="text-pink-500" /></a>
+                        </div>
+                    </>
                 }
             </div>
         )
