@@ -215,6 +215,7 @@ export const getServerSideProps = async (context) => {
     .where('slug', '==', context.query.detail)
     .get()
     .then(doc => ({
+      id: doc.docs[0].id,
       ...doc.docs[0].data(),
     }))
     .catch(err => console.log(err))

@@ -7,9 +7,20 @@ import { BiMap } from 'react-icons/bi'
 class CampaignItem extends Component {
     render() {
         const { item, customStyle } = this.props
+        const handleLastView = (item) => {
+            let lastView = localStorage.getItem('lastview')
+            let data
+            if (lastView === null) { data = [] } else { data = JSON.parse(lastView) }
+            const findData = data.filter(i => i.id === item.id).length
+            if (data.length > 5) {data.shift()}
+            if (findData === 0) {
+                data.push(item)
+                localStorage.setItem('lastview', JSON.stringify(data))
+            }
+        }
         return (
             <Link href={`/${Generateslug(item.title)}`}>
-                <div className={`rounded-xl overflow-hidden border ${customStyle}`}>
+                <div className={`rounded-xl overflow-hidden border ${customStyle}`} onClick={() => handleLastView(item)}>
                     <img src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} style={{ maxWidth: 'unset' }} />
                     <div className="px-2 pt-2 pb-2 text-center">
                         <div className="px-2 text-xl">
