@@ -49,20 +49,6 @@ class CampaignItem extends Component {
                         </div>
                         <div>
                             {
-                                item.facility.room.includes("AC") &&
-                                <span className="rounded text-xs font-semibold inline-block px-1 text-green-700 border mr-1">AC</span>
-                            }
-                            {
-                                item.facility.room.includes("Wifi") &&
-                                <span className="rounded text-xs font-semibold inline-block px-1 text-green-700 border mr-1">WiFi</span>
-                            }
-                            {
-                                item.facility.room.includes("Kamar Mandi Dalam") &&
-                                <span className="rounded text-xs font-semibold inline-block px-1 text-green-700 border">KM. Dalam</span>
-                            }
-                        </div>
-                        <div className="border-top pt-2 mt-2">
-                            {
                                 item.type.includes("Campur") &&
                                 <span className="rounded text-xs font-semibold inline-block px-1 text-blue-700 border mr-1 uppercase">Campur</span>
                             }
@@ -81,6 +67,20 @@ class CampaignItem extends Component {
                             {
                                 item.type.includes("LV") &&
                                 <span className="rounded text-xs font-semibold inline-block px-1 text-blue-700 border mr-1 uppercase">LV</span>
+                            }
+                        </div>
+                        <div className="border-top pt-1 mt-2">
+                            {
+                                item.facility.room.includes("AC") &&
+                                <span className="rounded text-xs font-semibold inline-block px-1 text-green-700 border mr-1">AC</span>
+                            }
+                            {
+                                item.facility.room.includes("Wifi") &&
+                                <span className="rounded text-xs font-semibold inline-block px-1 text-green-700 border mr-1">WiFi</span>
+                            }
+                            {
+                                item.facility.room.includes("Kamar Mandi Dalam") &&
+                                <span className="rounded text-xs font-semibold inline-block px-1 text-green-700 border">KM. Dalam</span>
                             }
                         </div>
                     </div>
