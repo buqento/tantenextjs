@@ -21,7 +21,23 @@ class Detail extends React.Component {
                 {
                     data.length > 0 ?
                         <div className="grid grid-cols-2 gap-3 mx-3 mb-3">
-                            {data.map((item, index) => <CampaignItem key={index} item={item} />)}
+                            {
+                                data
+                                    .sort(
+                                        function compare(a, b) {
+                                            const dtModifiedA = b.date_modified;
+                                            const dtModifiedB = a.date_modified;
+                                            let comparison = 0;
+                                            if (dtModifiedA > dtModifiedB) {
+                                                comparison = 1;
+                                            } else if (dtModifiedA < dtModifiedB) {
+                                                comparison = -1;
+                                            }
+                                            return comparison;
+                                        }
+                                    )
+                                    .map((item, index) => <CampaignItem key={index} item={item} />)
+                            }
                         </div>
                         :
                         <div className="container-center text-center">
