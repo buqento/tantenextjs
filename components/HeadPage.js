@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { BiChevronLeft, BiSearchAlt } from 'react-icons/bi'
-import { MdFavoriteBorder } from 'react-icons/md'
+import { MdFavorite } from 'react-icons/md'
 import { string, bool } from 'prop-types'
 import Router from 'next/router'
 class HeadPage extends Component {
@@ -22,7 +22,7 @@ class HeadPage extends Component {
                             <a href="/search"><BiSearchAlt size={24} className="text-indigo-700" /></a>
                         </div>
                         <div className="inline p-1 mb-2 border rounded-full float-right">
-                            <a href="/favorites"><MdFavoriteBorder size={24} className="text-pink-500" /></a>
+                            <a href="/favorites"><MdFavorite size={24} className="text-pink-500" /></a>
                         </div>
                     </>
                 }

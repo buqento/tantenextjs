@@ -133,7 +133,7 @@ class Detail extends React.Component {
             <ol className="list-reset py-3 pl-3 flex">
               <li className="px-2 mr-2 bg-indigo-700 rounded-full border text-white uppercase" onClick={() => Router.push('/')}>Home</li>
               <li>/</li>
-              <li className="px-2 mr-2 clamp-1">{detail.title}</li>
+              <li className="px-2 mr-2 clamp-1">{detail.name}</li>
             </ol>
           </nav>
           <div className="container mt-2 mb-3">
