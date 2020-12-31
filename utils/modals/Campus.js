@@ -29,5 +29,7 @@ export const Campus = [
     { id: 28, slug: 'universitas-respati-yogyakarta', name: 'Universitas Respati Yogyakarta', province: 'Yogyakarta' },
     { id: 29, slug: 'universitas-sarjanawiyata-tamansiswa', name: 'Universitas Sarjanawiyata Tamansiswa', province: 'Yogyakarta' },
     { id: 30, slug: 'universitas-mercu-buana-meruya', name: 'Universitas Mercu Buana Meruya', province: 'Jakarta Barat' },
-    { id: 31, slug: 'stie-ykpn-yogyakarta', name: 'STIE YKPN Yogyakarta', province: 'Jakarta Barat' }
+    { id: 31, slug: 'stie-ykpn-yogyakarta', name: 'STIE YKPN Yogyakarta', province: 'Yogyakarta' },
+    { id: 32, slug: 'universitas-kristen-immanuel', name: 'Universitas Kristen Immanuel', province: 'Yogyakarta' },
+    { id: 33, slug: 'itekes-bali', name: 'ITEKES Bali', province: 'Yogyakarta' }
 ]
