@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { DtProvinsi } from '../utils/modals/Provinsi'
 import Link from 'next/link'
 import Generateslug from '../utils/Generateslug'
-import { BiChevronRight, BiMap } from 'react-icons/bi'
+import { BiMap } from 'react-icons/bi'
 class Area extends Component {
     render() {
         return (

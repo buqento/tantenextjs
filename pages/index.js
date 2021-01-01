@@ -1,19 +1,17 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import Header from '../components/Header'
-import Provinsi from '../components/Provinsi'
 import Campus from '../components/Campus'
 import GroupSocial from '../components/GroupSocial'
-import { BiChevronRight } from "react-icons/bi"
 import FeedsGrid from '../components/FeedsGrid'
-
+import Kota from '../components/Kota'
 export default function Index() {
   return (
     <Layout>
       <Header />
       <div className="border-bottom">
-        <Provinsi />
-        <a href="area/provinsi/all">
+        <Kota />
+        <a href="area/kota/all">
           <div className="rounded-xl align-middle border rouded text-center text-indigo-700 uppercase mb-3 py-2 mx-3">Lihat Semua</div>
         </a>
       </div>
