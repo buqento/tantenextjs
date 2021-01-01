@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
-import InfiniteScroll from "react-infinite-scroll-component";
+import InfiniteScroll from "react-infinite-scroll-component"
+import fire from '../configurations/firebase'
 const style = {
     height: 30,
     border: "1px solid green",
     margin: 6,
     padding: 8
 };
-import fire from '../config/firebase'
-
 class ListKost extends Component {
     constructor(props) {
         super(props);

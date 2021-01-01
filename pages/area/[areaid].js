@@ -5,7 +5,7 @@ import HeadPage from '../../components/HeadPage'
 import ListKos from '../../components/ListKos'
 import NextHead from 'next/head'
 import Generateslug from '../../utils/Generateslug'
-import fire from '../../config/firebase'
+import fire from '../../configurations/firebase'
 import Titlecase from '../../utils/Titlecase'
 
 class Detail extends React.Component {

@@ -9,7 +9,7 @@ import FooterDetail from '../components/FooterDetail'
 import ReactGa from 'react-ga'
 import moment from 'moment'
 import ListKosOthers from '../components/ListKosOthers'
-import fire from '../config/firebase'
+import fire from '../configurations/firebase'
 
 class Detail extends React.Component {
   constructor(props) {

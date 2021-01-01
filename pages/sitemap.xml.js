@@ -1,7 +1,7 @@
 import React from "react";
 import { DtArea } from '../utils/modals/Area'
 import Generateslug from '../utils/Generateslug'
-import fire from '../config/firebase'
+import fire from '../configurations/firebase'
 
 const sitemapXml = (dataArea, dataKostKontrakan) => {
   let latestPost = 0;
