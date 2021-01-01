@@ -1,6 +1,6 @@
 import React from 'react'
 import CampaignItem from './CampaignItem'
-import fire from '../config/firebase'
+import fire from '../configurations/firebase'
 
 class FeedsGrid extends React.Component {
     constructor(props) {

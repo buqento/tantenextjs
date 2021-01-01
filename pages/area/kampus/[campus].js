@@ -4,7 +4,7 @@ import { string } from 'prop-types'
 import HeadPage from '../../../components/HeadPage'
 import ListKos from '../../../components/ListKos'
 import Generateslug from '../../../utils/Generateslug'
-import fire from '../../../config/firebase'
+import fire from '../../../configurations/firebase'
 import { Campus } from '../../../utils/modals/Campus'
 
 class CampusId extends React.Component {

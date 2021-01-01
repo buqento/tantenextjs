@@ -1,6 +1,6 @@
 import React from 'react'
 import NextHead from 'next/head'
-import fire from '../../config/firebase'
+import fire from '../../configurations/firebase'
 import HeadPage from '../../components/HeadPage'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import CampaignItem from '../../components/CampaignItem'
