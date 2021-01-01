@@ -1,7 +1,7 @@
 import React from 'react'
 import DragScroll from './DragScroll'
 import CampaignItem from './CampaignItem'
-import fire from '../config/fire-config'
+import fire from '../config/firebase'
 
 class Feeds extends React.Component {
     constructor(props) {
