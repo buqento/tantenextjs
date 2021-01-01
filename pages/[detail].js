@@ -129,8 +129,8 @@ class Detail extends React.Component {
         detail &&
         <div className="main-layout">
           <Slide imagesData={detail.images} imageTitle={detail.title} />
-          <nav className="sticky top-0 z-10 bg-white text-gray-700 border-bottom">
-            <ol className="list-reset py-3 pl-3 flex">
+          <nav className="sticky top-0 z-10 bg-white border-bottom">
+            <ol className="font-bold list-reset py-3 pl-3 flex">
               <li className="px-2 mr-2 bg-indigo-700 rounded-full border text-white uppercase" onClick={() => Router.push('/')}>Home</li>
               <li>/</li>
               <li className="px-2 mr-2 clamp-1">{detail.name}</li>
