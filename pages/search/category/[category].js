@@ -1,5 +1,5 @@
 import React from 'react'
-import fire from '../../../config/fire-config'
+import fire from '../../../config/firebase'
 import { string } from 'prop-types'
 import HeadPage from '../../../components/HeadPage'
 import Firstupper from '../../../utils/Firstupper'

@@ -6,7 +6,7 @@ const style = {
     margin: 6,
     padding: 8
 };
-import fire from '../config/fire-config'
+import fire from '../config/firebase'
 
 class ListKost extends Component {
     constructor(props) {
