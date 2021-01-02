@@ -10,7 +10,7 @@ import ReactGa from 'react-ga'
 import moment from 'moment'
 import ListKosOthers from '../components/ListKosOthers'
 import fire from '../configurations/firebase'
-
+import Facilities from '../components/Facilities'
 class Detail extends React.Component {
   constructor(props) {
     super(props)
@@ -148,27 +148,21 @@ class Detail extends React.Component {
                 detail && detail.facility && detail.facility.room.length > 0 && detail.facility.room[0] !== "" &&
                 <div className="mb-3">
                   <p className="font-bold">Fasilitas Kamar</p>
-                  <ul className="mx-4">
-                    {detail.facility.room.map((item, index) => <li className="list-disc" key={index}>{item}</li>)}
-                  </ul>
+                  <Facilities items={detail.facility.room} />
                 </div>
               }
               {
                 detail && detail.facility && detail.facility.bathroom.length > 0 && detail.facility.bathroom[0] !== "" &&
                 <div className="mb-3">
                   <p className="font-bold">Fasilitas Kamar Mandi</p>
-                  <ul className="mx-4">
-                    {detail.facility.bathroom.map((item, index) => <li className="list-disc" key={index}>{item}</li>)}
-                  </ul>
+                  <Facilities items={detail.facility.bathroom} />
                 </div>
               }
               {
                 detail && detail.facility && detail.facility.share.length > 0 && detail.facility.share[0] !== "" &&
                 <div className="mb-3">
                   <p className="font-bold">Fasilitas Bersama</p>
-                  <ul className="mx-4">
-                    {detail.facility.share.map((item, index) => <li className="list-disc" key={index}>{item}</li>)}
-                  </ul>
+                  <Facilities items={detail.facility.share} />
                 </div>
               }
               {
@@ -181,7 +175,7 @@ class Detail extends React.Component {
                 </div>
               }
               <div className="mb-3">
-                <p className="pb-1 font-bold">Lokasi {detail.category} <small>({detail.location && detail.location.district}, {detail.location && detail.location.province})</small></p>
+                <p className="pb-1 font-bold">Lokasi {detail.category} <small>({detail.location && detail.location.district}, {detail.location && detail.location.city})</small></p>
                 <Peta location={detail && detail.location} />
               </div>
               <div className="border-top mt-3">

@@ -20,7 +20,7 @@ export default function Peta(props) {
             mapboxApiAccessToken="pk.eyJ1IjoiYnVxZW50byIsImEiOiJjanJ5a3p4cDkwZXJiNDlvYXMxcnhud3hhIn0.AhQ-vGYSIo6uTBmQD4MCsA"
             onViewportChange={viewport => { setViewport(viewport) }}
             mapStyle="mapbox://styles/buqento/ckg4bb6cc2hrr19k84gzrs97j"
-            className="rounded-lg"
+            // className="rounded-lg"
         >
             <Marker
                 latitude={lat}

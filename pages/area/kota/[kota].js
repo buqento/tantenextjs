@@ -22,7 +22,6 @@ class Detail extends React.Component {
     }
     render() {
         const { slug } = this.props;
-        console.log(slug);
         const areaTitle = slug !== 'all' ? 'Area ' + Titlecase(slug) : 'Semua Kabupaten & Kota'
         return (
             <>
