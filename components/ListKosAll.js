@@ -54,7 +54,7 @@ class ListKosAll extends Component {
                                                     }
                                                     {
                                                         item.facility.room.includes("Wifi") &&
-                                                        <span className="rounded text-xs font-semibold inline-block px-1 text-indigo-500 border mr-1">WiFi</span>
+                                                        <span className="rounded text-xs font-semibold inline-block px-1 text-indigo-500 border mr-1">Wifi</span>
                                                     }
                                                     {
                                                         item.facility.room.includes("Kamar Mandi Dalam") &&

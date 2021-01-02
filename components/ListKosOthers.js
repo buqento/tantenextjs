@@ -35,7 +35,7 @@ class ListKosOthers extends Component {
                                                     }
                                                     {
                                                         kost.facility.room.includes("Wifi") &&
-                                                        <span className="rounded text-xs font-semibold inline-block px-1 text-green-700 border mr-1">WiFi</span>
+                                                        <span className="rounded text-xs font-semibold inline-block px-1 text-green-700 border mr-1">Wifi</span>
                                                     }
                                                     {
                                                         kost.facility.room.includes("Kamar Mandi Dalam") &&
