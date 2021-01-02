@@ -7,11 +7,13 @@ import { CgSmartHomeWashMachine } from "react-icons/cg";
 class Facilities extends React.Component {
     render() {
         const { items } = this.props;
+        const facility = ['Kamar Mandi Dalam', 'AC', 'Wifi', 'Kasur', 'Lemari Pakaian', 'Meja', 'Kursi', 'Exhaust Fan', 'Kipas Angin', 'TV', 'Shower', 'Kloset Duduk', 'Kloset Jongkok', 'Parkir Mobil', 'Parkir Motor', 'R.Jemur', 'R.Cuci', 'R.Tamu', 'Kamar Mandi Luar', 'Dapur']
         return (
             <div className="grid grid-cols-3 gap-3 mx-3">
                 {
                     items.map((item, index) =>
-                        <div key={index} className="mt-2 ml-n2">
+                        facility.includes(item) &&
+                        < div key={index} className="mt-2 ml-n2" >
                             {/* room */}
                             {item === 'Kamar Mandi Dalam' && <div><FaBath className="inline mb-1 mr-1" />KM.Dalam</div>}
                             {item === 'AC' && <div><MdAcUnit className="inline mb-1 mr-1" />AC</div>}
@@ -33,7 +35,7 @@ class Facilities extends React.Component {
                             {item === 'R. Jemur' && <div><GiPoloShirt className="inline mb-1 mr-1" />R.Jemur</div>}
                             {item === 'R. Cuci' && <div><CgSmartHomeWashMachine className="inline mb-1 mr-1" />R.Cuci</div>}
                             {item === 'R. Tamu' && <div><FaCouch className="inline mb-1 mr-1" />R.Tamu</div>}
-                            {item === 'Kamar Mandi Luar' && <div><FaShower className="inline mb-1 mr-1" />KM.Luar</div>}
+                            {item === 'Kamar Mandi Luar' && <div><FaBath className="inline mb-1 mr-1" />KM.Luar</div>}
                             {item === 'Dapur' && <div><MdKitchen className="inline mb-1 mr-1" />Dapur</div>}
                         </div>
                     )
