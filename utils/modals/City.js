@@ -17,6 +17,7 @@ export const City = [
     { name: 'Denpasar', province: 'Bali' },
     // Maluku
     { name: 'Ambon', province: 'Maluku' },
+    { name: 'Tual', province: 'Maluku' },
     // Papua
     { name: 'Kota Jayapura', province: 'Papua' },
     { name: 'Jayapura', province: 'Papua' },
@@ -43,9 +44,9 @@ export const City = [
     // { name: 'Bogor', province: 'Jawa Barat' },
     { name: 'Depok', province: 'Jawa Barat' },
     // Daerah Istimewa Yogyakarta
-    { name: 'Bantul', province: 'Jogja' },
-    // { name: 'Gunungkidul', province: 'Jogja' },
-    { name: 'Kulon Progo', province: 'Jogja' },
-    { name: 'Sleman', province: 'Jogja' },
-    { name: 'Yogyakarta', province: 'Jogja' }
+    { name: 'Bantul', province: 'Yogyakarta' },
+    // { name: 'Gunungkidul', province: 'Yogyakarta' },
+    { name: 'Kulon Progo', province: 'Yogyakarta' },
+    { name: 'Sleman', province: 'Yogyakarta' },
+    { name: 'Yogyakarta', province: 'Yogyakarta' }
 ]

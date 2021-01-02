@@ -50,22 +50,21 @@ class Detail extends React.Component {
         if (dataCallback.district === '---Semua---' && dataCallback.facilityRoom === '---Semua---') {
             conditions = dt
                 .where('category', '==', dataCallback.category)
-                .where('location.province', '==', dataCallback.province)
+                .where('location.city', '==', dataCallback.city)
         } else if (dataCallback.district !== '---Semua---' && dataCallback.facilityRoom === '---Semua---') {
-
             conditions = dt
                 .where('category', '==', dataCallback.category)
-                .where('location.province', '==', dataCallback.province)
+                .where('location.city', '==', dataCallback.city)
                 .where('location.district', '==', dataCallback.district)
         } else if (dataCallback.district === '---Semua---' && dataCallback.facilityRoom !== '---Semua---') {
             conditions = dt
                 .where('category', '==', dataCallback.category)
-                .where('location.province', '==', dataCallback.province)
+                .where('location.city', '==', dataCallback.city)
                 .where('facility.room', 'array-contains', dataCallback.facilityRoom)
         } else if (dataCallback.district !== '---Semua---' && dataCallback.facilityRoom !== '---Semua---') {
             conditions = dt
                 .where('category', '==', dataCallback.category)
-                .where('location.province', '==', dataCallback.province)
+                .where('location.city', '==', dataCallback.city)
                 .where('location.district', '==', dataCallback.district)
                 .where('facility.room', 'array-contains', dataCallback.facilityRoom)
         }
@@ -101,8 +100,8 @@ class Detail extends React.Component {
     render() {
         const { data, more, isFilter, showFilterForm, dataCallback } = this.state;
         let titleHead = 'Semua Kost & Kontrakan'
-        if (dataCallback && dataCallback.district === '---Semua---') { titleHead = dataCallback.province }
-        if (dataCallback && dataCallback.district !== '---Semua---') { titleHead = dataCallback.district + ', ' + dataCallback.province }
+        if (dataCallback && dataCallback.district === '---Semua---') { titleHead = dataCallback.city }
+        if (dataCallback && dataCallback.district !== '---Semua---') { titleHead = dataCallback.district + ', ' + dataCallback.city }
         return (<>
             <NextHead>
                 <title>Tersedia Kost Dan Kontrakan Murah Semua Di {titleHead}</title>
