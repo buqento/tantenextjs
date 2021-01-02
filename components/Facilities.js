@@ -19,7 +19,7 @@ class Facilities extends React.Component {
                             {item === 'Kursi' && <div><img src="../static/images/icons/chair_icon_149736.png" alt="Kursi" className="inline mr-1" width={24} />Kursi</div>}
                             {item === 'Wifi' && <div><img src="../static/images/icons/wifi-medium-signal-symbol-1_icon-icons.com_56451.png" alt="Wifi" className="inline mr-1" width={22} />Wifi</div>}
                             {item === 'Exhaust Fan' && <div><img src="../static/images/icons/hardware_fan_component_icon_148858.png" alt="Exhaust Fan" className="inline mr-1" width={24} />Exhaust</div>}
-                            {item === 'TV' && <div><img src="https://cdn.icon-icons.com/icons2/1863/PNG/512/live-tv_118973.png" alt="TV" className="inline mr-1" width={24} />TV</div>}
+                            {item === 'TV' && <div><img src="../static/images/icons/live-tv_118973.png" alt="TV" className="inline mr-1" width={24} />TV</div>}
                             {item === 'Kipas Angin' && <div><img src="../static/images/icons/circularfan_118424.png" alt="Kipas Angin" className="inline mr-1" width={24} />Kipas</div>}
                             {/* bathroom */}
                             {item === 'Shower' && <div><img src="../static/images/icons/shower_icon_149724.png" alt="Shower" className="inline mr-1" width={24} />Shower</div>}
