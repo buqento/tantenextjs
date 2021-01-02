@@ -84,7 +84,7 @@ class Detail extends React.Component {
                                         <div className="tab w-full overflow-hidden" key={index}>
                                             <input className="absolute opacity-0" id={index} type="radio" name="tabs2" />
                                             <label htmlFor={index} className="block pt-3 pb-2 leading-normal cursor-pointer uppercase" onClick={() => this.handleCollapse(index)}>
-                                                <BiMap className="inline mr-1 mb-1" /><span>{itemCity.name}</span></label>
+                                                <BiMap className="inline mr-1 mb-1" /><span>{itemCity.name}, {itemCity.province}</span></label>
                                             <div className="tab-content overflow-hidden leading-normal">
                                                 {
                                                     DtArea

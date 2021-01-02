@@ -45,7 +45,7 @@ class CampaignItem extends Component {
                             <span className="text-xs text-gray-700">/{item.price.duration}</span>
                         </div>
                         <div className="text-current leading-none clamp-1">
-                            <BiMap className="inline mr-1" /><span><small>{item.location.district}, {item.location.province}</small></span>
+                            <BiMap className="inline mr-1" /><span><small>{item.location.district}, {item.location.city}</small></span>
                         </div>
                         <div>
                             {
