@@ -77,6 +77,8 @@ class CampaignItem extends Component {
 
                             {item.facility.room.includes("Kasur") && <img src="/../static/images/icons/bed_icon_149738.svg" alt="Kasur" className="inline mr-1" width={18} />}
 
+                            {item.facility.room.includes("Springbed") && <img src="/../static/images/icons/bed_icon_149738.svg" alt="Springbed" className="inline mr-1" width={18} />}
+
                             {item.facility.room.includes("Lemari Pakaian") && <img src="/../static/images/icons/cupboard_icon_149733.svg" alt="Lemari Pakaian" className="inline mr-1" width={16} />}
 
                             {/* {item.facility.room.includes("Meja") && <img src="/../static/images/icons/table_icon_149720.svg" alt="Meja" className="inline mr-1" width={16} />} */}

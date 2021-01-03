@@ -15,6 +15,7 @@ class Facilities extends React.Component {
                             {item === 'Kamar Mandi Dalam' && <div><img src="../static/images/icons/bath_tube_icon_149739.svg" alt="Kamar Mandi Dalam" className="inline mr-1" width={24} />KM.Dalam</div>}
                             {item === 'AC' && <div><img src="../static/images/icons/air_conditioner_icon_149740.svg" alt="AC" className="inline mr-1" width={24} />AC</div>}
                             {item === 'Kasur' && <div><img src="../static/images/icons/bed_icon_149738.svg" alt="Kasur" className="inline mr-1" width={24} />Kasur</div>}
+                            {item === 'Springbed' && <div><img src="../static/images/icons/bed_icon_149738.svg" alt="Springbed" className="inline mr-1" width={24} />Springbed</div>}
                             {item === 'Lemari Pakaian' && <div><img src="../static/images/icons/cupboard_icon_149733.svg" alt="Lemari Pakaian" className="inline mr-1" width={24} />Lemari</div>}
                             {item === 'Meja' && <div><img src="../static/images/icons/table_icon_149720.svg" alt="Meja" className="inline mr-1" width={22} />Meja</div>}
                             {item === 'Kursi' && <div><img src="../static/images/icons/chair_icon_149736.svg" alt="Kursi" className="inline mr-1" width={24} />Kursi</div>}
