@@ -3,7 +3,8 @@ import { arrayOf, shape } from 'prop-types'
 class Facilities extends React.Component {
     render() {
         const { items } = this.props;
-        const facility = ['Kamar Mandi Dalam', 'AC', 'Wifi', 'Kasur', 'Lemari Pakaian', 'Meja', 'Kursi', 'Exhaust Fan', 'Kipas Angin', 'TV', 'Shower', 'Kloset Duduk', 'Kloset Jongkok', 'Parkir Mobil', 'Parkir Motor', 'R. Jemur', 'R. Cuci', 'R. Tamu', 'Kamar Mandi Luar', 'Dapur']
+        console.log(items);
+        const facility = ['Kamar Mandi Dalam', 'AC', 'Wifi', 'Kasur', 'Lemari Pakaian', 'Meja', 'Kursi', 'Exhaust Fan', 'Kipas Angin', 'TV', 'Shower', 'Kloset Duduk', 'Kloset Jongkok', 'Parkir Mobil', 'Parkir Motor', 'R.Jemur', 'R.Cuci', 'R.Tamu', 'Kamar Mandi Luar', 'Dapur']
         return (
             <div className="grid grid-cols-3 gap-3 mx-3">
                 {
@@ -28,9 +29,9 @@ class Facilities extends React.Component {
                             {/* share */}
                             {item === 'Parkir Motor' && <div><img src="../static/images/icons/parking_icon_137324.svg" alt="Parkir Motor" className="inline mr-1" width={24} />P.Motor</div>}
                             {item === 'Parkir Mobil' && <div><img src="../static/images/icons/parking_icon_137324.svg" alt="Parkir Mobil" className="inline mr-1" width={24} />P.Mobil</div>}
-                            {item === 'R. Jemur' && <div><img src="../static/images/icons/wardrobe_4486.png" alt="R.Jemur" className="inline mr-1" width={24} />R.Jemur</div>}
-                            {item === 'R. Cuci' && <div><img src="../static/images/icons/washing_machine_icon_149716.svg" alt="R.Cuci" className="inline mr-1" width={24} />R.Cuci</div>}
-                            {item === 'R. Tamu' && <div><img src="../static/images/icons/chair_icon_149737.svg" alt="R.Tamu" className="inline mr-1" width={24} />R.Tamu</div>}
+                            {item === 'R.Jemur' && <div><img src="../static/images/icons/wardrobe_4486.png" alt="R.Jemur" className="inline mr-1" width={24} />R.Jemur</div>}
+                            {item === 'R.Cuci' && <div><img src="../static/images/icons/washing_machine_icon_149716.svg" alt="R.Cuci" className="inline mr-1" width={24} />R.Cuci</div>}
+                            {item === 'R.Tamu' && <div><img src="../static/images/icons/chair_icon_149737.svg" alt="R.Tamu" className="inline mr-1" width={24} />R.Tamu</div>}
                             {item === 'Kamar Mandi Luar' && <div><img src="../static/images/icons/bath_tube_icon_149739.svg" alt="Kamar Mandi Luar" className="inline mr-1" width={24} />KM.Luar</div>}
                             {item === 'Dapur' && <div><img src="../static/images/icons/-kitchen_90730.svg" alt="Dapur" className="inline mr-1" width={24} />Dapur</div>}
                         </div>

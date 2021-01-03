@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Cash from '../utils/Cash'
 import Generateslug from '../utils/Generateslug'
 import { BiMap } from 'react-icons/bi'
-import { MdFavorite } from 'react-icons/md'
+import { MdStar } from 'react-icons/md'
 class CampaignItem extends Component {
     constructor(props) {
         super(props);
@@ -39,7 +39,7 @@ class CampaignItem extends Component {
                     <div className="px-2 pt-2 pb-2 text-center">
                         <div className="px-2 text-xl">
                             <span className="font-bold">
-                                {like && <MdFavorite className="inline text-pink-500 mb-1 mr-1" />}
+                                {like && <MdStar className="inline text-pink-500 mb-1 mr-1" />}
                                 {Cash(item.price.start_from, false)}
                             </span>
                             <span className="text-xs text-gray-700">/{item.price.duration}</span>

@@ -110,5 +110,6 @@ export const DtArea = [
     { lat_lng: '-7.830142193547411, 110.35674009732247', province: 'Yogyakarta', city: 'Bantul', district: 'Sewon', image: 'ITiANh4.webp' },
     { lat_lng: '-7.820333967580422, 110.36567341176088', province: 'Yogyakarta', city: 'Yogyakarta', district: 'Mantrijeron', image: 'I8wU0sp.webp' },
     { lat_lng: '-7.875289128184601, 110.0830316854075', province: 'Yogyakarta', city: 'Kulon Progo', district: 'Temon', image: 'u4g8OO5.webp' },
-    { lat_lng: '-7.764547124632418, 110.39234037538618', province: 'Yogyakarta', city: 'Sleman', district: 'Sleman', image: 'D8jE9Di.webp' }
+    { lat_lng: '-7.764547124632418, 110.39234037538618', province: 'Yogyakarta', city: 'Sleman', district: 'Sleman', image: 'D8jE9Di.webp' },
+    { lat_lng: '-7.728214605661262, 110.46034324501002', province: 'Yogyakarta', city: 'Sleman', district: 'Kalasan', image: 'WWp233O.webp' }
 ];
