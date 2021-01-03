@@ -33,5 +33,6 @@ export const Campus = [
     { id: 32, slug: 'universitas-kristen-immanuel', name: 'Universitas Kristen Immanuel', province: 'Yogyakarta' },
     { id: 33, slug: 'itekes-bali', name: 'ITEKES Bali', province: 'Yogyakarta' },
     { id: 34, slug: 'universitas-krisnadwipayana', name: 'Universitas Krisnadwipayana', province: 'Jawa Barat' },
-    { id: 35, slug: 'instiper-yogyakarta', name: 'INSTIPER Yogyakarta', province: 'Yogyakarta' }
+    { id: 35, slug: 'instiper-yogyakarta', name: 'INSTIPER Yogyakarta', province: 'Yogyakarta' },
+    { id: 36, slug: 'universitas-aisyiyah-yogyakarta', name: 'Universitas Aisyiyah Yogyakarta', province: 'Yogyakarta' }
 ]

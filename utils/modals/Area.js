@@ -78,6 +78,7 @@ export const DtArea = [
     // { lat_lng: ', ', province: 'Bali', city: 'Ambon', district: 'tembuku', image: 'QSGnE9M.webp' },
     // { lat_lng: ', ', province: 'Bali', city: 'Ambon', district: 'ubud', image: 'QSGnE9M.webp' },
     { lat_lng: '-6.1825053347203704, 106.76768614065962', province: 'Jakarta', city: 'Jakarta Barat', district: 'Kebon Jeruk', image: 'UTvGu65.webp' },
+    { lat_lng: '-6.160811759777173, 106.78986472948934', province: 'Jakarta', city: 'Jakarta Barat', district: 'Grogol Petamburan', image: 'hOfNpsz.webp' },
     { lat_lng: '-6.206725260936711, 106.75932410783896', province: 'Jakarta', city: 'Jakarta Barat', district: 'Kembangan', image: 'QNYAhVu.webp' },
     { lat_lng: '-6.195094, 106.943008', province: 'Jakarta', city: 'Jakarta Timur', district: 'Cakung', image: 'kudalZc.webp' },
     { lat_lng: '-6.215143, 106.887876', province: 'Jakarta', city: 'Jakarta Timur', district: 'Jatinegara', image: 'Djwgo8r.webp' },
