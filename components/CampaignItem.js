@@ -92,26 +92,26 @@ class CampaignItem extends Component {
                             {item.facility.room.includes("Kipas Angin") && <img src="/../static/images/icons/circularfan_118424.svg" alt="Kipas Angin" className="inline mr-1" width={18} />}
 
                             {/* bathroom */}
-                            {item.facility.room.includes("Shower") && <img src="/../static/images/icons/shower_icon_149718.svg" alt="Shower" className="inline mr-1" width={18} />}
+                            {item.facility.bathroom.includes("Shower") && <img src="/../static/images/icons/shower_icon_149724.svg" alt="Shower" className="inline mr-1" width={18} />}
 
-                            {item.facility.room.includes("Kloset Duduk") && <img src="/../static/images/icons/toilet_wc_icon_149719.svg" alt="Kloset Duduk" className="inline mr-1" width={18} />}
+                            {item.facility.bathroom.includes("Kloset Duduk") && <img src="/../static/images/icons/toilet_wc_icon_149719.svg" alt="Kloset Duduk" className="inline mr-1" width={18} />}
 
-                            {item.facility.room.includes("Kloset Jongkok") && <img src="/../static/images/icons/toilet_squad_icon_149721.svg" alt="Kloset Jongkok" className="inline mr-1" width={18} />}
+                            {item.facility.bathroom.includes("Kloset Jongkok") && <img src="/../static/images/icons/toilet_squad_icon_149721.svg" alt="Kloset Jongkok" className="inline mr-1" width={18} />}
 
                             {/* share */}
-                            {item.facility.room.includes("Parkir Motor") && <img src="/../static/images/icons/parking_icon_137324.svg" alt="Parkir Motor" className="inline mr-1" width={18} />}
+                            {item.facility.share.includes("Parkir Motor") && <img src="/../static/images/icons/parking_icon_137324.svg" alt="Parkir Motor" className="inline mr-1" width={18} />}
 
-                            {item.facility.room.includes("Parkir Mobil") && <img src="/../static/images/icons/parking_icon_137324.svg" alt="Parkir Mobil" className="inline mr-1" width={18} />}
+                            {item.facility.share.includes("Parkir Mobil") && <img src="/../static/images/icons/parking_icon_137324.svg" alt="Parkir Mobil" className="inline mr-1" width={18} />}
 
-                            {item.facility.room.includes("R.Jemur") && <img src="/../static/images/icons/wardrobe_4486.png" alt="R.Jemur" className="inline mr-1" width={18} />}
+                            {item.facility.share.includes("R.Jemur") && <img src="/../static/images/icons/wardrobe_4486.png" alt="R.Jemur" className="inline mr-1" width={18} />}
 
-                            {item.facility.room.includes("R.Cuci") && <img src="/../static/images/icons/washing_machine_icon_149716.svg" alt="R.Cuci" className="inline mr-1" width={18} />}
+                            {item.facility.share.includes("R.Cuci") && <img src="/../static/images/icons/washing_machine_icon_149716.svg" alt="R.Cuci" className="inline mr-1" width={18} />}
 
-                            {item.facility.room.includes("R.Tamu") && <img src="/../static/images/icons/chair_icon_149737.svg" alt="R.Tamu" className="inline mr-1" width={18} />}
+                            {item.facility.share.includes("R.Tamu") && <img src="/../static/images/icons/chair_icon_149737.svg" alt="R.Tamu" className="inline mr-1" width={18} />}
 
-                            {item.facility.room.includes("Kamar Mandi Luar") && <img src="/../static/images/icons/bath_tube_icon_149739.svg" alt="Kamar Mandi Luar" className="inline mr-1" width={18} />}
+                            {item.facility.share.includes("Kamar Mandi Luar") && <img src="/../static/images/icons/bath_tube_icon_149739.svg" alt="Kamar Mandi Luar" className="inline mr-1" width={18} />}
 
-                            {item.facility.room.includes("Dapur") && <img src="/../static/images/icons/-kitchen_90730.svg" alt="Dapur" className="inline mr-1" width={18} />}
+                            {item.facility.share.includes("Dapur") && <img src="/../static/images/icons/-kitchen_90730.svg" alt="Dapur" className="inline mr-1" width={18} />}
 
                         </div>
                     </div>

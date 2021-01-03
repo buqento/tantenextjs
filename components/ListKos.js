@@ -5,7 +5,7 @@ import CampaignItem from './CampaignItem'
 class ListKos extends Component {
     render() {
         const { data, category } = this.props
-        const skeletonArr = [1, 2, 3, 4, 5]
+        const skeletonArr = [1, 2, 3, 4, 5, 6]
         let listData = [];
         if (category !== null) {
             listData = data.filter(i => i.category === category)
