@@ -34,5 +34,7 @@ export const Campus = [
     { id: 33, slug: 'itekes-bali', name: 'ITEKES Bali', province: 'Yogyakarta' },
     { id: 34, slug: 'universitas-krisnadwipayana', name: 'Universitas Krisnadwipayana', province: 'Jawa Barat' },
     { id: 35, slug: 'instiper-yogyakarta', name: 'INSTIPER Yogyakarta', province: 'Yogyakarta' },
-    { id: 36, slug: 'universitas-aisyiyah-yogyakarta', name: 'Universitas Aisyiyah Yogyakarta', province: 'Yogyakarta' }
+    { id: 36, slug: 'universitas-tarumanagara', name: 'Universitas Tarumanagara', province: 'Jakarta Barat' },
+    { id: 37, slug: 'universitas-kristen-krida-wacana', name: 'Universitas Kristen Krida Wacana', province: 'Jakarta Barat' },
+    { id: 38, slug: 'universitas-trisakti', name: 'Universitas Trisakti', province: 'Jakarta Barat' }
 ]
