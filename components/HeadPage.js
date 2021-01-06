@@ -11,14 +11,14 @@ class HeadPage extends Component {
                 {
                     page !== 'home' &&
                     <span onClick={page === 'detail' ? () => Router.push('/') : () => Router.back()}>
-                        <BiChevronLeft size={40} className="inline pb-1 mr-1" />
+                        <BiChevronLeft size={40} className="inline mb-1 mr-1" />
                     </span>
                 }
                 {!nohead ? <h1 className="inline">{title}</h1> : <h1 className={style}>{title}</h1>}
                 {
                     page === 'home' &&
                     <>
-                        <div className="inline p-1 ml-2 mb-2 border rounded-full float-right">
+                        <div className="inline p-1 ml-2 mb-3 border rounded-full float-right">
                             <a href="/search"><BiSearchAlt size={24} className="text-indigo-700" /></a>
                         </div>
                         <div className="inline p-1 mb-2 border rounded-full float-right">

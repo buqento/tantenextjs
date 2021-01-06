@@ -8,12 +8,12 @@ class FeedsGrid extends React.Component {
         this.state = {
             data: null,
             load: true,
-            skeletonArr: [1, 2, 3, 4]
+            skeletonArr: [1, 2, 3, 4, 5, 6]
         }
     }
     async componentDidMount() {
         const docRef = await fire
-            .firestore().collection('kosts').orderBy('date_modified', 'desc').limit(4)
+            .firestore().collection('kosts').orderBy('date_modified', 'desc').limit(6)
         docRef.onSnapshot(snap => {
             const data = snap.docs.map(doc => ({
                 id: doc.id,

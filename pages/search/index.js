@@ -125,7 +125,7 @@ class Detail extends React.Component {
                 <HeadPage title={titleHead} />
                 {
                     <div className="fixed inset-x-0 bottom-0 mb-3 text-center z-40">
-                        <button onClick={handleShow} className={`${!show ? 'bg-indigo-700 text-white' : 'bg-white text-black border'} shadow-lg w-max px-2 py-2 mt-3 rounded-full hover:bg-white-700 focus:outline-none uppercase`}>
+                        <button onClick={handleShow} className={`${!show ? 'bg-indigo-700 text-white' : 'bg-white text-black border'} shadow-lg w-max px-3 py-2 mt-3 rounded-full hover:bg-white-700 focus:outline-none uppercase`}>
                             <BiFilterAlt className="inline mb-1 mr-1" />Saring</button>
                     </div>
                 }

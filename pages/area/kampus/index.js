@@ -16,9 +16,9 @@ const Filter = () => {
 
                 <div className="d-flex sticky top-0 bg-white border-bottom">
                     <span onClick={() => Router.push('/')}>
-                        <BiChevronLeft size={40} className="inline pb-1 mt-3 ml-2" />
+                        <BiChevronLeft size={40} className="inline mb-3 mt-3 ml-2" />
                     </span>
-                    <input className="border rounded w-full py-3 px-3 my-2 mx-3 text-gray-700 leading-tight focus:outline-none" id="name" type="text" placeholder="Cari Kampus" value={name} onChange={(e) => setName(e.target.value)}
+                    <input className="w-full rounded-full px-4 my-2 mr-3 text-gray-700 leading-tight focus:outline-none font-bold border bg-gray-200" id="name" type="text" placeholder="Cari Sekitar Kampus" value={name} onChange={(e) => setName(e.target.value)}
                     />
                 </div>
 

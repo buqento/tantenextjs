@@ -40,10 +40,10 @@ class Filter extends React.Component {
         return <>
             {
                 showHideForm &&
-                <form className="bg-white px-3" onSubmit={this.handleSearch}>
+                <form className="bg-white" onSubmit={this.handleSearch}>
                     <div className="mb-2">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="category">Kategori</label>
-                        <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="category"
+                        <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="category"
                             value={category}
                             name="category"
                             onChange={this.handleChange}>
@@ -53,7 +53,7 @@ class Filter extends React.Component {
                     </div>
                     <div className="mb-2">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="city">Kota/Kabupaten</label>
-                        <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="city"
+                        <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="city"
                             name="city"
                             value={city}
                             onChange={this.handleChange}>
@@ -72,7 +72,7 @@ class Filter extends React.Component {
                     </div>
                     <div className="mb-2">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="district">Area</label>
-                        <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="district"
+                        <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="district"
                             name="district"
                             value={district}
                             onChange={this.handleChange}>
@@ -95,7 +95,7 @@ class Filter extends React.Component {
                         category === 'Kost' &&
                         <div className="mb-2">
                             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="facilityRoom">Fasilitas Kamar</label>
-                            <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="facilityRoom"
+                            <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="facilityRoom"
                                 value={facilityRoom}
                                 name="facilityRoom"
                                 onChange={this.handleChange}>
@@ -122,7 +122,9 @@ class Filter extends React.Component {
                         onChange={this.toggleAc}
                     /> AC
                 </div> */}
-                    <button className="bg-indigo-700 hover:bg-indigo-600 focus:outline-none text-white font-bold py-2 px-3 my-2 mr-3 rounded w-full uppercase" type="submit">Terapkan</button>
+                <div className="border-top pt-3 mt-3">
+                    <button className="bg-indigo-700 hover:bg-indigo-600 focus:outline-none text-white font-bold py-3 px-3 my-2 mr-3 rounded-full w-full uppercase" type="submit">Terapkan</button>
+                </div>
                 </form>
             }
         </>
