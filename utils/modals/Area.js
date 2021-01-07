@@ -83,6 +83,7 @@ export const DtArea = [
     { lat_lng: '-6.195094, 106.943008', province: 'Jakarta', city: 'Jakarta Timur', district: 'Cakung', image: 'kudalZc.webp' },
     { lat_lng: '-6.215143, 106.887876', province: 'Jakarta', city: 'Jakarta Timur', district: 'Jatinegara', image: 'Djwgo8r.webp' },
     { lat_lng: '-6.247318, 106.913526', province: 'Jakarta', city: 'Jakarta Timur', district: 'Duren Sawit', image: 'Pxa0chJ.webp' },
+    { lat_lng: '-6.290317873188729, 106.86997944177475', province: 'Jakarta', city: 'Jakarta Timur', district: 'Kramat Jati', image: 'Nm1bts0.webp' },
     { lat_lng: '-6.321981331825193, 106.87213886784652', province: 'Jakarta', city: 'Jakarta Timur', district: 'Ciracas', image: 'f5gdncP.webp' },
     { lat_lng: '-6.258155697300953, 106.87439910168102', province: 'Jakarta', city: 'Jakarta Timur', district: 'Makasar', image: 'oQBRLdg.webp' },
     { lat_lng: '-6.203789663489473, 106.85677116784538', province: 'Jakarta', city: 'Jakarta Timur', district: 'Matraman', image: 'upClnGB.webp' },

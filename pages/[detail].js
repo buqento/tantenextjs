@@ -192,7 +192,9 @@ class Detail extends React.Component {
               <ListKosOthers data={otherdata} detail={detail} />
               <div className="border-top">
                 <a href="/search">
-                  <div className="rounded-xl align-middle border rouded text-center text-indigo-700 uppercase my-3 py-2">Cari {detail && detail.category} Lainnya</div>
+                  <div className="rounded-full bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-3 py-3 mx-3">
+                    <span>Cari {detail && detail.category} Lainnya</span>
+                  </div>
                 </a>
               </div>
             </div>

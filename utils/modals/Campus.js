@@ -37,5 +37,8 @@ export const Campus = [
     { id: 36, slug: 'universitas-tarumanagara', name: 'Universitas Tarumanagara', province: 'Jakarta Barat' },
     { id: 37, slug: 'universitas-kristen-krida-wacana', name: 'Universitas Kristen Krida Wacana', province: 'Jakarta Barat' },
     { id: 38, slug: 'universitas-trisakti', name: 'Universitas Trisakti', province: 'Jakarta Barat' },
-    { id: 39, slug: 'universitas-amikom-yogyakarta', name: 'Universitas AMIKOM Yogyakarta', province: 'Yogyakarta' }
+    { id: 39, slug: 'universitas-amikom-yogyakarta', name: 'Universitas AMIKOM Yogyakarta', province: 'Yogyakarta' },
+    { id: 40, slug: 'universitas-mercu-buana-yogyakarta', name: 'Universitas Mercu Buana Yogyakarta', province: 'Yogyakarta' },
+    { id: 41, slug: 'universitas-mh.thamrin', name: 'Universitas MH.Thamrin', province: 'Jakarta Timur' },
+    { id: 42, slug: 'universitas-indraprasta-pgri', name: 'Universitas Indraprasta PGRI', province: 'Jakarta Timur' }
 ]
