@@ -42,7 +42,11 @@ class Detail extends React.Component {
     filterCallback = (dataCallback) => {
         const dt = fire.firestore().collection('kosts')
         let conditions
-        if (dataCallback.district === '---Semua---' && dataCallback.facilityRoom === '---Semua---') {
+        if (dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---' && dataCallback.facilityRoom === '---Semua---') {
+            conditions = dt
+                .where('category', '==', dataCallback.category)
+                .where('location.province', '==', dataCallback.province)
+        } else if (dataCallback.district === '---Semua---' && dataCallback.facilityRoom === '---Semua---') {
             conditions = dt
                 .where('category', '==', dataCallback.category)
                 .where('location.city', '==', dataCallback.city)
@@ -97,8 +101,9 @@ class Detail extends React.Component {
         const handleClose = () => { this.setState({ show: false }) }
         const handleShow = () => { this.setState({ show: true }) }
         let titleHead = 'Semua Kost & Kontrakan'
-        if (dataCallback && dataCallback.district === '---Semua---') { titleHead = dataCallback.city }
-        if (dataCallback && dataCallback.district !== '---Semua---') { titleHead = dataCallback.district + ', ' + dataCallback.city }
+        if (dataCallback && dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---') { titleHead = dataCallback.province }
+        if (dataCallback && dataCallback.city !== '---Semua---') { titleHead = dataCallback.city + ', ' + dataCallback.province }
+        if (dataCallback && dataCallback.district !== '---Semua---') { titleHead = dataCallback.district + ', ' + dataCallback.city + ', ' + dataCallback.province }
         return (<>
             <NextHead>
                 <title>Tersedia Kost Dan Kontrakan Murah Semua Di {titleHead}</title>
@@ -124,9 +129,9 @@ class Detail extends React.Component {
             <div className="main-layout">
                 <HeadPage title={titleHead} />
                 {
-                    <div className="fixed inset-x-0 bottom-0 mb-3 text-center z-40">
-                        <button onClick={handleShow} className={`${!show ? 'bg-indigo-700 text-white' : 'bg-white text-black border'} shadow-lg w-max px-3 py-2 mt-3 rounded-full hover:bg-white-700 focus:outline-none uppercase`}>
-                            <BiFilterAlt className="inline mb-1 mr-1" />Saring</button>
+                    <div className="fixed inset-x-0 bottom-0 mb-5 text-center z-40">
+                        <span onClick={handleShow} className={`${!show ? 'bg-indigo-700 text-white' : 'bg-white text-black border'} shadow-lg w-max px-4 py-3 mt-3 rounded-full hover:bg-white-700 focus:outline-none uppercase border-4 border-indigo-200`}>
+                            <BiFilterAlt className="inline mb-1 mr-1" />Saring</span>
                     </div>
                 }
                 {

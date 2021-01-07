@@ -1,10 +1,10 @@
 export const City = [
     // DKI Jakarta
-    { name: 'Jakarta Barat', province: 'Jakarta' },
-    { name: 'Jakarta Pusat', province: 'Jakarta' },
-    { name: 'Jakarta Selatan', province: 'Jakarta' },
-    { name: 'Jakarta Timur', province: 'Jakarta' },
-    { name: 'Jakarta Utara', province: 'Jakarta' },
+    { name: 'Jakarta Barat', province: 'DKI Jakarta' },
+    { name: 'Jakarta Pusat', province: 'DKI Jakarta' },
+    { name: 'Jakarta Selatan', province: 'DKI Jakarta' },
+    { name: 'Jakarta Timur', province: 'DKI Jakarta' },
+    { name: 'Jakarta Utara', province: 'DKI Jakarta' },
     // Bali
     { name: 'Badung', province: 'Bali' },
     // { name: 'Bangli', province: 'Bali' },
@@ -44,9 +44,9 @@ export const City = [
     // { name: 'Bogor', province: 'Jawa Barat' },
     { name: 'Depok', province: 'Jawa Barat' },
     // Daerah Istimewa Yogyakarta
-    { name: 'Bantul', province: 'Yogyakarta' },
-    // { name: 'Gunungkidul', province: 'Yogyakarta' },
-    { name: 'Kulon Progo', province: 'Yogyakarta' },
-    { name: 'Sleman', province: 'Yogyakarta' },
-    { name: 'Yogyakarta', province: 'Yogyakarta' }
+    { name: 'Bantul', province: 'Daerah Istimewa Yogyakarta' },
+    // { name: 'Gunungkidul', province: 'Daerah Istimewa Yogyakarta' },
+    { name: 'Kulon Progo', province: 'Daerah Istimewa Yogyakarta' },
+    { name: 'Sleman', province: 'Daerah Istimewa Yogyakarta' },
+    { name: 'Yogyakarta', province: 'Daerah Istimewa Yogyakarta' }
 ]

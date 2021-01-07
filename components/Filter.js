@@ -8,7 +8,8 @@ class Filter extends React.Component {
         super(props)
         this.state = {
             category: 'Kost',
-            city: 'Yogyakarta',
+            province: 'Daerah Istimewa Yogyakarta',
+            city: '---Semua---',
             district: '---Semua---',
             facilityRoom: '---Semua---',
             ac: true,
@@ -19,9 +20,11 @@ class Filter extends React.Component {
         this.handleCancleFilter = this.handleCancleFilter.bind(this)
     }
     handleChange = (event) => {
-        const nam = event.target.name;
-        const val = event.target.value;
+        const nam = event.target.name
+        const val = event.target.value
         this.setState({ [nam]: val })
+        nam === 'province' && this.setState({ city: '---Semua---', district: '---Semua---' })
+        nam === 'city' && this.setState({ district: '---Semua---' })
     }
     handleCancleFilter() {
         const { showHideForm } = this.state
@@ -29,14 +32,14 @@ class Filter extends React.Component {
     }
     handleSearch(event) {
         event.preventDefault()
-        const { category, city, district, facilityRoom } = this.state;
-        this.props.callbackFromParent({ category, city, district, facilityRoom });
+        const { category, province, city, district, facilityRoom } = this.state;
+        this.props.callbackFromParent({ category, province, city, district, facilityRoom });
     }
     toggleAc = () => {
         this.setState({ ac: !this.state.ac });
     }
     render() {
-        const { showHideForm, category, city, district, facilityRoom } = this.state;
+        const { showHideForm, category, province, city, district, facilityRoom } = this.state
         return <>
             {
                 showHideForm &&
@@ -52,11 +55,31 @@ class Filter extends React.Component {
                         </select>
                     </div>
                     <div className="mb-2">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="province">Provinsi</label>
+                        <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="province"
+                            name="province"
+                            value={province}
+                            onChange={this.handleChange}>
+                            {
+                                DtProvinsi
+                                    .sort(function (a, b) {
+                                        var nameA = Generateslug(a.title.toUpperCase());
+                                        var nameB = Generateslug(b.title.toUpperCase());
+                                        if (nameA < nameB) return -1;
+                                        if (nameA > nameB) return 1;
+                                        return 0;
+                                    })
+                                    .map((province, index) => <option key={index}>{province.title}</option>)
+                            }
+                        </select>
+                    </div>
+                    <div className="mb-2">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="city">Kota/Kabupaten</label>
                         <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="city"
                             name="city"
                             value={city}
                             onChange={this.handleChange}>
+                            <option>{city}</option>
                             {
                                 City
                                     .sort(function (a, b) {
@@ -66,17 +89,18 @@ class Filter extends React.Component {
                                         if (nameA > nameB) return 1;
                                         return 0;
                                     })
+                                    .filter(city => city.province === province)
                                     .map((city, index) => <option key={index}>{city.name}</option>)
                             }
                         </select>
                     </div>
                     <div className="mb-2">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="district">Area</label>
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="district">Kecamatan</label>
                         <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="district"
                             name="district"
                             value={district}
                             onChange={this.handleChange}>
-                            <option>---Semua---</option>
+                            <option>{district}</option>
                             {
                                 DtArea
                                     .sort(function (a, b) {
@@ -122,9 +146,9 @@ class Filter extends React.Component {
                         onChange={this.toggleAc}
                     /> AC
                 </div> */}
-                <div className="border-top pt-3 mt-3">
-                    <button className="bg-indigo-700 hover:bg-indigo-600 focus:outline-none text-white font-bold py-3 px-3 my-2 mr-3 rounded-full w-full uppercase" type="submit">Terapkan</button>
-                </div>
+                    <div className="border-top pt-3 mt-3">
+                        <button className="bg-indigo-700 hover:bg-indigo-600 focus:outline-none text-white font-bold py-3 px-3 my-2 mr-3 rounded-full w-full uppercase" type="submit">Terapkan</button>
+                    </div>
                 </form>
             }
         </>
