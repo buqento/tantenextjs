@@ -91,6 +91,7 @@ export const DtArea = [
     { lat_lng: '-6.265128, 106.762563', province: 'DKI Jakarta', city: 'Jakarta Selatan', district: 'Pesanggrahan', image: 'HD2R7Qv.webp' },
     { lat_lng: '-6.270254800873329, 106.80304142813166', province: 'DKI Jakarta', city: 'Jakarta Selatan', district: 'Cilandak', image: 'v8whjL0.webp' },
     { lat_lng: '-6.274991106305772, 106.81550910170219', province: 'DKI Jakarta', city: 'Jakarta Selatan', district: 'Pasar Minggu', image: 'CCZiJH8.webp' },
+    { lat_lng: '-6.313535479182582, 106.81194372813879', province: 'DKI Jakarta', city: 'Jakarta Selatan', district: 'Jagakarsa', image: '0VZUk12.webp' },
     { lat_lng: '-6.200041050700936, 106.80149571745424', province: 'DKI Jakarta', city: 'Jakarta Pusat', district: 'Tanah Abang', image: 'HGI5iaq.webp' },
     { lat_lng: '-6.202250, 106.850641', province: 'DKI Jakarta', city: 'Jakarta Pusat', district: 'Menteng', image: 'RCPEZKW.webp' },
     { lat_lng: '-6.184476, 106.865415', province: 'DKI Jakarta', city: 'Jakarta Pusat', district: 'Cempaka Putih', image: 'FDHiDjR.webp' },

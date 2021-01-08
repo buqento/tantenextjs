@@ -40,5 +40,6 @@ export const Campus = [
     { id: 39, slug: 'universitas-amikom-yogyakarta', name: 'Universitas AMIKOM Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
     { id: 40, slug: 'universitas-mercu-buana-yogyakarta', name: 'Universitas Mercu Buana Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
     { id: 41, slug: 'universitas-mh.thamrin', name: 'Universitas MH.Thamrin', province: 'DKI Jakarta' },
-    { id: 42, slug: 'universitas-indraprasta-pgri', name: 'Universitas Indraprasta PGRI', province: 'DKI Jakarta' }
+    { id: 42, slug: 'universitas-indraprasta-pgri', name: 'Universitas Indraprasta PGRI', province: 'DKI Jakarta' },
+    { id: 43, slug: 'universitas-alma-ata-yogyakarta', name: 'Universitas Alma Ata Yogyakarta', province: 'Daerah Istimewa Yogyakarta' }
 ]

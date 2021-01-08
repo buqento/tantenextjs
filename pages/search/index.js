@@ -7,6 +7,7 @@ import CampaignItem from '../../components/CampaignItem'
 import { BiFilterAlt, BiWinkSmile } from 'react-icons/bi'
 import Filter from '../../components/Filter'
 import Modal from 'react-bootstrap/Modal'
+import { MdSystemUpdateAlt } from 'react-icons/md'
 class Detail extends React.Component {
     constructor(props) {
         super(props)
@@ -43,30 +44,48 @@ class Detail extends React.Component {
         const dt = fire.firestore().collection('kosts')
         let conditions
         if (dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---' && dataCallback.facilityRoom === '---Semua---') {
+            // console.log('kota semua, kecamatan semua, fasilitas semua')
             conditions = dt
                 .where('category', '==', dataCallback.category)
                 .where('location.province', '==', dataCallback.province)
-        } else if (dataCallback.district === '---Semua---' && dataCallback.facilityRoom === '---Semua---') {
+                .where("price.start_from", ">=", dataCallback.rangePrice.min)
+                .where("price.start_from", "<=", dataCallback.rangePrice.max)
+        } else if (dataCallback.city !== '---Semua---' && dataCallback.district === '---Semua---' && dataCallback.facilityRoom === '---Semua---') {
+            console.log('kota !semua, kecamatan semua, fasilitas semua')
             conditions = dt
                 .where('category', '==', dataCallback.category)
+                .where('location.province', '==', dataCallback.province)
                 .where('location.city', '==', dataCallback.city)
-        } else if (dataCallback.district !== '---Semua---' && dataCallback.facilityRoom === '---Semua---') {
+                .where("price.start_from", ">=", dataCallback.rangePrice.min)
+                .where("price.start_from", "<=", dataCallback.rangePrice.max)
+        } else if (dataCallback.city !== '---Semua---' && dataCallback.district !== '---Semua---' && dataCallback.facilityRoom === '---Semua---') {
+            // console.log('kota !semua, kecamatan !semua, fasilitas semua')
             conditions = dt
                 .where('category', '==', dataCallback.category)
-                .where('location.city', '==', dataCallback.city)
-                .where('location.district', '==', dataCallback.district)
-        } else if (dataCallback.district === '---Semua---' && dataCallback.facilityRoom !== '---Semua---') {
-            conditions = dt
-                .where('category', '==', dataCallback.category)
-                .where('location.city', '==', dataCallback.city)
-                .where('facility.room', 'array-contains', dataCallback.facilityRoom)
-        } else if (dataCallback.district !== '---Semua---' && dataCallback.facilityRoom !== '---Semua---') {
-            conditions = dt
-                .where('category', '==', dataCallback.category)
+                .where('location.province', '==', dataCallback.province)
                 .where('location.city', '==', dataCallback.city)
                 .where('location.district', '==', dataCallback.district)
+                .where("price.start_from", ">=", dataCallback.rangePrice.min)
+                .where("price.start_from", "<=", dataCallback.rangePrice.max)
+        } else if (dataCallback.city !== '---Semua---' && dataCallback.district !== '---Semua---' && dataCallback.facilityRoom !== '---Semua---') {
+            // console.log('kota !semua, kecamatan !semua, fasilitas !semua')
+            conditions = dt
+                .where('category', '==', dataCallback.category)
+                .where('location.province', '==', dataCallback.province)
+                .where('location.city', '==', dataCallback.city)
+                .where('location.district', '==', dataCallback.district)
                 .where('facility.room', 'array-contains', dataCallback.facilityRoom)
-        }
+                .where("price.start_from", ">=", dataCallback.rangePrice.min)
+                .where("price.start_from", "<=", dataCallback.rangePrice.max)
+        } else if (dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---' && dataCallback.facilityRoom !== '---Semua---') {
+            // console.log('kota semua, kecamatan semua, fasilitas !semua')
+            conditions = dt
+                .where('category', '==', dataCallback.category)
+                .where('location.province', '==', dataCallback.province)
+                .where('facility.room', 'array-contains', dataCallback.facilityRoom)
+                .where("price.start_from", ">=", dataCallback.rangePrice.min)
+                .where("price.start_from", "<=", dataCallback.rangePrice.max)
+        } 
         conditions.onSnapshot(snapshot => {
             const data = snapshot.docs.map(doc => ({
                 id: doc.id,

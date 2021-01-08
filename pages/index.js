@@ -15,7 +15,7 @@ export default function Index() {
         <FeedsGrid />
         <a href="/search">
           <div className="rounded-full bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-3 py-3 mx-3">
-            <span>Lihat Semua</span>
+            <span>Cari Kost Lainnya</span>
           </div>
         </a>
       </div>

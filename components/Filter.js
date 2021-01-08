@@ -3,6 +3,8 @@ import Generateslug from '../utils/Generateslug'
 import { DtProvinsi } from '../utils/modals/Provinsi'
 import { City } from '../utils/modals/City'
 import { DtArea } from '../utils/modals/Area'
+import Cash from '../utils/Cash'
+import InputRange from 'react-input-range'
 class Filter extends React.Component {
     constructor(props) {
         super(props)
@@ -12,6 +14,7 @@ class Filter extends React.Component {
             city: '---Semua---',
             district: '---Semua---',
             facilityRoom: '---Semua---',
+            rangePrice: { min: 50000, max: 5000000 },
             ac: true,
             data: [],
             showHideForm: true
@@ -32,8 +35,8 @@ class Filter extends React.Component {
     }
     handleSearch(event) {
         event.preventDefault()
-        const { category, province, city, district, facilityRoom } = this.state;
-        this.props.callbackFromParent({ category, province, city, district, facilityRoom });
+        const { category, province, city, district, facilityRoom, rangePrice } = this.state;
+        this.props.callbackFromParent({ category, province, city, district, facilityRoom, rangePrice });
     }
     toggleAc = () => {
         this.setState({ ac: !this.state.ac });
@@ -135,6 +138,17 @@ class Filter extends React.Component {
                             </select>
                         </div>
                     }
+                    <div className="mb-2">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="maxPrice">Harga Sewa</label>
+                        <div className="my-4 mx-3">
+                        <InputRange
+                            maxValue={5000000}
+                            minValue={50000}
+                            formatLabel={rangePrice => `${Cash(rangePrice)}`}
+                            value={this.state.rangePrice}
+                            onChange={rangePrice => this.setState({ rangePrice })} />
+                        </div>
+                    </div>
                     {/* <div className="mb-4">
                     <input
                         className="border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none"
