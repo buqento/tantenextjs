@@ -17,7 +17,7 @@ class Detail extends React.Component {
         const { data } = this.state;
         return (
             <div className="main-layout">
-                <HeadPage title="Kost &amp; Kontrakan Favorit" />
+                <HeadPage title="Favorit Saya" />
                 {
                     data.length > 0 ?
                         <div className="grid grid-cols-2 gap-3 mx-3 mb-3">

@@ -27,7 +27,7 @@ class FooterDetail extends Component {
         window.open('tel:' + phone);
     }
     handleFavorite() {
-        const { data } = this.props;
+        const { data } = this.props
         this.setState({ like: true })
         let fav = localStorage.getItem('favorites')
         let dataFav
@@ -37,6 +37,7 @@ class FooterDetail extends Component {
             dataFav.push(data)
             localStorage.setItem('favorites', JSON.stringify(dataFav))
         }
+        this.props.callbackFromParent();
     }
     handleUnfavorite() {
         const { data } = this.props
@@ -56,7 +57,7 @@ class FooterDetail extends Component {
         return (
             <div className="sticky flex bottom-0 border-top bg-gray-100 p-1 w-100">
                 <div className="flex-auto pl-2 pr-4">
-                    <div className="text-xs text-gray-700">Harga Sewa {data.category} Mulai</div>
+                    <div className="text-xs text-gray-700">Harga Sewa Mulai</div>
                     <div>
                         <span className="text-2xl font-bold">{Cash(data.price.start_from)}</span>
                         <span className="text-xs text-gray-700">/{data.price.duration}</span>
