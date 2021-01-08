@@ -178,10 +178,10 @@ class Detail extends React.Component {
                 }
             </div>
             <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Saring</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
+                {/* <Modal.Header closeButton> */}
+                    {/* <Modal.Title>Saring</Modal.Title> */}
+                {/* </Modal.Header> */}
+                <Modal.Body closeButton>
                     <Filter callbackFromParent={this.filterCallback} />
                 </Modal.Body>
             </Modal>

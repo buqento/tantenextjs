@@ -95,7 +95,8 @@
     color: white;
 }
 .input-range__label{
-    color: unset !important;
+    display: none;
+    /* color: unset !important;
     font-family: unset !important;
-    font-size: 0.75rem !important;
+    font-size: 0.75rem !important; */
 }

@@ -42,7 +42,7 @@ class Filter extends React.Component {
         this.setState({ ac: !this.state.ac });
     }
     render() {
-        const { showHideForm, category, province, city, district, facilityRoom } = this.state
+        const { showHideForm, category, province, city, district, facilityRoom, rangePrice } = this.state
         return <>
             {
                 showHideForm &&
@@ -139,14 +139,18 @@ class Filter extends React.Component {
                         </div>
                     }
                     <div className="mb-2">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="maxPrice">Harga Sewa</label>
+                        <label className="block text-gray-700 text-sm font-bold mb-n1" htmlFor="maxPrice">Harga Sewa</label>
+                        <div className="text-center text-gray-700 mb-n4">
+                            {Cash(rangePrice.min)} - {Cash(rangePrice.max)}
+                        </div>
                         <div className="my-4 mx-3">
-                        <InputRange
-                            maxValue={5000000}
-                            minValue={50000}
-                            formatLabel={rangePrice => `${Cash(rangePrice)}`}
-                            value={this.state.rangePrice}
-                            onChange={rangePrice => this.setState({ rangePrice })} />
+                            <InputRange
+                                step={50000}
+                                maxValue={5000000}
+                                minValue={50000}
+                                formatLabel={rangePrice => `${Cash(rangePrice)}`}
+                                value={this.state.rangePrice}
+                                onChange={rangePrice => this.setState({ rangePrice })} />
                         </div>
                     </div>
                     {/* <div className="mb-4">
