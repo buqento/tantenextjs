@@ -77,6 +77,15 @@ class Detail extends React.Component {
                 .where('facility.room', 'array-contains', dataCallback.facilityRoom)
                 .where("price.start_from", ">=", dataCallback.rangePrice.min)
                 .where("price.start_from", "<=", dataCallback.rangePrice.max)
+        } else if (dataCallback.city !== '---Semua---' && dataCallback.district === '---Semua---' && dataCallback.facilityRoom !== '---Semua---') {
+            // console.log('kota !semua, kecamatan semua, fasilitas !semua')
+            conditions = dt
+                .where('category', '==', dataCallback.category)
+                .where('location.province', '==', dataCallback.province)
+                .where('location.city', '==', dataCallback.city)
+                .where('facility.room', 'array-contains', dataCallback.facilityRoom)
+                .where("price.start_from", ">=", dataCallback.rangePrice.min)
+                .where("price.start_from", "<=", dataCallback.rangePrice.max)
         } else if (dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---' && dataCallback.facilityRoom !== '---Semua---') {
             // console.log('kota semua, kecamatan semua, fasilitas !semua')
             conditions = dt
@@ -85,7 +94,7 @@ class Detail extends React.Component {
                 .where('facility.room', 'array-contains', dataCallback.facilityRoom)
                 .where("price.start_from", ">=", dataCallback.rangePrice.min)
                 .where("price.start_from", "<=", dataCallback.rangePrice.max)
-        } 
+        }
         conditions.onSnapshot(snapshot => {
             const data = snapshot.docs.map(doc => ({
                 id: doc.id,
@@ -179,7 +188,7 @@ class Detail extends React.Component {
             </div>
             <Modal show={show} onHide={handleClose}>
                 {/* <Modal.Header closeButton> */}
-                    {/* <Modal.Title>Saring</Modal.Title> */}
+                {/* <Modal.Title>Saring</Modal.Title> */}
                 {/* </Modal.Header> */}
                 <Modal.Body closeButton>
                     <Filter callbackFromParent={this.filterCallback} />
