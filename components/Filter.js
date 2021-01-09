@@ -50,6 +50,13 @@ class Filter extends React.Component {
         facilities.ac && facilitiesRoom.push("AC")
         facilities.wifi && facilitiesRoom.push("Wifi")
         facilities.kamarMandiDalam && facilitiesRoom.push("Kamar Mandi Dalam")
+        facilities.kasur && facilitiesRoom.push("Kasur")
+        facilities.lemariPakaian && facilitiesRoom.push("Lemari Pakaian")
+        facilities.meja && facilitiesRoom.push("Meja")
+        facilities.kursi && facilitiesRoom.push("Kursi")
+        facilities.exhaustFan && facilitiesRoom.push("Exhaust Fan")
+        facilities.tv && facilitiesRoom.push("TV")
+        facilities.kipasAngin && facilitiesRoom.push("Kipas Angin")
         this.props.callbackFromParent({ category, province, city, district, facilitiesRoom, rangePrice });
     }
     toggleAc = () => {
@@ -237,7 +244,7 @@ class Filter extends React.Component {
                                     <input type="checkbox" checked={facilities.kasur} onChange={this.toggleKasur} /> Kasur
                                 </div>
                                 <div className="mb-2">
-                                    <input type="checkbox" checked={facilities.lemariPakaian} onChange={this.toggleLemariPakaian} /> Lemari Pakaian
+                                    <input type="checkbox" checked={facilities.lemariPakaian} onChange={this.toggleLemariPakaian} /> Lemari
                                 </div>
                                 <div className="mb-2">
                                     <input type="checkbox" checked={facilities.meja} onChange={this.toggleMeja} /> Meja
