@@ -11,7 +11,7 @@ class ListKosOthers extends Component {
             let data
             if (lastView === null) { data = [] } else { data = JSON.parse(lastView) }
             const findData = data.filter(i => i.id === item.id).length
-            if (data.length > 5) { data.shift() }
+            if (data.length > 9) { data.shift() }
             if (findData === 0) {
                 data.push(item)
                 localStorage.setItem('lastview', JSON.stringify(data))
