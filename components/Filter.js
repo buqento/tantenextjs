@@ -13,9 +13,19 @@ class Filter extends React.Component {
             province: 'Daerah Istimewa Yogyakarta',
             city: '---Semua---',
             district: '---Semua---',
-            facilityRoom: '---Semua---',
             rangePrice: { min: 50000, max: 5000000 },
-            ac: true,
+            facilities: {
+                kamarMandiDalam: true,
+                ac: true,
+                wifi: false,
+                kasur: false,
+                lemariPakaian: false,
+                meja: false,
+                kursi: false,
+                exhaustFan: false,
+                tv: false,
+                kipasAngin: false
+            },
             data: [],
             showHideForm: true
         }
@@ -35,14 +45,105 @@ class Filter extends React.Component {
     }
     handleSearch(event) {
         event.preventDefault()
-        const { category, province, city, district, facilityRoom, rangePrice } = this.state;
-        this.props.callbackFromParent({ category, province, city, district, facilityRoom, rangePrice });
+        const { category, province, city, district, rangePrice, facilities } = this.state
+        let facilitiesRoom = []
+        facilities.ac && facilitiesRoom.push("AC")
+        facilities.wifi && facilitiesRoom.push("Wifi")
+        facilities.kamarMandiDalam && facilitiesRoom.push("Kamar Mandi Dalam")
+        this.props.callbackFromParent({ category, province, city, district, facilitiesRoom, rangePrice });
     }
     toggleAc = () => {
-        this.setState({ ac: !this.state.ac });
+        const { facilities } = this.state
+        this.setState(prevState => ({
+            facilities: {
+                ...prevState.facilities,
+                ac: !facilities.ac
+            }
+        }))
+    }
+    toggleWifi = () => {
+        const { facilities } = this.state
+        this.setState(prevState => ({
+            facilities: {
+                ...prevState.facilities,
+                wifi: !facilities.wifi
+            }
+        }))
+    }
+    toggleKamarMandiDalam = () => {
+        const { facilities } = this.state
+        this.setState(prevState => ({
+            facilities: {
+                ...prevState.facilities,
+                kamarMandiDalam: !facilities.kamarMandiDalam
+            }
+        }))
+    }
+    toggleKasur = () => {
+        const { facilities } = this.state
+        this.setState(prevState => ({
+            facilities: {
+                ...prevState.facilities,
+                kasur: !facilities.kasur
+            }
+        }))
+    }
+    toggleLemariPakaian = () => {
+        const { facilities } = this.state
+        this.setState(prevState => ({
+            facilities: {
+                ...prevState.facilities,
+                lemariPakaian: !facilities.lemariPakaian
+            }
+        }))
+    }
+    toggleMeja = () => {
+        const { facilities } = this.state
+        this.setState(prevState => ({
+            facilities: {
+                ...prevState.facilities,
+                meja: !facilities.meja
+            }
+        }))
+    }
+    toggleKursi = () => {
+        const { facilities } = this.state
+        this.setState(prevState => ({
+            facilities: {
+                ...prevState.facilities,
+                kursi: !facilities.kursi
+            }
+        }))
+    }
+    toggleExhaustFan = () => {
+        const { facilities } = this.state
+        this.setState(prevState => ({
+            facilities: {
+                ...prevState.facilities,
+                exhaustFan: !facilities.exhaustFan
+            }
+        }))
+    }
+    toggleTv = () => {
+        const { facilities } = this.state
+        this.setState(prevState => ({
+            facilities: {
+                ...prevState.facilities,
+                tv: !facilities.tv
+            }
+        }))
+    }
+    toggleKipasAngin = () => {
+        const { facilities } = this.state
+        this.setState(prevState => ({
+            facilities: {
+                ...prevState.facilities,
+                kipasAngin: !facilities.kipasAngin
+            }
+        }))
     }
     render() {
-        const { showHideForm, category, province, city, district, facilityRoom, rangePrice } = this.state
+        const { showHideForm, category, province, city, district, facilities, rangePrice } = this.state
         return <>
             {
                 showHideForm &&
@@ -120,22 +221,40 @@ class Filter extends React.Component {
                     </div>
                     {
                         category === 'Kost' &&
-                        <div className="mb-2">
+                        <div>
                             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="facilityRoom">Fasilitas Kamar</label>
-                            <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="facilityRoom"
-                                value={facilityRoom}
-                                name="facilityRoom"
-                                onChange={this.handleChange}>
-                                <option>---Semua---</option>
-                                <option>Kamar Mandi Dalam</option>
-                                <option>AC</option>
-                                <option>Wifi</option>
-                                <option>Lemari Pakaian</option>
-                                <option>TV</option>
-                                <option>Kasur</option>
-                                <option>Meja</option>
-                                <option>Kursi</option>
-                            </select>
+                            <div className="grid grid-cols-3 gap-3 mx-3 text-xs">
+                                <div className="mb-2">
+                                    <input type="checkbox" checked={facilities.kamarMandiDalam} onChange={this.toggleKamarMandiDalam} /> KM.Dalam
+                                </div>
+                                <div className="mb-2">
+                                    <input type="checkbox" checked={facilities.ac} onChange={this.toggleAc} /> AC
+                                </div>
+                                <div className="mb-2">
+                                    <input type="checkbox" checked={facilities.wifi} onChange={this.toggleWifi} /> Wifi
+                                </div>
+                                <div className="mb-2">
+                                    <input type="checkbox" checked={facilities.kasur} onChange={this.toggleKasur} /> Kasur
+                                </div>
+                                <div className="mb-2">
+                                    <input type="checkbox" checked={facilities.lemariPakaian} onChange={this.toggleLemariPakaian} /> Lemari Pakaian
+                                </div>
+                                <div className="mb-2">
+                                    <input type="checkbox" checked={facilities.meja} onChange={this.toggleMeja} /> Meja
+                                </div>
+                                <div className="mb-2">
+                                    <input type="checkbox" checked={facilities.kursi} onChange={this.toggleKursi} /> Kursi
+                                </div>
+                                <div className="mb-2">
+                                    <input type="checkbox" checked={facilities.exhaustFan} onChange={this.toggleExhaustFan} /> Exhaust Fan
+                                </div>
+                                <div className="mb-2">
+                                    <input type="checkbox" checked={facilities.tv} onChange={this.toggleTv} /> TV
+                                </div>
+                                <div className="mb-2">
+                                    <input type="checkbox" checked={facilities.kipasAngin} onChange={this.toggleKipasAngin} /> Kipas Angin
+                                </div>
+                            </div>
                         </div>
                     }
                     <div className="mb-2">
@@ -153,17 +272,6 @@ class Filter extends React.Component {
                                 onChange={rangePrice => this.setState({ rangePrice })} />
                         </div>
                     </div>
-                    {/* <div className="mb-4">
-                    <input
-                        className="border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none"
-                        id="type"
-                        type="checkbox"
-                        placeholder="type"
-                        checked={this.state.ac}
-                        name="ac"
-                        onChange={this.toggleAc}
-                    /> AC
-                </div> */}
                     <div className="border-top pt-3 mt-3">
                         <button className="bg-indigo-700 hover:bg-indigo-600 focus:outline-none text-white font-bold py-3 px-3 my-2 mr-3 rounded-full w-full uppercase" type="submit">Terapkan</button>
                     </div>

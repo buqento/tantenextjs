@@ -7,7 +7,6 @@ import CampaignItem from '../../components/CampaignItem'
 import { BiFilterAlt, BiWinkSmile } from 'react-icons/bi'
 import Filter from '../../components/Filter'
 import Modal from 'react-bootstrap/Modal'
-import { MdSystemUpdateAlt } from 'react-icons/md'
 class Detail extends React.Component {
     constructor(props) {
         super(props)
@@ -41,25 +40,39 @@ class Detail extends React.Component {
         docRef.get().catch(err => console.log(err))
     }
     filterCallback = (dataCallback) => {
+        let facilitiesRoom = [""]
+        if (dataCallback.facilitiesRoom.length > 0) facilitiesRoom = dataCallback.facilitiesRoom
         const dt = fire.firestore().collection('kosts')
         let conditions
-        if (dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---' && dataCallback.facilityRoom === '---Semua---') {
-            // console.log('kota semua, kecamatan semua, fasilitas semua')
+        if (dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---') {
+            // console.log('kota semua, kecamatan semua')
             conditions = dt
                 .where('category', '==', dataCallback.category)
                 .where('location.province', '==', dataCallback.province)
                 .where("price.start_from", ">=", dataCallback.rangePrice.min)
                 .where("price.start_from", "<=", dataCallback.rangePrice.max)
-        } else if (dataCallback.city !== '---Semua---' && dataCallback.district === '---Semua---' && dataCallback.facilityRoom === '---Semua---') {
-            console.log('kota !semua, kecamatan semua, fasilitas semua')
+                .where("facility.room", "array-contains-any", facilitiesRoom)
+        } else if (dataCallback.city !== '---Semua---' && dataCallback.district === '---Semua---') {
+            // console.log('kota !semua, kecamatan semua')
             conditions = dt
                 .where('category', '==', dataCallback.category)
                 .where('location.province', '==', dataCallback.province)
                 .where('location.city', '==', dataCallback.city)
                 .where("price.start_from", ">=", dataCallback.rangePrice.min)
                 .where("price.start_from", "<=", dataCallback.rangePrice.max)
-        } else if (dataCallback.city !== '---Semua---' && dataCallback.district !== '---Semua---' && dataCallback.facilityRoom === '---Semua---') {
-            // console.log('kota !semua, kecamatan !semua, fasilitas semua')
+                .where("facility.room", "array-contains-any", facilitiesRoom)
+        } else if (dataCallback.city !== '---Semua---' && dataCallback.district !== '---Semua---') {
+            // console.log('kota !semua, kecamatan !semua')
+            conditions = dt
+                .where('category', '==', dataCallback.category)
+                .where('location.province', '==', dataCallback.province)
+                .where('location.city', '==', dataCallback.city)
+                .where('location.district', '==', dataCallback.district)
+                .where("price.start_from", ">=", dataCallback.rangePrice.min)
+                .where("price.start_from", "<=", dataCallback.rangePrice.max)
+                .where("facility.room", "array-contains-any", facilitiesRoom)
+        } else if (dataCallback.city !== '---Semua---' && dataCallback.district !== '---Semua---') {
+            // console.log('kota !semua, kecamatan !semua')
             conditions = dt
                 .where('category', '==', dataCallback.category)
                 .where('location.province', '==', dataCallback.province)
@@ -67,33 +80,24 @@ class Detail extends React.Component {
                 .where('location.district', '==', dataCallback.district)
                 .where("price.start_from", ">=", dataCallback.rangePrice.min)
                 .where("price.start_from", "<=", dataCallback.rangePrice.max)
-        } else if (dataCallback.city !== '---Semua---' && dataCallback.district !== '---Semua---' && dataCallback.facilityRoom !== '---Semua---') {
-            // console.log('kota !semua, kecamatan !semua, fasilitas !semua')
+                .where("facility.room", "array-contains-any", facilitiesRoom)
+        } else if (dataCallback.city !== '---Semua---' && dataCallback.district === '---Semua---') {
+            // console.log('kota !semua, kecamatan semua')
             conditions = dt
                 .where('category', '==', dataCallback.category)
                 .where('location.province', '==', dataCallback.province)
                 .where('location.city', '==', dataCallback.city)
-                .where('location.district', '==', dataCallback.district)
-                .where('facility.room', 'array-contains', dataCallback.facilityRoom)
                 .where("price.start_from", ">=", dataCallback.rangePrice.min)
                 .where("price.start_from", "<=", dataCallback.rangePrice.max)
-        } else if (dataCallback.city !== '---Semua---' && dataCallback.district === '---Semua---' && dataCallback.facilityRoom !== '---Semua---') {
-            // console.log('kota !semua, kecamatan semua, fasilitas !semua')
+                .where("facility.room", "array-contains-any", facilitiesRoom)
+        } else if (dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---') {
+            // console.log('kota semua, kecamatan semua)
             conditions = dt
                 .where('category', '==', dataCallback.category)
                 .where('location.province', '==', dataCallback.province)
-                .where('location.city', '==', dataCallback.city)
-                .where('facility.room', 'array-contains', dataCallback.facilityRoom)
                 .where("price.start_from", ">=", dataCallback.rangePrice.min)
                 .where("price.start_from", "<=", dataCallback.rangePrice.max)
-        } else if (dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---' && dataCallback.facilityRoom !== '---Semua---') {
-            // console.log('kota semua, kecamatan semua, fasilitas !semua')
-            conditions = dt
-                .where('category', '==', dataCallback.category)
-                .where('location.province', '==', dataCallback.province)
-                .where('facility.room', 'array-contains', dataCallback.facilityRoom)
-                .where("price.start_from", ">=", dataCallback.rangePrice.min)
-                .where("price.start_from", "<=", dataCallback.rangePrice.max)
+                .where("facility.room", "array-contains-any", facilitiesRoom)
         }
         conditions.onSnapshot(snapshot => {
             const data = snapshot.docs.map(doc => ({
@@ -187,9 +191,6 @@ class Detail extends React.Component {
                 }
             </div>
             <Modal show={show} onHide={handleClose}>
-                {/* <Modal.Header closeButton> */}
-                {/* <Modal.Title>Saring</Modal.Title> */}
-                {/* </Modal.Header> */}
                 <Modal.Body closeButton>
                     <Filter callbackFromParent={this.filterCallback} />
                 </Modal.Body>
