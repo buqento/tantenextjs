@@ -66,7 +66,7 @@ class FooterDetail extends Component {
                 <div className="mr-2 text-gray-700 text-center self-center">
                     {
                         like ?
-                            <MdStar size={40} className="text-pink-500 border rounded mr-2-full mb-1 inline" onClick={like ? () => this.handleUnfavorite() : () => this.handleFavorite()} />
+                            <MdStar size={40} className="text-pink-500 border rounded-full mr-2 mb-1 inline" onClick={like ? () => this.handleUnfavorite() : () => this.handleFavorite()} />
                             :
                             <MdStarBorder size={40} className="text-pink-500 border rounded-full mr-2 mb-1 inline" onClick={like ? () => this.handleUnfavorite() : () => this.handleFavorite()} />
                     }
