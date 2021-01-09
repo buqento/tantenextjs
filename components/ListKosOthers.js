@@ -6,6 +6,17 @@ import Generateslug from '../utils/Generateslug'
 class ListKosOthers extends Component {
     render() {
         const { data, detail } = this.props
+        const handleLastView = (item) => {
+            let lastView = localStorage.getItem('lastview')
+            let data
+            if (lastView === null) { data = [] } else { data = JSON.parse(lastView) }
+            const findData = data.filter(i => i.id === item.id).length
+            if (data.length > 5) { data.shift() }
+            if (findData === 0) {
+                data.push(item)
+                localStorage.setItem('lastview', JSON.stringify(data))
+            }
+        }
         let listData = [];
         detail.category !== null ? listData = data.filter(i => (i.category === detail.category && i.location.district === detail.location.district)) : listData = data
         return (
@@ -21,7 +32,7 @@ class ListKosOthers extends Component {
                                 .reverse()
                                 .map((kost, index) =>
                                     <Link key={index} href={`../${Generateslug(kost.title)}`}>
-                                        <div className="w-full overflow-hidden mb-3">
+                                        <div className="w-full overflow-hidden mb-3" onClick={() => handleLastView(kost)}>
                                             <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${kost.images[0]}`} alt={kost.title} className="float-left mr-2" />
                                             <div className="mx-3 mt-n1">
                                                 <div className="text-lg">
