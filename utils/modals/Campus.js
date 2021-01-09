@@ -42,5 +42,6 @@ export const Campus = [
     { id: 41, slug: 'universitas-mh.thamrin', name: 'Universitas MH.Thamrin', province: 'DKI Jakarta' },
     { id: 42, slug: 'universitas-indraprasta-pgri', name: 'Universitas Indraprasta PGRI', province: 'DKI Jakarta' },
     { id: 43, slug: 'universitas-alma-ata-yogyakarta', name: 'Universitas Alma Ata Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
-    { id: 44, slug: 'universitas-negeri-jakarta', name: 'Universitas Negeri Jakarta', province: 'DKI Jakarta' }
+    { id: 44, slug: 'universitas-negeri-jakarta', name: 'Universitas Negeri Jakarta', province: 'DKI Jakarta' },
+    { id: 45, slug: 'universitas-hasanuddin', name: 'Universitas Hasanuddin', province: 'Sulawesi Selatan' }
 ]

@@ -5,5 +5,6 @@ export const DtProvinsi = [
     { title: 'Papua' },
     { title: 'Papua Barat' },
     { title: 'Jawa Barat' },
-    { title: 'Daerah Istimewa Yogyakarta' }
+    { title: 'Daerah Istimewa Yogyakarta' },
+    { title: 'Sulawesi Selatan' }
 ]
