@@ -5,6 +5,7 @@ import { City } from '../utils/modals/City'
 import { DtArea } from '../utils/modals/Area'
 import Cash from '../utils/Cash'
 import InputRange from 'react-input-range'
+import { Form } from 'react-bootstrap'
 class Filter extends React.Component {
     constructor(props) {
         super(props)
@@ -155,6 +156,7 @@ class Filter extends React.Component {
             {
                 showHideForm &&
                 <form className="bg-white" onSubmit={this.handleSearch}>
+
                     <div className="mb-2">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="category">Kategori</label>
                         <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="category"
@@ -228,43 +230,43 @@ class Filter extends React.Component {
                     </div>
                     {
                         category === 'Kost' &&
-                        <div>
-                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="facilityRoom">Fasilitas Kamar</label>
-                            <div className="grid grid-cols-3 gap-3 mx-3 text-xs">
-                                <div className="mb-2">
-                                    <input type="checkbox" checked={facilities.kamarMandiDalam} onChange={this.toggleKamarMandiDalam} /> KM.Dalam
+                        <div className="text-gray-700 mt-2">
+                            <label className="block text-sm font-bold mb-n1" htmlFor="facilityRoom">Fasilitas Kamar</label>
+                            <div className="grid grid-cols-3 gap-3 mx-3">
+                                <div className="mb-n1">
+                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="kamarMandiDalam" label="KM.Dalam" checked={facilities.kamarMandiDalam} onChange={this.toggleKamarMandiDalam} custom />
                                 </div>
-                                <div className="mb-2">
-                                    <input type="checkbox" checked={facilities.ac} onChange={this.toggleAc} /> AC
+                                <div className="mb-n1">
+                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="ac" label="AC" checked={facilities.ac} onChange={this.toggleAc} custom />
                                 </div>
-                                <div className="mb-2">
-                                    <input type="checkbox" checked={facilities.wifi} onChange={this.toggleWifi} /> Wifi
+                                <div className="mb-n1">
+                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="wifi" label="Wifi" checked={facilities.wifi} onChange={this.toggleWifi} custom />
                                 </div>
-                                <div className="mb-2">
-                                    <input type="checkbox" checked={facilities.kasur} onChange={this.toggleKasur} /> Kasur
+                                <div className="mb-n1">
+                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="kasur" label="Kasur" checked={facilities.kasur} onChange={this.toggleKasur} custom />
                                 </div>
-                                <div className="mb-2">
-                                    <input type="checkbox" checked={facilities.lemariPakaian} onChange={this.toggleLemariPakaian} /> Lemari
+                                <div className="mb-n1">
+                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="lemariPakaian" label="Lemari" checked={facilities.lemariPakaian} onChange={this.toggleLemariPakaian} custom />
                                 </div>
-                                <div className="mb-2">
-                                    <input type="checkbox" checked={facilities.meja} onChange={this.toggleMeja} /> Meja
+                                <div className="mb-n1">
+                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="meja" label="Meja" checked={facilities.meja} onChange={this.toggleMeja} custom />
                                 </div>
-                                <div className="mb-2">
-                                    <input type="checkbox" checked={facilities.kursi} onChange={this.toggleKursi} /> Kursi
+                                {/* <div className="mb-n1">
+                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="kursi" label="Kursi" checked={facilities.kursi} onChange={this.toggleKursi} custom />
+                                </div> */}
+                                <div className="mb-n1">
+                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="exhaustFan" label="Exhaust" checked={facilities.exhaustFan} onChange={this.toggleExhaustFan} custom />
                                 </div>
-                                <div className="mb-2">
-                                    <input type="checkbox" checked={facilities.exhaustFan} onChange={this.toggleExhaustFan} /> Exhaust Fan
+                                <div className="mb-n1">
+                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="tv" label="TV" checked={facilities.tv} onChange={this.toggleTv} custom />
                                 </div>
-                                <div className="mb-2">
-                                    <input type="checkbox" checked={facilities.tv} onChange={this.toggleTv} /> TV
-                                </div>
-                                <div className="mb-2">
-                                    <input type="checkbox" checked={facilities.kipasAngin} onChange={this.toggleKipasAngin} /> Kipas Angin
+                                <div className="mb-n1">
+                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="kipasAngin" label="Kipas" checked={facilities.kipasAngin} onChange={this.toggleKipasAngin} custom />
                                 </div>
                             </div>
                         </div>
                     }
-                    <div className="mb-2">
+                    <div className="my-3">
                         <label className="block text-gray-700 text-sm font-bold mb-n1" htmlFor="maxPrice">Harga Sewa</label>
                         <div className="text-center text-gray-700 mb-n4">
                             {Cash(rangePrice.min)} - {Cash(rangePrice.max)}
