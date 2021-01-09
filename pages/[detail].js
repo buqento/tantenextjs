@@ -31,6 +31,7 @@ class Detail extends React.Component {
   }
   handleCloseAlert = () => {
     this.setState({ showAlert: false })
+    Router.push('/favorites')
   }
   handleShowAlert = () => {
     this.setState({ showAlert: true })
@@ -38,11 +39,23 @@ class Detail extends React.Component {
       this.setState({ showAlert: false })
     }.bind(this), 5000)
   }
+  handleLastView = (item) => {
+    let lastView = localStorage.getItem('lastview')
+    let data
+    if (lastView === null) { data = [] } else { data = JSON.parse(lastView) }
+    const findData = data.filter(i => i.id === item.id).length
+    if (data.length > 9) { data.shift() }
+    if (findData === 0) {
+      data.push(item)
+      localStorage.setItem('lastview', JSON.stringify(data))
+    }
+  }
   render() {
     const { slug, details, otherdatas } = this.props
     const { showAlert } = this.state
     const detail = JSON.parse(details)
     const otherdata = JSON.parse(otherdatas)
+    detail && this.handleLastView(detail)
     const structureTypeBreadcrumbList =
       `{
         "@context": "https://schema.org",
