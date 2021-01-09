@@ -26,7 +26,7 @@ export default function Index() {
         <Campus />
         <a href="/area/kampus">
           <div className="rounded-full bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-3 py-3 mx-3">
-            <span>Lihat Semua</span>
+            <span>Cari Kampus Lainnya</span>
           </div>
         </a>
       </div>

@@ -13,16 +13,13 @@ const Filter = () => {
     return (
         <>
             <div className="main-layout">
-
                 <div className="d-flex sticky top-0 bg-white border-bottom">
                     <span onClick={() => Router.push('/')}>
                         <BiChevronLeft size={40} className="inline mb-3 mt-3 ml-2" />
                     </span>
-                    <input className="w-full rounded-full px-4 my-2 mr-3 text-gray-700 leading-tight focus:outline-none font-bold border bg-gray-200" id="name" type="text" placeholder="Cari Sekitar Kampus" value={name} onChange={(e) => setName(e.target.value)}
+                    <input className="w-full rounded-full px-4 my-3 mr-3 text-gray-700 leading-tight focus:outline-none font-bold border" id="name" type="text" placeholder="Cari Sekitar Kampus" value={name} onChange={(e) => setName(e.target.value)}
                     />
                 </div>
-
-
                 <div className="container divide-y divide-gray-400">
                     {
                         data

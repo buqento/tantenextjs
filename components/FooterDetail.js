@@ -66,12 +66,12 @@ class FooterDetail extends Component {
                 <div className="mr-2 text-gray-700 text-center self-center">
                     {
                         like ?
-                            <MdStar size={40} className="text-pink-500 border rounded mr-2 mb-1 inline" onClick={like ? () => this.handleUnfavorite() : () => this.handleFavorite()} />
+                            <MdStar size={40} className="text-pink-500 border rounded mr-2-full mb-1 inline" onClick={like ? () => this.handleUnfavorite() : () => this.handleFavorite()} />
                             :
-                            <MdStarBorder size={40} className="text-pink-500 border rounded mr-2 mb-1 inline" onClick={like ? () => this.handleUnfavorite() : () => this.handleFavorite()} />
+                            <MdStarBorder size={40} className="text-pink-500 border rounded-full mr-2 mb-1 inline" onClick={like ? () => this.handleUnfavorite() : () => this.handleFavorite()} />
                     }
                     {
-                        data.contact_us && data.contact_us.phone !== '' ? <button className="bg-indigo-700 hover:bg-indigo-600 text-white font-bold py-2 px-2 rounded uppercase focus:outline-none" onClick={() => this.handleCall(data.contact_us.phone)}><FaPhoneAlt className="mr-2 inline" />Telepon</button> : <button className="bg-indigo-500 text-white font-bold py-2 px-2 rounded opacity-50 cursor-not-allowed uppercase focus:outline-none"><FaPhoneAlt className="mr-2 inline" />Telepon</button>
+                        data.contact_us && data.contact_us.phone !== '' ? <button className="bg-indigo-700 hover:bg-indigo-600 text-white font-bold py-2 px-3 rounded-full uppercase focus:outline-none" onClick={() => this.handleCall(data.contact_us.phone)}><FaPhoneAlt className="mr-2 inline" />Telepon</button> : <button className="bg-indigo-500 text-white font-bold py-2 px-3 rounded-full opacity-50 cursor-not-allowed uppercase focus:outline-none"><FaPhoneAlt className="mr-2 inline" />Telepon</button>
                     }
                 </div>
             </div>
