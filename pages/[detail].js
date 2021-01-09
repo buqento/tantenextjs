@@ -185,7 +185,7 @@ class Detail extends React.Component {
                 </div>
               }
               <div className="mb-3">
-                <p className="pb-1 font-bold">Lokasi {detail.category} <small>({detail.location && detail.location.district}, {detail.location && detail.location.city})</small></p>
+                <p className="pb-1 font-bold">Lokasi {detail.category} <small>({detail.location && detail.location.district}, {detail.location && detail.location.city}, {detail.location && detail.location.province})</small></p>
                 <Peta location={detail && detail.location} />
               </div>
               <div className="border-top mt-3">

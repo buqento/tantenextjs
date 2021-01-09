@@ -14,7 +14,7 @@ class ListKosOthers extends Component {
                     listData.length > 0 &&
                     <div className="mt-3">
                         <div className="py-3 font-bold">
-                            {`${detail.category} lain di ${detail.location.district}, ${detail.location.province}`}
+                            {`${detail.category} lain di ${detail.location.district}, ${detail.location.city}, ${detail.location.province}`}
                         </div>
                         {
                             listData
@@ -23,7 +23,7 @@ class ListKosOthers extends Component {
                                     <Link key={index} href={`../${Generateslug(kost.title)}`}>
                                         <div className="w-full overflow-hidden mb-3">
                                             <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${kost.images[0]}`} alt={kost.title} className="float-left mr-2" />
-                                            <div className="mx-3">
+                                            <div className="mx-3 mt-n1">
                                                 <div className="text-lg">
                                                     {Cash(kost.price.start_from)}/<span className="text-xs">{kost.price.duration}</span>
                                                 </div>
