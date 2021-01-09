@@ -55,7 +55,7 @@ class Detail extends React.Component {
     const { showAlert } = this.state
     const detail = JSON.parse(details)
     const otherdata = JSON.parse(otherdatas)
-    detail && this.handleLastView(detail)
+    // detail && this.handleLastView(detail)
     const structureTypeBreadcrumbList =
       `{
         "@context": "https://schema.org",
