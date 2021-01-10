@@ -100,3 +100,7 @@
     font-family: unset !important;
     font-size: 0.75rem !important; */
 }
+.container-image .button-delete {
+    position: absolute;
+    cursor: pointer;
+}
