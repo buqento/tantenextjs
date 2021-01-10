@@ -14,7 +14,7 @@ class Filter extends React.Component {
             province: 'Daerah Istimewa Yogyakarta',
             city: '---Semua---',
             district: '---Semua---',
-            rangePrice: { min: 50000, max: 70000000 },
+            rangePrice: { min: 50000, max: 10000000 },
             facilities: {
                 kamarMandiDalam: true,
                 ac: true,
@@ -274,7 +274,7 @@ class Filter extends React.Component {
                         <div className="my-4 mx-3">
                             <InputRange
                                 step={50000}
-                                maxValue={70000000}
+                                maxValue={10000000}
                                 minValue={50000}
                                 formatLabel={rangePrice => `${Cash(rangePrice)}`}
                                 value={this.state.rangePrice}

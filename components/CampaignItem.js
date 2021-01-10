@@ -26,21 +26,30 @@ class CampaignItem extends Component {
     render() {
         const { like } = this.state;
         const { item, customStyle } = this.props
-        const handleLastView = (item) => {
-            this.handleHit(item.id, item.hit === undefined ? 1 : item.hit + 1)
+        const newItem = {
+            date_view: Date.now(),
+            facility: { bathroom: item.facility.bathroom, building: item.facility.building, share: item.facility.share, room: item.facility.room },
+            id: item.id,
+            images: item.images,
+            price: { start_from: item.price.start_from, duration: item.price.duration },
+            slug: item.slug,
+            title: item.title
+        }
+        const handleLastView = () => {
+            this.handleHit(newItem.id, newItem.hit === undefined ? 1 : newItem.hit + 1)
             let lastView = localStorage.getItem('lastview')
             let data
             if (lastView === null) { data = [] } else { data = JSON.parse(lastView) }
-            const findData = data.filter(i => i.id === item.id).length
+            const findData = data.filter(i => i.id === newItem.id).length
             if (data.length > 14) { data.shift() }
             if (findData === 0) {
-                data.push(item)
+                data.push(newItem)
                 localStorage.setItem('lastview', JSON.stringify(data))
             }
         }
         return (
             <Link href={`/${Generateslug(item.title)}`}>
-                <div className={`rounded-xl overflow-hidden border ${customStyle}`} onClick={() => handleLastView(item)}>
+                <div className={`rounded-xl overflow-hidden border ${customStyle}`} onClick={() => handleLastView()}>
                     <img src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} style={{ maxWidth: 'unset' }} />
                     <div className="px-2 pt-2 pb-2">
                         <div className="text-xl">

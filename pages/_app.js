@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }) {
         loading ?
           <div className="container-center text-center">
             <div className="text-center">
-              <div><BiLoaderCircle size={22} className="animate-spin inline mr-1 mb-1" />Sedang proses</div>
+              <div><BiLoaderCircle size={22} className="animate-spin inline mr-1 mb-1" />Menunggu Data</div>
             </div>
           </div>
           : <Component {...pageProps} />

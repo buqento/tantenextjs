@@ -36,8 +36,8 @@ class History extends React.Component {
                                 data
                                     .sort(
                                         function compare(a, b) {
-                                            const dtModifiedA = b.date_modified;
-                                            const dtModifiedB = a.date_modified;
+                                            const dtModifiedA = b.date_view;
+                                            const dtModifiedB = a.date_view;
                                             let comparison = 0;
                                             if (dtModifiedA > dtModifiedB) {
                                                 comparison = 1;
@@ -49,7 +49,7 @@ class History extends React.Component {
                                     )
                                     .map((kost, index) =>
                                         <div className="w-full overflow-hidden divide-gray-100 py-2" key={index}>
-                                            <div class="container-image">
+                                            <div className="container-image">
                                                 <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${kost.images[0]}`} alt={kost.title} className="float-left mr-2" />
                                                 <MdClose className="button-delete bg-red-600 text-white rounded-full p-1 mt-2 ml-2" size="24" onClick={() => this.handleRemoveHistoryItem(kost)} />
                                             </div>
