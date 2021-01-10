@@ -33,8 +33,17 @@ class FooterDetail extends Component {
         let dataFav
         if (fav === null) { dataFav = [] } else { dataFav = JSON.parse(fav) }
         const findData = dataFav.filter(i => i.id === data.id).length
+        const newData = {
+            date_view: Date.now(),
+            facility: { bathroom: data.facility.bathroom, building: data.facility.building, share: data.facility.share, room: data.facility.room },
+            id: data.id,
+            images: data.images,
+            price: { start_from: data.price.start_from, duration: data.price.duration },
+            slug: data.slug,
+            title: data.title
+        }
         if (findData === 0) {
-            dataFav.push(data)
+            dataFav.push(newData)
             localStorage.setItem('favorites', JSON.stringify(dataFav))
         }
         this.props.callbackFromParent();

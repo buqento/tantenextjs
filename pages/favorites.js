@@ -1,7 +1,9 @@
 import React from 'react'
+import Link from 'next/link'
 import HeadPage from '../components/HeadPage'
-import CampaignItem from '../components/CampaignItem'
+import Cash from '../utils/Cash'
 import { BiSmile } from 'react-icons/bi'
+import { MdClose } from 'react-icons/md'
 class Detail extends React.Component {
     constructor(props) {
         super(props)
@@ -13,6 +15,18 @@ class Detail extends React.Component {
         if (userFav === null) { data = [] } else { data = JSON.parse(userFav) }
         this.setState({ data })
     }
+    handleRemoveFavoriteItem = (data) => {
+        let userFav = localStorage.getItem('favorites')
+        let userdataFav
+        if (userFav === null) { userdataFav = [] } else { userdataFav = JSON.parse(userFav) }
+        // remove data from array
+        userdataFav = userdataFav.filter(function (item) {
+            return item.id !== data.id
+        })
+        const newData = userdataFav.filter(i => i.id !== data.id)
+        localStorage.setItem('favorites', JSON.stringify(userdataFav))
+        this.setState({ data: newData })
+    }
     render() {
         const { data } = this.state;
         return (
@@ -20,13 +34,13 @@ class Detail extends React.Component {
                 <HeadPage title="Favorit Saya" />
                 {
                     data.length > 0 ?
-                        <div className="grid grid-cols-2 gap-3 mx-3 mb-3">
+                        <div className="mx-3 divide-y-2">
                             {
                                 data
                                     .sort(
                                         function compare(a, b) {
-                                            const dtModifiedA = b.date_modified;
-                                            const dtModifiedB = a.date_modified;
+                                            const dtModifiedA = b.date_view;
+                                            const dtModifiedB = a.date_view;
                                             let comparison = 0;
                                             if (dtModifiedA > dtModifiedB) {
                                                 comparison = 1;
@@ -36,13 +50,40 @@ class Detail extends React.Component {
                                             return comparison;
                                         }
                                     )
-                                    .map((item, index) => <CampaignItem key={index} item={item} />)
+                                    .map((kost, index) =>
+                                        <div className="w-full overflow-hidden divide-gray-100 py-2" key={index}>
+                                            <div className="container-image">
+                                                <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${kost.images[0]}`} alt={kost.title} className="float-left mr-2" />
+                                                <MdClose className="button-delete bg-red-600 text-white rounded-full p-1 mt-2 ml-2" size="24" onClick={() => this.handleRemoveFavoriteItem(kost)} />
+                                            </div>
+                                            <Link href={`/${kost.slug}`}>
+                                                <div className="mx-3 mt-n1" >
+                                                    <div className="text-lg">
+                                                        {Cash(kost.price.start_from)}/<span className="text-xs">{kost.price.duration}</span>
+                                                    </div>
+                                                    <div className="leading-none clamp-3"><small>{kost.title}</small></div>
+                                                    {
+                                                        kost.facility.room.length > 0 &&
+                                                        <div>
+                                                            {kost.facility.room.includes("Kamar Mandi Dalam") && <img src="/../static/images/icons/bath_tube_icon_149739.svg" alt="Kamar Mandi Dalam" className="inline mr-1 border" width={18} />}
+                                                            {kost.facility.room.includes("AC") && <img src="/../static/images/icons/air_conditioner_icon_149740.svg" alt="AC" className="inline mr-1 border" width={18} />}
+                                                            {kost.facility.room.includes("Kasur") && <img src="/../static/images/icons/bed_icon_149738.svg" alt="Kasur" className="inline mr-1 border" width={18} />}
+                                                            {kost.facility.room.includes("Springbed") && <img src="/../static/images/icons/bed_icon_149738.svg" alt="Springbed" className="inline mr-1 border" width={18} />}
+                                                            {kost.facility.room.includes("Lemari Pakaian") && <img src="/../static/images/icons/cupboard_icon_149733.svg" alt="Lemari Pakaian" className="inline mr-1 border" width={18} />}
+                                                            {kost.facility.room.includes("Wifi") && <img src="/../static/images/icons/wifi-medium-signal-symbol-1_icon-icons.com_56451.svg" alt="Wifi" className="inline mr-1 border" width={18} />}
+                                                            {kost.facility.room.includes("TV") && <img src="/../static/images/icons/-live-tv_90650.svg" alt="TV" className="inline mr-1 border" width={18} />}
+                                                        </div>
+                                                    }
+                                                </div>
+                                            </Link>
+                                        </div>
+                                    )
                             }
                         </div>
                         :
                         <div className="container-center text-center">
                             <div className="text-center">
-                                <div><BiSmile size={22} className="inline mr-1 mb-1" />Kamu belum memilih favorit</div>
+                                <div><BiSmile size={22} className="inline mr-1 mb-1" />Kamu belum memiliki kost favorit</div>
                             </div>
                         </div>
                 }

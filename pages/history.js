@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
 import HeadPage from '../components/HeadPage'
-import Generateslug from '../utils/Generateslug'
 import Cash from '../utils/Cash'
 import { BiSmile } from 'react-icons/bi'
 import { MdClose } from 'react-icons/md'
@@ -74,7 +73,6 @@ class History extends React.Component {
                                                 </div>
                                             </Link>
                                         </div>
-
                                     )
                             }
                         </div>

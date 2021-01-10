@@ -33,8 +33,7 @@ class CampaignItem extends Component {
             images: item.images,
             price: { start_from: item.price.start_from, duration: item.price.duration },
             slug: item.slug,
-            title: item.title,
-            hit: item.hit
+            title: item.title
         }
         const handleLastView = () => {
             this.handleHit(newItem.id, newItem.hit === undefined ? 1 : newItem.hit + 1)

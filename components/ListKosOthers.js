@@ -20,8 +20,7 @@ class ListKosOthers extends Component {
                 images: item.images,
                 price: { start_from: item.price.start_from, duration: item.price.duration },
                 slug: item.slug,
-                title: item.title,
-                hit: item.hit
+                title: item.title
             }
             let lastView = localStorage.getItem('lastview')
             let data
