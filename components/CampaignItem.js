@@ -36,13 +36,13 @@ class CampaignItem extends Component {
             <Link href={`/${Generateslug(item.title)}`}>
                 <div className={`rounded-xl overflow-hidden border ${customStyle}`} onClick={() => handleLastView(item)}>
                     <img src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} style={{ maxWidth: 'unset' }} />
-                    <div className="px-2 pt-2 pb-2 text-center">
-                        <div className="px-2 text-xl">
+                    <div className="px-2 pt-2 pb-2">
+                        <div className="text-xl">
                             <span className="font-bold">
-                                {like && <MdStar className="inline text-pink-500 mb-1 mr-1" />}
+                                {like && <MdStar className="inline text-pink-500 mt-1 mr-1 float-right" />}
                                 {Cash(item.price.start_from, false)}
                             </span>
-                            <span className="text-xs text-gray-700">/{item.price.duration}</span>
+                            <span className="text-xs text-gray-700"> / {item.price.duration}</span>
                         </div>
                         {
                             item.facility.room.length > 0 &&
@@ -56,8 +56,8 @@ class CampaignItem extends Component {
                                 {item.facility.room.includes("TV") && <img src="/../static/images/icons/-live-tv_90650.svg" alt="TV" className="inline mr-1 border" width={18} />}
                             </div>
                         }
-                        <div className="text-current leading-none clamp-1">
-                            <BiMap className="inline" /><span><small>{item.location.district}, {item.location.city}</small></span>
+                        <div className="text-sm font-bold clamp-1">
+                            <BiMap className="inline" /><span><small>{item.location.district}, {item.location.province}</small></span>
                         </div>
                         <div>
                             {
