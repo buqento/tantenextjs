@@ -3,10 +3,16 @@ import { arrayOf, shape } from 'prop-types'
 import Link from 'next/link'
 import Cash from '../utils/Cash'
 import Generateslug from '../utils/Generateslug'
+import fire from '../configurations/firebase'
 class ListKosOthers extends Component {
+    async handleHit(id, hit) {
+        await fire.firestore().collection("kosts").doc(id).update({ hit })
+            .catch(err => { console.log(err) })
+    }
     render() {
         const { data, detail } = this.props
         const handleLastView = (item) => {
+            this.handleHit(item.id, item.hit === undefined ? 1 : item.hit + 1)
             let lastView = localStorage.getItem('lastview')
             let data
             if (lastView === null) { data = [] } else { data = JSON.parse(lastView) }

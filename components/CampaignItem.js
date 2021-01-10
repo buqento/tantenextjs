@@ -5,6 +5,7 @@ import Cash from '../utils/Cash'
 import Generateslug from '../utils/Generateslug'
 import { BiMap } from 'react-icons/bi'
 import { MdStar } from 'react-icons/md'
+import fire from '../configurations/firebase'
 class CampaignItem extends Component {
     constructor(props) {
         super(props);
@@ -18,10 +19,15 @@ class CampaignItem extends Component {
         const findFav = userdataFav.filter(i => i.id === item.id).length
         if (findFav > 0) this.setState({ like: true })
     }
+    async handleHit(id, hit) {
+        await fire.firestore().collection("kosts").doc(id).update({ hit })
+            .catch(err => { console.log(err) })
+    }
     render() {
         const { like } = this.state;
         const { item, customStyle } = this.props
         const handleLastView = (item) => {
+            this.handleHit(item.id, item.hit === undefined ? 1 : item.hit + 1)
             let lastView = localStorage.getItem('lastview')
             let data
             if (lastView === null) { data = [] } else { data = JSON.parse(lastView) }

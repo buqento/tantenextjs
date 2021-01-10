@@ -149,7 +149,7 @@ class Detail extends React.Component {
           </nav>
           <div className="container mt-2 mb-3">
             <div>
-              <small className="text-gray-700">{moment(detail.date_modified).lang('id').fromNow()}</small>
+              <small className="text-gray-700">{moment(detail.date_modified).lang('id').fromNow()} &middot; {detail.hit === undefined ? '1' : detail.hit} kali dilihat</small>
               <h1 className="mt-0 mb-3 text-xl capitalize">{detail.title}</h1>
               <div className="mb-3">
                 <p className="font-bold">Deskripsi {detail.category}</p>
@@ -243,7 +243,10 @@ export const getServerSideProps = async (context) => {
     .where('slug', '!=', context.query.detail)
     .get()
   querySnapshot.forEach(doc => {
-    otherData.push(doc.data())
+    otherData.push({
+      id: doc.id,
+      ...doc.data()
+    })
   })
   return {
     props: {
