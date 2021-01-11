@@ -47,7 +47,7 @@ class Detail extends React.Component {
         if (dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---') {
             // console.log('kota semua, kecamatan semua')
             conditions = dt
-                .where('category', '==', dataCallback.category)
+                // .where('category', '==', dataCallback.category)
                 .where('location.province', '==', dataCallback.province)
                 .where("price.start_from", ">=", dataCallback.rangePrice.min)
                 .where("price.start_from", "<=", dataCallback.rangePrice.max)
@@ -55,7 +55,7 @@ class Detail extends React.Component {
         } else if (dataCallback.city !== '---Semua---' && dataCallback.district === '---Semua---') {
             // console.log('kota !semua, kecamatan semua')
             conditions = dt
-                .where('category', '==', dataCallback.category)
+                // .where('category', '==', dataCallback.category)
                 .where('location.province', '==', dataCallback.province)
                 .where('location.city', '==', dataCallback.city)
                 .where("price.start_from", ">=", dataCallback.rangePrice.min)
@@ -64,7 +64,7 @@ class Detail extends React.Component {
         } else if (dataCallback.city !== '---Semua---' && dataCallback.district !== '---Semua---') {
             // console.log('kota !semua, kecamatan !semua')
             conditions = dt
-                .where('category', '==', dataCallback.category)
+                // .where('category', '==', dataCallback.category)
                 .where('location.province', '==', dataCallback.province)
                 .where('location.city', '==', dataCallback.city)
                 .where('location.district', '==', dataCallback.district)
@@ -74,7 +74,7 @@ class Detail extends React.Component {
         } else if (dataCallback.city !== '---Semua---' && dataCallback.district !== '---Semua---') {
             // console.log('kota !semua, kecamatan !semua')
             conditions = dt
-                .where('category', '==', dataCallback.category)
+                // .where('category', '==', dataCallback.category)
                 .where('location.province', '==', dataCallback.province)
                 .where('location.city', '==', dataCallback.city)
                 .where('location.district', '==', dataCallback.district)
@@ -84,7 +84,7 @@ class Detail extends React.Component {
         } else if (dataCallback.city !== '---Semua---' && dataCallback.district === '---Semua---') {
             // console.log('kota !semua, kecamatan semua')
             conditions = dt
-                .where('category', '==', dataCallback.category)
+                // .where('category', '==', dataCallback.category)
                 .where('location.province', '==', dataCallback.province)
                 .where('location.city', '==', dataCallback.city)
                 .where("price.start_from", ">=", dataCallback.rangePrice.min)
@@ -93,7 +93,7 @@ class Detail extends React.Component {
         } else if (dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---') {
             // console.log('kota semua, kecamatan semua)
             conditions = dt
-                .where('category', '==', dataCallback.category)
+                // .where('category', '==', dataCallback.category)
                 .where('location.province', '==', dataCallback.province)
                 .where("price.start_from", ">=", dataCallback.rangePrice.min)
                 .where("price.start_from", "<=", dataCallback.rangePrice.max)
@@ -185,7 +185,7 @@ class Detail extends React.Component {
                             :
                             <div className="container-center text-center">
                                 <div className="text-center">
-                                    <div><BiWinkSmile size={22} className="inline mr-1 mb-1" />Data yang Kamu cari tidak ada</div>
+                                    <div><BiWinkSmile size={22} className="inline mr-1 mb-1" />Silahkan cari data dengan kriteria lainnya</div>
                                 </div>
                             </div>
                 }

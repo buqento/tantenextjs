@@ -16,7 +16,7 @@ class CampusId extends React.Component {
     async componentDidMount() {
         const { slug } = this.props
         const campus = Campus.filter(campus => campus.slug === slug)
-        this.setState({campusName:campus[0].name})
+        this.setState({ campusName: campus[0].name })
         const docRef = await fire.firestore().collection('kosts')
             .where("location.near", "array-contains", campus[0].name)
         docRef.onSnapshot(snap => {
@@ -114,8 +114,13 @@ class CampusId extends React.Component {
                     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureAreaPage) }} />
                 </NextHead>
                 <div className="main-layout">
-                    <HeadPage title={`Dekat ${campusName}`} />
+                    <HeadPage title={campusName} />
                     <ListKos data={data} />
+                    <a href="/search">
+                        <div className="rounded-full bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-3 py-3 mx-3">
+                            <span>Cari Kost Lainnya</span>
+                        </div>
+                    </a>
                 </div>
             </>
         )

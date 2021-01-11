@@ -72,29 +72,29 @@ class CampaignItem extends Component {
                                 {item.facility.room.includes("TV") && <img src="/../static/images/icons/-live-tv_90650.svg" alt="TV" className="inline mr-1 border" width={18} />}
                             </div>
                         }
-                        <div className="text-sm font-bold clamp-1">
+                        <div className="text-sm clamp-1">
                             <BiMap className="inline" /><span><small>{item.location.district}, {item.location.province}</small></span>
                         </div>
-                        <div>
+                        <div className="text-xs font-semibold uppercase">
                             {
                                 item.type.includes("Campur") &&
-                                <span className="rounded-full text-xs font-semibold inline-block px-1 text-green-700 border mr-1 uppercase">Campur</span>
+                                <span className="rounded-full inline-block px-1 text-green-700 border mr-1">Campur</span>
                             }
                             {
                                 item.type.includes("Putri") &&
-                                <span className="rounded-full text-xs font-semibold inline-block px-1 text-green-700 border mr-1 uppercase">Putri</span>
+                                <span className="rounded-full inline-block px-1 text-green-700 border mr-1">Putri</span>
                             }
                             {
                                 item.type.includes("Putra") &&
-                                <span className="rounded-full text-xs font-semibold inline-block px-1 text-green-700 border mr-1 uppercase">Putra</span>
+                                <span className="rounded-full inline-block px-1 text-green-700 border mr-1">Putra</span>
                             }
                             {
                                 item.type.includes("Pasutri") &&
-                                <span className="rounded-full text-xs font-semibold inline-block px-1 text-green-700 border mr-1 uppercase">Pasutri</span>
+                                <span className="rounded-full inline-block px-1 text-green-700 border mr-1">Pasutri</span>
                             }
                             {
                                 item.type.includes("LV") &&
-                                <span className="rounded text-xs font-semibold inline-block px-1 text-green-700 border mr-1 uppercase">LV</span>
+                                <span className="rounded-full text-xs inline-block px-1 text-green-700 border mr-1">LV</span>
                             }
                         </div>
                     </div>

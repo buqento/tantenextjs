@@ -18,10 +18,10 @@ class Filter extends React.Component {
             facilities: {
                 kamarMandiDalam: true,
                 ac: true,
-                wifi: false,
-                kasur: false,
-                lemariPakaian: false,
-                meja: false,
+                wifi: true,
+                kasur: true,
+                lemariPakaian: true,
+                meja: true,
                 kursi: false,
                 exhaustFan: false,
                 tv: false,
@@ -156,8 +156,7 @@ class Filter extends React.Component {
             {
                 showHideForm &&
                 <form className="bg-white" onSubmit={this.handleSearch}>
-
-                    <div className="mb-2">
+                    {/* <div className="mb-2">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="category">Kategori</label>
                         <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="category"
                             value={category}
@@ -166,7 +165,7 @@ class Filter extends React.Component {
                             <option>Kost</option>
                             <option>Kontrakan</option>
                         </select>
-                    </div>
+                    </div> */}
                     <div className="mb-2">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="province">Provinsi</label>
                         <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="province"
