@@ -45,5 +45,6 @@ export const Campus = [
     { id: 44, slug: 'universitas-negeri-jakarta', name: 'Universitas Negeri Jakarta', province: 'DKI Jakarta' },
     { id: 45, slug: 'universitas-hasanuddin', name: 'Universitas Hasanuddin', province: 'Sulawesi Selatan' },
     { id: 46, slug: 'universitas-negeri-makassar', name: 'Universitas Negeri Makassar', province: 'Sulawesi Selatan' },
-    { id: 47, slug: 'politeknik-bosowa', name: 'Politeknik Bosowa', province: 'Sulawesi Selatan' }
+    { id: 47, slug: 'politeknik-bosowa', name: 'Politeknik Bosowa', province: 'Sulawesi Selatan' },
+    { id: 48, slug: 'universitas-atma-jaya-yogyakarta', name: 'Universitas Atma Jaya Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
 ]
