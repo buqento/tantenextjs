@@ -185,7 +185,7 @@ class Detail extends React.Component {
                             :
                             <div className="container-center text-center">
                                 <div className="text-center">
-                                    <div><BiWinkSmile size={22} className="inline mr-1 mb-1" />Silahkan cari data dengan kriteria lainnya</div>
+                                    <div><BiWinkSmile size={22} className="inline mr-1 mb-1" />Silahkan cari dengan kriteria lainnya</div>
                                 </div>
                             </div>
                 }

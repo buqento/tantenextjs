@@ -155,7 +155,7 @@ class Filter extends React.Component {
         return <>
             {
                 showHideForm &&
-                <form className="bg-white" onSubmit={this.handleSearch}>
+                <form className="bg-white uppercase" onSubmit={this.handleSearch}>
                     {/* <div className="mb-2">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="category">Kategori</label>
                         <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="category"
@@ -231,7 +231,7 @@ class Filter extends React.Component {
                         category === 'Kost' &&
                         <div className="text-gray-700 mt-2">
                             <label className="block text-sm font-bold mb-n1" htmlFor="facilityRoom">Fasilitas Kamar</label>
-                            <div className="grid grid-cols-3 gap-3 mx-3">
+                            <div className="capitalize grid grid-cols-3 gap-3 mx-3">
                                 <div className="mb-n1">
                                     <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="kamarMandiDalam" label="KM.Dalam" checked={facilities.kamarMandiDalam} onChange={this.toggleKamarMandiDalam} custom />
                                 </div>
@@ -281,7 +281,7 @@ class Filter extends React.Component {
                         </div>
                     </div>
                     <div className="border-top pt-3 mt-3">
-                        <button className="bg-indigo-700 hover:bg-indigo-600 focus:outline-none text-white font-bold py-3 px-3 my-2 mr-3 rounded-full w-full uppercase" type="submit">Terapkan</button>
+                        <button className="bg-indigo-700 hover:bg-indigo-600 focus:outline-none text-white font-bold py-3 px-3 my-2 mr-3 rounded-full w-full uppercase" type="submit">Mulai Mencari</button>
                     </div>
                 </form>
             }
