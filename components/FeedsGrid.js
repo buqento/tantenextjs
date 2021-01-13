@@ -43,7 +43,7 @@ class FeedsGrid extends React.Component {
                                         </div>
                                         <a href="/search">
                                             <div className="rounded-full bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-3 py-3 mx-3">
-                                                <span>Cari Kost Lainnya</span>
+                                                <span>Cari Lebih Banyak</span>
                                             </div>
                                         </a>
                                     </>
@@ -72,14 +72,6 @@ class FeedsGrid extends React.Component {
                                                 </div>
                                             </div>
                                         </div>
-                                        // <div key={index} className="rounded-xl overflow-hidden border">
-                                        //     <div className="animate-pulse w-full h-48 bg-gray-300" />
-                                        //     <div className="px-3 py-3">
-                                        //         <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
-                                        //         <div className="animate-pulse px-2 my-1 w-12 h-4 bg-gray-300" />
-                                        //         <div className="animate-pulse px-2 my-1 w-6 h-4 bg-gray-300" />
-                                        //     </div>
-                                        // </div>
                                     )
                                 }
                             </div>
