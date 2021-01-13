@@ -60,14 +60,14 @@ class FeedsGrid extends React.Component {
                             <div className="mx-3">
                                 {
                                     skeletonArr.map((item, index) =>
-                                        <div class="border border-gray-300 rounded-md p-4 max-w-sm w-full mx-auto my-3">
-                                            <div class="animate-pulse flex space-x-4">
-                                                <div class="bg-gray-400 h-24 w-24"></div>
-                                                <div class="flex-1 space-y-4 py-1">
-                                                    <div class="h-4 bg-gray-400 rounded w-3/4"></div>
-                                                    <div class="space-y-2">
-                                                        <div class="h-4 bg-gray-400 rounded"></div>
-                                                        <div class="h-4 bg-gray-400 rounded w-5/6"></div>
+                                        <div key={index} className="border border-gray-300 rounded-md p-4 max-w-sm w-full mx-auto my-3">
+                                            <div className="animate-pulse flex space-x-4">
+                                                <div className="bg-gray-400 h-24 w-24"></div>
+                                                <div className="flex-1 space-y-4 py-1">
+                                                    <div className="h-4 bg-gray-400 rounded w-3/4"></div>
+                                                    <div className="space-y-2">
+                                                        <div className="h-4 bg-gray-400 rounded"></div>
+                                                        <div className="h-4 bg-gray-400 rounded w-5/6"></div>
                                                     </div>
                                                 </div>
                                             </div>

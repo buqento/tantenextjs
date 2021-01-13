@@ -40,12 +40,14 @@ class ListKosOthers extends Component {
                     listData.length > 0 &&
                     <div className="mt-3">
                         <div className="py-3 font-bold">
-                            {`${detail.category} lain di ${detail.location.district}, ${detail.location.city}, ${detail.location.province}`}
+                            <span className="font-normal">{`${detail.category} lain di `}</span>
+                            <span>{`${detail.location.district}, ${detail.location.city}, ${detail.location.province}`}</span>
                         </div>
                         <div className="divide-y-2">
                             {
                                 listData
                                     .reverse()
+                                    .slice(0, 5)
                                     .map((kost, index) =>
                                         <Link key={index} href={`../${Generateslug(kost.title)}`}>
                                             <div className="w-full overflow-hidden py-2" onClick={() => handleLastView(kost)}>

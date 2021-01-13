@@ -1,5 +1,5 @@
 import React from 'react'
-import { arrayOf, shape } from 'prop-types'
+import { array } from 'prop-types'
 class Facilities extends React.Component {
     render() {
         const { items } = this.props;
@@ -42,7 +42,7 @@ class Facilities extends React.Component {
     }
 }
 Facilities.propTypes = {
-    items: arrayOf(shape())
+    items: array
 }
 Facilities.defaultProps = {
     items: null

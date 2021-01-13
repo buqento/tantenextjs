@@ -48,4 +48,7 @@ export const Campus = [
     { id: 47, slug: 'politeknik-bosowa', name: 'Politeknik Bosowa', province: 'Sulawesi Selatan' },
     { id: 48, slug: 'universitas-atma-jaya-yogyakarta', name: 'Universitas Atma Jaya Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
     { id: 49, slug: 'universitas-sahid-jakarta', name: 'Universitas Sahid Jakarta', province: 'DKI Jakarta' },
+    { id: 50, slug: 'sekolah-tinggi-ilmu-ekonomi-amkop-makassar', name: 'Sekolah Tinggi Ilmu Ekonomi Amkop Makassar', province: 'Sulawesi Selatan' },
+    { id: 51, slug: 'stikes-mega-rezky', name: 'STIKES Mega Rezky', province: 'Sulawesi Selatan' },
+    { id: 52, slug: 'akademi-kebidanan-minasa-upa', name: 'Akademi Kebidanan Minasa Upa', province: 'Sulawesi Selatan' },
 ]
