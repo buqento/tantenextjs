@@ -15,6 +15,10 @@ class Index extends React.Component {
       isFilter: false,
       titleHead: null
     }
+    this.scrollToNode = this.scrollToNode.bind(this);
+  }
+  scrollToNode(node) {
+    node.scrollIntoView({ behavior: 'smooth' });
   }
   filterCallback = (dataCallback) => {
     const { limit } = this.state
@@ -85,6 +89,7 @@ class Index extends React.Component {
       }))
       this.setState({ data, isFilter: true, titleHead })
     })
+    this.scrollToNode(this.node)
   }
   render() {
     const { data, isFilter, titleHead } = this.state
@@ -94,7 +99,7 @@ class Index extends React.Component {
         <div className="border-bottom px-3 pb-3">
           <Filter callbackFromParent={this.filterCallback} />
         </div>
-        <div className="sticky top-0 py-3 px-3 bg-white z-10">
+        <div className="sticky top-0 py-3 px-3 bg-white z-10" ref={(node) => this.node = node}>
           <span className="text-current mb-4">
             {
               !isFilter ? <span className="uppercase font-bold">Terbaru</span> : <>Hasil Pencarian: <span className="font-bold">{titleHead}</span></>
