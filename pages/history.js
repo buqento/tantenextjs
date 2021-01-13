@@ -49,13 +49,15 @@ class History extends React.Component {
                                     .map((kost, index) =>
                                         <div className="w-full overflow-hidden divide-gray-100 py-2" key={index}>
                                             <div className="container-image">
-                                                <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${kost.images[0]}`} alt={kost.title} className="float-left mr-2" />
-                                                <MdClose className="button-delete bg-red-600 text-white rounded-full p-1 mt-2 ml-2" size="24" onClick={() => this.handleRemoveHistoryItem(kost)} />
+                                                <Link href={`/${kost.slug}`}>
+                                                    <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${kost.images[0]}`} alt={kost.title} className="float-left mr-2" />
+                                                </Link>
+                                                <MdClose className="button-delete bg-gray-600 text-white rounded-full p-1 mt-2 ml-2" size="24" onClick={() => this.handleRemoveHistoryItem(kost)} />
                                             </div>
                                             <Link href={`/${kost.slug}`}>
                                                 <div className="mx-3 mt-n1" >
-                                                    <div className="text-lg">
-                                                        {Cash(kost.price.start_from)}/<span className="text-xs">{kost.price.duration}</span>
+                                                    <div className="text-lg font-bold">
+                                                        {Cash(kost.price.start_from)}<span className="text-xs font-normal">/{kost.price.duration}</span>
                                                     </div>
                                                     <div className="leading-none clamp-3"><small>{kost.title}</small></div>
                                                     {

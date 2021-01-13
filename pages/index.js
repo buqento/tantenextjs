@@ -109,7 +109,7 @@ class Index extends React.Component {
         <div className="border-bottom">
           <FeedsGrid filterData={data} />
         </div>
-        <div className="sticky top-0 py-3 px-3 bg-white z-10">
+        <div className="sticky top-0 pt-4 pb-3 px-3 bg-white z-10">
           <span className="text-uppercase text-current font-bold">Dekat Kampus</span>
         </div>
         <div className="border-bottom">
