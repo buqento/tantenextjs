@@ -102,7 +102,7 @@ class Index extends React.Component {
     return (
       <Layout>
         <Header />
-        <div className="m-3 border rounded-xl shadow-sm px-3 py-3">
+        <div className="m-3 border rounded-xl shadow-sm py-3">
           <Filter callbackFromParent={this.filterCallback} />
         </div>
         <div className="sticky top-0 py-3 px-3 bg-white z-10" ref={(node) => this.node = node}>

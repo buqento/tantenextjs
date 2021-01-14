@@ -14,7 +14,7 @@ class Filter extends React.Component {
             province: 'Daerah Istimewa Yogyakarta',
             city: '---Semua---',
             district: '---Semua---',
-            rangePrice: { min: 50000, max: 10000000 },
+            rangePrice: { min: 50000, max: 50000000 },
             facilities: {
                 kamarMandiDalam: true,
                 ac: true,
@@ -156,100 +156,101 @@ class Filter extends React.Component {
             {
                 showHideForm &&
                 <form className="bg-white uppercase" onSubmit={this.handleSearch}>
-                    <div className="mb-2">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="duration">Tipe</label>
-                        <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="duration"
-                            value={duration}
-                            name="duration"
-                            onChange={this.handleChange}>
-                            <option value="Hari">Harian</option>
-                            <option value="Bulan">Bulanan</option>
-                            <option value="Tahun">Tahunan</option>
-                        </select>
-                    </div>
-                    <div className="mb-2">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="province">Provinsi</label>
-                        <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="province"
-                            name="province"
-                            value={province}
-                            onChange={this.handleChange}>
-                            {
-                                DtProvinsi
-                                    .sort(function (a, b) {
-                                        var nameA = Generateslug(a.title.toUpperCase());
-                                        var nameB = Generateslug(b.title.toUpperCase());
-                                        if (nameA < nameB) return -1;
-                                        if (nameA > nameB) return 1;
-                                        return 0;
-                                    })
-                                    .map((province, index) => <option key={index}>{province.title}</option>)
-                            }
-                        </select>
-                    </div>
-                    <div className="mb-2">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="city">Kota/Kabupaten</label>
-                        <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="city"
-                            name="city"
-                            value={city}
-                            onChange={this.handleChange}>
-                            <option>{city}</option>
-                            {
-                                City
-                                    .sort(function (a, b) {
-                                        var nameA = Generateslug(a.name.toUpperCase());
-                                        var nameB = Generateslug(b.name.toUpperCase());
-                                        if (nameA < nameB) return -1;
-                                        if (nameA > nameB) return 1;
-                                        return 0;
-                                    })
-                                    .filter(city => city.province === province)
-                                    .map((city, index) => <option key={index}>{city.name}</option>)
-                            }
-                        </select>
-                    </div>
-                    <div className="mb-2">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="district">Kecamatan</label>
-                        <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="district"
-                            name="district"
-                            value={district}
-                            onChange={this.handleChange}>
-                            <option>{district}</option>
-                            {
-                                DtArea
-                                    .sort(function (a, b) {
-                                        var nameA = Generateslug(a.district.toUpperCase());
-                                        var nameB = Generateslug(b.district.toUpperCase());
-                                        if (nameA < nameB) return -1;
-                                        if (nameA > nameB) return 1;
-                                        return 0;
-                                    })
-                                    .filter(area => area.city === city)
-                                    .map((area, index) => <option key={index}>{area.district}</option>)
-                            }
-                        </select>
-                    </div>
-                    <div className="text-gray-700 mt-2">
-                        <label className="block text-sm font-bold mb-n1" htmlFor="facilityRoom">Fasilitas Kamar</label>
-                        <div className="capitalize grid grid-cols-3 gap-3 mx-3">
-                            <div className="mb-n1">
-                                <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="ac" label="AC" checked={facilities.ac} onChange={this.toggleAc} custom />
-                            </div>
-                            <div className="mb-n1">
-                                <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="wifi" label="Wifi" checked={facilities.wifi} onChange={this.toggleWifi} custom />
-                            </div>
-                            <div className="mb-n1">
-                                <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="kamarMandiDalam" label="KM.Dalam" checked={facilities.kamarMandiDalam} onChange={this.toggleKamarMandiDalam} custom />
-                            </div>
-                            <div className="mb-n1">
-                                <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="kasur" label="Kasur" checked={facilities.kasur} onChange={this.toggleKasur} custom />
-                            </div>
-                            <div className="mb-n1">
-                                <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="lemariPakaian" label="Lemari" checked={facilities.lemariPakaian} onChange={this.toggleLemariPakaian} custom />
-                            </div>
-                            <div className="mb-n1">
-                                <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="meja" label="Meja" checked={facilities.meja} onChange={this.toggleMeja} custom />
-                            </div>
-                            {/* <div className="mb-n1">
+                    <div className="px-3">
+                        <div className="mb-2">
+                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="duration">Jenis Sewa</label>
+                            <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="duration"
+                                value={duration}
+                                name="duration"
+                                onChange={this.handleChange}>
+                                <option value="Hari">Harian</option>
+                                <option value="Bulan">Bulanan</option>
+                                <option value="Tahun">Tahunan</option>
+                            </select>
+                        </div>
+                        <div className="mb-2">
+                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="province">Provinsi</label>
+                            <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="province"
+                                name="province"
+                                value={province}
+                                onChange={this.handleChange}>
+                                {
+                                    DtProvinsi
+                                        .sort(function (a, b) {
+                                            var nameA = Generateslug(a.title.toUpperCase());
+                                            var nameB = Generateslug(b.title.toUpperCase());
+                                            if (nameA < nameB) return -1;
+                                            if (nameA > nameB) return 1;
+                                            return 0;
+                                        })
+                                        .map((province, index) => <option key={index}>{province.title}</option>)
+                                }
+                            </select>
+                        </div>
+                        <div className="mb-2">
+                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="city">Kota/Kabupaten</label>
+                            <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="city"
+                                name="city"
+                                value={city}
+                                onChange={this.handleChange}>
+                                <option>{city}</option>
+                                {
+                                    City
+                                        .sort(function (a, b) {
+                                            var nameA = Generateslug(a.name.toUpperCase());
+                                            var nameB = Generateslug(b.name.toUpperCase());
+                                            if (nameA < nameB) return -1;
+                                            if (nameA > nameB) return 1;
+                                            return 0;
+                                        })
+                                        .filter(city => city.province === province)
+                                        .map((city, index) => <option key={index}>{city.name}</option>)
+                                }
+                            </select>
+                        </div>
+                        <div className="mb-2">
+                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="district">Kecamatan</label>
+                            <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="district"
+                                name="district"
+                                value={district}
+                                onChange={this.handleChange}>
+                                <option>{district}</option>
+                                {
+                                    DtArea
+                                        .sort(function (a, b) {
+                                            var nameA = Generateslug(a.district.toUpperCase());
+                                            var nameB = Generateslug(b.district.toUpperCase());
+                                            if (nameA < nameB) return -1;
+                                            if (nameA > nameB) return 1;
+                                            return 0;
+                                        })
+                                        .filter(area => area.city === city)
+                                        .map((area, index) => <option key={index}>{area.district}</option>)
+                                }
+                            </select>
+                        </div>
+                        <div className="text-gray-700 mt-2">
+                            <label className="block text-sm font-bold mb-n1" htmlFor="facilityRoom">Fasilitas Kamar</label>
+                            <div className="capitalize grid grid-cols-3 gap-3 mx-3">
+                                <div className="mb-n1">
+                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="ac" label="AC" checked={facilities.ac} onChange={this.toggleAc} custom />
+                                </div>
+                                <div className="mb-n1">
+                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="wifi" label="Wifi" checked={facilities.wifi} onChange={this.toggleWifi} custom />
+                                </div>
+                                <div className="mb-n1">
+                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="kamarMandiDalam" label="KM.Dalam" checked={facilities.kamarMandiDalam} onChange={this.toggleKamarMandiDalam} custom />
+                                </div>
+                                <div className="mb-n1">
+                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="kasur" label="Kasur" checked={facilities.kasur} onChange={this.toggleKasur} custom />
+                                </div>
+                                <div className="mb-n1">
+                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="lemariPakaian" label="Lemari" checked={facilities.lemariPakaian} onChange={this.toggleLemariPakaian} custom />
+                                </div>
+                                <div className="mb-n1">
+                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="meja" label="Meja" checked={facilities.meja} onChange={this.toggleMeja} custom />
+                                </div>
+                                {/* <div className="mb-n1">
                                     <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="kursi" label="Kursi" checked={facilities.kursi} onChange={this.toggleKursi} custom />
                                 </div>
                                 <div className="mb-n1">
@@ -261,24 +262,25 @@ class Filter extends React.Component {
                                 <div className="mb-n1">
                                     <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="kipasAngin" label="Kipas" checked={facilities.kipasAngin} onChange={this.toggleKipasAngin} custom />
                                 </div> */}
+                            </div>
+                        </div>
+                        <div className="my-3">
+                            <label className="block text-gray-700 text-sm font-bold mb-n1" htmlFor="maxPrice">Harga Sewa</label>
+                            <div className="text-center text-gray-700 mb-n3">
+                                {Cash(rangePrice.min)} - {Cash(rangePrice.max)}
+                            </div>
+                            <div className="mt-4 mb-3 mx-3">
+                                <InputRange
+                                    step={50000}
+                                    maxValue={50000000}
+                                    minValue={50000}
+                                    formatLabel={rangePrice => `${Cash(rangePrice)}`}
+                                    value={this.state.rangePrice}
+                                    onChange={rangePrice => this.setState({ rangePrice })} />
+                            </div>
                         </div>
                     </div>
-                    <div className="my-3">
-                        <label className="block text-gray-700 text-sm font-bold mb-n1" htmlFor="maxPrice">Harga Sewa</label>
-                        <div className="text-center text-gray-700 mb-n4">
-                            {Cash(rangePrice.min)} - {Cash(rangePrice.max)}
-                        </div>
-                        <div className="my-4 mx-3">
-                            <InputRange
-                                step={50000}
-                                maxValue={10000000}
-                                minValue={50000}
-                                formatLabel={rangePrice => `${Cash(rangePrice)}`}
-                                value={this.state.rangePrice}
-                                onChange={rangePrice => this.setState({ rangePrice })} />
-                        </div>
-                    </div>
-                    <div className="border-top pt-3 mt-3">
+                    <div className="border-top pt-2 px-3">
                         <button className="bg-indigo-700 hover:bg-indigo-600 focus:outline-none text-white font-bold py-3 px-3 my-2 mr-3 rounded-full w-full uppercase" type="submit">Mulai Mencari</button>
                     </div>
                 </form>

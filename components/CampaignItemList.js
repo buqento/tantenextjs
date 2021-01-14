@@ -30,9 +30,14 @@ class CampaignItemList extends Component {
             facility: { bathroom: item.facility.bathroom, building: item.facility.building, share: item.facility.share, room: item.facility.room },
             id: item.id,
             images: item.images,
+            location: {
+                city: item.location.city, district: item.location.district, near: item.location.near, province: item.location.province
+            },
+            name: item.name,
             price: { start_from: item.price.start_from, duration: item.price.duration },
             slug: item.slug,
-            title: item.title
+            title: item.title,
+            type: item.type
         }
         const handleLastView = () => {
             this.handleHit(item.id, item.hit === undefined ? 1 : item.hit + 1)

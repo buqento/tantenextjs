@@ -38,9 +38,14 @@ class FooterDetail extends Component {
             facility: { bathroom: data.facility.bathroom, building: data.facility.building, share: data.facility.share, room: data.facility.room },
             id: data.id,
             images: data.images,
+            location: {
+                city: data.location.city, district: data.location.district, near: data.location.near, province: data.location.province
+            },
+            name: data.name,
             price: { start_from: data.price.start_from, duration: data.price.duration },
             slug: data.slug,
-            title: data.title
+            title: data.title,
+            type: data.type
         }
         if (findData === 0) {
             dataFav.push(newData)

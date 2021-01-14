@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import HeadPage from '../components/HeadPage'
 import Cash from '../utils/Cash'
-import { BiSmile } from 'react-icons/bi'
+import { BiSmile, BiMap } from 'react-icons/bi'
 import { MdClose } from 'react-icons/md'
 class History extends React.Component {
     constructor(props) {
@@ -59,17 +59,36 @@ class History extends React.Component {
                                                     <div className="text-lg font-bold">
                                                         {Cash(kost.price.start_from)}<span className="text-xs font-normal">/{kost.price.duration}</span>
                                                     </div>
-                                                    <div className="leading-none clamp-3"><small>{kost.title}</small></div>
+                                                    <div className="leading-none clamp-2"><small>{kost.title}</small></div>
                                                     {
-                                                        kost.facility.room.length > 0 &&
-                                                        <div>
-                                                            {kost.facility.room.includes("Kamar Mandi Dalam") && <img src="/../static/images/icons/bath_tube_icon_149739.svg" alt="Kamar Mandi Dalam" className="inline mr-1 border" width={18} />}
-                                                            {kost.facility.room.includes("AC") && <img src="/../static/images/icons/air_conditioner_icon_149740.svg" alt="AC" className="inline mr-1 border" width={18} />}
-                                                            {kost.facility.room.includes("Kasur") && <img src="/../static/images/icons/bed_icon_149738.svg" alt="Kasur" className="inline mr-1 border" width={18} />}
-                                                            {kost.facility.room.includes("Springbed") && <img src="/../static/images/icons/bed_icon_149738.svg" alt="Springbed" className="inline mr-1 border" width={18} />}
-                                                            {kost.facility.room.includes("Lemari Pakaian") && <img src="/../static/images/icons/cupboard_icon_149733.svg" alt="Lemari Pakaian" className="inline mr-1 border" width={18} />}
-                                                            {kost.facility.room.includes("Wifi") && <img src="/../static/images/icons/wifi-medium-signal-symbol-1_icon-icons.com_56451.svg" alt="Wifi" className="inline mr-1 border" width={18} />}
-                                                            {kost.facility.room.includes("TV") && <img src="/../static/images/icons/-live-tv_90650.svg" alt="TV" className="inline mr-1 border" width={18} />}
+                                                        kost.location &&
+                                                        <div className="text-sm clamp-1">
+                                                            <BiMap className="inline" /><span><small>{kost.location.district}, {kost.location.city}, {kost.location.province}</small></span>
+                                                        </div>
+                                                    }
+                                                    {
+                                                        kost.type &&
+                                                        <div className="text-xs font-semibold uppercase">
+                                                            {
+                                                                kost.type.includes("Campur") &&
+                                                                <span className="rounded-full inline-block px-1 text-green-700 border mr-1">Campur</span>
+                                                            }
+                                                            {
+                                                                kost.type.includes("Putri") &&
+                                                                <span className="rounded-full inline-block px-1 text-green-700 border mr-1">Putri</span>
+                                                            }
+                                                            {
+                                                                kost.type.includes("Putra") &&
+                                                                <span className="rounded-full inline-block px-1 text-green-700 border mr-1">Putra</span>
+                                                            }
+                                                            {
+                                                                kost.type.includes("Pasutri") &&
+                                                                <span className="rounded-full inline-block px-1 text-green-700 border mr-1">Pasutri</span>
+                                                            }
+                                                            {
+                                                                kost.type.includes("LV") &&
+                                                                <span className="rounded-full text-xs inline-block px-1 text-green-700 border mr-1">LV</span>
+                                                            }
                                                         </div>
                                                     }
                                                 </div>
