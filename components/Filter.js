@@ -10,7 +10,7 @@ class Filter extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            category: 'Kost',
+            duration: 'Bulan',
             province: 'Daerah Istimewa Yogyakarta',
             city: '---Semua---',
             district: '---Semua---',
@@ -46,7 +46,7 @@ class Filter extends React.Component {
     }
     handleSearch(event) {
         event.preventDefault()
-        const { category, province, city, district, rangePrice, facilities } = this.state
+        const { duration, province, city, district, rangePrice, facilities } = this.state
         let facilitiesRoom = []
         facilities.ac && facilitiesRoom.push("AC")
         facilities.wifi && facilitiesRoom.push("Wifi")
@@ -58,7 +58,7 @@ class Filter extends React.Component {
         facilities.exhaustFan && facilitiesRoom.push("Exhaust Fan")
         facilities.tv && facilitiesRoom.push("TV")
         facilities.kipasAngin && facilitiesRoom.push("Kipas Angin")
-        this.props.callbackFromParent({ category, province, city, district, facilitiesRoom, rangePrice });
+        this.props.callbackFromParent({ duration, province, city, district, facilitiesRoom, rangePrice });
     }
     toggleAc = () => {
         const { facilities } = this.state
@@ -151,21 +151,22 @@ class Filter extends React.Component {
         }))
     }
     render() {
-        const { showHideForm, category, province, city, district, facilities, rangePrice } = this.state
+        const { showHideForm, duration, province, city, district, facilities, rangePrice } = this.state
         return <>
             {
                 showHideForm &&
                 <form className="bg-white uppercase" onSubmit={this.handleSearch}>
-                    {/* <div className="mb-2">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="category">Kategori</label>
-                        <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="category"
-                            value={category}
-                            name="category"
+                    <div className="mb-2">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="duration">Tipe</label>
+                        <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="duration"
+                            value={duration}
+                            name="duration"
                             onChange={this.handleChange}>
-                            <option>Kost</option>
-                            <option>Kontrakan</option>
+                            <option value="Hari">Harian</option>
+                            <option value="Bulan">Bulanan</option>
+                            <option value="Tahun">Tahunan</option>
                         </select>
-                    </div> */}
+                    </div>
                     <div className="mb-2">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="province">Provinsi</label>
                         <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="province"
@@ -227,32 +228,30 @@ class Filter extends React.Component {
                             }
                         </select>
                     </div>
-                    {
-                        category === 'Kost' &&
-                        <div className="text-gray-700 mt-2">
-                            <label className="block text-sm font-bold mb-n1" htmlFor="facilityRoom">Fasilitas Kamar</label>
-                            <div className="capitalize grid grid-cols-3 gap-3 mx-3">
-                                <div className="mb-n1">
-                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="kamarMandiDalam" label="KM.Dalam" checked={facilities.kamarMandiDalam} onChange={this.toggleKamarMandiDalam} custom />
-                                </div>
-                                <div className="mb-n1">
-                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="ac" label="AC" checked={facilities.ac} onChange={this.toggleAc} custom />
-                                </div>
-                                <div className="mb-n1">
-                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="wifi" label="Wifi" checked={facilities.wifi} onChange={this.toggleWifi} custom />
-                                </div>
-                                <div className="mb-n1">
-                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="kasur" label="Kasur" checked={facilities.kasur} onChange={this.toggleKasur} custom />
-                                </div>
-                                <div className="mb-n1">
-                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="lemariPakaian" label="Lemari" checked={facilities.lemariPakaian} onChange={this.toggleLemariPakaian} custom />
-                                </div>
-                                <div className="mb-n1">
-                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="meja" label="Meja" checked={facilities.meja} onChange={this.toggleMeja} custom />
-                                </div>
-                                {/* <div className="mb-n1">
+                    <div className="text-gray-700 mt-2">
+                        <label className="block text-sm font-bold mb-n1" htmlFor="facilityRoom">Fasilitas Kamar</label>
+                        <div className="capitalize grid grid-cols-3 gap-3 mx-3">
+                            <div className="mb-n1">
+                                <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="ac" label="AC" checked={facilities.ac} onChange={this.toggleAc} custom />
+                            </div>
+                            <div className="mb-n1">
+                                <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="wifi" label="Wifi" checked={facilities.wifi} onChange={this.toggleWifi} custom />
+                            </div>
+                            <div className="mb-n1">
+                                <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="kamarMandiDalam" label="KM.Dalam" checked={facilities.kamarMandiDalam} onChange={this.toggleKamarMandiDalam} custom />
+                            </div>
+                            <div className="mb-n1">
+                                <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="kasur" label="Kasur" checked={facilities.kasur} onChange={this.toggleKasur} custom />
+                            </div>
+                            <div className="mb-n1">
+                                <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="lemariPakaian" label="Lemari" checked={facilities.lemariPakaian} onChange={this.toggleLemariPakaian} custom />
+                            </div>
+                            <div className="mb-n1">
+                                <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="meja" label="Meja" checked={facilities.meja} onChange={this.toggleMeja} custom />
+                            </div>
+                            {/* <div className="mb-n1">
                                     <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="kursi" label="Kursi" checked={facilities.kursi} onChange={this.toggleKursi} custom />
-                                </div> */}
+                                </div>
                                 <div className="mb-n1">
                                     <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="exhaustFan" label="Exhaust" checked={facilities.exhaustFan} onChange={this.toggleExhaustFan} custom />
                                 </div>
@@ -261,10 +260,9 @@ class Filter extends React.Component {
                                 </div>
                                 <div className="mb-n1">
                                     <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="kipasAngin" label="Kipas" checked={facilities.kipasAngin} onChange={this.toggleKipasAngin} custom />
-                                </div>
-                            </div>
+                                </div> */}
                         </div>
-                    }
+                    </div>
                     <div className="my-3">
                         <label className="block text-gray-700 text-sm font-bold mb-n1" htmlFor="maxPrice">Harga Sewa</label>
                         <div className="text-center text-gray-700 mb-n4">

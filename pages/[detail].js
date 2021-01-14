@@ -153,7 +153,7 @@ class Detail extends React.Component {
               <h1 className="mt-0 mb-3 text-xl capitalize">{detail.title}</h1>
               <div className="mb-3">
                 <p className="font-bold">Deskripsi {detail.category}</p>
-                <p>{detail.description}</p>
+                <div dangerouslySetInnerHTML={{ __html: detail.description }} />
               </div>
               {
                 detail && detail.facility && detail.facility.room.length > 0 && detail.facility.room[0] !== "" &&
