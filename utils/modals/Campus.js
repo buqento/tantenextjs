@@ -33,7 +33,7 @@ export const Campus = [
     { id: 32, slug: 'universitas-kristen-immanuel', name: 'Universitas Kristen Immanuel', province: 'Daerah Istimewa Yogyakarta' },
     { id: 33, slug: 'itekes-bali', name: 'ITEKES Bali', province: 'Daerah Istimewa Yogyakarta' },
     { id: 34, slug: 'universitas-krisnadwipayana', name: 'Universitas Krisnadwipayana', province: 'Jawa Barat' },
-    { id: 35, slug: 'instiper-yogyakarta', name: 'INSTIPER Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
+    { id: 35, slug: 'institut-pertanian-stiper-yogyakarta', name: 'Institut Pertanian Stiper Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
     { id: 36, slug: 'universitas-tarumanagara', name: 'Universitas Tarumanagara', province: 'DKI Jakarta' },
     { id: 37, slug: 'universitas-kristen-krida-wacana', name: 'Universitas Kristen Krida Wacana', province: 'DKI Jakarta' },
     { id: 38, slug: 'universitas-trisakti', name: 'Universitas Trisakti', province: 'DKI Jakarta' },
@@ -54,4 +54,5 @@ export const Campus = [
     { id: 53, slug: 'universitas-bosowa', name: 'Universitas Bosowa', province: 'Sulawesi Selatan' },
     { id: 54, slug: 'universitas-muslim-indonesia', name: 'Universitas Muslim Indonesia', province: 'Sulawesi Selatan' },
     { id: 55, slug: 'politeknik-ati-makassar', name: 'Politeknik ATI Makassar', province: 'Sulawesi Selatan' },
+    { id: 56, slug: 'universitas-kristen-immanuel', name: 'Universitas Kristen Immanuel', province: 'Daerah Istimewa Yogyakarta' },
 ]
