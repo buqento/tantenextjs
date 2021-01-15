@@ -11,7 +11,6 @@ class Index extends React.Component {
     super(props)
     this.state = {
       data: null,
-      limit: 10,
       isFilter: false,
       titleHead: null
     }
@@ -21,7 +20,6 @@ class Index extends React.Component {
     node.scrollIntoView({ behavior: 'smooth' });
   }
   filterCallback = (dataCallback) => {
-    const { limit } = this.state
     let facilitiesRoom = [""]
     if (dataCallback.facilitiesRoom.length > 0) facilitiesRoom = dataCallback.facilitiesRoom
     const dt = fire.firestore().collection('kosts')
@@ -35,7 +33,6 @@ class Index extends React.Component {
         .where("price.start_from", ">=", dataCallback.rangePrice.min)
         .where("price.start_from", "<=", dataCallback.rangePrice.max)
         .where("facility.room", "array-contains-any", facilitiesRoom)
-        .limit(limit)
     } else if (dataCallback.city !== '---Semua---' && dataCallback.district === '---Semua---') {
       titleHead = dataCallback.city + ', ' + dataCallback.province
       conditions = dt
@@ -45,7 +42,6 @@ class Index extends React.Component {
         .where("price.start_from", ">=", dataCallback.rangePrice.min)
         .where("price.start_from", "<=", dataCallback.rangePrice.max)
         .where("facility.room", "array-contains-any", facilitiesRoom)
-        .limit(limit)
     } else if (dataCallback.city !== '---Semua---' && dataCallback.district !== '---Semua---') {
       titleHead = dataCallback.district + ', ' + dataCallback.city + ', ' + dataCallback.province
       conditions = dt
@@ -56,7 +52,6 @@ class Index extends React.Component {
         .where("price.start_from", ">=", dataCallback.rangePrice.min)
         .where("price.start_from", "<=", dataCallback.rangePrice.max)
         .where("facility.room", "array-contains-any", facilitiesRoom)
-        .limit(limit)
     } else if (dataCallback.city !== '---Semua---' && dataCallback.district !== '---Semua---') {
       titleHead = dataCallback.district + ', ' + dataCallback.city + ', ' + dataCallback.province
       conditions = dt
@@ -67,7 +62,6 @@ class Index extends React.Component {
         .where("price.start_from", ">=", dataCallback.rangePrice.min)
         .where("price.start_from", "<=", dataCallback.rangePrice.max)
         .where("facility.room", "array-contains-any", facilitiesRoom)
-        .limit(limit)
     } else if (dataCallback.city !== '---Semua---' && dataCallback.district === '---Semua---') {
       titleHead = dataCallback.city + ', ' + dataCallback.province
       conditions = dt
@@ -77,7 +71,6 @@ class Index extends React.Component {
         .where("price.start_from", ">=", dataCallback.rangePrice.min)
         .where("price.start_from", "<=", dataCallback.rangePrice.max)
         .where("facility.room", "array-contains-any", facilitiesRoom)
-        .limit(limit)
     } else if (dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---') {
       titleHead = dataCallback.province
       conditions = dt
@@ -86,7 +79,6 @@ class Index extends React.Component {
         .where("price.start_from", ">=", dataCallback.rangePrice.min)
         .where("price.start_from", "<=", dataCallback.rangePrice.max)
         .where("facility.room", "array-contains-any", facilitiesRoom)
-        .limit(limit)
     }
     conditions.onSnapshot(snapshot => {
       const data = snapshot.docs.map(doc => ({

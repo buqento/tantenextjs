@@ -8,6 +8,7 @@ class FeedsGrid extends React.Component {
         this.state = {
             data: null,
             load: true,
+            limit: 5,
             skeletonArr: [1, 2, 3]
         }
     }
@@ -24,7 +25,7 @@ class FeedsGrid extends React.Component {
         docRef.get().catch(err => console.log(err))
     }
     render() {
-        const { data, load, skeletonArr } = this.state
+        const { data, limit, load, skeletonArr } = this.state
         const { filterData } = this.props
         return (
             <div className="mb-3">
@@ -38,12 +39,17 @@ class FeedsGrid extends React.Component {
                                     <>
                                         <div className="mx-3 divide-y-2">
                                             {
-                                                filterData.map((item, index) => <CampaignItemList key={index} item={item} />)
+                                                filterData
+                                                    .slice(0, limit)
+                                                    .map((item, index) => <CampaignItemList key={index} item={item} />)
                                             }
                                         </div>
                                         <a href="/search">
                                             <div className="rounded-full bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-3 py-3 mx-3">
-                                                <span>Cari Lebih Banyak</span>
+                                                {
+                                                    filterData.length > limit ?
+                                                        <span>Lihat {filterData.length - limit} Kost Lainnya</span> : <span>Cari Lebih Banyak</span>
+                                                }
                                             </div>
                                         </a>
                                     </>
