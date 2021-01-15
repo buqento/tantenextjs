@@ -55,4 +55,5 @@ export const Campus = [
     { id: 54, slug: 'universitas-muslim-indonesia', name: 'Universitas Muslim Indonesia', province: 'Sulawesi Selatan' },
     { id: 55, slug: 'politeknik-ati-makassar', name: 'Politeknik ATI Makassar', province: 'Sulawesi Selatan' },
     { id: 56, slug: 'universitas-kristen-immanuel', name: 'Universitas Kristen Immanuel', province: 'Daerah Istimewa Yogyakarta' },
+    { id: 57, slug: 'pgsd-universitas-pattimura', name: 'PGSD Universitas Pattimura', province: 'Maluku' },
 ]
