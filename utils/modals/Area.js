@@ -1,6 +1,7 @@
 export const DtArea = [
     { lat_lng: '-5.13706190197235, 119.51476500350188', province: 'Sulawesi Selatan', city: 'Makassar', district: 'Tamalanrea', image: 'y3AIIlf.webp' },
     { lat_lng: '-5.179694908177029, 119.41993354869139', province: 'Sulawesi Selatan', city: 'Makassar', district: 'Tamalate', image: 'nyCZLDg.webp' },
+    { lat_lng: '-5.128602678091211, 119.43847906432954', province: 'Sulawesi Selatan', city: 'Makassar', district: 'Tallo', image: 'LvFtD2Z.webp' },
     { lat_lng: '-5.167650234477785, 119.4646674025864', province: 'Sulawesi Selatan', city: 'Makassar', district: 'Manggala', image: '3h44uN9.webp' },
     { lat_lng: '-3.061918, 128.196573', province: 'Maluku', city: 'Ambon', district: 'Teluk Ambon', image: 'uAPVyO9.webp' },
     { lat_lng: '-3.061918, 128.196573', province: 'Maluku', city: 'Ambon', district: 'Baguala', image: 'ts7LHY7.webp' },

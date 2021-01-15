@@ -51,4 +51,7 @@ export const Campus = [
     { id: 50, slug: 'sekolah-tinggi-ilmu-ekonomi-amkop-makassar', name: 'Sekolah Tinggi Ilmu Ekonomi Amkop Makassar', province: 'Sulawesi Selatan' },
     { id: 51, slug: 'stikes-mega-rezky', name: 'STIKES Mega Rezky', province: 'Sulawesi Selatan' },
     { id: 52, slug: 'akademi-kebidanan-minasa-upa', name: 'Akademi Kebidanan Minasa Upa', province: 'Sulawesi Selatan' },
+    { id: 53, slug: 'universitas-bosowa', name: 'Universitas Bosowa', province: 'Sulawesi Selatan' },
+    { id: 54, slug: 'universitas-muslim-indonesia', name: 'Universitas Muslim Indonesia', province: 'Sulawesi Selatan' },
+    { id: 55, slug: 'politeknik-ati-makassar', name: 'Politeknik ATI Makassar', province: 'Sulawesi Selatan' },
 ]
