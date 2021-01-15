@@ -159,7 +159,9 @@ class Detail extends React.Component {
                 <link rel="canonical" content="https://tantekos.com/search" />
             </NextHead>
             <div className="main-layout">
-                <HeadPage title={titleHead} />
+                <div className="sticky top-0">
+                    <HeadPage title={titleHead} />
+                </div>
                 {
                     <div className="fixed inset-x-0 bottom-0 mb-5 text-center z-40">
                         <span onClick={handleShow} className={`${!show ? 'bg-indigo-700 text-white' : 'bg-white text-black border'} shadow-lg w-max px-4 py-3 mt-3 rounded-full hover:bg-white-700 focus:outline-none uppercase border-4 border-indigo-200`}>

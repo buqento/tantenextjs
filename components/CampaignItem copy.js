@@ -4,8 +4,10 @@ import Link from 'next/link'
 import Cash from '../utils/Cash'
 import Generateslug from '../utils/Generateslug'
 import { BiMap } from 'react-icons/bi'
+import { MdStar } from 'react-icons/md'
 import fire from '../configurations/firebase'
-class CampaignItemList extends Component {
+import Facilities from './Facilities'
+class CampaignItem extends Component {
     constructor(props) {
         super(props);
         this.state = { like: false }
@@ -19,6 +21,7 @@ class CampaignItemList extends Component {
         if (findFav > 0) this.setState({ like: true })
     }
     async handleHit(id, hit) {
+        console.log(hit);
         await fire.firestore().collection("kosts").doc(id).update({ hit })
             .catch(err => { console.log(err) })
     }
@@ -53,36 +56,43 @@ class CampaignItemList extends Component {
         }
         return (
             <Link href={`/${Generateslug(item.title)}`}>
-                <div className="w-full overflow-hidden py-2" onClick={() => handleLastView(item)}>
-                    <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${item.images[0]}`} alt={item.title} className="float-left mr-2 rounded-xl" />
-                    <div className="mx-3 mt-n1">
-                        <div className="text-lg font-bold">
-                            {Cash(item.price.start_from)}<span className="text-xs font-normal">/{item.price.duration}</span>
+                <div className={`rounded-xl overflow-hidden border ${customStyle}`} onClick={() => handleLastView()}>
+                    <img src={`https://cdn.statically.io/img/i.imgur.com/w=400/${item.images[0]}`} alt={item.title} />
+                    <div className="px-3 py-3">
+                        <div className="text-3xl">
+                            <span className="font-bold">
+                                {like && <MdStar className="inline text-pink-500 mt-1 mr-1 float-right" />}
+                                {Cash(item.price.start_from, false)}
+                            </span>
+                            <span className="text-sm text-gray-700">/{item.price.duration}</span>
                         </div>
-                        <div className="leading-none text-md clamp-2"><small>{item.title}</small></div>
-                        <div className="text-md clamp-1">
-                            <BiMap className="inline" /><small>{item.location.district}, {item.location.city}, {item.location.province}</small>
+                        {
+                            item.category === 'Kost' ? item.facility.room.length > 0 && <Facilities items={item.facility.room} inline />
+                                : <Facilities items={item.facility.building} inline />
+                        }
+                        <div className="text-xl clamp-1">
+                            <BiMap className="inline mr-1" /><span>{item.location.district}, {item.location.province}</span>
                         </div>
-                        <div className="text-sm uppercase">
+                        <div className="text-xl font-bold uppercase">
                             {
                                 item.type.includes("Campur") &&
-                                <small className="rounded-full inline-block px-1 text-green-700 border mr-1">{item.category === 'Kost' ? 'Campur' : 'Kontrakan'}</small>
+                                <small className="rounded-full inline-block px-2 text-green-700 border mr-1">{item.category === 'Kost' ? 'Campur' : 'Kontrakan'}</small>
                             }
                             {
                                 item.type.includes("Putri") &&
-                                <small className="rounded-full inline-block px-1 text-green-700 border mr-1">Putri</small>
+                                <small className="rounded-full inline-block px-2 text-green-700 border mr-1">Putri</small>
                             }
                             {
                                 item.type.includes("Putra") &&
-                                <small className="rounded-full inline-block px-1 text-green-700 border mr-1">Putra</small>
+                                <small className="rounded-full inline-block px-2 text-green-700 border mr-1">Putra</small>
                             }
                             {
                                 item.type.includes("Pasutri") &&
-                                <small className="rounded-full inline-block px-1 text-green-700 border mr-1">Pasutri</small>
+                                <small className="rounded-full inline-block px-2 text-green-700 border mr-1">Pasutri</small>
                             }
                             {
                                 item.type.includes("LV") &&
-                                <small className="rounded-full inline-block px-1 text-green-700 border mr-1">LV</small>
+                                <small className="rounded-full inline-block px-2 text-green-700 border mr-1">LV</small>
                             }
                         </div>
                     </div>
@@ -91,12 +101,12 @@ class CampaignItemList extends Component {
         )
     }
 }
-CampaignItemList.propTypes = {
+CampaignItem.propTypes = {
     item: shape({}),
     customStyle: string
 }
-CampaignItemList.defaultProps = {
+CampaignItem.defaultProps = {
     item: null,
     customStyle: null
 }
-export default CampaignItemList;
+export default CampaignItem;

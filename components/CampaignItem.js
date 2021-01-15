@@ -6,6 +6,7 @@ import Generateslug from '../utils/Generateslug'
 import { BiMap } from 'react-icons/bi'
 import { MdStar } from 'react-icons/md'
 import fire from '../configurations/firebase'
+import Facilities from './Facilities'
 class CampaignItem extends Component {
     constructor(props) {
         super(props);
@@ -56,50 +57,42 @@ class CampaignItem extends Component {
         return (
             <Link href={`/${Generateslug(item.title)}`}>
                 <div className={`rounded-xl overflow-hidden border ${customStyle}`} onClick={() => handleLastView()}>
-                    <img src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} style={{ maxWidth: 'unset' }} />
+                    <img src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} />
                     <div className="px-2 pt-2 pb-2">
                         <div className="text-xl">
                             <span className="font-bold">
                                 {like && <MdStar className="inline text-pink-500 mt-1 mr-1 float-right" />}
                                 {Cash(item.price.start_from, false)}
                             </span>
-                            <span className="text-xs text-gray-700"> / {item.price.duration}</span>
+                            <span className="text-xs text-gray-700">/{item.price.duration}</span>
                         </div>
                         {
-                            item.facility.room.length > 0 &&
-                            <div className="border-top">
-                                {item.facility.room.includes("Kamar Mandi Dalam") && <img src="/../static/images/icons/bath_tube_icon_149739.svg" alt="Kamar Mandi Dalam" className="inline mr-1 border" width={18} />}
-                                {item.facility.room.includes("AC") && <img src="/../static/images/icons/air_conditioner_icon_149740.svg" alt="AC" className="inline mr-1 border" width={18} />}
-                                {item.facility.room.includes("Kasur") && <img src="/../static/images/icons/bed_icon_149738.svg" alt="Kasur" className="inline mr-1 border" width={18} />}
-                                {item.facility.room.includes("Springbed") && <img src="/../static/images/icons/bed_icon_149738.svg" alt="Springbed" className="inline mr-1 border" width={18} />}
-                                {item.facility.room.includes("Lemari Pakaian") && <img src="/../static/images/icons/cupboard_icon_149733.svg" alt="Lemari Pakaian" className="inline mr-1 border" width={18} />}
-                                {item.facility.room.includes("Wifi") && <img src="/../static/images/icons/wifi-medium-signal-symbol-1_icon-icons.com_56451.svg" alt="Wifi" className="inline mr-1 border" width={18} />}
-                                {item.facility.room.includes("TV") && <img src="/../static/images/icons/-live-tv_90650.svg" alt="TV" className="inline mr-1 border" width={18} />}
-                            </div>
+                            item.category === 'Kost' ? item.facility.room.length > 0 && <Facilities items={item.facility.room} inline />
+                                : <Facilities items={item.facility.building} inline />
                         }
                         <div className="text-sm clamp-1">
-                            <BiMap className="inline" /><span><small>{item.location.district}, {item.location.province}</small></span>
+                            <BiMap className="inline" /><small>{item.location.district}, {item.location.province}</small>
                         </div>
-                        <div className="text-xs font-semibold uppercase">
+                        <div className="text-xs font-bold uppercase">
                             {
                                 item.type.includes("Campur") &&
-                                <span className="rounded-full inline-block px-1 text-green-700 border mr-1">Campur</span>
+                                <small className="rounded-full inline-block px-1 text-green-700 border mr-1">{item.category === 'Kost' ? 'Campur' : 'Kontrakan'}</small>
                             }
                             {
                                 item.type.includes("Putri") &&
-                                <span className="rounded-full inline-block px-1 text-green-700 border mr-1">Putri</span>
+                                <small className="rounded-full inline-block px-1 text-green-700 border mr-1">Putri</small>
                             }
                             {
                                 item.type.includes("Putra") &&
-                                <span className="rounded-full inline-block px-1 text-green-700 border mr-1">Putra</span>
+                                <small className="rounded-full inline-block px-1 text-green-700 border mr-1">Putra</small>
                             }
                             {
                                 item.type.includes("Pasutri") &&
-                                <span className="rounded-full inline-block px-1 text-green-700 border mr-1">Pasutri</span>
+                                <small className="rounded-full inline-block px-1 text-green-700 border mr-1">Pasutri</small>
                             }
                             {
                                 item.type.includes("LV") &&
-                                <span className="rounded-full text-xs inline-block px-1 text-green-700 border mr-1">LV</span>
+                                <small className="rounded-full inline-block px-1 text-green-700 border mr-1">LV</small>
                             }
                         </div>
                     </div>
