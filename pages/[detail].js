@@ -200,14 +200,8 @@ class Detail extends React.Component {
                   * Data dapat berubah sewaktu-waktu
                 </small>
               </div>
+              {/* kost lainnya */}
               <ListKosOthers data={otherdata} detail={detail} />
-              <div className="border-top">
-                <a href="/search">
-                  <div className="rounded-full bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-3 py-3">
-                    <span>Cari {detail && detail.category} Lainnya</span>
-                  </div>
-                </a>
-              </div>
             </div>
           </div>
           <FooterDetail data={detail} callbackFromParent={this.handleShowAlert} />

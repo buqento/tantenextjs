@@ -50,7 +50,7 @@ class History extends React.Component {
                                         <div className="w-full overflow-hidden divide-gray-100 py-2" key={index}>
                                             <div className="container-image">
                                                 <Link href={`/${kost.slug}`}>
-                                                    <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${kost.images[0]}`} alt={kost.title} className="float-left mr-2" />
+                                                    <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${kost.images[0]}`} alt={kost.title} className="float-left mr-2 rounded-xl" />
                                                 </Link>
                                                 <MdClose className="button-delete bg-gray-600 text-white rounded-full p-1 mt-2 ml-2" size="24" onClick={() => this.handleRemoveHistoryItem(kost)} />
                                             </div>
