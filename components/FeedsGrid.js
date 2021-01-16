@@ -34,9 +34,9 @@ class FeedsGrid extends React.Component {
                 url = '/search/' + dataCallback.duration.toLowerCase() + '?province=' + Generateslug(dataCallback.province)
             }
             else if (dataCallback.city !== '---Semua---' && dataCallback.district === '---Semua---') {
-                url = '/search/' + dataCallback.duration.toLowerCase() + '?province=' + Generateslug(dataCallback.province) + '?city=' + Generateslug(dataCallback.city)
+                url = '/search/' + dataCallback.duration.toLowerCase() + '?province=' + Generateslug(dataCallback.province) + '&city=' + Generateslug(dataCallback.city)
             } else if (dataCallback.city !== '---Semua---' && dataCallback.district !== '---Semua---') {
-                url = '/search/' + dataCallback.duration.toLowerCase() + '?province=' + Generateslug(dataCallback.province) + '?city=' + Generateslug(dataCallback.city) + '&district=' + Generateslug(dataCallback.district)
+                url = '/search/' + dataCallback.duration.toLowerCase() + '?province=' + Generateslug(dataCallback.province) + '&city=' + Generateslug(dataCallback.city) + '&district=' + Generateslug(dataCallback.district)
             }
         }
         return (
