@@ -19,7 +19,7 @@ class HeadPage extends Component {
                     page === 'home' &&
                     <>
                         <div className="inline p-1 ml-2 mb-3 border rounded-full float-right">
-                            <a href="/search"><BiSearchAlt size={24} className="text-indigo-700" /></a>
+                            <a href="/search/all"><BiSearchAlt size={24} className="text-indigo-700" /></a>
                         </div>
                         <div className="inline p-1 ml-2 mb-3 border rounded-full float-right">
                             <a href="/history"><BiListUl size={24} className="text-indigo-700" /></a>

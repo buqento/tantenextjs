@@ -1,10 +1,10 @@
 export const DtProvinsi = [
-    { title: 'DKI Jakarta' },
-    { title: 'Bali' },
-    { title: 'Maluku' },
-    { title: 'Papua' },
-    { title: 'Papua Barat' },
-    { title: 'Jawa Barat' },
-    { title: 'Daerah Istimewa Yogyakarta' },
-    { title: 'Sulawesi Selatan' }
+    { title: 'DKI Jakarta', slug: 'dki-jakarta' },
+    { title: 'Bali', slug: 'bali' },
+    { title: 'Maluku', slug: 'maluku' },
+    { title: 'Papua', slug: 'papua' },
+    { title: 'Papua Barat', slug: 'papua-barat' },
+    { title: 'Jawa Barat', slug: 'jawa-barat' },
+    { title: 'Daerah Istimewa Yogyakarta', slug: 'daerah-istimewa-yogyakarta' },
+    { title: 'Sulawesi Selatan', slug: 'sulawesi-selatan' }
 ]

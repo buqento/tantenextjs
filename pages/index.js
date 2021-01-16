@@ -12,7 +12,8 @@ class Index extends React.Component {
     this.state = {
       data: null,
       isFilter: false,
-      titleHead: null
+      titleHead: null,
+      dataCallback: null
     }
     this.scrollToNode = this.scrollToNode.bind(this);
   }
@@ -20,6 +21,7 @@ class Index extends React.Component {
     node.scrollIntoView({ behavior: 'smooth' });
   }
   filterCallback = (dataCallback) => {
+    this.setState({ dataCallback })
     let facilitiesRoom = [""]
     if (dataCallback.facilitiesRoom.length > 0) facilitiesRoom = dataCallback.facilitiesRoom
     const dt = fire.firestore().collection('kosts')
@@ -90,7 +92,7 @@ class Index extends React.Component {
     this.scrollToNode(this.node)
   }
   render() {
-    const { data, isFilter, titleHead } = this.state
+    const { data, dataCallback, isFilter, titleHead } = this.state
     return (
       <Layout>
         <Header />
@@ -105,7 +107,7 @@ class Index extends React.Component {
           </span>
         </div>
         <div className="border-bottom">
-          <FeedsGrid filterData={data} />
+          <FeedsGrid filterData={data} dataCallback={dataCallback} />
         </div>
         <div className="sticky top-0 pt-4 pb-3 px-3 bg-white z-10">
           <span className="text-uppercase text-current font-bold">Dekat Kampus</span>

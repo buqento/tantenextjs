@@ -116,7 +116,7 @@ class CampusId extends React.Component {
                 <div className="main-layout">
                     <HeadPage title={campusName} />
                     <ListKos data={data} />
-                    <a href="/search">
+                    <a href="/search/all">
                         <div className="rounded-full bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-3 py-3 mx-3">
                             <span>Cari Kost Lainnya</span>
                         </div>

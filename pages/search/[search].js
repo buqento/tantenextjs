@@ -7,7 +7,17 @@ import CampaignItem from '../../components/CampaignItem'
 import { BiFilterAlt, BiWinkSmile } from 'react-icons/bi'
 import Filter from '../../components/Filter'
 import Modal from 'react-bootstrap/Modal'
+import Titlecase from '../../utils/Titlecase'
+import { DtProvinsi } from '../../utils/modals/Provinsi'
 class Detail extends React.Component {
+    static async getInitialProps(ctx) {
+        return {
+            slug: ctx.query.search,
+            province: ctx.query.province,
+            city: ctx.query.city,
+            district: ctx.query.district
+        }
+    }
     constructor(props) {
         super(props)
         this.state = {
@@ -18,18 +28,40 @@ class Detail extends React.Component {
             last: {},
             isFilter: false,
             dataCallback: null,
-            show: true
+            show: false
         }
         this.fetchMoreData = this.fetchMoreData.bind(this)
     }
     async componentDidMount() {
-        const { limitPerPage } = this.state
-        const docRef = await fire
-            .firestore().collection('kosts').orderBy('date_modified', 'desc')
-        docRef.get().then(snapshot => {
+        const { province, city, district, slug } = this.props
+        const provinsi = DtProvinsi.filter(provinsi => provinsi.slug === province)
+        const dt = fire.firestore().collection('kosts')
+        let conditions
+        if (Titlecase(slug) !== 'All') {
+            conditions = dt
+                .where('location.province', '==', provinsi[0].title)
+                .where('price.duration', '==', Titlecase(slug))
+                .orderBy('date_modified', 'desc')
+            if (city !== undefined) {
+                conditions = dt
+                    .where('location.city', '==', Titlecase(city))
+                    .where('price.duration', '==', Titlecase(slug))
+            }
+            if (district !== undefined) {
+                conditions = dt
+                    .where('location.city', '==', Titlecase(city))
+                    .where('location.district', '==', Titlecase(district))
+                    .where('price.duration', '==', Titlecase(slug))
+            }
+            this.setState({ more: false })
+        } else {
+            conditions = dt
+                .orderBy('date_modified', 'desc')
+        }
+        conditions.get().then(snapshot => {
             this.setState({ collectionLength: snapshot.docs.length })
         }).catch(err => console.log(err))
-        docRef.limit(limitPerPage).onSnapshot(snap => {
+        conditions.onSnapshot(snap => {
             const last = snap.docs[snap.docs.length - 1]
             const data = snap.docs.map(doc => ({
                 id: doc.id,
@@ -37,7 +69,7 @@ class Detail extends React.Component {
             }))
             this.setState({ data, last })
         })
-        docRef.get().catch(err => console.log(err))
+        conditions.get().catch(err => console.log(err))
     }
     filterCallback = (dataCallback) => {
         let facilitiesRoom = [""]
@@ -163,8 +195,8 @@ class Detail extends React.Component {
                     <HeadPage title={titleHead} />
                 </div>
                 {
-                    <div className="fixed inset-x-0 bottom-0 mb-5 text-center z-40">
-                        <span onClick={handleShow} className={`${!show ? 'bg-indigo-700 text-white' : 'bg-white text-black border'} shadow-lg w-max px-4 py-3 mt-3 rounded-full hover:bg-white-700 focus:outline-none uppercase border-4 border-indigo-200`}>
+                    <div className="fixed inset-x-0 bottom-0 mb-4 text-center z-40">
+                        <span onClick={handleShow} className={`${!show ? 'bg-indigo-700 text-white' : 'bg-white text-black border'} shadow-lg w-max px-3 py-2 mt-3 rounded-full hover:bg-white-700 focus:outline-none uppercase border-4 border-indigo-200`}>
                             <BiFilterAlt className="inline mb-1 mr-1" />Saring</span>
                     </div>
                 }

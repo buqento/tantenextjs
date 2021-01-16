@@ -1,5 +1,6 @@
 import React from 'react'
 import CampaignItemList from './CampaignItemList'
+import Generateslug from '../utils/Generateslug'
 import fire from '../configurations/firebase'
 import { BiWinkSmile } from 'react-icons/bi'
 class FeedsGrid extends React.Component {
@@ -26,13 +27,23 @@ class FeedsGrid extends React.Component {
     }
     render() {
         const { data, limit, load, skeletonArr } = this.state
-        const { filterData } = this.props
+        const { filterData, dataCallback } = this.props
+        let url = '/search/all'
+        if (filterData && filterData.length > 5) {
+            if (dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---') {
+                url = '/search/' + dataCallback.duration.toLowerCase() + '?province=' + Generateslug(dataCallback.province)
+            }
+            else if (dataCallback.city !== '---Semua---' && dataCallback.district === '---Semua---') {
+                url = '/search/' + dataCallback.duration.toLowerCase() + '?province=' + Generateslug(dataCallback.province) + '?city=' + Generateslug(dataCallback.city)
+            } else if (dataCallback.city !== '---Semua---' && dataCallback.district !== '---Semua---') {
+                url = '/search/' + dataCallback.duration.toLowerCase() + '?province=' + Generateslug(dataCallback.province) + '?city=' + Generateslug(dataCallback.city) + '&district=' + Generateslug(dataCallback.district)
+            }
+        }
         return (
             <div className="mb-3">
                 {
                     filterData ?
                         <>
-
                             {
                                 filterData.length > 0
                                     ?
@@ -44,7 +55,7 @@ class FeedsGrid extends React.Component {
                                                     .map((item, index) => <CampaignItemList key={index} item={item} />)
                                             }
                                         </div>
-                                        <a href="/search">
+                                        <a href={url}>
                                             <div className="rounded-full bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-3 py-3 mx-3">
                                                 {
                                                     filterData.length > limit ?

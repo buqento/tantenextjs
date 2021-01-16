@@ -27,7 +27,7 @@ class ListKosOthers extends Component {
                     </div>
                 }
                 <div className="border-top">
-                    <a href="/search">
+                    <a href="/search/all">
                         <div className="rounded-full bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-3 py-3">
                             <span>Lihat {listData.length > 5 && listData.length - 5} {detail && detail.category} Lainnya</span>
                         </div>
