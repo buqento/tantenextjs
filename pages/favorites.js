@@ -50,16 +50,53 @@ class Detail extends React.Component {
                                             return comparison;
                                         }
                                     )
-                                    .map((kost, index) =>
+                                    .map((item, index) =>
                                         <div className="w-full overflow-hidden divide-gray-100 py-2" key={index}>
                                             <div className="container-image">
-                                                <Link href={`/${kost.slug}`}>
-                                                    <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${kost.images[0]}`} alt={kost.title} className="float-left mr-2 rounded-xl" />
+                                                <Link href={`/${item.slug}`}>
+                                                    <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${item.images[0]}`} alt={item.title} className="float-left mr-2 rounded-xl" />
                                                 </Link>
-                                                <MdClose className="button-delete bg-gray-600 text-white rounded-full p-1 mt-2 ml-2" size="24" onClick={() => this.handleRemoveFavoriteItem(kost)} />
+                                                <MdClose className="button-delete bg-gray-600 text-white rounded-full p-1 mt-2 ml-2" size="24" onClick={() => this.handleRemoveFavoriteItem(item)} />
                                             </div>
-                                            <Link href={`/${kost.slug}`}>
-                                                <div className="mx-3 mt-n1" >
+                                            <Link href={`/${item.slug}`}>
+                                                <div className="mx-3 mt-n1">
+                                                    <div className="text-lg font-bold">
+                                                        {Cash(item.price.start_from)}<span className="text-xs font-normal">/{item.price.duration}</span>
+                                                    </div>
+                                                    <div className="leading-none text-md clamp-2"><small>{item.title}</small></div>
+                                                    {
+                                                        item.location &&
+                                                        <div className="text-md clamp-1">
+                                                            <BiMap className="inline" /><small>{item.location.district}, {item.location.city}, {item.location.province}</small>
+                                                        </div>
+                                                    }
+                                                    {
+                                                        item.type &&
+                                                        <div className="text-sm uppercase">
+                                                            {
+                                                                item.type.includes("Campur") &&
+                                                                <small className="rounded-full inline-block px-1 text-green-700 border mr-1">{item.category === 'Kost' ? 'Campur' : 'Kontrakan'}</small>
+                                                            }
+                                                            {
+                                                                item.type.includes("Putri") &&
+                                                                <small className="rounded-full inline-block px-1 text-green-700 border mr-1">Putri</small>
+                                                            }
+                                                            {
+                                                                item.type.includes("Putra") &&
+                                                                <small className="rounded-full inline-block px-1 text-green-700 border mr-1">Putra</small>
+                                                            }
+                                                            {
+                                                                item.type.includes("Pasutri") &&
+                                                                <small className="rounded-full inline-block px-1 text-green-700 border mr-1">Pasutri</small>
+                                                            }
+                                                            {
+                                                                item.type.includes("LV") &&
+                                                                <small className="rounded-full inline-block px-1 text-green-700 border mr-1">LV</small>
+                                                            }
+                                                        </div>
+                                                    }
+                                                </div>
+                                                {/* <div className="mx-3 mt-n1" >
                                                     <div className="text-lg font-bold">
                                                         {Cash(kost.price.start_from)}<span className="text-xs font-normal">/{kost.price.duration}</span>
                                                     </div>
@@ -95,7 +132,7 @@ class Detail extends React.Component {
                                                             }
                                                         </div>
                                                     }
-                                                </div>
+                                                </div> */}
                                             </Link>
                                         </div>
                                     )

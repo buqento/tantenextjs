@@ -10,12 +10,12 @@ class FeedsGrid extends React.Component {
             data: null,
             load: true,
             limit: 5,
-            skeletonArr: [1, 2, 3]
+            skeletonArr: [1, 2, 3, 4, 5]
         }
     }
     async componentDidMount() {
         const docRef = await fire
-            .firestore().collection('kosts').orderBy('date_modified', 'desc').limit(3)
+            .firestore().collection('kosts').orderBy('date_modified', 'desc').limit(5)
         docRef.onSnapshot(snap => {
             const data = snap.docs.map(doc => ({
                 id: doc.id,
@@ -64,14 +64,14 @@ class FeedsGrid extends React.Component {
                                 </div>
                         }
                     </> : load ?
-                            <div className="mx-3">
+                            <div className="mx-3 divide-y-2">
                                 {
                                     skeletonArr.map((item, index) =>
-                                        <div key={index} className="border border-gray-300 rounded-md p-4 max-w-sm w-full mx-auto my-3">
+                                        <div key={index} className="max-w-sm w-full mx-auto py-2">
                                             <div className="animate-pulse flex space-x-4">
-                                                <div className="bg-gray-400 h-24 w-24"></div>
+                                                <div className="bg-gray-400 rounded-xl h-24 w-24"></div>
                                                 <div className="flex-1 space-y-4 py-1">
-                                                    <div className="h-4 bg-gray-400 rounded w-3/4"></div>
+                                                    <div className="h-6 bg-gray-400 rounded w-1/4"></div>
                                                     <div className="space-y-2">
                                                         <div className="h-4 bg-gray-400 rounded"></div>
                                                         <div className="h-4 bg-gray-400 rounded w-5/6"></div>
