@@ -28,7 +28,9 @@ class Detail extends React.Component {
             last: {},
             isFilter: false,
             dataCallback: null,
-            show: false
+            show: false,
+            load: true,
+            skeletonArr: [1, 2, 3, 4, 5, 6]
         }
         this.fetchMoreData = this.fetchMoreData.bind(this)
     }
@@ -67,7 +69,7 @@ class Detail extends React.Component {
                 id: doc.id,
                 ...doc.data()
             }))
-            this.setState({ data, last })
+            this.setState({ data, last, load: false })
         })
         conditions.get().catch(err => console.log(err))
     }
@@ -136,7 +138,7 @@ class Detail extends React.Component {
                 id: doc.id,
                 ...doc.data()
             }))
-            this.setState({ data, isFilter: true, show: false, dataCallback })
+            this.setState({ data, isFilter: true, show: false, dataCallback, load: false })
         })
     }
     fetchMoreData() {
@@ -161,7 +163,7 @@ class Detail extends React.Component {
         }
     }
     render() {
-        const { show, data, more, isFilter, dataCallback } = this.state;
+        const { show, data, more, isFilter, dataCallback, load, skeletonArr } = this.state;
         const handleClose = () => { this.setState({ show: false }) }
         const handleShow = () => { this.setState({ show: true }) }
         let titleHead = 'Semua Kost & Kontrakan'
@@ -201,27 +203,42 @@ class Detail extends React.Component {
                     </div>
                 }
                 {
-                    !isFilter ?
-                        <InfiniteScroll
-                            dataLength={data.length}
-                            next={this.fetchMoreData}
-                            hasMore={more}
-                            loader={<div className="py-3 text-center"></div>}
-                        >
-                            <div className="grid grid-cols-2 gap-3 mx-3 mb-3">
-                                {data.map((item, index) => <CampaignItem key={index} item={item} />
-                                )}
-                            </div>
-                        </InfiniteScroll>
-                        :
-                        data.length > 0 ? <div className="grid grid-cols-2 gap-3 mx-3 my-3">{data.map((item, index) => <CampaignItem key={index} item={item} />
-                        )}</div>
-                            :
-                            <div className="container-center text-center">
-                                <div className="text-center">
-                                    <div><BiWinkSmile size={22} className="inline mr-1 mb-1" />Silahkan cari dengan kriteria lainnya</div>
+                    load ?
+                        <div className="grid grid-cols-2 gap-3 mx-3">
+                            {
+                                skeletonArr.map((item, index) =>
+                                    <div key={index} className="rounded-xl overflow-hidden border">
+                                        <div className="animate-pulse w-full h-48 bg-gray-300" />
+                                        <div className="px-3 py-3">
+                                            <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
+                                            <div className="animate-pulse px-2 my-1 w-12 h-4 bg-gray-300" />
+                                            <div className="animate-pulse px-2 my-1 w-6 h-4 bg-gray-300" />
+                                        </div>
+                                    </div>
+                                )
+                            }
+                        </div> :
+                        !isFilter ?
+                            <InfiniteScroll
+                                dataLength={data.length}
+                                next={this.fetchMoreData}
+                                hasMore={more}
+                                loader={<div className="py-3 text-center"></div>}
+                            >
+                                <div className="grid grid-cols-2 gap-3 mx-3 mb-3">
+                                    {data.map((item, index) => <CampaignItem key={index} item={item} />
+                                    )}
                                 </div>
-                            </div>
+                            </InfiniteScroll>
+                            :
+                            data.length > 0 ? <div className="grid grid-cols-2 gap-3 mx-3 my-3">{data.map((item, index) => <CampaignItem key={index} item={item} />
+                            )}</div>
+                                :
+                                <div className="container-center text-center">
+                                    <div className="text-center">
+                                        <div><BiWinkSmile size={22} className="inline mr-1 mb-1" />Silahkan cari dengan kriteria lainnya</div>
+                                    </div>
+                                </div>
                 }
             </div>
             <Modal show={show} onHide={handleClose}>

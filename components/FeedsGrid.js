@@ -42,38 +42,28 @@ class FeedsGrid extends React.Component {
         return (
             <div className="mb-3">
                 {
-                    filterData ?
-                        <>
-                            {
-                                filterData.length > 0
-                                    ?
-                                    <>
-                                        <div className="mx-3 divide-y-2">
-                                            {
-                                                filterData
-                                                    .slice(0, limit)
-                                                    .map((item, index) => <CampaignItemList key={index} item={item} />)
-                                            }
-                                        </div>
-                                        <a href={url}>
-                                            <div className="rounded-full bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-3 py-3 mx-3">
-                                                {
-                                                    filterData.length > limit ?
-                                                        <span>Lihat {filterData.length - limit} Kost Lainnya</span> : <span>Cari Lebih Banyak</span>
-                                                }
-                                            </div>
-                                        </a>
-                                    </>
-                                    :
-                                    <div className="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
-                                        <p className="font-bold">Tidak Ditemukan</p>
-                                        <p className="text-sm"><BiWinkSmile size={22} className="inline mr-1 mb-1" />Silahkan cari dengan kriteria lainnya</p>
+                    filterData ? <>
+                        {
+                            filterData.length > 0 ?
+                                <>
+                                    <div className="mx-3 divide-y-2">
+                                        {
+                                            filterData.slice(0, limit).map((item, index) => <CampaignItemList key={index} item={item} />)
+                                        }
                                     </div>
-                            }
-                        </>
-
-                        :
-                        load ?
+                                    <a href={url}><div className="rounded-full bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-3 py-3 mx-3">
+                                        {
+                                            filterData.length > limit ? <span>Lihat {filterData.length - limit} Kost Lainnya</span> : <span>Cari Lebih Banyak</span>
+                                        }
+                                    </div></a>
+                                </>
+                                :
+                                <div className="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
+                                    <p className="font-bold">Tidak Ditemukan</p>
+                                    <p className="text-sm"><BiWinkSmile size={22} className="inline mr-1 mb-1" />Silahkan cari dengan kriteria lainnya</p>
+                                </div>
+                        }
+                    </> : load ?
                             <div className="mx-3">
                                 {
                                     skeletonArr.map((item, index) =>
