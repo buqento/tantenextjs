@@ -56,4 +56,8 @@ export const Campus = [
     { id: 55, slug: 'politeknik-ati-makassar', name: 'Politeknik ATI Makassar', province: 'Sulawesi Selatan' },
     { id: 56, slug: 'universitas-kristen-immanuel', name: 'Universitas Kristen Immanuel', province: 'Daerah Istimewa Yogyakarta' },
     { id: 57, slug: 'pgsd-universitas-pattimura', name: 'PGSD Universitas Pattimura', province: 'Maluku' },
+    { id: 58, slug: 'universitas-undiknas', name: 'Universitas Undiknas', province: 'Bali' },
+    { id: 59, slug: 'poltekkes-kemenkes-makassar', name: 'Poltekkes Kemenkes Makassar', province: 'Sulawesi Selatan' },
+    { id: 60, slug: 'universitas-muhammadiyah-makassar', name: 'Universitas Muhammadiyah Makassar', province: 'Sulawesi Selatan' },
+    { id: 61, slug: 'universitas-islam-negeri-alauddin-makassar', name: 'Universitas Islam Negeri Alauddin Makassar', province: 'Sulawesi Selatan' },
 ]
