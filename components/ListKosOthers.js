@@ -2,14 +2,17 @@ import React, { Component } from 'react'
 import { arrayOf, shape } from 'prop-types'
 import fire from '../configurations/firebase'
 import CampaignItemList from '../components/CampaignItemList'
+import Generateslug from '../utils/Generateslug'
 class ListKosOthers extends Component {
     async handleHit(id, hit) {
         await fire.firestore().collection("kosts").doc(id).update({ hit }).catch(err => { console.log(err) })
     }
     render() {
         const { data, detail } = this.props
-        let listData = [];
+        let listData = []
         detail.category !== null ? listData = data.filter(i => (i.category === detail.category && i.location.district === detail.location.district)) : listData = data
+        let url = '/search/all'
+        if (listData.length > 5) url = '/search/bulan?province=' + Generateslug(detail.location.province) + '&city=' + Generateslug(detail.location.city) + '&district=' + Generateslug(detail.location.district)
         return (
             <>
                 {
@@ -27,7 +30,7 @@ class ListKosOthers extends Component {
                     </div>
                 }
                 <div className="border-top">
-                    <a href="/search/all">
+                    <a href={url}>
                         <div className="rounded-full bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-3 py-3">
                             <span>Lihat {listData.length > 5 && listData.length - 5} {detail && detail.category} Lainnya</span>
                         </div>

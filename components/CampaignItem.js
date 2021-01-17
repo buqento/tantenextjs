@@ -21,7 +21,6 @@ class CampaignItem extends Component {
         if (findFav > 0) this.setState({ like: true })
     }
     async handleHit(id, hit) {
-        console.log(hit);
         await fire.firestore().collection("kosts").doc(id).update({ hit })
             .catch(err => { console.log(err) })
     }
