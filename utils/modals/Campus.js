@@ -60,4 +60,6 @@ export const Campus = [
     { id: 59, slug: 'poltekkes-kemenkes-makassar', name: 'Poltekkes Kemenkes Makassar', province: 'Sulawesi Selatan' },
     { id: 60, slug: 'universitas-muhammadiyah-makassar', name: 'Universitas Muhammadiyah Makassar', province: 'Sulawesi Selatan' },
     { id: 61, slug: 'universitas-islam-negeri-alauddin-makassar', name: 'Universitas Islam Negeri Alauddin Makassar', province: 'Sulawesi Selatan' },
+    { id: 62, slug: 'universitas-indonesia', name: 'Universitas Indonesia', province: 'Jawa Barat' },
+    { id: 63, slug: 'sekolah-tinggi-teknologi-kedirgantaraan', name: 'Sekolah Tinggi Teknologi Kedirgantaraan', province: 'Daerah Istimewa Yogyakarta' },
 ]
