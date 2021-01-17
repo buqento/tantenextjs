@@ -102,7 +102,7 @@ class Index extends React.Component {
         <div className="sticky top-0 py-3 px-3 bg-white z-10" ref={(node) => this.node = node}>
           <span className="text-current mb-4">
             {
-              !isFilter ? <span className="uppercase font-bold">Terbaru</span> : <>Hasil Pencarian: <span className="font-bold">{titleHead}</span></>
+              !isFilter ? <span className="uppercase font-bold">Terbaru</span> : <>Hasil Pencarian: <span className="font-bold">Sewa {dataCallback.duration}an, {titleHead}</span></>
             }
           </span>
         </div>
