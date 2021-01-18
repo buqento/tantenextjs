@@ -43,22 +43,24 @@ class Detail extends React.Component {
             conditions = dt
                 .where('location.province', '==', provinsi[0].title)
                 .where('price.duration', '==', Titlecase(slug))
-                .orderBy('date_modified', 'desc')
+                .orderBy('price.start_from', 'asc')
             if (city !== undefined) {
                 conditions = dt
                     .where('location.city', '==', Titlecase(city))
                     .where('price.duration', '==', Titlecase(slug))
+                    .orderBy('price.start_from', 'asc')
             }
             if (district !== undefined) {
                 conditions = dt
                     .where('location.city', '==', Titlecase(city))
                     .where('location.district', '==', Titlecase(district))
                     .where('price.duration', '==', Titlecase(slug))
+                    .orderBy('price.start_from', 'asc')
             }
             this.setState({ more: false })
         } else {
             conditions = dt
-                .orderBy('date_modified', 'desc')
+                .orderBy('price.start_from', 'asc')
         }
         conditions.get().then(snapshot => {
             this.setState({ collectionLength: snapshot.docs.length })
@@ -79,7 +81,6 @@ class Detail extends React.Component {
         const dt = fire.firestore().collection('kosts')
         let conditions
         if (dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---') {
-            // console.log('kota semua, kecamatan semua')
             conditions = dt
                 .where('price.duration', '==', dataCallback.duration)
                 .where('location.province', '==', dataCallback.province)
@@ -87,7 +88,6 @@ class Detail extends React.Component {
                 .where("price.start_from", "<=", dataCallback.rangePrice.max)
                 .where("facility.room", "array-contains-any", facilitiesRoom)
         } else if (dataCallback.city !== '---Semua---' && dataCallback.district === '---Semua---') {
-            // console.log('kota !semua, kecamatan semua')
             conditions = dt
                 .where('price.duration', '==', dataCallback.duration)
                 .where('location.province', '==', dataCallback.province)
@@ -96,7 +96,6 @@ class Detail extends React.Component {
                 .where("price.start_from", "<=", dataCallback.rangePrice.max)
                 .where("facility.room", "array-contains-any", facilitiesRoom)
         } else if (dataCallback.city !== '---Semua---' && dataCallback.district !== '---Semua---') {
-            // console.log('kota !semua, kecamatan !semua')
             conditions = dt
                 .where('price.duration', '==', dataCallback.duration)
                 .where('location.province', '==', dataCallback.province)
@@ -106,7 +105,6 @@ class Detail extends React.Component {
                 .where("price.start_from", "<=", dataCallback.rangePrice.max)
                 .where("facility.room", "array-contains-any", facilitiesRoom)
         } else if (dataCallback.city !== '---Semua---' && dataCallback.district !== '---Semua---') {
-            // console.log('kota !semua, kecamatan !semua')
             conditions = dt
                 .where('price.duration', '==', dataCallback.duration)
                 .where('location.province', '==', dataCallback.province)
@@ -116,7 +114,6 @@ class Detail extends React.Component {
                 .where("price.start_from", "<=", dataCallback.rangePrice.max)
                 .where("facility.room", "array-contains-any", facilitiesRoom)
         } else if (dataCallback.city !== '---Semua---' && dataCallback.district === '---Semua---') {
-            // console.log('kota !semua, kecamatan semua')
             conditions = dt
                 .where('price.duration', '==', dataCallback.duration)
                 .where('location.province', '==', dataCallback.province)
@@ -125,7 +122,6 @@ class Detail extends React.Component {
                 .where("price.start_from", "<=", dataCallback.rangePrice.max)
                 .where("facility.room", "array-contains-any", facilitiesRoom)
         } else if (dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---') {
-            // console.log('kota semua, kecamatan semua)
             conditions = dt
                 .where('price.duration', '==', dataCallback.duration)
                 .where('location.province', '==', dataCallback.province)
@@ -204,7 +200,7 @@ class Detail extends React.Component {
                 }
                 {
                     load ?
-                        <div className="grid grid-cols-2 gap-3 mx-3">
+                        <div className="grid grid-cols-2 gap-3 mx-3 mb-3">
                             {
                                 skeletonArr.map((item, index) =>
                                     <div key={index} className="rounded-xl overflow-hidden border">
