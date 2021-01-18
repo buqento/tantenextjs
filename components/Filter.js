@@ -271,7 +271,7 @@ class Filter extends React.Component {
                             </div>
                             <div className="mt-4 mb-3 mx-3">
                                 <InputRange
-                                    step={50000}
+                                    step={100000}
                                     maxValue={50000000}
                                     minValue={50000}
                                     formatLabel={rangePrice => `${Cash(rangePrice)}`}

@@ -21,7 +21,6 @@ class Index extends React.Component {
     node.scrollIntoView({ behavior: 'smooth' });
   }
   filterCallback = (dataCallback) => {
-    this.setState({ dataCallback })
     let facilitiesRoom = [""]
     if (dataCallback.facilitiesRoom.length > 0) facilitiesRoom = dataCallback.facilitiesRoom
     const dt = fire.firestore().collection('kosts')
@@ -87,7 +86,7 @@ class Index extends React.Component {
         id: doc.id,
         ...doc.data()
       }))
-      this.setState({ data, isFilter: true, titleHead })
+      this.setState({ data, isFilter: true, titleHead, dataCallback })
     })
     this.scrollToNode(this.node)
   }

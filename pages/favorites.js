@@ -34,7 +34,7 @@ class Detail extends React.Component {
                 <HeadPage title="Favorit Saya" />
                 {
                     data.length > 0 ?
-                        <div className="mx-3 divide-y-2">
+                        <div className="mx-3 mb-3 divide-y-2">
                             {
                                 data
                                     .sort(
