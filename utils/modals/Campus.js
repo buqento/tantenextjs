@@ -54,7 +54,7 @@ export const Campus = [
     { id: 53, slug: 'universitas-bosowa', name: 'Universitas Bosowa', province: 'Sulawesi Selatan' },
     { id: 54, slug: 'universitas-muslim-indonesia', name: 'Universitas Muslim Indonesia', province: 'Sulawesi Selatan' },
     { id: 55, slug: 'politeknik-ati-makassar', name: 'Politeknik ATI Makassar', province: 'Sulawesi Selatan' },
-    { id: 56, slug: 'universitas-kristen-immanuel', name: 'Universitas Kristen Immanuel', province: 'Daerah Istimewa Yogyakarta' },
+    { id: 56, slug: 'stmik-akakom-yogyakarta', name: 'STMIK AKAKOM Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
     { id: 57, slug: 'pgsd-universitas-pattimura', name: 'PGSD Universitas Pattimura', province: 'Maluku' },
     { id: 58, slug: 'universitas-undiknas', name: 'Universitas Undiknas', province: 'Bali' },
     { id: 59, slug: 'poltekkes-kemenkes-makassar', name: 'Poltekkes Kemenkes Makassar', province: 'Sulawesi Selatan' },
@@ -62,4 +62,5 @@ export const Campus = [
     { id: 61, slug: 'universitas-islam-negeri-alauddin-makassar', name: 'Universitas Islam Negeri Alauddin Makassar', province: 'Sulawesi Selatan' },
     { id: 62, slug: 'universitas-indonesia', name: 'Universitas Indonesia', province: 'Jawa Barat' },
     { id: 63, slug: 'sekolah-tinggi-teknologi-kedirgantaraan', name: 'Sekolah Tinggi Teknologi Kedirgantaraan', province: 'Daerah Istimewa Yogyakarta' },
+    { id: 64, slug: 'institut-teknologi-nasional-yogyakarta', name: 'Institut Teknologi Nasional Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
 ]

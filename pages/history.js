@@ -7,7 +7,7 @@ import { MdClose } from 'react-icons/md'
 class History extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { data: [] }
+        this.state = { data: null }
     }
     componentDidMount() {
         let userFav = localStorage.getItem('lastview')
@@ -29,7 +29,7 @@ class History extends React.Component {
             <div className="main-layout">
                 <HeadPage title="Terakhir Dilihat" />
                 {
-                    data.length > 0 ?
+                    data && data.length > 0 ?
                         <div className="mx-3 mb-3 divide-y-2">
                             {
                                 data
@@ -55,7 +55,7 @@ class History extends React.Component {
                                                 <MdClose className="button-delete bg-gray-600 text-white rounded-full p-1 mt-2 ml-2" size="24" onClick={() => this.handleRemoveHistoryItem(item)} />
                                             </div>
                                             <Link href={`/${item.slug}`}>
-                                            <div className="mx-3 mt-n1">
+                                                <div className="mx-3 mt-n1">
                                                     <div className="text-lg font-bold">
                                                         {Cash(item.price.start_from)}<span className="text-xs font-normal">/{item.price.duration}</span>
                                                     </div>

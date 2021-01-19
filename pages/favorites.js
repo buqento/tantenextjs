@@ -7,7 +7,7 @@ import { MdClose } from 'react-icons/md'
 class Detail extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { data: [] }
+        this.state = { data: null }
     }
     componentDidMount() {
         let userFav = localStorage.getItem('favorites')
@@ -33,7 +33,7 @@ class Detail extends React.Component {
             <div className="main-layout">
                 <HeadPage title="Favorit Saya" />
                 {
-                    data.length > 0 ?
+                    data && data.length > 0 ?
                         <div className="mx-3 mb-3 divide-y-2">
                             {
                                 data

@@ -106,6 +106,7 @@ export const DtArea = [
     { lat_lng: '-6.114833, 106.921758', province: 'DKI Jakarta', city: 'Jakarta Utara', district: 'Cilincing', image: '2AQB4hh.webp' },
     { lat_lng: '-6.374155, 106.775153', province: 'Jawa Barat', city: 'Depok', district: 'Limo', image: 'nLujVPR.webp' },
     { lat_lng: '-6.419886, 106.891092', province: 'Jawa Barat', city: 'Depok', district: 'Tapos', image: 'nLujVPR.webp' },
+    { lat_lng: '-6.403239896656243, 106.82140956743655', province: 'Jawa Barat', city: 'Depok', district: 'Pancoran Mas', image: 'zIxTRiy.webp' },
     { lat_lng: '-6.359101548178681, 106.81927332023648', province: 'Jawa Barat', city: 'Depok', district: 'Beji', image: 'm1e8pGW.webp' },
     { lat_lng: '-6.439349367233359, 106.8378696318463', province: 'Jawa Barat', city: 'Depok', district: 'Cilodong', image: '9KZ1qP9.webp' },
     { lat_lng: '-6.583268286890974, 106.77395867259717', province: 'Jawa Barat', city: 'Bogor', district: 'Bogor Barat', image: 'sPgl8ZV.webp' },
