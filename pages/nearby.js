@@ -52,9 +52,9 @@ class Nearby extends React.Component {
         let nearbyList = []
         let locationText = 't'
         for (var i = 0; i < data.length; i++) {
-            // if this location is within 0.1KM of the user, add it to the list
+            // if this location is within 5KM of the user, add it to the list
             const d = this.getDistance(latitude, longitude, data[i].location.lat_lng.w_, data[i].location.lat_lng.T_, "K")
-            if (d <= 1) nearbyList.push(data[i])
+            if (d <= 5) nearbyList.push(data[i])
         }
         fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=111ed9e8cfcb4f7a83d8b17c1671a4f0`)
             .then(response => response.json())
