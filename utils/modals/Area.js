@@ -22,6 +22,8 @@ export const DtArea = [
     { province: 'Bali', city: 'Badung', district: 'Kuta Selatan' },
     { province: 'Bali', city: 'Badung', district: 'Kuta Utara' },
     { province: 'Bali', city: 'Badung', district: 'Kuta' },
+    { province: 'Bali', city: 'Tabanan', district: 'Tabanan' },
+    { province: 'Bali', city: 'Tabanan', district: 'Kediri' },
     { province: 'DKI Jakarta', city: 'Jakarta Barat', district: 'Kebon Jeruk' },
     { province: 'DKI Jakarta', city: 'Jakarta Barat', district: 'Grogol Petamburan' },
     { province: 'DKI Jakarta', city: 'Jakarta Barat', district: 'Kembangan' },

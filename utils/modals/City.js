@@ -13,7 +13,7 @@ export const City = [
     // { name: 'Jembrana', province: 'Bali' },
     // { name: 'Karangasem', province: 'Bali' },
     // { name: 'Klungkung', province: 'Bali' },
-    // { name: 'Tabanan', province: 'Bali' },
+    { name: 'Tabanan', province: 'Bali' },
     { name: 'Denpasar', province: 'Bali' },
     // Maluku
     { name: 'Ambon', province: 'Maluku' },
