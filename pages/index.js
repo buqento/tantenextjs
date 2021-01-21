@@ -6,6 +6,7 @@ import Filter from '../components/Filter'
 import GroupSocial from '../components/GroupSocial'
 import FeedsGrid from '../components/FeedsGrid'
 import fire from '../configurations/firebase'
+import { MdMyLocation } from 'react-icons/md'
 class Index extends React.Component {
   constructor(props) {
     super(props)
@@ -95,6 +96,14 @@ class Index extends React.Component {
     return (
       <Layout>
         <Header />
+        <div className="m-3 border rounded-xl shadow-sm py-3 px-3 text-center text-gray-700 font-bold uppercase">
+          <div><MdMyLocation className="inline mb-1 mr-2" /> Cari Kost di sekitar Kamu</div>
+          <a href="/nearby">
+            <div className="rounded-full bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase mt-3 mb-2 py-3">
+              <span>Mulai Mencari</span>
+            </div>
+          </a>
+        </div>
         <div className="m-3 border rounded-xl shadow-sm py-3">
           <Filter callbackFromParent={this.filterCallback} />
         </div>

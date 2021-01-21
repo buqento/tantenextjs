@@ -10,7 +10,7 @@ class Nearby extends React.Component {
             data: [],
             locationText: null,
             nearbyList: null,
-            load: false,
+            load: true,
             skeletonArr: [1, 2, 3, 4, 5]
         }
     }
@@ -48,7 +48,7 @@ class Nearby extends React.Component {
         const { latitude, longitude } = position.coords
         const { data } = this.state
         let nearbyList = []
-        let locationText = 't'
+        let locationText
         for (var i = 0; i < data.length; i++) {
             // if this location is within 5KM of the user, add it to the list
             const d = this.getDistance(latitude, longitude, data[i].location.lat_lng.w_, data[i].location.lat_lng.T_, "K")
@@ -57,12 +57,11 @@ class Nearby extends React.Component {
         fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=111ed9e8cfcb4f7a83d8b17c1671a4f0`)
             .then(response => response.json())
             .then(response => { locationText = response.results[0].formatted })
-            .then(() => this.setState({ locationText, nearbyList }))
+            .then(() => this.setState({ locationText, nearbyList, load: false }))
     }
     render() {
         const { locationText, nearbyList, load, skeletonArr } = this.state
         return <Layout>
-            <div className="mb-3 mx-3">{locationText}</div>
             {
                 load ?
                     <div className="mx-3 divide-y-2">
@@ -84,16 +83,20 @@ class Nearby extends React.Component {
                         }
                     </div>
                     :
-                    nearbyList && nearbyList.length > 0 ?
-                        <div className="mx-3">
-                            {
-                                nearbyList.map((item, index) => <CampaignItemList key={index} item={item} />)
-                            }
-                        </div> :
-                        <div className="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
-                            <p className="font-bold">Tidak Ditemukan</p>
-                            <p className="text-sm"><BiWinkSmile size={22} className="inline mr-1 mb-1" />Temukan kost menggunakan pencarian</p>
+                    nearbyList && nearbyList.length > 0 &&
+                    <div>
+                        <div className="mb-3 mx-3 font-bold"><span className="font-normal">Kost di sekitar</span> {locationText}</div>
+                        <div className="mx-3 divide-y-2">
+                            {nearbyList.map((item, index) => <CampaignItemList key={index} item={item} />)}
                         </div>
+                    </div>
+            }
+            {
+                nearbyList && nearbyList.length === 0 &&
+                <div className="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
+                    <p className="font-bold">Tidak Ditemukan</p>
+                    <p className="text-sm"><BiWinkSmile size={22} className="inline mr-1 mb-1" />Temukan kost menggunakan pencarian</p>
+                </div>
             }
         </Layout>
     }

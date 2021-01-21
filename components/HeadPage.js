@@ -14,7 +14,10 @@ class HeadPage extends Component {
                         <BiChevronLeft size={40} className="inline mb-1 mr-1" />
                     </span>
                 }
-                {!nohead ? <h1 className="inline">{title}</h1> : <h1 className={style}>{title}</h1>}
+                {
+                    !nohead ? <h1 className="inline">{title}</h1> :
+                        <h1 onClick={() => Router.push('/')} className={style}>{title}</h1>
+                }
                 {
                     page === 'home' &&
                     <>
