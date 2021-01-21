@@ -94,7 +94,7 @@ class Index extends React.Component {
   render() {
     const { data, dataCallback, isFilter, titleHead } = this.state
     return (
-      <Layout>
+      <Layout withFooter>
         <Header />
         <div className="m-3 border rounded-xl shadow-sm py-3 px-3 text-center text-gray-700 font-bold uppercase">
           <div><MdMyLocation className="inline mb-1 mr-2" /> Cari Kost di sekitar Kamu</div>

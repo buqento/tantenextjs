@@ -7,13 +7,17 @@ import { MdClose } from 'react-icons/md'
 class Detail extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { data: null }
+        this.state = {
+            data: null,
+            skeletonArr: [1, 2, 3, 4, 5],
+            load: true
+        }
     }
     componentDidMount() {
         let userFav = localStorage.getItem('favorites')
         let data
         if (userFav === null) { data = [] } else { data = JSON.parse(userFav) }
-        this.setState({ data })
+        this.setState({ data, load: false })
     }
     handleRemoveFavoriteItem = (data) => {
         let userFav = localStorage.getItem('favorites')
@@ -28,12 +32,32 @@ class Detail extends React.Component {
         this.setState({ data: newData })
     }
     render() {
-        const { data } = this.state;
+        const { data, load, skeletonArr } = this.state;
         return (
             <div className="main-layout">
                 <HeadPage title="Favorit Saya" />
                 {
-                    data && data.length > 0 ?
+                    load ?
+                        <div className="mx-3 divide-y-2">
+                            {
+                                skeletonArr.map((item, index) =>
+                                    <div key={index} className="max-w-sm w-full mx-auto py-2">
+                                        <div className="animate-pulse flex space-x-4">
+                                            <div className="bg-gray-400 rounded-xl h-24 w-24"></div>
+                                            <div className="flex-1 space-y-4 py-1">
+                                                <div className="h-6 bg-gray-400 rounded w-1/4"></div>
+                                                <div className="space-y-2">
+                                                    <div className="h-4 bg-gray-400 rounded"></div>
+                                                    <div className="h-4 bg-gray-400 rounded w-5/6"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )
+                            }
+                        </div>
+                        :
+                        data && data.length > 0 &&
                         <div className="mx-3 mb-3 divide-y-2">
                             {
                                 data
@@ -96,54 +120,19 @@ class Detail extends React.Component {
                                                         </div>
                                                     }
                                                 </div>
-                                                {/* <div className="mx-3 mt-n1" >
-                                                    <div className="text-lg font-bold">
-                                                        {Cash(kost.price.start_from)}<span className="text-xs font-normal">/{kost.price.duration}</span>
-                                                    </div>
-                                                    <div className="leading-none clamp-2"><small>{kost.title}</small></div>
-                                                    {
-                                                        kost.location &&
-                                                        <div className="text-sm clamp-1">
-                                                            <BiMap className="inline" /><span><small>{kost.location.district}, {kost.location.city}, {kost.location.province}</small></span>
-                                                        </div>
-                                                    }
-                                                    {
-                                                        kost.type &&
-                                                        <div className="text-xs font-semibold uppercase">
-                                                            {
-                                                                kost.type.includes("Campur") &&
-                                                                <span className="rounded-full inline-block px-1 text-green-700 border mr-1">Campur</span>
-                                                            }
-                                                            {
-                                                                kost.type.includes("Putri") &&
-                                                                <span className="rounded-full inline-block px-1 text-green-700 border mr-1">Putri</span>
-                                                            }
-                                                            {
-                                                                kost.type.includes("Putra") &&
-                                                                <span className="rounded-full inline-block px-1 text-green-700 border mr-1">Putra</span>
-                                                            }
-                                                            {
-                                                                kost.type.includes("Pasutri") &&
-                                                                <span className="rounded-full inline-block px-1 text-green-700 border mr-1">Pasutri</span>
-                                                            }
-                                                            {
-                                                                kost.type.includes("LV") &&
-                                                                <span className="rounded-full text-xs inline-block px-1 text-green-700 border mr-1">LV</span>
-                                                            }
-                                                        </div>
-                                                    }
-                                                </div> */}
                                             </Link>
                                         </div>
                                     )
                             }
                         </div>
-                        :
-                        <div className="container-center text-center">
-                            <div className="text-center">
-                                <div><BiSmile size={22} className="inline mr-1 mb-1" />Kamu belum memiliki kost favorit</div>
-                            </div>
+                }
+                {
+                    data && data.length === 0 &&
+                    <div className="container-center text-center">
+                        <div className="text-center">
+                            <div><BiSmile size={22} className="inline mr-1 mb-1" />Kamu belum memiliki kost favorit</div>
                         </div>
+                    </div>
                 }
             </div>
         )

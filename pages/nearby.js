@@ -84,7 +84,7 @@ class Nearby extends React.Component {
                     </div>
                     :
                     nearbyList && nearbyList.length > 0 &&
-                    <div>
+                    <div className="mb-3">
                         <div className="mb-3 mx-3 font-bold"><span className="font-normal">Kost di sekitar</span> {locationText}</div>
                         <div className="mx-3 divide-y-2">
                             {nearbyList.map((item, index) => <CampaignItemList key={index} item={item} />)}

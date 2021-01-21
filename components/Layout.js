@@ -7,7 +7,7 @@ const Layout = (props) => (
         <div>
             {props.children}
         </div>
-        <Footer />
+        { props.withFooter && <Footer />}
     </div>
 )
 export default Layout;
