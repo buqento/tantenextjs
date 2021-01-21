@@ -6,7 +6,13 @@ import { BiWinkSmile } from 'react-icons/bi'
 class Nearby extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { data: [], nearbyList: null, load: false, skeletonArr: [1, 2, 3, 4, 5] }
+        this.state = {
+            data: [],
+            locationText: null,
+            nearbyList: null,
+            load: false,
+            skeletonArr: [1, 2, 3, 4, 5]
+        }
     }
     componentDidMount() {
         const dt = fire.firestore().collection('kosts')
@@ -17,6 +23,11 @@ class Nearby extends React.Component {
             }))
             this.setState({ data })
         })
+        if (typeof window !== 'undefined' && window.navigator.geolocation) {
+            window.navigator.geolocation.getCurrentPosition(
+                this.successfulLookup, this.showAlert
+            )
+        }
     }
     showAlert = () => { console.log('Your location is unknown!') }
     getDistance = (lat1, lon1, lat2, lon2, unit) => {
@@ -35,23 +46,25 @@ class Nearby extends React.Component {
     }
     successfulLookup = position => {
         const { latitude, longitude } = position.coords
+        console.log(latitude);
+        console.log(longitude);
         const { data } = this.state
         let nearbyList = []
+        let locationText = 't'
         for (var i = 0; i < data.length; i++) {
             // if this location is within 0.1KM of the user, add it to the list
             const d = this.getDistance(latitude, longitude, data[i].location.lat_lng.w_, data[i].location.lat_lng.T_, "K")
             if (d <= 1) nearbyList.push(data[i])
         }
-        this.setState({ nearbyList, load: false })
+        fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=111ed9e8cfcb4f7a83d8b17c1671a4f0`)
+            .then(response => response.json())
+            .then(response => { locationText = response.results[0].formatted })
+            .then(() => this.setState({ locationText, nearbyList }))
     }
     render() {
-        const { data, nearbyList, load, skeletonArr } = this.state
-        if (typeof window !== 'undefined' && window.navigator.geolocation) {
-            window.navigator.geolocation.getCurrentPosition(
-                this.successfulLookup, this.showAlert
-            )
-        }
+        const { locationText, nearbyList, load, skeletonArr } = this.state
         return <Layout>
+            <div className="mb-3 mx-3">{locationText}</div>
             {
                 load ?
                     <div className="mx-3 divide-y-2">
@@ -76,7 +89,7 @@ class Nearby extends React.Component {
                     nearbyList && nearbyList.length > 0 ? <>{nearbyList.map((item, index) => <CampaignItemList key={index} item={item} />)}</> :
                         <div className="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
                             <p className="font-bold">Tidak Ditemukan</p>
-                            <p className="text-sm"><BiWinkSmile size={22} className="inline mr-1 mb-1" />Tidak ada kost terdekat di sekitarmu</p>
+                            <p className="text-sm"><BiWinkSmile size={22} className="inline mr-1 mb-1" />Temukan kost menggunakan pencarian</p>
                         </div>
             }
         </Layout>
