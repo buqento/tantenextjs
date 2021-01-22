@@ -34,6 +34,7 @@ class FooterDetail extends Component {
         if (fav === null) { dataFav = [] } else { dataFav = JSON.parse(fav) }
         const findData = dataFav.filter(i => i.id === data.id).length
         const newData = {
+            category: data.category,
             date_view: Date.now(),
             facility: { bathroom: data.facility.bathroom, building: data.facility.building, share: data.facility.share, room: data.facility.room },
             id: data.id,
