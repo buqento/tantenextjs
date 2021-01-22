@@ -73,8 +73,7 @@ class Nearby extends React.Component {
     }
     render() {
         const { locationText, nearbyList, load, skeletonArr } = this.state
-        console.log(nearbyList);
-        return <Layout>
+        return <Layout title="Terdekat">
             {
                 load ?
                     <div className="mx-3 divide-y-2">
