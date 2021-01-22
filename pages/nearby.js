@@ -76,7 +76,7 @@ class Nearby extends React.Component {
         return <Layout title="Terdekat">
             {
                 load ?
-                    <div className="mx-3 divide-y-2">
+                    <div className="mx-3 divide-y-2 h-screen">
                         {
                             skeletonArr.map((item, index) =>
                                 <div key={index} className="max-w-sm w-full mx-auto py-2">
@@ -98,7 +98,7 @@ class Nearby extends React.Component {
                     nearbyList && nearbyList.length > 0 &&
                     <div className="mb-3">
                         <div className="mb-3 mx-3 font-bold"><span className="font-normal">Kost di sekitar</span> {locationText}</div>
-                        <div className="mx-3 divide-y-2">
+                        <div className="mx-3 divide-y-2 h-screen">
                             {
                                 nearbyList
                                     .sort(
