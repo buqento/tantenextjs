@@ -1,7 +1,6 @@
 import React from 'react'
 import NextHead from 'next/head'
 import fire from '../../configurations/firebase'
-import HeadPage from '../../components/HeadPage'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import CampaignItem from '../../components/CampaignItem'
 import { BiFilterAlt, BiWinkSmile } from 'react-icons/bi'
@@ -9,6 +8,7 @@ import Filter from '../../components/Filter'
 import Modal from 'react-bootstrap/Modal'
 import Titlecase from '../../utils/Titlecase'
 import { DtProvinsi } from '../../utils/modals/Provinsi'
+import Layout from '../../components/Layout'
 class Detail extends React.Component {
     static async getInitialProps(ctx) {
         return {
@@ -166,7 +166,7 @@ class Detail extends React.Component {
         if (dataCallback && dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---') { titleHead = dataCallback.province }
         if (dataCallback && dataCallback.city !== '---Semua---') { titleHead = dataCallback.city + ', ' + dataCallback.province }
         if (dataCallback && dataCallback.district !== '---Semua---') { titleHead = dataCallback.district + ', ' + dataCallback.city + ', ' + dataCallback.province }
-        return (<>
+        return (<Layout title="Pencarian">
             <NextHead>
                 <title>Tersedia Kost Dan Kontrakan Murah Semua Di {titleHead}</title>
                 <meta name="googlebot" content="index, follow" />
@@ -189,11 +189,8 @@ class Detail extends React.Component {
                 <link rel="canonical" content="https://tantekos.com/search" />
             </NextHead>
             <div className="main-layout">
-                <div className="sticky top-0">
-                    <HeadPage title={titleHead} />
-                </div>
                 {
-                    <div className="fixed inset-x-0 bottom-0 mb-4 text-center z-40">
+                    <div className="fixed inset-x-0 bottom-0 mb-5 pb-4 text-center z-40">
                         <span onClick={handleShow} className={`${!show ? 'bg-indigo-700 text-white' : 'bg-white text-black border'} shadow-lg w-max px-3 py-2 mt-3 rounded-full hover:bg-white-700 focus:outline-none uppercase border-4 border-indigo-200`}>
                             <BiFilterAlt className="inline mb-1 mr-1" />Saring</span>
                     </div>
@@ -242,7 +239,7 @@ class Detail extends React.Component {
                     <Filter callbackFromParent={this.filterCallback} />
                 </Modal.Body>
             </Modal>
-        </>)
+        </Layout>)
     }
 }
 export default Detail;

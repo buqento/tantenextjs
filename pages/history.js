@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import HeadPage from '../components/HeadPage'
+import Layout from '../components/Layout'
 import Cash from '../utils/Cash'
 import { BiSmile, BiMap } from 'react-icons/bi'
 import { MdClose } from 'react-icons/md'
@@ -30,11 +30,10 @@ class History extends React.Component {
     render() {
         const { data, load, skeletonArr } = this.state;
         return (
-            <div className="main-layout">
-                <HeadPage title="Terakhir Dilihat" />
+            <Layout title="Terakhir Dilihat">
                 {
                     load ?
-                        <div className="mx-3 divide-y-2">
+                        <div className="mx-3 divide-y-2 h-screen">
                             {
                                 skeletonArr.map((item, index) =>
                                     <div key={index} className="max-w-sm w-full mx-auto py-2">
@@ -54,7 +53,7 @@ class History extends React.Component {
                         </div>
                         :
                         data && data.length > 0 &&
-                        <div className="mx-3 mb-3 divide-y-2">
+                        <div className="mx-3 divide-y-2 h-screen">
                             {
                                 data
                                     .sort(
@@ -130,7 +129,7 @@ class History extends React.Component {
                         </div>
                     </div>
                 }
-            </div>
+            </Layout>
         )
     }
 }

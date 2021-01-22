@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { BiChevronLeft, BiSearchAlt, BiListUl } from 'react-icons/bi'
-import { MdStar } from 'react-icons/md'
+import { BiChevronLeft } from 'react-icons/bi'
+import { MdStar, MdHistory } from 'react-icons/md'
 import { string, bool } from 'prop-types'
 import Router from 'next/router'
 class HeadPage extends Component {
@@ -22,10 +22,7 @@ class HeadPage extends Component {
                     page === 'home' &&
                     <>
                         <div className="inline p-1 ml-2 mb-3 border rounded-full float-right">
-                            <a href="/search/all"><BiSearchAlt size={24} className="text-indigo-700" /></a>
-                        </div>
-                        <div className="inline p-1 ml-2 mb-3 border rounded-full float-right">
-                            <a href="/history"><BiListUl size={24} className="text-indigo-700" /></a>
+                            <a href="/history"><MdHistory size={24} className="text-indigo-700" /></a>
                         </div>
                         <div className="inline p-1 mb-2 border rounded-full float-right">
                             <a href="/favorites"><MdStar size={24} className="text-pink-500" /></a>
