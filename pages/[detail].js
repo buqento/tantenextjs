@@ -5,6 +5,7 @@ import { string } from 'prop-types'
 import { FaExternalLinkAlt } from 'react-icons/fa'
 import Slide from '../components/Slide'
 import Peta from '../components/Peta'
+import Layout from '../components/Layout'
 import FooterDetail from '../components/FooterDetail'
 import ReactGa from 'react-ga'
 import moment from 'moment'
@@ -108,7 +109,7 @@ class Detail extends React.Component {
         JSON.parse(structureTypeBreadcrumbList)
       ]
     };
-    return <>
+    return <Layout>
       {
         detail &&
         <NextHead>
@@ -140,13 +141,9 @@ class Detail extends React.Component {
         detail &&
         <div className="main-layout">
           <Slide imagesData={detail.images} imageTitle={detail.title} />
-          <nav className="sticky top-0 z-10 bg-white border-bottom">
-            <ol className="font-bold list-reset py-2 pl-3 flex">
-              <li className="px-3 py-2 mr-2 bg-indigo-700 rounded-full text-white uppercase" onClick={() => Router.push('/')}>Beranda</li>
-              <li className="pt-2">/</li>
-              <li className="pt-2 mx-2 clamp-1">{detail.name}</li>
-            </ol>
-          </nav>
+          <div className="sticky top-0 z-10">
+            <FooterDetail data={detail} callbackFromParent={this.handleShowAlert} />
+          </div>
           <div className="container mt-2 mb-3">
             <div>
               <small className="text-gray-700">{moment(detail.date_modified).lang('id').fromNow()} &middot; {detail.hit === undefined ? '1' : detail.hit} kali dilihat</small>
@@ -204,7 +201,6 @@ class Detail extends React.Component {
               <ListKosOthers data={otherdata} detail={detail} />
             </div>
           </div>
-          <FooterDetail data={detail} callbackFromParent={this.handleShowAlert} />
         </div>
       }
       {
@@ -219,7 +215,7 @@ class Detail extends React.Component {
           </label>
         </div>
       }
-    </>
+    </Layout>
   }
 }
 export const getServerSideProps = async (context) => {

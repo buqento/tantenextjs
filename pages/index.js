@@ -93,7 +93,7 @@ class Index extends React.Component {
   render() {
     const { data, dataCallback, isFilter, titleHead } = this.state
     return (
-      <Layout title="Tantekos" withFooter>
+      <Layout title="Tantekos" withFooter withHeader>
         <Header />
         <div className="m-3 border rounded-xl shadow-sm py-3">
           <Filter callbackFromParent={this.filterCallback} />

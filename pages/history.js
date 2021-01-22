@@ -1,8 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
 import Layout from '../components/Layout'
+import Message from '../components/Message'
 import Cash from '../utils/Cash'
-import { BiSmile, BiMap } from 'react-icons/bi'
+import { BiMap } from 'react-icons/bi'
 import { MdClose } from 'react-icons/md'
 class History extends React.Component {
     constructor(props) {
@@ -30,7 +31,7 @@ class History extends React.Component {
     render() {
         const { data, load, skeletonArr } = this.state;
         return (
-            <Layout title="Terakhir Dilihat">
+            <Layout title="Terakhir Dilihat" withHeader>
                 {
                     load ?
                         <div className="mx-3 divide-y-2">
@@ -121,14 +122,7 @@ class History extends React.Component {
                             }
                         </div>
                 }
-                {
-                    data && data.length === 0 &&
-                    <div className="container-center text-center">
-                        <div className="text-center">
-                            <div><BiSmile size={22} className="inline mr-1 mb-1" />Kamu belum memiliki history</div>
-                        </div>
-                    </div>
-                }
+                {data && data.length === 0 && <Message message="Kamu belum memiliki history" />}
             </Layout>
         )
     }

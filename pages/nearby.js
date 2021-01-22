@@ -1,8 +1,8 @@
 import React from 'react'
 import fire from '../configurations/firebase'
 import CampaignItemList from '../components/CampaignItemList'
+import Message from '../components/Message'
 import Layout from '../components/Layout'
-import { BiWinkSmile } from 'react-icons/bi'
 class Nearby extends React.Component {
     constructor(props) {
         super(props)
@@ -73,7 +73,7 @@ class Nearby extends React.Component {
     }
     render() {
         const { locationText, nearbyList, load, skeletonArr } = this.state
-        return <Layout title="Terdekat">
+        return <Layout title="Terdekat" withHeader>
             {
                 load ?
                     <div className="mx-3 divide-y-2">
@@ -120,11 +120,7 @@ class Nearby extends React.Component {
                     </div>
             }
             {
-                nearbyList && nearbyList.length === 0 &&
-                <div className="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
-                    <p className="font-bold">Tidak Ditemukan</p>
-                    <p className="text-sm"><BiWinkSmile size={22} className="inline mr-1 mb-1" />Temukan kost menggunakan pencarian</p>
-                </div>
+                nearbyList && nearbyList.length === 0 && <Message title="Tidak Ditemukan" message="Temukan kost menggunakan pencarian" />
             }
         </Layout>
     }

@@ -2,7 +2,7 @@ import React from 'react'
 import CampaignItemList from './CampaignItemList'
 import Generateslug from '../utils/Generateslug'
 import fire from '../configurations/firebase'
-import { BiWinkSmile } from 'react-icons/bi'
+import Message from './Message'
 class FeedsGrid extends React.Component {
     constructor(props) {
         super(props)
@@ -58,10 +58,7 @@ class FeedsGrid extends React.Component {
                                     </div></a>
                                 </>
                                 :
-                                <div className="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3" role="alert">
-                                    <p className="font-bold">Tidak Ditemukan</p>
-                                    <p className="text-sm"><BiWinkSmile size={22} className="inline mr-1 mb-1" />Silahkan cari dengan kriteria lainnya</p>
-                                </div>
+                                <Message title="Tidak Ditemukan" message="Silahkan cari dengan kriteria lainnya" />
                         }
                     </> : load ?
                             <div className="mx-3 divide-y-2">

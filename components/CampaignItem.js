@@ -28,6 +28,7 @@ class CampaignItem extends Component {
         const { like } = this.state;
         const { item, customStyle } = this.props
         const newItem = {
+            category: item.category,
             date_view: Date.now(),
             facility: { bathroom: item.facility.bathroom, building: item.facility.building, share: item.facility.share, room: item.facility.room },
             id: item.id,
