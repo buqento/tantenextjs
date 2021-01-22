@@ -37,7 +37,7 @@ class Detail extends React.Component {
             <Layout title="Favorit">
                 {
                     load ?
-                        <div className="mx-3 divide-y-2 h-screen">
+                        <div className="mx-3 divide-y-2">
                             {
                                 skeletonArr.map((item, index) =>
                                     <div key={index} className="max-w-sm w-full mx-auto py-2">
@@ -57,7 +57,7 @@ class Detail extends React.Component {
                         </div>
                         :
                         data && data.length > 0 &&
-                        <div className="mx-3 mb-3 divide-y-2 h-screen">
+                        <div className="mx-3 mb-3 divide-y-2">
                             {
                                 data
                                     .sort(

@@ -190,7 +190,7 @@ class Detail extends React.Component {
             </NextHead>
             <div className="main-layout">
                 {
-                    <div className="fixed inset-x-0 bottom-0 mb-5 pb-5 text-center z-40">
+                    <div className="fixed inset-x-0 bottom-0 mb-5 pb-4 text-center z-40">
                         <span onClick={handleShow} className={`${!show ? 'bg-indigo-700 text-white' : 'bg-white text-black border'} shadow-lg w-max px-3 py-2 mt-3 rounded-full hover:bg-white-700 focus:outline-none uppercase border-4 border-indigo-200`}>
                             <BiFilterAlt className="inline mb-1 mr-1" />Saring</span>
                     </div>
