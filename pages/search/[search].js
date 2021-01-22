@@ -219,13 +219,13 @@ class Detail extends React.Component {
                                 hasMore={more}
                                 loader={<div className="py-3 text-center"></div>}
                             >
-                                <div className="grid grid-cols-2 gap-3 mx-3 mb-3">
+                                <div className="grid grid-cols-2 gap-3 mx-3 mb-4">
                                     {data.map((item, index) => <CampaignItem key={index} item={item} />
                                     )}
                                 </div>
                             </InfiniteScroll>
                             :
-                            data.length > 0 ? <div className="grid grid-cols-2 gap-3 mx-3 my-3">{data.map((item, index) => <CampaignItem key={index} item={item} />
+                            data.length > 0 ? <div className="grid grid-cols-2 gap-3 mx-3 mt-3 mb-4">{data.map((item, index) => <CampaignItem key={index} item={item} />
                             )}</div>
                                 :
                                 <Message title="Tidak Ditemukan" message="Silahkan cari dengan kriteria lainnya" />

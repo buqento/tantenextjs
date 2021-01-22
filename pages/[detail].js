@@ -144,7 +144,7 @@ class Detail extends React.Component {
           <div className="sticky top-0 z-10">
             <FooterDetail data={detail} callbackFromParent={this.handleShowAlert} />
           </div>
-          <div className="container mt-2 mb-3">
+          <div className="container mt-2 mb-4">
             <div>
               <small className="text-gray-700">{moment(detail.date_modified).lang('id').fromNow()} &middot; {detail.hit === undefined ? '1' : detail.hit} kali dilihat</small>
               <h1 className="mt-0 mb-3 text-xl select-none capitalize">{detail.title}</h1>
@@ -197,7 +197,6 @@ class Detail extends React.Component {
                   * Data dapat berubah sewaktu-waktu
                 </small>
               </div>
-              {/* kost lainnya */}
               <ListKosOthers data={otherdata} detail={detail} />
             </div>
           </div>
