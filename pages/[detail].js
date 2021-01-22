@@ -150,10 +150,10 @@ class Detail extends React.Component {
           <div className="container mt-2 mb-3">
             <div>
               <small className="text-gray-700">{moment(detail.date_modified).lang('id').fromNow()} &middot; {detail.hit === undefined ? '1' : detail.hit} kali dilihat</small>
-              <h1 className="mt-0 mb-3 text-xl capitalize">{detail.title}</h1>
+              <h1 className="mt-0 mb-3 text-xl select-none capitalize">{detail.title}</h1>
               <div className="mb-3">
                 <p className="font-bold">Deskripsi {detail.category}</p>
-                <div dangerouslySetInnerHTML={{ __html: detail.description }} />
+                <div className="select-none" dangerouslySetInnerHTML={{ __html: detail.description }} />
               </div>
               {
                 detail && detail.facility && detail.facility.room.length > 0 && detail.facility.room[0] !== "" &&
