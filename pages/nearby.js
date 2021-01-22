@@ -126,11 +126,6 @@ class Nearby extends React.Component {
                     <p className="text-sm"><BiWinkSmile size={22} className="inline mr-1 mb-1" />Temukan kost menggunakan pencarian</p>
                 </div>
             }
-            <a href="/search/all">
-                <div className="rounded-full bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-3 py-3 mx-3">
-                    <span>Cari Kost Lainnya</span>
-                </div>
-            </a>
         </Layout>
     }
 }
