@@ -9,7 +9,7 @@ export const Campus = [
     { id: 8, slug: 'universitas-udayana', name: 'Universitas Udayana', province: 'Bali' },
     { id: 9, slug: 'universitas-warmadewa', name: 'Universitas Warmadewa', province: 'Bali' },
     { id: 10, slug: 'universitas-ahmad-dahlan', name: 'Universitas Ahmad Dahlan', province: 'Daerah Istimewa Yogyakarta' },
-    { id: 11, slug: 'universitas-teknologi-yogyakarta', name: 'Universitas Teknologi Daerah Istimewa Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
+    { id: 11, slug: 'universitas-teknologi-yogyakarta', name: 'Universitas Teknologi Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
     { id: 12, slug: 'universitas-islam-indonesia', name: 'Universitas Islam Indonesia', province: 'Daerah Istimewa Yogyakarta' },
     { id: 13, slug: 'asrd-msd-yogyakarta', name: 'ASRD MSD Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
     { id: 14, slug: 'sekolah-tinggi-seni-rupa-dan-desain-visi', name: 'Sekolah Tinggi Seni Rupa dan Desain Visi', province: 'Daerah Istimewa Yogyakarta' },
@@ -63,4 +63,8 @@ export const Campus = [
     { id: 62, slug: 'universitas-indonesia', name: 'Universitas Indonesia', province: 'Jawa Barat' },
     { id: 63, slug: 'sekolah-tinggi-teknologi-kedirgantaraan', name: 'Sekolah Tinggi Teknologi Kedirgantaraan', province: 'Daerah Istimewa Yogyakarta' },
     { id: 64, slug: 'institut-teknologi-nasional-yogyakarta', name: 'Institut Teknologi Nasional Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
+    { id: 65, slug: 'universitas-gunadarma', name: 'Universitas Gunadarma', province: 'DKI Jakarta' },
+    { id: 66, slug: 'stmik-umel-mandiri', name: 'STMIK Umel Mandiri', province: 'Papua' },
+    { id: 67, slug: 'universitas-cenderawasih', name: 'Universitas Cenderawasih', province: 'Papua' },
+    { id: 68, slug: 'universitas-ottow-geissler Papua', name: 'Universitas Ottow Geissler Papua', province: 'Papua' },
 ]

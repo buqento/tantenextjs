@@ -23,8 +23,7 @@ class CampaignItemList extends Component {
             .catch(err => { console.log(err) })
     }
     render() {
-        const { like } = this.state;
-        const { item, customStyle } = this.props
+        const { item, nearby } = this.props
         const newItem = {
             date_view: Date.now(),
             facility: { bathroom: item.facility.bathroom, building: item.facility.building, share: item.facility.share, room: item.facility.room },
@@ -56,8 +55,16 @@ class CampaignItemList extends Component {
                 <div className="w-full overflow-hidden py-2" onClick={() => handleLastView(item)}>
                     <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${item.images[0]}`} alt={item.title} className="float-left mr-2 rounded-xl" />
                     <div className="mx-3 mt-n1">
-                        <div className="text-lg font-bold">
-                            {Cash(item.price.start_from)}<span className="text-xs font-normal">/{item.price.duration}</span>
+                        <div className="text-lg font-bold flex">
+                            <div className>
+                                {Cash(item.price.start_from)}<span className="text-xs font-normal">/{item.price.duration}</span>
+                            </div>
+                            {
+                                nearby &&
+                                <div className="w-full">
+                                    <span className="float-right text-green-700 font-normal">{item.distance}Km</span>
+                                </div>
+                            }
                         </div>
                         <div className="leading-none text-md clamp-2"><small>{item.title}</small></div>
                         <div className="text-md clamp-1">

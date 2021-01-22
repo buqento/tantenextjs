@@ -27,6 +27,7 @@ export const DtArea = [
     { province: 'DKI Jakarta', city: 'Jakarta Barat', district: 'Kebon Jeruk' },
     { province: 'DKI Jakarta', city: 'Jakarta Barat', district: 'Grogol Petamburan' },
     { province: 'DKI Jakarta', city: 'Jakarta Barat', district: 'Kembangan' },
+    { province: 'DKI Jakarta', city: 'Jakarta Barat', district: 'Kalideres' },
     { province: 'DKI Jakarta', city: 'Jakarta Timur', district: 'Cakung' },
     { province: 'DKI Jakarta', city: 'Jakarta Timur', district: 'Jatinegara' },
     { province: 'DKI Jakarta', city: 'Jakarta Timur', district: 'Duren Sawit' },

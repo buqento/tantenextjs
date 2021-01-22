@@ -48,11 +48,23 @@ class Nearby extends React.Component {
         const { latitude, longitude } = position.coords
         const { data } = this.state
         let nearbyList = []
+        let nearItem = {}
         let locationText
         for (var i = 0; i < data.length; i++) {
             // if this location is within 5KM of the user, add it to the list
             const d = this.getDistance(latitude, longitude, data[i].location.lat_lng.w_, data[i].location.lat_lng.T_, "K")
-            if (d <= 5) nearbyList.push(data[i])
+            nearItem = {
+                distance: (d).toFixed(1),
+                facility: data[i].facility,
+                images: data[i].images,
+                location: data[i].location,
+                name: data[i].name,
+                price: data[i].price,
+                slug: data[i].slug,
+                title: data[i].title,
+                type: data[i].type
+            }
+            if (d <= 5) nearbyList.push(nearItem)
         }
         fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=111ed9e8cfcb4f7a83d8b17c1671a4f0`)
             .then(response => response.json())
@@ -61,6 +73,7 @@ class Nearby extends React.Component {
     }
     render() {
         const { locationText, nearbyList, load, skeletonArr } = this.state
+        console.log(nearbyList);
         return <Layout>
             {
                 load ?
@@ -87,7 +100,23 @@ class Nearby extends React.Component {
                     <div className="mb-3">
                         <div className="mb-3 mx-3 font-bold"><span className="font-normal">Kost di sekitar</span> {locationText}</div>
                         <div className="mx-3 divide-y-2">
-                            {nearbyList.map((item, index) => <CampaignItemList key={index} item={item} />)}
+                            {
+                                nearbyList
+                                    .sort(
+                                        function compare(a, b) {
+                                            const dtA = a.distance;
+                                            const dtB = b.distance;
+                                            let comparison = 0;
+                                            if (dtA > dtB) {
+                                                comparison = 1;
+                                            } else if (dtA < dtB) {
+                                                comparison = -1;
+                                            }
+                                            return comparison;
+                                        }
+                                    )
+                                    .map((item, index) => <CampaignItemList key={index} item={item} nearby />)
+                            }
                         </div>
                     </div>
             }
@@ -98,6 +127,11 @@ class Nearby extends React.Component {
                     <p className="text-sm"><BiWinkSmile size={22} className="inline mr-1 mb-1" />Temukan kost menggunakan pencarian</p>
                 </div>
             }
+            <a href="/search/all">
+                <div className="rounded-full bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-3 py-3 mx-3">
+                    <span>Cari Kost Lainnya</span>
+                </div>
+            </a>
         </Layout>
     }
 }
