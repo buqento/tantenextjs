@@ -1,6 +1,8 @@
 import React from 'react'
 import HeadPage from '../components/HeadPage'
 import NextHead from 'next/head'
+import { FaFacebook, FaWhatsapp, FaTelegram } from 'react-icons/fa'
+
 export default function Index() {
   return (
     <div className="main-layout">
@@ -18,12 +20,25 @@ export default function Index() {
       <HeadPage title="Kontak Kami" />
       <div className="container text-center leading-relaxed">
         <h1 className="text-2xl py-3">Kontak Kami</h1>
-        <p>Jika Anda memiliki pertanyaan atau saran untuk pengembangan layanan kami, jangan ragu untuk menghubungi kami melalui layanan kami.</p>
-        <p><strong>tantekos@gmail.com</strong></p>
-        <p><strong>+62 878-7203-3154</strong></p>
-        <p className="text-indigo-700 font-bold">
-          <a href="https://www.facebook.com/groups/tantekos" target="blank">Facebook</a> &middot; <a href="https://www.instagram.com/tantekos_official" target="blank">Instagram</a>
-        </p>
+        <p>Jika Anda memiliki pertanyaan atau saran untuk pengembangan layanan Tantekos, jangan ragu untuk menghubungi kami melalui:</p>
+        <div className="mt-3">
+          <a href="https://wa.me/6287855133758?text=Hai%20Tantekos,%20Saya%20tertarik%20dengan%20kost%20yang%20diposting%20di%20website." target="blank">
+            <span className="border rounded-full py-1 px-2 mr-1 text-green-600">
+              <FaWhatsapp className="inline mr-1 mb-1" />
+            WhatsApp
+          </span>
+          </a>
+          <a href="https://facebook.com/tantekos" target="blank">
+            <span className="border rounded-full py-1 px-2 mr-1 text-blue-700">
+              <FaFacebook className="inline mr-1 mb-1" />Facebook
+          </span>
+          </a>
+          <a href="https://t.me/tantekos" target="blank" style={{ whiteSpace: 'nowrap' }}>
+            <span className="border rounded-full py-1 px-2 mr-1 text-blue-400">
+              <FaTelegram className="inline mr-1 mb-1" />Telegram
+          </span>
+          </a>
+        </div>
       </div>
     </div>
   )

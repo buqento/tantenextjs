@@ -15,11 +15,9 @@ class Index extends React.Component {
       titleHead: null,
       dataCallback: null
     }
-    this.scrollToNode = this.scrollToNode.bind(this);
+    this.scrollToNode = this.scrollToNode.bind(this)
   }
-  scrollToNode(node) {
-    node.scrollIntoView({ behavior: 'smooth' });
-  }
+  scrollToNode(node) {node.scrollIntoView({ behavior: 'smooth' })}
   filterCallback = (dataCallback) => {
     let facilitiesRoom = [""]
     if (dataCallback.facilitiesRoom.length > 0) facilitiesRoom = dataCallback.facilitiesRoom

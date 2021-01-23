@@ -34,6 +34,7 @@ class Detail extends React.Component {
             load: true
         }
         this.fetchMoreData = this.fetchMoreData.bind(this)
+        this.scrollToNode = this.scrollToNode.bind(this)
     }
     async componentDidMount() {
         const { province, city, district, slug } = this.props
@@ -135,6 +136,7 @@ class Detail extends React.Component {
             }))
             const dataFilterByDuration = data.filter((item) => item.durations.includes(dataCallback.duration.toLowerCase()))
             this.setState({ data: dataFilterByDuration, isFilter: true, show: false, dataCallback, load: false })
+            this.scrollToNode(this.node)
         })
     }
     fetchMoreData() {
@@ -158,6 +160,7 @@ class Detail extends React.Component {
             this.setState({ more: false })
         }
     }
+    scrollToNode(node) { node.scrollIntoView({ behavior: 'smooth' }) }
     render() {
         const { show, data, more, isFilter, dataCallback, load } = this.state;
         const handleClose = () => { this.setState({ show: false }) }
@@ -188,7 +191,7 @@ class Detail extends React.Component {
                 <meta name="classification" content="Business, Rent House, Sewa Kost, Property, Rent Room, Info Kost, Information, Kost, Room, Cari Kost, Kost Murah, Kost Bebas, Application, Mobile Application, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
                 <link rel="canonical" content="https://tantekos.com/search" />
             </NextHead>
-            <div className="main-layout">
+            <div className="main-layout" ref={(node) => this.node = node}>
                 {titleHead && <div className="mb-2 mx-3 font-bold"><span className="font-normal">Kost Sewa </span>{dataCallback.duration}an, {titleHead}</div>}
                 {
                     <div className="fixed inset-x-0 bottom-0 mb-5 pb-5 text-center z-40">

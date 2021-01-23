@@ -237,11 +237,7 @@ export const getServerSideProps = async (context) => {
       ...doc.data()
     })
   })
-  if(!detail){
-    return {
-      notFound: true
-    }
-  }
+  if (!detail) return { notFound: true }
   return {
     props: {
       slug: context.query.detail,
