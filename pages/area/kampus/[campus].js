@@ -1,12 +1,11 @@
 import React from 'react'
 import NextHead from 'next/head'
 import { string } from 'prop-types'
-import HeadPage from '../../../components/HeadPage'
-import ListKos from '../../../components/ListKos'
+import Layout from '../../../components/Layout'
 import Generateslug from '../../../utils/Generateslug'
 import fire from '../../../configurations/firebase'
 import { Campus } from '../../../utils/modals/Campus'
-
+import CampaignItemList from '../../../components/CampaignItemList'
 class CampusId extends React.Component {
     static async getInitialProps(ctx) { return { slug: ctx.query.campus } }
     constructor(props) {
@@ -113,15 +112,12 @@ class CampusId extends React.Component {
                     <link rel="canonical" content={`https://tantekos.com/area/${slug}`} />
                     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureAreaPage) }} />
                 </NextHead>
-                <div className="main-layout">
-                    <HeadPage title={campusName} />
-                    <ListKos data={data} />
-                    <a href="/search/all">
-                        <div className="rounded-full bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-3 py-3 mx-3">
-                            <span>Cari Kost Lainnya</span>
-                        </div>
-                    </a>
-                </div>
+                <Layout withHeader title="Kampus">
+                    <div className="mx-3 mb-2 font-bold"><span className="font-normal">Dekat</span> {campusName}</div>
+                    <div className="mx-3 mb-3 divide-y">
+                        {data && data.map((item, index) => <CampaignItemList item={item} key={index} />)}
+                    </div>
+                </Layout>
             </>
         )
     }

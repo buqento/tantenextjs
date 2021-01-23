@@ -3,14 +3,14 @@ import CampaignItemList from './CampaignItemList'
 import Generateslug from '../utils/Generateslug'
 import fire from '../configurations/firebase'
 import Message from './Message'
+import CampaignItemListSkeleton from './CampaignItemListSkeleton'
 class FeedsGrid extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             data: null,
             load: true,
-            limit: 5,
-            skeletonArr: [1, 2, 3, 4, 5]
+            limit: 5
         }
     }
     async componentDidMount() {
@@ -26,7 +26,7 @@ class FeedsGrid extends React.Component {
         docRef.get().catch(err => console.log(err))
     }
     render() {
-        const { data, limit, load, skeletonArr } = this.state
+        const { data, limit, load } = this.state
         const { filterData, dataCallback } = this.props
         let url = '/search/all'
         if (filterData && filterData.length > 5) {
@@ -46,7 +46,7 @@ class FeedsGrid extends React.Component {
                         {
                             filterData.length > 0 ?
                                 <>
-                                    <div className="mx-3 divide-y-2">
+                                    <div className="mx-3 divide-y">
                                         {
                                             filterData.slice(0, limit).map((item, index) => <CampaignItemList key={index} item={item} />)
                                         }
@@ -60,31 +60,10 @@ class FeedsGrid extends React.Component {
                                 :
                                 <Message title="Tidak Ditemukan" message="Silahkan cari dengan kriteria lainnya" />
                         }
-                    </> : load ?
-                            <div className="mx-3 divide-y-2">
-                                {
-                                    skeletonArr.map((item, index) =>
-                                        <div key={index} className="max-w-sm w-full mx-auto py-2">
-                                            <div className="animate-pulse flex space-x-4">
-                                                <div className="bg-gray-400 rounded-xl h-24 w-24"></div>
-                                                <div className="flex-1 space-y-4 py-1">
-                                                    <div className="h-6 bg-gray-400 rounded w-1/4"></div>
-                                                    <div className="space-y-2">
-                                                        <div className="h-4 bg-gray-400 rounded"></div>
-                                                        <div className="h-4 bg-gray-400 rounded w-5/6"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    )
-                                }
-                            </div>
-                            :
-                            <div className="mx-3 divide-y-2">
-                                {
-                                    !load && data && data
-                                        .map((item, index) => <CampaignItemList key={index} item={item} />)
-                                }
+                    </> : load ? <CampaignItemListSkeleton /> :
+                            <div className="mx-3 divide-y">
+                                {!load && data && data
+                                    .map((item, index) => <CampaignItemList key={index} item={item} />)}
                             </div>
                 }
             </div>

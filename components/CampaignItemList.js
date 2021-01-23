@@ -40,7 +40,7 @@ class CampaignItemList extends Component {
             type: item.type
         }
         const handleLastView = () => {
-            this.handleHit(item.id, item.hit === undefined ? 1 : item.hit + 1)
+            this.handleHit(item.id, item.hit + 1)
             let lastView = localStorage.getItem('lastview')
             let data
             if (lastView === null) { data = [] } else { data = JSON.parse(lastView) }

@@ -3,13 +3,14 @@ import NextHead from 'next/head'
 import fire from '../../configurations/firebase'
 import Message from '../../components/Message'
 import InfiniteScroll from 'react-infinite-scroll-component'
-import CampaignItem from '../../components/CampaignItem'
 import { BiFilterAlt } from 'react-icons/bi'
 import Filter from '../../components/Filter'
 import Modal from 'react-bootstrap/Modal'
 import Titlecase from '../../utils/Titlecase'
 import { DtProvinsi } from '../../utils/modals/Provinsi'
 import Layout from '../../components/Layout'
+import CampaignItemList from '../../components/CampaignItemList'
+import CampaignItemListSkeleton from '../../components/CampaignItemListSkeleton'
 class Detail extends React.Component {
     static async getInitialProps(ctx) {
         return {
@@ -30,8 +31,7 @@ class Detail extends React.Component {
             isFilter: false,
             dataCallback: null,
             show: false,
-            load: true,
-            skeletonArr: [1, 2, 3, 4, 5, 6]
+            load: true
         }
         this.fetchMoreData = this.fetchMoreData.bind(this)
     }
@@ -155,14 +155,14 @@ class Detail extends React.Component {
         }
     }
     render() {
-        const { show, data, more, isFilter, dataCallback, load, skeletonArr } = this.state;
+        const { show, data, more, isFilter, dataCallback, load } = this.state;
         const handleClose = () => { this.setState({ show: false }) }
         const handleShow = () => { this.setState({ show: true }) }
-        let titleHead = 'Semua Kost & Kontrakan'
+        let titleHead = null
         if (dataCallback && dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---') { titleHead = dataCallback.province }
         if (dataCallback && dataCallback.city !== '---Semua---') { titleHead = dataCallback.city + ', ' + dataCallback.province }
         if (dataCallback && dataCallback.district !== '---Semua---') { titleHead = dataCallback.district + ', ' + dataCallback.city + ', ' + dataCallback.province }
-        return (<Layout title="Pencarian" withHeader>
+        return (<Layout title="Cari Kost" withHeader>
             <NextHead>
                 <title>Tersedia Kost Dan Kontrakan Murah Semua Di {titleHead}</title>
                 <meta name="googlebot" content="index, follow" />
@@ -185,6 +185,7 @@ class Detail extends React.Component {
                 <link rel="canonical" content="https://tantekos.com/search" />
             </NextHead>
             <div className="main-layout">
+                {titleHead && <div className="mb-2 mx-3 font-bold">{titleHead}</div>}
                 {
                     <div className="fixed inset-x-0 bottom-0 mb-5 pb-5 text-center z-40">
                         <span onClick={handleShow} className={`${!show ? 'bg-indigo-700 text-white' : 'bg-white text-black border'} shadow-lg w-max px-3 py-3 mt-3 rounded-full hover:bg-white-700 focus:outline-none uppercase border-4 border-indigo-200`}>
@@ -192,21 +193,7 @@ class Detail extends React.Component {
                     </div>
                 }
                 {
-                    load ?
-                        <div className="grid grid-cols-2 gap-3 mx-3 mb-3">
-                            {
-                                skeletonArr.map((item, index) =>
-                                    <div key={index} className="rounded-xl overflow-hidden border">
-                                        <div className="animate-pulse w-full h-48 bg-gray-300" />
-                                        <div className="px-3 py-3">
-                                            <div className="animate-pulse px-2 my-1 w-full h-4 bg-gray-300" />
-                                            <div className="animate-pulse px-2 my-1 w-12 h-4 bg-gray-300" />
-                                            <div className="animate-pulse px-2 my-1 w-6 h-4 bg-gray-300" />
-                                        </div>
-                                    </div>
-                                )
-                            }
-                        </div> :
+                    load ? <CampaignItemListSkeleton /> :
                         !isFilter ?
                             <InfiniteScroll
                                 dataLength={data.length}
@@ -214,13 +201,13 @@ class Detail extends React.Component {
                                 hasMore={more}
                                 loader={<div className="py-3 text-center"></div>}
                             >
-                                <div className="grid grid-cols-2 gap-3 mx-3 mb-4">
-                                    {data.map((item, index) => <CampaignItem key={index} item={item} />
+                                <div className="mx-3 mb-3 divide-y">
+                                    {data.map((item, index) => <CampaignItemList key={index} item={item} />
                                     )}
                                 </div>
                             </InfiniteScroll>
                             :
-                            data.length > 0 ? <div className="grid grid-cols-2 gap-3 mx-3 mt-3 mb-4">{data.map((item, index) => <CampaignItem key={index} item={item} />
+                            data.length > 0 ? <div className="mx-3 mb-3 divide-y">{data.map((item, index) => <CampaignItemList key={index} item={item} />
                             )}</div>
                                 :
                                 <Message title="Tidak Ditemukan" message="Silahkan cari dengan kriteria lainnya" />

@@ -3,7 +3,7 @@ import { BiChevronRight } from "react-icons/bi"
 class Area extends Component {
     render() {
         return (
-            <div className="my-3 mx-3 divide-y-2 divide-gray-100">
+            <div className="my-3 mx-3 divide-y">
                 <div className="py-2">
                     <a href="https://www.facebook.com/groups/485414032435519" target="blank">
                         <span>Rumah/Kost/Kontrakan DKI Jakarta</span>

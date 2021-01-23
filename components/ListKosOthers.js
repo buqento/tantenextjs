@@ -22,7 +22,7 @@ class ListKosOthers extends Component {
                             <span className="font-normal">{`${detail.category} lain di `}</span>
                             <span>{`${detail.location.district}, ${detail.location.city}, ${detail.location.province}`}</span>
                         </div>
-                        <div className="divide-y-2">
+                        <div className="divide-y">
                             {
                                 listData.reverse().slice(0, 5).map((item, index) => <CampaignItemList key={index} item={item} />)
                             }
