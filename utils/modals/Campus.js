@@ -69,4 +69,6 @@ export const Campus = [
     { id: 68, slug: 'universitas-ottow-geissler Papua', name: 'Universitas Ottow Geissler Papua', province: 'Papua' },
     { id: 69, slug: 'stmik-primakara', name: 'STMIK Primakara', province: 'Bali' },
     { id: 70, slug: 'universitas-pendidikan-ganesha', name: 'Universitas Pendidikan Ganesha', province: 'Bali' },
+    { id: 71, slug: 'institut-teknologi-dan-bisnis-stikom-ambon', name: 'Institut Teknologi dan Bisnis STIKOM Ambon', province: 'Maluku' },
+    { id: 72, slug: 'universitas-kristen-indonesia-maluku', name: 'Universitas Kristen Indonesia Maluku', province: 'Maluku' },
 ]

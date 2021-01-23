@@ -29,7 +29,6 @@ class Index extends React.Component {
     if (dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---') {
       titleHead = dataCallback.province
       conditions = dt
-        .where('price.duration', '==', dataCallback.duration)
         .where('location.province', '==', dataCallback.province)
         .where("price.start_from", ">=", dataCallback.rangePrice.min)
         .where("price.start_from", "<=", dataCallback.rangePrice.max)
@@ -37,7 +36,6 @@ class Index extends React.Component {
     } else if (dataCallback.city !== '---Semua---' && dataCallback.district === '---Semua---') {
       titleHead = dataCallback.city + ', ' + dataCallback.province
       conditions = dt
-        .where('price.duration', '==', dataCallback.duration)
         .where('location.province', '==', dataCallback.province)
         .where('location.city', '==', dataCallback.city)
         .where("price.start_from", ">=", dataCallback.rangePrice.min)
@@ -46,7 +44,6 @@ class Index extends React.Component {
     } else if (dataCallback.city !== '---Semua---' && dataCallback.district !== '---Semua---') {
       titleHead = dataCallback.district + ', ' + dataCallback.city + ', ' + dataCallback.province
       conditions = dt
-        .where('price.duration', '==', dataCallback.duration)
         .where('location.province', '==', dataCallback.province)
         .where('location.city', '==', dataCallback.city)
         .where('location.district', '==', dataCallback.district)
@@ -56,7 +53,6 @@ class Index extends React.Component {
     } else if (dataCallback.city !== '---Semua---' && dataCallback.district !== '---Semua---') {
       titleHead = dataCallback.district + ', ' + dataCallback.city + ', ' + dataCallback.province
       conditions = dt
-        .where('price.duration', '==', dataCallback.duration)
         .where('location.province', '==', dataCallback.province)
         .where('location.city', '==', dataCallback.city)
         .where('location.district', '==', dataCallback.district)
@@ -66,7 +62,6 @@ class Index extends React.Component {
     } else if (dataCallback.city !== '---Semua---' && dataCallback.district === '---Semua---') {
       titleHead = dataCallback.city + ', ' + dataCallback.province
       conditions = dt
-        .where('price.duration', '==', dataCallback.duration)
         .where('location.province', '==', dataCallback.province)
         .where('location.city', '==', dataCallback.city)
         .where("price.start_from", ">=", dataCallback.rangePrice.min)
@@ -75,7 +70,6 @@ class Index extends React.Component {
     } else if (dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---') {
       titleHead = dataCallback.province
       conditions = dt
-        .where('price.duration', '==', dataCallback.duration)
         .where('location.province', '==', dataCallback.province)
         .where("price.start_from", ">=", dataCallback.rangePrice.min)
         .where("price.start_from", "<=", dataCallback.rangePrice.max)
@@ -86,7 +80,8 @@ class Index extends React.Component {
         id: doc.id,
         ...doc.data()
       }))
-      this.setState({ data, isFilter: true, titleHead, dataCallback })
+      const dataFilterByDuration = data.filter((item) => item.durations.includes(dataCallback.duration.toLowerCase()))
+      this.setState({ data: dataFilterByDuration, isFilter: true, titleHead, dataCallback })
     })
     this.scrollToNode(this.node)
   }
