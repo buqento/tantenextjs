@@ -185,7 +185,7 @@ class Detail extends React.Component {
                 <link rel="canonical" content="https://tantekos.com/search" />
             </NextHead>
             <div className="main-layout">
-                {titleHead && <div className="mb-2 mx-3 font-bold">{titleHead}</div>}
+    {titleHead && <div className="mb-2 mx-3 font-bold"><span className="font-normal">Kost Sewa </span>{dataCallback.duration}an, {titleHead}</div>}
                 {
                     <div className="fixed inset-x-0 bottom-0 mb-5 pb-5 text-center z-40">
                         <span onClick={handleShow} className={`${!show ? 'bg-indigo-700 text-white' : 'bg-white text-black border'} shadow-lg w-max px-3 py-3 mt-3 rounded-full hover:bg-white-700 focus:outline-none uppercase border-4 border-indigo-200`}>
