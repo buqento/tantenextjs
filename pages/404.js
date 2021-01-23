@@ -1,6 +1,9 @@
 import React from 'react';
+import Message from '../components/Message';
 export default function Custom404() {
-    return <div className="container-center text-center">
-        <p>404 | Halaman Tidak Ditemukan</p>
+    return <div class="flex h-screen">
+        <div class="m-auto">
+            <Message title="Kesalahan 404" message="Halaman Tidak Ditemukan" url="/" urlTitle="Kembali ke Beranda" />
+        </div>
     </div>
 }

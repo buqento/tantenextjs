@@ -40,41 +40,45 @@ class Detail extends React.Component {
         const provinsi = DtProvinsi.filter(provinsi => provinsi.slug === province)
         const dt = fire.firestore().collection('kosts')
         let conditions
-        if (Titlecase(slug) !== 'All') {
-            conditions = dt
-                .where('location.province', '==', provinsi[0].title)
-                .where('price.duration', '==', Titlecase(slug))
-                .orderBy('price.start_from', 'asc')
-            if (city !== undefined) {
+        if (provinsi.length > 0 || Titlecase(slug) === 'All') {
+            if (Titlecase(slug) !== 'All') {
                 conditions = dt
-                    .where('location.city', '==', Titlecase(city))
+                    .where('location.province', '==', provinsi[0].title)
                     .where('price.duration', '==', Titlecase(slug))
                     .orderBy('price.start_from', 'asc')
-            }
-            if (district !== undefined) {
+                if (city !== undefined) {
+                    conditions = dt
+                        .where('location.city', '==', Titlecase(city))
+                        .where('price.duration', '==', Titlecase(slug))
+                        .orderBy('price.start_from', 'asc')
+                }
+                if (district !== undefined) {
+                    conditions = dt
+                        .where('location.city', '==', Titlecase(city))
+                        .where('location.district', '==', Titlecase(district))
+                        .where('price.duration', '==', Titlecase(slug))
+                        .orderBy('price.start_from', 'asc')
+                }
+                this.setState({ more: false })
+            } else {
                 conditions = dt
-                    .where('location.city', '==', Titlecase(city))
-                    .where('location.district', '==', Titlecase(district))
-                    .where('price.duration', '==', Titlecase(slug))
                     .orderBy('price.start_from', 'asc')
             }
-            this.setState({ more: false })
+            conditions.get().then(snapshot => {
+                this.setState({ collectionLength: snapshot.docs.length })
+            }).catch(err => console.log(err))
+            conditions.onSnapshot(snap => {
+                const last = snap.docs[snap.docs.length - 1]
+                const data = snap.docs.map(doc => ({
+                    id: doc.id,
+                    ...doc.data()
+                }))
+                this.setState({ data, last, load: false })
+            })
+            conditions.get().catch(err => console.log(err))
         } else {
-            conditions = dt
-                .orderBy('price.start_from', 'asc')
+            this.setState({ data: [], load: false })
         }
-        conditions.get().then(snapshot => {
-            this.setState({ collectionLength: snapshot.docs.length })
-        }).catch(err => console.log(err))
-        conditions.onSnapshot(snap => {
-            const last = snap.docs[snap.docs.length - 1]
-            const data = snap.docs.map(doc => ({
-                id: doc.id,
-                ...doc.data()
-            }))
-            this.setState({ data, last, load: false })
-        })
-        conditions.get().catch(err => console.log(err))
     }
     filterCallback = (dataCallback) => {
         let facilitiesRoom = [""]
@@ -185,7 +189,7 @@ class Detail extends React.Component {
                 <link rel="canonical" content="https://tantekos.com/search" />
             </NextHead>
             <div className="main-layout">
-    {titleHead && <div className="mb-2 mx-3 font-bold"><span className="font-normal">Kost Sewa </span>{dataCallback.duration}an, {titleHead}</div>}
+                {titleHead && <div className="mb-2 mx-3 font-bold"><span className="font-normal">Kost Sewa </span>{dataCallback.duration}an, {titleHead}</div>}
                 {
                     <div className="fixed inset-x-0 bottom-0 mb-5 pb-5 text-center z-40">
                         <span onClick={handleShow} className={`${!show ? 'bg-indigo-700 text-white' : 'bg-white text-black border'} shadow-md w-max px-3 py-3 rounded-full hover:bg-white-700 focus:outline-none uppercase`}>
