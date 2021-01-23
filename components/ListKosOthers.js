@@ -29,13 +29,16 @@ class ListKosOthers extends Component {
                         </div>
                     </div>
                 }
-                <div className="border-top">
-                    <a href={url}>
-                        <div className="rounded-full bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-3 py-3">
-                            <span>Lihat {listData.length > 5 && listData.length - 5} {detail && detail.category} Lainnya</span>
-                        </div>
-                    </a>
-                </div>
+                {
+                    listData.length > 5 &&
+                    <div className="border-top">
+                        <a href={url}>
+                            <div className="rounded-full bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-3 py-3">
+                                <span>Lihat {listData.length - 5} {detail && detail.category} Lainnya</span>
+                            </div>
+                        </a>
+                    </div>
+                }
             </>
         )
     }

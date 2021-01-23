@@ -13,7 +13,7 @@ const navButtons = [
     icon: <MdMyLocation />
   },
   {
-    label: "Pencarian",
+    label: "Cari Kost",
     path: "/search/all",
     icon: <BiSearchAlt />
   }
