@@ -22,7 +22,7 @@ export default function Index() {
         <h1 className="text-2xl py-3">Kontak Kami</h1>
         <p>Jika Anda memiliki pertanyaan atau saran untuk pengembangan layanan Tantekos, jangan ragu untuk menghubungi kami melalui:</p>
         <div className="mt-3">
-          <a href="https://wa.me/6287855133758?text=Hai%20Tantekos,%20Saya%20tertarik%20dengan%20kost%20yang%20diposting%20di%20website." target="blank">
+          <a href="https://wa.me/6287855133758?text=Hai%20Tantekos,%20Saya%20tertarik%20dengan%20kost%20yang%ada%20di%20website." target="blank">
             <span className="border rounded-full py-1 px-2 mr-1 text-green-600">
               <FaWhatsapp className="inline mr-1 mb-1" />
             WhatsApp

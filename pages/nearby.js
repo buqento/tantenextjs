@@ -2,6 +2,7 @@ import React from 'react'
 import fire from '../configurations/firebase'
 import CampaignItemList from '../components/CampaignItemList'
 import Message from '../components/Message'
+import Header from '../components/Header'
 import Layout from '../components/Layout'
 import CampaignItemListSkeleton from '../components/CampaignItemListSkeleton'
 class Nearby extends React.Component {
@@ -11,8 +12,10 @@ class Nearby extends React.Component {
             data: [],
             locationText: null,
             nearbyList: null,
-            load: true
+            load: true,
+            locationPermit: null
         }
+        this.handlePermission = this.handlePermission.bind(this)
     }
     componentDidMount() {
         const dt = fire.firestore().collection('kosts')
@@ -24,12 +27,35 @@ class Nearby extends React.Component {
             this.setState({ data })
             if (typeof window !== 'undefined' && window.navigator.geolocation) {
                 window.navigator.geolocation.getCurrentPosition(
-                    this.successfulLookup, this.showAlert
+                    this.successfulLookup, console.warn('Location permission denied!')
                 )
             }
         })
+        this.handlePermission()
     }
-    showAlert = () => { console.log('Your location is unknown!') }
+    handlePermission() {
+        const report = (state) => {
+            if (state === 'prompt') {
+                this.setState({ locationPermit: state })
+            } else {
+                this.setState({ locationPermit: state, load: false })
+            }
+        }
+        if (typeof window !== 'undefined' && window.navigator.geolocation) {
+            window.navigator.permissions.query({ name: 'geolocation' }).then(function (result) {
+                if (result.state == 'granted') {
+                    report(result.state);
+                } else if (result.state == 'prompt') {
+                    report(result.state);
+                } else if (result.state == 'denied') {
+                    report(result.state);
+                }
+                result.onchange = function () {
+                    report(result.state);
+                }
+            });
+        }
+    }
     getDistance = (lat1, lon1, lat2, lon2, unit) => {
         var radlat1 = Math.PI * lat1 / 180
         var radlat2 = Math.PI * lat2 / 180
@@ -72,8 +98,15 @@ class Nearby extends React.Component {
             .then(() => this.setState({ locationText, nearbyList, load: false }))
     }
     render() {
-        const { locationText, nearbyList, load } = this.state
+        const { locationText, nearbyList, load, locationPermit } = this.state
         return <Layout title="Terdekat" withHeader>
+            <Header />
+            {
+                locationPermit === 'denied' &&
+                <div className="px-2 py-1">
+                    <Message title="Pengaturan Lokasi" message="Tidak dapat mengakses lokasi Kamu" />
+                </div>
+            }
             {
                 load ? <CampaignItemListSkeleton /> :
                     nearbyList && nearbyList.length > 0 &&
