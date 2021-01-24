@@ -35,11 +35,13 @@ class Nearby extends React.Component {
     }
     handlePermission() {
         const report = (state) => {
-            if (state === 'prompt') {
-                this.setState({ locationPermit: state })
-            } else {
-                this.setState({ locationPermit: state, load: false })
-            }
+            alert(state)
+            this.setState({ locationPermit: state, load: false })
+            // if (state === 'prompt') {
+            //     this.setState({ locationPermit: state })
+            // } else {
+            //     this.setState({ locationPermit: state, load: false })
+            // }
         }
         if (typeof window !== 'undefined' && window.navigator.geolocation) {
             window.navigator.permissions.query({ name: 'geolocation' }).then(function (result) {
