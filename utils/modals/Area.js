@@ -54,6 +54,7 @@ export const DtArea = [
     { province: 'Jawa Barat', city: 'Depok', district: 'Cilodong' },
     { province: 'Jawa Barat', city: 'Bogor', district: 'Bogor Barat' },
     { province: 'Jawa Barat', city: 'Bogor', district: 'Bogor Selatan' },
+    { province: 'Jawa Barat', city: 'Bogor', district: 'Gunung Putri' },
     { province: 'Jawa Barat', city: 'Bekasi', district: 'Pondokgede' },
     { province: 'Jawa Barat', city: 'Bekasi', district: 'Jatiasih' },
     { province: 'Daerah Istimewa Yogyakarta', city: 'Yogyakarta', district: 'Gondokusuman' },

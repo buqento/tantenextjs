@@ -5,6 +5,7 @@ import Cash from '../utils/Cash'
 import Generateslug from '../utils/Generateslug'
 import { BiMap } from 'react-icons/bi'
 import fire from '../configurations/firebase'
+import KostType from './Type'
 class CampaignItemList extends Component {
     constructor(props) {
         super(props);
@@ -71,28 +72,7 @@ class CampaignItemList extends Component {
                         <div className="text-md clamp-1">
                             <BiMap className="inline" /><small>{item.location.district}, {item.location.city}, {item.location.province}</small>
                         </div>
-                        <div className="text-sm uppercase">
-                            {
-                                item.type.includes("Campur") &&
-                                <small className="rounded-full inline-block px-1 text-green-700 border mr-1">{item.category === 'Kost' ? 'Campur' : 'Kontrakan'}</small>
-                            }
-                            {
-                                item.type.includes("Putri") &&
-                                <small className="rounded-full inline-block px-1 text-green-700 border mr-1">Putri</small>
-                            }
-                            {
-                                item.type.includes("Putra") &&
-                                <small className="rounded-full inline-block px-1 text-green-700 border mr-1">Putra</small>
-                            }
-                            {
-                                item.type.includes("Pasutri") &&
-                                <small className="rounded-full inline-block px-1 text-green-700 border mr-1">Pasutri</small>
-                            }
-                            {
-                                item.type.includes("LV") &&
-                                <small className="rounded-full inline-block px-1 text-green-700 border mr-1">LV</small>
-                            }
-                        </div>
+                        <KostType item={item.type} />
                     </div>
                 </div>
             </Link>
