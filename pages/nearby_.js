@@ -48,7 +48,7 @@ class Nearby extends React.Component {
                 if (result.state == 'granted') {
                     report(result.state);
                 } else if (result.state == 'prompt') {
-                    report(result.state);
+                    // report(result.state);
                 } else if (result.state == 'denied') {
                     report(result.state);
                 }
