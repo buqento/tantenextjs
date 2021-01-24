@@ -73,33 +73,34 @@ class Nearby extends React.Component {
     }
     render() {
         const { locationText, nearbyList, load } = this.state
-        console.log(nearbyList);
         return <Layout title="Terdekat" withHeader>
             {
                 load ? <CampaignItemListSkeleton /> :
                     nearbyList && nearbyList.length > 0 &&
-                    <div className="mb-3">
-                        <div className="mb-2 mx-3 font-bold"><span className="font-normal">Kost di sekitar</span> {locationText}</div>
-                        <div className="mx-3 divide-y">
-                            {
-                                nearbyList
-                                    .sort(
-                                        function compare(a, b) {
-                                            const dtA = a.distance;
-                                            const dtB = b.distance;
-                                            let comparison = 0;
-                                            if (dtA > dtB) {
-                                                comparison = 1;
-                                            } else if (dtA < dtB) {
-                                                comparison = -1;
+                    <>
+                        <div className="py-3 px-3 font-bold z-40 sticky top-0 bg-white"><span className="font-normal">Kost di sekitar</span> {locationText}</div>
+                        <div className="mb-3">
+                            <div className="mx-3 divide-y">
+                                {
+                                    nearbyList
+                                        .sort(
+                                            function compare(a, b) {
+                                                const dtA = a.distance;
+                                                const dtB = b.distance;
+                                                let comparison = 0;
+                                                if (dtA > dtB) {
+                                                    comparison = 1;
+                                                } else if (dtA < dtB) {
+                                                    comparison = -1;
+                                                }
+                                                return comparison;
                                             }
-                                            return comparison;
-                                        }
-                                    )
-                                    .map((item, index) => <CampaignItemList key={index} item={item} nearby />)
-                            }
+                                        )
+                                        .map((item, index) => <CampaignItemList key={index} item={item} nearby />)
+                                }
+                            </div>
                         </div>
-                    </div>
+                    </>
             }
             {
                 nearbyList && nearbyList.length === 0 && <Message title="Tidak Ditemukan" message="Temukan kost menggunakan pencarian" />

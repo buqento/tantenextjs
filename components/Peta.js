@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import ReactMapGl, { Marker } from 'react-map-gl'
 import { shape } from 'prop-types'
 import { FaMapMarkerAlt } from 'react-icons/fa';
-
 export default function Peta(props) {
     const lat = parseFloat(props.location.lat_lng.latitude)
     const long = parseFloat(props.location.lat_lng.longitude)
@@ -13,7 +12,6 @@ export default function Peta(props) {
         height: "150px",
         zoom: 10
     })
-
     return (
         <ReactMapGl
             {...viewport}
@@ -34,7 +32,6 @@ export default function Peta(props) {
     )
 
 }
-
 Peta.propTypes = {
     location: shape({})
 }

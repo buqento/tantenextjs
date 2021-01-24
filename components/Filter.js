@@ -164,6 +164,7 @@ class Filter extends React.Component {
                                 name="duration"
                                 onChange={this.handleChange}>
                                 <option value="Hari">Harian</option>
+                                <option value="Minggu">Mingguan</option>
                                 <option value="Bulan">Bulanan</option>
                                 <option value="Tahun">Tahunan</option>
                             </select>

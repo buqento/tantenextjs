@@ -1,19 +1,15 @@
 import React, { Component } from 'react'
 import NextHead from 'next/head'
 import ReactGa from 'react-ga'
-
 class Header extends Component {
-
     componentDidMount() {
         ReactGa.initialize('UA-132808614-2')
         ReactGa.pageview('/')
     }
-
     componentDidUpdate() {
         ReactGa.initialize('UA-132808614-2')
         ReactGa.pageview('/')
     }
-
     render() {
         const structureTypeWebsite = {
             '@context': 'https://schema.org',
@@ -26,7 +22,6 @@ class Header extends Component {
                 'query-input': 'required name=search_term_string'
             }
         };
-
         const structureTypeOrganization = {
             '@context': 'https://schema.org',
             '@type': 'Organization',
@@ -44,7 +39,6 @@ class Header extends Component {
             sameAs: ['https://www.facebook.com/tantekos/', 'https://tantekos.com/', 'https://twitter.com/tantekos', 'https://www.instagram.com/tantekos_official/'
             ]
         };
-
         const structureTypeLocalBusiness = {
             '@context': 'https://schema.org',
             '@type': "LocalBusiness",
@@ -79,7 +73,6 @@ class Header extends Component {
             image: "https://github.com/buqento/tantenextjs/blob/master/static/images/Home-icon.png?raw=true",
             priceRange: 'Rp 50.000 - Rp 15.000.000',
         }
-
         const structureHomePage = {
             '@graph': [
                 structureTypeWebsite,
@@ -87,7 +80,6 @@ class Header extends Component {
                 structureTypeLocalBusiness
             ]
         };
-
         return (
             <>
                 <NextHead>
@@ -106,5 +98,4 @@ class Header extends Component {
         )
     }
 }
-
 export default Header;

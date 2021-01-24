@@ -7,15 +7,15 @@ import Generateslug from '../../utils/Generateslug'
 import fire from '../../configurations/firebase'
 import Titlecase from '../../utils/Titlecase'
 import CampaignItemList from '../../components/CampaignItemList'
+import CampaignItemListSkeleton from '../../components/CampaignItemListSkeleton'
+import Message from '../../components/Message'
 class Detail extends React.Component {
     static async getInitialProps(ctx) {
         return { slug: ctx.query.areaid }
     }
     constructor(props) {
         super(props)
-        this.state = {
-            data: null
-        }
+        this.state = { data: null, load: true }
     }
     async componentDidMount() {
         const { slug } = this.props;
@@ -26,14 +26,16 @@ class Detail extends React.Component {
                 id: doc.id,
                 ...doc.data()
             }))
-            this.setState({ data })
+            this.setState({ data, load: false })
         })
         docRef.get().catch(err => console.log(err))
     }
     render() {
-        const { data } = this.state;
+        const { data, load } = this.state;
         const { slug } = this.props;
         const dataArea = DtArea.filter(item => Generateslug(item.district) === slug)
+        let seoItem = { province: '', district: '', image: '' }
+        if (dataArea.length > 0) seoItem = { province: dataArea[0].province, district: dataArea[0].district, image: dataArea[0].image }
         const structureTypeBreadcrumbList =
             `{
               "@context": "https://schema.org",
@@ -60,7 +62,7 @@ class Detail extends React.Component {
                     "position": 3,
                     "item": {
                         "@id": "https://tantekos.com/area/${slug}",
-                        "name": "${dataArea[0].district}"
+                        "name": "${seoItem.district}"
                     }
                 }
             ]
@@ -69,7 +71,7 @@ class Detail extends React.Component {
             `{
                 "@context": "https://schema.org",
                 "@type": "ItemList",
-                "name": "Area ${dataArea[0].district}",
+                "name": "Area ${seoItem.district}",
                 "itemListElement": [
                     ${data && data.map((item, index) => `{
                         "@type": "ListItem",
@@ -87,20 +89,20 @@ class Detail extends React.Component {
         return (
             <>
                 <NextHead>
-                    <title>Tantekos - Kost &amp; Kontrakan di {dataArea[0].district}</title>
+                    <title>Tantekos - Kost &amp; Kontrakan di {seoItem.district}</title>
                     <meta name="googlebot" content="index, follow" />
                     <meta name="robot" content="index, follow" />
                     <meta name="application-name" content="Tantekos" />
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                    <meta name="title" content={`Kost Dan Kontrakan Murah Area ${dataArea[0].district}`} />
-                    <meta name="description" content={`Tersedia Kost Dan Kontrakan Murah Area ${dataArea[0].district}`} />
-                    <meta name="keywords" content={`tantekos, Info Kost, Cari kost, kost, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian, ${dataArea[0].district}`} />
-                    <meta property="og:title" content={`Kost Dan Kontrakan Murah Area ${dataArea[0].district}`} />
-                    <meta property="og:description" content={`Tersedia Kost Dan Kontrakan Murah Area ${dataArea[0].district}`} />
+                    <meta name="title" content={`Kost Dan Kontrakan Murah Area ${seoItem.district}`} />
+                    <meta name="description" content={`Tersedia Kost Dan Kontrakan Murah Area ${seoItem.district}`} />
+                    <meta name="keywords" content={`tantekos, Info Kost, Cari kost, kost, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian, ${seoItem.district}`} />
+                    <meta property="og:title" content={`Kost Dan Kontrakan Murah Area ${seoItem.district}`} />
+                    <meta property="og:description" content={`Tersedia Kost Dan Kontrakan Murah Area ${seoItem.district}`} />
                     <meta property="og:type" content="website" />
                     <meta property="og:url" content={`https://tantekos.com/area/${slug}`} />
-                    <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/w=300/${dataArea[0].image}`} />
-                    <meta property="og:image:alt" content={dataArea[0].district} />
+                    <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/w=300/${seoItem.image}`} />
+                    <meta property="og:image:alt" content={seoItem.district} />
                     <meta property="og:locale" content="id_ID" />
                     <meta property="og:site_name" content="Tantekos" />
                     <meta name="keyphrases" content="Info Kost, Cari Kost, Sewa Kost, Kost Bebas, Kost Murah, Kost pasutri, Aplikasi Kost, Aplikasi Pencarian Kost, Aplikasi Info Kost, APlikasi Cari Kost, Kost, Tantekost, Tantekosapp, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
@@ -109,8 +111,12 @@ class Detail extends React.Component {
                     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureAreaPage) }} />
                 </NextHead>
                 <div className="main-layout">
-                    <HeadPage title={`Area ${dataArea[0].district}, ${dataArea[0].province}`} />
-                    <CampaignItemList data={data} />
+                    <HeadPage title={`Area ${seoItem.district}, ${seoItem.province}`} />
+                    {load && <CampaignItemListSkeleton />}
+                    {data && data.length === 0 && <Message title="Tidak Ditemukan" message="Silahkan cari dengan kriteria lainnya" />}
+                    <div className="mx-3 mb-3 divide-y">
+                        {data && data.map((item, index) => <CampaignItemList item={item} key={index} />)}
+                    </div>
                 </div>
             </>
         )
