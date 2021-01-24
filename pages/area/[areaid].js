@@ -2,12 +2,11 @@ import React from 'react'
 import { string } from 'prop-types'
 import { DtArea } from '../../utils/modals/Area'
 import HeadPage from '../../components/HeadPage'
-import ListKos from '../../components/ListKos'
 import NextHead from 'next/head'
 import Generateslug from '../../utils/Generateslug'
 import fire from '../../configurations/firebase'
 import Titlecase from '../../utils/Titlecase'
-
+import CampaignItemList from '../../components/CampaignItemList'
 class Detail extends React.Component {
     static async getInitialProps(ctx) {
         return { slug: ctx.query.areaid }
@@ -111,7 +110,7 @@ class Detail extends React.Component {
                 </NextHead>
                 <div className="main-layout">
                     <HeadPage title={`Area ${dataArea[0].district}, ${dataArea[0].province}`} />
-                    <ListKos data={data} />
+                    <CampaignItemList data={data} />
                 </div>
             </>
         )
