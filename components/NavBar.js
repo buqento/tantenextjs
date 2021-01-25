@@ -1,14 +1,42 @@
 import NavButton from "./NavButton"
-const NavBar = props => (
-  <div className="nav-bottom flex bottom-0 fixed border-top bg-gray-100 py-2 px-3 z-50 text-indigo-700">
-    {props.navButtons.map(button => (
-      <NavButton
-        key={button.path}
-        path={button.path}
-        label={button.label}
-        icon={button.icon}
-      />
-    ))}
-  </div>
-)
+import { BiSearchAlt, BiSearch } from 'react-icons/bi'
+import { AiFillHome, AiOutlineHome } from 'react-icons/ai'
+import { HiLocationMarker, HiOutlineLocationMarker } from 'react-icons/hi'
+import { useRouter } from 'next/router'
+function NavBar(props) {
+  const router = useRouter()
+  const navButtons = [
+    {
+      label: "Beranda",
+      path: "/",
+      icon: router.pathname === '/' ? <AiFillHome /> : <AiOutlineHome />,
+      color: router.pathname === '/' ? 'text-indigo-700' : 'text-gray-600'
+    },
+    {
+      label: "Terdekat",
+      path: "/nearby",
+      icon: router.pathname === '/nearby' ? <HiLocationMarker /> : <HiOutlineLocationMarker />,
+      color: router.pathname === '/nearby' ? 'text-indigo-700' : 'text-gray-600'
+    },
+    {
+      label: "Cari Kost",
+      path: "/search/all",
+      icon: router.pathname === '/search/[search]' ? <BiSearchAlt /> : <BiSearch />,
+      color: router.pathname === '/search/[search]' ? 'text-indigo-700' : 'text-gray-600'
+    }
+  ]
+  return (
+    <div className="nav-bottom flex bottom-0 fixed border-top bg-gray-100 py-2 px-3 z-50">
+      {navButtons.map(button => (
+        <NavButton
+          key={button.path}
+          path={button.path}
+          label={button.label}
+          icon={button.icon}
+          color={button.color}
+        />
+      ))}
+    </div>
+  )
+}
 export default NavBar
