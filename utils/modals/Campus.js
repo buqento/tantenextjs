@@ -72,4 +72,5 @@ export const Campus = [
     { id: 71, slug: 'institut-teknologi-dan-bisnis-stikom-ambon', name: 'Institut Teknologi dan Bisnis STIKOM Ambon', province: 'Maluku' },
     { id: 72, slug: 'universitas-kristen-indonesia-maluku', name: 'Universitas Kristen Indonesia Maluku', province: 'Maluku' },
     { id: 73, slug: 'sekolah-tinggi-ilmu-manajemen-yayasan-keluarga-pahlawan-negara', name: 'Sekolah Tinggi Ilmu Manajemen Yayasan Keluarga Pahlawan Negara', province: 'Daerah Istimewa Yogyakarta' },
+    { id: 74, slug: 'Universitas Janabadra', name: 'Universitas Janabadra', province: 'Daerah Istimewa Yogyakarta' },
 ]
