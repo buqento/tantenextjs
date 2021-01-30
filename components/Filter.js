@@ -232,24 +232,30 @@ class Filter extends React.Component {
                         </div>
                         <div className="text-gray-700 mt-2">
                             <label className="block text-sm font-bold mb-n1" htmlFor="facilityRoom">Fasilitas Kamar</label>
-                            <div className="capitalize grid grid-cols-3 gap-3 mx-3">
+                            <div className="capitalize grid grid-cols-3 gap-3 my-2">
                                 <div className="mb-n1">
-                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="ac" label="AC" checked={facilities.ac} onChange={this.toggleAc} custom />
+                                    <div className={`cursor-pointer m-1 p-1 text-center rounded-full ${facilities.ac ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-indigo-700'}`} onClick={this.toggleAc}>AC</div>
+                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2 hidden" id="ac" label="AC" checked={facilities.ac} onChange={this.toggleAc} custom />
                                 </div>
                                 <div className="mb-n1">
-                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="wifi" label="Wifi" checked={facilities.wifi} onChange={this.toggleWifi} custom />
+                                    <div className={`cursor-pointer m-1 p-1 text-center rounded-full ${facilities.wifi ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-indigo-700'}`} onClick={this.toggleWifi}>Wifi</div>
+                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2 hidden" id="wifi" label="Wifi" checked={facilities.wifi} onChange={this.toggleWifi} custom />
                                 </div>
                                 <div className="mb-n1">
-                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="kamarMandiDalam" label="KM.Dalam" checked={facilities.kamarMandiDalam} onChange={this.toggleKamarMandiDalam} custom />
+                                    <div className={`cursor-pointer m-1 p-1 text-center rounded-full ${facilities.kamarMandiDalam ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-indigo-700'}`} onClick={this.toggleKamarMandiDalam}>KM.Dalam</div>
+                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2 hidden" id="kamarMandiDalam" label="KM.Dalam" checked={facilities.kamarMandiDalam} onChange={this.toggleKamarMandiDalam} custom />
                                 </div>
                                 <div className="mb-n1">
-                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="kasur" label="Kasur" checked={facilities.kasur} onChange={this.toggleKasur} custom />
+                                    <div className={`cursor-pointer m-1 p-1 text-center rounded-full ${facilities.kasur ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-indigo-700'}`} onClick={this.toggleKasur}>Kasur</div>
+                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2 hidden" id="kasur" label="Kasur" checked={facilities.kasur} onChange={this.toggleKasur} custom />
                                 </div>
                                 <div className="mb-n1">
-                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="lemariPakaian" label="Lemari" checked={facilities.lemariPakaian} onChange={this.toggleLemariPakaian} custom />
+                                    <div className={`cursor-pointer m-1 p-1 text-center rounded-full ${facilities.lemariPakaian ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-indigo-700'}`} onClick={this.toggleLemariPakaian}>Lemari</div>
+                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2 hidden" id="lemariPakaian" label="Lemari" checked={facilities.lemariPakaian} onChange={this.toggleLemariPakaian} custom />
                                 </div>
                                 <div className="mb-n1">
-                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="meja" label="Meja" checked={facilities.meja} onChange={this.toggleMeja} custom />
+                                    <div className={`cursor-pointer m-1 p-1 text-center rounded-full ${facilities.meja ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-indigo-700'}`} onClick={this.toggleMeja}>Meja</div>
+                                    <Form.Check type="checkbox" className="mt-2 mr-sm-2 hidden" id="meja" label="Meja" checked={facilities.meja} onChange={this.toggleMeja} custom />
                                 </div>
                                 {/* <div className="mb-n1">
                                     <Form.Check type="checkbox" className="mt-2 mr-sm-2" id="kursi" label="Kursi" checked={facilities.kursi} onChange={this.toggleKursi} custom />

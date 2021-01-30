@@ -32,7 +32,6 @@ class Detail extends React.Component {
     }
     render() {
         const { data, load } = this.state;
-        console.log(data);
         return (
             <Layout title="Favorit" withHeader>
                 {
