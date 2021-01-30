@@ -35,8 +35,8 @@ class Area extends Component {
                     group.map((item, index) =>
                         <Link key={index} href={item.url}>
                             <div className="flex hover:text-indigo-700 py-2 align-middle items-center cursor-pointer">
-                                <img src={`/static/images/group/${item.image}.jpg`} alt={item.title} className="float-left mr-2 rounded-lg" width={40} />
-                                <span className="clamp-2 leading-tight">{item.name}</span>
+                                <img src={`/static/images/group/${item.image}.jpg`} alt={item.title} className="float-left mr-2 rounded-lg" width={50} />
+                                <span className="clamp-2">{item.name}</span>
                             </div>
                         </Link>
                     )
