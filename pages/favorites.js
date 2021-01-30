@@ -32,6 +32,7 @@ class Detail extends React.Component {
     }
     render() {
         const { data, load } = this.state;
+        console.log(data);
         return (
             <Layout title="Favorit" withHeader>
                 {
@@ -39,7 +40,7 @@ class Detail extends React.Component {
                         data && data.length > 0 &&
                         <div className="mx-3 mb-3 divide-y">
                             {
-                                data
+                                data && data
                                     .sort(
                                         function compare(a, b) {
                                             const dtModifiedA = b.date_view;
