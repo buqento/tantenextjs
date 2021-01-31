@@ -4,6 +4,7 @@ import CampaignItemList from '../components/CampaignItemList'
 import Message from '../components/Message'
 import Layout from '../components/Layout'
 import CampaignItemListSkeleton from '../components/CampaignItemListSkeleton'
+import Header from '../components/Header'
 class Nearby extends React.Component {
     constructor(props) {
         super(props)
@@ -74,6 +75,7 @@ class Nearby extends React.Component {
     render() {
         const { locationText, nearbyList, load } = this.state
         return <Layout title="Terdekat" withHeader>
+            <Header />
             {
                 load ? <CampaignItemListSkeleton /> :
                     nearbyList && nearbyList.length > 0 &&

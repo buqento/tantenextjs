@@ -7,6 +7,7 @@ import { BiMap } from 'react-icons/bi'
 import { MdClose } from 'react-icons/md'
 import CampaignItemListSkeleton from '../components/CampaignItemListSkeleton'
 import KostType from '../components/Type'
+import Header from '../components/Header'
 class History extends React.Component {
     constructor(props) {
         super(props)
@@ -30,6 +31,7 @@ class History extends React.Component {
         const { data, load } = this.state;
         return (
             <Layout title="Terakhir Dilihat" withHeader>
+                <Header />
                 {
                     load ? <CampaignItemListSkeleton /> :
                         data && data.length > 0 &&
@@ -50,15 +52,15 @@ class History extends React.Component {
                                         }
                                     )
                                     .map((item, index) =>
-                                        <div className="w-full overflow-hidden divide-gray-100 py-2" key={index}>
-                                            <div className="container-image">
+                                        <div className="w-full overflow-hidden divide-gray-100 py-2 flex" key={index}>
+                                            <div className="container-image h-24 w-24 bg-gray-400 rounded-xl">
                                                 <Link href={`/${item.slug}`}>
                                                     <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${item.images[0]}`} alt={item.title} className="float-left mr-2 rounded-xl" />
                                                 </Link>
                                                 <MdClose className="button-delete bg-gray-600 text-white rounded-full p-1 mt-2 ml-2" size="24" onClick={() => this.handleRemoveHistoryItem(item)} />
                                             </div>
                                             <Link href={`/${item.slug}`}>
-                                                <div className="mx-3 mt-n1">
+                                                <div className="flex-1 mx-3 mt-n1">
                                                     <div className="text-lg font-bold">
                                                         {Cash(item.price.start_from)}<span className="text-xs font-normal">/{item.price.duration}</span>
                                                     </div>

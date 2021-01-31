@@ -54,9 +54,11 @@ class CampaignItemList extends Component {
         }
         return (
             <Link href={`/${Generateslug(item.title)}`}>
-                <div className="w-full overflow-hidden py-2" onClick={() => handleLastView(item)}>
-                    <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${item.images[0]}`} alt={item.title} className="float-left mr-2 rounded-xl" width={100} height={100} />
-                    <div className="mx-3 mt-n1">
+                <div className="w-full overflow-hidden py-2 d-flex" onClick={() => handleLastView(item)}>
+                    <div className="h-24 w-24 bg-gray-400 rounded-xl">
+                        <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${item.images[0]}`} alt={item.title} className="float-left mr-2 rounded-xl" width={100} height={100} />
+                    </div>
+                    <div className="flex-1 ml-2 mr-3 mt-n1">
                         <div className="text-lg font-bold flex">
                             <div className>
                                 {Cash(item.price.start_from)}<span className="text-xs font-normal">/{item.price.duration}</span>
