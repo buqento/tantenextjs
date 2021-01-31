@@ -10,19 +10,19 @@ function NavBar(props) {
       label: "Beranda",
       path: "/",
       icon: router.pathname === '/' ? <AiFillHome /> : <AiOutlineHome />,
-      color: router.pathname === '/' ? 'text-indigo-700' : 'text-gray-600'
+      color: router.pathname === '/' ? 'text-indigo-700' : 'text-gray-700'
     },
     {
       label: "Terdekat",
       path: "/nearby",
       icon: router.pathname === '/nearby' ? <HiLocationMarker /> : <HiOutlineLocationMarker />,
-      color: router.pathname === '/nearby' ? 'text-indigo-700' : 'text-gray-600'
+      color: router.pathname === '/nearby' ? 'text-indigo-700' : 'text-gray-700'
     },
     {
       label: "Cari Kost",
       path: "/search/all",
       icon: router.pathname === '/search/[search]' ? <BiSearchAlt /> : <BiSearch />,
-      color: router.pathname === '/search/[search]' ? 'text-indigo-700' : 'text-gray-600'
+      color: router.pathname === '/search/[search]' ? 'text-indigo-700' : 'text-gray-700'
     }
   ]
   return (

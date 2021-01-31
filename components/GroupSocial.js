@@ -6,27 +6,27 @@ class Area extends Component {
             {
                 name: 'Informasi Rumah, Kost, Kontrakan Daerah Khusus Ibukota Jakarta',
                 url: 'https://www.facebook.com/groups/485414032435519',
-                image: 'jakarta'
+                image: 'Aux8Yxk'
             },
             {
                 name: 'Informasi Rumah, Kost, Kontrakan Daerah Istimewa Yogyakarta',
                 url: 'https://www.facebook.com/groups/221285929390212',
-                image: 'yogyakarta'
+                image: '2nsyPfq'
             },
             {
                 name: 'Informasi Rumah, Kost, Kontrakan Daerah Bali',
                 url: 'https://www.facebook.com/groups/762731311013431',
-                image: 'bali'
+                image: '34TAjvq'
             },
             {
                 name: 'Informasi Rumah, Kost, Kontrakan Daerah Maluku & Maluku Utara',
                 url: 'https://www.facebook.com/groups/tantekos',
-                image: 'maluku'
+                image: 'KokRrm7'
             },
             {
                 name: 'Informasi Rumah, Kost, Kontrakan Daerah Papua & Papua Barat',
                 url: 'https://www.facebook.com/groups/811913479639737',
-                image: 'papua'
+                image: 'BuvhC73'
             }
         ]
         return (
@@ -35,7 +35,7 @@ class Area extends Component {
                     group.map((item, index) =>
                         <Link key={index} href={item.url}>
                             <div className="flex hover:text-indigo-700 py-2 align-middle items-center cursor-pointer">
-                                <img src={`/static/images/group/${item.image}.jpg`} alt={item.title} className="float-left mr-2 rounded-lg" width={50} />
+                                <img src={`https://cdn.statically.io/img/i.imgur.com/w=50/${item.image}.webp`} alt={item.name} className="float-left mr-2 rounded-lg" width={50} height={50} />
                                 <span className="clamp-2">{item.name}</span>
                             </div>
                         </Link>
