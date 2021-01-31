@@ -17,7 +17,7 @@ class Index extends React.Component {
     }
     this.scrollToNode = this.scrollToNode.bind(this)
   }
-  scrollToNode(node) {node.scrollIntoView({ behavior: 'smooth' })}
+  scrollToNode(node) { node.scrollIntoView({ behavior: 'smooth' }) }
   filterCallback = (dataCallback) => {
     let facilitiesRoom = [""]
     if (dataCallback.facilitiesRoom.length > 0) facilitiesRoom = dataCallback.facilitiesRoom
@@ -85,9 +85,14 @@ class Index extends React.Component {
   }
   render() {
     const { data, dataCallback, isFilter, titleHead } = this.state
+    const info = {
+      title: 'Kost Murah Sewa Harian Bulanan Tahunan',
+      description: 'Cari Kost Dan Kontrakan Harian Bulanan Tahunan Murah Terjangkau Nyaman Strategis',
+      url: ''
+    }
     return (
       <Layout title="Tantekos" withFooter withHeader>
-        <Header />
+        <Header info={info} />
         <div className="m-3 border rounded-xl shadow-sm py-3">
           <Filter callbackFromParent={this.filterCallback} />
         </div>

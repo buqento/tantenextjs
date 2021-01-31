@@ -74,8 +74,13 @@ class Nearby extends React.Component {
     }
     render() {
         const { locationText, nearbyList, load } = this.state
+        const info = {
+            title: 'Kost Terdekat Disekitar Kamu',
+            description: 'Kost Terdekat Harian Bulanan Tahunan Murah',
+            url: 'nearby'
+        }
         return <Layout title="Terdekat" withHeader>
-            <Header />
+            <Header info={info} />
             {
                 load ? <CampaignItemListSkeleton /> :
                     nearbyList && nearbyList.length > 0 &&

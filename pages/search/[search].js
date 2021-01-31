@@ -11,6 +11,7 @@ import { DtProvinsi } from '../../utils/modals/Provinsi'
 import Layout from '../../components/Layout'
 import CampaignItemList from '../../components/CampaignItemList'
 import CampaignItemListSkeleton from '../../components/CampaignItemListSkeleton'
+import Header from '../../components/Header'
 class Detail extends React.Component {
     static async getInitialProps(ctx) {
         return {
@@ -169,28 +170,13 @@ class Detail extends React.Component {
         if (dataCallback && dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---') { titleHead = dataCallback.province }
         if (dataCallback && dataCallback.city !== '---Semua---') { titleHead = dataCallback.city + ', ' + dataCallback.province }
         if (dataCallback && dataCallback.district !== '---Semua---') { titleHead = dataCallback.district + ', ' + dataCallback.city + ', ' + dataCallback.province }
+        const info = {
+            title: 'Cari Kost Murah Sewa Harian Bulanan Tahunan Disekitar Kamu',
+            description: 'Kost Murah Sewa Harian Bulanan Tahunan Murah',
+            url: 'search/all'
+        }
         return (<Layout title="Cari Kost" withHeader>
-            <NextHead>
-                <title>Tersedia Kost Dan Kontrakan Murah Semua Di {titleHead}</title>
-                <meta name="googlebot" content="index, follow" />
-                <meta name="robot" content="index, follow" />
-                <meta name="application-name" content="Tantekos" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <meta name="title" content="Tersedia Kost Dan Kontrakan Murah Semua Area Di Indonesia" />
-                <meta name="description" content="Tersedia Kost Dan Kontrakan Murah Semua Area Di Indonesia" />
-                <meta name="keywords" content="tantekos, Info Kost, Cari kost, kost, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
-                <meta property="og:title" content="Tersedia Kost Dan Kontrakan Murah Semua Area Di Indonesia" />
-                <meta property="og:description" content="Tersedia Kost Dan Kontrakan Murah Semua Area Di Indonesia" />
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://tantekos.com/search" />
-                <meta property="og:image" content="https://cdn.statically.io/img/i.imgur.com/w=300/i2aQSZ9.webpm" />
-                <meta property="og:image:alt" content={`Tersedia Kost Dan Kontrakan Murah Di ${titleHead}`} />
-                <meta property="og:locale" content="id_ID" />
-                <meta property="og:site_name" content="Tantekos" />
-                <meta name="keyphrases" content="Info Kost, Cari Kost, Sewa Kost, Kost Bebas, Kost Murah, Kost pasutri, Aplikasi Kost, Aplikasi Pencarian Kost, Aplikasi Info Kost, APlikasi Cari Kost, Kost, Tantekost, Tantekosapp, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
-                <meta name="classification" content="Business, Rent House, Sewa Kost, Property, Rent Room, Info Kost, Information, Kost, Room, Cari Kost, Kost Murah, Kost Bebas, Application, Mobile Application, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
-                <link rel="canonical" content="https://tantekos.com/search" />
-            </NextHead>
+            <Header info={info} />
             {titleHead && <div className="px-3 py-3 font-bold z-40 sticky top-0 bg-white"><span className="font-normal">Sewa </span>{dataCallback.duration}an, {titleHead} <span className="text-green-700">({data.length})</span></div>}
             <div className="main-layout" ref={(node) => this.node = node}>
                 {

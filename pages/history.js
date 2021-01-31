@@ -28,10 +28,15 @@ class History extends React.Component {
         this.setState({ data: newData })
     }
     render() {
-        const { data, load } = this.state;
+        const { data, load } = this.state
+        const info = {
+            title: 'Kost Terdekat Disekitar Kamu',
+            description: 'Kost Terdekat Harian Bulanan Tahunan Murah',
+            url: 'history'
+        }
         return (
             <Layout title="Terakhir Dilihat" withHeader>
-                <Header />
+                <Header info={info} />
                 {
                     load ? <CampaignItemListSkeleton /> :
                         data && data.length > 0 &&

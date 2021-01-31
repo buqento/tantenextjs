@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import NextHead from 'next/head'
 import ReactGa from 'react-ga'
+import { shape } from 'prop-types'
 class Header extends Component {
     componentDidMount() {
         ReactGa.initialize('UA-132808614-2')
@@ -104,10 +105,26 @@ class Header extends Component {
                     <meta property="og:site_name" content="Tantekos" />
                     <meta property="fb:app_id" content="3234331779955939" />
                     <meta name="keyphrases" content="Info Kost, Cari Kost, Sewa Kost, Kost Bebas, Kost Murah, Kost pasutri, Aplikasi Kost, Aplikasi Pencarian Kost, Aplikasi Info Kost, APlikasi Cari Kost, Kost, Tantekost, Tantekosapp, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
+                    <meta property="og:type" content="website" />
+                    {
+                        this.props.info &&
+                        <>
+                            <meta property="og:title" content={this.props.info.title} />
+                            <meta property="og:description" content={this.props.info.description} />
+                            <meta property="og:url" content={`https://tantekos.com/${this.props.info.url}`} />
+                            <link rel="canonical" content={`https://tantekos.com/${this.props.info.url}`} />
+                        </>
+                    }
                     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureHomePage) }} />
                 </NextHead>
             </>
         )
     }
+}
+Header.propTypes = {
+    info: shape()
+}
+Header.defaultProps = {
+    info: null
 }
 export default Header;
