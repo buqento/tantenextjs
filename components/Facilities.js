@@ -17,13 +17,13 @@ class Facilities extends React.Component {
                             }
                         </div>
                         :
-                        <div className="grid grid-cols-3 gap-3 mx-3">
+                        <div className="grid grid-cols-3 gap-3 mx-2">
                             {
                                 items.map((item, index) =>
                                     facility.includes(item) &&
-                                    < div key={index} className="mt-2 ml-n2" >
+                                    < div key={index} className="mt-2 ml-n2 px-1 py-1 border rounded-xl text-sm" >
                                         {/* room */}
-                                        {item === 'Kamar Mandi Dalam' && <div><img src="../static/images/icons/bath_tube_icon_149739.svg" alt="Kamar Mandi Dalam" className="inline mr-1" width={24} height={24} />KM.Dalam</div>}
+                                        {item === 'Kamar Mandi Dalam' && <div><img src="../static/images/icons/bath_tube_icon_149739.svg" alt="Kamar Mandi Dalam" className="inline mr-1" width={24} height={24} />KM. Dalam</div>}
                                         {item === 'AC' && <div><img src="../static/images/icons/air_conditioner_icon_149740.svg" alt="AC" className="inline mr-1" width={24} height={24} />AC</div>}
                                         {item === 'Kasur' && <div><img src="../static/images/icons/bed_icon_149738.svg" alt="Kasur" className="inline mr-1" width={24} height={24} />Kasur</div>}
                                         {item === 'Springbed' && <div><img src="../static/images/icons/bed_icon_149738.svg" alt="Springbed" className="inline mr-1" width={24} height={24} />Springbed</div>}
