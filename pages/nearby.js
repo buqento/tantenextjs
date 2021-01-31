@@ -78,7 +78,7 @@ class Nearby extends React.Component {
                 load ? <CampaignItemListSkeleton /> :
                     nearbyList && nearbyList.length > 0 &&
                     <>
-                        <div className="py-3 px-3 font-bold z-40 sticky top-0 bg-white"><span className="font-normal">Kost di sekitar</span> {locationText}</div>
+                        <div className="py-3 px-3 font-bold z-40 sticky top-0 bg-white"><span className="font-normal">Di sekitar</span> {locationText}</div>
                         <div className="mb-3">
                             <div className="mx-3 divide-y">
                                 {
