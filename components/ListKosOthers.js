@@ -8,9 +8,7 @@ class ListKosOthers extends Component {
         await fire.firestore().collection("kosts").doc(id).update({ hit }).catch(err => { console.log(err) })
     }
     render() {
-        const { data, detail } = this.props
-        let listData = []
-        detail.category !== null ? listData = data.filter(i => (i.category === detail.category && i.location.district === detail.location.district)) : listData = data
+        const { data: listData, detail } = this.props
         let url = '/search/all'
         if (listData.length > 5) url = '/search/bulan?province=' + Generateslug(detail.location.province) + '&city=' + Generateslug(detail.location.city) + '&district=' + Generateslug(detail.location.district)
         return (
@@ -19,12 +17,26 @@ class ListKosOthers extends Component {
                     listData.length > 0 &&
                     <div className="mt-3">
                         <div className="py-3 font-bold">
-                            <span className="font-normal">{`${detail.category} lain di `}</span>
+                            <span className="font-normal">Lainnya di </span>
                             <span>{`${detail.location.district}, ${detail.location.city}, ${detail.location.province}`}</span>
                         </div>
                         <div className="divide-y">
                             {
-                                listData.reverse().slice(0, 5).map((item, index) => <CampaignItemList key={index} item={item} />)
+                                listData
+                                    .sort(
+                                        function compare(a, b) {
+                                            const dtModifiedA = b.date_modified;
+                                            const dtModifiedB = a.date_modified;
+                                            let comparison = 0;
+                                            if (dtModifiedA > dtModifiedB) {
+                                                comparison = 1;
+                                            } else if (dtModifiedA < dtModifiedB) {
+                                                comparison = -1;
+                                            }
+                                            return comparison;
+                                        }
+                                    )
+                                    .slice(0, 5).map((item, index) => <CampaignItemList key={index} item={item} />)
                             }
                         </div>
                     </div>
@@ -34,7 +46,7 @@ class ListKosOthers extends Component {
                     <div className="border-top">
                         <a href={url}>
                             <div className="rounded-full bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-3 py-3">
-                                <span>Lihat {listData.length - 5} {detail && detail.category} Lainnya</span>
+                                <span>Lihat {listData.length - 5} Lainnya</span>
                             </div>
                         </a>
                     </div>

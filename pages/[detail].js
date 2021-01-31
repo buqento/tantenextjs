@@ -149,7 +149,7 @@ class Detail extends React.Component {
               <small className="text-gray-700">{moment(detail.date_modified).lang('id').fromNow()} &middot; {detail.hit} kali dilihat</small>
               <h1 className="mt-0 mb-3 text-xl select-none capitalize">{detail.title}</h1>
               <div className="mb-3">
-                <p className="font-bold">Deskripsi {detail.category}</p>
+                <p className="font-bold">Deskripsi</p>
                 <div className="select-none" dangerouslySetInnerHTML={{ __html: detail.description }} />
               </div>
               {
@@ -183,7 +183,7 @@ class Detail extends React.Component {
                 </div>
               }
               <div className="mb-3">
-                <p className="pb-1 font-bold">Lokasi {detail.category} <small>({detail.location && detail.location.district}, {detail.location && detail.location.city}, {detail.location && detail.location.province})</small></p>
+                <p className="pb-1 font-bold">Lokasi <small>({detail.location && detail.location.district}, {detail.location && detail.location.city}, {detail.location && detail.location.province})</small></p>
                 <Peta location={detail && detail.location} />
               </div>
               <div className="border-top mt-3">
@@ -230,6 +230,7 @@ export const getServerSideProps = async (context) => {
   let otherData = []
   const querySnapshot = await fire.firestore().collection('kosts')
     .where('slug', '!=', context.query.detail)
+    .where('location.district', '==', detail.location.district)
     .get()
   querySnapshot.forEach(doc => {
     otherData.push({
