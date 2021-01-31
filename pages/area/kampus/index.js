@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
-import Router from 'next/router'
 import { Campus } from '../../../utils/modals/Campus'
 import { DtProvinsi } from '../../../utils/modals/Provinsi'
 import CampusList from '../../../components/CampusList'
 import Layout from '../../../components/Layout'
 import Generateslug from '../../../utils/Generateslug'
-import { BiChevronLeft } from 'react-icons/bi'
 const Filter = () => {
     const [name, setName] = useState("")
     const filterItems = (keyword) => {

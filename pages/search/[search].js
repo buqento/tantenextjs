@@ -191,7 +191,7 @@ class Detail extends React.Component {
                 <meta name="classification" content="Business, Rent House, Sewa Kost, Property, Rent Room, Info Kost, Information, Kost, Room, Cari Kost, Kost Murah, Kost Bebas, Application, Mobile Application, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
                 <link rel="canonical" content="https://tantekos.com/search" />
             </NextHead>
-            {titleHead && <div className="px-3 py-3 font-bold z-40 sticky top-0 bg-white"><span className="font-normal">Kost Sewa </span>{dataCallback.duration}an, {titleHead}</div>}
+            {titleHead && <div className="px-3 py-3 font-bold z-40 sticky top-0 bg-white"><span className="font-normal">Sewa </span>{dataCallback.duration}an, {titleHead} <span className="text-green-700">({data.length})</span></div>}
             <div className="main-layout" ref={(node) => this.node = node}>
                 {
                     <div className="fixed inset-x-0 bottom-0 mb-5 pb-5 text-center z-40">
