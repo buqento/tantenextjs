@@ -10,12 +10,13 @@ class FeedsGrid extends React.Component {
         this.state = {
             data: null,
             load: true,
-            limit: 5
+            limit: 3
         }
     }
     async componentDidMount() {
+        const { limit } = this.state
         const docRef = await fire
-            .firestore().collection('kosts').orderBy('date_modified', 'desc').limit(5)
+            .firestore().collection('kosts').orderBy('date_modified', 'desc').limit(limit)
         docRef.onSnapshot(snap => {
             const data = snap.docs.map(doc => ({
                 id: doc.id,
@@ -29,7 +30,7 @@ class FeedsGrid extends React.Component {
         const { data, limit, load } = this.state
         const { filterData, dataCallback } = this.props
         let url = '/search/all'
-        if (filterData && filterData.length > 5) {
+        if (filterData && filterData.length > limit) {
             if (dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---') {
                 url = '/search/' + dataCallback.duration.toLowerCase() + '?province=' + Generateslug(dataCallback.province)
             }

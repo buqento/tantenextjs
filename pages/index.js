@@ -96,7 +96,7 @@ class Index extends React.Component {
         <div className="m-3 border rounded-xl shadow-sm py-3">
           <Filter callbackFromParent={this.filterCallback} />
         </div>
-        <div className="sticky top-0 py-3 px-3 bg-white z-10" ref={(node) => this.node = node}>
+        <div className="py-3 px-3 bg-white z-10" ref={(node) => this.node = node}>
           <span className="text-current mb-4">
             {
               !isFilter ? <span className="uppercase font-bold">Terbaru</span> : <>Hasil Pencarian: <span className="font-bold">Sewa {dataCallback.duration}an, {titleHead}</span></>
@@ -106,7 +106,7 @@ class Index extends React.Component {
         <div className="border-bottom">
           <FeedsGrid filterData={data} dataCallback={dataCallback} />
         </div>
-        <div className="sticky top-0 pt-4 pb-3 px-3 bg-white z-10">
+        <div className="pt-4 pb-3 px-3 bg-white z-10">
           <span className="text-uppercase text-current font-bold">Dekat Kampus</span>
         </div>
         <div className="border-bottom">

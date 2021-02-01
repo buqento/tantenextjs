@@ -5,6 +5,7 @@ export const DtArea = [
     { province: 'Sulawesi Selatan', city: 'Makassar', district: 'Manggala' },
     { province: 'Sulawesi Selatan', city: 'Makassar', district: 'Rappocini' },
     { province: 'Sulawesi Selatan', city: 'Makassar', district: 'Ujung Tanah' },
+    { province: 'Sulawesi Selatan', city: 'Makassar', district: 'Mariso' },
     { province: 'Maluku', city: 'Ambon', district: 'Teluk Ambon' },
     { province: 'Maluku', city: 'Ambon', district: 'Baguala' },
     { province: 'Maluku', city: 'Ambon', district: 'Sirimau' },

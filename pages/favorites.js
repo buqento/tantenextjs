@@ -62,9 +62,9 @@ class Detail extends React.Component {
                                     )
                                     .map((item, index) =>
                                         <div className="w-full overflow-hidden divide-gray-100 py-2 flex" key={index}>
-                                            <div className="container-image h-24 w-24 bg-gray-400 rounded-xl">
+                                            <div className="container-image h-20 w-20 bg-gray-400 rounded-xl">
                                                 <Link href={`/${item.slug}`}>
-                                                    <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${item.images[0]}`} alt={item.title} className="float-left mr-2 rounded-xl" />
+                                                    <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${item.images[0]}`} alt={item.title} className="float-left mr-2 rounded-xl h-20 w-20" />
                                                 </Link>
                                                 <MdClose className="button-delete bg-gray-600 text-white rounded-full p-1 mt-2 ml-2" size="24" onClick={() => this.handleRemoveFavoriteItem(item)} />
                                             </div>
