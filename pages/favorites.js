@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Facilities from '../components/Facilities'
 import Message from '../components/Message'
 import Layout from '../components/Layout'
 import Cash from '../utils/Cash'
@@ -66,17 +67,17 @@ class Detail extends React.Component {
                                                 <Link href={`/${item.slug}`}>
                                                     <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${item.images[0]}`} alt={item.title} className="float-left mr-2 rounded-xl h-20 w-20" />
                                                 </Link>
-                                                <MdClose className="button-delete bg-gray-600 text-white rounded-full p-1 mt-2 ml-2" size="24" onClick={() => this.handleRemoveFavoriteItem(item)} />
+                                                <MdClose className="button-delete bg-gray-700 text-white rounded-full p-1 mt-1 ml-1" size="24" onClick={() => this.handleRemoveFavoriteItem(item)} />
                                             </div>
                                             <Link href={`/${item.slug}`}>
-                                                <div className="flex-1 mx-3 mt-n1">
-                                                    <div className="text-lg font-bold">
+                                                <div className="flex-1 mx-3 mr-3 mt-n1 self-center">
+                                                    <div className="mb-n2 text-xl font-bold">
                                                         {Cash(item.price.start_from)}<span className="text-xs font-normal">/{item.price.duration}</span>
                                                     </div>
-                                                    <div className="leading-none text-md clamp-2"><small>{item.title}</small></div>
+                                                    <Facilities items={item.facility.room} inline />
                                                     {
                                                         item.location &&
-                                                        <div className="text-md clamp-1">
+                                                        <div className="text-md clamp-1 text-indigo-700 my-n1 ml-n1">
                                                             <BiMap className="inline" /><small>{item.location.district}, {item.location.city}, {item.location.province}</small>
                                                         </div>
                                                     }
@@ -84,6 +85,7 @@ class Detail extends React.Component {
                                                 </div>
                                             </Link>
                                         </div>
+
                                     )
                             }
                         </div>

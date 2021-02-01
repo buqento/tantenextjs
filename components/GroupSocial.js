@@ -37,7 +37,7 @@ class Area extends Component {
                         <Link key={index} href={item.url}>
                             <div className="flex hover:text-indigo-700 py-2 align-middle items-center cursor-pointer">
                                 <img src={`https://cdn.statically.io/img/i.imgur.com/w=150/${item.image}.webp`} alt={item.name} className="float-left rounded-xl w-20 h-20" />
-                                <span className="mx-3 clamp-2 text-lg font-bold">{item.name}</span>
+                                <span className="mx-3 clamp-2 text-xl">{item.name}</span>
                             </div>
                         </Link>
                     )
