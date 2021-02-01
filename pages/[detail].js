@@ -150,27 +150,27 @@ class Detail extends React.Component {
               <small className="text-gray-700">{moment(detail.date_modified).lang('id').fromNow()} &middot; {detail.hit} kali dilihat</small>
               <h1 className="mt-0 mb-3 text-xl select-none capitalize">{detail.title}</h1>
               <div className="mb-3">
-                <p className="font-bold">Deskripsi</p>
+                <h2 className="font-bold">Deskripsi</h2>
                 <div className="select-none" dangerouslySetInnerHTML={{ __html: detail.description }} />
               </div>
               {
                 detail && detail.facility && detail.facility.room.length > 0 && detail.facility.room[0] !== "" &&
                 <div className="mb-3">
-                  <p className="font-bold">Fasilitas Kamar</p>
+                  <h2 className="font-bold">Fasilitas Kamar</h2>
                   <Facilities items={detail.facility.room} />
                 </div>
               }
               {
                 detail && detail.facility && detail.facility.bathroom.length > 0 && detail.facility.bathroom[0] !== "" &&
                 <div className="mb-3">
-                  <p className="font-bold">Fasilitas Kamar Mandi</p>
+                  <h2 className="font-bold">Fasilitas Kamar Mandi</h2>
                   <Facilities items={detail.facility.bathroom} />
                 </div>
               }
               {
                 detail && detail.facility && detail.facility.share.length > 0 && detail.facility.share[0] !== "" &&
                 <div className="mb-3">
-                  <p className="font-bold">Fasilitas Bersama</p>
+                  <h2 className="font-bold">Fasilitas Bersama</h2>
                   <Facilities items={detail.facility.share} />
                 </div>
               }
@@ -184,7 +184,7 @@ class Detail extends React.Component {
                 </div>
               }
               <div className="mb-3">
-                <p className="pb-1 font-bold">Lokasi <small>({detail.location && detail.location.district}, {detail.location && detail.location.city}, {detail.location && detail.location.province})</small></p>
+                <h2 className="pb-1 font-bold">Lokasi <small>({detail.location && detail.location.district}, {detail.location && detail.location.city}, {detail.location && detail.location.province})</small></h2>
                 <Peta location={detail && detail.location} />
               </div>
               <div className="border-top mt-3">

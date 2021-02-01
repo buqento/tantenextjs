@@ -72,5 +72,11 @@ export const Campus = [
     { id: 71, slug: 'institut-teknologi-dan-bisnis-stikom-ambon', name: 'Institut Teknologi dan Bisnis STIKOM Ambon', province: 'Maluku' },
     { id: 72, slug: 'universitas-kristen-indonesia-maluku', name: 'Universitas Kristen Indonesia Maluku', province: 'Maluku' },
     { id: 73, slug: 'sekolah-tinggi-ilmu-manajemen-yayasan-keluarga-pahlawan-negara', name: 'Sekolah Tinggi Ilmu Manajemen Yayasan Keluarga Pahlawan Negara', province: 'Daerah Istimewa Yogyakarta' },
-    { id: 74, slug: 'Universitas Janabadra', name: 'Universitas Janabadra', province: 'Daerah Istimewa Yogyakarta' },
+    { id: 75, slug: 'universitas-janabadra', name: 'Universitas Janabadra', province: 'Daerah Istimewa Yogyakarta' },
+    { id: 76, slug: 'universitas-nahdlatul-ulama-yogyakarta', name: 'Universitas Nahdlatul Ulama Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
+    { id: 77, slug: 'universitas-jenderal-achmad-yani-yogyakarta', name: 'Universitas Jenderal Achmad Yani Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
+    { id: 78, slug: 'sekolah-tinggi-pertanahan-nasional-yogyakarta', name: 'Sekolah Tinggi Pertanahan Nasional Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
+    { id: 79, slug: 'poltekkes-kemenkes-yogyakarta', name: 'Poltekkes Kemenkes Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
+    { id: 80, slug: 'itb-stikom-bali', name: 'ITB STIKOM Bali', province: 'Bali' },
+    { id: 81, slug: 'politeknik-pariwisata-bali', name: 'Politeknik Pariwisata Bali', province: 'Bali' },
 ]
