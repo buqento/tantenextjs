@@ -1,5 +1,5 @@
 import React from 'react'
-const skeletonArr = [1, 2, 3, 4, 5]
+const skeletonArr = [1, 2, 3, 4, 5, 6, 7, 8]
 const CampaignItemListSkeleton = () => <div className="mx-3 divide-y">
     {
         skeletonArr.map((item, index) =>

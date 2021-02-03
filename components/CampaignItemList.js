@@ -61,21 +61,26 @@ class CampaignItemList extends Component {
                     </div>
                     <div className="flex-1 mx-3 mr-3 mt-n1 self-center">
                         <div className="text-xl font-bold flex">
-                            <div className="mb-n2">
+                            <div className="leading-none">
                                 {Cash(item.price.start_from)}<span className="text-xs font-normal">/{item.price.duration}</span>
                             </div>
                             {
-                                nearby &&
-                                <div className="w-full">
-                                    <span className="float-right text-green-700 font-normal">{item.distance}Km</span>
-                                </div>
+                                nearby ?
+                                    <div className="w-full">
+                                        <span className="float-right text-green-700 font-normal">{item.distance}Km</span>
+                                    </div> :
+                                    <div className="w-full">
+                                        <span className="float-right text-sm">
+
+                                            <KostType item={item.type} />
+                                        </span>
+                                    </div>
                             }
                         </div>
                         <Facilities items={item.facility.room} inline />
-                        <div className="text-md clamp-1 text-indigo-700 my-n1 ml-n1">
-                            <BiMap className="inline" /><small>{item.location.district}, {item.location.city}, {item.location.province}</small>
+                        <div className="text-sm clamp-1 text-indigo-700">
+                            <BiMap className="inline" size={16} /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
                         </div>
-                        <KostType item={item.type} />
                     </div>
                 </div>
             </Link>

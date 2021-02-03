@@ -71,21 +71,26 @@ class Detail extends React.Component {
                                             </div>
                                             <Link href={`/${item.slug}`}>
                                                 <div className="flex-1 mx-3 mr-3 mt-n1 self-center">
-                                                    <div className="mb-n2 text-xl font-bold">
-                                                        {Cash(item.price.start_from)}<span className="text-xs font-normal">/{item.price.duration}</span>
+                                                    <div className="flex">
+                                                        <div className="leading-none text-xl font-bold">
+                                                            {Cash(item.price.start_from)}<span className="text-xs font-normal">/{item.price.duration}</span>
+                                                        </div>
+                                                        <div className="w-full">
+                                                            <span className="float-right text-sm">
+                                                                <KostType item={item.type} />
+                                                            </span>
+                                                        </div>
                                                     </div>
                                                     <Facilities items={item.facility.room} inline />
                                                     {
                                                         item.location &&
-                                                        <div className="text-md clamp-1 text-indigo-700 my-n1 ml-n1">
-                                                            <BiMap className="inline" /><small>{item.location.district}, {item.location.city}, {item.location.province}</small>
+                                                        <div className="text-sm clamp-1 text-indigo-700">
+                                                            <BiMap className="inline" size={16} /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
                                                         </div>
                                                     }
-                                                    <KostType item={item.type} />
                                                 </div>
                                             </Link>
                                         </div>
-
                                     )
                             }
                         </div>

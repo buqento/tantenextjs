@@ -8,10 +8,10 @@ class Facilities extends React.Component {
             <>
                 {
                     inline ?
-                        <div className="clamp-1 leading-none">
+                        <div className="clamp-1">
                             {
                                 items.map((item, index) =>
-                                    <span key={item} className="text-xs">{index !== 0 && <>&middot;</>} {item}&nbsp;
+                                    <span key={item} className="text-sm">{index !== 0 && <>&middot;</>} {item}&nbsp;
                                 </span>
                                 )
                             }
