@@ -59,7 +59,7 @@ class CampaignItemList extends Component {
                     <div className="h-20 w-20 bg-gray-400 rounded-xl">
                         <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${item.images[0]}`} alt={item.title} className="float-left mr-2 rounded-xl h-20 w-20" />
                     </div>
-                    <div className="flex-1 mx-3 mr-3 mt-n1 self-center">
+                    <div className="flex-1 ml-3 mt-n1 self-center">
                         <div className="text-xl font-bold flex">
                             <div className="leading-none">
                                 {Cash(item.price.start_from)}<span className="text-xs font-normal">/{item.price.duration}</span>
