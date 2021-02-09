@@ -75,4 +75,5 @@ export const DtArea = [
     { province: 'Daerah Istimewa Yogyakarta', city: 'Sleman', district: 'Kalasan' },
     { province: 'Daerah Istimewa Yogyakarta', city: 'Sleman', district: 'Gamping' },
     { province: 'Daerah Istimewa Yogyakarta', city: 'Sleman', district: 'Godean' },
+    { province: 'Daerah Istimewa Yogyakarta', city: 'Sleman', district: 'Sinduadi' },
 ];

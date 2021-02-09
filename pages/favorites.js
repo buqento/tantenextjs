@@ -70,7 +70,7 @@ class Detail extends React.Component {
                                                 <MdClose className="button-delete bg-gray-700 text-white rounded-full p-1 mt-1 ml-1" size="24" onClick={() => this.handleRemoveFavoriteItem(item)} />
                                             </div>
                                             <Link href={`/${item.slug}`}>
-                                                <div className="flex-1 mx-3 mr-3 mt-n1 self-center">
+                                                <div className="flex-1 ml-3 mt-n1 self-center">
                                                     <div className="flex">
                                                         <div className="leading-none text-xl font-bold">
                                                             {Cash(item.price.start_from)}<span className="text-xs font-normal">/{item.price.duration}</span>
