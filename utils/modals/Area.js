@@ -6,6 +6,7 @@ export const DtArea = [
     { province: 'Sulawesi Selatan', city: 'Makassar', district: 'Rappocini' },
     { province: 'Sulawesi Selatan', city: 'Makassar', district: 'Ujung Tanah' },
     { province: 'Sulawesi Selatan', city: 'Makassar', district: 'Mariso' },
+    { province: 'Sulawesi Selatan', city: 'Makassar', district: 'Biringkanaya' },
     { province: 'Maluku', city: 'Ambon', district: 'Teluk Ambon' },
     { province: 'Maluku', city: 'Ambon', district: 'Baguala' },
     { province: 'Maluku', city: 'Ambon', district: 'Sirimau' },
@@ -76,4 +77,5 @@ export const DtArea = [
     { province: 'Daerah Istimewa Yogyakarta', city: 'Sleman', district: 'Gamping' },
     { province: 'Daerah Istimewa Yogyakarta', city: 'Sleman', district: 'Godean' },
     { province: 'Daerah Istimewa Yogyakarta', city: 'Sleman', district: 'Sinduadi' },
+    { province: 'Daerah Istimewa Yogyakarta', city: 'Sleman', district: 'Ngemplak' },
 ];
