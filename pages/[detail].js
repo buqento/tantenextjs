@@ -155,28 +155,28 @@ class Detail extends React.Component {
               </div>
               {
                 detail && detail.facility && detail.facility.room.length > 0 && detail.facility.room[0] !== "" &&
-                <div className="mb-3">
+                <div className="mb-4">
                   <h2 className="font-bold">Fasilitas Kamar</h2>
                   <Facilities items={detail.facility.room} />
                 </div>
               }
               {
                 detail && detail.facility && detail.facility.bathroom.length > 0 && detail.facility.bathroom[0] !== "" &&
-                <div className="mb-3">
+                <div className="mb-4">
                   <h2 className="font-bold">Fasilitas Kamar Mandi</h2>
                   <Facilities items={detail.facility.bathroom} />
                 </div>
               }
               {
                 detail && detail.facility && detail.facility.share.length > 0 && detail.facility.share[0] !== "" &&
-                <div className="mb-3">
+                <div className="mb-4">
                   <h2 className="font-bold">Fasilitas Bersama</h2>
                   <Facilities items={detail.facility.share} />
                 </div>
               }
               {
                 detail && detail.facility && detail.facility.building.length > 0 && detail.facility.building[0] !== "" &&
-                <div className="mb-3">
+                <div className="mb-4">
                   <p className="font-bold">Fasilitas</p>
                   <ul className="mx-4">
                     {detail.facility.building.map((item, index) => <li className="list-disc" key={index}>{item}</li>)}

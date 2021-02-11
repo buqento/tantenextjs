@@ -17,11 +17,11 @@ class Facilities extends React.Component {
                             }
                         </div>
                         :
-                        <div className="grid grid-cols-3 gap-3 mx-2">
+                        <div className="grid grid-cols-3 gap-4 mx-2 mt-2">
                             {
                                 items.map((item, index) =>
                                     facility.includes(item) &&
-                                    < div key={index} className="mt-2 ml-n2 px-1 py-1 border rounded-xl text-sm" >
+                                    < div key={index} className="ml-n2 mb-n2 px-1 py-1 border rounded-xl text-sm" >
                                         {/* room */}
                                         {item === 'Kamar Mandi Dalam' && <div><img src="../static/images/icons/bath_tube_icon_149739.svg" alt="Kamar Mandi Dalam" className="inline mr-1" width={24} height={24} />KM.Dalam</div>}
                                         {item === 'AC' && <div><img src="../static/images/icons/air_conditioner_icon_149740.svg" alt="AC" className="inline mr-1" width={24} height={24} />AC</div>}
