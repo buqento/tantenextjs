@@ -57,7 +57,7 @@ class CampaignItemList extends Component {
             <Link href={`/${Generateslug(item.title)}`}>
                 <div className="w-full overflow-hidden py-2 flex" onClick={() => handleLastView(item)}>
                     <div className="h-20 w-20 bg-gray-400 rounded-xl">
-                        <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${item.images[0]}`} alt={item.title} className="float-left mr-2 rounded-xl h-20 w-20" />
+                        <img src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} className="float-left mr-2 rounded-xl h-20 w-20" />
                     </div>
                     <div className="flex-1 ml-3 mt-n1 self-center">
                         <div className="text-xl font-bold flex">
