@@ -28,6 +28,11 @@ class Area extends Component {
                 name: 'Kost Dan Kontrakan Provinsi Papua & Papua Barat',
                 url: 'https://www.facebook.com/groups/811913479639737',
                 image: 'BuvhC73'
+            },
+            {
+                name: 'Kost Dan Kontrakan Provinsi Sulawesi Selatan',
+                url: 'https://www.facebook.com/groups/439907767456192',
+                image: 'eYOZreq'
             }
         ]
         return (
