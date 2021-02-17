@@ -44,6 +44,8 @@ export const Campus = [
     { slug: 'universitas-alma-ata-yogyakarta', name: 'Universitas Alma Ata Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
     { slug: 'universitas-negeri-jakarta', name: 'Universitas Negeri Jakarta', province: 'DKI Jakarta' },
     { slug: 'universitas-hasanuddin', name: 'Universitas Hasanuddin', province: 'Sulawesi Selatan' },
+    { slug: 'stikes-nani-hasanuddin', name: 'STIKES Nani Hasanuddin', province: 'Sulawesi Selatan' },
+    { slug: 'universitas-kristen-indonesia-paulus', name: 'Universitas Kristen Indonesia Paulus', province: 'Sulawesi Selatan' },
     { slug: 'universitas-negeri-makassar', name: 'Universitas Negeri Makassar', province: 'Sulawesi Selatan' },
     { slug: 'politeknik-bosowa', name: 'Politeknik Bosowa', province: 'Sulawesi Selatan' },
     { slug: 'universitas-atma-jaya-yogyakarta', name: 'Universitas Atma Jaya Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
