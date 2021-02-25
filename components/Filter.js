@@ -242,7 +242,7 @@ class Filter extends React.Component {
                                     <Form.Check type="checkbox" className="mt-2 mr-sm-2 hidden" id="wifi" label="Wifi" checked={facilities.wifi} onChange={this.toggleWifi} custom />
                                 </div>
                                 <div className="mb-n1">
-                                    <div className={`cursor-pointer m-1 p-1 text-center rounded-full ${facilities.kamarMandiDalam ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-indigo-700 clamp-1'}`} onClick={this.toggleKamarMandiDalam}>KM.Dalam</div>
+                                    <div className={`cursor-pointer m-1 p-1 text-center rounded-full ${facilities.kamarMandiDalam ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-indigo-700 clamp-1'}`} onClick={this.toggleKamarMandiDalam}>K.Dalam</div>
                                     <Form.Check type="checkbox" className="mt-2 mr-sm-2 hidden" id="kamarMandiDalam" label="KM.Dalam" checked={facilities.kamarMandiDalam} onChange={this.toggleKamarMandiDalam} custom />
                                 </div>
                                 <div className="mb-n1">
