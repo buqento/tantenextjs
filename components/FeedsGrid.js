@@ -10,7 +10,7 @@ class FeedsGrid extends React.Component {
         this.state = {
             data: null,
             load: true,
-            limit: 3
+            limit: 5
         }
     }
     async componentDidMount() {
