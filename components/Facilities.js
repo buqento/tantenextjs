@@ -44,7 +44,7 @@ class Facilities extends React.Component {
                                         {item === 'R.Jemur' && <div><img src="../static/images/icons/wardrobe_4486.png" alt="R.Jemur" className="inline mr-1" width={24} height={24} />R.Jemur</div>}
                                         {item === 'R.Cuci' && <div><img src="../static/images/icons/washing_machine_icon_149716.svg" alt="R.Cuci" className="inline mr-1" width={24} height={24} />R.Cuci</div>}
                                         {item === 'R.Tamu' && <div><img src="../static/images/icons/chair_icon_149737.svg" alt="R.Tamu" className="inline mr-1" width={24} height={24} />R.Tamu</div>}
-                                        {item === 'Kamar Mandi Luar' && <div><img src="../static/images/icons/bath_tube_icon_149739.svg" alt="Kamar Mandi Luar" className="inline mr-1" width={24} height={24} />KM.Luar</div>}
+                                        {item === 'Kamar Mandi Luar' && <div><img src="../static/images/icons/bath_tube_icon_149739.svg" alt="Kamar Mandi Luar" className="inline mr-1" width={24} height={24} />K.Luar</div>}
                                         {item === 'Dapur' && <div><img src="../static/images/icons/-kitchen_90730.svg" alt="Dapur" className="inline mr-1" width={24} height={24} />Dapur</div>}
                                     </div>
                                 )

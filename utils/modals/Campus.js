@@ -7,6 +7,9 @@ export const Campus = [
     { slug: 'universitas-pgri-yogyakarta', name: 'Universitas PGRI Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
     { slug: 'universitas-pattimura', name: 'Universitas Pattimura', province: 'Maluku' },
     { slug: 'universitas-udayana', name: 'Universitas Udayana', province: 'Bali' },
+    { slug: 'stmik-stikom-indonesia', name: 'STMIK STIKOM Indonesia', province: 'Bali' },
+    { slug: 'universitas-pendidikan-nasional', name: 'Universitas Pendidikan Nasional', province: 'Bali' },
+    { slug: 'universitas-terbuka-denpasar', name: 'Universitas Terbuka Denpasar', province: 'Bali' },
     { slug: 'universitas-warmadewa', name: 'Universitas Warmadewa', province: 'Bali' },
     { slug: 'universitas-ahmad-dahlan', name: 'Universitas Ahmad Dahlan', province: 'Daerah Istimewa Yogyakarta' },
     { slug: 'universitas-teknologi-yogyakarta', name: 'Universitas Teknologi Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
@@ -63,6 +66,7 @@ export const Campus = [
     { slug: 'universitas-undiknas', name: 'Universitas Undiknas', province: 'Bali' },
     { slug: 'poltekkes-kemenkes-makassar', name: 'Poltekkes Kemenkes Makassar', province: 'Sulawesi Selatan' },
     { slug: 'universitas-muhammadiyah-makassar', name: 'Universitas Muhammadiyah Makassar', province: 'Sulawesi Selatan' },
+    { slug: 'stmik-akba', name: 'STMIK AKBA', province: 'Sulawesi Selatan' },
     { slug: 'stmik-handayani-makassar', name: 'STMIK Handayani Makassar', province: 'Sulawesi Selatan' },
     { slug: 'universitas-fajar', name: 'Universitas Fajar', province: 'Sulawesi Selatan' },
     { slug: 'stmik-professional-makassar', name: 'STMIK Professional Makassar', province: 'Sulawesi Selatan' },
@@ -88,4 +92,5 @@ export const Campus = [
     { slug: 'politeknik-pariwisata-bali', name: 'Politeknik Pariwisata Bali', province: 'Bali' },
     { slug: 'institut-stiami-jakarta', name: 'Institut STIAMI Jakarta', province: 'DKI Jakarta' },
     { slug: 'universitas-bung-karno', name: 'Universitas Bung Karno', province: 'DKI Jakarta' },
+    { slug: 'universitas-borobudur', name: 'Universitas Borobudur', province: 'DKI Jakarta' },
 ]
