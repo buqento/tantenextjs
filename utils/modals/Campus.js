@@ -50,6 +50,7 @@ export const Campus = [
     { slug: 'stikes-nani-hasanuddin', name: 'STIKES Nani Hasanuddin', province: 'Sulawesi Selatan' },
     { slug: 'universitas-kristen-indonesia-paulus', name: 'Universitas Kristen Indonesia Paulus', province: 'Sulawesi Selatan' },
     { slug: 'politeknik-kesehatan-makassar', name: 'Politeknik Kesehatan Makassar', province: 'Sulawesi Selatan' },
+    { slug: 'universitas-dipa-makassar', name: 'Universitas Dipa Makassar', province: 'Sulawesi Selatan' },
     { slug: 'politeknik-stia-lan-makassar', name: 'Politeknik STIA LAN Makassar', province: 'Sulawesi Selatan' },
     { slug: 'universitas-negeri-makassar', name: 'Universitas Negeri Makassar', province: 'Sulawesi Selatan' },
     { slug: 'politeknik-bosowa', name: 'Politeknik Bosowa', province: 'Sulawesi Selatan' },
