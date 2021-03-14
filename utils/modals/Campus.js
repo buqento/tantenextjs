@@ -17,6 +17,7 @@ export const Campus = [
     { slug: 'asrd-msd-yogyakarta', name: 'ASRD MSD Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
     { slug: 'sekolah-tinggi-seni-rupa-dan-desain-visi', name: 'Sekolah Tinggi Seni Rupa dan Desain Visi', province: 'Daerah Istimewa Yogyakarta' },
     { slug: 'institut-transportasi-dan-logistik-trisakti', name: 'Institut Transportasi dan Logistik Trisakti', province: 'DKI Jakarta' },
+    { slug: 'universitas-darma-persada', name: 'Universitas Darma Persada', province: 'DKI Jakarta' },
     { slug: 'universitas-kristen-indonesia', name: 'Universitas Kristen Indonesia', province: 'DKI Jakarta' },
     { slug: 'universitas-muhammadiyah-yogyakarta', name: 'Universitas Muhammadiyah Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
     { slug: 'universitas-pembangunan-nasional-veteran-yogyakarta', name: 'Universitas Pembangunan Nasional Veteran Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
