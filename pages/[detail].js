@@ -152,7 +152,10 @@ class Detail extends React.Component {
           <div className="container mt-2 mb-4">
             <div>
               <div className="mb-3">
-                <FacebookShareButton quote={detail.title} url={String(window.location)}>
+                <FacebookShareButton
+                  quote={detail.description}
+                  url={String(window.location)}
+                >
                   <FacebookIcon size="2rem" />
                 </FacebookShareButton>
               </div>
