@@ -13,6 +13,7 @@ import moment from 'moment'
 import ListKosOthers from '../components/ListKosOthers'
 import fire from '../configurations/firebase'
 import Facilities from '../components/Facilities'
+import { FacebookShareButton, FacebookIcon } from "react-share"
 class Detail extends React.Component {
   constructor(props) {
     super(props)
@@ -109,7 +110,9 @@ class Detail extends React.Component {
         JSON.parse(structureTypeHostel),
         JSON.parse(structureTypeBreadcrumbList)
       ]
-    };
+    }
+
+    const shareUrl = 'https://tantekos.com/kost-kompleks-hasanuddin-seruni-kalegowa-somba-opu-gowa-sulawesi-selatan'
     return <Layout>
       {
         detail &&
@@ -148,11 +151,17 @@ class Detail extends React.Component {
           </div>
           <div className="container mt-2 mb-4">
             <div>
+              <div className="mb-3">
+                <FacebookShareButton quote={detail.title} url={String(window.location)}>
+                  <FacebookIcon size="2rem" />
+                </FacebookShareButton>
+              </div>
               <small className="text-gray-700">{moment(detail.date_modified).lang('id').fromNow()} &middot; {detail.hit} kali dilihat</small>
               <h1 className="mt-0 text-xl capitalize">{detail.title}</h1>
               <div className="mb-3">
-              <KostType item={detail.type} />
+                <KostType item={detail.type} />
               </div>
+
               <div className="mb-3">
                 <h2 className="font-bold">Deskripsi</h2>
                 <div dangerouslySetInnerHTML={{ __html: detail.description }} />

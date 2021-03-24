@@ -20,7 +20,7 @@ export const City = [
     { name: 'Tual', province: 'Maluku' },
     // Sulawesi Selatan
     { name: 'Makassar', province: 'Sulawesi Selatan' },
-    { name: 'Parepare', province: 'Sulawesi Selatan' },
+    { name: 'Gowa', province: 'Sulawesi Selatan' },
     // Papua
     { name: 'Kota Jayapura', province: 'Papua' },
     { name: 'Jayapura', province: 'Papua' },
