@@ -151,14 +151,14 @@ class Detail extends React.Component {
           </div>
           <div className="container mt-2 mb-4">
             <div>
-              {/* <div className="mb-3">
+              <div className="mb-3">
                 <FacebookShareButton
                   quote={detail.description}
-                  url={String(window.location)}
+                  url={`https://tantekos.com/${detail.slug}`}
                 >
                   <FacebookIcon size="2rem" />
                 </FacebookShareButton>
-              </div> */}
+              </div>
               <small className="text-gray-700">{moment(detail.date_modified).lang('id').fromNow()} &middot; {detail.hit} kali dilihat</small>
               <h1 className="mt-0 text-xl capitalize">{detail.title}</h1>
               <div className="mb-3">
