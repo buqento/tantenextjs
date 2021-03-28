@@ -13,7 +13,7 @@ import moment from 'moment'
 import ListKosOthers from '../components/ListKosOthers'
 import fire from '../configurations/firebase'
 import Facilities from '../components/Facilities'
-import { FacebookShareButton, FacebookIcon } from "react-share"
+import { FacebookShareButton, WhatsappShareButton, WhatsappIcon, FacebookIcon, TelegramShareButton, TelegramIcon } from "react-share"
 class Detail extends React.Component {
   constructor(props) {
     super(props)
@@ -152,12 +152,9 @@ class Detail extends React.Component {
           <div className="container mt-2 mb-4">
             <div>
               <div className="mb-3">
-                <FacebookShareButton
-                  quote={detail.description}
-                  url={`https://tantekos.com/${detail.slug}`}
-                >
-                  <FacebookIcon size="2rem" />
-                </FacebookShareButton>
+                <FacebookShareButton quote={detail.description} url={`https://tantekos.com/${detail.slug}`}><FacebookIcon size="2rem" /></FacebookShareButton>
+                <WhatsappShareButton title={detail.description} url={`https://tantekos.com/${detail.slug}`}><WhatsappIcon size="2rem" /></WhatsappShareButton>
+                <TelegramShareButton title={detail.description} url={`https://tantekos.com/${detail.slug}`}><TelegramIcon size="2rem" /></TelegramShareButton>
               </div>
               <small className="text-gray-700">{moment(detail.date_modified).lang('id').fromNow()} &middot; {detail.hit} kali dilihat</small>
               <h1 className="mt-0 text-xl capitalize">{detail.title}</h1>
