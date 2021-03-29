@@ -82,7 +82,7 @@ class FooterDetail extends Component {
                         data.contact_us && data.contact_us.phone !== '' ? <button className="bg-indigo-700 hover:bg-indigo-600 text-white font-bold mr-1 py-1 px-2 uppercase focus:outline-none" onClick={() => this.handleCall(data.contact_us.phone)}><FaPhoneAlt className="mr-1 inline" />Telepon</button> : <button className="bg-indigo-500 text-white font-bold mr-1 py-2 px-3 rounded-full opacity-50 cursor-not-allowed uppercase focus:outline-none"><FaPhoneAlt className="mr-1 inline" />Telepon</button>
                     }
                     {
-                        data.contact_us && data.contact_us.whatsapp !== undefined ? <button className="bg-green-400 hover:bg-green-300 text-white font-bold py-1 px-2 uppercase focus:outline-none" onClick={() => this.handleCall(data.contact_us.phone)}><FaWhatsapp size={24} className="mr-1 inline" />WhatsApp</button> : <button className="bg-green-300 text-white font-bold py-1 px-2 opacity-50 cursor-not-allowed uppercase focus:outline-none"><FaWhatsapp className="mr-1 inline" />WhatsApp</button>
+                        data.contact_us && data.contact_us.whatsapp !== undefined ? <button className="bg-green-400 hover:bg-green-300 text-white font-bold py-1 px-2 uppercase focus:outline-none" onClick={() => this.handleCall(data.contact_us.phone)}><FaWhatsapp size={22} className="mr-1 inline" />WhatsApp</button> : <button className="bg-green-300 text-white font-bold py-1 px-2 opacity-50 cursor-not-allowed uppercase focus:outline-none"><FaWhatsapp size={22} className="mr-1 inline" />WhatsApp</button>
                     }
                 </div>
             </div>
