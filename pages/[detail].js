@@ -3,6 +3,9 @@ import NextHead from 'next/head'
 import Router from 'next/router'
 import { string } from 'prop-types'
 import { FaExternalLinkAlt } from 'react-icons/fa'
+import { MdFavorite } from 'react-icons/md'
+import Cash from '../utils/Cash'
+
 import Slide from '../components/Slide'
 import Peta from '../components/Peta'
 import KostType from '../components/Type'
@@ -13,7 +16,7 @@ import moment from 'moment'
 import ListKosOthers from '../components/ListKosOthers'
 import fire from '../configurations/firebase'
 import Facilities from '../components/Facilities'
-import { FacebookShareButton, WhatsappShareButton, WhatsappIcon, FacebookIcon, TelegramShareButton, TelegramIcon } from "react-share"
+import Share from '../components/Share'
 class Detail extends React.Component {
   constructor(props) {
     super(props)
@@ -151,17 +154,23 @@ class Detail extends React.Component {
           </div>
           <div className="container mt-2 mb-4">
             <div>
-              <div className="mb-3">
-                <FacebookShareButton quote={detail.description} url={`https://tantekos.com/${detail.slug}`}><FacebookIcon size="2rem" /></FacebookShareButton>
-                <WhatsappShareButton title={detail.description} url={`https://tantekos.com/${detail.slug}`}><WhatsappIcon size="2rem" /></WhatsappShareButton>
-                <TelegramShareButton title={detail.description} url={`https://tantekos.com/${detail.slug}`}><TelegramIcon size="2rem" /></TelegramShareButton>
+              <div className="mb-1 flex">
+                <div className="flex-auto pr-4">
+                  <Share detail={detail} />
+                </div>
+                <div className="text-gray-700 text-center self-center">
+                  <div className="text-xs text-gray-700 mt-n2 mb-n2">Harga Sewa Mulai</div>
+                  <div>
+                    <span className="text-xl font-bold">{Cash(detail.price.start_from)}</span>
+                    <span className="text-xs text-gray-700">/{detail.price.duration}</span>
+                  </div>
+                </div>
               </div>
               <small className="text-gray-700">{moment(detail.date_modified).lang('id').fromNow()} &middot; {detail.hit} kali dilihat</small>
               <h1 className="mt-0 text-xl capitalize">{detail.title}</h1>
               <div className="mb-3">
                 <KostType item={detail.type} />
               </div>
-
               <div className="mb-3">
                 <h2 className="font-bold">Deskripsi</h2>
                 <div dangerouslySetInnerHTML={{ __html: detail.description }} />

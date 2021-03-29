@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { shape } from 'prop-types'
-import { FaPhoneAlt } from 'react-icons/fa'
+import { FaPhoneAlt, FaWhatsapp } from 'react-icons/fa'
 import { MdStar, MdStarBorder } from 'react-icons/md'
 import ReactGa from 'react-ga'
 import Cash from '../utils/Cash'
@@ -70,23 +70,19 @@ class FooterDetail extends Component {
         const { data } = this.props;
         const { like } = this.state;
         return (
-            <div className="sticky flex bottom-0 border-bottom bg-white pt-1 px-2 w-100">
-                <div className="flex-auto pl-2 pr-4">
-                    <div className="text-xs text-gray-700">Harga Sewa Mulai</div>
-                    <div>
-                        <span className="text-2xl font-bold">{Cash(data.price.start_from)}</span>
-                        <span className="text-xs text-gray-700">/{data.price.duration}</span>
-                    </div>
-                </div>
-                <div className="mr-2 text-gray-700 text-center self-center">
+            <div className="sticky bottom-0 border-bottom bg-white py-2 px-3 w-100">
+                <div className="text-gray-700 text-center self-center">
                     {
                         like ?
-                            <MdStar size={40} className="text-pink-500 border rounded-full mr-2 mb-1 inline" onClick={like ? () => this.handleUnfavorite() : () => this.handleFavorite()} />
+                            <button className="bg-pink-700 hover:bg-pink-600 text-white font-bold mr-1 py-1 px-2 uppercase focus:outline-none" onClick={like ? () => this.handleUnfavorite() : () => this.handleFavorite()}><MdStar size={22} className="mr-1 inline" />Suka</button>
                             :
-                            <MdStarBorder size={40} className="text-pink-500 border rounded-full mr-2 mb-1 inline" onClick={like ? () => this.handleUnfavorite() : () => this.handleFavorite()} />
+                            <button className="bg-indigo-700 hover:bg-indigo-600 text-white font-bold mr-1 py-1 px-2 uppercase focus:outline-none" onClick={like ? () => this.handleUnfavorite() : () => this.handleFavorite()}><MdStarBorder size={22} className="mr-1 inline" />Suka</button>
                     }
                     {
-                        data.contact_us && data.contact_us.phone !== '' ? <button className="bg-indigo-700 hover:bg-indigo-600 text-white font-bold py-2 px-3 rounded-full uppercase focus:outline-none" onClick={() => this.handleCall(data.contact_us.phone)}><FaPhoneAlt className="mr-2 inline" />Telepon</button> : <button className="bg-indigo-500 text-white font-bold py-2 px-3 rounded-full opacity-50 cursor-not-allowed uppercase focus:outline-none"><FaPhoneAlt className="mr-2 inline" />Telepon</button>
+                        data.contact_us && data.contact_us.phone !== '' ? <button className="bg-indigo-700 hover:bg-indigo-600 text-white font-bold mr-1 py-1 px-2 uppercase focus:outline-none" onClick={() => this.handleCall(data.contact_us.phone)}><FaPhoneAlt className="mr-1 inline" />Telepon</button> : <button className="bg-indigo-500 text-white font-bold mr-1 py-2 px-3 rounded-full opacity-50 cursor-not-allowed uppercase focus:outline-none"><FaPhoneAlt className="mr-1 inline" />Telepon</button>
+                    }
+                    {
+                        data.contact_us && data.contact_us.whatsapp !== undefined ? <button className="bg-green-400 hover:bg-green-300 text-white font-bold py-1 px-2 uppercase focus:outline-none" onClick={() => this.handleCall(data.contact_us.phone)}><FaWhatsapp size={24} className="mr-1 inline" />WhatsApp</button> : <button className="bg-green-300 text-white font-bold py-1 px-2 opacity-50 cursor-not-allowed uppercase focus:outline-none"><FaWhatsapp className="mr-1 inline" />WhatsApp</button>
                     }
                 </div>
             </div>
