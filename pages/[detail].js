@@ -159,9 +159,9 @@ class Detail extends React.Component {
                   <Share detail={detail} />
                 </div>
                 <div className="text-gray-700 text-center self-center">
-                  <div className="text-xs text-gray-700 mt-n2 mb-n2">Harga Sewa Mulai</div>
-                  <div>
-                    <span className="text-xl font-bold">{Cash(detail.price.start_from)}</span>
+                  {/* <div className="text-xs text-gray-700 mt-n2 mb-n2">Harga Sewa Mulai</div> */}
+                  <div className="mt-n2">
+                    <span className="text-3xl font-bold">{Cash(detail.price.start_from)}</span>
                     <span className="text-xs text-gray-700">/{detail.price.duration}</span>
                   </div>
                 </div>
