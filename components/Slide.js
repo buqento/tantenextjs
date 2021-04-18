@@ -9,7 +9,7 @@ class Slide extends Component {
         const { imagesData, imageTitle } = this.props;
         return <Swiper
             spaceBetween={0}
-            slidesPerView={2}
+            slidesPerView={1}
             pagination={{ clickable: true }}
             // navigation
             autoplay
@@ -18,12 +18,12 @@ class Slide extends Component {
                 imagesData && imagesData.map((item, index) =>
                     <SwiperSlide key={index} className="text-left">
                         <img
-                            width="210px"
-                            height="210px"
-                            src={`https://cdn.statically.io/img/i.imgur.com/w=350/${item}`}
+                            // width="210px"
+                            // height="210px"
+                            src={`https://cdn.statically.io/img/i.imgur.com/w=414/${item}`}
                             alt={`${imageTitle} 
                         ${index + 1}`}
-                            style={{ maxHeight: '210px' }}
+                            // style={{ maxHeight: '210px' }}
                         />
                     </SwiperSlide>
                 )
