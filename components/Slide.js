@@ -20,7 +20,7 @@ class Slide extends Component {
                         <img
                             // width="210px"
                             // height="210px"
-                            src={`https://cdn.statically.io/img/i.imgur.com/w=414/${item}`}
+                            src={`https://cdn.statically.io/img/i.imgur.com/w=450/${item}`}
                             alt={`${imageTitle} 
                         ${index + 1}`}
                             // style={{ maxHeight: '210px' }}
