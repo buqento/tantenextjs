@@ -5,7 +5,8 @@ export const Campus = [
     
     { slug: 'stmik-umel-mandiri', name: 'STMIK Umel Mandiri', province: 'Papua' },
     { slug: 'universitas-cenderawasih', name: 'Universitas Cenderawasih', province: 'Papua' },
-    { slug: 'universitas-ottow-geissler Papua', name: 'Universitas Ottow Geissler Papua', province: 'Papua' },
+    { slug: 'universitas-ottow-geissler-papua', name: 'Universitas Ottow Geissler Papua', province: 'Papua' },
+    { slug: 'universitas-sains-dan-teknologi-jayapura', name: 'Universitas Sains dan Teknologi Jayapura', province: 'Papua' },
 
     { slug: 'pgsd-universitas-pattimura', name: 'PGSD Universitas Pattimura', province: 'Maluku' },
     { slug: 'universitas-pattimura', name: 'Universitas Pattimura', province: 'Maluku' },
