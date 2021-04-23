@@ -18,7 +18,7 @@ class Slide extends Component {
                 imagesData && imagesData.map((item, index) =>
                     <SwiperSlide key={index} className="text-left">
                         <img
-                            style={{ objectFit: 'cover', objectPosition: 'bottom', width: '450px', height: '250px' }}
+                            style={{ objectFit: 'cover', objectPosition: 'center', width: '450px', height: '250px' }}
                             src={`https://cdn.statically.io/img/i.imgur.com/w=450/${item}`}
                             alt={`${imageTitle} 
                         ${index + 1}`}
