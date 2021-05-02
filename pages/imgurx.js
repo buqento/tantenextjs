@@ -31,13 +31,17 @@ class Imgur extends Component {
                     Authorization: "Client-ID e6aa071d345d18f"
                 },
                 body: formdata
-            }).then(data => data.json()).then(data => {
-                console.log(data);
-                console.log(data.id);
-                images.push(data.id + '.webp')
             })
-            console.log("file => ", index + 1);
-            if (index + 1 === allFile.length) { done = true }
+            .then(data => data.json())
+            .then(data => {
+                console.log(data);
+                console.log(data && data.id);
+                if(data){
+                    images.push(data.id + '.webp')
+                }
+                console.log("file => ", index + 1);
+                if (index + 1 === allFile.length) { done = true }
+            })
         }
         console.log("done => ", done);
 
