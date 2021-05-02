@@ -25,16 +25,16 @@ class Imgur extends Component {
 
         // Request made to the backend api 
         // Send formData object 
-        formdata.append("image", files)
-        fetch("https://api.imgur.com/3/image", {
-            method: "post",
-            headers: {
-                Authorization: "Client-ID e6aa071d345d18f"
-            },
-            body: formdata
-        }).then(data => data.json()).then(data => {
-            console.log(data)
-        })
+        // formdata.append("image", files)
+        // fetch("https://api.imgur.com/3/image", {
+        //     method: "post",
+        //     headers: {
+        //         Authorization: "Client-ID e6aa071d345d18f"
+        //     },
+        //     body: formdata
+        // }).then(data => data.json()).then(data => {
+        //     console.log(data)
+        // })
 
     }
 
