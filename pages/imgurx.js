@@ -32,6 +32,8 @@ class Imgur extends Component {
                 },
                 body: formdata
             }).then(data => data.json()).then(data => {
+                console.log(data);
+                console.log(data.id);
                 images.push(data.id + '.webp')
             })
             console.log("file => ", index + 1);
