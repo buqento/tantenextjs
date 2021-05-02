@@ -20,7 +20,7 @@ class Imgur extends Component {
     onFileUpload = () => {
         const { allFile } = this.state
         for (let index = 0; index < allFile.length; index++) {
-            let file = f[index]
+            let file = allFile[index]
             const formdata = new FormData();
             formdata.append("image", file);
             fetch("https://api.imgur.com/3/image", {
