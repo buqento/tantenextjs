@@ -34,23 +34,16 @@ class Imgur extends Component {
             })
                 .then(data => data.json())
                 .then(data => {
-                    console.log(data);
-                    console.log(data && data.id);
-                    if (data.data.id) {
-                        images.push(data.data.id + '.webp')
-                    }
+                    console.log(data.data.id);
+                    images.push(data.data.id + '.webp')
                     console.log("index + 1 => ", index + 1);
                     console.log("allFile.length => ", allFile.length);
                     if (index + 1 === allFile.length) {
                         console.log("done")
+                        console.log(images)
                     }
                 })
         }
-
-        // if (done) {
-        //     console.log(images);
-        //     console.log('begin send data');
-        // }
     }
 
     render() {
