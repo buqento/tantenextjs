@@ -19,6 +19,8 @@ class Imgur extends Component {
 
     onFileUpload = () => {
         const { allFile } = this.state
+        let images = []
+        let done = false
         for (let index = 0; index < allFile.length; index++) {
             let file = allFile[index]
             const formdata = new FormData();
@@ -30,8 +32,13 @@ class Imgur extends Component {
                 },
                 body: formdata
             }).then(data => data.json()).then(data => {
-                console.log(data)
+                images.push(data.id + '.webp')
             })
+            if(index === allFile.length) {done = true}
+        }
+        if(done){
+            console.log(images);
+            console.log('begin send data');
         }
     }
 
