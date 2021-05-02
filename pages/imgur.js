@@ -15,7 +15,6 @@ class Imgur extends Component {
         const { selectedFile } = this.state
         const formdata = new FormData();
         formdata.append("image", selectedFile);
-        formdata.append("image", files)
         fetch("https://api.imgur.com/3/image", {
             method: "post",
             headers: {
