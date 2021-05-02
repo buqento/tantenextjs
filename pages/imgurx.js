@@ -34,9 +34,12 @@ class Imgur extends Component {
             }).then(data => data.json()).then(data => {
                 images.push(data.id + '.webp')
             })
-            if(index === allFile.length) {done = true}
+            console.log("file => ", index + 1);
+            if (index + 1 === allFile.length) { done = true }
         }
-        if(done){
+        console.log("done => ", done);
+
+        if (done) {
             console.log(images);
             console.log('begin send data');
         }
