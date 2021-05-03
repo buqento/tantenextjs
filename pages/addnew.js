@@ -46,7 +46,7 @@ const Addnew = () => {
     const onFileUpload = (e) => {
         e.preventDefault();
 
-        console.log(allImages);
+        // console.log(allImages);
         let images = []
         for (let index = 0; index < allImages.length; index++) {
             let file = allImages[index]
@@ -71,89 +71,92 @@ const Addnew = () => {
     }
 
     const handleSubmit = (e) => {
-        let found = false
-        const docRef = fire
-            .firestore().collection('kosts')
-            .where('slug', '==', Generateslug(title))
-        docRef.onSnapshot(snap => {
-            const data = snap.docs.map(doc => ({
-                id: doc.id, ...doc.data()
-            }))
-            data.length > 0 && (found = true)
-        })
-        docRef.get()
-            .then(() => {
-                if (!found) {
-                    fire.firestore().collection("kosts")
-                        .add({
-                            date_modified: Date.now(),
-                            date_published: Date.now(),
-                            slug: Generateslug(title),
-                            name: name,
-                            title: title,
-                            description: description,
-                            durations: strToArray(durations),
-                            keywords: keywords,
-                            images: arrayImages,
-                            location: {
-                                province: province,
-                                city: city,
-                                district: district,
-                                near: strToArray(near),
-                                lat_lng: new fire.firestore.GeoPoint(Number(strToArray(lat_lng)[0]), Number(strToArray(lat_lng)[1]))
-                            },
-                            category: category,
-                            type: strToArray(type),
-                            contact_us: {
-                                facebook_url: contact_fb,
-                                phone: contact_phone,
-                                whatsapp: contact_whatsapp
-                            },
-                            facility: {
-                                room: strToArray(facilities_room),
-                                bathroom: strToArray(facilities_bathroom),
-                                share: strToArray(facilities_share),
-                                building: strToArray(facilities_building)
-                            },
-                            price: {
-                                start_from: parseInt(start_from),
-                                duration: duration
-                            },
-                            post_url: post_url,
-                            is_active: true,
-                            hit: 1
-                        })
-                        .then(() => { alert('Data saved') })
-                        .catch((error) => { alert(error.message) })
+        console.log('arrayImages => ',arrayImages);
+        console.log('images => ', images);
+        console.log('strToArrayimages => ', strToArray(images));
+        // let found = false
+        // const docRef = fire
+        //     .firestore().collection('kosts')
+        //     .where('slug', '==', Generateslug(title))
+        // docRef.onSnapshot(snap => {
+        //     const data = snap.docs.map(doc => ({
+        //         id: doc.id, ...doc.data()
+        //     }))
+        //     data.length > 0 && (found = true)
+        // })
+        // docRef.get()
+        //     .then(() => {
+        //         if (!found) {
+        //             fire.firestore().collection("kosts")
+        //                 .add({
+        //                     date_modified: Date.now(),
+        //                     date_published: Date.now(),
+        //                     slug: Generateslug(title),
+        //                     name: name,
+        //                     title: title,
+        //                     description: description,
+        //                     durations: strToArray(durations),
+        //                     keywords: keywords,
+        //                     images: arrayImages,
+        //                     location: {
+        //                         province: province,
+        //                         city: city,
+        //                         district: district,
+        //                         near: strToArray(near),
+        //                         lat_lng: new fire.firestore.GeoPoint(Number(strToArray(lat_lng)[0]), Number(strToArray(lat_lng)[1]))
+        //                     },
+        //                     category: category,
+        //                     type: strToArray(type),
+        //                     contact_us: {
+        //                         facebook_url: contact_fb,
+        //                         phone: contact_phone,
+        //                         whatsapp: contact_whatsapp
+        //                     },
+        //                     facility: {
+        //                         room: strToArray(facilities_room),
+        //                         bathroom: strToArray(facilities_bathroom),
+        //                         share: strToArray(facilities_share),
+        //                         building: strToArray(facilities_building)
+        //                     },
+        //                     price: {
+        //                         start_from: parseInt(start_from),
+        //                         duration: duration
+        //                     },
+        //                     post_url: post_url,
+        //                     is_active: true,
+        //                     hit: 1
+        //                 })
+        //                 .then(() => { alert('Data saved') })
+        //                 .catch((error) => { alert(error.message) })
 
-                    setName("")
-                    setTitle("")
-                    setDescription("")
-                    setDurations("")
-                    setKeywords("")
-                    setImages("")
-                    setProvince("")
-                    setCity("")
-                    setDistrict("")
-                    setNear("")
-                    setLatlng("")
-                    setCategory("")
-                    setType("")
-                    setContactPhone("")
-                    setContactWhatsapp("")
-                    setContactFb("")
-                    setFacilitiesRoom("")
-                    setFacilitiesBathroom("")
-                    setFacilitiesShare("")
-                    setFacilitiesBuilding("")
-                    setStartFrom("")
-                    setDuration("")
-                    setPostUrl("")
-                } else {
-                    alert('Judul tidak valid!')
-                }
-            })
-            .catch(err => console.log(err))
+        //             setName("")
+        //             setTitle("")
+        //             setDescription("")
+        //             setDurations("")
+        //             setKeywords("")
+        //             setImages("")
+        //             setProvince("")
+        //             setCity("")
+        //             setDistrict("")
+        //             setNear("")
+        //             setLatlng("")
+        //             setCategory("")
+        //             setType("")
+        //             setContactPhone("")
+        //             setContactWhatsapp("")
+        //             setContactFb("")
+        //             setFacilitiesRoom("")
+        //             setFacilitiesBathroom("")
+        //             setFacilitiesShare("")
+        //             setFacilitiesBuilding("")
+        //             setStartFrom("")
+        //             setDuration("")
+        //             setPostUrl("")
+        //         } else {
+        //             alert('Judul tidak valid!')
+        //         }
+        //     })
+        //     .catch(err => console.log(err))
     }
     return (
         <form className="bg-white px-8 py-8" onSubmit={onFileUpload}>
