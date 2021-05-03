@@ -3,33 +3,48 @@ class Imgur extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            selectedFile: null
+            allFile: null
         }
     }
 
     onFileChange = event => {
-        this.setState({ selectedFile: event.target.files[0] });
+        let f = event.target.files
+        let i = []
+        for (let index = 0; index < f.length; index++) {
+            let file = f[index]
+            i.push(file)
+        }
+        this.setState({ allFile: i })
     }
 
     onFileUpload = () => {
-        const { selectedFile } = this.state
-        const formdata = new FormData();
-        formdata.append("image", selectedFile);
-        fetch("https://api.imgur.com/3/image", {
-            method: "post",
-            headers: {
-                Authorization: "Client-ID e6aa071d345d18f"
-            },
-            body: formdata
-        }).then(data => data.json()).then(data => {
-            console.log(data)
-        })
+        const { allFile } = this.state
+        let images = []
+        for (let index = 0; index < allFile.length; index++) {
+            let file = allFile[index]
+            const formdata = new FormData();
+            formdata.append("image", file);
+            fetch("https://api.imgur.com/3/image", {
+                method: "post",
+                headers: {
+                    Authorization: "Client-ID e6aa071d345d18f"
+                },
+                body: formdata
+            })
+                .then(data => data.json())
+                .then(data => {
+                    images.push(data.data.id + '.webp')
+                    if (index + 1 === allFile.length) {
+                        console.log(images)
+                    }
+                })
+        }
     }
 
     render() {
         return (
             <div>
-                <input type="file" onChange={this.onFileChange} accept="image/*" />
+                <input type="file" multiple onChange={this.onFileChange} accept="image/*" />
                 <button onClick={this.onFileUpload}>Upload</button>
             </div >
         )
