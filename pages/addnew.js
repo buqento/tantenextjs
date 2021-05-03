@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import fire from '../../configurations/firebase'
-import Generateslug from '../../utils/Generateslug'
-import { DtArea } from '../../utils/modals/Area'
-import { DtProvinsi } from '../../utils/modals/Provinsi'
-import { City } from '../../utils/modals/City'
+import fire from '../configurations/firebase'
+import Generateslug from '../utils/Generateslug'
+import { DtArea } from '../utils/modals/Area'
+import { DtProvinsi } from '../utils/modals/Provinsi'
+import { City } from '../utils/modals/City'
 
 const Addnew = () => {
     const strToArray = (str) => { return str.trim().split(", ") }
@@ -30,11 +30,47 @@ const Addnew = () => {
     const [start_from, setStartFrom] = useState("")
     const [duration, setDuration] = useState("Bulan")
     const [post_url, setPostUrl] = useState("")
+    const [allImages, setAllimages] = useState("")
+    const [arrayImages, setArrayImages] = useState("")
 
-    const handleSubmit = (e) => {
+    const onFileChange = event => {
+        let f = event.target.files
+        let i = []
+        for (let index = 0; index < f.length; index++) {
+            let file = f[index]
+            i.push(file)
+        }
+        setAllimages(i)
+    }
+
+    const onFileUpload = (e) => {
         e.preventDefault();
 
-        // check slug
+        console.log(allImages);
+        let images = []
+        for (let index = 0; index < allImages.length; index++) {
+            let file = allImages[index]
+            const formdata = new FormData();
+            formdata.append("image", file);
+            fetch("https://api.imgur.com/3/image", {
+                method: "post",
+                headers: {
+                    Authorization: "Client-ID e6aa071d345d18f"
+                },
+                body: formdata
+            })
+                .then(data => data.json())
+                .then(data => {
+                    images.push(data.data.id + '.webp')
+                    if (index + 1 === allImages.length) {
+                        setArrayImages(images)
+                        handleSubmit()
+                    }
+                })
+        }
+    }
+
+    const handleSubmit = (e) => {
         let found = false
         const docRef = fire
             .firestore().collection('kosts')
@@ -58,7 +94,7 @@ const Addnew = () => {
                             description: description,
                             durations: strToArray(durations),
                             keywords: keywords,
-                            images: strToArray(images),
+                            images: arrayImages,
                             location: {
                                 province: province,
                                 city: city,
@@ -68,10 +104,10 @@ const Addnew = () => {
                             },
                             category: category,
                             type: strToArray(type),
-                            contact_us: { 
-                                facebook_url: contact_fb, 
-                                phone: contact_phone, 
-                                whatsapp: contact_whatsapp 
+                            contact_us: {
+                                facebook_url: contact_fb,
+                                phone: contact_phone,
+                                whatsapp: contact_whatsapp
                             },
                             facility: {
                                 room: strToArray(facilities_room),
@@ -120,7 +156,13 @@ const Addnew = () => {
             .catch(err => console.log(err))
     }
     return (
-        <form className="bg-white px-8 py-8" onSubmit={handleSubmit}>
+        <form className="bg-white px-8 py-8" onSubmit={onFileUpload}>
+
+            <div className="mb-4">
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">Images</label>
+                <input type="file" multiple onChange={onFileChange} accept="image/*" />
+            </div>
+
             <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">name</label>
                 <input className="border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none" id="name" type="text" placeholder="name"
@@ -335,8 +377,3 @@ const Addnew = () => {
     )
 }
 export default Addnew
-
-
-
-
-
