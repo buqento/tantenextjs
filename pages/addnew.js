@@ -61,9 +61,11 @@ const Addnew = () => {
             })
                 .then(data => data.json())
                 .then(data => {
+                    console.log('data => ', data);
                     images.push(data.data.id + '.webp')
                     if (index + 1 === allImages.length) {
                         setArrayImages(images)
+                        console.log('setArrayImages => ', images);
                         handleSubmit()
                     }
                 })
