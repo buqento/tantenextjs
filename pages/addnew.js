@@ -66,15 +66,14 @@ const Addnew = () => {
                     if (index + 1 === allImages.length) {
                         setArrayImages(images)
                         console.log('setArrayImages => ', images);
-                        handleSubmit()
+                        handleSubmit(images)
                     }
                 })
         }
     }
 
-    const handleSubmit = (e) => {
-        console.log('arrayImages => ',arrayImages);
-        console.log('images => ', images);
+    const handleSubmit = (images) => {
+        console.log('images => ',images);
         console.log('strToArrayimages => ', strToArray(images));
         // let found = false
         // const docRef = fire
