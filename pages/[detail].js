@@ -3,6 +3,7 @@ import NextHead from 'next/head'
 import Router from 'next/router'
 import { string } from 'prop-types'
 import { FaExternalLinkAlt } from 'react-icons/fa'
+import { AiOutlineZoomIn } from 'react-icons/ai'
 import Cash from '../utils/Cash'
 import Slide from '../components/Slide'
 import Peta from '../components/Peta'
@@ -215,9 +216,9 @@ class Detail extends React.Component {
               }
               <div className="mb-3">
                 <h2 className="pb-1 font-bold">Lokasi <small>({detail.location && detail.location.district}, {detail.location && detail.location.city}, {detail.location && detail.location.province})</small></h2>
-                <Peta location={detail && detail.location} height={100} zoom={10} />
-                <div className="rounded bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-2 py-2" onClick={this.handleShowModal}>
-                  <span className="text-uppercase text-current font-bold">Lihat Lokasi</span>
+                <Peta type="image" location={detail && detail.location} height={75} zoom={10} />
+                <div className="border align-middle rouded text-center font-bold uppercase mb-2 py-2 cursor-pointer hover:bg-indigo-700 hover:text-white" onClick={this.handleShowModal}>                  
+                  <span className="text-uppercase text-current font-bold"><AiOutlineZoomIn className="inline mb-1" size={20} /> Perbesar Lokasi Kost</span>
                 </div>
               </div>
               <div className="border-top mt-3">
