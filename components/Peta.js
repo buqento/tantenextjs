@@ -5,25 +5,29 @@ import { FaMapMarkerAlt } from 'react-icons/fa';
 export default function Peta(props) {
     const lat = parseFloat(props.location.lat_lng.latitude)
     const long = parseFloat(props.location.lat_lng.longitude)
+    const height = parseInt(props.height)
+    const zoom = parseInt(props.zoom)
     const [viewport, setViewport] = useState({
         latitude: lat,
         longitude: long,
         width: "100%",
-        height: "150px",
-        zoom: 10
+        height: height,
+        zoom: zoom
     })
+    viewport.width = "100%"
+    viewport.height = height
     return (
         <ReactMapGl
             {...viewport}
             mapboxApiAccessToken="pk.eyJ1IjoiYnVxZW50byIsImEiOiJjanJ5a3p4cDkwZXJiNDlvYXMxcnhud3hhIn0.AhQ-vGYSIo6uTBmQD4MCsA"
             onViewportChange={viewport => { setViewport(viewport) }}
             mapStyle="mapbox://styles/buqento/ckg4bb6cc2hrr19k84gzrs97j"
-            // className="rounded-lg"
+        // className="rounded-lg"
         >
             <Marker
                 latitude={lat}
                 longitude={long}
-                offsetLeft={-18} 
+                offsetLeft={-18}
                 offsetTop={-25}
             >
                 <FaMapMarkerAlt size={30} className="text-danger" />

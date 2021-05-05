@@ -1,5 +1,4 @@
 import React from 'react'
-import NextHead from 'next/head'
 import fire from '../../configurations/firebase'
 import Message from '../../components/Message'
 import InfiniteScroll from 'react-infinite-scroll-component'

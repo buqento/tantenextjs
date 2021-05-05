@@ -3,9 +3,7 @@ import NextHead from 'next/head'
 import Router from 'next/router'
 import { string } from 'prop-types'
 import { FaExternalLinkAlt } from 'react-icons/fa'
-import { MdFavorite } from 'react-icons/md'
 import Cash from '../utils/Cash'
-
 import Slide from '../components/Slide'
 import Peta from '../components/Peta'
 import KostType from '../components/Type'
@@ -17,10 +15,15 @@ import ListKosOthers from '../components/ListKosOthers'
 import fire from '../configurations/firebase'
 import Facilities from '../components/Facilities'
 import Share from '../components/Share'
+import Modal from 'react-bootstrap/Modal'
 class Detail extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { otherData: null, showAlert: false }
+    this.state = {
+      otherData: null,
+      showAlert: false,
+      showModal: false
+    }
     this.myRef = React.createRef()
   }
   async componentDidMount() {
@@ -39,6 +42,11 @@ class Detail extends React.Component {
     this.setState({ showAlert: false })
     Router.push('/favorites')
   }
+
+  handleCloseModal = () => { this.setState({ showModal: false }) }
+
+  handleShowModal = () => { this.setState({ showModal: true }) }
+
   handleShowAlert = () => {
     this.setState({ showAlert: true })
     setTimeout(function () {
@@ -47,7 +55,7 @@ class Detail extends React.Component {
   }
   render() {
     const { slug, details, otherdatas } = this.props
-    const { showAlert } = this.state
+    const { showAlert, showModal, viewport } = this.state
     const detail = JSON.parse(details)
     const otherdata = JSON.parse(otherdatas)
     const structureTypeBreadcrumbList =
@@ -207,7 +215,10 @@ class Detail extends React.Component {
               }
               <div className="mb-3">
                 <h2 className="pb-1 font-bold">Lokasi <small>({detail.location && detail.location.district}, {detail.location && detail.location.city}, {detail.location && detail.location.province})</small></h2>
-                <Peta location={detail && detail.location} />
+                <Peta location={detail && detail.location} height={100} zoom={10} />
+                <div className="rounded bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-2 py-2" onClick={this.handleShowModal}>
+                  <span className="text-uppercase text-current font-bold">Lihat Lokasi</span>
+                </div>
               </div>
               <div className="border-top mt-3">
                 {
@@ -237,7 +248,17 @@ class Detail extends React.Component {
           </label>
         </div>
       }
-    </Layout>
+
+      <Modal show={showModal} onHide={this.handleCloseModal} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Lokasi Kost</Modal.Title>
+        </Modal.Header>
+        <Modal.Body closeButton>
+          <Peta location={detail && detail.location} height={500} zoom={16} />
+        </Modal.Body>
+      </Modal>
+
+    </Layout >
   }
 }
 export const getServerSideProps = async (context) => {
