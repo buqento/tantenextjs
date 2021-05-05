@@ -118,7 +118,7 @@ class FooterDetail extends Component {
                         {
                             data.contact_us && data.contact_us.whatsapp !== undefined ?
 
-                                <a href={`https://wa.me/${data.contact_us.whatsapp}`} target="BLANK">
+                                <a href={`https://wa.me/${data.contact_us.whatsapp}/?text=Hai, saya tertarik dengan kost ini https://tantekos.com/${data.slug}`} target="BLANK">
                                     <button className="w-100 bg-green-400 hover:bg-green-300 text-white font-bold py-1 px-1 uppercase focus:outline-none" onClick={() => this.handleWa(data.contact_us.phone)}>
                                         <div style={{ textAlign: '-webkit-center' }}>
                                             <FaWhatsapp size={22} />
