@@ -4,6 +4,7 @@ import Generateslug from '../utils/Generateslug'
 import { DtArea } from '../utils/modals/Area'
 import { DtProvinsi } from '../utils/modals/Provinsi'
 import { City } from '../utils/modals/City'
+import withAuth from '../helpers/withAuth';
 
 const Addnew = () => {
     const strToArray = (str) => { return str.trim().split(", ") }
@@ -373,4 +374,4 @@ const Addnew = () => {
         </form>
     )
 }
-export default Addnew
+export default withAuth(Addnew);
