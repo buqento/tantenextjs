@@ -88,6 +88,7 @@ export const DtArea = [
     { province: 'Daerah Istimewa Yogyakarta', city: 'Bantul', district: 'Kasihan' },
     { province: 'Daerah Istimewa Yogyakarta', city: 'Bantul', district: 'Piyungan' },
     { province: 'Daerah Istimewa Yogyakarta', city: 'Bantul', district: 'Sewon' },
+    { province: 'Daerah Istimewa Yogyakarta', city: 'Bantul', district: 'Sedayu' },
     { province: 'Daerah Istimewa Yogyakarta', city: 'Sleman', district: 'Depok' },
     { province: 'Daerah Istimewa Yogyakarta', city: 'Sleman', district: 'Mlati' },
     { province: 'Daerah Istimewa Yogyakarta', city: 'Sleman', district: 'Ngaglik' },
