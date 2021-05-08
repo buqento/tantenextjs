@@ -3,7 +3,6 @@ import NextHead from 'next/head'
 import Router from 'next/router'
 import { string } from 'prop-types'
 import { FaExternalLinkAlt } from 'react-icons/fa'
-import { AiOutlineZoomIn } from 'react-icons/ai'
 import Cash from '../utils/Cash'
 import Slide from '../components/Slide'
 import Peta from '../components/Peta'
@@ -16,14 +15,12 @@ import ListKosOthers from '../components/ListKosOthers'
 import fire from '../configurations/firebase'
 import Facilities from '../components/Facilities'
 import Share from '../components/Share'
-import Modal from 'react-bootstrap/Modal'
 class Detail extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       otherData: null,
-      showAlert: false,
-      showModal: false
+      showAlert: false
     }
     this.myRef = React.createRef()
   }
@@ -44,10 +41,6 @@ class Detail extends React.Component {
     Router.push('/favorites')
   }
 
-  handleCloseModal = () => { this.setState({ showModal: false }) }
-
-  handleShowModal = () => { this.setState({ showModal: true }) }
-
   handleShowAlert = () => {
     this.setState({ showAlert: true })
     setTimeout(function () {
@@ -56,7 +49,7 @@ class Detail extends React.Component {
   }
   render() {
     const { slug, details, otherdatas } = this.props
-    const { showAlert, showModal, viewport } = this.state
+    const { showAlert } = this.state
     const detail = JSON.parse(details)
     const otherdata = JSON.parse(otherdatas)
     const structureTypeBreadcrumbList =
@@ -123,8 +116,6 @@ class Detail extends React.Component {
         JSON.parse(structureTypeBreadcrumbList)
       ]
     }
-
-    const shareUrl = 'https://tantekos.com/kost-kompleks-hasanuddin-seruni-kalegowa-somba-opu-gowa-sulawesi-selatan'
     return <Layout>
       {
         detail &&
@@ -215,7 +206,7 @@ class Detail extends React.Component {
                 </div>
               }
               <div className="mb-3">
-                <h2 className="pb-1 font-bold">Lokasi <small>({detail.location && detail.location.district}, {detail.location && detail.location.city}, {detail.location && detail.location.province})</small></h2>
+                <h2 className="pb-2 font-bold">Lokasi <small>({detail.location && detail.location.district}, {detail.location && detail.location.city}, {detail.location && detail.location.province})</small></h2>
                   <Peta location={detail && detail.location} height={150} zoom={10} />
               </div>
               <div className="border-top mt-3">
@@ -246,16 +237,6 @@ class Detail extends React.Component {
           </label>
         </div>
       }
-
-      <Modal show={showModal} onHide={this.handleCloseModal} centered>
-        <Modal.Header closeButton>
-          <Modal.Title>Lokasi Kost</Modal.Title>
-        </Modal.Header>
-        <Modal.Body closeButton>
-          <Peta location={detail && detail.location} height={500} zoom={14} />
-        </Modal.Body>
-      </Modal>
-
     </Layout >
   }
 }
