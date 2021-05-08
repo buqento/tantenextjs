@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import ReactMapGl, { Marker } from 'react-map-gl'
+import ReactMapGl, { FullscreenControl, GeolocateControl, Marker } from 'react-map-gl'
 import { shape } from 'prop-types'
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { Image } from 'react-bootstrap';
@@ -17,6 +17,9 @@ export default function Peta(props) {
         height: height,
         zoom: zoom
     })
+    const getCoordinates = (map, event) => {
+        console.log(event);
+    }
     viewport.width = "100%"
     viewport.height = height
     return (
@@ -30,15 +33,22 @@ export default function Peta(props) {
                         mapboxApiAccessToken="pk.eyJ1IjoiYnVxZW50byIsImEiOiJjanJ5a3p4cDkwZXJiNDlvYXMxcnhud3hhIn0.AhQ-vGYSIo6uTBmQD4MCsA"
                         onViewportChange={viewport => { setViewport(viewport) }}
                         mapStyle="mapbox://styles/buqento/ckg4bb6cc2hrr19k84gzrs97j"
-                        mar
-                    // className="rounded-lg"
+                        onClick={getCoordinates()}
                     >
+                        <div className="ml-1 mt-1" style={{width:'30px'}}>
+                            <FullscreenControl />
+                        </div>
+                        <div className="ml-1 mt-1" style={{ width: '30px' }}>
+                            <GeolocateControl
+                                positionOptions={{ enableHighAccuracy: true }}
+                                trackUserLocation={true}
+                            />
+                        </div>
                         <Marker
                             latitude={lat}
                             longitude={long}
                             offsetLeft={-18}
                             offsetTop={-25}
-                            
                         >
                             <FaMapMarkerAlt size={30} className="text-danger" />
                         </Marker>

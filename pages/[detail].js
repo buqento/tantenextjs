@@ -216,12 +216,7 @@ class Detail extends React.Component {
               }
               <div className="mb-3">
                 <h2 className="pb-1 font-bold">Lokasi <small>({detail.location && detail.location.district}, {detail.location && detail.location.city}, {detail.location && detail.location.province})</small></h2>
-                <div onClick={this.handleShowModal} className="cursor-pointer">
-                  <Peta type="image" location={detail && detail.location} height={75} zoom={10} />
-                  <div className="border align-middle rouded text-center font-bold uppercase mb-2 py-2 hover:bg-indigo-700 hover:text-white">
-                    <span className="text-uppercase text-current font-bold"><AiOutlineZoomIn className="inline mb-1" size={20} /> Perbesar Lokasi</span>
-                  </div>
-                </div>
+                  <Peta location={detail && detail.location} height={150} zoom={10} />
               </div>
               <div className="border-top mt-3">
                 {
