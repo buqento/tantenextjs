@@ -56,10 +56,10 @@ class CampaignItem extends Component {
         }
         return (
             <Link href={`/${Generateslug(item.title)}`}>
-                <div className={`rounded-xl overflow-hidden border ${customStyle}`} onClick={() => handleLastView()}>
-                    <img src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} />
+                <div className={`overflow-hidden ${customStyle}`} onClick={() => handleLastView()}>
+                    <img style={{ objectFit: 'cover', objectPosition: 'center', width: '450px', height: '250px' }} src={`https://cdn.statically.io/img/i.imgur.com/w=450/${item.images[0]}`} alt={item.title} />
                     <div className="px-2 pt-2 pb-2">
-                        <div className="text-xl">
+                        <div className="text-2xl">
                             <span className="font-bold">
                                 {like && <MdStar className="inline text-pink-500 mt-1 mr-1 float-right" />}
                                 {Cash(item.price.start_from, false)}
@@ -71,7 +71,7 @@ class CampaignItem extends Component {
                                 : <Facilities items={item.facility.building} inline />
                         }
                         <div className="text-sm clamp-1">
-                            <BiMap className="inline" /><small>{item.location.district}, {item.location.province}</small>
+                            <BiMap className="inline" /><small>{item.location.district}, {item.location.city}, {item.location.province}</small>
                         </div>
                         <div className="text-xs font-bold uppercase">
                             {

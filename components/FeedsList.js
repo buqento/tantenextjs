@@ -1,10 +1,10 @@
 import React from 'react'
-import CampaignItem from './CampaignItem'
+import CampaignItemList from './CampaignItemList'
 import Generateslug from '../utils/Generateslug'
 import fire from '../configurations/firebase'
 import Message from './Message'
-import CampaignItemSkeleton from './CampaignItemSkeleton'
-class FeedsGrid extends React.Component {
+import CampaignItemListSkeleton from './CampaignItemListSkeleton'
+class FeedsList extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -47,7 +47,7 @@ class FeedsGrid extends React.Component {
                         {
                             filterData.length > 0 ?
                                 <>
-                                    <div>
+                                    <div className="mx-3 divide-y">
                                         {
                                             filterData.slice(0, limit).map((item, index) => <CampaignItem key={index} item={item} />)
                                         }
@@ -61,19 +61,14 @@ class FeedsGrid extends React.Component {
                                 :
                                 <Message title="Tidak Ditemukan" message="Silahkan cari dengan kriteria lainnya" />
                         }
-                    </> : load ? <CampaignItemSkeleton /> :
-                        <div>
-                            {!load && data && data
-                                .map((item, index) => 
-                                <div className="my-3">
-
-                                <CampaignItem key={index} item={item} />
-                                </div>
-                                )}
-                        </div>
+                    </> : load ? <CampaignItemListSkeleton /> :
+                            <div className="mx-3 divide-y">
+                                {!load && data && data
+                                    .map((item, index) => <CampaignItemList key={index} item={item} />)}
+                            </div>
                 }
             </div>
         )
     }
 }
-export default FeedsGrid
+export default FeedsList

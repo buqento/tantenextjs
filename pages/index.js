@@ -96,10 +96,10 @@ class Index extends React.Component {
         <div className="m-3 border rounded-xl shadow-sm py-3">
           <Filter callbackFromParent={this.filterCallback} />
         </div>
-        <div className="py-3 px-3 bg-white z-10" ref={(node) => this.node = node}>
-          <span className="text-current mb-4">
+        <div className="mb-3 px-3 bg-white z-10" ref={(node) => this.node = node}>
+          <span className="text-current">
             {
-              !isFilter ? <span className="uppercase font-bold">Terbaru</span> : <>Hasil Pencarian: <span className="font-bold">Sewa {dataCallback.duration}an, {titleHead}</span></>
+              isFilter && <>Hasil Pencarian: <span className="font-bold">Sewa {dataCallback.duration}an, {titleHead}</span></>
             }
           </span>
         </div>
