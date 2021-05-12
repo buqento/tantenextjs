@@ -196,15 +196,6 @@ class Detail extends React.Component {
                   <Facilities items={detail.facility.share} />
                 </div>
               }
-              {
-                detail && detail.facility && detail.facility.building.length > 0 && detail.facility.building[0] !== "" &&
-                <div className="mb-4">
-                  <p className="font-bold">Fasilitas</p>
-                  <ul className="mx-4">
-                    {detail.facility.building.map((item, index) => <li className="list-disc" key={index}>{item}</li>)}
-                  </ul>
-                </div>
-              }
               <div className="mb-3">
                 <h2 className="pb-2 font-bold">Lokasi <small>({detail.location && detail.location.district}, {detail.location && detail.location.city}, {detail.location && detail.location.province})</small></h2>
                   <Peta location={detail && detail.location} height={150} zoom={10} />
