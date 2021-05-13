@@ -10,10 +10,10 @@ import { FiSend } from 'react-icons/fi'
 const Addnew = () => {
     const strToArray = (str) => { return str.trim().split(", ") }
     const initType = {
-        campur: true,
-        putra: false,
-        putri: false,
-        pasutri: false
+        Campur: true,
+        Putra: false,
+        Putri: false,
+        Pasutri: false
     }
     const initDurations = {
         hari: false,
@@ -47,6 +47,30 @@ const Addnew = () => {
         rCuci: false,
         rTamu: false
     }
+    const listFacility = [
+        { name: 'kamarMandiDalam', title: 'Kamar Mandi Dalam' },
+        { name: 'wifi', title: 'Wifi' },
+        { name: 'springbed', title: 'Springbed' },
+        { name: 'kasur', title: 'Kasur' },
+        { name: 'lemariPakaian', title: 'Lemari Pakaian' },
+        { name: 'meja', title: 'Meja' },
+        { name: 'exhaustFan', title: 'Exhaust Fan' },
+        { name: 'kipasAngin', title: 'Kipas Angin' },
+        { name: 'tv', title: 'TV' },
+        { name: 'ac', title: 'AC' },
+        { name: 'shower', title: 'Shower' },
+        { name: 'klosetJongkok', title: 'Kloset Jongkok' },
+        { name: 'klosetDuduk', title: 'Kloset Duduk' },
+        { name: 'dapur', title: 'Dapur' },
+        { name: 'parkirMotor', title: 'Parkir Motor' },
+        { name: 'parkirMobil', title: 'Parkir Mobil' },
+        { name: 'kamarMandiLuar', title: 'Kamar Mandi Luar' },
+        { name: 'rJemur', title: 'R.Jemur' },
+        { name: 'rCuci', title: 'R.Cuci' },
+        { name: 'rTamu', title: 'R.Tamu' }
+    ]
+    const facilityTitle = (key) => listFacility.filter(facility => facility.name === key)
+
     const [type, setType] = useState(initType)
     const [durations, setDurations] = useState(initDurations);
     const [facilityRoom, setFacilityRoom] = useState(initFacilityRoom);
@@ -111,23 +135,23 @@ const Addnew = () => {
         for (const property in durations) { durations[property] && arrDurations.push(property) }
 
         let arrFacilityRoom = []
-        for (const property in facilityRoom) { facilityRoom[property] && arrFacilityRoom.push(property) }
+        for (const property in facilityRoom) { facilityRoom[property] && arrFacilityRoom.push(facilityTitle(property)[0].title) }
 
         let arrFacilityBathroom = []
-        for (const property in facilityBathroom) { facilityBathroom[property] && arrFacilityBathroom.push(property) }
+        for (const property in facilityBathroom) { facilityBathroom[property] && arrFacilityBathroom.push(facilityTitle(property)[0].title) }
 
         let arrFacilityShare = []
-        for (const property in facilityShare) { facilityShare[property] && arrFacilityShare.push(property) }
+        for (const property in facilityShare) { facilityShare[property] && arrFacilityShare.push(facilityTitle(property)[0].title) }
 
         const campur = type.campur ? 'Kost campur, ' : ''
         const putra = type.putra ? 'Kost putra, ' : ''
         const putri = type.putri ? 'Kost putri, ' : ''
         const pasutri = type.pasutri ? 'Kost pasutri, ' : ''
         const hari = type.hari ? 'Kost harian, ' : ''
-        const minggu = type.putra ? 'Kost mingguan, ' : ''
-        const bulan = type.putri ? 'Kost bulanan, ' : ''
-        const tahun = type.pasutri ? 'Kost tahunan, ' : ''
-        const keywords = 'Kost Murah, ' + campur + putra + putri + pasutri + hari + minggu + bulan + tahun + 'Kost ' + province + ', Kost ' + city + ', Kost ' + district + ', ' + name
+        const minggu = type.minggu ? 'Kost mingguan, ' : ''
+        const bulan = type.bulan ? 'Kost bulanan, ' : ''
+        const tahun = type.tahun ? 'Kost tahunan, ' : ''
+        const keywords = 'Kost murah, ' + campur + putra + putri + pasutri + hari + minggu + bulan + tahun + 'Kost ' + province + ', Kost ' + city + ', Kost ' + district + ', ' + name
 
         let found = false
         const docRef = fire
@@ -206,17 +230,17 @@ const Addnew = () => {
 
     const toggleType = (types) => {
         switch (types) {
-            case 'campur':
-                setType((prevState) => ({ ...prevState, campur: !type.campur }));
+            case 'Campur':
+                setType((prevState) => ({ ...prevState, Campur: !type.Campur }));
                 break;
-            case 'putra':
-                setType((prevState) => ({ ...prevState, putra: !type.putra }));
+            case 'Putra':
+                setType((prevState) => ({ ...prevState, Putra: !type.Putra }));
                 break;
-            case 'putri':
-                setType((prevState) => ({ ...prevState, putri: !type.putri }));
+            case 'Putri':
+                setType((prevState) => ({ ...prevState, Putri: !type.Putri }));
                 break;
             default:
-                setType((prevState) => ({ ...prevState, pasutri: !type.pasutri }));
+                setType((prevState) => ({ ...prevState, Pasutri: !type.Pasutri }));
                 break;
         }
     }
@@ -366,7 +390,7 @@ const Addnew = () => {
 
             <div className="mb-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact_phone">Tipe Kost</label>
-                <div className="capitalize grid grid-cols-2 gap-0">
+                <div className="grid grid-cols-2 gap-0">
                     {
                         Object.keys(type).map((key, index) =>
                             <div key={index}>
@@ -475,7 +499,7 @@ const Addnew = () => {
                     {
                         Object.keys(facilityRoom).map((key, index) =>
                             <div key={index}>
-                                <div className={`rounded cursor-pointer m-1 p-1 text-center ${facilityRoom[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleFacilityRoom(key)}>{key}</div>
+                                <div className={`rounded cursor-pointer m-1 p-1 text-center ${facilityRoom[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleFacilityRoom(key)}>{facilityTitle(key)[0].title}</div>
                             </div>
                         )
                     }
@@ -488,7 +512,7 @@ const Addnew = () => {
                     {
                         Object.keys(facilityBathroom).map((key, index) =>
                             <div key={index}>
-                                <div className={`rounded cursor-pointer m-1 p-1 text-center ${facilityBathroom[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleFacilityBathroom(key)}>{key}</div>
+                                <div className={`rounded cursor-pointer m-1 p-1 text-center ${facilityBathroom[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleFacilityBathroom(key)}>{facilityTitle(key)[0].title}</div>
                             </div>
                         )
                     }
@@ -501,7 +525,7 @@ const Addnew = () => {
                     {
                         Object.keys(facilityShare).map((key, index) =>
                             <div key={index}>
-                                <div className={`rounded cursor-pointer m-1 p-1 text-center ${facilityShare[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleFacilityShare(key)}>{key}</div>
+                                <div className={`rounded cursor-pointer m-1 p-1 text-center ${facilityShare[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleFacilityShare(key)}>{facilityTitle(key)[0].title}</div>
                             </div>
                         )
                     }

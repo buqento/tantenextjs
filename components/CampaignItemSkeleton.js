@@ -3,9 +3,9 @@ const skeletonArr = [1, 2, 3, 4, 5, 6, 7, 8]
 const CampaignItemSkeleton = () => <div>
     {
         skeletonArr.map((item, index) =>
-            <div key={index} className="max-w-sm w-full mx-auto py-2">
+            <div key={index} className="w-full py-2">
                 <div className="animate-pulse space-x-4">
-                    <div className="bg-gray-400 h-40 w-100"></div>
+                    <div className="bg-gray-400 h-56 w-100"></div>
                     <div className="space-y-4 pt-2">
                         <div className="h-8 bg-gray-400 w-1/4"></div>
                         <div className="space-y-2 mr-3">

@@ -64,11 +64,10 @@ class FeedsGrid extends React.Component {
                     </> : load ? <CampaignItemSkeleton /> :
                         <div>
                             {!load && data && data
-                                .map((item, index) => 
-                                <div className="my-3">
-
-                                <CampaignItem key={index} item={item} />
-                                </div>
+                                .map((item, index) =>
+                                    <div className="my-3" key={index}>
+                                        <CampaignItem key={index} item={item} />
+                                    </div>
                                 )}
                         </div>
                 }

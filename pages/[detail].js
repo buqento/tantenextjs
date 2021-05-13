@@ -68,7 +68,7 @@ class Detail extends React.Component {
       "@type": "Hostel",
       "image": [${detail && detail.images && detail.images.map(item => `"https://cdn.statically.io/img/i.imgur.com/w=300/${item}"`)}],
       "@id": "https://tantekos.com",
-      "name": "${detail && detail.title}",
+      "name": "${detail && detail.name}",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "${detail && detail.location && detail.location.district}",
@@ -96,17 +96,12 @@ class Detail extends React.Component {
       },
       "url": "${`https://tantekos.com/${slug}`}",
       "telephone": "${detail && detail.contact_us && detail.contact_us.phone || '+6285243322433'}",
-      "priceRange": "Rp50.000 - Rp1.500.000",
+      "priceRange": "Rp50.000 - ${detail && detail.price && detail.price.start_from}",
       "paymentAccepted": "Cash, Credit Card",
       "currenciesAccepted": "IDR",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "${Math.floor(Math.random() * 5) + 1}",
-        "reviewCount": "375"
-      },
       "contactPoint" : { 
         "@type" : "ContactPoint",
-        "telephone" : "+6285243322433",
+        "telephone" : "${detail && detail.contact_us && detail.contact_us.phone || '+6285243322433'}",
         "contactType" : "customer service"
       } 
     }`
@@ -198,7 +193,7 @@ class Detail extends React.Component {
               }
               <div className="mb-3">
                 <h2 className="pb-2 font-bold">Lokasi <small>({detail.location && detail.location.district}, {detail.location && detail.location.city}, {detail.location && detail.location.province})</small></h2>
-                  <Peta location={detail && detail.location} height={150} zoom={10} />
+                <Peta location={detail && detail.location} height={150} zoom={10} />
               </div>
               <div className="border-top mt-3">
                 {
