@@ -1,5 +1,6 @@
 export const DtProvinsi = [
     { title: 'DKI Jakarta', slug: 'dki-jakarta' },
+    { title: 'Banten', slug: 'banten' },
     { title: 'Bali', slug: 'bali' },
     { title: 'Maluku', slug: 'maluku' },
     { title: 'Papua', slug: 'papua' },

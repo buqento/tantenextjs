@@ -11,11 +11,10 @@ function Addnew({ userdata }) {
 
     const user = {
         uid: userdata.uid,
-        displayName: userdata.displayName,
+        display_name: userdata.displayName,
         email: userdata.email,
-        photoURL: userdata.photoURL
+        photo_url: userdata.photoURL
     }
-
     const strToArray = (str) => { return str.trim().split(", ") }
     const initType = {
         Campur: true,

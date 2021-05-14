@@ -5,6 +5,9 @@ export const City = [
     { name: 'Jakarta Selatan', province: 'DKI Jakarta' },
     { name: 'Jakarta Timur', province: 'DKI Jakarta' },
     { name: 'Jakarta Utara', province: 'DKI Jakarta' },
+    // Banten
+    { name: 'Kota Tangerang', province: 'Banten' },
+    { name: 'Kota Tangerang Selatan', province: 'Banten' },
     // Bali
     { name: 'Badung', province: 'Bali' },
     // { name: 'Bangli', province: 'Bali' },

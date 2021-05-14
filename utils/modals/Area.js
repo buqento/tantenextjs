@@ -59,6 +59,17 @@ export const DtArea = [
     { province: 'DKI Jakarta', city: 'Jakarta Pusat', district: 'Kemayoran' },
     { province: 'DKI Jakarta', city: 'Jakarta Pusat', district: 'Senen' },
     { province: 'DKI Jakarta', city: 'Jakarta Pusat', district: 'Johar Baru' },
+
+    { province: 'Banten', city: 'Kota Tangerang', district: 'Cipondoh' },
+    { province: 'Banten', city: 'Kota Tangerang', district: 'Ciledug' },
+    { province: 'Banten', city: 'Kota Tangerang', district: 'Cibodas' },
+
+    { province: 'Banten', city: 'Kota Tangerang Selatan', district: 'Ciputat' },
+    { province: 'Banten', city: 'Kota Tangerang Selatan', district: 'Pamulang' },
+    { province: 'Banten', city: 'Kota Tangerang Selatan', district: 'Pondok Aren' },
+    { province: 'Banten', city: 'Kota Tangerang Selatan', district: 'Serpong' },
+    { province: 'Banten', city: 'Kota Tangerang Selatan', district: 'Setu' },
+
     { province: 'Jawa Barat', city: 'Depok', district: 'Limo' },
     { province: 'Jawa Barat', city: 'Depok', district: 'Tapos' },
     { province: 'Jawa Barat', city: 'Depok', district: 'Pancoran Mas' },
