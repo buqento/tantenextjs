@@ -7,7 +7,15 @@ import { City } from '../utils/modals/City'
 import withAuth from '../helpers/withAuth';
 import { FiSend } from 'react-icons/fi'
 
-const Addnew = () => {
+function Addnew({ userdata }) {
+
+    const user = {
+        uid: userdata.uid,
+        displayName: userdata.displayName,
+        email: userdata.email,
+        photoURL: userdata.photoURL
+    }
+
     const strToArray = (str) => { return str.trim().split(", ") }
     const initType = {
         Campur: true,
@@ -201,6 +209,7 @@ const Addnew = () => {
                                 duration: duration
                             },
                             post_url: post_url,
+                            user: user,
                             is_active: true,
                             hit: 1
                         })
@@ -381,7 +390,7 @@ const Addnew = () => {
                     {
                         Object.keys(durations).map((key, index) =>
                             <div key={index}>
-                                <div className={`rounded cursor-pointer m-1 p-1 text-center ${durations[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleDurations(key)}>{key}</div>
+                                <div className={`clamp-1 rounded cursor-pointer m-1 p-1 pr-2 text-center small ${durations[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleDurations(key)}>{key}</div>
                             </div>
                         )
                     }
@@ -394,7 +403,7 @@ const Addnew = () => {
                     {
                         Object.keys(type).map((key, index) =>
                             <div key={index}>
-                                <div className={`rounded cursor-pointer m-1 p-1 text-center ${type[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleType(key)}>{key}</div>
+                                <div className={`clamp-1 rounded cursor-pointer m-1 p-1 pr-2 text-center small ${type[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleType(key)}>{key}</div>
                             </div>
                         )
                     }
@@ -499,7 +508,7 @@ const Addnew = () => {
                     {
                         Object.keys(facilityRoom).map((key, index) =>
                             <div key={index}>
-                                <div className={`rounded cursor-pointer m-1 p-1 text-center ${facilityRoom[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleFacilityRoom(key)}>{facilityTitle(key)[0].title}</div>
+                                <div className={`clamp-1 rounded cursor-pointer m-1 p-1 pr-2 text-center small ${facilityRoom[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleFacilityRoom(key)}>{facilityTitle(key)[0].title}</div>
                             </div>
                         )
                     }
@@ -512,7 +521,7 @@ const Addnew = () => {
                     {
                         Object.keys(facilityBathroom).map((key, index) =>
                             <div key={index}>
-                                <div className={`rounded cursor-pointer m-1 p-1 text-center ${facilityBathroom[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleFacilityBathroom(key)}>{facilityTitle(key)[0].title}</div>
+                                <div className={`clamp-1 rounded cursor-pointer m-1 p-1 pr-2 text-center small ${facilityBathroom[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleFacilityBathroom(key)}>{facilityTitle(key)[0].title}</div>
                             </div>
                         )
                     }
@@ -525,7 +534,7 @@ const Addnew = () => {
                     {
                         Object.keys(facilityShare).map((key, index) =>
                             <div key={index}>
-                                <div className={`rounded cursor-pointer m-1 p-1 text-center ${facilityShare[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleFacilityShare(key)}>{facilityTitle(key)[0].title}</div>
+                                <div className={`clamp-1 rounded cursor-pointer m-1 p-1 pr-2 text-center small ${facilityShare[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleFacilityShare(key)}>{facilityTitle(key)[0].title}</div>
                             </div>
                         )
                     }
