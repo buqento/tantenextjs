@@ -112,4 +112,6 @@ export const Campus = [
     { slug: 'stmik-professional-makassar', name: 'STMIK Professional Makassar', province: 'Sulawesi Selatan' },
     { slug: 'universitas-islam-negeri-alauddin-makassar', name: 'Universitas Islam Negeri Alauddin Makassar', province: 'Sulawesi Selatan' },
     
+    { slug: 'universitas-sam-ratulangi', name: 'Universitas Sam Ratulangi', province: 'Sulawesi Utara' },
+    
 ]
