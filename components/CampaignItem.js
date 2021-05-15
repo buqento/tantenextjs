@@ -7,6 +7,7 @@ import { BiMap } from 'react-icons/bi'
 import { MdStar } from 'react-icons/md'
 import fire from '../configurations/firebase'
 import Facilities from './Facilities'
+import moment from 'moment'
 class CampaignItem extends Component {
     constructor(props) {
         super(props);
@@ -57,44 +58,59 @@ class CampaignItem extends Component {
         return (
             <Link href={`/${Generateslug(item.title)}`}>
                 <div className={`overflow-hidden ${customStyle}`} onClick={() => handleLastView()}>
-                    <img style={{ objectFit: 'cover', objectPosition: 'center', width: '450px', height: '250px' }} src={`https://cdn.statically.io/img/i.imgur.com/w=450/${item.images[0]}`} alt={item.title} />
+                    <img style={{ objectFit: 'cover', objectPosition: 'center', width: '450px' }} src={`https://cdn.statically.io/img/i.imgur.com/w=450/${item.images[0]}`} alt={item.title} />
                     <div className="px-2 pt-2 pb-2">
-                        <div className="text-2xl">
-                            <span className="font-bold">
-                                {like && <MdStar className="inline text-pink-500 mt-1 mr-1 float-right" />}
-                                {Cash(item.price.start_from, false)}
-                            </span>
-                            <span className="text-xs text-gray-700">/{item.price.duration}</span>
+
+                        {/* price and action */}
+                        <div className="text-2xl flex">
+                            <div className="flex-auto">
+                                <span className="font-bold">
+                                    {like && <MdStar className="inline text-pink-500 mt-1 mr-1 float-right" />}
+                                    {Cash(item.price.start_from, false)}
+                                </span>
+                                <span className="text-xs text-gray-700">/{item.price.duration}</span>
+                            </div>
+                            <div className="text-sm">
+                                {/* category */}
+                                <div className="font-bold uppercase mt-2 text-indigo-700">
+                                    {
+                                        item.type.includes("Campur") &&
+                                        <span className="rounded-full inline-block px-1 border mr-1">{item.category === 'Kost' ? 'Campur' : 'Kontrakan'}</span>
+                                    }
+                                    {
+                                        item.type.includes("Putri") &&
+                                        <span className="rounded-full inline-block px-1 border mr-1">Putri</span>
+                                    }
+                                    {
+                                        item.type.includes("Putra") &&
+                                        <span className="rounded-full inline-block px-1 border mr-1">Putra</span>
+                                    }
+                                    {
+                                        item.type.includes("Pasutri") &&
+                                        <span className="rounded-full inline-block px-1 border mr-1">Pasutri</span>
+                                    }
+                                    {
+                                        item.type.includes("LV") &&
+                                        <span className="rounded-full inline-block px-1 border mr-1">LV</span>
+                                    }
+                                </div>
+
+                            </div>
                         </div>
+
+                        {/* facilities */}
                         {
                             item.category === 'Kost' ? item.facility.room.length > 0 && <Facilities items={item.facility.room} inline />
                                 : <Facilities items={item.facility.building} inline />
                         }
-                        <div className="text-sm clamp-1">
-                            <BiMap className="inline" /><small>{item.location.district}, {item.location.city}, {item.location.province}</small>
+
+                        {/* location */}
+                        <div className="clamp-1">
+                            <BiMap size={20} className="inline mb-2 ml-n1" /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
                         </div>
-                        <div className="text-xs font-bold uppercase">
-                            {
-                                item.type.includes("Campur") &&
-                                <small className="rounded-full inline-block px-1 text-green-700 border mr-1">{item.category === 'Kost' ? 'Campur' : 'Kontrakan'}</small>
-                            }
-                            {
-                                item.type.includes("Putri") &&
-                                <small className="rounded-full inline-block px-1 text-green-700 border mr-1">Putri</small>
-                            }
-                            {
-                                item.type.includes("Putra") &&
-                                <small className="rounded-full inline-block px-1 text-green-700 border mr-1">Putra</small>
-                            }
-                            {
-                                item.type.includes("Pasutri") &&
-                                <small className="rounded-full inline-block px-1 text-green-700 border mr-1">Pasutri</small>
-                            }
-                            {
-                                item.type.includes("LV") &&
-                                <small className="rounded-full inline-block px-1 text-green-700 border mr-1">LV</small>
-                            }
-                        </div>
+
+                        <small className="text-gray-600 uppercase">{moment(item.date_modified).lang('id').fromNow()} &middot; {item.hit} kali dilihat</small>
+
                     </div>
                 </div>
             </Link>

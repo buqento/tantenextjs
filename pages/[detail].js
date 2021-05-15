@@ -148,28 +148,36 @@ class Detail extends React.Component {
             <FooterDetail data={detail} callbackFromParent={this.handleShowAlert} />
           </div>
           <div className="container mt-2 mb-4">
-            <div>
+            <div className="text-left">
               <div className="mb-1 flex">
-                <div className="flex-auto pr-4">
-                  <Share detail={detail} />
-                </div>
-                <div className="text-gray-700 text-center self-center">
+                <div className="text-gray-700 self-center flex-auto pr-4">
                   {/* <div className="text-xs text-gray-700 mt-n2 mb-n2">Harga Sewa Mulai</div> */}
                   <div className="mt-n2">
                     <span className="text-3xl font-bold">{Cash(detail.price.start_from)}</span>
                     <span className="text-xs text-gray-700">/{detail.price.duration}</span>
                   </div>
                 </div>
+                <div>
+                  <Share detail={detail} />
+                </div>
               </div>
-              <small className="text-gray-700">{moment(detail.date_modified).lang('id').fromNow()} &middot; {detail.hit} kali dilihat</small>
+
+              {/* type */}
+              <div className="my-2 uppercase font-bold"><KostType item={detail.type} /></div>
+              
+              {/* title */}
               <h1 className="mt-0 text-xl capitalize">{detail.title}</h1>
-              <div className="mb-3">
-                <KostType item={detail.type} />
-              </div>
-              <div className="mb-3">
+              
+              {/* date modified */}
+              <small className="text-gray-600 uppercase">{moment(detail.date_modified).lang('id').fromNow()} &middot; {detail.hit} kali dilihat</small>
+
+              {/* description */}
+              <div className="my-3">
                 <h2 className="font-bold">Deskripsi</h2>
                 <div dangerouslySetInnerHTML={{ __html: detail.description }} />
               </div>
+
+              {/* facilities */}
               {
                 detail && detail.facility && detail.facility.room.length > 0 && detail.facility.room[0] !== "" &&
                 <div className="mb-4">
@@ -191,6 +199,8 @@ class Detail extends React.Component {
                   <Facilities items={detail.facility.share} />
                 </div>
               }
+
+              {/* location */}
               <div className="mb-3">
                 <h2 className="pb-2 font-bold">Lokasi <small>({detail.location && detail.location.district}, {detail.location && detail.location.city}, {detail.location && detail.location.province})</small></h2>
                 <Peta location={detail && detail.location} height={150} zoom={10} />
@@ -206,6 +216,8 @@ class Detail extends React.Component {
                   * Data dapat berubah sewaktu-waktu
                 </small>
               </div>
+
+              {/* other */}
               <ListKosOthers data={otherdata} detail={detail} />
             </div>
           </div>

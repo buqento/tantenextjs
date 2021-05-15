@@ -11,7 +11,7 @@ class Facilities extends React.Component {
                         <div className="clamp-1">
                             {
                                 items.map((item, index) =>
-                                    <span key={item} className="text-sm">{index !== 0 && <>&middot;</>} {item}&nbsp;
+                                    <span key={item} className="text-md">{index !== 0 && <>&middot;</>} {item}&nbsp;
                                 </span>
                                 )
                             }
