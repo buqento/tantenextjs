@@ -163,7 +163,7 @@ class Detail extends React.Component {
               </div>
 
               {/* type */}
-              <div className="my-2 uppercase font-bold"><KostType item={detail.type} /></div>
+              <div className="my-2 uppercase text-indigo-700 font-bold"><KostType item={detail.type} /></div>
               
               {/* title */}
               <h1 className="mt-0 text-xl capitalize">{detail.title}</h1>
