@@ -39,7 +39,8 @@ function Addnew({ userdata }) {
         exhaustFan: false,
         kipasAngin: false,
         tv: false,
-        ac: false
+        ac: false,
+        dapur: false
     }
     const initFacilityBathroom = {
         shower: false,

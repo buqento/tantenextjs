@@ -68,6 +68,7 @@ export const Campus = [
     { slug: 'universitas-mercu-buana-yogyakarta', name: 'Universitas Mercu Buana Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
     { slug: 'universitas-alma-ata-yogyakarta', name: 'Universitas Alma Ata Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
     { slug: 'universitas-kristen-duta-wacana', name: 'Universitas Kristen Duta Wacana', province: 'Daerah Istimewa Yogyakarta' },
+    { slug: 'stikes-guna-bangsa-yogyakarta', name: 'STIKES Guna Bangsa Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
     
     { slug: 'universitas-tarumanagara', name: 'Universitas Tarumanagara', province: 'DKI Jakarta' },
     { slug: 'universitas-kristen-krida-wacana', name: 'Universitas Kristen Krida Wacana', province: 'DKI Jakarta' },
