@@ -6,6 +6,8 @@ import { DtProvinsi } from '../utils/modals/Provinsi'
 import { City } from '../utils/modals/City'
 import withAuth from '../helpers/withAuth';
 import { FiSend } from 'react-icons/fi'
+import ReactMapGl, { FullscreenControl, GeolocateControl, Marker } from 'react-map-gl'
+import { FaMapMarkerAlt } from 'react-icons/fa';
 
 function Addnew({ userdata }) {
 
@@ -80,6 +82,25 @@ function Addnew({ userdata }) {
     ]
     const facilityTitle = (key) => listFacility.filter(facility => facility.name === key)
     const strToArray = (str) => { return str.trim().split(", ") }
+
+    // map
+    const accessToken = "pk.eyJ1IjoiYnVxZW50byIsImEiOiJjanJ5a3p4cDkwZXJiNDlvYXMxcnhud3hhIn0.AhQ-vGYSIo6uTBmQD4MCsA"
+    const lat = parseFloat(-6.175428880001885)
+    const long = parseFloat(106.82717876549592)
+    const height = 300
+    const zoom = 10
+    const [viewport, setViewport] = useState({
+        latitude: lat,
+        longitude: long,
+        width: "100%",
+        height: height,
+        zoom: zoom
+    })
+    viewport.width = "100%"
+    viewport.height = height
+    // end map
+
+    const [publish, setPublish] = useState(false)
     const [type, setType] = useState(initType)
     const [durations, setDurations] = useState(initDurations);
     const [facilityRoom, setFacilityRoom] = useState(initFacilityRoom);
@@ -92,7 +113,6 @@ function Addnew({ userdata }) {
     const [city, setCity] = useState("Denpasar")
     const [district, setDistrict] = useState("Denpasar Utara")
     const [near, setNear] = useState("")
-    const [lat_lng, setLatlng] = useState("")
     const [contact_phone, setContactPhone] = useState("")
     const [contact_whatsapp, setContactWhatsapp] = useState("")
     const [contact_fb, setContactFb] = useState("")
@@ -113,25 +133,30 @@ function Addnew({ userdata }) {
 
     const onFileUpload = (e) => {
         e.preventDefault();
-        let images = []
-        for (let index = 0; index < allImages.length; index++) {
-            let file = allImages[index]
-            const formdata = new FormData();
-            formdata.append("image", file);
-            fetch("https://api.imgur.com/3/image", {
-                method: "post",
-                headers: {
-                    Authorization: "Client-ID e6aa071d345d18f"
-                },
-                body: formdata
-            })
-                .then(data => data.json())
-                .then(data => {
-                    images.push(data.data.id + '.webp')
-                    if (index + 1 === allImages.length) {
-                        handleSubmit(images)
-                    }
+        setPublish(true)
+        if (name !== "" && title !== "" && description !== "" && start_from !== "" && contact_phone !== "" && allImages.length > 0) {
+            let images = []
+            for (let index = 0; index < allImages.length; index++) {
+                let file = allImages[index]
+                const formdata = new FormData();
+                formdata.append("image", file);
+                fetch("https://api.imgur.com/3/image", {
+                    method: "post",
+                    headers: {
+                        Authorization: "Client-ID e6aa071d345d18f"
+                    },
+                    body: formdata
                 })
+                    .then(data => data.json())
+                    .then(data => {
+                        images.push(data.data.id + '.webp')
+                        if (index + 1 === allImages.length) {
+                            handleSubmit(images)
+                        }
+                    })
+            }
+        } else {
+            alert('Data tidak valid!');
         }
     }
 
@@ -191,12 +216,11 @@ function Addnew({ userdata }) {
                                 city: city,
                                 district: district,
                                 near: strToArray(near),
-                                lat_lng: new fire.firestore.GeoPoint(Number(strToArray(lat_lng)[0]), Number(strToArray(lat_lng)[1]))
+                                lat_lng: new fire.firestore.GeoPoint(viewport.latitude, viewport.longitude)
                             },
                             category: "Kost",
                             type: arrType,
                             contact_us: {
-                                facebook_url: contact_fb,
                                 phone: contact_phone,
                                 whatsapp: contact_whatsapp
                             },
@@ -209,9 +233,8 @@ function Addnew({ userdata }) {
                                 start_from: parseInt(start_from),
                                 duration: duration
                             },
-                            post_url: post_url,
                             user: user,
-                            is_active: true,
+                            is_active: false,
                             hit: 1
                         })
                         .then(() => { alert('Data saved') })
@@ -224,15 +247,15 @@ function Addnew({ userdata }) {
                     setCity("")
                     setDistrict("")
                     setNear("")
-                    setLatlng("")
                     setContactPhone("")
                     setContactWhatsapp("")
                     setContactFb("")
+                    setPostUrl("")
                     setStartFrom("")
                     setDuration("")
-                    setPostUrl("")
+                    setPublish(false)
                 } else {
-                    alert('Judul tidak valid!')
+                    alert('Judul sudah terdaftar, silahkan ubah dengan judul lain!')
                 }
             })
             .catch(err => console.log(err))
@@ -351,27 +374,27 @@ function Addnew({ userdata }) {
         <form className="bg-white px-8 py-8" onSubmit={onFileUpload}>
 
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">Nama Kost</label>
-                <input className="border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none" id="name" type="text" placeholder="Nama Kost" value={name} onChange={(e) => setName(e.target.value)} />
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">Nama Kost <span className="text-danger">*</span></label>
+                <input required className="border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none" id="name" type="text" placeholder="Nama Kost" value={name} onChange={(e) => setName(e.target.value)} />
                 <div className="small my-1 text-current">Contoh: <span className="font-bold text-green-500">Kost Exclusive Graha Chempaka</span></div>
             </div>
 
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="title">Judul</label>
-                <input className="border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none" id="title" type="text" placeholder="Judul" value={title} onChange={(e) => setTitle(e.target.value)} />
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="title">Judul <span className="text-danger">*</span></label>
+                <input required className="border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none" id="title" type="text" placeholder="Judul" value={title} onChange={(e) => setTitle(e.target.value)} />
                 <div className="small my-1 text-current">Contoh: <span className="font-bold text-green-500">Kost Exclusive Graha Chempaka Badung Renon Denpasar Selatan Denpasar Bali</span></div>
             </div>
 
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="description">Deskripsi Kost</label>
-                <textarea className="border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none" rows={5} placeholder="Deskripsi Kost" value={description} onChange={(e) => setDescription(e.target.value)} />
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="description">Deskripsi Kost <span className="text-danger">*</span></label>
+                <textarea required className="border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none" rows={5} placeholder="Deskripsi Kost" value={description} onChange={(e) => setDescription(e.target.value)} />
             </div>
 
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="start_from">Harga Sewa / Durasi</label>
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="start_from">Harga Sewa / Durasi <span className="text-danger">*</span></label>
                 <div className="grid grid-cols-2 gap-3">
                     <div>
-                        <input className="border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none" id="start_from" type="number" placeholder="1500000" value={start_from} onChange={(e) => setStartFrom(e.target.value)} />
+                        <input required className="border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none" id="start_from" type="number" placeholder="1500000" value={start_from} onChange={(e) => setStartFrom(e.target.value)} />
                     </div>
                     <div>
                         <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state"
@@ -387,12 +410,12 @@ function Addnew({ userdata }) {
             </div>
 
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact_phone">Jenis Sewa</label>
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact_phone">Jenis Sewa <span className="text-danger">*</span></label>
                 <div className="capitalize grid grid-cols-2 gap-0">
                     {
                         Object.keys(durations).map((key, index) =>
                             <div key={index}>
-                                <div className={`clamp-1 rounded cursor-pointer m-1 p-1 pr-2 text-center small ${durations[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleDurations(key)}>{key}</div>
+                                <div className={`font-bold clamp-1 rounded cursor-pointer m-1 py-3 text-center ${durations[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleDurations(key)}>{key}</div>
                             </div>
                         )
                     }
@@ -400,12 +423,12 @@ function Addnew({ userdata }) {
             </div>
 
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact_phone">Tipe Kost</label>
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact_phone">Tipe Kost <span className="text-danger">*</span></label>
                 <div className="grid grid-cols-2 gap-0">
                     {
                         Object.keys(type).map((key, index) =>
                             <div key={index}>
-                                <div className={`clamp-1 rounded cursor-pointer m-1 p-1 pr-2 text-center small ${type[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleType(key)}>{key}</div>
+                                <div className={`font-bold clamp-1 rounded cursor-pointer m-1 py-3 text-center ${type[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleType(key)}>{key}</div>
                             </div>
                         )
                     }
@@ -413,18 +436,24 @@ function Addnew({ userdata }) {
             </div>
 
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">Foto Kost</label>
-                <input type="file" multiple onChange={onFileChange} accept="image/*" />
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">Foto Kost <span className="text-danger">*</span></label>
+                <input required type="file" multiple onChange={onFileChange} accept="image/*" />
                 <div className="small my-1 text-green-500 font-bold">Pilih beberapa foto sekaligus</div>
             </div>
 
             <div className="text-3xl font-bold border-b-2 mb-3">Lokasi</div>
 
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="province">Provinsi</label>
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="province">Provinsi <span className="text-danger">*</span></label>
                 <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state"
                     value={province}
-                    onChange={(e) => setProvince(e.target.value)}>
+                    onChange={
+                        (e) => {
+                            setProvince(e.target.value)
+                            setCity("")
+                            setDistrict("")
+                        }
+                    }>
                     {
                         DtProvinsi
                             .sort(function (a, b) {
@@ -440,7 +469,7 @@ function Addnew({ userdata }) {
             </div>
 
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="city">Kota/Kabupaten</label>
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="city">Kota/Kabupaten <span className="text-danger">*</span></label>
                 <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="city"
                     value={city}
                     onChange={(e) => setCity(e.target.value)}>
@@ -460,7 +489,7 @@ function Addnew({ userdata }) {
             </div>
 
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="district">Kecamatan</label>
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="district">Kecamatan <span className="text-danger">*</span></label>
                 <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state"
                     value={district}
                     onChange={(e) => setDistrict(e.target.value)}>
@@ -480,8 +509,32 @@ function Addnew({ userdata }) {
             </div>
 
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm mb-2 font-bold" htmlFor="lat_lng">Latitude, Longitude</label>
-                <input className="border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none" id="lat_lng" type="text" placeholder="-8.669823629718868, 115.20791945067694" value={lat_lng} onChange={(e) => setLatlng(e.target.value)} />
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="district">Peta Lokasi <span className="text-danger">*</span></label>
+                <ReactMapGl
+                    {...viewport}
+                    mapboxApiAccessToken="pk.eyJ1IjoiYnVxZW50byIsImEiOiJjanJ5a3p4cDkwZXJiNDlvYXMxcnhud3hhIn0.AhQ-vGYSIo6uTBmQD4MCsA"
+                    onViewportChange={viewport => { setViewport(viewport) }}
+                    mapStyle="mapbox://styles/buqento/ckg4bb6cc2hrr19k84gzrs97j"
+                >
+                    <div className="ml-2 mt-2" style={{ width: '29px' }}>
+                        <FullscreenControl label="Perbesar Peta" />
+                    </div>
+                    <div className="ml-2 mt-2" style={{ width: '29px' }}>
+                        <GeolocateControl
+                            positionOptions={{ enableHighAccuracy: true }}
+                            trackUserLocation={true}
+                            label="Lokasi Anda"
+                        />
+                    </div>
+                    <Marker
+                        latitude={viewport.latitude}
+                        longitude={viewport.longitude}
+                        offsetLeft={-18}
+                        offsetTop={-25}
+                    >
+                        <FaMapMarkerAlt size={30} className="text-danger" />
+                    </Marker>
+                </ReactMapGl>
             </div>
 
             <div className="mb-4">
@@ -493,8 +546,8 @@ function Addnew({ userdata }) {
             <div className="text-3xl font-bold border-b-2 mb-3">Kontak</div>
 
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact_phone">Nomor Handphone</label>
-                <input className="border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none" id="contact_phone" type="text" placeholder="+6285243322123" value={contact_phone} onChange={(e) => setContactPhone(e.target.value)} />
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact_phone">Nomor Handphone <span className="text-danger">*</span></label>
+                <input required className="border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none" id="contact_phone" type="text" placeholder="+6285243322123" value={contact_phone} onChange={(e) => setContactPhone(e.target.value)} />
             </div>
 
             <div className="mb-4">
@@ -505,12 +558,12 @@ function Addnew({ userdata }) {
             <div className="text-3xl font-bold border-b-2 mb-3">Fasilitas</div>
 
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact_phone">Fasilitas Kamar</label>
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact_phone">Fasilitas Kamar <span className="text-danger">*</span></label>
                 <div className="capitalize grid grid-cols-3 gap-0">
                     {
                         Object.keys(facilityRoom).map((key, index) =>
                             <div key={index}>
-                                <div className={`clamp-1 rounded cursor-pointer m-1 p-1 pr-2 text-center small ${facilityRoom[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleFacilityRoom(key)}>{facilityTitle(key)[0].title}</div>
+                                <div className={`font-bold clamp-1 rounded cursor-pointer m-1 p-1 text-center small ${facilityRoom[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleFacilityRoom(key)}>{facilityTitle(key)[0].title}</div>
                             </div>
                         )
                     }
@@ -518,12 +571,12 @@ function Addnew({ userdata }) {
             </div>
 
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact_phone">Fasilitas Kamar Mandi</label>
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact_phone">Fasilitas Kamar Mandi <span className="text-danger">*</span></label>
                 <div className="capitalize grid grid-cols-3 gap-0">
                     {
                         Object.keys(facilityBathroom).map((key, index) =>
                             <div key={index}>
-                                <div className={`clamp-1 rounded cursor-pointer m-1 p-1 pr-2 text-center small ${facilityBathroom[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleFacilityBathroom(key)}>{facilityTitle(key)[0].title}</div>
+                                <div className={`font-bold clamp-1 rounded cursor-pointer m-1 p-1 text-center small ${facilityBathroom[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleFacilityBathroom(key)}>{facilityTitle(key)[0].title}</div>
                             </div>
                         )
                     }
@@ -531,12 +584,12 @@ function Addnew({ userdata }) {
             </div>
 
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact_phone">Fasilitas Bersama</label>
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact_phone">Fasilitas Bersama <span className="text-danger">*</span></label>
                 <div className="capitalize grid grid-cols-3 gap-0">
                     {
                         Object.keys(facilityShare).map((key, index) =>
                             <div key={index}>
-                                <div className={`clamp-1 rounded cursor-pointer m-1 p-1 pr-2 text-center small ${facilityShare[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleFacilityShare(key)}>{facilityTitle(key)[0].title}</div>
+                                <div className={`font-bold clamp-1 rounded cursor-pointer m-1 p-1 pr-2 text-center small ${facilityShare[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleFacilityShare(key)}>{facilityTitle(key)[0].title}</div>
                             </div>
                         )
                     }
@@ -555,7 +608,7 @@ function Addnew({ userdata }) {
                 <input className="border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none" id="Link Facebook" type="text" placeholder="Link Facebook" value={post_url} onChange={(e) => setPostUrl(e.target.value)} />
             </div>
 
-            <button className="bg-indigo-700 hover:bg-indigo-600 focus:outline-none text-white text-xl font-bold py-2 px-4 rounded w-100" type="submit"><FiSend className="inline mb-1" /> Publish</button>
+            <button className={`${publish ? "bg-gray-300 text-current" : "bg-indigo-700 hover:bg-indigo-600 focus:outline-none text-white"} text-xl font-bold py-2 px-4 rounded w-100`} type="submit"><FiSend className="inline mb-1" /> {publish ? 'Sending Data...' : `Publish`}</button>
 
         </form>
     )
