@@ -6,8 +6,6 @@ import { DtProvinsi } from '../utils/modals/Provinsi'
 import { City } from '../utils/modals/City'
 import withAuth from '../helpers/withAuth';
 import { FiSend } from 'react-icons/fi'
-import ReactMapGl, { FullscreenControl, GeolocateControl, Marker } from 'react-map-gl'
-import { FaMapMarkerAlt } from 'react-icons/fa';
 
 function Addnew({ userdata }) {
 
@@ -82,24 +80,6 @@ function Addnew({ userdata }) {
     ]
     const facilityTitle = (key) => listFacility.filter(facility => facility.name === key)
     const strToArray = (str) => { return str.trim().split(", ") }
-
-    // map
-    const accessToken = "pk.eyJ1IjoiYnVxZW50byIsImEiOiJjanJ5a3p4cDkwZXJiNDlvYXMxcnhud3hhIn0.AhQ-vGYSIo6uTBmQD4MCsA"
-    const lat = parseFloat(-6.175428880001885)
-    const long = parseFloat(106.82717876549592)
-    const height = 300
-    const zoom = 10
-    const [viewport, setViewport] = useState({
-        latitude: lat,
-        longitude: long,
-        width: "100%",
-        height: height,
-        zoom: zoom
-    })
-    viewport.width = "100%"
-    viewport.height = height
-    // end map
-
     const [publish, setPublish] = useState(false)
     const [type, setType] = useState(initType)
     const [durations, setDurations] = useState(initDurations);
@@ -113,6 +93,7 @@ function Addnew({ userdata }) {
     const [city, setCity] = useState("Denpasar")
     const [district, setDistrict] = useState("Denpasar Utara")
     const [near, setNear] = useState("")
+    const [lat_lng, setLatlng] = useState("")
     const [contact_phone, setContactPhone] = useState("")
     const [contact_whatsapp, setContactWhatsapp] = useState("")
     const [contact_fb, setContactFb] = useState("")
@@ -216,7 +197,7 @@ function Addnew({ userdata }) {
                                 city: city,
                                 district: district,
                                 near: strToArray(near),
-                                lat_lng: new fire.firestore.GeoPoint(viewport.latitude, viewport.longitude)
+                                lat_lng: new fire.firestore.GeoPoint(Number(strToArray(lat_lng)[0]), Number(strToArray(lat_lng)[1]))
                             },
                             category: "Kost",
                             type: arrType,
@@ -247,6 +228,7 @@ function Addnew({ userdata }) {
                     setCity("")
                     setDistrict("")
                     setNear("")
+                    setLatlng("")
                     setContactPhone("")
                     setContactWhatsapp("")
                     setContactFb("")
@@ -314,6 +296,9 @@ function Addnew({ userdata }) {
                 break;
             case 'meja':
                 setFacilityRoom((prevState) => ({ ...prevState, meja: !facilityRoom.meja }));
+                break;
+            case 'kursi':
+                setFacilityRoom((prevState) => ({ ...prevState, kursi: !facilityRoom.kursi }));
                 break;
             case 'exhaustFan':
                 setFacilityRoom((prevState) => ({ ...prevState, exhaustFan: !facilityRoom.exhaustFan }));
@@ -509,32 +494,8 @@ function Addnew({ userdata }) {
             </div>
 
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="district">Peta Lokasi <span className="text-danger">*</span></label>
-                <ReactMapGl
-                    {...viewport}
-                    mapboxApiAccessToken="pk.eyJ1IjoiYnVxZW50byIsImEiOiJjanJ5a3p4cDkwZXJiNDlvYXMxcnhud3hhIn0.AhQ-vGYSIo6uTBmQD4MCsA"
-                    onViewportChange={viewport => { setViewport(viewport) }}
-                    mapStyle="mapbox://styles/buqento/ckg4bb6cc2hrr19k84gzrs97j"
-                >
-                    <div className="ml-2 mt-2" style={{ width: '29px' }}>
-                        <FullscreenControl label="Perbesar Peta" />
-                    </div>
-                    <div className="ml-2 mt-2" style={{ width: '29px' }}>
-                        <GeolocateControl
-                            positionOptions={{ enableHighAccuracy: true }}
-                            trackUserLocation={true}
-                            label="Lokasi Anda"
-                        />
-                    </div>
-                    <Marker
-                        latitude={viewport.latitude}
-                        longitude={viewport.longitude}
-                        offsetLeft={-18}
-                        offsetTop={-25}
-                    >
-                        <FaMapMarkerAlt size={30} className="text-danger" />
-                    </Marker>
-                </ReactMapGl>
+                <label className="block text-gray-700 text-sm mb-2 font-bold" htmlFor="lat_lng">Latitude, Longitude</label>
+                <input className="border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none" id="lat_lng" type="text" placeholder="-8.669823629718868, 115.20791945067694" value={lat_lng} onChange={(e) => setLatlng(e.target.value)} />
             </div>
 
             <div className="mb-4">

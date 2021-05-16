@@ -315,6 +315,9 @@ function Post({ userdata }) {
             case 'meja':
                 setFacilityRoom((prevState) => ({ ...prevState, meja: !facilityRoom.meja }));
                 break;
+            case 'kursi':
+                setFacilityRoom((prevState) => ({ ...prevState, kursi: !facilityRoom.kursi }));
+                break;
             case 'exhaustFan':
                 setFacilityRoom((prevState) => ({ ...prevState, exhaustFan: !facilityRoom.exhaustFan }));
                 break;
