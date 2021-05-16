@@ -309,6 +309,9 @@ function Addnew({ userdata }) {
             case 'tv':
                 setFacilityRoom((prevState) => ({ ...prevState, tv: !facilityRoom.tv }));
                 break;
+            case 'dapur':
+                setFacilityRoom((prevState) => ({ ...prevState, dapur: !facilityRoom.dapur }));
+                break;
             default:
                 setFacilityRoom((prevState) => ({ ...prevState, ac: !facilityRoom.ac }));
                 break;
