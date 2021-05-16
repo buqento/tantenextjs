@@ -147,11 +147,10 @@ class Detail extends React.Component {
           <div className="sticky top-0 z-10">
             <FooterDetail data={detail} callbackFromParent={this.handleShowAlert} />
           </div>
-          <div className="container mt-2 mb-4">
-            <div className="text-left">
+          <div className="mt-2 mb-4">
+            <div className="text-left mx-3">
               <div className="mb-1 flex">
-                <div className="text-gray-700 self-center flex-auto pr-4">
-                  {/* <div className="text-xs text-gray-700 mt-n2 mb-n2">Harga Sewa Mulai</div> */}
+                <div className="self-center flex-auto pr-4">
                   <div className="mt-n2">
                     <span className="text-3xl font-bold">{Cash(detail.price.start_from)}</span>
                     <span className="text-xs text-gray-700">/{detail.price.duration}</span>
@@ -164,10 +163,10 @@ class Detail extends React.Component {
 
               {/* type */}
               <div className="my-2 uppercase text-indigo-700 font-bold"><KostType item={detail.type} /></div>
-              
+
               {/* title */}
               <h1 className="mt-0 text-xl capitalize">{detail.title}</h1>
-              
+
               {/* date modified */}
               <small className="text-gray-600 uppercase">{moment(detail.date_modified).lang('id').fromNow()} &middot; {detail.hit} kali dilihat</small>
 

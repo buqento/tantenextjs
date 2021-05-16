@@ -71,8 +71,7 @@ class CampaignItemList extends Component {
                                         <span className="float-right text-green-700 font-normal">{item.distance}Km</span>
                                     </div> :
                                     <div className="w-full">
-                                        <span className="float-right text-sm">
-
+                                        <span className="float-right text-indigo-700 text-sm">
                                             <KostType item={item.type} />
                                         </span>
                                     </div>
@@ -80,7 +79,7 @@ class CampaignItemList extends Component {
                         </div>
                         <Facilities items={item.facility.room} inline />
                         <div className="text-sm clamp-1 text-indigo-700">
-                            <BiMap className="inline" size={16} /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
+                            <BiMap className="inline mb-1" size={16} /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
                         </div>
                     </div>
                 </div>
