@@ -71,7 +71,7 @@ class CampaignItemList extends Component {
                                         <span className="float-right text-green-700 font-normal">{item.distance}Km</span>
                                     </div> :
                                     <div className="w-full">
-                                        <span className="float-right text-indigo-700 text-sm">
+                                        <span className="float-right text-indigo-700 text-sm uppercase">
                                             <KostType item={item.type} />
                                         </span>
                                     </div>

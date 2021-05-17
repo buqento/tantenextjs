@@ -215,7 +215,7 @@ function Addnew({ userdata }) {
                                 duration: duration
                             },
                             user: user,
-                            is_active: false,
+                            is_active: true,
                             hit: 1
                         })
                         .then(() => { alert('Data saved') })

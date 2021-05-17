@@ -234,7 +234,7 @@ function Post({ userdata }) {
                             },
                             post_url: post_url,
                             user: user,
-                            is_active: true,
+                            is_active: false,
                             hit: 1
                         })
                         .then(() => { alert('Data saved') })
