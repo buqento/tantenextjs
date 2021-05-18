@@ -57,29 +57,29 @@ class CampaignItemList extends Component {
             <Link href={`/${Generateslug(item.title)}`}>
                 <div className="w-full overflow-hidden py-2 flex" onClick={() => handleLastView(item)}>
                     <div className="h-20 w-20 bg-gray-400 rounded-xl">
-                        <img src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} className="float-left mr-2 rounded-xl h-20 w-20" style={{ objectFit: 'cover', objectPosition: 'center', width: '80px', height: '80px' }}
+                        <img src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} className="float-left mr-2 h-20 w-20" style={{ objectFit: 'cover', objectPosition: 'center', width: '80px', height: '95px' }}
                         />
                     </div>
-                    <div className="flex-1 ml-3 mt-n1 self-center">
+                    <div className="flex-1 ml-2 mt-1 self-center">
                         <div className="text-xl font-bold flex">
                             <div className="leading-none">
                                 {Cash(item.price.start_from)}<span className="text-xs font-normal">/{item.price.duration}</span>
                             </div>
                             {
-                                nearby ?
-                                    <div className="w-full">
-                                        <span className="float-right text-green-700 font-normal">{item.distance}Km</span>
-                                    </div> :
-                                    <div className="w-full">
-                                        <span className="float-right text-indigo-700 text-sm uppercase">
-                                            <KostType item={item.type} />
-                                        </span>
-                                    </div>
+                                nearby &&
+                                <div className="w-full">
+                                    <span className="float-right text-indigo-800  text-sm mr-1 rounded-full inline-block px-1 border">{item.distance}Km</span>
+                                </div>
                             }
                         </div>
                         <Facilities items={item.facility.room} inline />
-                        <div className="text-sm clamp-1 text-indigo-700">
+                        <div className="text-sm clamp-1">
                             <BiMap className="inline mb-1" size={16} /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
+                        </div>
+                        <div className="w-full">
+                            <span className="text-indigo-700 text-xs uppercase">
+                                <KostType item={item.type} />
+                            </span>
                         </div>
                     </div>
                 </div>
