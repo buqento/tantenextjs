@@ -62,32 +62,28 @@ class Detail extends React.Component {
                                         }
                                     )
                                     .map((item, index) =>
-                                        <div className="w-full overflow-hidden divide-gray-100 py-2 flex" key={index}>
+                                        <div className="w-full overflow-hidden divide-gray-100 py-2 mb-2 flex" key={index}>
                                             <div className="container-image h-20 w-20 bg-gray-400 rounded-xl">
                                                 <Link href={`/${item.slug}`}>
-                                                    <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${item.images[0]}`} alt={item.title} className="float-left mr-2 rounded-xl h-20 w-20" />
+                                                    <img src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} className="float-left mr-2 h-20 w-20" style={{ objectFit: 'cover', objectPosition: 'center', width: '80px', height: '95px' }}
+                                                    />
                                                 </Link>
                                                 <MdClose className="button-delete bg-gray-700 text-white rounded-full p-1 mt-1 ml-1" size="24" onClick={() => this.handleRemoveFavoriteItem(item)} />
                                             </div>
                                             <Link href={`/${item.slug}`}>
-                                                <div className="flex-1 ml-3 mt-n1 self-center">
-                                                    <div className="flex">
-                                                        <div className="leading-none text-xl font-bold">
-                                                            {Cash(item.price.start_from)}<span className="text-xs font-normal">/{item.price.duration}</span>
-                                                        </div>
-                                                        <div className="w-full">
-                                                            <span className="float-right text-sm">
-                                                                <KostType item={item.type} />
-                                                            </span>
-                                                        </div>
+                                                <div className="flex-1 ml-2 mt-1 self-center">
+                                                    <div className="leading-none font-bold">
+                                                        {Cash(item.price.start_from)}<span className="text-xs font-normal">/{item.price.duration}</span>
                                                     </div>
                                                     <Facilities items={item.facility.room} inline />
-                                                    {
-                                                        item.location &&
-                                                        <div className="text-sm clamp-1 text-indigo-700">
-                                                            <BiMap className="inline" size={16} /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
-                                                        </div>
-                                                    }
+                                                    <div className="text-sm clamp-1">
+                                                        <BiMap className="inline mb-1" size={16} /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
+                                                    </div>
+                                                    <div className="w-full">
+                                                        <span className="text-indigo-700 text-xs uppercase">
+                                                            <KostType item={item.type} />
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </Link>
                                         </div>

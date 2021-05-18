@@ -72,7 +72,7 @@ class CampaignItem extends Component {
                             </div>
                             <div className="text-sm">
                                 {/* category */}
-                                <div className="font-bold uppercase mt-2 text-indigo-700">
+                                <div className="uppercase mt-2 text-indigo-700">
                                     {
                                         item.type.includes("Campur") &&
                                         <span className="rounded-full inline-block px-1 border mr-1">{item.category === 'Kost' ? 'Campur' : 'Kontrakan'}</span>

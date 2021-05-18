@@ -5,12 +5,12 @@ const CampaignItemSkeleton = () => <div>
         skeletonArr.map((item, index) =>
             <div key={index} className="w-full py-2">
                 <div className="animate-pulse space-x-4">
-                    <div className="bg-gray-400 h-56 w-100"></div>
+                    <div className="bg-gray-400 h-56 w-100"/>
                     <div className="space-y-4 pt-2">
-                        <div className="h-8 bg-gray-400 w-1/4"></div>
-                        <div className="space-y-2 mr-3">
-                            <div className="h-4 bg-gray-400"></div>
-                            <div className="h-4 bg-gray-400 w-5/6"></div>
+                        <div className="h-6 bg-gray-400 w-1/4"/>
+                        <div className="space-y-1 mr-3">
+                            <div className="h-4 bg-gray-400"/>
+                            <div className="h-4 bg-gray-400 w-5/6"/>
                         </div>
                     </div>
                 </div>
