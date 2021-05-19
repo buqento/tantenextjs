@@ -113,5 +113,6 @@ export const Campus = [
     { slug: 'universitas-islam-negeri-alauddin-makassar', name: 'Universitas Islam Negeri Alauddin Makassar', province: 'Sulawesi Selatan' },
     
     { slug: 'universitas-sam-ratulangi', name: 'Universitas Sam Ratulangi', province: 'Sulawesi Utara' },
-    
+    { slug: 'Universitas Trinita', name: 'universitas-trinita', province: 'Sulawesi Utara' },
+    { slug: 'Universitas Pembangunan Indonesia', name: 'universitas-pembangunan-indonesia', province: 'Sulawesi Utara' },
 ]
