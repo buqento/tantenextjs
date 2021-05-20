@@ -18,6 +18,7 @@ class IklanSaya extends React.Component {
         const { userdata } = this.props
         const dt = fire.firestore().collection('kosts')
         dt.where('user.uid', '==', userdata.uid)
+            .orderBy('date_modified', 'desc')
             .onSnapshot(snapshot => {
                 const data = snapshot.docs.map(doc => ({
                     id: doc.id,
@@ -62,7 +63,9 @@ class IklanSaya extends React.Component {
                     <Message title="Belum ada iklan" message="Kamu belum memiliki Iklan Aktif. Silahkan membuat iklan baru" />
                 </div>
             }
-            <Ads />
+            <div className="mb-4">
+                <Ads />
+            </div>
         </Layout>
     }
 }

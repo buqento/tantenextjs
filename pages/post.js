@@ -8,6 +8,7 @@ import withAuth from '../helpers/withAuth';
 import { FiSend } from 'react-icons/fi'
 import ReactMapGl, { FullscreenControl, GeolocateControl, Marker } from 'react-map-gl'
 import { FaMapMarkerAlt } from 'react-icons/fa';
+import { BiLoaderCircle } from 'react-icons/bi'
 import Layout from '../components/Layout'
 import router from 'next/router'
 function Post({ userdata }) {
@@ -101,7 +102,7 @@ function Post({ userdata }) {
     viewport.height = height
     // end map
 
-    const [publish, setPublish] = useState(false)
+    const [publish, setPublish] = useState(true)
     const [type, setType] = useState(initType)
     const [durations, setDurations] = useState(initDurations);
     const [facilityRoom, setFacilityRoom] = useState(initFacilityRoom);
@@ -604,7 +605,7 @@ function Post({ userdata }) {
                     </div>
                 </div>
 
-                <button className={`${publish ? "bg-gray-300 text-current" : "bg-indigo-700 hover:bg-indigo-600 focus:outline-none text-white"} text-xl font-bold py-2 px-4 rounded w-100`} type="submit"><FiSend className="inline mb-1" /> {publish ? 'Sending Data...' : `Publish`}</button>
+                <button className={`${publish ? "bg-gray-300 text-current" : "bg-indigo-700 hover:bg-indigo-600 focus:outline-none text-white"} text-xl font-bold py-2 px-4 rounded w-100`} type="submit">{publish ? <BiLoaderCircle size={22} className="animate-spin inline mr-1 mb-1" /> : <FiSend className="inline mr-1 mb-1" />}{publish ? `Sending Data` : `Publish`}</button>
 
             </form>
         </Layout>

@@ -27,7 +27,7 @@ function NavBar(props) {
     {
       label: "Akun",
       path: "/account",
-      icon: router.pathname === '/account' ? <FaUserAlt /> : <FaRegUser />,
+      icon: router.pathname === '/account' ? <FaUserAlt size={20} className="mt-1" /> : <FaRegUser size={20} className="mt-1" />,
       color: router.pathname === '/account' ? 'text-indigo-700' : 'text-gray-700'
     }
   ]

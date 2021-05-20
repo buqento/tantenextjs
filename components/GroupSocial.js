@@ -33,6 +33,11 @@ class Area extends Component {
                 name: 'Kost Dan Kontrakan Provinsi Sulawesi Selatan',
                 url: 'https://www.facebook.com/groups/439907767456192',
                 image: 'eYOZreq'
+            },
+            {
+                name: 'Kost Dan Kontrakan Provinsi Sulawesi Utara',
+                url: 'https://www.facebook.com/groups/1613843658805496',
+                image: 'QmmyajL'
             }
         ]
         return (
@@ -41,7 +46,7 @@ class Area extends Component {
                     group.map((item, index) =>
                         <Link key={index} href={item.url}>
                             <div className="flex hover:text-indigo-700 py-2 align-middle items-center cursor-pointer">
-                                <img src={`https://cdn.statically.io/img/i.imgur.com/w=150/${item.image}.webp`} alt={item.name} className="float-left rounded-xl w-20 h-20" />
+                                <img src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.image}.webp`} alt={item.name} className="float-left h-20 w-20" style={{ objectFit: 'cover', objectPosition: 'center', width: '80px', height: '95px' }} />
                                 <span className="mx-3 clamp-2 text-xl">{item.name}</span>
                             </div>
                         </Link>
