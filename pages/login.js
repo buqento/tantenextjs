@@ -10,30 +10,19 @@ class Login extends React.Component {
     provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
     auth.signInWithPopup(provider)
       .then(() => {
-        router.push('addnew')
+        router.push('account')
       })
       .catch(err => {
-        alert('OOps something went wrong check your console');
         console.log(err);
       });
   }
-  // handleLogout = () => {
-  //   auth.signOut().then(function () {
-  //     router.push('/')
-  //   }).catch(function (error) {
-  //     alert('OOps something went wrong check your console');
-  //     console.log(err);
-  //   });
-  // }
   render() {
     return (
       <Container className="text-center my-5">
         <div className="text-4xl">Login</div>
-        <div>
-          Untuk menggunakan layanan ini silahkan masuk dengan akun Google Anda.
-        </div>
-        <div className="my-5 p-2 text-center border cursor-pointer" onClick={this.handleSignIn}><FcGoogle className="inline mb-1 mr-2" />Masuk dengan Google</div>
-        <Link href="/">Kembali ke Beranda</Link>
+        <div className="my-5 p-2 text-center border cursor-pointer" onClick={this.handleSignIn}><FcGoogle className="inline mb-1 mr-2" />Login dengan Google</div>
+        <div>Kami tidak akan membagikan detail pribadi Anda dengan siapa pun. Jika Anda login, Anda menerima Syarat dan Ketentuan serta <Link href="policy"><span  className="underline cursor-pointer">Kebijakan Privasi</span></Link></div>
+        <div className="mt-5 underline"><Link href="/">Kembali ke Beranda</Link></div>
       </Container>
     )
   }

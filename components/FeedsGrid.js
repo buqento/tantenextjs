@@ -16,7 +16,9 @@ class FeedsGrid extends React.Component {
     async componentDidMount() {
         const { limit } = this.state
         const docRef = await fire
-            .firestore().collection('kosts').orderBy('date_modified', 'desc').limit(limit)
+            .firestore().collection('kosts')
+            .where('is_active', '==', true)
+            .orderBy('date_modified', 'desc').limit(limit)
         docRef.onSnapshot(snap => {
             const data = snap.docs.map(doc => ({
                 id: doc.id,

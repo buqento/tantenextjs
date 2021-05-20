@@ -1,5 +1,5 @@
 import NavButton from "./NavButton"
-import { BiSearchAlt, BiSearch } from 'react-icons/bi'
+import { FaRegUser, FaUserAlt } from 'react-icons/fa'
 import { AiFillHome, AiOutlineHome } from 'react-icons/ai'
 import { HiLocationMarker, HiOutlineLocationMarker } from 'react-icons/hi'
 import { useRouter } from 'next/router'
@@ -18,11 +18,17 @@ function NavBar(props) {
       icon: router.pathname === '/nearby' ? <HiLocationMarker /> : <HiOutlineLocationMarker />,
       color: router.pathname === '/nearby' ? 'text-indigo-700' : 'text-gray-700'
     },
+    // {
+    //   label: "Cari Kost",
+    //   path: "/search/all",
+    //   icon: router.pathname === '/search/[search]' ? <BiSearchAlt /> : <BiSearch />,
+    //   color: router.pathname === '/search/[search]' ? 'text-indigo-700' : 'text-gray-700'
+    // }
     {
-      label: "Cari Kost",
-      path: "/search/all",
-      icon: router.pathname === '/search/[search]' ? <BiSearchAlt /> : <BiSearch />,
-      color: router.pathname === '/search/[search]' ? 'text-indigo-700' : 'text-gray-700'
+      label: "Akun",
+      path: "/account",
+      icon: router.pathname === '/account' ? <FaUserAlt /> : <FaRegUser />,
+      color: router.pathname === '/account' ? 'text-indigo-700' : 'text-gray-700'
     }
   ]
   return (

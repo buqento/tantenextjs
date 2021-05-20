@@ -25,7 +25,7 @@ class CampaignItemList extends Component {
             .catch(err => { console.log(err) })
     }
     render() {
-        const { item, nearby } = this.props
+        const { item, nearby, myads } = this.props
         const newItem = {
             category: item.category,
             date_view: Date.now(),
@@ -68,8 +68,14 @@ class CampaignItemList extends Component {
                             {
                                 nearby &&
                                 <div className="w-full">
-                                    <span className="float-right text-indigo-800  text-sm mr-1 rounded-full inline-block px-1 border">{item.distance}Km</span>
+                                    <span className="float-right text-indigo-800 text-sm mr-1 rounded-full inline-block px-1 border">{item.distance}Km</span>
                                 </div>
+                            }
+                            {
+                                myads && <div className="text-sm uppercase w-full">{item.is_active ?
+                                    <span className="float-right text-green-700 rounded-full px-1 border">Aktif</span> :
+                                    <span className="float-right text-indigo-700 rounded-full px-1 border">Persetujuan</span>
+                                }</div>
                             }
                         </div>
                         <Facilities items={item.facility.room} inline />

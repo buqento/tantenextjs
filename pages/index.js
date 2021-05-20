@@ -31,6 +31,7 @@ class Index extends React.Component {
         .where("price.start_from", ">=", dataCallback.rangePrice.min)
         .where("price.start_from", "<=", dataCallback.rangePrice.max)
         .where("facility.room", "array-contains-any", facilitiesRoom)
+        .where('is_active', '==', true)
     } else if (dataCallback.city !== '---Semua---' && dataCallback.district === '---Semua---') {
       titleHead = dataCallback.city + ', ' + dataCallback.province
       conditions = dt
@@ -39,6 +40,7 @@ class Index extends React.Component {
         .where("price.start_from", ">=", dataCallback.rangePrice.min)
         .where("price.start_from", "<=", dataCallback.rangePrice.max)
         .where("facility.room", "array-contains-any", facilitiesRoom)
+        .where('is_active', '==', true)
     } else if (dataCallback.city !== '---Semua---' && dataCallback.district !== '---Semua---') {
       titleHead = dataCallback.district + ', ' + dataCallback.city + ', ' + dataCallback.province
       conditions = dt
@@ -48,6 +50,7 @@ class Index extends React.Component {
         .where("price.start_from", ">=", dataCallback.rangePrice.min)
         .where("price.start_from", "<=", dataCallback.rangePrice.max)
         .where("facility.room", "array-contains-any", facilitiesRoom)
+        .where('is_active', '==', true)
     } else if (dataCallback.city !== '---Semua---' && dataCallback.district !== '---Semua---') {
       titleHead = dataCallback.district + ', ' + dataCallback.city + ', ' + dataCallback.province
       conditions = dt
@@ -57,6 +60,7 @@ class Index extends React.Component {
         .where("price.start_from", ">=", dataCallback.rangePrice.min)
         .where("price.start_from", "<=", dataCallback.rangePrice.max)
         .where("facility.room", "array-contains-any", facilitiesRoom)
+        .where('is_active', '==', true)
     } else if (dataCallback.city !== '---Semua---' && dataCallback.district === '---Semua---') {
       titleHead = dataCallback.city + ', ' + dataCallback.province
       conditions = dt
@@ -65,6 +69,7 @@ class Index extends React.Component {
         .where("price.start_from", ">=", dataCallback.rangePrice.min)
         .where("price.start_from", "<=", dataCallback.rangePrice.max)
         .where("facility.room", "array-contains-any", facilitiesRoom)
+        .where('is_active', '==', true)
     } else if (dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---') {
       titleHead = dataCallback.province
       conditions = dt
@@ -72,6 +77,7 @@ class Index extends React.Component {
         .where("price.start_from", ">=", dataCallback.rangePrice.min)
         .where("price.start_from", "<=", dataCallback.rangePrice.max)
         .where("facility.room", "array-contains-any", facilitiesRoom)
+        .where('is_active', '==', true)
     }
     conditions.onSnapshot(snapshot => {
       const data = snapshot.docs.map(doc => ({
@@ -112,7 +118,7 @@ class Index extends React.Component {
         <div className="border-bottom">
           <Campus />
           <a href="/area/kampus">
-            <div className="rounded-full bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-3 py-3 mx-3">
+            <div className="rounded-full bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-3 py-3 mx-3 cursor-pointer">
               <span>Cari Kampus Lainnya</span>
             </div>
           </a>
