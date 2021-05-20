@@ -379,7 +379,7 @@ function Post({ userdata }) {
 
     return (
         <Layout title="Tambah Iklan" withHeader>
-            <form className="bg-white px-8 mb-4" onSubmit={onFileUpload}>
+            <form className="bg-white px-3 mb-4" onSubmit={onFileUpload}>
 
                 <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">Nama Kost <span className="text-danger">*</span></label>

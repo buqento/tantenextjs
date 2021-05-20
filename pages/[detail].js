@@ -15,6 +15,7 @@ import ListKosOthers from '../components/ListKosOthers'
 import fire from '../configurations/firebase'
 import Facilities from '../components/Facilities'
 import Share from '../components/Share'
+import Ads from '../components/Ads'
 class Detail extends React.Component {
   constructor(props) {
     super(props)
@@ -215,6 +216,8 @@ class Detail extends React.Component {
                   * Data dapat berubah sewaktu-waktu
                 </small>
               </div>
+
+              <Ads />
 
               {/* other */}
               <ListKosOthers data={otherdata} detail={detail} />

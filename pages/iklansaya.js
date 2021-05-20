@@ -5,8 +5,7 @@ import Message from '../components/Message'
 import Layout from '../components/Layout'
 import CampaignItemListSkeleton from '../components/CampaignItemListSkeleton'
 import withAuth from '../helpers/withAuth';
-import Link from 'next/link'
-import { MdAdd } from 'react-icons/md'
+import Ads from '../components/Ads'
 class IklanSaya extends React.Component {
     constructor(props) {
         super(props)
@@ -61,17 +60,9 @@ class IklanSaya extends React.Component {
                 data && data.length === 0 &&
                 <div>
                     <Message title="Belum ada iklan" message="Kamu belum memiliki Iklan Aktif. Silahkan membuat iklan baru" />
-                    <div className="mx-3 my-4">
-                        <Link href="post">
-                            <div className="rounded-full bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-3 py-3 mx-3 cursor-pointer">
-                                <span><MdAdd className="inline mb-1 mr-1" />Buat Iklan</span>
-                            </div>
-                        </Link>
-
-
-                    </div>
                 </div>
             }
+            <Ads />
         </Layout>
     }
 }

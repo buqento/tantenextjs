@@ -6,6 +6,7 @@ import Filter from '../components/Filter'
 import GroupSocial from '../components/GroupSocial'
 import FeedsGrid from '../components/FeedsGrid'
 import fire from '../configurations/firebase'
+import Ads from '../components/Ads'
 class Index extends React.Component {
   constructor(props) {
     super(props)
@@ -108,6 +109,9 @@ class Index extends React.Component {
               isFilter && <>Hasil Pencarian: <span className="font-bold">Sewa {dataCallback.duration}an, {titleHead}</span></>
             }
           </span>
+        </div>
+        <div>
+          <Ads />
         </div>
         <div className="border-bottom">
           <FeedsGrid filterData={data} dataCallback={dataCallback} />
