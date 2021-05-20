@@ -9,7 +9,7 @@ import { FiSend } from 'react-icons/fi'
 import ReactMapGl, { FullscreenControl, GeolocateControl, Marker } from 'react-map-gl'
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import Layout from '../components/Layout'
-
+import router from 'next/router'
 function Post({ userdata }) {
 
     const user = {
@@ -238,7 +238,7 @@ function Post({ userdata }) {
                             is_active: false,
                             hit: 1
                         })
-                        .then(() => { alert('Data saved') })
+                        .then(() => { router.push('iklansaya') })
                         .catch((error) => { alert(error.message) })
 
                     setName("")
