@@ -5,6 +5,7 @@ import Message from '../components/Message'
 import Layout from '../components/Layout'
 import CampaignItemListSkeleton from '../components/CampaignItemListSkeleton'
 import Header from '../components/Header'
+import Ads from '../components/Ads'
 class Nearby extends React.Component {
     constructor(props) {
         super(props)
@@ -17,18 +18,19 @@ class Nearby extends React.Component {
     }
     componentDidMount() {
         const dt = fire.firestore().collection('kosts')
-        dt.onSnapshot(snapshot => {
-            const data = snapshot.docs.map(doc => ({
-                id: doc.id,
-                ...doc.data()
-            }))
-            this.setState({ data })
-            if (typeof window !== 'undefined' && window.navigator.geolocation) {
-                window.navigator.geolocation.getCurrentPosition(
-                    this.successfulLookup, this.showAlert
-                )
-            }
-        })
+        dt.where('is_active', '==', true)
+            .onSnapshot(snapshot => {
+                const data = snapshot.docs.map(doc => ({
+                    id: doc.id,
+                    ...doc.data()
+                }))
+                this.setState({ data })
+                if (typeof window !== 'undefined' && window.navigator.geolocation) {
+                    window.navigator.geolocation.getCurrentPosition(
+                        this.successfulLookup, this.showAlert
+                    )
+                }
+            })
     }
     showAlert = () => { console.log('Your location is unknown!') }
     getDistance = (lat1, lon1, lat2, lon2, unit) => {
@@ -107,6 +109,7 @@ class Nearby extends React.Component {
                                 }
                             </div>
                         </div>
+                        <Ads />
                     </>
             }
             {

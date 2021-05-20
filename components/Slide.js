@@ -20,8 +20,8 @@ class Slide extends Component {
                         <img
                             style={{ objectFit: 'cover', objectPosition: 'center', width: '450px', height: '250px' }}
                             src={`https://cdn.statically.io/img/i.imgur.com/w=450/${item}`}
-                            alt={`${imageTitle} 
-                        ${index + 1}`}
+                            alt={`${imageTitle}${index + 1}`}
+                            onError={(e)=>{e.target.onerror = null; e.target.src="/static/images/image-not-found.png"}}
                         />
                     </SwiperSlide>
                 )

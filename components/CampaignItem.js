@@ -58,7 +58,7 @@ class CampaignItem extends Component {
         return (
             <Link href={`/${Generateslug(item.title)}`}>
                 <div className={`overflow-hidden ${customStyle}`} onClick={() => handleLastView()}>
-                    <img style={{ objectFit: 'cover', objectPosition: 'center', width: '450px' }} src={`https://cdn.statically.io/img/i.imgur.com/w=450/${item.images[0]}`} alt={item.title} />
+                    <img style={{ objectFit: 'cover', objectPosition: 'center', width: '450px' }} src={`https://cdn.statically.io/img/i.imgur.com/w=450/${item.images[0]}`} alt={item.title} onError={(e)=>{e.target.onerror = null; e.target.src="/static/images/image-not-found.png"}} />
                     <div className="px-2 pt-2 pb-2">
 
                         {/* price and action */}

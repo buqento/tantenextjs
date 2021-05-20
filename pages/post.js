@@ -251,10 +251,8 @@ function Post({ userdata }) {
                     setNear("")
                     setContactPhone("")
                     setContactWhatsapp("")
-                    setContactFb("")
                     setStartFrom("")
                     setDuration("")
-                    setPostUrl("")
                     setPublish(false)
                 } else {
                     alert('Judul sudah terdaftar, silahkan ubah dengan judul lain!')

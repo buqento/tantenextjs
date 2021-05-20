@@ -76,7 +76,7 @@ class Detail extends React.Component {
                             <div key={index}>
                                 <Link href={`https://tantekos.com/${Generateslug(item.title)}`}>
                                     <div className="h-full rounded-xl overflow-hidden border">
-                                        <img className="w-full" src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} />
+                                        <img className="w-full" src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} />
                                         <div className="px-3 py-3 text-center">
                                             <div className="px-2 text-xl font-bold">{Cash(item.price.start_from)}</div>
                                             <div>

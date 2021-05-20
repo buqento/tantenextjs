@@ -32,7 +32,7 @@ class Account extends React.Component {
         return <Layout title="Account" withHeader>
             <Container className="divide-y-2 divide">
                 <div className="flex py-3">
-                    <div><img src={userdata.photoURL} alt={userdata.displayName} width={50} /></div>
+                    <div><img src={userdata.photoURL} alt={userdata.displayName} width={50} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} /></div>
                     <div className="ml-2">
                         <div>Hallo,</div>
                         <div className="text-lg font-bold">{userdata.displayName}</div>

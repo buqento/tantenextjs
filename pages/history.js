@@ -59,10 +59,9 @@ class History extends React.Component {
                                     )
                                     .map((item, index) =>
                                         <div className="w-full overflow-hidden divide-gray-100 py-2 mb-2 flex" key={index}>
-                                            <div className="container-image h-20 w-20 bg-gray-400 rounded-xl">
+                                            <div className="container-image h-30 w-20 bg-gray-400">
                                                 <Link href={`/${item.slug}`}>
-                                                    <img src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} className="float-left mr-2 h-20 w-20" style={{ objectFit: 'cover', objectPosition: 'center', width: '80px', height: '95px' }}
-                                                    />
+                                                    <img src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} className="float-left mr-2 h-20 w-20" style={{ objectFit: 'cover', objectPosition: 'center', width: '80px', height: '95px' }} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} />
                                                 </Link>
                                                 <MdClose className="button-delete bg-gray-700 text-white rounded-full p-1 mt-1 ml-1" size="24" onClick={() => this.handleRemoveHistoryItem(item)} />
                                             </div>

@@ -46,11 +46,13 @@ class Detail extends React.Component {
                 conditions = dt
                     .where('location.province', '==', provinsi[0].title)
                     .where('price.duration', '==', Titlecase(slug))
+                    .where('is_active', '==', true)
                     .orderBy('price.start_from', 'asc')
                 if (city !== undefined) {
                     conditions = dt
                         .where('location.city', '==', Titlecase(city))
                         .where('price.duration', '==', Titlecase(slug))
+                        .where('is_active', '==', true)
                         .orderBy('price.start_from', 'asc')
                 }
                 if (district !== undefined) {
@@ -58,6 +60,7 @@ class Detail extends React.Component {
                         .where('location.city', '==', Titlecase(city))
                         .where('location.district', '==', Titlecase(district))
                         .where('price.duration', '==', Titlecase(slug))
+                        .where('is_active', '==', true)
                         .orderBy('price.start_from', 'asc')
                 }
                 this.setState({ more: false })
@@ -92,6 +95,7 @@ class Detail extends React.Component {
                 .where("price.start_from", ">=", dataCallback.rangePrice.min)
                 .where("price.start_from", "<=", dataCallback.rangePrice.max)
                 .where("facility.room", "array-contains-any", facilitiesRoom)
+                .where('is_active', '==', true)
         } else if (dataCallback.city !== '---Semua---' && dataCallback.district === '---Semua---') {
             conditions = dt
                 .where('location.province', '==', dataCallback.province)
@@ -99,6 +103,7 @@ class Detail extends React.Component {
                 .where("price.start_from", ">=", dataCallback.rangePrice.min)
                 .where("price.start_from", "<=", dataCallback.rangePrice.max)
                 .where("facility.room", "array-contains-any", facilitiesRoom)
+                .where('is_active', '==', true)
         } else if (dataCallback.city !== '---Semua---' && dataCallback.district !== '---Semua---') {
             conditions = dt
                 .where('location.province', '==', dataCallback.province)
@@ -107,6 +112,7 @@ class Detail extends React.Component {
                 .where("price.start_from", ">=", dataCallback.rangePrice.min)
                 .where("price.start_from", "<=", dataCallback.rangePrice.max)
                 .where("facility.room", "array-contains-any", facilitiesRoom)
+                .where('is_active', '==', true)
         } else if (dataCallback.city !== '---Semua---' && dataCallback.district !== '---Semua---') {
             conditions = dt
                 .where('location.province', '==', dataCallback.province)
@@ -115,6 +121,7 @@ class Detail extends React.Component {
                 .where("price.start_from", ">=", dataCallback.rangePrice.min)
                 .where("price.start_from", "<=", dataCallback.rangePrice.max)
                 .where("facility.room", "array-contains-any", facilitiesRoom)
+                .where('is_active', '==', true)
         } else if (dataCallback.city !== '---Semua---' && dataCallback.district === '---Semua---') {
             conditions = dt
                 .where('location.province', '==', dataCallback.province)
@@ -122,12 +129,14 @@ class Detail extends React.Component {
                 .where("price.start_from", ">=", dataCallback.rangePrice.min)
                 .where("price.start_from", "<=", dataCallback.rangePrice.max)
                 .where("facility.room", "array-contains-any", facilitiesRoom)
+                .where('is_active', '==', true)
         } else if (dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---') {
             conditions = dt
                 .where('location.province', '==', dataCallback.province)
                 .where("price.start_from", ">=", dataCallback.rangePrice.min)
                 .where("price.start_from", "<=", dataCallback.rangePrice.max)
                 .where("facility.room", "array-contains-any", facilitiesRoom)
+                .where('is_active', '==', true)
         }
         conditions.onSnapshot(snapshot => {
             const data = snapshot.docs.map(doc => ({

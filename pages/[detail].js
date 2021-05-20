@@ -244,12 +244,14 @@ export const getServerSideProps = async (context) => {
   const detail = await fire
     .firestore().collection('kosts')
     .where('slug', '==', context.query.detail)
+    .where('is_active', '==', true)
     .get()
     .then(doc => ({
       id: doc.docs[0].id,
       ...doc.docs[0].data(),
     }))
     .catch(err => console.log(err))
+  if (!detail) return { notFound: true }
   let otherData = []
   const querySnapshot = await fire.firestore().collection('kosts')
     .where('slug', '!=', context.query.detail)
@@ -261,7 +263,6 @@ export const getServerSideProps = async (context) => {
       ...doc.data()
     })
   })
-  if (!detail) return { notFound: true }
   return {
     props: {
       slug: context.query.detail,

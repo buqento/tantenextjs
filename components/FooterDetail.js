@@ -76,7 +76,7 @@ class FooterDetail extends Component {
         const { data } = this.props;
         const { like } = this.state;
         return (
-            <div className="sticky bottom-0 border-bottom bg-white pb-1 w-100">
+            <div className="sticky bottom-0 border-bottom bg-white w-100">
                 <div className="text-gray-700 text-center self-center flex">
                     <div className="w-100">
                         {

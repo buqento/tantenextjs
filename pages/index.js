@@ -122,13 +122,13 @@ class Index extends React.Component {
         <div className="border-bottom">
           <Campus />
           <a href="/area/kampus">
-            <div className="rounded-full bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-3 py-3 mx-3 cursor-pointer">
-              <span>Cari Kampus Lainnya</span>
+            <div className="align-middle rouded text-center text-indigo-700 font-bold uppercase mb-3 mt-2 py-2 mx-3 cursor-pointer border">
+              <span>Kampus Lainnya</span>
             </div>
           </a>
         </div>
         <div className="m-3 mb-n2">
-          <span className="text-uppercase text-current font-bold">Grup Facebook</span>
+          <span className="text-uppercase text-current font-bold">Komunitas Facebook</span>
         </div>
         <GroupSocial />
       </Layout>
