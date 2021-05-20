@@ -9,7 +9,7 @@ class Nearby extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            data: [],
+            data: null,
             locationText: null,
             nearbyList: null,
             load: true
