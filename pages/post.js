@@ -102,7 +102,7 @@ function Post({ userdata }) {
     viewport.height = height
     // end map
 
-    const [publish, setPublish] = useState(true)
+    const [publish, setPublish] = useState(false)
     const [type, setType] = useState(initType)
     const [durations, setDurations] = useState(initDurations);
     const [facilityRoom, setFacilityRoom] = useState(initFacilityRoom);
