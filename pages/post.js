@@ -220,7 +220,7 @@ function Post({ userdata }) {
                             category: "Kost",
                             type: arrType,
                             contact_us: {
-                                facebook_url: contact_fb,
+                                facebook_url: "contact_fb",
                                 phone: contact_phone,
                                 whatsapp: contact_whatsapp
                             },
@@ -233,7 +233,7 @@ function Post({ userdata }) {
                                 start_from: parseInt(start_from),
                                 duration: duration
                             },
-                            post_url: post_url,
+                            post_url: "post_url",
                             user: user,
                             is_active: false,
                             hit: 1
