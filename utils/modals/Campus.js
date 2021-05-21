@@ -2,8 +2,8 @@ export const Campus = [
     { slug: 'universitas-pamulang', name: 'Universitas Pamulang', province: 'Banten' },
 
     { slug: 'universitas-krisnadwipayana', name: 'Universitas Krisnadwipayana', province: 'Jawa Barat' },
-    
     { slug: 'universitas-indonesia', name: 'Universitas Indonesia', province: 'Jawa Barat' },
+    { slug: 'universitas-pancasila', name: 'Universitas Pancasila', province: 'Jawa Barat' },
     
     { slug: 'stmik-umel-mandiri', name: 'STMIK Umel Mandiri', province: 'Papua' },
     { slug: 'universitas-cenderawasih', name: 'Universitas Cenderawasih', province: 'Papua' },

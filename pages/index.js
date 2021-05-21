@@ -7,6 +7,9 @@ import GroupSocial from '../components/GroupSocial'
 import FeedsGrid from '../components/FeedsGrid'
 import fire from '../configurations/firebase'
 import Ads from '../components/Ads'
+import NavBar from '../components/NavBar'
+import HeadPage from '../components/HeadPage'
+import { MdHistory, MdStar } from 'react-icons/md'
 class Index extends React.Component {
   constructor(props) {
     super(props)
@@ -98,40 +101,59 @@ class Index extends React.Component {
       url: ''
     }
     return (
-      <Layout title="Tantekos" withFooter withHeader>
-        <Header info={info} />
-        <div className="m-3 border rounded-xl shadow-sm py-3">
-          <Filter callbackFromParent={this.filterCallback} />
-        </div>
-        <div className="mb-3 px-3 bg-white z-10" ref={(node) => this.node = node}>
-          <span className="text-current">
-            {
-              isFilter && <>Hasil Pencarian: <span className="font-bold">Sewa {dataCallback.duration}an, {titleHead}</span></>
-            }
-          </span>
-        </div>
-        <div>
-          <Ads />
-        </div>
-        <div className="border-bottom">
-          <FeedsGrid filterData={data} dataCallback={dataCallback} />
-        </div>
-        <div className="pt-4 pb-3 px-3 bg-white z-10">
-          <span className="text-uppercase text-current font-bold">Dekat Kampus</span>
-        </div>
-        <div className="border-bottom">
-          <Campus />
-          <a href="/area/kampus">
-            <div className="align-middle rouded text-center text-indigo-700 font-bold uppercase mb-3 mt-2 py-2 mx-3 cursor-pointer border">
-              <span>Kampus Lainnya</span>
+      <div className="grid sm:grid-cols-2 md:grid-cols-3">
+        {/* col1 */}
+        <div className="">
+          <div className={`z-10 bg-white pt-3 pr-3 mb-3 text-gray-700 font-bold clamp-1 top-0 text-2xl border-bottom`}>
+            <h1 className="text-indigo-700 inline pl-3">Tantekos</h1>
+            <div className="inline p-1 ml-2 mb-3 border rounded-full float-right">
+              <a href="/history"><MdHistory size={24} className="text-indigo-700" /></a>
             </div>
-          </a>
+            <div className="inline p-1 mb-2 border rounded-full float-right">
+              <a href="/favorites"><MdStar size={24} className="text-pink-500" /></a>
+            </div>
+          </div>
+          <Header info={info} />
+          <div className="m-3 border rounded-xl shadow-sm py-3">
+            <Filter callbackFromParent={this.filterCallback} />
+          </div>
+          <div>
+            <Ads />
+          </div>
         </div>
-        <div className="m-3 mb-n2">
-          <span className="text-uppercase text-current font-bold">Komunitas Facebook</span>
+        {/* col2 */}
+        <div className="">
+          <div className="mb-3 px-3 bg-white z-10" ref={(node) => this.node = node}>
+            <span className="text-current">
+              {
+                isFilter && <>Hasil Pencarian: <span className="font-bold">Sewa {dataCallback.duration}an, {titleHead}</span></>
+              }
+            </span>
+          </div>
+          <div className="border-bottom">
+            <FeedsGrid filterData={data} dataCallback={dataCallback} />
+          </div>
         </div>
-        <GroupSocial />
-      </Layout>
+        {/* col3 */}
+        <div className="mb-5">
+          <div className="pt-4 pb-3 px-3 bg-white z-10">
+            <span className="text-uppercase text-current font-bold">Dekat Kampus</span>
+          </div>
+          <div className="border-bottom">
+            <Campus />
+            <a href="/area/kampus">
+              <div className="align-middle rouded text-center text-indigo-700 font-bold uppercase mb-3 mt-2 py-2 mx-3 cursor-pointer border">
+                <span>Kampus Lainnya</span>
+              </div>
+            </a>
+          </div>
+          <div className="m-3 mb-n2">
+            <span className="text-uppercase text-current font-bold">Komunitas Facebook</span>
+          </div>
+          <GroupSocial />
+        </div>
+        <NavBar />
+      </div>
     )
   }
 }
