@@ -29,7 +29,7 @@ class Account extends React.Component {
 
     render() {
         const { userdata } = this.props
-        return <Layout title="Account" withHeader>
+        return <Layout title="Akun Saya" withHeader>
             <Container className="divide-y-2 divide">
                 <div className="flex py-3">
                     <div><img src={userdata.photoURL} alt={userdata.displayName} width={50} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} /></div>
