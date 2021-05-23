@@ -9,7 +9,7 @@ import { FiSend } from 'react-icons/fi'
 import ReactMapGl, { FullscreenControl, GeolocateControl, Marker } from 'react-map-gl'
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { BiLoaderCircle } from 'react-icons/bi'
-import Layout from '../components/Layout'
+import NavComponent from '../components/NavComponent'
 import router from 'next/router'
 function Post({ userdata }) {
 
@@ -377,8 +377,9 @@ function Post({ userdata }) {
     }
 
     return (
-        <Layout title="Tambah Iklan" withHeader>
-            <form className="bg-white px-3 mb-4" onSubmit={onFileUpload}>
+        <>
+            <NavComponent />
+            <form className="bg-white px-3 my-3" onSubmit={onFileUpload}>
 
                 <div className="mb-4">
                     <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">Nama Kost <span className="text-danger">*</span></label>
@@ -606,7 +607,7 @@ function Post({ userdata }) {
                 <button className={`${publish ? "bg-gray-300 text-current" : "bg-indigo-700 hover:bg-indigo-600 focus:outline-none text-white"} text-xl font-bold py-2 px-4 rounded w-100`} type="submit">{publish ? <BiLoaderCircle size={22} className="animate-spin inline mr-1 mb-1" /> : <FiSend className="inline mr-1 mb-1" />}{publish ? `Sending Data` : `Publish`}</button>
 
             </form>
-        </Layout>
+        </>
 
     )
 }

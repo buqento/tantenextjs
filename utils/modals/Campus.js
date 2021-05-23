@@ -86,6 +86,7 @@ export const Campus = [
     { slug: 'universitas-borobudur', name: 'Universitas Borobudur', province: 'DKI Jakarta' },
     { slug: 'institut-transportasi-dan-logistik-trisakti', name: 'Institut Transportasi dan Logistik Trisakti', province: 'DKI Jakarta' },
  
+    { slug: 'politeknik-negeri-ujung-pandang', name: 'Politeknik Negeri Ujung Pandang', province: 'Sulawesi Selatan' },
     { slug: 'universitas-hasanuddin', name: 'Universitas Hasanuddin', province: 'Sulawesi Selatan' },
     { slug: 'stikes-nani-hasanuddin', name: 'STIKES Nani Hasanuddin', province: 'Sulawesi Selatan' },
     { slug: 'ibk-nitro', name: 'IBK Nitro', province: 'Sulawesi Selatan' },
