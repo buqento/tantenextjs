@@ -34,17 +34,9 @@ export default function Nav({ userdata }) {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <Link href="/">
-                  <div className="flex-shrink-0 flex items-center">
-                    <img
-                      className="block lg:hidden h-8 w-auto"
-                      src="/static/images/Home-icon.png"
-                      alt="Tantekos"
-                    />
-                    <img
-                      className="hidden lg:block h-8 w-auto"
-                      src="/static/images/Home-icon.png"
-                      alt="Tantekos"
-                    />
+                  <div className="text-white font-bold flex-shrink-0 flex items-center">
+                    <h1 className="block lg:hidden">TANTEKOS</h1>
+                    <h1 className="hidden lg:block">TANTEKOS</h1>
                   </div>
                 </Link>
                 <div className="hidden sm:block sm:ml-6">

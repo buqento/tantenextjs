@@ -6,6 +6,8 @@ import Layout from '../components/Layout'
 import CampaignItemListSkeleton from '../components/CampaignItemListSkeleton'
 import Header from '../components/Header'
 import Ads from '../components/Ads'
+import NavComponent from '../components/NavComponent'
+import Footer from '../components/Footer'
 class Nearby extends React.Component {
     constructor(props) {
         super(props)
@@ -81,7 +83,8 @@ class Nearby extends React.Component {
             description: 'Kost Terdekat Harian Bulanan Tahunan Murah',
             url: 'nearby'
         }
-        return <Layout title="Terdekat" withHeader>
+        return <div>
+            <NavComponent />
             <Header info={info} />
             {
                 load ? <CampaignItemListSkeleton /> :
@@ -115,7 +118,8 @@ class Nearby extends React.Component {
             {
                 nearbyList && nearbyList.length === 0 && <Message title="Tidak Ditemukan" message="Temukan kost menggunakan pencarian" />
             }
-        </Layout>
+            <Footer />
+        </div>
     }
 }
 export default Nearby

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
-import { BiMap } from 'react-icons/bi'
 class Area extends Component {
     render() {
         const group = [

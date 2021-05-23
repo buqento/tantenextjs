@@ -127,19 +127,19 @@ class Index extends React.Component {
                 }
               </span>
             </div>
-            <div className="border-bottom">
+            <div>
               <FeedsGrid filterData={data} dataCallback={dataCallback} />
             </div>
           </div>
           {/* col3 */}
-          <div className="mb-5">
+          <div className="border-top">
             <div className="pt-4 pb-3 px-3 bg-white z-10">
               <span className="text-uppercase text-current font-bold">Dekat Kampus</span>
             </div>
             <div className="border-bottom">
               <Campus />
               <a href="/area/kampus">
-                <div className="align-middle rouded text-center text-indigo-700 font-bold uppercase mb-3 mt-2 py-2 mx-3 cursor-pointer border">
+                <div className="align-middle text-center text-indigo-700 font-bold uppercase mb-3 mt-2 py-2 mx-3 cursor-pointer underline">
                   <span>Kampus Lainnya</span>
                 </div>
               </a>
