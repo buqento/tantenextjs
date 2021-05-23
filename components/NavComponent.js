@@ -4,7 +4,7 @@ import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import Link from 'next/link'
 
 const navigation = [
-  { name: 'Beranda', href: '/', current: true },
+  { name: 'Beranda', href: '/', current: false },
   { name: 'Favorit', href: 'favorites', current: false },
   { name: 'History', href: 'history', current: false },
   { name: 'Terdekat', href: 'nearby', current: false }
@@ -16,7 +16,7 @@ function classNames(...classes) {
 
 export default function Nav({ userdata }) {
   return (
-    <Disclosure as="nav" className="bg-gray-800 sticky top-0">
+    <Disclosure as="nav" className="bg-gray-800 sticky top-0 z-10">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -33,18 +33,20 @@ export default function Nav({ userdata }) {
                 </Disclosure.Button>
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex-shrink-0 flex items-center">
-                  <img
-                    className="block lg:hidden h-8 w-auto"
-                    src="/static/images/Home-icon.png"
-                    alt="Tantekos"
-                  />
-                  <img
-                    className="hidden lg:block h-8 w-auto"
-                    src="/static/images/Home-icon.png"
-                    alt="Tantekos"
-                  />
-                </div>
+                <Link href="/">
+                  <div className="flex-shrink-0 flex items-center">
+                    <img
+                      className="block lg:hidden h-8 w-auto"
+                      src="/static/images/Home-icon.png"
+                      alt="Tantekos"
+                    />
+                    <img
+                      className="hidden lg:block h-8 w-auto"
+                      src="/static/images/Home-icon.png"
+                      alt="Tantekos"
+                    />
+                  </div>
+                </Link>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (

@@ -7,7 +7,7 @@ import Cash from '../utils/Cash'
 import Slide from '../components/Slide'
 import Peta from '../components/Peta'
 import KostType from '../components/Type'
-import Layout from '../components/Layout'
+import NavComponent from '../components/NavComponent'
 import FooterDetail from '../components/FooterDetail'
 import ReactGa from 'react-ga'
 import moment from 'moment'
@@ -16,6 +16,7 @@ import fire from '../configurations/firebase'
 import Facilities from '../components/Facilities'
 import Share from '../components/Share'
 import Ads from '../components/Ads'
+import Footer from '../components/Footer'
 class Detail extends React.Component {
   constructor(props) {
     super(props)
@@ -49,6 +50,7 @@ class Detail extends React.Component {
     }.bind(this), 5000)
   }
   render() {
+
     const { slug, details, otherdatas } = this.props
     const { showAlert } = this.state
     const detail = JSON.parse(details)
@@ -112,7 +114,9 @@ class Detail extends React.Component {
         JSON.parse(structureTypeBreadcrumbList)
       ]
     }
-    return <Layout>
+    return <>
+      <NavComponent />
+
       {
         detail &&
         <NextHead>
@@ -141,14 +145,22 @@ class Detail extends React.Component {
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureDetailPage) }} />
         </NextHead>
       }
+
+      {
+        /* slide */
+        detail &&
+        <div>
+          <Slide imagesData={detail.images} imageTitle={detail.title} />
+          <FooterDetail data={detail} callbackFromParent={this.handleShowAlert} />
+        </div>
+      }
+
       {
         detail &&
-        <div className="main-layout">
-          <Slide imagesData={detail.images} imageTitle={detail.title} />
-          <div className="sticky top-0 z-10">
-            <FooterDetail data={detail} callbackFromParent={this.handleShowAlert} />
-          </div>
-          <div className="mt-2 mb-4">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+
+          {/* price/title/desc */}
+          <div className="mt-2">
             <div className="text-left mx-3">
               <div className="mb-1 flex">
                 <div className="self-center flex-auto pr-4">
@@ -199,32 +211,36 @@ class Detail extends React.Component {
                   <Facilities items={detail.facility.share} />
                 </div>
               }
-
-              {/* location */}
-              <div className="mb-3">
-                <h2 className="pb-2 font-bold">Lokasi <small>({detail.location && detail.location.district}, {detail.location && detail.location.city}, {detail.location && detail.location.province})</small></h2>
-                <Peta location={detail && detail.location} height={150} zoom={10} />
-              </div>
-              <div className="border-top mt-3">
-                {
-                  detail.contact_us.facebook_url !== '' &&
-                  <div className="pt-3 text-sm text-indigo-700">
-                    <a href={detail.contact_us.facebook_url} target="blank" rel="noreferrer">* Lihat informasi pengiklan <FaExternalLinkAlt className="mb-1 inline" /> </a>
-                  </div>
-                }
-                <small>
-                  * Data dapat berubah sewaktu-waktu
-                </small>
-              </div>
-
-              <Ads />
-
-              {/* other */}
-              <ListKosOthers data={otherdata} detail={detail} />
             </div>
           </div>
+
+          {/* location */}
+          <div className="my-2 mx-3">
+            <div className="mb-3">
+              <h2 className="pb-2 font-bold">Lokasi <small>({detail.location && detail.location.district}, {detail.location && detail.location.city}, {detail.location && detail.location.province})</small></h2>
+              <Peta location={detail && detail.location} zoom={15} />
+            </div>
+            <div className="mt-3">
+              {/* {
+                detail.contact_us.facebook_url !== '' &&
+                <div className="pt-3 text-sm text-indigo-700">
+                  <a href={detail.contact_us.facebook_url} target="blank" rel="noreferrer">* Lihat informasi pengiklan <FaExternalLinkAlt className="mb-1 inline" /> </a>
+                </div>
+              } */}
+              <small>* Data dapat berubah sewaktu-waktu.</small>
+            </div>
+          </div>
+
+
+          {/* other */}
+          <div className="mx-3">
+            <Ads />
+            <ListKosOthers data={otherdata} detail={detail} />
+          </div>
+
         </div>
       }
+
       {
         detail && showAlert &&
         <div className="alert-banner w-full fixed top-0 z-40 bg-green-500" onClick={this.handleCloseAlert}>
@@ -237,7 +253,8 @@ class Detail extends React.Component {
           </label>
         </div>
       }
-    </Layout >
+      <Footer />
+    </>
   }
 }
 export const getServerSideProps = async (context) => {

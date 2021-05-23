@@ -1,23 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ReactMapGl, { FullscreenControl, GeolocateControl, Marker } from 'react-map-gl'
 import { shape } from 'prop-types'
 import { FaMapMarkerAlt } from 'react-icons/fa';
 export default function Peta(props) {
+
+    const [windowWIdth, setWindowWidth] = useState(null)
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            setWindowWidth(window.innerWidth)
+        }
+    })
     const accessToken = "pk.eyJ1IjoiYnVxZW50byIsImEiOiJjanJ5a3p4cDkwZXJiNDlvYXMxcnhud3hhIn0.AhQ-vGYSIo6uTBmQD4MCsA"
     const type = props.type
     const lat = parseFloat(props.location.lat_lng.latitude)
     const long = parseFloat(props.location.lat_lng.longitude)
-    const height = parseInt(props.height)
     const zoom = parseInt(props.zoom)
     const [viewport, setViewport] = useState({
         latitude: lat,
         longitude: long,
         width: "100%",
-        height: height,
+        height: 200,
         zoom: zoom
     })
     viewport.width = "100%"
-    viewport.height = height
+    viewport.height = windowWIdth > 768 ? 500 : 200
     return (
         <ReactMapGl
             {...viewport}
