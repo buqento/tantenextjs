@@ -120,10 +120,10 @@ class Index extends React.Component {
           </div>
           {/* col2 */}
           <div className="">
-            <div className="mb-3 px-3 bg-white z-10" ref={(node) => this.node = node}>
+            <div className="mb-2 px-3 bg-white z-10" ref={(node) => this.node = node}>
               <span className="text-current">
                 {
-                  isFilter && <>Hasil Pencarian: <span className="font-bold">Sewa {dataCallback.duration}an, {titleHead}</span></>
+                  isFilter && <div className="mt-2">Hasil Pencarian: <span className="font-bold">Sewa {dataCallback.duration}an, {titleHead}</span></div>
                 }
               </span>
             </div>
@@ -133,7 +133,7 @@ class Index extends React.Component {
           </div>
           {/* col3 */}
           <div className="border-top">
-            <div className="pt-4 pb-3 px-3 bg-white z-10">
+            <div className="py-2 px-3 bg-white z-10">
               <span className="text-uppercase text-current font-bold">Dekat Kampus</span>
             </div>
             <div className="border-bottom">

@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import Layout from '../components/Layout'
 import Message from '../components/Message'
 import Facilities from '../components/Facilities'
 import Cash from '../utils/Cash'
@@ -9,6 +8,8 @@ import { MdClose } from 'react-icons/md'
 import CampaignItemListSkeleton from '../components/CampaignItemListSkeleton'
 import KostType from '../components/Type'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
+import NavComponent from '../components/NavComponent'
 class History extends React.Component {
     constructor(props) {
         super(props)
@@ -36,12 +37,13 @@ class History extends React.Component {
             url: 'history'
         }
         return (
-            <Layout title="Terakhir Dilihat" withHeader>
+            <>
                 <Header info={info} />
+                <NavComponent />
                 {
                     load ? <CampaignItemListSkeleton /> :
                         data && data.length > 0 &&
-                        <div className="mx-3 mb-3 divide-y">
+                        <div className="mx-3 my-2 divide-y">
                             {
                                 data
                                     .sort(
@@ -87,7 +89,8 @@ class History extends React.Component {
                         </div>
                 }
                 {data && data.length === 0 && <Message message="Kamu belum memiliki history" />}
-            </Layout>
+                <Footer />
+            </>
         )
     }
 }

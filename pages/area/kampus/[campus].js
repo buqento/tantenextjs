@@ -1,11 +1,12 @@
 import React from 'react'
 import NextHead from 'next/head'
 import { string } from 'prop-types'
-import Layout from '../../../components/Layout'
 import Generateslug from '../../../utils/Generateslug'
 import fire from '../../../configurations/firebase'
 import { Campus } from '../../../utils/modals/Campus'
 import CampaignItemList from '../../../components/CampaignItemList'
+import NavComponent from '../../../components/NavComponent'
+import Footer from '../../../components/Footer'
 class CampusId extends React.Component {
     static async getInitialProps(ctx) { return { slug: ctx.query.campus } }
     constructor(props) {
@@ -112,12 +113,14 @@ class CampusId extends React.Component {
                     <link rel="canonical" content={`https://tantekos.com/area/${slug}`} />
                     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureAreaPage) }} />
                 </NextHead>
-                <Layout withHeader title="Kampus">
+                <NavComponent />
+                <div className="my-2">
                     <div className="mx-3 mb-2 font-bold"><span className="font-normal">Dekat</span> {campusName}</div>
                     <div className="mx-3 mb-3 divide-y">
                         {data && data.map((item, index) => <CampaignItemList item={item} key={index} />)}
                     </div>
-                </Layout>
+                </div>
+                <Footer />
             </>
         )
     }

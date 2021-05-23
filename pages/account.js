@@ -1,14 +1,13 @@
 import React from 'react'
-import fire from '../configurations/firebase'
-import { auth, firebase } from '../configurations/auth'
-import Layout from '../components/Layout'
-import withAuth from '../helpers/withAuth';
-import { Container } from 'react-bootstrap';
+import { auth } from '../configurations/auth'
+import withAuth from '../helpers/withAuth'
+import { Container } from 'react-bootstrap'
 import { FaList } from 'react-icons/fa'
 import { FiLogOut } from 'react-icons/fi'
 import router from 'next/router'
 import Link from 'next/link';
-
+import Footer from '../components/Footer'
+import NavComponent from '../components/NavComponent'
 class Account extends React.Component {
     constructor(props) {
         super(props)
@@ -16,9 +15,6 @@ class Account extends React.Component {
             data: []
         }
     }
-    componentDidMount() {
-    }
-
     handleLogout = () => {
         auth.signOut().then(function () {
             router.push('/')
@@ -26,10 +22,10 @@ class Account extends React.Component {
             console.log(error);
         });
     }
-
     render() {
         const { userdata } = this.props
-        return <Layout title="Akun Saya" withHeader>
+        return <>
+        <NavComponent />
             <Container className="divide-y-2 divide">
                 <div className="flex py-3">
                     <div><img src={userdata.photoURL} alt={userdata.displayName} width={50} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} /></div>
@@ -47,7 +43,8 @@ class Account extends React.Component {
                     <FiLogOut className="inline mb-1 mr-1" /> Logout
                 </div>
             </Container>
-        </Layout>
+            <Footer />
+        </>
     }
 }
 export default withAuth(Account);

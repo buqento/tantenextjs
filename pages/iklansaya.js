@@ -6,6 +6,8 @@ import Layout from '../components/Layout'
 import CampaignItemListSkeleton from '../components/CampaignItemListSkeleton'
 import withAuth from '../helpers/withAuth';
 import Ads from '../components/Ads'
+import Footer from '../components/Footer'
+import NavComponent from '../components/NavComponent'
 class IklanSaya extends React.Component {
     constructor(props) {
         super(props)
@@ -29,7 +31,8 @@ class IklanSaya extends React.Component {
     }
     render() {
         const { load, data } = this.state
-        return <Layout title="Iklan Saya" withHeader>
+        return <>
+            <NavComponent />
             {
                 load ? <CampaignItemListSkeleton /> :
                     data && data.length > 0 &&
@@ -64,7 +67,8 @@ class IklanSaya extends React.Component {
             <div className="mb-4">
                 <Ads />
             </div>
-        </Layout>
+            <Footer />
+        </>
     }
 }
 export default withAuth(IklanSaya)

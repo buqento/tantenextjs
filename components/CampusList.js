@@ -12,7 +12,7 @@ const CampusList = (props) => {
     const data = filterItems(name)
     return (
         <>
-            <div className="main-layout">
+            <div>
                 {
                     data.length > 0 && <div className="px-3 pt-3 text-lg font-bold">{locationProvince}</div>
                 }

@@ -14,7 +14,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Nav({ userdata }) {
+export default function NavComponent({ userdata }) {
   return (
     <Disclosure as="nav" className="bg-gray-800 sticky top-0 z-10">
       {({ open }) => (
