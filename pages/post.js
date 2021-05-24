@@ -11,6 +11,7 @@ import { FaMapMarkerAlt } from 'react-icons/fa';
 import { BiLoaderCircle } from 'react-icons/bi'
 import NavComponent from '../components/NavComponent'
 import router from 'next/router'
+import Footer from '../components/Footer'
 function Post({ userdata }) {
 
     const user = {
@@ -607,8 +608,8 @@ function Post({ userdata }) {
                 <button className={`${publish ? "bg-gray-300 text-current" : "bg-indigo-700 hover:bg-indigo-600 focus:outline-none text-white"} text-xl font-bold py-2 px-4 rounded w-100`} type="submit">{publish ? <BiLoaderCircle size={22} className="animate-spin inline mr-1 mb-1" /> : <FiSend className="inline mr-1 mb-1" />}{publish ? `Sending Data` : `Publish`}</button>
 
             </form>
+            <Footer />
         </>
-
     )
 }
 export default withAuth(Post);

@@ -20,11 +20,6 @@ class Index extends React.Component {
     }
     this.scrollToNode = this.scrollToNode.bind(this)
   }
-  componentDidMount() {
-    auth.onAuthStateChanged(authUser => {
-      authUser && this.setState({ userdata: authUser })
-    })
-  }
   scrollToNode(node) { node.scrollIntoView({ behavior: 'smooth' }) }
   filterCallback = (dataCallback) => {
     let facilitiesRoom = [""]
@@ -106,7 +101,7 @@ class Index extends React.Component {
     }
     return (
       <div>
-        <NavComponent userdata={userdata} />
+        <NavComponent />
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
           {/* col1 */}
           <div className="">

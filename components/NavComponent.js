@@ -1,20 +1,24 @@
-import { Fragment } from 'react'
+import { Fragment, useState, useEffect } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import Link from 'next/link'
-
+import { auth } from '../configurations/auth'
 const navigation = [
   { name: 'Beranda', href: '/', current: false },
   { name: 'Favorit', href: 'favorites', current: false },
   { name: 'History', href: 'history', current: false },
   { name: 'Terdekat', href: 'nearby', current: false }
 ]
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
-
-export default function NavComponent({ userdata }) {
+export default function NavComponent() {
+  const [userdata, setUserdata] = useState(null)
+  useEffect(() => {
+    auth.onAuthStateChanged(authUser => {
+      authUser && setUserdata(authUser)
+    })
+  })
   return (
     <Disclosure as="nav" className="bg-gray-800 sticky top-0 z-10">
       {({ open }) => (
@@ -60,7 +64,6 @@ export default function NavComponent({ userdata }) {
               {
                 userdata ?
                   <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-
                     {/* Profile dropdown */}
                     <Menu as="div" className="ml-3 relative">
                       {({ open }) => (
@@ -130,7 +133,6 @@ export default function NavComponent({ userdata }) {
               }
             </div>
           </div>
-
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map((item) => (
