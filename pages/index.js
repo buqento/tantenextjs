@@ -7,7 +7,6 @@ import FeedsGrid from '../components/FeedsGrid'
 import fire from '../configurations/firebase'
 import Ads from '../components/Ads'
 import NavComponent from '../components/NavComponent'
-import { auth } from '../configurations/auth'
 import Footer from '../components/Footer'
 class Index extends React.Component {
   constructor(props) {
@@ -93,7 +92,7 @@ class Index extends React.Component {
     this.scrollToNode(this.node)
   }
   render() {
-    const { data, dataCallback, isFilter, titleHead, userdata } = this.state
+    const { data, dataCallback, isFilter, titleHead } = this.state
     const info = {
       title: 'Kost Murah Sewa Harian Bulanan Tahunan',
       description: 'Cari Kost Dan Kontrakan Harian Bulanan Tahunan Murah Terjangkau Nyaman Strategis',
