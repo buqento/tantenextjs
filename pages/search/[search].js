@@ -7,10 +7,11 @@ import Filter from '../../components/Filter'
 import Modal from 'react-bootstrap/Modal'
 import Titlecase from '../../utils/Titlecase'
 import { DtProvinsi } from '../../utils/modals/Provinsi'
-import Layout from '../../components/Layout'
 import CampaignItemList from '../../components/CampaignItemList'
 import CampaignItemListSkeleton from '../../components/CampaignItemListSkeleton'
 import Header from '../../components/Header'
+import NavComponent from '../../components/NavComponent'
+import Footer from '../../components/Footer'
 class Detail extends React.Component {
     static async getInitialProps(ctx) {
         return {
@@ -183,10 +184,11 @@ class Detail extends React.Component {
             description: 'Kost Murah Sewa Harian Bulanan Tahunan Murah',
             url: 'search/all'
         }
-        return (<Layout title="Cari Kost" withHeader>
+        return <>
+            <NavComponent />
             <Header info={info} />
-            {titleHead && <div className="px-3 py-3 font-bold z-40 sticky top-0 bg-white"><span className="font-normal">Sewa </span>{dataCallback.duration}an, {titleHead} <span className="text-green-700">({data.length})</span></div>}
-            <div className="main-layout" ref={(node) => this.node = node}>
+            {titleHead && <div className="py-4 px-3 font-bold z-40 sticky top-0 bg-white"><span className="font-normal">Sewa </span>{dataCallback.duration}an, {titleHead} <span className="text-green-700">({data.length})</span></div>}
+            <div className="mt-2" ref={(node) => this.node = node}>
                 {
                     <div className="fixed inset-x-0 bottom-0 mb-5 pb-5 text-center z-40">
                         <span onClick={handleShow} className={`${!show ? 'bg-indigo-700 text-white' : 'bg-white text-black border'} shadow-md w-max px-3 py-3 rounded-full hover:bg-white-700 focus:outline-none uppercase`}>
@@ -219,7 +221,8 @@ class Detail extends React.Component {
                     <Filter callbackFromParent={this.filterCallback} />
                 </Modal.Body>
             </Modal>
-        </Layout>)
+            <Footer />
+        </>
     }
 }
 export default Detail;

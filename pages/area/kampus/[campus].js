@@ -7,11 +7,16 @@ import { Campus } from '../../../utils/modals/Campus'
 import CampaignItemList from '../../../components/CampaignItemList'
 import NavComponent from '../../../components/NavComponent'
 import Footer from '../../../components/Footer'
+import CampaignItemListSkeleton from '../../../components/CampaignItemListSkeleton'
 class CampusId extends React.Component {
     static async getInitialProps(ctx) { return { slug: ctx.query.campus } }
     constructor(props) {
         super(props)
-        this.state = { data: null, campusName: null }
+        this.state = {
+            data: null,
+            campusName: null,
+            load: true
+        }
     }
     async componentDidMount() {
         const { slug } = this.props
@@ -24,12 +29,12 @@ class CampusId extends React.Component {
                 id: doc.id,
                 ...doc.data()
             }))
-            this.setState({ data })
+            this.setState({ data, load: false })
         })
         docRef.get().catch(err => console.log(err))
     }
     render() {
-        const { data, campusName } = this.state
+        const { data, campusName, load } = this.state
         const { slug } = this.props
         const structureTypeBreadcrumbList =
             `{
@@ -114,12 +119,15 @@ class CampusId extends React.Component {
                     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureAreaPage) }} />
                 </NextHead>
                 <NavComponent />
-                <div className="my-2">
-                    <div className="mx-3 mb-2 font-bold"><span className="font-normal">Dekat</span> {campusName}</div>
-                    <div className="mx-3 mb-3 divide-y">
-                        {data && data.map((item, index) => <CampaignItemList item={item} key={index} />)}
-                    </div>
-                </div>
+                {
+                    load ? <CampaignItemListSkeleton /> :
+                        <div className="my-2">
+                            <div className="mx-3 mb-2 font-bold"><span className="font-normal">Dekat</span> {campusName}</div>
+                            <div className="mx-3 mb-3 divide-y">
+                                {data && data.map((item, index) => <CampaignItemList item={item} key={index} />)}
+                            </div>
+                        </div>
+                }
                 <Footer />
             </>
         )

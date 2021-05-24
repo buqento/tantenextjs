@@ -54,7 +54,7 @@ class FeedsGrid extends React.Component {
                                             filterData.slice(0, limit).map((item, index) => <CampaignItem key={index} item={item} />)
                                         }
                                     </div>
-                                    <a href={url}><div className="rounded-full bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-3 py-3 mx-3">
+                                    <a href={url}><div className="align-middle text-center text-indigo-700 font-bold uppercase underline my-3 py-3 mx-3">
                                         {
                                             filterData.length > limit ? <span>Lihat {filterData.length - limit} Kost Lainnya</span> : <span>Cari Lebih Banyak</span>
                                         }
