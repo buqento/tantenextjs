@@ -111,7 +111,7 @@ class CampaignItem extends Component {
                             <BiMap size={20} className="inline mb-1" /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
                         </div>
 
-                        <small className="text-gray-600 uppercase">{moment(item.date_modified).lang('id').fromNow()} &middot; {item.hit} kali dilihat</small>
+                        <small className="text-gray-700 uppercase">{moment(item.date_modified).lang('id').fromNow()} &middot; {item.hit} kali dilihat</small>
 
                     </div>
                 </div>

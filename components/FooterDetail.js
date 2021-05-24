@@ -117,22 +117,11 @@ class FooterDetail extends Component {
                     <div className="w-100">
                         {
                             data.contact_us && data.contact_us.whatsapp !== undefined ?
-
                                 <a href={`https://wa.me/${data.contact_us.whatsapp}/?text=Hai, saya tertarik dengan kost ini https://tantekos.com/${data.slug}`} target="BLANK">
-                                    <button className="w-100 bg-green-400 hover:bg-green-300 text-white font-bold py-1 px-1 uppercase focus:outline-none" onClick={() => this.handleWa(data.contact_us.phone)}>
-                                        <div style={{ textAlign: '-webkit-center' }}>
-                                            <FaWhatsapp size={22} />
-                                        </div>
-                                WhatsApp
-                                </button>
-                                </a>
+                                    <button className="w-100 bg-green-400 hover:bg-green-300 text-white font-bold py-1 px-1 uppercase focus:outline-none" onClick={() => this.handleWa(data.contact_us.phone)}><div style={{ textAlign: '-webkit-center' }}><FaWhatsapp size={22} /></div>WhatsApp
+                                </button></a>
                                 :
-                                <button className="w-100 bg-green-300 text-white font-bold py-1 px-1 opacity-50 cursor-not-allowed uppercase focus:outline-none">
-                                    <div style={{ textAlign: '-webkit-center' }}>
-                                        <FaWhatsapp size={22} />
-                                    </div>
-                                    WhatsApp
-                                    </button>
+                                <button className="w-100 bg-green-300 text-gray-800 font-bold py-1 px-1 opacity-50 cursor-not-allowed uppercase focus:outline-none"><div style={{ textAlign: '-webkit-center' }}><FaWhatsapp size={22} /></div>WhatsApp</button>
                         }
                     </div>
 

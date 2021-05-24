@@ -71,11 +71,7 @@ export default function NavComponent() {
                           <div>
                             <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                               <span className="sr-only">Open user menu</span>
-                              <img
-                                className="h-8 w-8 rounded-full"
-                                src={userdata.photoURL}
-                                alt=""
-                              />
+                              <img className="h-8 w-8 rounded-full" src={userdata.photoURL} alt={userdata.displayName} />
                             </Menu.Button>
                           </div>
                           <Transition

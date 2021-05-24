@@ -114,7 +114,7 @@ class Index extends React.Component {
           </div>
           {/* col2 */}
           <div className="">
-            <div className="mb-2 px-3 bg-white z-10" ref={(node) => this.node = node}>
+            <div className="mb-2 px-2 bg-white z-10" ref={(node) => this.node = node}>
               <span className="text-current">
                 {
                   isFilter && <div className="mt-2">Hasil Pencarian: <span className="font-bold">Sewa {dataCallback.duration}an, {titleHead}</span></div>

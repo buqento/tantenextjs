@@ -181,7 +181,7 @@ class Detail extends React.Component {
               <h1 className="mt-0 text-xl capitalize">{detail.title}</h1>
 
               {/* date modified */}
-              <small className="text-gray-600 uppercase">{moment(detail.date_modified).lang('id').fromNow()} &middot; {detail.hit} kali dilihat</small>
+              <small className="text-gray-700 uppercase">{moment(detail.date_modified).lang('id').fromNow()} &middot; {detail.hit} kali dilihat</small>
 
               {/* description */}
               <div className="my-3">
@@ -273,6 +273,7 @@ export const getServerSideProps = async (context) => {
   const querySnapshot = await fire.firestore().collection('kosts')
     .where('slug', '!=', context.query.detail)
     .where('location.district', '==', detail.location.district)
+    .where('is_active', '==', true)
     .get()
   querySnapshot.forEach(doc => {
     otherData.push({
