@@ -61,7 +61,7 @@ class CampaignItem extends Component {
                     <div className="bg-gray-400">
                         <img className="object-cover object-center w-full h-64" src={`https://cdn.statically.io/img/i.imgur.com/w=450/${item.images[0]}`} alt={item.title} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} />
                     </div>
-                    <div className="px-2 pt-2 pb-2">
+                    <div className="px-2 pt-2 pb-4">
 
                         {/* price and action */}
                         <div className="text-2xl flex">

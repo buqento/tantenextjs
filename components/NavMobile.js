@@ -1,9 +1,9 @@
 import NavButton from "./NavButton"
-import { FaRegUser, FaUserAlt } from 'react-icons/fa'
 import { AiFillHome, AiOutlineHome } from 'react-icons/ai'
 import { HiLocationMarker, HiOutlineLocationMarker } from 'react-icons/hi'
 import { useRouter } from 'next/router'
-function NavBar(props) {
+import { BiSearch, BiSearchAlt } from "react-icons/bi"
+function NavMobile(props) {
   const router = useRouter()
   const navButtons = [
     {
@@ -18,21 +18,15 @@ function NavBar(props) {
       icon: router.pathname === '/nearby' ? <HiLocationMarker /> : <HiOutlineLocationMarker />,
       color: router.pathname === '/nearby' ? 'text-indigo-700' : 'text-gray-700'
     },
-    // {
-    //   label: "Cari Kost",
-    //   path: "/search/all",
-    //   icon: router.pathname === '/search/[search]' ? <BiSearchAlt /> : <BiSearch />,
-    //   color: router.pathname === '/search/[search]' ? 'text-indigo-700' : 'text-gray-700'
-    // }
     {
-      label: "Akun",
-      path: "/account",
-      icon: router.pathname === '/account' ? <FaUserAlt size={20} className="mt-1" /> : <FaRegUser size={20} className="mt-1" />,
-      color: router.pathname === '/account' ? 'text-indigo-700' : 'text-gray-700'
+      label: "Cari Kost",
+      path: "/search/all",
+      icon: router.pathname === '/search/[search]' ? <BiSearchAlt /> : <BiSearch />,
+      color: router.pathname === '/search/[search]' ? 'text-indigo-700' : 'text-gray-700'
     }
   ]
   return (
-    <div className="nav-bottom flex bottom-0 fixed border-top bg-gray-100 py-2 px-3 z-50">
+    <div className="nav-bottom flex bottom-0 fixed border-top bg-gray-100 py-3 px-3 z-50">
       {navButtons.map(button => (
         <NavButton
           key={button.path}
@@ -45,4 +39,4 @@ function NavBar(props) {
     </div>
   )
 }
-export default NavBar
+export default NavMobile

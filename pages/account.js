@@ -8,6 +8,7 @@ import router from 'next/router'
 import Link from 'next/link';
 import Footer from '../components/Footer'
 import NavComponent from '../components/NavComponent'
+import NavMobile from '../components/NavMobile'
 class Account extends React.Component {
     constructor(props) {
         super(props)
@@ -25,7 +26,7 @@ class Account extends React.Component {
     render() {
         const { userdata } = this.props
         return <>
-        <NavComponent />
+            <NavComponent />
             <Container className="divide-y-2 divide">
                 <div className="flex py-3">
                     <div><img src={userdata.photoURL} alt={userdata.displayName} width={50} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} /></div>
@@ -43,7 +44,9 @@ class Account extends React.Component {
                     <FiLogOut className="inline mb-1 mr-1" /> Logout
                 </div>
             </Container>
-            <Footer />
+            <div className="xs:block sm:hidden md:hidden lg:hidden">
+                <NavMobile />
+            </div>
         </>
     }
 }

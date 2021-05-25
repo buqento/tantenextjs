@@ -10,6 +10,7 @@ import KostType from '../components/Type'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import NavComponent from '../components/NavComponent'
+import NavMobile from '../components/NavMobile'
 class History extends React.Component {
     constructor(props) {
         super(props)
@@ -90,6 +91,9 @@ class History extends React.Component {
                 }
                 {data && data.length === 0 && <Message message="Kamu belum memiliki history" />}
                 <Footer />
+                <div className="xs:block sm:hidden md:hidden lg:hidden">
+                    <NavMobile />
+                </div>
             </>
         )
     }

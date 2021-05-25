@@ -10,6 +10,7 @@ import KostType from '../components/Type'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import NavComponent from '../components/NavComponent'
+import NavMobile from '../components/NavMobile'
 class Detail extends React.Component {
     constructor(props) {
         super(props)
@@ -94,6 +95,9 @@ class Detail extends React.Component {
                 }
                 {data && data.length === 0 && <Message message="Kamu belum memiliki kost favorit" />}
                 <Footer />
+                <div className="xs:block sm:hidden md:hidden lg:hidden">
+                    <NavMobile />
+                </div>
             </>
         )
     }

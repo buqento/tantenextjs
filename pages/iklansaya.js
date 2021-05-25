@@ -8,6 +8,7 @@ import withAuth from '../helpers/withAuth';
 import Ads from '../components/Ads'
 import Footer from '../components/Footer'
 import NavComponent from '../components/NavComponent'
+import NavMobile from '../components/NavMobile'
 class IklanSaya extends React.Component {
     constructor(props) {
         super(props)
@@ -68,6 +69,9 @@ class IklanSaya extends React.Component {
                 <Ads />
             </div>
             <Footer />
+            <div className="xs:block sm:hidden md:hidden lg:hidden">
+                <NavMobile />
+            </div>
         </>
     }
 }

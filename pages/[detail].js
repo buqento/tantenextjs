@@ -17,6 +17,7 @@ import Facilities from '../components/Facilities'
 import Share from '../components/Share'
 import Ads from '../components/Ads'
 import Footer from '../components/Footer'
+import NavMobile from '../components/NavMobile'
 class Detail extends React.Component {
   constructor(props) {
     super(props)
@@ -254,6 +255,9 @@ class Detail extends React.Component {
         </div>
       }
       <Footer />
+      <div className="xs:block sm:hidden md:hidden lg:hidden">
+        <NavMobile />
+      </div>
     </>
   }
 }

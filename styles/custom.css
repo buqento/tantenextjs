@@ -1,11 +1,6 @@
 .nav-bottom {
     width: 100%;
-    max-width: 411px;
 }
-/* .swiper-pagination {
-    padding-right: 20px;
-    text-align: right !important;
-} */
 .scroll-section {
     overflow-y: auto;
 }

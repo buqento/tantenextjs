@@ -2,12 +2,12 @@ import React from 'react'
 import fire from '../configurations/firebase'
 import CampaignItemList from '../components/CampaignItemList'
 import Message from '../components/Message'
-import Layout from '../components/Layout'
 import CampaignItemListSkeleton from '../components/CampaignItemListSkeleton'
 import Header from '../components/Header'
 import Ads from '../components/Ads'
 import NavComponent from '../components/NavComponent'
 import Footer from '../components/Footer'
+import NavMobile from '../components/NavMobile'
 class Nearby extends React.Component {
     constructor(props) {
         super(props)
@@ -119,6 +119,9 @@ class Nearby extends React.Component {
                 nearbyList && nearbyList.length === 0 && <Message title="Tidak Ditemukan" message="Temukan kost menggunakan pencarian" />
             }
             <Footer />
+            <div className="xs:block sm:hidden md:hidden lg:hidden">
+                <NavMobile />
+            </div>
         </div>
     }
 }

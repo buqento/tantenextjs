@@ -12,6 +12,7 @@ import CampaignItemListSkeleton from '../../components/CampaignItemListSkeleton'
 import Header from '../../components/Header'
 import NavComponent from '../../components/NavComponent'
 import Footer from '../../components/Footer'
+import NavMobile from '../../components/NavMobile'
 class Detail extends React.Component {
     static async getInitialProps(ctx) {
         return {
@@ -222,6 +223,9 @@ class Detail extends React.Component {
                 </Modal.Body>
             </Modal>
             <Footer />
+            <div className="xs:block sm:hidden md:hidden lg:hidden">
+                <NavMobile />
+            </div>
         </>
     }
 }

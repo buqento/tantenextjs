@@ -6,6 +6,7 @@ import CampusList from '../../../components/CampusList'
 import Generateslug from '../../../utils/Generateslug'
 import NavComponent from '../../../components/NavComponent'
 import Footer from '../../../components/Footer'
+import NavMobile from '../../../components/NavMobile'
 const Filter = () => {
     const [name, setName] = useState("")
     const filterItems = (keyword) => {
@@ -54,6 +55,9 @@ const Filter = () => {
                     )
             }
             <Footer />
+            <div className="xs:block sm:hidden md:hidden lg:hidden">
+                <NavMobile />
+            </div>
         </>
     )
 }

@@ -8,6 +8,7 @@ import fire from '../configurations/firebase'
 import Ads from '../components/Ads'
 import NavComponent from '../components/NavComponent'
 import Footer from '../components/Footer'
+import NavMobile from '../components/NavMobile'
 class Index extends React.Component {
   constructor(props) {
     super(props)
@@ -145,6 +146,9 @@ class Index extends React.Component {
           </div>
         </div>
         <Footer />
+        <div className="xs:block sm:hidden md:hidden lg:hidden">
+          <NavMobile />
+        </div>
       </div>
     )
   }
