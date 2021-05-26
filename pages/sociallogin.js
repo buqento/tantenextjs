@@ -29,6 +29,12 @@ class Sociallogin extends React.Component {
           <button>Login with Google</button>
 
         </SocialButton>
+        <div>
+          <a href="googlechrome://www.tantekos.com/login">www.tantekos.com</a>
+        </div>
+        <div>
+          <a href="googlechrome://tantekos.com/login">tantekos.com</a>
+        </div>
         {/* <div className="my-5 p-2 text-center border cursor-pointer" onClick={this.handleSignIn}><FcGoogle className="inline mb-1 mr-2" />Login dengan Google</div> */}
         <div>Kami tidak akan membagikan detail pribadi Anda dengan siapa pun. Jika Anda login, Anda menerima Syarat dan Ketentuan serta <Link href="policy"><span className="underline cursor-pointer">Kebijakan Privasi</span></Link></div>
         <div className="mt-5 underline"><Link href="/">Kembali ke Beranda</Link></div>
