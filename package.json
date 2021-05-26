@@ -26,6 +26,7 @@
     "react-js-pagination": "^3.0.3",
     "react-map-gl": "^5.2.9",
     "react-share": "^4.4.0",
+    "react-social-login": "^3.4.13",
     "sass": "^1.27.0",
     "swiper": "^6.3.4"
   },
