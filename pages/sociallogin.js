@@ -20,15 +20,30 @@ class Sociallogin extends React.Component {
       <Container className="text-center my-5">
         <div className="text-4xl">Login</div>
 
+        <div>
+
+          <SocialButton
+            provider="google"
+            appId="788082975831-u359tstdmbm4g6b8evnkafvige96cbv9.apps.googleusercontent.com"
+            onLoginSuccess={this.handleSignIn}
+            onLoginFailure={this.handleSocialLoginFailure}
+          >
+            <button>Login with Google</button>
+
+          </SocialButton>
+        </div>
         <SocialButton
-          provider="google"
-          appId="788082975831-u359tstdmbm4g6b8evnkafvige96cbv9.apps.googleusercontent.com"
+          provider="facebook"
+          appId="3234331779955939"
           onLoginSuccess={this.handleSignIn}
           onLoginFailure={this.handleSocialLoginFailure}
         >
-          <button>Login with Google</button>
+          <button>Login with Facebook</button>
 
         </SocialButton>
+
+
+
         <div>
           <a href="googlechrome://www.tantekos.com/login">www.tantekos.com</a>
         </div>
