@@ -7,6 +7,7 @@ import { Campus } from '../../../utils/modals/Campus'
 import CampaignItemList from '../../../components/CampaignItemList'
 import NavComponent from '../../../components/NavComponent'
 import Footer from '../../../components/Footer'
+import NavMobile from '../../../components/NavMobile'
 import CampaignItemListSkeleton from '../../../components/CampaignItemListSkeleton'
 class CampusId extends React.Component {
     static async getInitialProps(ctx) { return { slug: ctx.query.campus } }
@@ -129,6 +130,9 @@ class CampusId extends React.Component {
                         </div>
                 }
                 <Footer />
+                <div className="xs:block sm:hidden md:hidden lg:hidden">
+                    <NavMobile />
+                </div>
             </>
         )
     }
