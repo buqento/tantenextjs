@@ -78,6 +78,7 @@ export const DtArea = [
     { province: 'Banten', city: 'Kota Tangerang Selatan', district: 'Serpong' },
     { province: 'Banten', city: 'Kota Tangerang Selatan', district: 'Setu' },
 
+    { province: 'Jawa Barat', city: 'Depok', district: 'Cimanggis' },
     { province: 'Jawa Barat', city: 'Depok', district: 'Limo' },
     { province: 'Jawa Barat', city: 'Depok', district: 'Tapos' },
     { province: 'Jawa Barat', city: 'Depok', district: 'Pancoran Mas' },
