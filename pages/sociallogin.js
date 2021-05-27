@@ -8,6 +8,9 @@ import SocialLogin from 'react-social-login'
 import SocialButton from '../components/SocialButton'
 
 class Sociallogin extends React.Component {
+  componentDidMount(user){
+    console.log('u:',user);
+  }
   handleSignIn = (user) => {
     console.log(user);
   }
@@ -27,6 +30,7 @@ class Sociallogin extends React.Component {
             appId="788082975831-u359tstdmbm4g6b8evnkafvige96cbv9.apps.googleusercontent.com"
             onLoginSuccess={this.handleSignIn}
             onLoginFailure={this.handleSocialLoginFailure}
+            autoLogin={true}
           >
             <button>Login with Google</button>
 
