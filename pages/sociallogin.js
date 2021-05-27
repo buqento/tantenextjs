@@ -75,7 +75,7 @@ class Sociallogin extends React.Component {
     const { user, logged, currentProvider } = this.state
     console.log('logged=======>', logged);
     console.log('user=======>', user);
-    console.log('currentProvider=======>', currentProvider);
+    console.log('currentProvider=======>', user._provider);
     return (
       <Container className="text-center my-5">
         <div className="text-4xl">Login</div>
