@@ -33,7 +33,6 @@ class Sociallogin extends React.Component {
 
   onLoginSuccess(user) {
     console.log(user)
-
     this.setState({
       logged: true,
       currentProvider: user._provider,
@@ -73,8 +72,7 @@ class Sociallogin extends React.Component {
 
   render() {
     const { user, logged, currentProvider } = this.state
-    console.log('logged=======>', logged);
-    console.log('user=======>', user);
+    console.log('user=======>', user._profile);
     console.log('currentProvider=======>', user._provider);
     return (
       <Container className="text-center my-5">
