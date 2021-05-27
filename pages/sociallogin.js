@@ -98,6 +98,25 @@ class Sociallogin extends React.Component {
 
         <div>Kami tidak akan membagikan detail pribadi Anda dengan siapa pun. Jika Anda login, Anda menerima Syarat dan Ketentuan serta <Link href="policy"><span className="underline cursor-pointer">Kebijakan Privasi</span></Link></div>
         <div className="mt-5 underline"><Link href="/">Kembali ke Beranda</Link></div>
+
+        <Container className="divide-y-2 divide">
+          <div className="flex py-3">
+            <div><img src={user._profile.profilePicURL} alt={user._profile.name} width={50} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} /></div>
+            <div className="ml-2">
+              <div>Hallo,</div>
+              <div className="text-lg font-bold">{user._profile.name}</div>
+            </div>
+          </div>
+          <Link href="iklansaya">
+            <div className="py-3 cursor-pointer">
+              <FaList className="inline mb-1 mr-1" /> Iklan Saya
+                </div>
+          </Link>
+          <div className="py-3 cursor-pointer" onClick={this.handleLogout}>
+            <FiLogOut className="inline mb-1 mr-1" /> Logout
+                </div>
+        </Container>
+
       </Container>
     )
   }
