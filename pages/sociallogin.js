@@ -1,12 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
-import { auth, firebase } from '../configurations/auth'
 import { Container } from 'react-bootstrap'
-import { FcGoogle } from 'react-icons/fc'
 import router from 'next/router'
-import SocialLogin from 'react-social-login'
 import SocialButton from '../components/SocialButton'
-import SocialLogin from 'react-social-login'
 
 class Sociallogin extends React.Component {
 
