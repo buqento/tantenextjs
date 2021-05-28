@@ -15,7 +15,18 @@ class Account extends React.Component {
             user: {},
             data: []
         }
+        this.nodes = {}
+
+        this.onLoginSuccess = this.onLoginSuccess.bind(this)
+        this.onLoginFailure = this.onLoginFailure.bind(this)
+        this.handleLogout = this.handleLogout.bind(this)
     }
+    setNodeRef(provider, node) {
+        if (node) {
+          this.nodes[provider] = node
+        }
+      }
+    
     onLoginSuccess(user) {
         this.setState({ logged: true, user })
     }
