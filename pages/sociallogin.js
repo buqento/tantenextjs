@@ -2,6 +2,8 @@ import React from 'react'
 import Link from 'next/link'
 import { Container } from 'react-bootstrap'
 import router from 'next/router'
+import { FaList } from 'react-icons/fa'
+import { FiLogOut } from 'react-icons/fi'
 import SocialButton from '../components/SocialButton'
 import UserCard from './userCard'
 
