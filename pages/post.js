@@ -14,12 +14,12 @@ import router from 'next/router'
 import Footer from '../components/Footer'
 function Post({ userdata }) {
 
-    const user = {
-        uid: userdata.uid,
-        display_name: userdata.displayName,
-        email: userdata.email,
-        photo_url: userdata.photoURL
-    }
+    // const user = {
+    //     uid: userdata.uid,
+    //     display_name: userdata.displayName,
+    //     email: userdata.email,
+    //     photo_url: userdata.photoURL
+    // }
     const initType = {
         Campur: true,
         Putra: false,
