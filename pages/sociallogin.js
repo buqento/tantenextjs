@@ -22,7 +22,7 @@ class Sociallogin extends React.Component {
     this.onLoginFailure = this.onLoginFailure.bind(this)
     this.onLogoutSuccess = this.onLogoutSuccess.bind(this)
     this.onLogoutFailure = this.onLogoutFailure.bind(this)
-    this.logout = this.logout.bind(this)
+    this.handleLogout = this.handleLogout.bind(this)
   }
 
   setNodeRef(provider, node) {
