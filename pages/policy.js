@@ -1,6 +1,7 @@
 import React from 'react'
 import HeadPage from '../components/HeadPage'
 import NextHead from 'next/head'
+import FacebookLogin from '../components/FacebookLogin'
 export default function Index() {
   return (
     <div className="main-layout">
@@ -30,6 +31,7 @@ export default function Index() {
         <p>Jika Kamu memiliki pertanyaan atau saran tentang Kebijakan Privasi Kami, jangan ragu untuk menghubungi Kami melalui layanan <a href="contact" className="text-indigo-700">kontak Kami</a>.</p>
         <p className="my-3 pt-2 font-bold border-t-2">Tantekos</p>
       </div>
+      <FacebookLogin />
     </div>
   )
 }
