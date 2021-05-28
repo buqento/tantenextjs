@@ -12,6 +12,7 @@ import { BiLoaderCircle } from 'react-icons/bi'
 import NavComponent from '../components/NavComponent'
 import router from 'next/router'
 import Footer from '../components/Footer'
+import SocialButton from '../components/SocialButton'
 function Post({ userdata }) {
 
     // const user = {
