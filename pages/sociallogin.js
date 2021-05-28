@@ -72,7 +72,7 @@ class Sociallogin extends React.Component {
   }
 
   render() {
-    const { user } = this.state
+    const { logged, user } = this.state
     return (
       <Container className="text-center my-5">
         <div className="text-4xl">Login</div>
@@ -89,11 +89,13 @@ class Sociallogin extends React.Component {
             onInternetFailure={() => { return true }}
             autoLogin={true}
           >
-            <button>Login dengan Facebook</button>
+            {
+              !logged && <button>Login dengan Facebook</button>
+            }
           </SocialButton>
         </div>
 
-        <UserCard user={user} />
+        {/* <UserCard user={user} /> */}
 
         {/* <div className="my-5 p-2 text-center border cursor-pointer" onClick={this.handleSignIn}><FcGoogle className="inline mb-1 mr-2" />Login dengan Google</div> */}
 
@@ -101,7 +103,7 @@ class Sociallogin extends React.Component {
         <div className="mt-5 underline"><Link href="/">Kembali ke Beranda</Link></div>
 
         {
-          user._profile &&
+          logged && user._profile &&
           <Container className="divide-y-2 divide">
             <div className="flex py-3">
               <div><img src={user._profile.profilePicURL} alt={user._profile.name} width={50} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} /></div>
