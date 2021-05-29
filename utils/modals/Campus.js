@@ -117,4 +117,5 @@ export const Campus = [
     { slug: 'universitas-sam-ratulangi', name: 'Universitas Sam Ratulangi', province: 'Sulawesi Utara' },
     { slug: 'universitas-trinita', name: 'Universitas Trinita', province: 'Sulawesi Utara' },
     { slug: 'universitas-pembangunan-indonesia', name: 'Universitas Pembangunan Indonesia', province: 'Sulawesi Utara' },
+    { slug: 'institut-agama-kristen-negeri-manado', name: 'Institut Agama Kristen Negeri Manado', province: 'Sulawesi Utara' },
 ]
