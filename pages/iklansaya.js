@@ -21,10 +21,9 @@ class IklanSaya extends React.Component {
         this.onLoginSuccess = this.onLoginSuccess.bind(this)
         this.onLoginFailure = this.onLoginFailure.bind(this)
     }
-    componentDidMount() {
-        const { user } = this.state
-        console.log(user);
-        if (user && user._profile) {
+    onLoginSuccess(user) {
+        this.setState({ logged: true, user })
+        if (user._profile) {
             const dt = fire.firestore().collection('kosts')
             dt.where('user.uid', '==', user._profile.id)
                 .orderBy('date_modified', 'desc')
@@ -36,10 +35,6 @@ class IklanSaya extends React.Component {
                     this.setState({ data, load: false })
                 })
         }
-    }
-    onLoginSuccess(user) {
-        console.log(user);
-        this.setState({ logged: true, user })
     }
     onLoginFailure(err) {
         console.log(err);
