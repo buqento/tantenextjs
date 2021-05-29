@@ -2,38 +2,62 @@ import React from 'react'
 import fire from '../configurations/firebase'
 import CampaignItemList from '../components/CampaignItemList'
 import Message from '../components/Message'
-import Layout from '../components/Layout'
 import CampaignItemListSkeleton from '../components/CampaignItemListSkeleton'
-import withAuth from '../helpers/withAuth';
 import Ads from '../components/Ads'
 import Footer from '../components/Footer'
 import NavComponent from '../components/NavComponent'
 import NavMobile from '../components/NavMobile'
+import SocialButton from '../components/SocialButton'
+import router from 'next/router'
 class IklanSaya extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            logged: false,
+            user: null,
             data: null,
             load: true
         }
+        this.onLoginSuccess = this.onLoginSuccess.bind(this)
+        this.onLoginFailure = this.onLoginFailure.bind(this)
     }
     componentDidMount() {
-        const { userdata } = this.props
-        const dt = fire.firestore().collection('kosts')
-        dt.where('user.uid', '==', userdata.uid)
-            .orderBy('date_modified', 'desc')
-            .onSnapshot(snapshot => {
-                const data = snapshot.docs.map(doc => ({
-                    id: doc.id,
-                    ...doc.data()
-                }))
-                this.setState({ data, load: false })
-            })
+        const { user } = this.state
+        console.log(user);
+        if (user && user._profile) {
+            const dt = fire.firestore().collection('kosts')
+            dt.where('user.uid', '==', user._profile.id)
+                .orderBy('date_modified', 'desc')
+                .onSnapshot(snapshot => {
+                    const data = snapshot.docs.map(doc => ({
+                        id: doc.id,
+                        ...doc.data()
+                    }))
+                    this.setState({ data, load: false })
+                })
+        }
+    }
+    onLoginSuccess(user) {
+        console.log(user);
+        this.setState({ logged: true, user })
+    }
+    onLoginFailure(err) {
+        console.log(err);
+        router.push('/login')
     }
     render() {
         const { load, data } = this.state
         return <>
             <NavComponent />
+            <SocialButton
+                provider="facebook"
+                appId="3234331779955939"
+                onLoginSuccess={this.onLoginSuccess}
+                onLoginFailure={this.onLoginFailure}
+                key={'facebook'}
+                onInternetFailure={() => { return true }}
+                autoLogin={true}
+            ></SocialButton>
             {
                 load ? <CampaignItemListSkeleton /> :
                     data && data.length > 0 &&
@@ -75,4 +99,4 @@ class IklanSaya extends React.Component {
         </>
     }
 }
-export default withAuth(IklanSaya)
+export default IklanSaya
