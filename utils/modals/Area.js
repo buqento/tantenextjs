@@ -17,6 +17,7 @@ export const DtArea = [
     { province: 'Sulawesi Utara', city: 'Manado', district: 'Malalayang' },
     { province: 'Sulawesi Utara', city: 'Manado', district: 'Mapanget' },
     { province: 'Sulawesi Utara', city: 'Manado', district: 'Paal Dua' },
+    { province: 'Sulawesi Utara', city: 'Minahasa', district: 'Pineleng' },
 
     { province: 'Maluku', city: 'Ambon', district: 'Teluk Ambon' },
     { province: 'Maluku', city: 'Ambon', district: 'Baguala' },

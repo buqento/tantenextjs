@@ -25,6 +25,7 @@ export const City = [
     { name: 'Manado', province: 'Sulawesi Utara' },
     { name: 'Tomohon', province: 'Sulawesi Utara' },
     { name: 'Bitung', province: 'Sulawesi Utara' },
+    { name: 'Minahasa', province: 'Sulawesi Utara' },
     // Sulawesi Selatan
     { name: 'Makassar', province: 'Sulawesi Selatan' },
     { name: 'Gowa', province: 'Sulawesi Selatan' },
