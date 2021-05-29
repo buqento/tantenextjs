@@ -1,8 +1,7 @@
-import { Fragment, useState } from 'react'
+import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import Link from 'next/link'
-import SocialButton from './SocialButton'
 import { signIn, signOut, useSession } from 'next-auth/client'
 const navigation = [
   { name: 'Beranda', href: '/', current: false },
@@ -16,17 +15,6 @@ function classNames(...classes) {
 export default function NavComponent() {
   const [session, loading] = useSession()
   console.log(session);
-  const [user, setUser] = useState(null)
-  const [logged, setLogged] = useState(false)
-  const onLoginSuccess = (user) => {
-    setUser(user)
-    setLogged(true)
-  }
-  const onLoginFailure = (err) => {
-    console.error(err)
-    setUser({})
-    setLogged(false)
-  }
   return (
     <Disclosure as="nav" className="bg-gray-800 sticky top-0 z-10">
       {({ open }) => (
@@ -69,17 +57,8 @@ export default function NavComponent() {
                   </div>
                 </div>
               </div>
-              <SocialButton
-                provider="facebook"
-                appId="3234331779955939"
-                onLoginSuccess={onLoginSuccess}
-                onLoginFailure={onLoginFailure}
-                key={'facebook'}
-                onInternetFailure={() => { return true }}
-                autoLogin={true}>
-              </SocialButton>
               {
-                logged && user._profile ?
+                session ?
                   <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                     {/* Profile dropdown */}
                     <Menu as="div" className="ml-3 relative">
@@ -88,7 +67,7 @@ export default function NavComponent() {
                           <div>
                             <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                               <span className="sr-only">Open user menu</span>
-                              <img className="h-8 w-8 rounded-full" src={user._profile.profilePicURL} alt={user._profile.name} />
+                              <img className="h-8 w-8 rounded-full" src={session.user.image} alt={session.user.name} />
                             </Menu.Button>
                           </div>
                           <Transition
@@ -138,11 +117,9 @@ export default function NavComponent() {
                     </Menu>
                   </div>
                   :
-                  <Link href="login">
-                    <div className="cursor-pointer bg-gray-800 mr-2">
-                      <img className="h-8 w-8 rounded-full" src={`/static/images/user-default.png`} alt="user" />
-                    </div>
-                  </Link>
+                  <div className="cursor-pointer bg-gray-800 mr-2" onClick={() => signIn()}>
+                    <img className="h-8 w-8 rounded-full" src={`/static/images/user-default.png`} alt="user" />
+                  </div>
               }
             </div>
           </div>
