@@ -16,7 +16,7 @@ export default function NavComponent() {
   const [user, setUser] = useState(null)
   const [logged, setLogged] = useState(false)
   const onLoginSuccess = (user) => {
-    console.log(user);
+    console.log('u:',user);
     setUser(user)
     setLogged(true)
   }
