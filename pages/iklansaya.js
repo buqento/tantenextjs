@@ -10,32 +10,40 @@ import NavMobile from '../components/NavMobile'
 import { useSession } from 'next-auth/client'
 const withSession = Component => props => {
     const [session, loading] = useSession()
-    let data = []
-    if (session) {
-        const dt = fire.firestore().collection('kosts')
-        dt.where('user.email', '==', session.user.email)
-            .orderBy('date_modified', 'desc')
-            .onSnapshot(snapshot => {
-                data = snapshot.docs.map(doc => ({
-                    id: doc.id,
-                    ...doc.data()
-                }))
-            })
-    }
     if (Component.prototype.render) {
-        return <Component session={session} loading={loading} data={data} {...props} />
+        return <Component session={session} loading={loading} {...props} />
     }
     throw new Error([])
 };
 class IklanSaya extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            data: null,
+            load: true
+        }
+    }
     render() {
-        const { loading, data } = this.props
+        const { session } = this.props
+        const { data, load } = this.state
+        if (session) {
+            const dt = fire.firestore().collection('kosts')
+            dt.where('user.email', '==', session.user.email)
+                .orderBy('date_modified', 'desc')
+                .onSnapshot(snapshot => {
+                    const data = snapshot.docs.map(doc => ({
+                        id: doc.id,
+                        ...doc.data()
+                    }))
+                    this.setState({ data, load: false })
+                })
+        }
         return <>
             <NavComponent />
             {
-                loading ? <CampaignItemListSkeleton /> :
+                load ? <CampaignItemListSkeleton /> :
                     data && data.length > 0 &&
-                    <div className="mb-3">
+                    <div className="my-2">
                         <div className="mx-3 divide-y">
                             {
                                 data
@@ -60,7 +68,7 @@ class IklanSaya extends React.Component {
             {
                 data && data.length === 0 &&
                 <div>
-                    <Message title="Belum ada iklan" message="Kamu belum memiliki Iklan Aktif. Silahkan membuat iklan baru secara gratis" />
+                    <Message title="Belum ada iklan" message="Kamu belum memiliki Iklan! Silahkan membuat iklan secara gratis." />
                 </div>
             }
             <div className="mb-4">

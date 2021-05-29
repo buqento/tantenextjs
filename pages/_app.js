@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }) {
     };
   }, []);
   return (
-    <>
+    <Provider session={pageProps.session}>
       {
         loading ?
           <div className="container-center text-center">
@@ -32,13 +32,10 @@ function MyApp({ Component, pageProps }) {
             </div>
           </div>
           :
-          <Provider session={pageProps.session}>
-            <Component {...pageProps} />
-          </Provider>
+          <Component {...pageProps} />
       }
-    </>
-  );
-  // return <Component {...pageProps} />
+    </Provider>
+  )
 }
 MyApp.propTypes = {
   Component: func,
