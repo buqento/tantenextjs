@@ -1,5 +1,4 @@
 import React from 'react'
-import Router from 'next/router'
 import { Container } from 'react-bootstrap'
 import { FaList } from 'react-icons/fa'
 import { FiLogOut } from 'react-icons/fi'
@@ -10,9 +9,7 @@ import { signOut, useSession } from 'next-auth/client'
 export default function Account() {
     const [session, loading] = useSession()
     const handleLogout = () => {
-        signOut(()=>{
-            Router.push('/')
-        })
+        signOut({ callbackUrl: '/' })
     }
     return <>
         <NavComponent />

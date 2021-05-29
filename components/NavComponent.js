@@ -58,7 +58,7 @@ export default function NavComponent() {
               </div>
               {
                 !session ?
-                  <div className="cursor-pointer bg-gray-800 mr-2" onClick={() => signIn()}>
+                  <div className="cursor-pointer bg-gray-800 mr-2" onClick={() => signIn('google')}>
                     <img className="h-8 w-8 rounded-full" src={`/static/images/user-default.png`} alt="user" />
                   </div>
                   :
