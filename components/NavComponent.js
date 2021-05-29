@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import Link from 'next/link'
-import { signIn, signOut, useSession } from 'next-auth/client'
+import { signIn, useSession } from 'next-auth/client'
 const navigation = [
   { name: 'Beranda', href: '/', current: false },
   { name: 'Favorit', href: 'favorites', current: false },
@@ -13,7 +13,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 export default function NavComponent() {
-  const [session, loading] = useSession()
+  const [session] = useSession()
   console.log(session);
   return (
     <Disclosure as="nav" className="bg-gray-800 sticky top-0 z-10">
@@ -58,7 +58,11 @@ export default function NavComponent() {
                 </div>
               </div>
               {
-                session ?
+                !session ?
+                  <div className="cursor-pointer bg-gray-800 mr-2" onClick={() => signIn()}>
+                    <img className="h-8 w-8 rounded-full" src={`/static/images/user-default.png`} alt="user" />
+                  </div>
+                  :
                   <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                     {/* Profile dropdown */}
                     <Menu as="div" className="ml-3 relative">
@@ -115,10 +119,6 @@ export default function NavComponent() {
                         </>
                       )}
                     </Menu>
-                  </div>
-                  :
-                  <div className="cursor-pointer bg-gray-800 mr-2" onClick={() => signIn()}>
-                    <img className="h-8 w-8 rounded-full" src={`/static/images/user-default.png`} alt="user" />
                   </div>
               }
             </div>

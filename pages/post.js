@@ -11,7 +11,8 @@ import { BiLoaderCircle } from 'react-icons/bi'
 import NavComponent from '../components/NavComponent'
 import router from 'next/router'
 import Footer from '../components/Footer'
-import SocialButton from '../components/SocialButton'
+import { useSession } from 'next-auth/client'
+import NavMobile from '../components/NavMobile'
 function Post() {
 
     const initType = {
@@ -115,22 +116,8 @@ function Post() {
     const [start_from, setStartFrom] = useState("")
     const [duration, setDuration] = useState("Bulan")
     const [allImages, setAllimages] = useState("")
-    const [user, setUser] = useState({})
-    const [logged, setLogged] = useState(false)
-    const onLoginSuccess = (user) => {
-        setUser({
-            uid: user._profile.id,
-            display_name: user._profile.name,
-            email: user._profile.email,
-            photo_url: user._profile.profilePicURL
-        })
-        setLogged(true)
-    }
-    const onLoginFailure = (err) => {
-        console.error(err)
-        setUser(null)
-        setLogged(false)
-    }
+    const [session] = useSession()
+
     const onFileChange = event => {
         let f = event.target.files
         let i = []
@@ -205,6 +192,17 @@ function Post() {
             }))
             data.length > 0 && (found = true)
         })
+
+        let user = {}
+        if (session) {
+            user = {
+                uid: '',
+                display_name: session.user.name,
+                email: session.user.email,
+                photo_url: session.user.image
+            }
+        }
+
         docRef.get()
             .then(() => {
                 if (!found) {
@@ -386,20 +384,10 @@ function Post() {
 
     return (
         <>
-            <SocialButton
-                provider="facebook"
-                appId="3234331779955939"
-                onLoginSuccess={onLoginSuccess}
-                onLoginFailure={onLoginFailure}
-                key={'facebook'}
-                onInternetFailure={() => { return true }}
-                autoLogin={true}>
-                {!logged && <button>Login</button>}
-            </SocialButton>
 
             <NavComponent />
             {
-                logged &&
+                session &&
                 <form className="bg-white px-3 my-3" onSubmit={onFileUpload}>
 
                     <div className="mb-4">
@@ -630,6 +618,7 @@ function Post() {
                 </form>
             }
             <Footer />
+            <NavMobile />
         </>
     )
 }

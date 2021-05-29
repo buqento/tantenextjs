@@ -1,4 +1,5 @@
 import React from 'react'
+import { Provider } from 'next-auth/client'
 import Router from "next/router"
 import { shape, func } from 'prop-types'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -30,7 +31,10 @@ function MyApp({ Component, pageProps }) {
               <div><BiLoaderCircle size={22} className="animate-spin inline mr-1 mb-1" />Menunggu Data</div>
             </div>
           </div>
-          : <Component {...pageProps} />
+          :
+          <Provider session={pageProps.session}>
+            <Component {...pageProps} />
+          </Provider>
       }
     </>
   );
