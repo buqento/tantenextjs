@@ -1,7 +1,6 @@
 import React from 'react'
 import HeadPage from '../components/HeadPage'
 import NextHead from 'next/head'
-import FacebookLogin from '../components/FacebookLogin'
 export default function Index() {
   return (
     <div className="main-layout">
@@ -22,7 +21,6 @@ export default function Index() {
         <p>Kami bangga membangun aplikasi Tantekos dengan memberikan layanan Gratis untuk Kamu. Layanan ini disediakan tanpa biaya dan dimaksudkan untuk digunakan sebagaimana adanya. Kami menyediakan informasi hunian di seluruh Indonesia.</p>
         <p>Konten yang kami bagikan berasal dari informasi yang Kami dapatkan yang telah tersaring. Perkenankan Kami menyampaikan terima kasih atas dukungan dan partisipasi menjaga layanan Tantekos tetap sehat.</p>
       </div>
-      <FacebookLogin />
     </div>
   )
 }

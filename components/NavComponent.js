@@ -3,6 +3,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import Link from 'next/link'
 import SocialButton from './SocialButton'
+import { signIn, signOut, useSession } from 'next-auth/client'
 const navigation = [
   { name: 'Beranda', href: '/', current: false },
   { name: 'Favorit', href: 'favorites', current: false },
@@ -13,10 +14,11 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 export default function NavComponent() {
+  const [session, loading] = useSession()
+  console.log(session);
   const [user, setUser] = useState(null)
   const [logged, setLogged] = useState(false)
   const onLoginSuccess = (user) => {
-    console.log('u:',user);
     setUser(user)
     setLogged(true)
   }
