@@ -1,8 +1,8 @@
-import { Fragment, useState, useEffect } from 'react'
+import { Fragment, useState } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import Link from 'next/link'
-import { auth } from '../configurations/auth'
+import SocialButton from './SocialButton'
 const navigation = [
   { name: 'Beranda', href: '/', current: false },
   { name: 'Favorit', href: 'favorites', current: false },
@@ -13,12 +13,18 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 export default function NavComponent() {
-  const [userdata, setUserdata] = useState(null)
-  useEffect(() => {
-    auth.onAuthStateChanged(authUser => {
-      authUser && setUserdata(authUser)
-    })
-  })
+  const [user, setUser] = useState(null)
+  const [logged, setLogged] = useState(false)
+  const onLoginSuccess = (user) => {
+    console.log(user);
+    setUser(user)
+    setLogged(true)
+  }
+  const onLoginFailure = (err) => {
+    console.error(err)
+    setUser({})
+    setLogged(false)
+  }
   return (
     <Disclosure as="nav" className="bg-gray-800 sticky top-0 z-10">
       {({ open }) => (
@@ -61,8 +67,17 @@ export default function NavComponent() {
                   </div>
                 </div>
               </div>
+              <SocialButton
+                provider="facebook"
+                appId="3234331779955939"
+                onLoginSuccess={onLoginSuccess}
+                onLoginFailure={onLoginFailure}
+                key={'facebook'}
+                onInternetFailure={() => { return true }}
+                autoLogin={true}>
+              </SocialButton>
               {
-                userdata ?
+                logged && user._profile ?
                   <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                     {/* Profile dropdown */}
                     <Menu as="div" className="ml-3 relative">
@@ -71,7 +86,7 @@ export default function NavComponent() {
                           <div>
                             <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                               <span className="sr-only">Open user menu</span>
-                              <img className="h-8 w-8 rounded-full" src={userdata.photoURL} alt={userdata.displayName} />
+                              <img className="h-8 w-8 rounded-full" src={user._profile.profilePicURL} alt={user._profile.name} />
                             </Menu.Button>
                           </div>
                           <Transition
