@@ -48,7 +48,6 @@ class IklanSaya extends React.Component {
     render() {
         const { load, data } = this.state
         return <>
-            <NavComponent />
             <SocialButton
                 provider="facebook"
                 appId="3234331779955939"
@@ -58,6 +57,7 @@ class IklanSaya extends React.Component {
                 onInternetFailure={() => { return true }}
                 autoLogin={true}
             ></SocialButton>
+            <NavComponent />
             {
                 load ? <CampaignItemListSkeleton /> :
                     data && data.length > 0 &&

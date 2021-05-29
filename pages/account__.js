@@ -45,7 +45,6 @@ class Account extends React.Component {
     render() {
         const { user, logged } = this.state
         return <>
-            <NavComponent />
             <SocialButton
                 provider="facebook"
                 appId="3234331779955939"
@@ -55,6 +54,7 @@ class Account extends React.Component {
                 onInternetFailure={() => { return true }}
                 autoLogin={true}
             ></SocialButton>
+            <NavComponent />
             {
                 logged && user._profile &&
                 <Container className="divide-y-2 divide">
