@@ -4,7 +4,6 @@ import Generateslug from '../utils/Generateslug'
 import { DtArea } from '../utils/modals/Area'
 import { DtProvinsi } from '../utils/modals/Provinsi'
 import { City } from '../utils/modals/City'
-import withAuth from '../helpers/withAuth';
 import { FiSend } from 'react-icons/fi'
 import ReactMapGl, { FullscreenControl, GeolocateControl, Marker } from 'react-map-gl'
 import { FaMapMarkerAlt } from 'react-icons/fa';
@@ -13,14 +12,8 @@ import NavComponent from '../components/NavComponent'
 import router from 'next/router'
 import Footer from '../components/Footer'
 import SocialButton from '../components/SocialButton'
-function Post({ userdata }) {
+function Post() {
 
-    // const user = {
-    //     uid: userdata.uid,
-    //     display_name: userdata.displayName,
-    //     email: userdata.email,
-    //     photo_url: userdata.photoURL
-    // }
     const initType = {
         Campur: true,
         Putra: false,
@@ -122,22 +115,22 @@ function Post({ userdata }) {
     const [start_from, setStartFrom] = useState("")
     const [duration, setDuration] = useState("Bulan")
     const [allImages, setAllimages] = useState("")
-
-    // user login
     const [user, setUser] = useState({})
     const [logged, setLogged] = useState(false)
     const onLoginSuccess = (user) => {
-        console.log(user);
-        setUser(user)
+        setUser({
+            uid: user._profile.id,
+            display_name: user._profile.name,
+            email: user._profile.email,
+            photo_url: user._profile.profilePicURL
+        })
         setLogged(true)
     }
     const onLoginFailure = (err) => {
         console.error(err)
-        setUser({})
+        setUser(null)
         setLogged(false)
     }
-    // end user login
-
     const onFileChange = event => {
         let f = event.target.files
         let i = []
@@ -147,7 +140,6 @@ function Post({ userdata }) {
         }
         setAllimages(i)
     }
-
     const onFileUpload = (e) => {
         e.preventDefault();
         setPublish(true)
@@ -176,7 +168,6 @@ function Post({ userdata }) {
             alert('Data tidak valid!');
         }
     }
-
     const handleSubmit = (images) => {
 
         let arrType = []
@@ -642,4 +633,4 @@ function Post({ userdata }) {
         </>
     )
 }
-export default withAuth(Post);
+export default Post;
