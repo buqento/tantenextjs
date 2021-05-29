@@ -117,7 +117,7 @@ export default function NavComponent() {
                     </Menu>
                   </div>
                   :
-                  <div className="cursor-pointer bg-gray-800 mr-2" onClick={() => signIn('facebook', { callbackUrl: 'https://tantekos.com' })}>
+                  <div className="cursor-pointer bg-gray-800 mr-2" onClick={() => signIn()}>
                     <img className="h-8 w-8 rounded-full" src={`/static/images/user-default.png`} alt="user" />
                   </div>
               }
