@@ -44,7 +44,7 @@ class Account extends React.Component {
         }
     }
     render() {
-        const { user, logged } = this.props
+        const { user, logged } = this.state
         return <>
             <SocialButton
                 provider="facebook"
