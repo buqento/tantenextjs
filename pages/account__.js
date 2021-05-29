@@ -23,15 +23,17 @@ class Account extends React.Component {
     }
     setNodeRef(provider, node) {
         if (node) {
-          this.nodes[provider] = node
+            this.nodes[provider] = node
         }
-      }
-    
+    }
+
     onLoginSuccess(user) {
+        console.log(user);
         this.setState({ logged: true, user })
     }
 
     onLoginFailure(err) {
+        console.log(err);
         router.push('/login')
     }
     handleLogout() {
@@ -49,6 +51,7 @@ class Account extends React.Component {
                 appId="3234331779955939"
                 onLoginSuccess={this.onLoginSuccess}
                 onLoginFailure={this.onLoginFailure}
+                key={'facebook'}
                 onInternetFailure={() => { return true }}
                 autoLogin={true}
             ></SocialButton>
