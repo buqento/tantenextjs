@@ -3,7 +3,7 @@ import { AiFillHome, AiOutlineHome } from 'react-icons/ai'
 import { HiLocationMarker, HiOutlineLocationMarker } from 'react-icons/hi'
 import { useRouter } from 'next/router'
 import { BiSearch, BiSearchAlt } from "react-icons/bi"
-function NavMobile(props) {
+function NavMobile() {
   const router = useRouter()
   const navButtons = [
     {

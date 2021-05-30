@@ -1,9 +1,11 @@
 import React from 'react'
-import HeadPage from '../components/HeadPage'
 import NextHead from 'next/head'
+import NavComponent from '../components/NavComponent'
+import NavMobile from '../components/NavMobile'
+import Footer from '../components/Footer'
 export default function Index() {
   return (
-    <div className="main-layout">
+    <>
       <NextHead>
         <title>Kebijakan Privasi - Cari Kost Dan Kontrakan Harian Bulanan Tahunan Murah Terjangkau Nyaman Strategis</title>
         <meta name="description" content="Tersedia Kost Dan Kontrakan Harian Bulanan Tahunan Murah Terjangkau Nyaman Strategis Di Sekitar Kamu" />
@@ -15,7 +17,7 @@ export default function Index() {
         <meta name="classification" content="Business, Rent House, Sewa Kost, Property, Rent Room, Info Kost, Information, Kost, Room, Cari Kost, Kost Murah, Kost Bebas, Application, Mobile Application, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
         <meta name="keywords" content="Tantekos, Info Kost, Cari Kost, Kost, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
       </NextHead>
-      <HeadPage title="Kebijakan Privasi" />
+      <NavComponent />
       <div className="container text-center leading-relaxed">
         <h1 className="text-2xl py-3">Kebijakan Privasi</h1>
         <p>Kami bangga membangun aplikasi Tantekos. Layanan ini disediakan tanpa biaya dan dimaksudkan untuk digunakan sebagaimana adanya.</p>
@@ -30,6 +32,10 @@ export default function Index() {
         <p>Jika Kamu memiliki pertanyaan atau saran tentang Kebijakan Privasi Kami, jangan ragu untuk menghubungi Kami melalui layanan <a href="contact" className="text-indigo-700">kontak Kami</a>.</p>
         <p className="my-3 pt-2 font-bold border-t-2">Tantekos</p>
       </div>
-    </div>
+      <Footer />
+      <div className="xs:block sm:hidden md:hidden lg:hidden">
+        <NavMobile />
+      </div>
+    </>
   )
 }
