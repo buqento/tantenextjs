@@ -7,6 +7,8 @@ import NextHead from 'next/head'
 import Generateslug from '../../../utils/Generateslug'
 import Titlecase from '../../../utils/Titlecase'
 import { BiChevronRight, BiMap } from 'react-icons/bi'
+import Link from 'next/link'
+import NavComponent from '../../../components/NavComponent'
 
 class Detail extends React.Component {
     static async getInitialProps(ctx) {
@@ -45,8 +47,8 @@ class Detail extends React.Component {
                     <meta name="classification" content="Business, Rent House, Sewa Kost, Property, Rent Room, Info Kost, Information, Kost, Room, Cari Kost, Kost Murah, Kost Bebas, Application, Mobile Application, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
                     <link rel="canonical" content={`https://tantekos.com/area/provinsi/${slug}`} />
                 </NextHead>
-                <div className="main-layout">
-                    <HeadPage title={areaTitle} />
+                <NavComponent />
+                <>
                     <div className="container divide-y divide-gray-400">
                         {
                             slug != 'all' ?
@@ -61,12 +63,12 @@ class Detail extends React.Component {
                                     .filter(item => Generateslug(item.province) === slug)
                                     .map((item, index) =>
                                         <div className="py-3 px-3" key={index}>
-                                            <a href={`../../area/${Generateslug(item.district)}`}>
+                                            <Link href={`../../area/${Generateslug(item.district)}`}>
                                                 <div>
                                                     <span>{item.district}</span>
                                                     <span className="float-right"><BiChevronRight size={28} className="inline ml-1 mb-1" /></span>
                                                 </div>
-                                            </a>
+                                            </Link>
                                         </div>
                                     )
                                 :
@@ -96,12 +98,12 @@ class Detail extends React.Component {
                                                         .filter(item => Generateslug(item.province) === Generateslug(itemProvinsi.title))
                                                         .map((item, index) =>
                                                             <div className="py-3 px-3 bg-gray-100 border-bottom" key={index}>
-                                                                <a href={`../../area/${Generateslug(item.district)}`}>
+                                                                <Link href={`../../area/${Generateslug(item.district)}`}>
                                                                     <div>
                                                                         <span>{item.district}</span>
                                                                         <span className="float-right"><a href="/search/category/Kost"><BiChevronRight size={28} className="inline ml-1 mb-1" /></a></span>
                                                                     </div>
-                                                                </a>
+                                                                </Link>
                                                             </div>
                                                         )
                                                 }
@@ -110,7 +112,7 @@ class Detail extends React.Component {
                                     )
                         }
                     </div>
-                </div>
+                </>
             </>
         )
     }

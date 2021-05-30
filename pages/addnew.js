@@ -96,11 +96,13 @@ function Addnew() {
     const [post_url, setPostUrl] = useState("")
     const [allImages, setAllimages] = useState("")
     const [session] = useSession()
+
     useEffect(() => {
         if (!session) {
             signIn('google', { callbackUrl: '/account' })
         }
     })
+    
     const onFileChange = event => {
         let f = event.target.files
         let i = []

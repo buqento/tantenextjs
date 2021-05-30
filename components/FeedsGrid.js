@@ -4,6 +4,7 @@ import Generateslug from '../utils/Generateslug'
 import fire from '../configurations/firebase'
 import Message from './Message'
 import CampaignItemSkeleton from './CampaignItemSkeleton'
+import Link from 'next/link'
 class FeedsGrid extends React.Component {
     constructor(props) {
         super(props)
@@ -54,11 +55,13 @@ class FeedsGrid extends React.Component {
                                             filterData.slice(0, limit).map((item, index) => <CampaignItem key={index} item={item} />)
                                         }
                                     </div>
-                                    <a href={url}><div className="align-middle text-center text-indigo-700 font-bold uppercase underline my-3 py-3 mx-3">
-                                        {
-                                            filterData.length > limit ? <span>Lihat {filterData.length - limit} Kost Lainnya</span> : <span>Cari Lebih Banyak</span>
-                                        }
-                                    </div></a>
+                                    <Link href={url}>
+                                        <div className="align-middle text-center text-indigo-700 font-bold uppercase underline my-3 py-3 mx-3">
+                                            {
+                                                filterData.length > limit ? <span>Lihat {filterData.length - limit} Kost Lainnya</span> : <span>Cari Lebih Banyak</span>
+                                            }
+                                        </div>
+                                    </Link>
                                 </>
                                 :
                                 <Message title="Tidak Ditemukan" message="Silahkan cari dengan kriteria lainnya" />

@@ -5,9 +5,9 @@ import Link from 'next/link'
 import { signIn, useSession } from 'next-auth/client'
 const navigation = [
   { name: 'Beranda', href: '/', current: false },
-  { name: 'Favorit', href: 'favorites', current: false },
-  { name: 'History', href: 'history', current: false },
-  { name: 'Terdekat', href: 'nearby', current: false }
+  { name: 'Favorit', href: '/favorites', current: false },
+  { name: 'History', href: '/history', current: false },
+  { name: 'Terdekat', href: '/nearby', current: false }
 ]
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -33,7 +33,7 @@ export default function NavComponent() {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <Link href="/">
-                  <div className="text-white font-bold flex-shrink-0 flex items-center">
+                  <div className="cursor-pointer text-white font-bold flex-shrink-0 flex items-center">
                     <h1 className="block lg:hidden">TANTEKOS</h1>
                     <h1 className="hidden lg:block">TANTEKOS</h1>
                   </div>
@@ -41,17 +41,13 @@ export default function NavComponent() {
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
+                      <Link key={item.name} href={item.href} aria-current={item.current ? 'page' : undefined}>
+                        <span className={classNames(
                           item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'px-3 py-2 rounded-md text-sm font-medium'
-                        )}
-                        aria-current={item.current ? 'page' : undefined}
-                      >
-                        {item.name}
-                      </a>
+                          'cursor-pointer px-3 py-2 rounded-md text-sm font-medium')}>
+                          {item.name}
+                        </span>
+                      </Link>
                     ))}
                   </div>
                 </div>

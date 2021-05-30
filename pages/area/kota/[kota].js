@@ -1,13 +1,14 @@
 import React from 'react'
 import { string } from 'prop-types'
 import { DtArea } from '../../../utils/modals/Area'
-import { DtProvinsi } from '../../../utils/modals/Provinsi'
 import HeadPage from '../../../components/HeadPage'
 import NextHead from 'next/head'
 import Generateslug from '../../../utils/Generateslug'
 import Titlecase from '../../../utils/Titlecase'
 import { BiChevronRight, BiMap } from 'react-icons/bi'
 import { City } from '../../../utils/modals/City'
+import NavComponent from '../../../components/NavComponent'
+import Link from 'next/link'
 
 class Detail extends React.Component {
     static async getInitialProps(ctx) {
@@ -46,9 +47,9 @@ class Detail extends React.Component {
                     <meta name="classification" content="Business, Rent House, Sewa Kost, Property, Rent Room, Info Kost, Information, Kost, Room, Cari Kost, Kost Murah, Kost Bebas, Application, Mobile Application, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
                     <link rel="canonical" content={`https://tantekos.com/area/provinsi/${slug}`} />
                 </NextHead>
-                <div className="main-layout">
-                    <HeadPage title={areaTitle} />
-                    <div className="container divide-y divide-gray-400">
+                <NavComponent />
+                <>
+                    <div className="mx-3 divide-y divide-gray-400">
                         {
                             slug != 'all' ?
                                 DtArea
@@ -62,12 +63,12 @@ class Detail extends React.Component {
                                     .filter(item => Generateslug(item.city) === slug)
                                     .map((item, index) =>
                                         <div className="py-3 px-3" key={index}>
-                                            <a href={`../../area/${Generateslug(item.district)}`}>
+                                            <Link href={`../../area/${Generateslug(item.district)}`}>
                                                 <div>
                                                     <span>{item.district}</span>
                                                     <span className="float-right"><BiChevronRight size={28} className="inline ml-1 mb-1" /></span>
                                                 </div>
-                                            </a>
+                                            </Link>
                                         </div>
                                     )
                                 :
@@ -97,12 +98,12 @@ class Detail extends React.Component {
                                                         .filter(item => Generateslug(item.city) === Generateslug(itemCity.name))
                                                         .map((item, index) =>
                                                             <div className="py-3 px-3 bg-gray-100 border-bottom" key={index}>
-                                                                <a href={`../../area/${Generateslug(item.district)}`}>
+                                                                <Link href={`../../area/${Generateslug(item.district)}`}>
                                                                     <div>
                                                                         <span>{item.district}</span>
-                                                                        <span className="float-right"><a href="/search/category/Kost"><BiChevronRight size={28} className="inline ml-1 mb-1" /></a></span>
+                                                                        <span className="float-right"><Link href="/search/category/Kost"><BiChevronRight size={28} className="inline ml-1 mb-1" /></Link></span>
                                                                     </div>
-                                                                </a>
+                                                                </Link>
                                                             </div>
                                                         )
                                                 }
@@ -111,7 +112,7 @@ class Detail extends React.Component {
                                     )
                         }
                     </div>
-                </div>
+                </>
             </>
         )
     }

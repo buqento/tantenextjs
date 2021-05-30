@@ -3,6 +3,7 @@ import { string } from 'prop-types'
 import { Campus } from '../utils/modals/Campus'
 import Generateslug from '../utils/Generateslug'
 import { BiChevronRight } from 'react-icons/bi'
+import Link from 'next/link'
 const CampusList = (props) => {
     const { name, locationProvince } = props
     const filterItems = (keyword) => {
@@ -28,12 +29,12 @@ const CampusList = (props) => {
                             })
                             .map((item, index) =>
                                 <div className="py-2 px-3" key={index}>
-                                    <a href={`../../area/kampus/${Generateslug(item.name)}`}>
-                                        <div className="d-flex">
+                                    <Link href={`../../area/kampus/${Generateslug(item.name)}`}>
+                                        <div className="d-flex cursor-pointer">
                                             <span className="w-full">{item.name}</span>
                                             <span className="ml-0.5 float-right self-center"><BiChevronRight size={28} className="inline ml-1 mb-1" /></span>
                                         </div>
-                                    </a>
+                                    </Link>
                                 </div>
                             )
                     }

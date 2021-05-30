@@ -3,6 +3,7 @@ import { arrayOf, shape } from 'prop-types'
 import fire from '../configurations/firebase'
 import CampaignItemList from '../components/CampaignItemList'
 import Generateslug from '../utils/Generateslug'
+import Link from 'next/link'
 class ListKosOthers extends Component {
     async handleHit(id, hit) {
         await fire.firestore().collection("kosts").doc(id).update({ hit }).catch(err => { console.log(err) })
@@ -44,11 +45,11 @@ class ListKosOthers extends Component {
                 {
                     listData.length > 5 &&
                     <div className="border-top">
-                        <a href={url}>
-                            <div className="align-middle text-center text-indigo-700 underline font-bold uppercase my-3 py-3">
+                        <Link href={url}>
+                            <div className="cursor-pointer align-middle text-center text-indigo-700 underline font-bold uppercase my-3 py-3">
                                 <span>Lihat {listData.length - 5} Lainnya</span>
                             </div>
-                        </a>
+                        </Link>
                     </div>
                 }
             </>

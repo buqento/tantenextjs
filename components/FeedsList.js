@@ -4,6 +4,7 @@ import Generateslug from '../utils/Generateslug'
 import fire from '../configurations/firebase'
 import Message from './Message'
 import CampaignItemListSkeleton from './CampaignItemListSkeleton'
+import Link from 'next/link'
 class FeedsList extends React.Component {
     constructor(props) {
         super(props)
@@ -52,20 +53,22 @@ class FeedsList extends React.Component {
                                             filterData.slice(0, limit).map((item, index) => <CampaignItem key={index} item={item} />)
                                         }
                                     </div>
-                                    <a href={url}><div className="rounded-full bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-3 py-3 mx-3">
-                                        {
-                                            filterData.length > limit ? <span>Lihat {filterData.length - limit} Kost Lainnya</span> : <span>Cari Lebih Banyak</span>
-                                        }
-                                    </div></a>
+                                    <Link href={url}>
+                                        <div className="rounded-full bg-indigo-700 align-middle rouded text-center text-white font-bold uppercase my-3 py-3 mx-3">
+                                            {
+                                                filterData.length > limit ? <span>Lihat {filterData.length - limit} Kost Lainnya</span> : <span>Cari Lebih Banyak</span>
+                                            }
+                                        </div>
+                                    </Link>
                                 </>
                                 :
                                 <Message title="Tidak Ditemukan" message="Silahkan cari dengan kriteria lainnya" />
                         }
                     </> : load ? <CampaignItemListSkeleton /> :
-                            <div className="mx-3 divide-y">
-                                {!load && data && data
-                                    .map((item, index) => <CampaignItemList key={index} item={item} />)}
-                            </div>
+                        <div className="mx-3 divide-y">
+                            {!load && data && data
+                                .map((item, index) => <CampaignItemList key={index} item={item} />)}
+                        </div>
                 }
             </div>
         )

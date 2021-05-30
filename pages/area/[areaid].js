@@ -9,6 +9,7 @@ import Titlecase from '../../utils/Titlecase'
 import CampaignItemList from '../../components/CampaignItemList'
 import CampaignItemListSkeleton from '../../components/CampaignItemListSkeleton'
 import Message from '../../components/Message'
+import NavComponent from '../../components/NavComponent'
 class Detail extends React.Component {
     static async getInitialProps(ctx) {
         return { slug: ctx.query.areaid }
@@ -110,14 +111,14 @@ class Detail extends React.Component {
                     <link rel="canonical" content={`https://tantekos.com/area/${slug}`} />
                     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureAreaPage) }} />
                 </NextHead>
-                <div className="main-layout">
-                    <HeadPage title={`Area ${seoItem.district}, ${seoItem.province}`} />
+                <NavComponent />
+                <>
                     {load && <CampaignItemListSkeleton />}
                     {data && data.length === 0 && <Message title="Tidak Ditemukan" message="Silahkan cari dengan kriteria lainnya" />}
-                    <div className="mx-3 mb-3 divide-y">
+                    <div className="mx-3 my-2 divide-y">
                         {data && data.map((item, index) => <CampaignItemList item={item} key={index} />)}
                     </div>
-                </div>
+                </>
             </>
         )
     }

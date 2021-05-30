@@ -9,6 +9,7 @@ import Ads from '../components/Ads'
 import NavComponent from '../components/NavComponent'
 import Footer from '../components/Footer'
 import NavMobile from '../components/NavMobile'
+import Link from 'next/link'
 class Index extends React.Component {
   constructor(props) {
     super(props)
@@ -133,11 +134,11 @@ class Index extends React.Component {
             </div>
             <div className="border-bottom">
               <Campus />
-              <a href="/area/kampus">
+              <Link href="/area/kampus">
                 <div className="align-middle text-center text-indigo-700 font-bold uppercase mb-3 mt-2 py-2 mx-3 cursor-pointer underline">
                   <span>Kampus Lainnya</span>
                 </div>
-              </a>
+              </Link>
             </div>
             <div className="m-3 mb-n2">
               <span className="text-uppercase text-current font-bold">Komunitas Facebook</span>

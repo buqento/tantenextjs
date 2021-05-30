@@ -222,12 +222,6 @@ class Detail extends React.Component {
               <Peta location={detail && detail.location} zoom={15} />
             </div>
             <div className="mt-3">
-              {/* {
-                detail.contact_us.facebook_url !== '' &&
-                <div className="pt-3 text-sm text-indigo-700">
-                  <a href={detail.contact_us.facebook_url} target="blank" rel="noreferrer">* Lihat informasi pengiklan <FaExternalLinkAlt className="mb-1 inline" /> </a>
-                </div>
-              } */}
               <small>* Data dapat berubah sewaktu-waktu.</small>
             </div>
           </div>
