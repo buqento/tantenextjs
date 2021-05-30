@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import fire from '../configurations/firebase'
 import Generateslug from '../utils/Generateslug'
 import { DtArea } from '../utils/modals/Area'
 import { DtProvinsi } from '../utils/modals/Provinsi'
 import { City } from '../utils/modals/City'
 import { FiSend } from 'react-icons/fi'
+import { useSession, signIn } from 'next-auth/client'
 
 function Addnew() {
 
