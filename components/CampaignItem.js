@@ -57,7 +57,7 @@ class CampaignItem extends Component {
         }
         return (
             <Link href={`/${Generateslug(item.title)}`}>
-                <div className={`overflow-hidden ${customStyle}`} onClick={() => handleLastView()}>
+                <div className={`cursor-pointer overflow-hidden ${customStyle}`} onClick={() => handleLastView()}>
                     <div className="bg-gray-400">
                         <img className="object-cover object-center w-full h-64" src={`https://cdn.statically.io/img/i.imgur.com/w=450/${item.images[0]}`} alt={item.title} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} />
                     </div>

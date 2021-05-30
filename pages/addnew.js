@@ -4,17 +4,10 @@ import Generateslug from '../utils/Generateslug'
 import { DtArea } from '../utils/modals/Area'
 import { DtProvinsi } from '../utils/modals/Provinsi'
 import { City } from '../utils/modals/City'
-import withAuth from '../helpers/withAuth';
 import { FiSend } from 'react-icons/fi'
 
-function Addnew({ userdata }) {
+function Addnew() {
 
-    const user = {
-        uid: userdata.uid,
-        display_name: userdata.displayName,
-        email: userdata.email,
-        photo_url: userdata.photoURL
-    }
     const initType = {
         Campur: true,
         Putra: false,
@@ -101,7 +94,12 @@ function Addnew({ userdata }) {
     const [duration, setDuration] = useState("Bulan")
     const [post_url, setPostUrl] = useState("")
     const [allImages, setAllimages] = useState("")
-
+    const [session] = useSession()
+    useEffect(() => {
+        if (!session) {
+            signIn('google', { callbackUrl: '/account' })
+        }
+    })
     const onFileChange = event => {
         let f = event.target.files
         let i = []
@@ -111,7 +109,6 @@ function Addnew({ userdata }) {
         }
         setAllimages(i)
     }
-
     const onFileUpload = (e) => {
         e.preventDefault();
         setPublish(true)
@@ -178,6 +175,15 @@ function Addnew({ userdata }) {
             }))
             data.length > 0 && (found = true)
         })
+        let user = {}
+        if (session) {
+            user = {
+                uid: '',
+                display_name: session.user.name,
+                email: session.user.email,
+                photo_url: session.user.image
+            }
+        }
         docRef.get()
             .then(() => {
                 if (!found) {
@@ -577,4 +583,4 @@ function Addnew({ userdata }) {
         </form>
     )
 }
-export default withAuth(Addnew);
+export default Addnew

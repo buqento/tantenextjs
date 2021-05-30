@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Router from 'next/router'
 import fire from '../configurations/firebase'
 import Generateslug from '../utils/Generateslug'
 import { DtArea } from '../utils/modals/Area'
