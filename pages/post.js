@@ -394,7 +394,7 @@ function Post() {
                 session &&
                 <>
                     <NavComponent />
-                    <form className="bg-white px-3 my-3" onSubmit={onFileUpload}>
+                    <form className="bg-white mx-3 my-3" onSubmit={onFileUpload}>
 
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">Nama Kost <span className="text-danger">*</span></label>

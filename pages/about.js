@@ -18,7 +18,7 @@ export default function Index() {
         <meta name="keywords" content="Tantekos, Info Kost, Cari Kost, Kost, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
       </NextHead>
       <NavComponent />
-      <div className="container text-center leading-relaxed p-5">
+      <div className="my-3 mx-3 pb-5 text-center leading-relaxed">
         <div style={{ textAlign: '-webkit-center' }}>
           <img src="/static/images/logo.png" width={100} height={100} alt="logo_tantekos" className="object-center justify-center" />
         </div>

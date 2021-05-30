@@ -20,7 +20,7 @@ export default function Index() {
         <meta name="keywords" content="Tantekos, Info Kost, Cari Kost, Kost, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
       </NextHead>
       <NavComponent />
-      <div className="container text-center leading-relaxed">
+      <div className="my-3 mx-3 text-center leading-relaxed">
         <h1 className="text-2xl py-3">Kontak Kami</h1>
         <p>Jika Anda memiliki pertanyaan atau saran untuk pengembangan layanan Tantekos, jangan ragu untuk menghubungi kami melalui:</p>
         <div className="mt-3">

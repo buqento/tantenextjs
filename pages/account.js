@@ -2,6 +2,7 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 import { FaList } from 'react-icons/fa'
 import { FiLogOut } from 'react-icons/fi'
+import { MdAdd } from 'react-icons/md'
 import Link from 'next/link';
 import NavComponent from '../components/NavComponent'
 import NavMobile from '../components/NavMobile'
@@ -15,7 +16,7 @@ export default function Account() {
         <NavComponent />
         {
             !loading && session &&
-            <Container className="divide-y-2 divide">
+            <div className="mx-3 divide-y-2 divide">
                 <div className="flex py-3">
                     <div><img src={session.user.image} alt={session.user.name} width={50} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} /></div>
                     <div className="ml-2">
@@ -23,15 +24,21 @@ export default function Account() {
                         <div className="text-lg font-bold">{session.user.name}</div>
                     </div>
                 </div>
-                <Link href="iklansaya">
+                <Link href="/iklansaya">
                     <div className="py-3 cursor-pointer">
                         <FaList className="inline mb-1 mr-1" /> Iklan Saya
                 </div>
                 </Link>
+                {
+                    session.user.email === 'buqento@gmail.com' &&
+                    <Link href="/addnew">
+                        <div className="py-3 cursor-pointer"><MdAdd className="inline mb-1 mr-1" /> Tambah Iklan</div>
+                    </Link>
+                }
                 <div className="py-3 cursor-pointer" onClick={handleLogout}>
                     <FiLogOut className="inline mb-1 mr-1" /> Logout
                 </div>
-            </Container>
+            </div>
         }
         <div className="xs:block sm:hidden md:hidden lg:hidden">
             <NavMobile />

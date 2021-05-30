@@ -18,9 +18,9 @@ export default function Index() {
         <meta name="keywords" content="Tantekos, Info Kost, Cari Kost, Kost, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
       </NextHead>
       <NavComponent />
-      <div className="container text-center leading-relaxed">
+      <div className="my-3 mx-3 text-center leading-relaxed">
         <h1 className="text-2xl py-3">Kebijakan Privasi</h1>
-        <p>Kami bangga membangun aplikasi Tantekos. Layanan ini disediakan tanpa biaya dan dimaksudkan untuk digunakan sebagaimana adanya.</p>
+        <p>Layanan ini disediakan tanpa biaya dan dimaksudkan untuk digunakan sebagaimana adanya.</p>
         <p>Halaman ini digunakan untuk memberi tahu Kamu mengenai kebijakan Kami dengan pengumpulan, penggunaan, dan pengungkapan Informasi Pribadi jika Kamu yang memutuskan untuk menggunakan Layanan Kami.</p>
         <p>Jika Kamu memilih untuk menggunakan Layanan Kami, maka Kamu menyetujui pengumpulan dan penggunaan informasi sehubungan dengan kebijakan ini. Informasi Pribadi yang Kami kumpulkan digunakan untuk menyediakan dan meningkatkan Layanan. Kami tidak akan menggunakan atau membagikan informasi Kamu dengan siapa pun kecuali seperti yang dijelaskan dalam Kebijakan Privasi ini.</p>
         <p>Istilah yang digunakan dalam Kebijakan Privasi ini memiliki arti yang sama seperti dalam Syarat dan Ketentuan Kami, yang dapat diakses di Tantekos kecuali ditentukan lain dalam Kebijakan Privasi ini.</p>
