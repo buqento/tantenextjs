@@ -56,14 +56,14 @@ class CampaignItem extends Component {
         }
         return (
             <a className="hover:text-current" href={`/${Generateslug(item.title)}`}>
-                <div className={`border overflow-hidden ${customStyle}`} onClick={() => handleLastView()}>
+                <div className={`mx-3 my-3 border overflow-hidden ${customStyle}`} onClick={() => handleLastView()}>
                     <div className="flex mx-3 my-3">
                         <div className="">
-                            <img className="rounded-full mr-2 h-10 w-10 rounded-full" src={item.user.photo_url} alt={item.user.display_name} />
+                            <img className="rounded-full mr-2 h-10 w-10 rounded-full" src={item.user ? item.user.photo_url : `https://lh3.googleusercontent.com/a-/AOh14GjjPCDsfAHebN5lD2lUt2blSJY6jlKDiukkYGkCbw=s96-c`} alt={item.user ? item.user.display_name : `admin`} />
                         </div>
                         <div>
                             {/* <div>{item.user.display_name}</div> */}
-                            <div>Admin</div>
+                            <div>{item.user ? item.user.display_name : `Admin`}</div>
                             <div>
                                 <small className="text-gray-700 uppercase">{moment(item.date_modified).lang('id').fromNow()} &middot; {item.hit} kali dilihat</small>
                             </div>
@@ -82,7 +82,7 @@ class CampaignItem extends Component {
                                 </span>
                                 <span className="text-xs text-gray-700">/{item.price.duration}</span>
                             </div>
-                            <div className="text-sm underline uppercase text-indigo-700">
+                            <div className="mt-2 text-sm underline uppercase text-indigo-700">
                                 Selengkapnya
                             </div>
                         </div>
