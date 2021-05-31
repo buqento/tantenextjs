@@ -31,7 +31,7 @@ export default function NavComponent() {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+              <div className="ml-2 flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <Link href="/">
                   <div className="cursor-pointer text-white font-bold flex-shrink-0 flex items-center">
                     <h1 className="block lg:hidden">TANTEKOS</h1>

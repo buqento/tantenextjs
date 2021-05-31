@@ -55,13 +55,24 @@ class CampaignItem extends Component {
             }
         }
         return (
-            <a href={`/${Generateslug(item.title)}`}>
-                <div className={`cursor-pointer overflow-hidden ${customStyle}`} onClick={() => handleLastView()}>
+            <a className="hover:text-current" href={`/${Generateslug(item.title)}`}>
+                <div className={`border overflow-hidden ${customStyle}`} onClick={() => handleLastView()}>
+                    <div className="flex mx-3 my-3">
+                        <div className="">
+                            <img className="rounded-full mr-2 h-10 w-10 rounded-full" src={item.user.photo_url} alt={item.user.display_name} />
+                        </div>
+                        <div>
+                            {/* <div>{item.user.display_name}</div> */}
+                            <div>Admin</div>
+                            <div>
+                                <small className="text-gray-700 uppercase">{moment(item.date_modified).lang('id').fromNow()} &middot; {item.hit} kali dilihat</small>
+                            </div>
+                        </div>
+                    </div>
                     <div className="bg-gray-400">
                         <img className="object-cover object-center w-full h-64" src={`https://cdn.statically.io/img/i.imgur.com/w=450/${item.images[0]}`} alt={item.title} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} />
                     </div>
-                    <div className="px-2 pt-2 pb-4">
-
+                    <div className="mx-3 my-3">
                         {/* price and action */}
                         <div className="text-2xl flex">
                             <div className="flex-auto">
@@ -71,31 +82,8 @@ class CampaignItem extends Component {
                                 </span>
                                 <span className="text-xs text-gray-700">/{item.price.duration}</span>
                             </div>
-                            <div className="text-sm">
-                                {/* category */}
-                                <div className="uppercase mt-2 text-indigo-700">
-                                    {
-                                        item.type.includes("Campur") &&
-                                        <span className="rounded-full inline-block px-1 border mr-1">{item.category === 'Kost' ? 'Campur' : 'Kontrakan'}</span>
-                                    }
-                                    {
-                                        item.type.includes("Putri") &&
-                                        <span className="rounded-full inline-block px-1 border mr-1">Putri</span>
-                                    }
-                                    {
-                                        item.type.includes("Putra") &&
-                                        <span className="rounded-full inline-block px-1 border mr-1">Putra</span>
-                                    }
-                                    {
-                                        item.type.includes("Pasutri") &&
-                                        <span className="rounded-full inline-block px-1 border mr-1">Pasutri</span>
-                                    }
-                                    {
-                                        item.type.includes("LV") &&
-                                        <span className="rounded-full inline-block px-1 border mr-1">LV</span>
-                                    }
-                                </div>
-
+                            <div className="text-sm underline uppercase text-indigo-700">
+                                Selengkapnya
                             </div>
                         </div>
 
@@ -107,10 +95,34 @@ class CampaignItem extends Component {
 
                         {/* location */}
                         <div className="clamp-1">
-                            <BiMap size={20} className="inline mb-1" /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
+                            <BiMap size={20} className="inline" /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
                         </div>
 
-                        <small className="text-gray-700 uppercase">{moment(item.date_modified).lang('id').fromNow()} &middot; {item.hit} kali dilihat</small>
+                        <div className="text-sm">
+                            {/* category */}
+                            <div className="uppercase mt-2 text-indigo-700">
+                                {
+                                    item.type.includes("Campur") &&
+                                    <span className="inline-block px-1 mr-1">{item.category === 'Kost' ? 'Campur' : 'Kontrakan'}</span>
+                                }
+                                {
+                                    item.type.includes("Putri") &&
+                                    <span className="inline-block px-1 mr-1">Putri</span>
+                                }
+                                {
+                                    item.type.includes("Putra") &&
+                                    <span className="inline-block px-1 mr-1">Putra</span>
+                                }
+                                {
+                                    item.type.includes("Pasutri") &&
+                                    <span className="inline-block px-1 mr-1">Pasutri</span>
+                                }
+                                {
+                                    item.type.includes("LV") &&
+                                    <span className="rounded-full inline-block px-1 border mr-1">LV</span>
+                                }
+                            </div>
+                        </div>
 
                     </div>
                 </div>
