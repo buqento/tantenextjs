@@ -16,7 +16,7 @@ class MapView extends React.Component {
         this.state = {
             load: true,
             data: null,
-            keyword: 'Jakarta',
+            keyword: 'Jakarta Pusat',
             listResult: null,
             placeName: null,
             viewport: {
@@ -26,6 +26,7 @@ class MapView extends React.Component {
         }
     }
     componentDidMount() {
+        document.getElementsByTagName("input")[0].setAttribute("placeholder", "Masukan nama lokasi/area/alamat");
         const dt = fire.firestore().collection('kosts')
         dt.where('is_active', '==', true)
             .onSnapshot(snapshot => {
@@ -132,7 +133,7 @@ class MapView extends React.Component {
                                         }
                                         {
                                             listResult.length === 0 &&
-                                            <Message title="Tidak Ditemukan" message={`Tidak ditemukan kost area ${placeName}. Silahkan cari di area lainnya.`} />
+                                            <Message title="Tidak Ditemukan" message={`Tidak ditemukan kost area ${placeName}. Silahkan cari di area lainnya`} />
                                         }
                                     </>
                                 }

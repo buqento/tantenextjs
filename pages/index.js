@@ -22,7 +22,6 @@ class Index extends React.Component {
       data: null,
       titleHead: null,
       load: true,
-      keyword: 'lokasi...',
       listResult: null,
       placeName: null,
       viewport: {
@@ -32,6 +31,7 @@ class Index extends React.Component {
     }
   }
   componentDidMount() {
+    document.getElementsByTagName("input")[0].setAttribute("placeholder", "Masukan nama lokasi/area/alamat");
     const dt = fire.firestore().collection('kosts')
     dt.where('is_active', '==', true)
       .orderBy('date_modified', 'desc')
@@ -59,7 +59,7 @@ class Index extends React.Component {
   }
 
   onSelected = (viewport, item) => {
-    const { data, keyword } = this.state
+    const { data } = this.state
     const latitude = viewport.latitude
     const longitude = viewport.longitude
     let nearList = []
@@ -82,10 +82,10 @@ class Index extends React.Component {
       }
       if (d <= 5) nearList.push(nearItem)
     }
-    this.setState({ listResult: nearList, placeName: item.place_name, keyword: '' })
+    this.setState({ listResult: nearList, placeName: item.place_name })
   }
   render() {
-    const { viewport, listResult, keyword } = this.state
+    const { viewport, listResult, placeName } = this.state
     const info = {
       title: 'Kost Murah Sewa Harian Bulanan Tahunan',
       description: 'Cari Kost Dan Kontrakan Harian Bulanan Tahunan Murah Terjangkau Nyaman Strategis',
@@ -106,15 +106,13 @@ class Index extends React.Component {
                 viewport={viewport}
                 hideOnSelect={true}
                 queryParams={{ country: "id" }}
-                updateInputOnSelect
-                initialInputValue={keyword}
               />
             </div>
             <div>
               {!listResult && <CampaignItemSkeleton />}
               {listResult && listResult.length > 0 && <FeedsGrid data={listResult} />}
               {listResult && listResult.length === 0 &&
-                <Message title="Tidak Ditemukan" message={`Silahkan cari di area lainnya`} />
+                <Message title="Tidak Ditemukan" message={`Tidak ditemukan kost area ${placeName}. Silahkan cari di area lainnya`} />
               }
             </div>
           </div>
