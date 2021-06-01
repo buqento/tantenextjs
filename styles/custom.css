@@ -106,10 +106,19 @@
 .swiper-pagination-bullet {
     border: #111 1px solid;
 }
+.react-geocoder {
+    padding: 5px;
+}
 .react-geocoder > input{
     width: 100%;
     padding: 10px;
 }
-.react-geocoder-results {
-    border-bottom: 1px solid #111;
+.react-geocoder-results > div {
+    cursor: pointer;
+    margin: 10px 10px 0;
+    font-size: 1rem;
+    line-height: 1.3rem;
+    font-weight: 500;
+    border-bottom: 1px solid rgb(219, 219, 219);
+    padding-bottom: 5px;
 }

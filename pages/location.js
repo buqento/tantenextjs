@@ -117,7 +117,7 @@ class MapView extends React.Component {
                                 {
                                     listResult &&
                                     <>
-                                        {listResult.length > 0 && `${listResult.length} Kost `}{listResult && listResult.length === 0 && `Tidak ditemukan kost area `}<span className="font-bold">{placeName}</span>
+                                        {listResult.length > 0 && `${listResult.length} Kost di Area`}<span className="font-bold">{!placeName ? ` Jakarta` : ` `}</span>{listResult && listResult.length === 0 && `Tidak ditemukan kost area `}<span className="font-bold">{placeName}</span>
                                     </>
                                 }
                             </div>
