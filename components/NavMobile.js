@@ -21,8 +21,8 @@ function NavMobile() {
     {
       label: "Cari Kost",
       path: "/location",
-      icon: router.pathname === '/search/[search]' ? <BiSearchAlt /> : <BiSearch />,
-      color: router.pathname === '/search/[search]' ? 'text-indigo-700' : 'text-gray-700'
+      icon: router.pathname === '/location' ? <BiSearchAlt /> : <BiSearch />,
+      color: router.pathname === '/location' ? 'text-indigo-700' : 'text-gray-700'
     }
   ]
   return (
