@@ -1,7 +1,6 @@
 import React from 'react'
 import Header from '../components/Header'
 import Campus from '../components/Campus'
-import Filter from '../components/Filter'
 import GroupSocial from '../components/GroupSocial'
 import FeedsGrid from '../components/FeedsGrid'
 import fire from '../configurations/firebase'
@@ -10,91 +9,79 @@ import NavComponent from '../components/NavComponent'
 import Footer from '../components/Footer'
 import NavMobile from '../components/NavMobile'
 import Link from 'next/link'
+import Geocoder from 'react-mapbox-gl-geocoder'
+import Message from '../components/Message'
+
+const mapboxApiKey = 'pk.eyJ1IjoiYnVxZW50byIsImEiOiJjanJ5a3p4cDkwZXJiNDlvYXMxcnhud3hhIn0.AhQ-vGYSIo6uTBmQD4MCsA'
+
 class Index extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       data: null,
-      isFilter: false,
       titleHead: null,
-      dataCallback: null
+      load: true,
+      keyword: 'lokasi...',
+      listResult: null,
+      placeName: null,
+      viewport: {
+        latitude: -6.177167845630349,
+        longitude: 106.82731084626721
+      }
     }
-    this.scrollToNode = this.scrollToNode.bind(this)
   }
-  scrollToNode(node) { node.scrollIntoView({ behavior: 'smooth' }) }
-  filterCallback = (dataCallback) => {
-    let facilitiesRoom = [""]
-    if (dataCallback.facilitiesRoom.length > 0) facilitiesRoom = dataCallback.facilitiesRoom
+  componentDidMount() {
     const dt = fire.firestore().collection('kosts')
-    let conditions
-    let titleHead
-    if (dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---') {
-      titleHead = dataCallback.province
-      conditions = dt
-        .where('location.province', '==', dataCallback.province)
-        .where("price.start_from", ">=", dataCallback.rangePrice.min)
-        .where("price.start_from", "<=", dataCallback.rangePrice.max)
-        .where("facility.room", "array-contains-any", facilitiesRoom)
-        .where('is_active', '==', true)
-    } else if (dataCallback.city !== '---Semua---' && dataCallback.district === '---Semua---') {
-      titleHead = dataCallback.city + ', ' + dataCallback.province
-      conditions = dt
-        .where('location.province', '==', dataCallback.province)
-        .where('location.city', '==', dataCallback.city)
-        .where("price.start_from", ">=", dataCallback.rangePrice.min)
-        .where("price.start_from", "<=", dataCallback.rangePrice.max)
-        .where("facility.room", "array-contains-any", facilitiesRoom)
-        .where('is_active', '==', true)
-    } else if (dataCallback.city !== '---Semua---' && dataCallback.district !== '---Semua---') {
-      titleHead = dataCallback.district + ', ' + dataCallback.city + ', ' + dataCallback.province
-      conditions = dt
-        .where('location.province', '==', dataCallback.province)
-        .where('location.city', '==', dataCallback.city)
-        .where('location.district', '==', dataCallback.district)
-        .where("price.start_from", ">=", dataCallback.rangePrice.min)
-        .where("price.start_from", "<=", dataCallback.rangePrice.max)
-        .where("facility.room", "array-contains-any", facilitiesRoom)
-        .where('is_active', '==', true)
-    } else if (dataCallback.city !== '---Semua---' && dataCallback.district !== '---Semua---') {
-      titleHead = dataCallback.district + ', ' + dataCallback.city + ', ' + dataCallback.province
-      conditions = dt
-        .where('location.province', '==', dataCallback.province)
-        .where('location.city', '==', dataCallback.city)
-        .where('location.district', '==', dataCallback.district)
-        .where("price.start_from", ">=", dataCallback.rangePrice.min)
-        .where("price.start_from", "<=", dataCallback.rangePrice.max)
-        .where("facility.room", "array-contains-any", facilitiesRoom)
-        .where('is_active', '==', true)
-    } else if (dataCallback.city !== '---Semua---' && dataCallback.district === '---Semua---') {
-      titleHead = dataCallback.city + ', ' + dataCallback.province
-      conditions = dt
-        .where('location.province', '==', dataCallback.province)
-        .where('location.city', '==', dataCallback.city)
-        .where("price.start_from", ">=", dataCallback.rangePrice.min)
-        .where("price.start_from", "<=", dataCallback.rangePrice.max)
-        .where("facility.room", "array-contains-any", facilitiesRoom)
-        .where('is_active', '==', true)
-    } else if (dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---') {
-      titleHead = dataCallback.province
-      conditions = dt
-        .where('location.province', '==', dataCallback.province)
-        .where("price.start_from", ">=", dataCallback.rangePrice.min)
-        .where("price.start_from", "<=", dataCallback.rangePrice.max)
-        .where("facility.room", "array-contains-any", facilitiesRoom)
-        .where('is_active', '==', true)
+    dt.where('is_active', '==', true)
+      .orderBy('date_modified', 'desc')
+      .onSnapshot(snapshot => {
+        const data = snapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }))
+        this.setState({ data, listResult: data, load: false })
+      })
+  }
+  getDistance = (lat1, lon1, lat2, lon2, unit) => {
+    var radlat1 = Math.PI * lat1 / 180
+    var radlat2 = Math.PI * lat2 / 180
+    var theta = lon1 - lon2
+    var radtheta = Math.PI * theta / 180
+    var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta)
+    if (dist > 1) dist = 1
+    dist = Math.acos(dist)
+    dist = dist * 180 / Math.PI
+    dist = dist * 60 * 1.1515
+    if (unit == "K") dist = dist * 1.609344
+    if (unit == "N") dist = dist * 0.8684
+    return dist
+  }
+
+  onSelected = (viewport, item) => {
+    const { data, keyword } = this.state
+    const latitude = viewport.latitude
+    const longitude = viewport.longitude
+    let nearList = []
+    let nearItem = {}
+    for (var i = 0; i < data.length; i++) {
+      const d = this.getDistance(latitude, longitude, data[i].location.lat_lng.w_, data[i].location.lat_lng.T_, "K")
+      nearItem = {
+        distance: (d).toFixed(1),
+        facility: data[i].facility,
+        images: data[i].images,
+        location: data[i].location,
+        name: data[i].name,
+        price: data[i].price,
+        slug: data[i].slug,
+        title: data[i].title,
+        type: data[i].type
+      }
+      if (d <= 5) nearList.push(nearItem)
     }
-    conditions.onSnapshot(snapshot => {
-      const data = snapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }))
-      const dataFilterByDuration = data.filter((item) => item.durations.includes(dataCallback.duration.toLowerCase()))
-      this.setState({ data: dataFilterByDuration, isFilter: true, titleHead, dataCallback })
-    })
-    this.scrollToNode(this.node)
+    this.setState({ listResult: nearList, placeName: item.place_name, keyword: '' })
   }
   render() {
-    const { data, dataCallback, isFilter, titleHead } = this.state
+    const { viewport, listResult, load, keyword } = this.state
     const info = {
       title: 'Kost Murah Sewa Harian Bulanan Tahunan',
       description: 'Cari Kost Dan Kontrakan Harian Bulanan Tahunan Murah Terjangkau Nyaman Strategis',
@@ -103,32 +90,34 @@ class Index extends React.Component {
     return (
       <div>
         <NavComponent />
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-4">
           {/* col1 */}
-          <div className="">
+          <div>
             <Header info={info} />
-            <div className="m-3 border rounded-xl shadow-sm py-3">
-              <Filter callbackFromParent={this.filterCallback} />
+            <div className="my-3">
+              <Geocoder
+                className="border text-lg mx-3 my-3"
+                mapboxApiAccessToken={mapboxApiKey}
+                onSelected={this.onSelected}
+                viewport={viewport}
+                hideOnSelect={true}
+                queryParams={{ country: "id" }}
+                updateInputOnSelect
+                initialInputValue={keyword}
+              />
             </div>
             <div>
-              <Ads />
+              {
+                listResult && listResult.length > 0 ?
+                  <FeedsGrid data={listResult} load={load} />
+                  :
+                  <Message title="Tidak Ditemukan" message={`Silahkan cari di area lainnya.`} />
+              }
             </div>
           </div>
           {/* col2 */}
-          <div className="">
-            <div className="mb-2 px-2 bg-white z-10" ref={(node) => this.node = node}>
-              <span className="text-current">
-                {
-                  isFilter && <div className="mt-2">Hasil Pencarian: <span className="font-bold">Sewa {dataCallback.duration}an, {titleHead}</span></div>
-                }
-              </span>
-            </div>
-            <div>
-              <FeedsGrid filterData={data} dataCallback={dataCallback} />
-            </div>
-          </div>
-          {/* col3 */}
-          <div className="border-top">
+          <div>
+            <div><Ads /></div>
             <div className="py-2 px-3 bg-white z-10">
               <span className="text-uppercase text-current font-bold">Dekat Kampus</span>
             </div>

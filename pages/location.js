@@ -9,14 +9,13 @@ import fire from '../configurations/firebase'
 
 const mapboxApiKey = 'pk.eyJ1IjoiYnVxZW50byIsImEiOiJjanJ5a3p4cDkwZXJiNDlvYXMxcnhud3hhIn0.AhQ-vGYSIo6uTBmQD4MCsA'
 
-const params = { country: "id" }
-
 class MapView extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             load: true,
             data: null,
+            keyword: 'Jakarta',
             listResult: null,
             placeName: null,
             viewport: {
@@ -54,12 +53,12 @@ class MapView extends React.Component {
                 title: data[i].title,
                 type: data[i].type
             }
-            if (d <= 10) initList.push(initItem)
+            if (d <= 5) initList.push(initItem)
         }
         this.setState({ listResult: initList })
     }
     onSelected = (viewport, item) => {
-        const { data } = this.state
+        const { data, keyword } = this.state
         const latitude = viewport.latitude
         const longitude = viewport.longitude
         let nearList = []
@@ -77,9 +76,9 @@ class MapView extends React.Component {
                 title: data[i].title,
                 type: data[i].type
             }
-            if (d <= 10) nearList.push(nearItem)
+            if (d <= 5) nearList.push(nearItem)
         }
-        this.setState({ listResult: nearList, placeName: item.place_name })
+        this.setState({ listResult: nearList, placeName: item.place_name, keyword: '' })
     }
     getDistance = (lat1, lon1, lat2, lon2, unit) => {
         var radlat1 = Math.PI * lat1 / 180
@@ -96,7 +95,7 @@ class MapView extends React.Component {
         return dist
     }
     render() {
-        const { viewport, listResult, placeName, load } = this.state
+        const { viewport, listResult, placeName, load, keyword } = this.state
         return (
             <>
                 <NavComponent />
@@ -106,9 +105,9 @@ class MapView extends React.Component {
                     onSelected={this.onSelected}
                     viewport={viewport}
                     hideOnSelect={true}
-                    queryParams={params}
+                    queryParams={{ country: "id" }}
                     updateInputOnSelect
-                    initialInputValue="Jakarta"
+                    initialInputValue={keyword}
                 />
                 {
                     load ? <CampaignItemListSkeleton /> :
@@ -117,7 +116,7 @@ class MapView extends React.Component {
                                 {
                                     listResult &&
                                     <>
-                                        {listResult.length > 0 && `${listResult.length} Kost di Area`}<span className="font-bold">{!placeName ? ` Jakarta` : ` `}</span>{listResult && listResult.length === 0 && `Tidak ditemukan kost area `}<span className="font-bold">{placeName}</span>
+                                        {listResult.length > 0 && `${listResult.length} Kost di Area`}<span className="font-bold">{!placeName ? ` ` + keyword : ` `}</span>{listResult && listResult.length === 0 && `Tidak ditemukan kost area `}<span className="font-bold">{placeName}</span>
                                     </>
                                 }
                             </div>

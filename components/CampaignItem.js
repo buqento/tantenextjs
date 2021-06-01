@@ -43,7 +43,7 @@ class CampaignItem extends Component {
             type: item.type
         }
         const handleLastView = () => {
-            this.handleHit(item.id, item.hit + 1)
+            // this.handleHit(item.id, item.hit + 1)
             let lastView = localStorage.getItem('lastview')
             let data
             if (lastView === null) { data = [] } else { data = JSON.parse(lastView) }
@@ -61,8 +61,7 @@ class CampaignItem extends Component {
                         <div className="">
                             <img className="rounded-full mr-2 h-10 w-10 rounded-full" src={item.user ? item.user.photo_url : `https://lh3.googleusercontent.com/a-/AOh14GjjPCDsfAHebN5lD2lUt2blSJY6jlKDiukkYGkCbw=s96-c`} alt={item.user ? item.user.display_name : `admin`} />
                         </div>
-                        <div>
-                            {/* <div>{item.user.display_name}</div> */}
+                        <div className="mt-n1">
                             <div>{item.user ? item.user.display_name : `Admin`}</div>
                             <div>
                                 <small className="text-gray-700 uppercase">{moment(item.date_modified).lang('id').fromNow()} &middot; {item.hit} kali dilihat</small>
@@ -88,10 +87,10 @@ class CampaignItem extends Component {
                         </div>
 
                         {/* facilities */}
-                        {
+                        {/* {
                             item.category === 'Kost' ? item.facility.room.length > 0 && <Facilities items={item.facility.room} inline />
                                 : <Facilities items={item.facility.building} inline />
-                        }
+                        } */}
 
                         {/* location */}
                         <div className="clamp-1">
