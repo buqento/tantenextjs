@@ -1,6 +1,7 @@
 import React from 'react'
 import Geocoder from 'react-mapbox-gl-geocoder'
 import CampaignItemList from '../components/CampaignItemList'
+import CampaignItemListSkeleton from '../components/CampaignItemListSkeleton'
 import Footer from '../components/Footer'
 import NavComponent from '../components/NavComponent'
 import NavMobile from '../components/NavMobile'
@@ -14,6 +15,7 @@ class MapView extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            load: true,
             data: null,
             listResult: null,
             placeName: null,
@@ -31,7 +33,7 @@ class MapView extends React.Component {
                     id: doc.id,
                     ...doc.data()
                 }))
-                this.setState({ data })
+                this.setState({ data, load: false })
                 this.initData()
             })
     }
@@ -94,7 +96,7 @@ class MapView extends React.Component {
         return dist
     }
     render() {
-        const { viewport, listResult, placeName } = this.state
+        const { viewport, listResult, placeName, load } = this.state
         return (
             <>
                 <NavComponent />
@@ -108,26 +110,29 @@ class MapView extends React.Component {
                     updateInputOnSelect
                     initialInputValue="Jakarta"
                 />
-                <div className="mx-3 my-3">
-                    <div>
-                        {
-                            listResult &&
-                            <>
-                                {listResult.length > 0 && `${listResult.length} Kost `}{listResult && listResult.length === 0 && `Tidak ditemukan kost area `}<span className="font-bold">{placeName}</span>
-                            </>
-                        }
-                    </div>
-                    {
-                        listResult && listResult.length > 0 &&
-                        <div className="divide-y">
+                {
+                    load ? <CampaignItemListSkeleton /> :
+                        <div className="mx-3 my-3">
+                            <div>
+                                {
+                                    listResult &&
+                                    <>
+                                        {listResult.length > 0 && `${listResult.length} Kost `}{listResult && listResult.length === 0 && `Tidak ditemukan kost area `}<span className="font-bold">{placeName}</span>
+                                    </>
+                                }
+                            </div>
                             {
-                                listResult.map((item, index) =>
-                                    <div key={index}><CampaignItemList item={item} nohit /></div>
-                                )
+                                listResult && listResult.length > 0 &&
+                                <div className="divide-y">
+                                    {
+                                        listResult.map((item, index) =>
+                                            <div key={index}><CampaignItemList item={item} nohit /></div>
+                                        )
+                                    }
+                                </div>
                             }
                         </div>
-                    }
-                </div>
+                }
                 <Footer />
                 <div className="xs:block sm:hidden md:hidden lg:hidden">
                     <NavMobile />
