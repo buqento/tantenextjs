@@ -87,10 +87,10 @@ class CampaignItem extends Component {
                         </div>
 
                         {/* facilities */}
-                        {/* {
+                        {
                             item.category === 'Kost' ? item.facility.room.length > 0 && <Facilities items={item.facility.room} inline />
                                 : <Facilities items={item.facility.building} inline />
-                        } */}
+                        }
 
                         {/* location */}
                         <div className="clamp-1">

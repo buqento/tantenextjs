@@ -5,6 +5,7 @@ import CampaignItemListSkeleton from '../components/CampaignItemListSkeleton'
 import Footer from '../components/Footer'
 import NavComponent from '../components/NavComponent'
 import NavMobile from '../components/NavMobile'
+import Message from '../components/Message'
 import fire from '../configurations/firebase'
 
 const mapboxApiKey = 'pk.eyJ1IjoiYnVxZW50byIsImEiOiJjanJ5a3p4cDkwZXJiNDlvYXMxcnhud3hhIn0.AhQ-vGYSIo6uTBmQD4MCsA'
@@ -78,7 +79,7 @@ class MapView extends React.Component {
             }
             if (d <= 5) nearList.push(nearItem)
         }
-        this.setState({ listResult: nearList, placeName: item.place_name, keyword: '' })
+        this.setState({ listResult: nearList, placeName: item.place_name, keyword: keyword })
     }
     getDistance = (lat1, lon1, lat2, lon2, unit) => {
         var radlat1 = Math.PI * lat1 / 180
@@ -96,6 +97,7 @@ class MapView extends React.Component {
     }
     render() {
         const { viewport, listResult, placeName, load, keyword } = this.state
+        console.log('placeName => ', placeName);
         return (
             <>
                 <NavComponent />
@@ -116,7 +118,22 @@ class MapView extends React.Component {
                                 {
                                     listResult &&
                                     <>
-                                        {listResult.length > 0 && `${listResult.length} Kost di Area`}<span className="font-bold">{!placeName ? ` ` + keyword : ` `}</span>{listResult && listResult.length === 0 && `Tidak ditemukan kost area `}<span className="font-bold">{placeName}</span>
+                                        {
+                                            listResult.length > 0 &&
+                                            `${listResult.length} kost di area `
+                                        }
+                                        {
+                                            listResult.length > 0 &&
+                                                !placeName ? <strong>{keyword}</strong> : ` `
+                                        }
+                                        {
+                                            listResult.length > 0 &&
+                                            placeName && <strong>{placeName}</strong>
+                                        }
+                                        {
+                                            listResult.length === 0 &&
+                                            <Message title="Tidak Ditemukan" message={`Tidak ditemukan kost area ${placeName}. Silahkan cari di area lainnya.`} />
+                                        }
                                     </>
                                 }
                             </div>

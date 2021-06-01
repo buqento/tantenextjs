@@ -11,6 +11,7 @@ import NavMobile from '../components/NavMobile'
 import Link from 'next/link'
 import Geocoder from 'react-mapbox-gl-geocoder'
 import Message from '../components/Message'
+import CampaignItemSkeleton from '../components/CampaignItemSkeleton'
 
 const mapboxApiKey = 'pk.eyJ1IjoiYnVxZW50byIsImEiOiJjanJ5a3p4cDkwZXJiNDlvYXMxcnhud3hhIn0.AhQ-vGYSIo6uTBmQD4MCsA'
 
@@ -67,6 +68,8 @@ class Index extends React.Component {
       const d = this.getDistance(latitude, longitude, data[i].location.lat_lng.w_, data[i].location.lat_lng.T_, "K")
       nearItem = {
         distance: (d).toFixed(1),
+        category: data[i].category,
+        date_modified: data[i].date_modified,
         facility: data[i].facility,
         images: data[i].images,
         location: data[i].location,
@@ -74,14 +77,15 @@ class Index extends React.Component {
         price: data[i].price,
         slug: data[i].slug,
         title: data[i].title,
-        type: data[i].type
+        type: data[i].type,
+        hit: data[i].hit
       }
       if (d <= 5) nearList.push(nearItem)
     }
     this.setState({ listResult: nearList, placeName: item.place_name, keyword: '' })
   }
   render() {
-    const { viewport, listResult, load, keyword } = this.state
+    const { viewport, listResult, keyword } = this.state
     const info = {
       title: 'Kost Murah Sewa Harian Bulanan Tahunan',
       description: 'Cari Kost Dan Kontrakan Harian Bulanan Tahunan Murah Terjangkau Nyaman Strategis',
@@ -107,11 +111,10 @@ class Index extends React.Component {
               />
             </div>
             <div>
-              {
-                listResult && listResult.length > 0 ?
-                  <FeedsGrid data={listResult} load={load} />
-                  :
-                  <Message title="Tidak Ditemukan" message={`Silahkan cari di area lainnya.`} />
+              {!listResult && <CampaignItemSkeleton />}
+              {listResult && listResult.length > 0 && <FeedsGrid data={listResult} />}
+              {listResult && listResult.length === 0 &&
+                <Message title="Tidak Ditemukan" message={`Silahkan cari di area lainnya`} />
               }
             </div>
           </div>
