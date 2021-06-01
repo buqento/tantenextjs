@@ -24,7 +24,7 @@ class CampaignItemList extends Component {
             .catch(err => { console.log(err) })
     }
     render() {
-        const { item, nearby, myads } = this.props
+        const { item, nearby, myads, nohit } = this.props
         const newItem = {
             category: item.category,
             date_view: Date.now(),
@@ -41,7 +41,7 @@ class CampaignItemList extends Component {
             type: item.type
         }
         const handleLastView = () => {
-            this.handleHit(item.id, item.hit + 1)
+            if (!nohit) this.handleHit(item.id, item.hit + 1)
             let lastView = localStorage.getItem('lastview')
             let data
             if (lastView === null) { data = [] } else { data = JSON.parse(lastView) }
@@ -53,10 +53,10 @@ class CampaignItemList extends Component {
             }
         }
         return (
-            <a href={`/${Generateslug(item.title)}`}>
+            <a className="hover:text-current" href={`/${Generateslug(item.title)}`}>
                 <div className="cursor-pointer w-full overflow-hidden py-2 flex" onClick={() => handleLastView(item)}>
                     <div className="w-20 bg-gray-400">
-                        <img src={`https://cdn.statically.io/img/i.imgur.com/${item.images[0]}`} alt={item.title} className="object-cover object-center float-left mr-2 h-24 w-20" onError={(e)=>{e.target.onerror = null; e.target.src="/static/images/image-not-found.png"}} />
+                        <img src={`https://cdn.statically.io/img/i.imgur.com/${item.images[0]}`} alt={item.title} className="object-cover object-center float-left mr-2 h-24 w-20" onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} />
                     </div>
                     <div className="flex-1 ml-2 mt-1 self-center">
                         <div className="text-xl font-bold flex">
