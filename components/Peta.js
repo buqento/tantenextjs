@@ -3,7 +3,6 @@ import ReactMapGl, { FullscreenControl, GeolocateControl, Marker } from 'react-m
 import { shape } from 'prop-types'
 import { FaMapMarkerAlt } from 'react-icons/fa';
 export default function Peta(props) {
-
     const [windowWIdth, setWindowWidth] = useState(null)
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -23,7 +22,7 @@ export default function Peta(props) {
         zoom: zoom
     })
     viewport.width = "100%"
-    viewport.height = windowWIdth > 768 ? 500 : 200
+    viewport.height = windowWIdth > 768 ? 700 : 200
     return (
         <ReactMapGl
             {...viewport}

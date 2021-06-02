@@ -104,7 +104,7 @@
     cursor: pointer;
 }
 .swiper-pagination-bullet {
-    border: #111 1px solid;
+    padding: 7px;
 }
 .react-geocoder {
     padding: 5px;

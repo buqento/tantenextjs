@@ -5,7 +5,7 @@ export const Campus = [
     { slug: 'universitas-indonesia', name: 'Universitas Indonesia', province: 'Jawa Barat' },
     { slug: 'universitas-pancasila', name: 'Universitas Pancasila', province: 'Jawa Barat' },
     { slug: 'universitas-islam-internasional-indonesia', name: 'Universitas Islam Internasional Indonesia', province: 'Jawa Barat' },
-    
+
     { slug: 'stmik-umel-mandiri', name: 'STMIK Umel Mandiri', province: 'Papua' },
     { slug: 'universitas-cenderawasih', name: 'Universitas Cenderawasih', province: 'Papua' },
     { slug: 'universitas-ottow-geissler-papua', name: 'Universitas Ottow Geissler Papua', province: 'Papua' },
@@ -30,7 +30,7 @@ export const Campus = [
     { slug: 'universitas-pendidikan-ganesha', name: 'Universitas Pendidikan Ganesha', province: 'Bali' },
     { slug: 'stmik-primakara', name: 'STMIK Primakara', province: 'Bali' },
     { slug: 'universitas-warmadewa', name: 'Universitas Warmadewa', province: 'Bali' },
-    
+
     { slug: 'universitas-muhammadiyah-yogyakarta', name: 'Universitas Muhammadiyah Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
     { slug: 'politeknik-atk-yogyakarta', name: 'Politeknik ATK Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
     { slug: 'universitas-pembangunan-nasional-veteran-yogyakarta', name: 'Universitas Pembangunan Nasional Veteran Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
@@ -70,7 +70,7 @@ export const Campus = [
     { slug: 'universitas-alma-ata-yogyakarta', name: 'Universitas Alma Ata Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
     { slug: 'universitas-kristen-duta-wacana', name: 'Universitas Kristen Duta Wacana', province: 'Daerah Istimewa Yogyakarta' },
     { slug: 'stikes-guna-bangsa-yogyakarta', name: 'STIKES Guna Bangsa Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
-    
+
     { slug: 'universitas-tarumanagara', name: 'Universitas Tarumanagara', province: 'DKI Jakarta' },
     { slug: 'universitas-kristen-krida-wacana', name: 'Universitas Kristen Krida Wacana', province: 'DKI Jakarta' },
     { slug: 'universitas-trisakti', name: 'Universitas Trisakti', province: 'DKI Jakarta' },
@@ -86,7 +86,7 @@ export const Campus = [
     { slug: 'universitas-bung-karno', name: 'Universitas Bung Karno', province: 'DKI Jakarta' },
     { slug: 'universitas-borobudur', name: 'Universitas Borobudur', province: 'DKI Jakarta' },
     { slug: 'institut-transportasi-dan-logistik-trisakti', name: 'Institut Transportasi dan Logistik Trisakti', province: 'DKI Jakarta' },
- 
+
     { slug: 'politeknik-negeri-ujung-pandang', name: 'Politeknik Negeri Ujung Pandang', province: 'Sulawesi Selatan' },
     { slug: 'universitas-hasanuddin', name: 'Universitas Hasanuddin', province: 'Sulawesi Selatan' },
     { slug: 'stikes-nani-hasanuddin', name: 'STIKES Nani Hasanuddin', province: 'Sulawesi Selatan' },
@@ -113,9 +113,10 @@ export const Campus = [
     { slug: 'universitas-fajar', name: 'Universitas Fajar', province: 'Sulawesi Selatan' },
     { slug: 'stmik-professional-makassar', name: 'STMIK Professional Makassar', province: 'Sulawesi Selatan' },
     { slug: 'universitas-islam-negeri-alauddin-makassar', name: 'Universitas Islam Negeri Alauddin Makassar', province: 'Sulawesi Selatan' },
-    
+
     { slug: 'universitas-sam-ratulangi', name: 'Universitas Sam Ratulangi', province: 'Sulawesi Utara' },
     { slug: 'universitas-trinita', name: 'Universitas Trinita', province: 'Sulawesi Utara' },
     { slug: 'universitas-pembangunan-indonesia', name: 'Universitas Pembangunan Indonesia', province: 'Sulawesi Utara' },
     { slug: 'institut-agama-kristen-negeri-manado', name: 'Institut Agama Kristen Negeri Manado', province: 'Sulawesi Utara' },
+    { slug: 'universitas-prisma', name: 'Universitas Prisma', province: 'Sulawesi Utara' },
 ]

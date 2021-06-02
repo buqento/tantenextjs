@@ -37,20 +37,27 @@ class ListKosOthers extends Component {
                                             return comparison;
                                         }
                                     )
-                                    .slice(0, 5).map((item, index) => <CampaignItemList key={index} item={item} />)
+                                    .slice(0, 5).map((item, index) => <div><CampaignItemList key={index} item={item} /></div>)
                             }
                         </div>
                     </div>
                 }
                 {
-                    listData.length > 5 &&
-                    <div className="border-top">
-                        <Link href={url}>
-                            <div className="cursor-pointer align-middle text-center text-indigo-700 underline font-bold uppercase my-3 py-3">
-                                <span>Lihat {listData.length - 5} Lainnya</span>
-                            </div>
-                        </Link>
-                    </div>
+                    listData.length > 5 ?
+                        <div className="border-top">
+                            <Link href={url}>
+                                <div className="cursor-pointer align-middle text-center text-indigo-700 underline font-bold uppercase my-3 py-3">
+                                    <span>Lihat {listData.length - 5} Lainnya</span>
+                                </div>
+                            </Link>
+                        </div> :
+                        <div className="border-top">
+                            <Link href='/location'>
+                                <div className="cursor-pointer align-middle text-center text-indigo-700 underline font-bold uppercase my-3 py-3">
+                                    <span>Lihat Kost Lainnya</span>
+                                </div>
+                            </Link>
+                        </div>
                 }
             </>
         )

@@ -130,8 +130,8 @@ class Index extends React.Component {
                 </div>
               </Link>
             </div>
-            <div className="m-3 mb-n2">
-              <span className="text-uppercase text-current font-bold">Komunitas Facebook</span>
+            <div className="m-3 mb-n3">
+              <span className="text-uppercase text-current font-bold">Grup Facebook</span>
             </div>
             <GroupSocial />
           </div>

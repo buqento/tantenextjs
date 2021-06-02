@@ -219,7 +219,7 @@ class Detail extends React.Component {
           <div className="my-2 mx-3">
             <div className="mb-3">
               <h2 className="pb-2 font-bold">Lokasi <small>({detail.location && detail.location.district}, {detail.location && detail.location.city}, {detail.location && detail.location.province})</small></h2>
-              <Peta location={detail && detail.location} zoom={15} />
+              <Peta location={detail && detail.location} zoom={10} />
             </div>
             <div className="mt-3">
               <small>* Data dapat berubah sewaktu-waktu.</small>
