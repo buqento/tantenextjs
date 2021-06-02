@@ -49,7 +49,7 @@ class Area extends Component {
                             <div className="mx-3">
                                 <div className="clamp-2 text-lg mb-2 mt-n2">{item.name}</div>
                                 <Link key={index} href={item.url}>
-                                    <span className="border rounded-lg p-2 cursor-pointer uppercase text-indigo-700 font-bold">Gabung Group</span>
+                                    <span className="border rounded-lg p-2 cursor-pointer uppercase text-indigo-700 font-bold">Gabung Grup</span>
                                 </Link>
                             </div>
                         </div>
