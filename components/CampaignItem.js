@@ -62,14 +62,21 @@ class CampaignItem extends Component {
                             <img className="rounded-full mr-2 h-10 w-10 rounded-full" src={item.user ? item.user.photo_url : `https://lh3.googleusercontent.com/a-/AOh14GjjPCDsfAHebN5lD2lUt2blSJY6jlKDiukkYGkCbw=s96-c`} alt={item.user ? item.user.display_name : `admin`} />
                         </div>
                         <div className="mt-n1">
-                            <div>{item.user ? item.user.display_name : `Admin`}</div>
+                            <div className="font-bold">
+                                {
+                                    item.user ?
+                                        <>{
+                                            item.user.email === 'buqento@gmail.com' ? <>Admin<span className="text-indigo-600">*</span></> : item.user.display_name
+                                        }</> : <>Admin<span className="text-indigo-600">*</span></>
+                                }
+                            </div>
                             <div>
                                 <small className="text-gray-700 uppercase">{moment(item.date_modified).lang('id').fromNow()} &middot; {item.hit} kali dilihat</small>
                             </div>
                         </div>
                     </div>
                     <div className="bg-gray-400">
-                        <img className="object-cover object-center w-full h-64" src={`https://cdn.statically.io/img/i.imgur.com/w=450/${item.images[0]}`} alt={item.title} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} />
+                        <img className="object-cover object-center w-full h-64" src={`https://cdn.statically.io/img/i.imgur.com/${item.images[0]}`} alt={item.title} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} />
                     </div>
                     <div className="mx-3 my-3">
                         {/* price and action */}
@@ -102,23 +109,23 @@ class CampaignItem extends Component {
                             <div className="uppercase mt-2 text-indigo-700">
                                 {
                                     item.type.includes("Campur") &&
-                                    <span className="inline-block px-1 mr-1">{item.category === 'Kost' ? 'Campur' : 'Kontrakan'}</span>
+                                    <span className="inline-block mr-1">{item.category === 'Kost' ? 'Campur' : 'Kontrakan'}</span>
                                 }
                                 {
                                     item.type.includes("Putri") &&
-                                    <span className="inline-block px-1 mr-1">Putri</span>
+                                    <span className="inline-block mr-1">Putri</span>
                                 }
                                 {
                                     item.type.includes("Putra") &&
-                                    <span className="inline-block px-1 mr-1">Putra</span>
+                                    <span className="inline-block mr-1">Putra</span>
                                 }
                                 {
                                     item.type.includes("Pasutri") &&
-                                    <span className="inline-block px-1 mr-1">Pasutri</span>
+                                    <span className="inline-block mr-1">Pasutri</span>
                                 }
                                 {
                                     item.type.includes("LV") &&
-                                    <span className="rounded-full inline-block px-1 border mr-1">LV</span>
+                                    <span className="rounded-full inline-block border mr-1">LV</span>
                                 }
                             </div>
                         </div>
