@@ -206,12 +206,13 @@ class Detail extends React.Component {
                                 loader={<div className="py-3 text-center"></div>}
                             >
                                 <div className="mx-3 mb-3 divide-y">
-                                    {data.map((item, index) => <CampaignItemList key={index} item={item} />
+                                    {data.map((item, index) => <div key={index}><CampaignItemList key={index} item={item} /></div>
                                     )}
                                 </div>
                             </InfiniteScroll>
                             :
-                            data.length > 0 ? <div className="mx-3 mb-3 divide-y">{data.map((item, index) => <CampaignItemList key={index} item={item} />
+                            data.length > 0 ? <div className="mx-3 mb-3 divide-y">{data.map((item, index) =>
+                                <div key={index}><CampaignItemList item={item} /></div>
                             )}</div>
                                 :
                                 <Message title="Tidak Ditemukan" message="Silahkan cari dengan kriteria lainnya" />

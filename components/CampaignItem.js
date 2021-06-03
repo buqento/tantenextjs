@@ -96,7 +96,7 @@ class CampaignItem extends Component {
 
                         {/* location */}
                         <div className="clamp-1">
-                            <BiMap size={20} className="inline" /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
+                            <BiMap size={20} className="inline mb-1" /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
                         </div>
 
                         <div className="text-sm">

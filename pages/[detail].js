@@ -76,7 +76,7 @@ class Detail extends React.Component {
     const structureTypeHostel = `{
       "@context": "https://schema.org",
       "@type": "Hostel",
-      "image": [${detail && detail.images && detail.images.map(item => `"https://cdn.statically.io/img/i.imgur.com/w=300/${item}"`)}],
+      "image": [${detail && detail.images && detail.images.map(item => `"https://cdn.statically.io/img/i.imgur.com/${item}"`)}],
       "@id": "https://tantekos.com",
       "name": "${detail && detail.name}",
       "address": {
