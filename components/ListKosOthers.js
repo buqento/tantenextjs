@@ -5,9 +5,6 @@ import CampaignItemList from '../components/CampaignItemList'
 import Generateslug from '../utils/Generateslug'
 import Link from 'next/link'
 class ListKosOthers extends Component {
-    async handleHit(id, hit) {
-        await fire.firestore().collection("kosts").doc(id).update({ hit }).catch(err => { console.log(err) })
-    }
     render() {
         const { data: listData, detail } = this.props
         let url = '/search/all'

@@ -19,12 +19,8 @@ class CampaignItemList extends Component {
         const findFav = userdataFav.filter(i => i.id === item.id).length
         if (findFav > 0) this.setState({ like: true })
     }
-    async handleHit(id, hit) {
-        await fire.firestore().collection("kosts").doc(id).update({ hit })
-            .catch(err => { console.log(err) })
-    }
     render() {
-        const { item, nearby, myads, nohit } = this.props
+        const { item, nearby, myads } = this.props
         const newItem = {
             category: item.category,
             date_view: Date.now(),
@@ -41,7 +37,6 @@ class CampaignItemList extends Component {
             type: item.type
         }
         const handleLastView = () => {
-            if (!nohit) this.handleHit(item.id, item.hit + 1)
             let lastView = localStorage.getItem('lastview')
             let data
             if (lastView === null) { data = [] } else { data = JSON.parse(lastView) }

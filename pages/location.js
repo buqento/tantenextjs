@@ -98,7 +98,6 @@ class MapView extends React.Component {
     }
     render() {
         const { viewport, listResult, placeName, load, keyword } = this.state
-        console.log('placeName => ', placeName);
         return (
             <>
                 <NavComponent />
@@ -143,7 +142,7 @@ class MapView extends React.Component {
                                 <div className="divide-y">
                                     {
                                         listResult.map((item, index) =>
-                                            <div key={index}><CampaignItemList item={item} nohit /></div>
+                                            <div key={index}><CampaignItemList item={item} /></div>
                                         )
                                     }
                                 </div>
