@@ -109,15 +109,15 @@ class CampaignItem extends Component {
                             <div className="uppercase mt-2 text-indigo-700">
                                 {
                                     item.type.includes("Campur") &&
-                                    <span className="inline-block mr-1">{item.category === 'Kost' ? 'Campur' : 'Kontrakan'}</span>
+                                    <span className="inline-block mr-2">{item.category === 'Kost' ? 'Campur' : 'Kontrakan'}</span>
                                 }
                                 {
                                     item.type.includes("Putri") &&
-                                    <span className="inline-block mr-1">Putri</span>
+                                    <span className="inline-block mr-2">Putri</span>
                                 }
                                 {
                                     item.type.includes("Putra") &&
-                                    <span className="inline-block mr-1">Putra</span>
+                                    <span className="inline-block mr-2">Putra</span>
                                 }
                                 {
                                     item.type.includes("Pasutri") &&
@@ -125,7 +125,7 @@ class CampaignItem extends Component {
                                 }
                                 {
                                     item.type.includes("LV") &&
-                                    <span className="rounded-full inline-block border mr-1">LV</span>
+                                    <span className="rounded-full inline-block border mr-2">LV</span>
                                 }
                             </div>
                         </div>

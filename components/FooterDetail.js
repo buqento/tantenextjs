@@ -106,7 +106,7 @@ class FooterDetail extends Component {
                                 Telepon
                                 </button>
                                 :
-                                <button className="w-100 bg-blue-500 text-white font-bold mr-1 py-1 px-3 rounded-full opacity-50 cursor-not-allowed uppercase focus:outline-none">
+                                <button className="w-100 bg-blue-500 text-white font-bold mr-1 py-1 px-3 opacity-50 cursor-not-allowed uppercase focus:outline-none">
                                     <div style={{ textAlign: '-webkit-center' }}>
                                         <BiPhoneCall size={22} />
                                     </div>

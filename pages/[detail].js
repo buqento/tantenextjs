@@ -26,9 +26,13 @@ class Detail extends React.Component {
       showAlert: false
     }
     this.myRef = React.createRef()
+    this.handleHit = this.handleHit.bind(this)
   }
   async componentDidMount() {
+    const { details } = this.props
+    const detail = JSON.parse(details)
     if (window.location.hostname !== 'localhost') {
+      this.handleHit(detail.id, detail.hit + 1)
       ReactGa.initialize('UA-132808614-2')
       ReactGa.pageview('/detail')
     }
@@ -43,15 +47,17 @@ class Detail extends React.Component {
     this.setState({ showAlert: false })
     Router.push('/favorites')
   }
-
   handleShowAlert = () => {
     this.setState({ showAlert: true })
     setTimeout(function () {
       this.setState({ showAlert: false })
     }.bind(this), 5000)
   }
+  async handleHit(id, hit) {
+    await fire.firestore().collection("kosts").doc(id).update({ hit })
+      .catch(err => { console.log(err) })
+  }
   render() {
-
     const { slug, details, otherdatas } = this.props
     const { showAlert } = this.state
     const detail = JSON.parse(details)
