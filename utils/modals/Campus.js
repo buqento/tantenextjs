@@ -15,6 +15,7 @@ export const Campus = [
     { slug: 'universitas-pattimura', name: 'Universitas Pattimura', province: 'Maluku' },
     { slug: 'institut-teknologi-dan-bisnis-stikom-ambon', name: 'Institut Teknologi dan Bisnis STIKOM Ambon', province: 'Maluku' },
     { slug: 'universitas-kristen-indonesia-maluku', name: 'Universitas Kristen Indonesia Maluku', province: 'Maluku' },
+    { slug: 'politeknik-negeri-ambon', name: 'Politeknik Negeri Ambon', province: 'Maluku' },
 
     { slug: 'universitas-mahasaraswati-denpasar', name: 'Universitas Mahasaraswati Denpasar', province: 'Bali' },
     { slug: 'universitas-udayana', name: 'Universitas Udayana', province: 'Bali' },
