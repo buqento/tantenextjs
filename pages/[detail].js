@@ -192,7 +192,7 @@ class Detail extends React.Component {
 
               {/* description */}
               <div className="my-3">
-                <h2 className="font-bold">Deskripsi</h2>
+                <h2 className="font-bold">Deskripsi*</h2>
                 <div dangerouslySetInnerHTML={{ __html: detail.description }} />
               </div>
 
@@ -222,16 +222,21 @@ class Detail extends React.Component {
           </div>
 
           {/* location */}
-          <div className="my-2 mx-3">
-            <div className="mb-3">
-              <h2 className="pb-2 font-bold">Lokasi <small>({detail.location && detail.location.district}, {detail.location && detail.location.city}, {detail.location && detail.location.province})</small></h2>
-              <Peta location={detail && detail.location} zoom={10} />
+          {
+            detail.location &&
+            <div className="my-2 mx-3">
+              <div className="mb-3">
+                <h2 className="pb-2 font-bold">Lokasi <small>({detail.location.district}, {detail.location.city}, {detail.location.province})</small></h2>
+                <Peta location={detail.location} zoom={10} />
+                <a href={`https://www.google.com/maps/search/?api=1&query=${detail.location.lat_lng.latitude},${detail.location.lat_lng.longitude}`} target="_blank">
+                  <div className="my-3 uppercase underline text-sm text-indigo-700 font-bold">Lihat Peta Google</div>
+                </a>
+              </div>
+              <div className="mt-3">
+                <small>* Data kost dapat berubah sewaktu-waktu.</small>
+              </div>
             </div>
-            <div className="mt-3">
-              <small>* Data dapat berubah sewaktu-waktu.</small>
-            </div>
-          </div>
-
+          }
 
           {/* other */}
           <div className="mx-3">
