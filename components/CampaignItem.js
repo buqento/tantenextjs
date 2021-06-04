@@ -83,7 +83,7 @@ class CampaignItem extends Component {
                                 </span>
                                 <span className="text-xs text-gray-700">/{item.price.duration}</span>
                             </div>
-                            <div className="mt-2 text-sm underline uppercase text-indigo-700">
+                            <div className="mt-2 text-sm underline uppercase text-indigo-700 font-bold">
                                 Selengkapnya
                             </div>
                         </div>

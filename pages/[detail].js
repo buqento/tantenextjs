@@ -229,7 +229,7 @@ class Detail extends React.Component {
                 <h2 className="pb-2 font-bold">Lokasi <small>({detail.location.district}, {detail.location.city}, {detail.location.province})</small></h2>
                 <Peta location={detail.location} zoom={10} />
                 <a href={`https://www.google.com/maps/search/?api=1&query=${detail.location.lat_lng.latitude},${detail.location.lat_lng.longitude}`} target="_blank">
-                  <div className="my-3 uppercase underline text-sm text-indigo-700 font-bold">Lihat Peta Google</div>
+                  <div className="my-3 uppercase underline text-indigo-700 font-bold">Lihat Peta Google</div>
                 </a>
               </div>
               <div className="mt-3">
