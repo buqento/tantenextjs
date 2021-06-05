@@ -102,16 +102,26 @@ class MapView extends React.Component {
         return (
             <>
                 <NavComponent />
-                <Geocoder
-                    className="border text-lg mx-3 my-3"
-                    mapboxApiAccessToken={mapboxApiKey}
-                    onSelected={this.onSelected}
-                    viewport={viewport}
-                    hideOnSelect={true}
-                    queryParams={{ country: "id" }}
-                    updateInputOnSelect
-                    initialInputValue={keyword}
-                />
+                <div className="mx-3 my-3">
+                    <AdSense.Google
+                        client='ca-pub-1434074630735871'
+                        slot='7863233219'
+                        className="h-48 w-full"
+                        format=''
+                    />
+                </div>
+                <div>
+                    <Geocoder
+                        className="border text-lg mx-3 my-3"
+                        mapboxApiAccessToken={mapboxApiKey}
+                        onSelected={this.onSelected}
+                        viewport={viewport}
+                        hideOnSelect={true}
+                        queryParams={{ country: "id" }}
+                        updateInputOnSelect
+                        initialInputValue={keyword}
+                    />
+                </div>
                 {
                     load ? <CampaignItemListSkeleton /> :
                         <div className="mx-3 my-3">
@@ -150,14 +160,6 @@ class MapView extends React.Component {
                             }
                         </div>
                 }
-                <div>
-                    <AdSense.Google
-                        client='ca-pub-1434074630735871'
-                        slot='7863233219'
-                        className="mx-3 my-3 h-48 w-full"
-                        format=''
-                    />
-                </div>
                 <Footer />
                 <div className="xs:block sm:hidden md:hidden lg:hidden">
                     <NavMobile />
