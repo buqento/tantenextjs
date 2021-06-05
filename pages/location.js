@@ -7,6 +7,7 @@ import NavComponent from '../components/NavComponent'
 import NavMobile from '../components/NavMobile'
 import Message from '../components/Message'
 import fire from '../configurations/firebase'
+import AdSense from 'react-adsense';
 
 const mapboxApiKey = 'pk.eyJ1IjoiYnVxZW50byIsImEiOiJjanJ5a3p4cDkwZXJiNDlvYXMxcnhud3hhIn0.AhQ-vGYSIo6uTBmQD4MCsA'
 
@@ -101,6 +102,13 @@ class MapView extends React.Component {
         return (
             <>
                 <NavComponent />
+                <AdSense.Google
+                    client='ca-pub-1434074630735871'
+                    slot='7863233219'
+                    style={{ display: 'block' }}
+                    layout='in-article'
+                    format='fluid'
+                />
                 <Geocoder
                     className="border text-lg mx-3 my-3"
                     mapboxApiAccessToken={mapboxApiKey}
