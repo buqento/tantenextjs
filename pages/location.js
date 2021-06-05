@@ -105,9 +105,8 @@ class MapView extends React.Component {
                 <AdSense.Google
                     client='ca-pub-1434074630735871'
                     slot='7863233219'
-                    style={{ width: '100%', height: 300, float: 'left' }}
+                    className="h-40 w-full"
                     format=''
-                    className="my-2"
                 />
                 <Geocoder
                     className="border text-lg mx-3 my-3"

@@ -19,14 +19,6 @@ class ListKosOthers extends Component {
                             <span>{`${detail.location.district}, ${detail.location.city}, ${detail.location.province}`}</span>
                         </div>
                         <div className="divide-y">
-                            <div>
-                                <AdSense.Google
-                                    client='ca-pub-1434074630735871'
-                                    slot='7863233219'
-                                    className="h-24 w-full"
-                                    format=''
-                                />
-                            </div>
                             {
                                 listData
                                     .sort(
@@ -44,6 +36,14 @@ class ListKosOthers extends Component {
                                     )
                                     .slice(0, 5).map((item, index) => <div key={index}><CampaignItemList key={index} item={item} /></div>)
                             }
+                            <div>
+                                <AdSense.Google
+                                    client='ca-pub-1434074630735871'
+                                    slot='7863233219'
+                                    className="h-24 w-full"
+                                    format=''
+                                />
+                            </div>
                         </div>
                     </div>
                 }
