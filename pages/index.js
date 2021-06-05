@@ -12,7 +12,7 @@ import Link from 'next/link'
 import Geocoder from 'react-mapbox-gl-geocoder'
 import Message from '../components/Message'
 import CampaignItemSkeleton from '../components/CampaignItemSkeleton'
-import AdSense from 'react-adsense';
+import AdSense from 'react-adsense'
 
 const mapboxApiKey = 'pk.eyJ1IjoiYnVxZW50byIsImEiOiJjanJ5a3p4cDkwZXJiNDlvYXMxcnhud3hhIn0.AhQ-vGYSIo6uTBmQD4MCsA'
 

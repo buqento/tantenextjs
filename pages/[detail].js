@@ -18,6 +18,7 @@ import Share from '../components/Share'
 import Ads from '../components/Ads'
 import Footer from '../components/Footer'
 import NavMobile from '../components/NavMobile'
+import AdSense from 'react-adsense';
 class Detail extends React.Component {
   constructor(props) {
     super(props)
@@ -240,10 +241,17 @@ class Detail extends React.Component {
 
           {/* other */}
           <div className="mx-3">
+            <div className="mx-3 my-3">
+              <AdSense.Google
+                client='ca-pub-1434074630735871'
+                slot='7863233219'
+                className="h-48 w-full"
+                format=''
+              />
+            </div>
             <Ads />
             <ListKosOthers data={otherdata} detail={detail} />
           </div>
-
         </div>
       }
 

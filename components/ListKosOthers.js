@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { arrayOf, shape } from 'prop-types'
-import AdSense from 'react-adsense';
 import CampaignItemList from '../components/CampaignItemList'
 import Generateslug from '../utils/Generateslug'
 import Link from 'next/link'
@@ -36,14 +35,6 @@ class ListKosOthers extends Component {
                                     )
                                     .slice(0, 5).map((item, index) => <div key={index}><CampaignItemList key={index} item={item} /></div>)
                             }
-                            <div>
-                                <AdSense.Google
-                                    client='ca-pub-1434074630735871'
-                                    slot='7863233219'
-                                    className="h-24 w-full"
-                                    format=''
-                                />
-                            </div>
                         </div>
                     </div>
                 }

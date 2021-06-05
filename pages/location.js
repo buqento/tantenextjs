@@ -7,7 +7,7 @@ import NavComponent from '../components/NavComponent'
 import NavMobile from '../components/NavMobile'
 import Message from '../components/Message'
 import fire from '../configurations/firebase'
-import AdSense from 'react-adsense';
+import AdSense from 'react-adsense'
 
 const mapboxApiKey = 'pk.eyJ1IjoiYnVxZW50byIsImEiOiJjanJ5a3p4cDkwZXJiNDlvYXMxcnhud3hhIn0.AhQ-vGYSIo6uTBmQD4MCsA'
 
