@@ -128,10 +128,11 @@ class Index extends React.Component {
           {/* col2 */}
           <div>
             <div className="mx-3 my-3">
+              {/*1, 2, 4, 16, 20, 24, 32, 40 48, 56, 64 */}
               <AdSense.Google
                 client='ca-pub-1434074630735871'
                 slot='7863233219'
-                className="h-48 w-full"
+                className="h-56 w-full"
                 format=''
               />
             </div>

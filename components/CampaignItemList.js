@@ -3,7 +3,6 @@ import { shape, string } from 'prop-types'
 import Cash from '../utils/Cash'
 import Generateslug from '../utils/Generateslug'
 import { BiMap } from 'react-icons/bi'
-import fire from '../configurations/firebase'
 import KostType from './Type'
 import Facilities from './Facilities'
 class CampaignItemList extends Component {
