@@ -79,7 +79,7 @@ class MapView extends React.Component {
                 title: data[i].title,
                 type: data[i].type
             }
-            if (d <= 5) nearList.push(nearItem)
+            if (d <= 1) nearList.push(nearItem)
         }
         this.setState({ listResult: nearList, placeName: item.place_name, keyword: keyword })
     }

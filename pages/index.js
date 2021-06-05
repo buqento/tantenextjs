@@ -81,7 +81,7 @@ class Index extends React.Component {
         type: data[i].type,
         hit: data[i].hit
       }
-      if (d <= 5) nearList.push(nearItem)
+      if (d <= 1) nearList.push(nearItem)
     }
     this.setState({ listResult: nearList, placeName: item.place_name })
   }
