@@ -109,6 +109,14 @@ class Index extends React.Component {
                 queryParams={{ country: "id" }}
               />
             </div>
+            <div className="mx-3 my-3">
+              <AdSense.Google
+                client='ca-pub-1434074630735871'
+                slot='3178716891'
+                className="h-52 w-full"
+                format='auto'
+              />
+            </div>
             <div>
               {!listResult && <CampaignItemSkeleton />}
               {listResult && listResult.length > 0 && <FeedsGrid data={listResult} />}
@@ -119,14 +127,6 @@ class Index extends React.Component {
           </div>
           {/* col2 */}
           <div>
-            <div className="mx-3 my-3">
-              <AdSense.Google
-                client='ca-pub-1434074630735871'
-                slot='7863233219'
-                className="h-48 w-full"
-                format=''
-              />
-            </div>
             <div><Ads /></div>
             <div className="py-2 px-3 bg-white z-10">
               <span className="text-uppercase text-current font-bold">Dekat Kampus</span>
