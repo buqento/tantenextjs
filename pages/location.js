@@ -102,12 +102,6 @@ class MapView extends React.Component {
         return (
             <>
                 <NavComponent />
-                <AdSense.Google
-                    client='ca-pub-1434074630735871'
-                    slot='7863233219'
-                    className="h-40 w-full"
-                    format=''
-                />
                 <Geocoder
                     className="border text-lg mx-3 my-3"
                     mapboxApiAccessToken={mapboxApiKey}
@@ -156,6 +150,14 @@ class MapView extends React.Component {
                             }
                         </div>
                 }
+                <div>
+                    <AdSense.Google
+                        client='ca-pub-1434074630735871'
+                        slot='7863233219'
+                        className="mx-3 my-3 h-48 w-full"
+                        format=''
+                    />
+                </div>
                 <Footer />
                 <div className="xs:block sm:hidden md:hidden lg:hidden">
                     <NavMobile />
