@@ -109,7 +109,7 @@ class Index extends React.Component {
                 queryParams={{ country: "id" }}
               />
             </div>
-            <div className="mx-3 my-3">
+            <div className="mx-3 my-3 sticky top-0 z-10">
               <AdSense.Google
                 client='ca-pub-1434074630735871'
                 slot='3178716891'
@@ -127,7 +127,7 @@ class Index extends React.Component {
           </div>
           {/* col2 */}
           <div>
-            <div className="mx-3 my-3">
+            <div className="mx-3 my-3 sticky top-0 z-10">
               <AdSense.Google
                 client='ca-pub-1434074630735871'
                 slot='7863233219'

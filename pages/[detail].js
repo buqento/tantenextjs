@@ -191,6 +191,15 @@ class Detail extends React.Component {
               {/* date modified */}
               <small className="text-gray-700 uppercase">{moment(detail.date_modified).lang('id').fromNow()} &middot; {detail.hit} kali dilihat</small>
 
+              <div className="mt-3 mb-4 sticky top-0 z-10">
+                <AdSense.Google
+                  client='ca-pub-1434074630735871'
+                  slot='7863233219'
+                  className="h-64 w-full"
+                  format=''
+                />
+              </div>
+
               {/* description */}
               <div className="my-3">
                 <h2 className="font-bold">Deskripsi*</h2>
@@ -241,14 +250,6 @@ class Detail extends React.Component {
 
           {/* other */}
           <div className="mx-3">
-            <div className="mt-3 mb-4">
-              <AdSense.Google
-                client='ca-pub-1434074630735871'
-                slot='7863233219'
-                className="h-64 w-full"
-                format=''
-              />
-            </div>
             <Ads />
             <ListKosOthers data={otherdata} detail={detail} />
           </div>
