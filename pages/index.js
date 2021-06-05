@@ -12,6 +12,7 @@ import Link from 'next/link'
 import Geocoder from 'react-mapbox-gl-geocoder'
 import Message from '../components/Message'
 import CampaignItemSkeleton from '../components/CampaignItemSkeleton'
+import AdSense from 'react-adsense';
 
 const mapboxApiKey = 'pk.eyJ1IjoiYnVxZW50byIsImEiOiJjanJ5a3p4cDkwZXJiNDlvYXMxcnhud3hhIn0.AhQ-vGYSIo6uTBmQD4MCsA'
 
@@ -118,6 +119,14 @@ class Index extends React.Component {
           </div>
           {/* col2 */}
           <div>
+            <div>
+              <AdSense.Google
+                client='ca-pub-1434074630735871'
+                slot='7863233219'
+                className="mx-3 my-3 h-48 w-full"
+                format=''
+              />
+            </div>
             <div><Ads /></div>
             <div className="py-2 px-3 bg-white z-10">
               <span className="text-uppercase text-current font-bold">Dekat Kampus</span>
@@ -134,6 +143,14 @@ class Index extends React.Component {
               <span className="text-uppercase text-current font-bold">Grup Facebook</span>
             </div>
             <GroupSocial />
+            <div>
+              <AdSense.Google
+                client='ca-pub-1434074630735871'
+                slot='7863233219'
+                className="mx-3 my-3 h-48 w-full"
+                format=''
+              />
+            </div>
           </div>
         </div>
         <Footer />
