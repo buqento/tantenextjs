@@ -86,7 +86,7 @@ class Nearby extends React.Component {
         }
         return <div>
             <NavComponent />
-            <div className="mx-3 my-3 sticky top-0 z-10">
+            <div className="mx-3 my-3">
                 <AdSense.Google
                     client='ca-pub-1434074630735871'
                     slot='7863233219'
