@@ -106,7 +106,7 @@ class MapView extends React.Component {
                     <AdSense.Google
                         client='ca-pub-1434074630735871'
                         slot='7863233219'
-                        className="h-48 w-full"
+                        className="h-64 w-full"
                         format=''
                     />
                 </div>
