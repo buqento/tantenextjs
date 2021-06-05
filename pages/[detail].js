@@ -241,7 +241,7 @@ class Detail extends React.Component {
 
           {/* other */}
           <div className="mx-3">
-            <div className="mx-3 my-3">
+            <div className="my-3">
               <AdSense.Google
                 client='ca-pub-1434074630735871'
                 slot='7863233219'

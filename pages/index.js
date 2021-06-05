@@ -128,6 +128,14 @@ class Index extends React.Component {
           {/* col2 */}
           <div>
             <div><Ads /></div>
+            <div className="mx-3 my-3">
+              <AdSense.Google
+                client='ca-pub-1434074630735871'
+                slot='7863233219'
+                className="h-48 w-full"
+                format=''
+              />
+            </div>
             <div className="py-2 px-3 bg-white z-10">
               <span className="text-uppercase text-current font-bold">Dekat Kampus</span>
             </div>
@@ -143,14 +151,6 @@ class Index extends React.Component {
               <span className="text-uppercase text-current font-bold">Grup Facebook</span>
             </div>
             <GroupSocial />
-            <div className="mx-3 my-3">
-              <AdSense.Google
-                client='ca-pub-1434074630735871'
-                slot='7863233219'
-                className="h-48 w-full"
-                format=''
-              />
-            </div>
           </div>
         </div>
         <Footer />
