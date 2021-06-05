@@ -113,9 +113,8 @@ class Index extends React.Component {
               <AdSense.Google
                 client='ca-pub-1434074630735871'
                 slot='3178716891'
-                className="w-full"
-                style={{ height: 350 }}
-                format='auto'
+                style={{ width: '100%', height: 300 }}
+                format=''
               />
             </div>
             <div>
