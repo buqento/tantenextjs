@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { arrayOf, shape } from 'prop-types'
-import fire from '../configurations/firebase'
+import AdSense from 'react-adsense';
 import CampaignItemList from '../components/CampaignItemList'
 import Generateslug from '../utils/Generateslug'
 import Link from 'next/link'
@@ -19,6 +19,14 @@ class ListKosOthers extends Component {
                             <span>{`${detail.location.district}, ${detail.location.city}, ${detail.location.province}`}</span>
                         </div>
                         <div className="divide-y">
+                            <div>
+                                <AdSense.Google
+                                    client='ca-pub-1434074630735871'
+                                    slot='7863233219'
+                                    className="h-24 w-full"
+                                    format=''
+                                />
+                            </div>
                             {
                                 listData
                                     .sort(
