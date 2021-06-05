@@ -127,7 +127,6 @@ class Index extends React.Component {
           </div>
           {/* col2 */}
           <div>
-            <div><Ads /></div>
             <div className="mx-3 my-3">
               <AdSense.Google
                 client='ca-pub-1434074630735871'
@@ -136,6 +135,7 @@ class Index extends React.Component {
                 format=''
               />
             </div>
+            <div><Ads /></div>
             <div className="py-2 px-3 bg-white z-10">
               <span className="text-uppercase text-current font-bold">Dekat Kampus</span>
             </div>
