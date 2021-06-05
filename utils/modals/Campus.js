@@ -122,4 +122,5 @@ export const Campus = [
     { slug: 'institut-agama-kristen-negeri-manado', name: 'Institut Agama Kristen Negeri Manado', province: 'Sulawesi Utara' },
     { slug: 'universitas-prisma', name: 'Universitas Prisma', province: 'Sulawesi Utara' },
     { slug: 'universitas-katolik-de-la-salle-manado', name: 'Universitas Katolik De La Salle Manado', province: 'Sulawesi Utara' },
+    { slug: 'sekolah-tinggi-ilmu-komunikasi-manado', name: 'Sekolah Tinggi Ilmu Komunikasi Manado', province: 'Sulawesi Utara' },
 ]
