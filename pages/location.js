@@ -102,14 +102,6 @@ class MapView extends React.Component {
         return (
             <>
                 <NavComponent />
-                <div className="mx-3 my-3">
-                    <AdSense.Google
-                        client='ca-pub-1434074630735871'
-                        slot='7863233219'
-                        className="h-64 w-full"
-                        format=''
-                    />
-                </div>
                 <div>
                     <Geocoder
                         className="border text-lg mx-3 my-3"
@@ -153,7 +145,20 @@ class MapView extends React.Component {
                                 <div className="divide-y">
                                     {
                                         listResult.map((item, index) =>
-                                            <div key={index}><CampaignItemList item={item} /></div>
+                                            <div key={index}>
+                                                {
+                                                    index === 1 &&
+                                                    <div className="my-1 border-bottom">
+                                                        <AdSense.Google
+                                                            client='ca-pub-1434074630735871'
+                                                            slot='7863233219'
+                                                            className="h-32 w-full"
+                                                            format=''
+                                                        />
+                                                    </div>
+                                                }
+                                                <CampaignItemList item={item} />
+                                            </div>
                                         )
                                     }
                                 </div>
