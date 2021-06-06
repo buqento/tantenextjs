@@ -110,14 +110,6 @@ class Index extends React.Component {
                 updateInputOnSelect
               />
             </div>
-            <div className="mx-3 my-3 sticky top-0 z-10">
-              <AdSense.Google
-                client='ca-pub-1434074630735871'
-                slot='3178716891'
-                className="h-64 w-full"
-                format='auto'
-              />
-            </div>
             <div>
               {!listResult && <CampaignItemSkeleton />}
               {listResult && listResult.length > 0 && <FeedsGrid data={listResult} />}
