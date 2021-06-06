@@ -24,12 +24,10 @@ class Detail extends React.Component {
     super(props)
     this.state = {
       otherData: null,
-      showAlert: false,
-      showAds: true
+      showAlert: false
     }
     this.myRef = React.createRef()
     this.handleHit = this.handleHit.bind(this)
-    this.handleShowAds = this.handleShowAds.bind(this)
   }
   async componentDidMount() {
     const { details } = this.props
@@ -56,18 +54,13 @@ class Detail extends React.Component {
       this.setState({ showAlert: false })
     }.bind(this), 5000)
   }
-  handleShowAds() {
-    const { showAds } = this.state
-    this.setState({ showAds: !showAds })
-    console.log('showAds => ', showAds);
-  }
   async handleHit(id, hit) {
     await fire.firestore().collection("kosts").doc(id).update({ hit })
       .catch(err => { console.log(err) })
   }
   render() {
     const { slug, details, otherdatas } = this.props
-    const { showAlert, showAds } = this.state
+    const { showAlert } = this.state
     const detail = JSON.parse(details)
     const otherdata = JSON.parse(otherdatas)
     const structureTypeBreadcrumbList =
@@ -168,11 +161,11 @@ class Detail extends React.Component {
           <Slide imagesData={detail.images} imageTitle={detail.title} />
           <FooterDetail data={detail} callbackFromParent={this.handleShowAlert} />
           {/* google ads */}
-          <div onClick={this.handleShowAds} className={`z-10 opacity-0 bg-indigo-700 cursor-pointer ${showAds ? 'block' : 'hidden'}`} style={{ marginTop: '-55px' }}>
+          <div className={`z-40 bg-indigo-900 opacity-0`} style={{ marginTop: '100px' }}>
             <AdSense.Google
               client='ca-pub-1434074630735871'
               slot='7863233219'
-              className="h-32 w-full"
+              className="h-64 w-full"
               format=''
             />
           </div>
@@ -181,10 +174,10 @@ class Detail extends React.Component {
 
       {
         detail &&
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4" style={{ marginTop: '-75px' }}>
+        <div className="z-0 grid sm:grid-cols-2 md:grid-cols-3 gap-4" style={{ marginTop: '-355px' }}>
 
           {/* price/title/desc */}
-          <div className="mt-2">
+          <div className="mt-3">
             <div className="text-left mx-3">
               <div className="mb-1 flex">
                 <div className="self-center flex-auto pr-4">
@@ -246,7 +239,7 @@ class Detail extends React.Component {
                 <h2 className="pb-2 font-bold">Lokasi <small>({detail.location.district}, {detail.location.city}, {detail.location.province})</small></h2>
                 <Peta location={detail.location} zoom={10} />
                 <a href={`https://www.google.com/maps/search/?api=1&query=${detail.location.lat_lng.latitude},${detail.location.lat_lng.longitude}`} target="_blank">
-                  <div className="my-3 uppercase underline text-indigo-700 font-bold">Lihat Peta Google</div>
+                  <div className="my-3 uppercase underline text-indigo-700 font-bold">Lihat Peta Google <FaExternalLinkAlt className="inline ml-1 mb-1" /></div>
                 </a>
               </div>
               <div className="mt-3">
@@ -258,7 +251,6 @@ class Detail extends React.Component {
 
           {/* other */}
           <div className="mx-3">
-            <FooterDetail data={detail} callbackFromParent={this.handleShowAlert} />
             <Ads />
             <ListKosOthers data={otherdata} detail={detail} />
           </div>
