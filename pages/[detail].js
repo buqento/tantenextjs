@@ -161,7 +161,7 @@ class Detail extends React.Component {
           <Slide imagesData={detail.images} imageTitle={detail.title} />
           <FooterDetail data={detail} callbackFromParent={this.handleShowAlert} />
           {/* google ads */}
-          <div className={`z-40 bg-indigo-900 opacity-0`} style={{ marginTop: '100px' }}>
+          <div className='opacity-0' style={{ marginTop: '100px' }}>
             <AdSense.Google
               client='ca-pub-1434074630735871'
               slot='7863233219'
@@ -248,9 +248,15 @@ class Detail extends React.Component {
             </div>
           }
 
-
           {/* other */}
           <div className="mx-3">
+            {/* google ads */}
+            <AdSense.Google
+              client='ca-pub-1434074630735871'
+              slot='7863233219'
+              className="h-64 w-full"
+              format=''
+            />
             <Ads />
             <ListKosOthers data={otherdata} detail={detail} />
           </div>
