@@ -107,6 +107,7 @@ class Index extends React.Component {
                 viewport={viewport}
                 hideOnSelect={true}
                 queryParams={{ country: "id" }}
+                updateInputOnSelect
               />
             </div>
             <div className="mx-3 my-3 sticky top-0 z-10">
