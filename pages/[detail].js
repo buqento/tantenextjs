@@ -24,10 +24,12 @@ class Detail extends React.Component {
     super(props)
     this.state = {
       otherData: null,
-      showAlert: false
+      showAlert: false,
+      showAds: true
     }
     this.myRef = React.createRef()
     this.handleHit = this.handleHit.bind(this)
+    this.handleShowAds = this.handleShowAds.bind(this)
   }
   async componentDidMount() {
     const { details } = this.props
@@ -54,13 +56,18 @@ class Detail extends React.Component {
       this.setState({ showAlert: false })
     }.bind(this), 5000)
   }
+  handleShowAds() {
+    const { showAds } = this.state
+    this.setState({ showAds: !showAds })
+    console.log('showAds => ',showAds);
+  }
   async handleHit(id, hit) {
     await fire.firestore().collection("kosts").doc(id).update({ hit })
       .catch(err => { console.log(err) })
   }
   render() {
     const { slug, details, otherdatas } = this.props
-    const { showAlert } = this.state
+    const { showAlert, showAds } = this.state
     const detail = JSON.parse(details)
     const otherdata = JSON.parse(otherdatas)
     const structureTypeBreadcrumbList =
@@ -161,7 +168,7 @@ class Detail extends React.Component {
           <Slide imagesData={detail.images} imageTitle={detail.title} />
           <FooterDetail data={detail} callbackFromParent={this.handleShowAlert} />
           {/* google ads */}
-          <div className="z-10 opacity-0" style={{ marginTop: '-55px' }}>
+          <div onClick={this.handleShowAds} className={`z-10 opacity-0 bg-indigo-700 cursor-pointer ${showAds ? 'block' : 'hidden'}`} style={{ marginTop: '-55px' }}>
             <AdSense.Google
               client='ca-pub-1434074630735871'
               slot='7863233219'
@@ -174,7 +181,7 @@ class Detail extends React.Component {
 
       {
         detail &&
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4" style={{ marginTop: '-75px' }}>
 
           {/* price/title/desc */}
           <div className="mt-2">
