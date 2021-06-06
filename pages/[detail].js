@@ -59,7 +59,7 @@ class Detail extends React.Component {
   handleShowAds() {
     const { showAds } = this.state
     this.setState({ showAds: !showAds })
-    console.log('showAds => ',showAds);
+    console.log('showAds => ', showAds);
   }
   async handleHit(id, hit) {
     await fire.firestore().collection("kosts").doc(id).update({ hit })
@@ -142,7 +142,7 @@ class Detail extends React.Component {
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <meta name="title" content={detail.title} />
           <meta name="description" content={detail.description} />
-          <meta name="keywords" content={`tantekos, Info Kost, Cari kost, kost, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian, ${detail.keywords}`} />
+          <meta name="keywords" content={`infokost, cari kos, cari kost, kost murah, cari kost murah, kost eksklusif, kost exclusive, kost mewah, kost kostan, kost bebas, kos lv, olx kost, rukita kost, kost minimalis, kost pelangi, reddoorz kost, kost orange, kos flamboyan, ${detail.keywords}`} />
           <meta property="og:title" content={detail.title} />
           <meta property="og:description" content={detail.description} />
           <meta property="og:type" content="website" />

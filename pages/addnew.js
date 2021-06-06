@@ -169,7 +169,7 @@ function Addnew() {
         const minggu = type.minggu ? 'kos mingguan, ' : ''
         const bulan = type.bulan ? 'kost bulanan, ' : ''
         const tahun = type.tahun ? 'kost tahunan, ' : ''
-        const keywords = 'infokost, cari kos, cari kost, kost murah, cari kost murah, kost eksklusif, kost exclusive, kost mewah, kost kostan, kost bebas, kos lv, olx kost, rukita kost, kost minimalis, kost pelangi, reddoorz kost, kost orange, kos flamboyan, ' + hari + minggu + bulan + tahun + 'kost putri dekat ' + location.near[0] + ', kost putra dekat ' + location.near[0] + ', kost ' + campur + putra + putri + pasutri + 'kost putra dekat ' + location.district + ', kost ' + location.district + ', kost di ' + location.district + ', kost ' + location.city + ', kost di ' + location.city + ', kost dekat ' + location.near[0]
+        const keywords = hari + minggu + bulan + tahun + 'kost putri dekat ' + location.near[0] + ', kost putra dekat ' + location.near[0] + ', kost ' + campur + putra + putri + pasutri + 'kost putra dekat ' + location.district + ', kost ' + location.district + ', kost di ' + location.district + ', kost ' + location.city + ', kost di ' + location.city + ', kost dekat ' + location.near[0]
 
         let found = false
         const docRef = fire
