@@ -169,7 +169,9 @@ function Addnew() {
         const minggu = type.minggu ? 'kos mingguan, ' : ''
         const bulan = type.bulan ? 'kost bulanan, ' : ''
         const tahun = type.tahun ? 'kost tahunan, ' : ''
-        const keywords = hari + minggu + bulan + tahun + 'kost putri dekat ' + location.near[0] + ', kost putra dekat ' + location.near[0] + ', kost ' + campur + putra + putri + pasutri + 'kost putra dekat ' + location.district + ', kost ' + location.district + ', kost di ' + location.district + ', kost ' + location.city + ', kost di ' + location.city + ', kost dekat ' + location.near[0]
+        const nearCampus = strToArray(near)
+        const keywords = hari + minggu + bulan + tahun + 'kost putri dekat ' + nearCampus[0] + ', kost putra dekat ' + nearCampus[0] + ', kost ' + campur + putra + putri + pasutri + 'kost putra dekat ' + district + ', kost ' + district + ', kost di ' + district + ', kost ' + city + ', kost di ' + city + ', kost dekat ' + nearCampus[0]
+
 
         let found = false
         const docRef = fire
@@ -208,7 +210,7 @@ function Addnew() {
                                 province: province,
                                 city: city,
                                 district: district,
-                                near: strToArray(near),
+                                near: nearCampus,
                                 lat_lng: new fire.firestore.GeoPoint(Number(strToArray(lat_lng)[0]), Number(strToArray(lat_lng)[1]))
                             },
                             category: "Kost",
