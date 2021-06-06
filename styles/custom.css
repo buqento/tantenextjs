@@ -124,5 +124,5 @@
 }
 /* hide google ads button */
 .abgc .cbb {
-    display: none;
+    display: none !important;
 }
