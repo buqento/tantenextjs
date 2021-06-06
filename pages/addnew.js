@@ -161,15 +161,15 @@ function Addnew() {
         let arrFacilityShare = []
         for (const property in facilityShare) { facilityShare[property] && arrFacilityShare.push(facilityTitle(property)[0].title) }
 
-        const campur = type.campur ? 'Kost campur, ' : ''
-        const putra = type.putra ? 'Kost putra, ' : ''
-        const putri = type.putri ? 'Kost putri, ' : ''
-        const pasutri = type.pasutri ? 'Kost pasutri, ' : ''
-        const hari = type.hari ? 'Kost harian, ' : ''
-        const minggu = type.minggu ? 'Kost mingguan, ' : ''
-        const bulan = type.bulan ? 'Kost bulanan, ' : ''
-        const tahun = type.tahun ? 'Kost tahunan, ' : ''
-        const keywords = 'Kost murah, ' + campur + putra + putri + pasutri + hari + minggu + bulan + tahun + 'Kost ' + province + ', Kost ' + city + ', Kost ' + district + ', ' + name
+        const campur = type.campur ? 'kost campur, ' : ''
+        const putra = type.putra ? 'kost putra, ' : ''
+        const putri = type.putri ? 'kost putri, ' : ''
+        const pasutri = type.pasutri ? 'kost pasutri, ' : ''
+        const hari = type.hari ? 'kost harian, ' : ''
+        const minggu = type.minggu ? 'kos mingguan, ' : ''
+        const bulan = type.bulan ? 'kost bulanan, ' : ''
+        const tahun = type.tahun ? 'kost tahunan, ' : ''
+        const keywords = 'infokost, cari kos, cari kost, kost murah, cari kost murah, kost eksklusif, kost exclusive, kost mewah, kost kostan, kost bebas, kos lv, olx kost, rukita kost, kost minimalis, kost pelangi, reddoorz kost, kost orange, kos flamboyan, ' + hari + minggu + bulan + tahun + 'kost putri dekat ' + location.near[0] + ', kost putra dekat ' + location.near[0] + ', kost ' + campur + putra + putri + pasutri + 'kost putra dekat ' + location.district + ', kost ' + location.district + ', kost di ' + location.district + ', kost ' + location.city + ', kost di ' + location.city + ', kost dekat ' + location.near[0]
 
         let found = false
         const docRef = fire
