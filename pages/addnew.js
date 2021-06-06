@@ -170,7 +170,7 @@ function Addnew() {
         const bulan = type.bulan ? 'kost bulanan, ' : ''
         const tahun = type.tahun ? 'kost tahunan, ' : ''
         const nearCampus = strToArray(near)
-        const keywords = hari + minggu + bulan + tahun + 'kost putri dekat ' + nearCampus[0] + ', kost putra dekat ' + nearCampus[0] + ', kost ' + campur + putra + putri + pasutri + 'kost putra dekat ' + district + ', kost ' + district + ', kost di ' + district + ', kost ' + city + ', kost di ' + city + ', kost dekat ' + nearCampus[0]
+        const keywords = hari + minggu + bulan + tahun + 'kost putri dekat ' + nearCampus[0] + ', kost putra dekat ' + nearCampus[0] + campur + putra + putri + pasutri + 'kost putra dekat ' + district + 'kost putri dekat ' + district + ', kost ' + district + ', kost di ' + district + ', kost ' + city + ', kost di ' + city + ', kost dekat ' + nearCampus[0]
 
 
         let found = false
