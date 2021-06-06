@@ -123,6 +123,6 @@
     padding-bottom: 5px;
 }
 /* hide google ads button */
-.abgc .cbb {
+.abgc, .cbb {
     display: none !important;
 }
