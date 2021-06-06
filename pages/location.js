@@ -148,7 +148,7 @@ class MapView extends React.Component {
                                             <div key={index}>
                                                 {
                                                     index === 1 &&
-                                                    <div className="my-1 border-bottom">
+                                                    <div className="my-1">
                                                         <AdSense.Google
                                                             client='ca-pub-1434074630735871'
                                                             slot='7863233219'
