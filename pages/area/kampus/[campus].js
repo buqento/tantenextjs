@@ -125,7 +125,7 @@ class CampusId extends React.Component {
                         <div className="my-2">
                             <div className="mx-3 mb-2 font-bold"><span className="font-normal">Dekat</span> {campusName}</div>
                             <div className="mx-3 mb-3 divide-y">
-                                {data && data.map((item, index) => <CampaignItemList item={item} key={index} />)}
+                                {data && data.map((item, index) => <div><CampaignItemList item={item} key={index} /></div>)}
                             </div>
                         </div>
                 }
