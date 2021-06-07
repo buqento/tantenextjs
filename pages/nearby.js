@@ -117,7 +117,7 @@ class Nearby extends React.Component {
                                                 return comparison;
                                             }
                                         )
-                                        .map((item, index) => <CampaignItemList key={index} item={item} nearby />)
+                                        .map((item, index) => <div><CampaignItemList key={index} item={item} nearby /></div>)
                                 }
                             </div>
                         </div>

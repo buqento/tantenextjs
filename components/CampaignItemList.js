@@ -60,7 +60,7 @@ class CampaignItemList extends Component {
                             {
                                 nearby &&
                                 <div className="w-full">
-                                    <span className="float-right text-indigo-800 text-sm mr-1 rounded-full inline-block px-1 border">{item.distance}Km</span>
+                                    <span className="float-right text-green-700 text-sm mr-1 rounded-full inline-block px-1 border">{item.distance} Km</span>
                                 </div>
                             }
                             {
