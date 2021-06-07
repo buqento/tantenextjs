@@ -249,14 +249,16 @@ class Detail extends React.Component {
           }
 
           {/* other */}
-          <div className="mx-3">
+          <div className="mt-3 mx-3">
             {/* google ads */}
-            <AdSense.Google
-              client='ca-pub-1434074630735871'
-              slot='7863233219'
-              className="h-64 w-full"
-              format=''
-            />
+            <div>
+              <AdSense.Google
+                client='ca-pub-1434074630735871'
+                slot='7863233219'
+                className="h-64 w-full"
+                format=''
+              />
+            </div>
             <Ads />
             <ListKosOthers data={otherdata} detail={detail} />
           </div>
