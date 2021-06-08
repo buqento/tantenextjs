@@ -19,15 +19,18 @@ import Ads from '../components/Ads'
 import Footer from '../components/Footer'
 import NavMobile from '../components/NavMobile'
 import AdSense from 'react-adsense';
+import { MdClose } from 'react-icons/md'
 class Detail extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       otherData: null,
-      showAlert: false
+      showAlert: false,
+      showAds: true
     }
     this.myRef = React.createRef()
     this.handleHit = this.handleHit.bind(this)
+    this.handShowAds = this.handShowAds.bind(this)
   }
   async componentDidMount() {
     const { details } = this.props
@@ -54,13 +57,17 @@ class Detail extends React.Component {
       this.setState({ showAlert: false })
     }.bind(this), 5000)
   }
+  handShowAds() {
+    const { showAds } = this.state
+    this.setState({ showAds: !showAds })
+  }
   async handleHit(id, hit) {
     await fire.firestore().collection("kosts").doc(id).update({ hit })
       .catch(err => { console.log(err) })
   }
   render() {
     const { slug, details, otherdatas } = this.props
-    const { showAlert } = this.state
+    const { showAlert, showAds } = this.state
     const detail = JSON.parse(details)
     const otherdata = JSON.parse(otherdatas)
     const structureTypeBreadcrumbList =
@@ -161,20 +168,23 @@ class Detail extends React.Component {
           <Slide imagesData={detail.images} imageTitle={detail.title} />
           <FooterDetail data={detail} callbackFromParent={this.handleShowAlert} />
           {/* google ads */}
-          <div className='opacity-0' style={{ marginTop: '100px' }}>
+          <div className={`${showAds ? 'block' : 'hidden'} container-image`} style={{ marginTop: '-40px' }}>
             <AdSense.Google
               client='ca-pub-1434074630735871'
               slot='7863233219'
-              className="h-64 w-full"
+              className="h-32 w-full"
               format=''
             />
+            <div style={{ marginTop: '-120px' }}>
+              <MdClose className="button-delete cursor-pointer bg-gray-700 text-white rounded-full p-1 mt-2 ml-3" size="20" onClick={this.handShowAds} />
+            </div>
           </div>
         </div>
       }
 
       {
         detail &&
-        <div className="z-0 grid sm:grid-cols-2 md:grid-cols-3 gap-4" style={{ marginTop: '-355px' }}>
+        <div className={`${showAds ? 'mt-4' : 'mt-0'} grid sm:grid-cols-2 md:grid-cols-3 gap-4`}>
 
           {/* price/title/desc */}
           <div className="mt-3">
