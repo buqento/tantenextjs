@@ -250,7 +250,6 @@ class Detail extends React.Component {
 
           {/* other */}
           <div className="mt-3 mx-3">
-            {/* google ads */}
             <div>
               <AdSense.Google
                 client='ca-pub-1434074630735871'
