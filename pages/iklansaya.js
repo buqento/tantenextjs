@@ -71,9 +71,9 @@ class IklanSaya extends React.Component {
                     <Message title="Belum ada iklan" message="Kamu belum memiliki Iklan! Silahkan membuat iklan secara gratis." />
                 </div>
             }
-            <div className="mb-4">
+            {/* <div className="mb-4">
                 <Ads />
-            </div>
+            </div> */}
             <Footer />
             <div className="xs:block sm:hidden md:hidden lg:hidden">
                 <NavMobile />

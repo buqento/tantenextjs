@@ -259,7 +259,7 @@ class Detail extends React.Component {
                 format=''
               />
             </div>
-            <Ads />
+            {/* <Ads /> */}
             <ListKosOthers data={otherdata} detail={detail} />
           </div>
         </div>

@@ -128,7 +128,7 @@ class Index extends React.Component {
                 format=''
               />
             </div>
-            <div><Ads /></div>
+            {/* <div><Ads /></div> */}
             <div className="py-2 px-3 bg-white z-10">
               <span className="text-uppercase text-current font-bold">Dekat Kampus</span>
             </div>

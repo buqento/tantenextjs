@@ -121,7 +121,7 @@ class Nearby extends React.Component {
                                 }
                             </div>
                         </div>
-                        <Ads />
+                        {/* <Ads /> */}
                     </>
             }
             {
