@@ -15,7 +15,6 @@ import ListKosOthers from '../components/ListKosOthers'
 import fire from '../configurations/firebase'
 import Facilities from '../components/Facilities'
 import Share from '../components/Share'
-import Ads from '../components/Ads'
 import Footer from '../components/Footer'
 import NavMobile from '../components/NavMobile'
 import AdSense from 'react-adsense';
@@ -269,7 +268,6 @@ class Detail extends React.Component {
                 format=''
               />
             </div>
-            {/* <Ads /> */}
             <ListKosOthers data={otherdata} detail={detail} />
           </div>
         </div>
