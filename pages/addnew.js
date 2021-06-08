@@ -126,9 +126,9 @@ function Addnew() {
                 formdata.append("image", file);
                 fetch("https://api.imgur.com/3/image", {
                     method: "post",
-                    headers: {
-                        Authorization: "Client-ID e6aa071d345d18f"
-                    },
+                    // headers: {
+                    //     Authorization: "Client-ID e6aa071d345d18f"
+                    // },
                     body: formdata
                 })
                     .then(data => data.json())
