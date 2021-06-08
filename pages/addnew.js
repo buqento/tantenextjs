@@ -161,14 +161,15 @@ function Addnew() {
         let arrFacilityShare = []
         for (const property in facilityShare) { facilityShare[property] && arrFacilityShare.push(facilityTitle(property)[0].title) }
 
-        const campur = type.campur ? 'kost campur, ' : ''
-        const putra = type.putra ? 'kost putra, ' : ''
-        const putri = type.putri ? 'kost putri, ' : ''
-        const pasutri = type.pasutri ? 'kost pasutri, ' : ''
-        const hari = type.hari ? 'kost harian, ' : ''
-        const minggu = type.minggu ? 'kos mingguan, ' : ''
-        const bulan = type.bulan ? 'kost bulanan, ' : ''
-        const tahun = type.tahun ? 'kost tahunan, ' : ''
+        const campur = type.Campur ? 'kost campur, ' : ''
+        const putra = type.Putra ? 'kost putra, ' : ''
+        const putri = type.Putri ? 'kost putri, ' : ''
+        const pasutri = type.Pasutri ? 'kost pasutri, ' : ''
+        const hari = durations.hari ? 'kost harian, ' : ''
+        const minggu = durations.minggu ? 'kost mingguan, ' : ''
+        const bulan = durations.bulan ? 'kost bulanan, ' : ''
+        const tahun = durations.tahun ? 'kost tahunan, ' : ''
+
         const nearCampus = strToArray(near)
         const keywords = hari + minggu + bulan + tahun + 'kost putri dekat ' + nearCampus[0] + ', kost putra dekat ' + nearCampus[0] + ', ' + campur + putra + putri + pasutri + 'kost putra dekat ' + district + ', kost putri dekat ' + district + ', kost ' + district + ', kost di ' + district + ', kost ' + city + ', kost di ' + city + ', kost dekat ' + nearCampus[0]
         let found = false
