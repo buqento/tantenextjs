@@ -14,7 +14,7 @@ class FeedsGrid extends React.Component {
                             <div key={index}>
                                 {
                                     index === 2 &&
-                                    <div className="mx-3 my-2 sticky top-0 z-10">
+                                    <div className="mx-3 my-2">
                                         <AdSense.Google
                                             client='ca-pub-1434074630735871'
                                             slot='3178716891'
@@ -25,7 +25,18 @@ class FeedsGrid extends React.Component {
                                 }
                                 {
                                     index === 7 &&
-                                    <div className="mx-3 my-2 sticky top-0 z-10">
+                                    <div className="mx-3 my-2">
+                                        <AdSense.Google
+                                            client='ca-pub-1434074630735871'
+                                            slot='3178716891'
+                                            className="h-64 w-full"
+                                            format='auto'
+                                        />
+                                    </div>
+                                }
+                                {
+                                    index === 10 &&
+                                    <div className="mx-3 my-2">
                                         <AdSense.Google
                                             client='ca-pub-1434074630735871'
                                             slot='3178716891'
