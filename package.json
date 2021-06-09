@@ -28,11 +28,9 @@
     "react-input-range": "^1.3.0",
     "react-js-pagination": "^3.0.3",
     "react-map-gl": "^5.2.9",
-    "react-map-gl-geocoder": "^2.1.6",
     "react-mapbox-gl-geocoder": "^1.1.0",
     "react-share": "^4.4.0",
     "react-simple-wysiwyg": "^1.0.2",
-    "react-social-login": "^3.4.13",
     "sass": "^1.27.0",
     "swiper": "^6.3.4"
   },

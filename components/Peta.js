@@ -30,7 +30,7 @@ export default function Peta(props) {
             onViewportChange={viewport => { setViewport(viewport) }}
             mapStyle="mapbox://styles/buqento/ckg4bb6cc2hrr19k84gzrs97j"
         >
-            <div className="ml-2 mt-2" style={{ width: '29px' }}>
+            <div className="ml-2 mt-2" style={{ width: '29px', zIndex: -1 }}>
                 <FullscreenControl label="Perbesar Peta" />
             </div>
             <div className="ml-2 mt-2" style={{ width: '29px' }}>
