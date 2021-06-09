@@ -140,7 +140,7 @@ class Detail extends React.Component {
           <meta name="application-name" content="Tantekos" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <meta name="title" content={detail.title} />
-          <meta name="description" content={detail.description} />
+          <meta name="description" content={detail.description.replace(/&nbsp;|<\/?[^>]+(>|$)/g, " ")} />
           <meta name="keywords" content={`infokost, cari kos, cari kost, kost murah, cari kost murah, kost eksklusif, kost exclusive, kost mewah, kost kostan, kost bebas, kos lv, olx kost, rukita kost, kost minimalis, kost pelangi, reddoorz kost, kost orange, kos flamboyan, ${detail.keywords}`} />
           <meta property="og:title" content={detail.title} />
           <meta property="og:description" content={detail.description} />
@@ -213,6 +213,10 @@ class Detail extends React.Component {
               <div className="my-3">
                 <h2 className="font-bold">Deskripsi*</h2>
                 <div dangerouslySetInnerHTML={{ __html: detail.description }} />
+
+                
+
+
               </div>
 
               {/* facilities */}
