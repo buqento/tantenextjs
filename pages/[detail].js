@@ -175,7 +175,7 @@ class Detail extends React.Component {
               format=''
             />
             <div style={{ marginTop: '-120px' }}>
-              <MdClose className="button-delete cursor-pointer bg-gray-700 text-white rounded-full p-1 mt-2 ml-3" size="20" onClick={this.handShowAds} />
+              <MdClose className="button-delete cursor-pointer bg-gray-700 text-white rounded-full p-1" size="24" style={{ right: 2, marginTop: -10 }} onClick={this.handShowAds} />
             </div>
           </div>
         </div>
