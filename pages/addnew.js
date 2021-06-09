@@ -9,7 +9,7 @@ import { useSession, signIn } from 'next-auth/client'
 import NavComponent from '../components/NavComponent'
 import Footer from '../components/Footer'
 import NavMobile from '../components/NavMobile'
-import { DefaultEditor } from 'react-simple-wysiwyg';
+import { BtnBold, BtnUnderline, BtnItalic, Editor, Toolbar, BtnBulletList } from 'react-simple-wysiwyg';
 function Addnew() {
 
     const initType = {
@@ -393,7 +393,16 @@ function Addnew() {
 
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="description">Deskripsi Kost <span className="text-danger">*</span></label>
-                            <DefaultEditor value={description} onChange={(e) => setDescription(e.target.value)} />
+                            <p>ul class="list-disc"</p>
+                            <Editor value={description} onChange={(e) => setDescription(e.target.value)}>
+                                <Toolbar>
+                                    <BtnBold />
+                                    <BtnItalic />
+                                    <BtnUnderline />
+                                    <BtnBulletList />
+                                </Toolbar>
+                            </Editor>
+                            <textarea value={description} onChange={(e) => setDescription(e.target.value)} class="w-full my-3 px-2 py-2 text-gray-700 border focus:outline-none" rows="4"></textarea>
                         </div>
 
                         <div className="mb-4">
