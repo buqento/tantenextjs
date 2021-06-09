@@ -13,7 +13,18 @@ class FeedsGrid extends React.Component {
                         data.slice(0, limit).map((item, index) =>
                             <div key={index}>
                                 {
-                                    index === 2 &&
+                                    index === 1 &&
+                                    <div className="mx-3 my-2">
+                                        <AdSense.Google
+                                            client='ca-pub-1434074630735871'
+                                            slot='3178716891'
+                                            className="h-64 w-full"
+                                            format='auto'
+                                        />
+                                    </div>
+                                }
+                                {
+                                    index === 4 &&
                                     <div className="mx-3 my-2">
                                         <AdSense.Google
                                             client='ca-pub-1434074630735871'
@@ -25,17 +36,6 @@ class FeedsGrid extends React.Component {
                                 }
                                 {
                                     index === 7 &&
-                                    <div className="mx-3 my-2">
-                                        <AdSense.Google
-                                            client='ca-pub-1434074630735871'
-                                            slot='3178716891'
-                                            className="h-64 w-full"
-                                            format='auto'
-                                        />
-                                    </div>
-                                }
-                                {
-                                    index === 10 &&
                                     <div className="mx-3 my-2">
                                         <AdSense.Google
                                             client='ca-pub-1434074630735871'
