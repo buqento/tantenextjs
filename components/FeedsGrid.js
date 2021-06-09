@@ -23,6 +23,17 @@ class FeedsGrid extends React.Component {
                                         />
                                     </div>
                                 }
+                                {
+                                    index === 7 &&
+                                    <div className="mx-3 my-2 sticky top-0 z-10">
+                                        <AdSense.Google
+                                            client='ca-pub-1434074630735871'
+                                            slot='3178716891'
+                                            className="h-64 w-full"
+                                            format='auto'
+                                        />
+                                    </div>
+                                }
                                 <CampaignItem key={index} item={item} />
                             </div>
                         )
