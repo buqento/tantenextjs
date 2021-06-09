@@ -5,7 +5,7 @@ import AdSense from 'react-adsense'
 class FeedsGrid extends React.Component {
     render() {
         const { data } = this.props
-        const limit = 5
+        const limit = 10
         return (
             <div className="mb-3">
                 <div>
