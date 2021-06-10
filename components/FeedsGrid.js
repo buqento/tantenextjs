@@ -6,7 +6,7 @@ class FeedsGrid extends React.Component {
     render() {
         const { data } = this.props
         return (
-            <div className="mb-3">
+            <div>
                 <div>
                     {
                         data.map((item, index) =>
@@ -28,7 +28,7 @@ class FeedsGrid extends React.Component {
                     }
                 </div>
                 <Link href="/location">
-                    <div className="cursor-pointer align-middle text-center text-indigo-700 font-bold uppercase underline my-3 py-3 mx-3">Cari Kost Lainnya</div>
+                    <div className="cursor-pointer align-middle text-center text-indigo-700 font-bold uppercase underline py-3 mx-3">Cari Kost Lainnya</div>
                 </Link>
             </div>
         )

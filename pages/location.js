@@ -125,19 +125,18 @@ class MapView extends React.Component {
                         <MdClose className="bg-gray-700 rounded-full text-white" size={24} style={{ marginTop: 32, marginLeft: -52 }} />
                     </div>
                 </div>
-
+                <div className="my-3">
+                    <AdSense.Google
+                        client='ca-pub-1434074630735871'
+                        slot='7863233219'
+                        className="h-32 w-full"
+                        format=''
+                    />
+                </div>
                 {
                     load ? <CampaignItemListSkeleton /> :
                         <div className="mx-3 my-3">
-                            <div className="my-1">
-                                <AdSense.Google
-                                    client='ca-pub-1434074630735871'
-                                    slot='7863233219'
-                                    className="h-32 w-full"
-                                    format=''
-                                />
-                            </div>
-                            <div>
+                            <div className="my-2">
                                 {
                                     listResult &&
                                     <>

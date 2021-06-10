@@ -39,18 +39,20 @@ class Index extends React.Component {
       <div>
         <NavComponent />
         <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-4">
+
           {/* col1 */}
           <div>
             <Header info={info} />
-            <div>
+            <div className="mt-2">
               {load && <CampaignItemSkeleton />}
-              {data && data.length > 0 && <FeedsGrid data={data} />}
+              {!load && data && <FeedsGrid data={data} />}
             </div>
           </div>
+
           {/* col2 */}
           <div>
-            <div><Ads /></div>
-            <div className="py-2 px-3 bg-white z-10">
+            <div className="lg:mt-4"><Ads /></div>
+            <div className="mt-3 py-2 px-3 bg-white z-10">
               <span className="text-uppercase text-current font-bold">Dekat Kampus</span>
             </div>
             <div className="border-bottom">

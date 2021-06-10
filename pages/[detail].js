@@ -221,7 +221,7 @@ class Detail extends React.Component {
               }
               {
                 detail && detail.facility && detail.facility.share.length > 0 && detail.facility.share[0] !== "" &&
-                <div className="mb-4">
+                <div>
                   <h2 className="font-bold">Fasilitas Bersama</h2>
                   <Facilities items={detail.facility.share} />
                 </div>
@@ -232,7 +232,7 @@ class Detail extends React.Component {
           {/* location */}
           {
             detail.location &&
-            <div className="my-3 mx-3">
+            <div className="mt-3 mx-3">
               <div className="mb-3">
                 <h2 className="mb-3 font-bold">Lokasi <small>({detail.location.district}, {detail.location.city}, {detail.location.province})</small></h2>
                 <Peta location={detail.location} zoom={10} />

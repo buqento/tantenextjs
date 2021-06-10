@@ -3,7 +3,7 @@ const skeletonArr = [1, 2, 3, 4, 5, 6, 7, 8]
 const CampaignItemSkeleton = () => <div>
     {
         skeletonArr.map((item, index) =>
-            <div key={index} className="w-full py-2">
+            <div key={index} className="py-2 mx-3 mr-3">
                 <div className="animate-pulse space-x-4">
                     <div className="bg-gray-400 h-64 w-full"/>
                     <div className="space-y-4 pt-2">
