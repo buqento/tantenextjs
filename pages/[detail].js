@@ -68,6 +68,7 @@ class Detail extends React.Component {
     const { slug, details, otherdatas } = this.props
     const { showAlert, showAds } = this.state
     const detail = JSON.parse(details)
+    const descriptionDetail = detail && detail.description.replace(/&nbsp;|<\/?[^>]+(>|$)/g, " ")
     const otherdata = JSON.parse(otherdatas)
     const structureTypeBreadcrumbList =
       `{
@@ -140,10 +141,10 @@ class Detail extends React.Component {
           <meta name="application-name" content="Tantekos" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <meta name="title" content={detail.title} />
-          <meta name="description" content={detail.description.replace(/&nbsp;|<\/?[^>]+(>|$)/g, " ")} />
+          <meta name="description" content={descriptionDetail} />
           <meta name="keywords" content={`infokost, cari kos, cari kost, kost murah, cari kost murah, kost eksklusif, kost exclusive, kost mewah, kost kostan, kost bebas, kos lv, olx kost, rukita kost, kost minimalis, kost pelangi, reddoorz kost, kost orange, kos flamboyan, ${detail.keywords}`} />
           <meta property="og:title" content={detail.title} />
-          <meta property="og:description" content={detail.description} />
+          <meta property="og:description" content={descriptionDetail} />
           <meta property="og:type" content="website" />
           <meta property="og:url" content={`https://tantekos.com/${slug}`} />
           <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/w=300/${detail.images && detail.images[0]}`} />
