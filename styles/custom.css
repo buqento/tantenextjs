@@ -112,6 +112,7 @@
 .react-geocoder > input{
     width: 100%;
     padding: 10px;
+    outline: none;
 }
 .react-geocoder-results > div {
     cursor: pointer;
@@ -120,5 +121,5 @@
     line-height: 1.3rem;
     font-weight: 500;
     border-bottom: 1px solid rgb(219, 219, 219);
-    padding-bottom: 5px;
+    padding-bottom: 10px;
 }

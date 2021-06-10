@@ -43,8 +43,7 @@ class Area extends Component {
             <div className="my-3 mx-3 divide-y">
                 {
                     group.map((item, index) =>
-
-                        <div className="flex py-3 align-middle items-center">
+                        <div key={index} className="flex py-3 align-middle items-center">
                             <img src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.image}.webp`} alt={item.name} className="float-left h-20 w-20" style={{ objectFit: 'cover', objectPosition: 'center', width: '80px', height: '95px' }} />
                             <div className="mx-3">
                                 <div className="clamp-2 text-lg mb-2 mt-n2">{item.name}</div>

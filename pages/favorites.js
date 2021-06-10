@@ -75,14 +75,14 @@ class Detail extends React.Component {
                                             <Link href={`/${item.slug}`}>
                                                 <div className="flex-1 ml-2 mt-1 self-center">
                                                     <div className="leading-none font-bold">
-                                                        {Cash(item.price.start_from)}<span className="text-xs font-normal">/{item.price.duration}</span>
+                                                        {Cash(item.price.start_from)}<span className="text-xs font-normal uppercase"> &middot; {item.price.duration}</span>
                                                     </div>
                                                     <Facilities items={item.facility.room} inline />
                                                     <div className="text-sm clamp-1">
-                                                        <BiMap className="inline mb-1" size={16} /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
+                                                        <BiMap size={16} className="inline mr-1 mb-1" /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
                                                     </div>
                                                     <div className="w-full">
-                                                        <span className="text-indigo-700 text-xs uppercase">
+                                                        <span className="text-green-700 text-xs font-bold uppercase">
                                                             <KostType item={item.type} />
                                                         </span>
                                                     </div>

@@ -17,19 +17,13 @@ import Facilities from '../components/Facilities'
 import Share from '../components/Share'
 import Footer from '../components/Footer'
 import NavMobile from '../components/NavMobile'
-import AdSense from 'react-adsense';
-import { MdClose } from 'react-icons/md'
+import AdSense from 'react-adsense'
 class Detail extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      otherData: null,
-      showAlert: false,
-      showAds: true
-    }
+    this.state = { otherData: null, showAlert: false }
     this.myRef = React.createRef()
     this.handleHit = this.handleHit.bind(this)
-    this.handShowAds = this.handShowAds.bind(this)
   }
   async componentDidMount() {
     const { details } = this.props
@@ -55,10 +49,6 @@ class Detail extends React.Component {
     setTimeout(function () {
       this.setState({ showAlert: false })
     }.bind(this), 5000)
-  }
-  handShowAds() {
-    const { showAds } = this.state
-    this.setState({ showAds: !showAds })
   }
   async handleHit(id, hit) {
     await fire.firestore().collection("kosts").doc(id).update({ hit })
@@ -131,7 +121,6 @@ class Detail extends React.Component {
     }
     return <>
       <NavComponent />
-
       {
         detail &&
         <NextHead>
@@ -167,18 +156,6 @@ class Detail extends React.Component {
         <div>
           <Slide imagesData={detail.images} imageTitle={detail.title} />
           <FooterDetail data={detail} callbackFromParent={this.handleShowAlert} />
-          {/* google ads */}
-          <div className={`${showAds ? `block` : `hidden`} container-image`} style={{ marginTop: '-40px' }}>
-            <AdSense.Google
-              client='ca-pub-1434074630735871'
-              slot='7863233219'
-              className="h-32 w-full"
-              format=''
-            />
-            <div style={{ marginTop: '-120px' }}>
-              <MdClose className="button-delete cursor-pointer bg-gray-700 text-white rounded-full p-1" size="24" style={{ right: 4, marginTop: -12 }} onClick={this.handShowAds} />
-            </div>
-          </div>
         </div>
       }
 
@@ -186,14 +163,15 @@ class Detail extends React.Component {
         detail &&
         <div className={`${showAds ? `mt-4` : `mt-0`} grid sm:grid-cols-2 md:grid-cols-3 gap-4`}>
 
-          {/* price/title/desc */}
           <div className="mt-3">
             <div className="text-left mx-3">
+
+              {/* price/share */}
               <div className="mb-1 flex">
                 <div className="self-center flex-auto pr-4">
-                  <div className="mt-n2">
-                    <span className="text-3xl font-bold">{Cash(detail.price.start_from)}</span>
-                    <span className="text-xs text-gray-700">/{detail.price.duration}</span>
+                  <div className="mt-n2 font-bold">
+                    <span className="text-3xl">{Cash(detail.price.start_from)}</span>
+                    <span className="text-xs text-gray-700 uppercase"> &middot; {detail.price.duration}</span>
                   </div>
                 </div>
                 <div>
@@ -202,22 +180,28 @@ class Detail extends React.Component {
               </div>
 
               {/* type */}
-              <div className="my-2 text-left uppercase text-indigo-700"><KostType item={detail.type} /></div>
-
-              {/* title */}
-              <h1 className="mt-0 text-xl capitalize">{detail.title}</h1>
+              <div className="my-2 text-left uppercase text-green-600 font-bold"><KostType item={detail.type} /></div>
 
               {/* date modified */}
               <small className="text-gray-700 uppercase">{moment(detail.date_modified).lang('id').fromNow()} &middot; {detail.hit} kali dilihat</small>
 
+              {/* title */}
+              <h1 className="my-4 text-xl capitalize font-bold">{detail.title}</h1>
+
+              {/* google ads */}
+              <div>
+                <AdSense.Google
+                  client='ca-pub-1434074630735871'
+                  slot='7863233219'
+                  className="h-64 w-full"
+                  format=''
+                />
+              </div>
+
               {/* description */}
               <div className="my-3">
-                <h2 className="font-bold">Deskripsi*</h2>
+                <h2 className="font-bold">Deskripsi *</h2>
                 <div dangerouslySetInnerHTML={{ __html: detail.description }} />
-
-                
-
-
               </div>
 
               {/* facilities */}
@@ -248,9 +232,9 @@ class Detail extends React.Component {
           {/* location */}
           {
             detail.location &&
-            <div className="my-2 mx-3">
+            <div className="my-3 mx-3">
               <div className="mb-3">
-                <h2 className="pb-2 font-bold">Lokasi <small>({detail.location.district}, {detail.location.city}, {detail.location.province})</small></h2>
+                <h2 className="mb-3 font-bold">Lokasi <small>({detail.location.district}, {detail.location.city}, {detail.location.province})</small></h2>
                 <Peta location={detail.location} zoom={10} />
                 <a href={`https://www.google.com/maps/search/?api=1&query=${detail.location.lat_lng.latitude},${detail.location.lat_lng.longitude}`} target="_blank">
                   <div className="my-3 uppercase underline text-indigo-700 font-bold">Lihat Peta Google <FaExternalLinkAlt className="inline ml-1 mb-1" /></div>
@@ -263,16 +247,7 @@ class Detail extends React.Component {
           }
 
           {/* other */}
-          <div className="mt-3 mx-3">
-            {/* google ads */}
-            <div>
-              <AdSense.Google
-                client='ca-pub-1434074630735871'
-                slot='7863233219'
-                className="h-64 w-full"
-                format=''
-              />
-            </div>
+          <div className="mx-3">
             <ListKosOthers data={otherdata} detail={detail} />
           </div>
         </div>

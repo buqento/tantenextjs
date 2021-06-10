@@ -4,7 +4,6 @@ import Cash from '../utils/Cash'
 import Generateslug from '../utils/Generateslug'
 import { BiMap } from 'react-icons/bi'
 import { MdStar } from 'react-icons/md'
-import fire from '../configurations/firebase'
 import Facilities from './Facilities'
 import moment from 'moment'
 class CampaignItem extends Component {
@@ -60,9 +59,11 @@ class CampaignItem extends Component {
                             <div className="font-bold">
                                 {
                                     item.user ?
-                                        <>{
-                                            item.user.email === 'buqento@gmail.com' ? <>Admin<span className="text-indigo-600">*</span></> : item.user.display_name
-                                        }</> : <>Admin<span className="text-indigo-600">*</span></>
+                                        <>
+                                            {
+                                                item.user.email === 'buqento@gmail.com' ? 'Admin' : item.user.display_name
+                                            }
+                                        </> : 'Admin'
                                 }
                             </div>
                             <div>
@@ -76,53 +77,46 @@ class CampaignItem extends Component {
                     <div className="mx-3 my-3">
                         {/* price and action */}
                         <div className="text-2xl flex">
-                            <div className="flex-auto">
-                                <span className="font-bold">
+                            <div className="flex-auto font-bold">
+                                <span>
                                     {like && <MdStar className="inline text-pink-500 mt-1 mr-1 float-right" />}
                                     {Cash(item.price.start_from, false)}
                                 </span>
-                                <span className="text-xs text-gray-700">/{item.price.duration}</span>
+                                <span className="text-xs text-gray-700 uppercase"> &middot; {item.price.duration}</span>
                             </div>
-                            <div className="mt-2 text-sm underline uppercase text-indigo-700 font-bold">
-                                Selengkapnya
-                            </div>
+                            <div className="mt-2 text-sm underline uppercase text-indigo-700 font-bold">Selengkapnya</div>
                         </div>
-
-                        {/* facilities */}
-                        {
-                            item.category === 'Kost' ? item.facility.room.length > 0 && <Facilities items={item.facility.room} inline />
-                                : <Facilities items={item.facility.building} inline />
-                        }
 
                         {/* location */}
                         <div className="clamp-1">
-                            <BiMap size={20} className="inline mb-1" /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
+                            <BiMap size={16} className="inline mr-1 mb-1" /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
                         </div>
 
-                        <div className="text-sm">
-                            {/* category */}
-                            <div className="uppercase mt-2 text-indigo-700">
-                                {
-                                    item.type.includes("Campur") &&
-                                    <span className="inline-block mr-2">{item.category === 'Kost' ? 'Campur' : 'Kontrakan'}</span>
-                                }
-                                {
-                                    item.type.includes("Putri") &&
-                                    <span className="inline-block mr-2">Putri</span>
-                                }
-                                {
-                                    item.type.includes("Putra") &&
-                                    <span className="inline-block mr-2">Putra</span>
-                                }
-                                {
-                                    item.type.includes("Pasutri") &&
-                                    <span className="inline-block mr-1">Pasutri</span>
-                                }
-                                {
-                                    item.type.includes("LV") &&
-                                    <span className="rounded-full inline-block border mr-2">LV</span>
-                                }
-                            </div>
+                        {/* facilities */}
+                        <Facilities items={item.facility.room} inline />
+
+                        {/* category */}
+                        <div className="text-sm uppercase mt-1 text-green-600 font-bold">
+                            {
+                                item.type.includes("Campur") &&
+                                <span className="inline-block mr-2">Campur</span>
+                            }
+                            {
+                                item.type.includes("Putri") &&
+                                <span className="inline-block mr-2">Putri</span>
+                            }
+                            {
+                                item.type.includes("Putra") &&
+                                <span className="inline-block mr-2">Putra</span>
+                            }
+                            {
+                                item.type.includes("Pasutri") &&
+                                <span className="inline-block mr-2">Pasutri</span>
+                            }
+                            {
+                                item.type.includes("LV") &&
+                                <span className="inline-block">LV</span>
+                            }
                         </div>
 
                     </div>

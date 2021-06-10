@@ -8,6 +8,7 @@ import NavMobile from '../components/NavMobile'
 import Message from '../components/Message'
 import fire from '../configurations/firebase'
 import AdSense from 'react-adsense'
+import { MdClose } from 'react-icons/md'
 
 const mapboxApiKey = 'pk.eyJ1IjoiYnVxZW50byIsImEiOiJjanJ5a3p4cDkwZXJiNDlvYXMxcnhud3hhIn0.AhQ-vGYSIo6uTBmQD4MCsA'
 
@@ -97,26 +98,45 @@ class MapView extends React.Component {
         if (unit == "N") dist = dist * 0.8684
         return dist
     }
+    handleResetSearch = () => {
+        const input = document.getElementsByTagName("input")[0]
+        input.focus();
+        input.select();
+    }
     render() {
         const { viewport, listResult, placeName, load, keyword } = this.state
         return (
             <>
                 <NavComponent />
-                <div>
-                    <Geocoder
-                        className="border text-lg mx-3 my-3"
-                        mapboxApiAccessToken={mapboxApiKey}
-                        onSelected={this.onSelected}
-                        viewport={viewport}
-                        hideOnSelect={true}
-                        queryParams={{ country: "id" }}
-                        updateInputOnSelect
-                        initialInputValue={keyword}
-                    />
+                <div className="my-3 flex">
+                    <div className="w-full">
+                        <Geocoder
+                            className="border text-lg mx-3 my-3 pr-5"
+                            mapboxApiAccessToken={mapboxApiKey}
+                            onSelected={this.onSelected}
+                            viewport={viewport}
+                            hideOnSelect={true}
+                            queryParams={{ country: "id" }}
+                            updateInputOnSelect
+                            initialInputValue={keyword}
+                        />
+                    </div>
+                    <div className="flex-auto cursor-pointer" onClick={this.handleResetSearch}>
+                        <MdClose className="bg-gray-700 rounded-full text-white" size={24} style={{ marginTop: 32, marginLeft: -52 }} />
+                    </div>
                 </div>
+
                 {
                     load ? <CampaignItemListSkeleton /> :
                         <div className="mx-3 my-3">
+                            <div className="my-1">
+                                <AdSense.Google
+                                    client='ca-pub-1434074630735871'
+                                    slot='7863233219'
+                                    className="h-32 w-full"
+                                    format=''
+                                />
+                            </div>
                             <div>
                                 {
                                     listResult &&
@@ -146,17 +166,6 @@ class MapView extends React.Component {
                                     {
                                         listResult.map((item, index) =>
                                             <div key={index}>
-                                                {
-                                                    index === 1 &&
-                                                    <div className="my-1">
-                                                        <AdSense.Google
-                                                            client='ca-pub-1434074630735871'
-                                                            slot='7863233219'
-                                                            className="h-32 w-full"
-                                                            format=''
-                                                        />
-                                                    </div>
-                                                }
                                                 <CampaignItemList item={item} />
                                             </div>
                                         )
