@@ -10,6 +10,7 @@ import Footer from '../components/Footer'
 import NavMobile from '../components/NavMobile'
 import Link from 'next/link'
 import CampaignItemSkeleton from '../components/CampaignItemSkeleton'
+import AdSense from 'react-adsense'
 
 class Index extends React.Component {
   constructor(props) {
@@ -51,6 +52,15 @@ class Index extends React.Component {
 
           {/* col2 */}
           <div>
+            <div className="xs:mx-3 my-3">
+              {/* vertical ads */}
+              <AdSense.Google
+                client='ca-pub-1434074630735871'
+                slot='3178716891'
+                className="w-full"
+                format='auto'
+              />
+            </div>
             <div className="lg:mt-4"><Ads /></div>
             <div className="mt-3 py-2 px-3 bg-white z-10">
               <span className="text-uppercase text-current font-bold">Dekat Kampus</span>

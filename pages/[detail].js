@@ -244,6 +244,17 @@ class Detail extends React.Component {
               <div className="mt-3">
                 <small>* Data kost dapat berubah sewaktu-waktu.</small>
               </div>
+
+              <div className="my-3">
+                {/* horizontal ads */}
+                <AdSense.Google
+                  client='ca-pub-1434074630735871'
+                  slot='5011678900'
+                  className="w-full"
+                  format='auto'
+                />
+              </div>
+
               {/* facebook comment */}
               <div>
                 <FacebookProvider appId={process.env.NEXT_PUBLIC_REACT_APP_FB_CLIENT_ID}>

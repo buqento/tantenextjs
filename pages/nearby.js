@@ -4,7 +4,6 @@ import CampaignItemList from '../components/CampaignItemList'
 import Message from '../components/Message'
 import CampaignItemListSkeleton from '../components/CampaignItemListSkeleton'
 import Header from '../components/Header'
-import Ads from '../components/Ads'
 import NavComponent from '../components/NavComponent'
 import Footer from '../components/Footer'
 import NavMobile from '../components/NavMobile'
@@ -14,7 +13,7 @@ class Nearby extends React.Component {
         super(props)
         this.state = {
             data: null,
-            locationText: null,
+            locationText: "Jakarta Pusat",
             nearbyList: null,
             load: true
         }
@@ -86,14 +85,17 @@ class Nearby extends React.Component {
         }
         return <div>
             <NavComponent />
-            <div className="mx-3 my-3">
-                <AdSense.Google
-                    client='ca-pub-1434074630735871'
-                    slot='7863233219'
-                    className="h-64 w-full"
-                    format=''
-                />
+
+            <div className="xs:mx-3 my-3">
+              {/* horizontal ads */}
+              <AdSense.Google
+                client='ca-pub-1434074630735871'
+                slot='5011678900'
+                className="w-full"
+                format='auto'
+              />
             </div>
+
             <Header info={info} />
             {
                 load ? <CampaignItemListSkeleton /> :
