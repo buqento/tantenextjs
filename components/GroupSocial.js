@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
+import { FacebookProvider, Group } from 'react-facebook'
 class Area extends Component {
     render() {
         const group = [
@@ -44,13 +45,15 @@ class Area extends Component {
                 {
                     group.map((item, index) =>
                         <div key={index} className="flex py-3 align-middle items-center">
-                            <img src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.image}.webp`} alt={item.name} className="float-left h-20 w-20" style={{ objectFit: 'cover', objectPosition: 'center', width: '80px', height: '95px' }} />
-                            <div className="mx-3">
-                                <div className="clamp-2 text-lg mb-2 mt-n2">{item.name}</div>
-                                <Link key={index} href={item.url}>
-                                    <span className="border rounded-lg p-2 cursor-pointer uppercase text-indigo-700 font-bold">Gabung Grup</span>
-                                </Link>
-                            </div>
+                            <FacebookProvider appId="123456789">
+                                <Group
+                                    href={item.url}
+                                    width="100%"
+                                    showSocialContext={true}
+                                    showMetaData={true}
+                                    skin="light"
+                                />
+                            </FacebookProvider>
                         </div>
                     )
                 }
