@@ -18,6 +18,7 @@ import Share from '../components/Share'
 import Footer from '../components/Footer'
 import NavMobile from '../components/NavMobile'
 import AdSense from 'react-adsense'
+import { Comments, FacebookProvider } from 'react-facebook';
 class Detail extends React.Component {
   constructor(props) {
     super(props)
@@ -242,6 +243,12 @@ class Detail extends React.Component {
               </div>
               <div className="mt-3">
                 <small>* Data kost dapat berubah sewaktu-waktu.</small>
+              </div>
+              {/* facebook comment */}
+              <div>
+                <FacebookProvider appId={process.env.NEXT_PUBLIC_REACT_APP_FB_CLIENT_ID}>
+                  <Comments width={`100%`} href={`https://tantekos.com/${detail.slug}`} />
+                </FacebookProvider>
               </div>
             </div>
           }
