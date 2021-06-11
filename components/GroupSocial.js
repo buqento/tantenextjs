@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Link from 'next/link'
 import { FacebookProvider, Group } from 'react-facebook'
 class Area extends Component {
     render() {
@@ -44,11 +43,11 @@ class Area extends Component {
             <div className="my-3 mx-3 divide-y">
                 {
                     group.map((item, index) =>
-                        <div key={index} className="flex py-3 align-middle items-center">
+                        <div key={index} className="py-3 text-center">
                             <FacebookProvider appId={process.env.NEXT_PUBLIC_REACT_APP_FB_CLIENT_ID}>
                                 <Group
                                     href={item.url}
-                                    width="100%"
+                                    width="320"
                                     showSocialContext={true}
                                     showMetaData={true}
                                     skin="light"
