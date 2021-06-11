@@ -111,7 +111,7 @@ class MapView extends React.Component {
                 <div className="my-3 flex">
                     <div className="w-full">
                         <Geocoder
-                            className="border text-lg mx-3 my-3 pr-5"
+                            className="border text-lg mx-3 pr-5"
                             mapboxApiAccessToken={mapboxApiKey}
                             onSelected={this.onSelected}
                             viewport={viewport}
@@ -122,10 +122,10 @@ class MapView extends React.Component {
                         />
                     </div>
                     <div className="flex-auto cursor-pointer" onClick={this.handleResetSearch}>
-                        <MdClose className="bg-gray-700 rounded-full text-white" size={24} style={{ marginTop: 32, marginLeft: -52 }} />
+                        <MdClose className="bg-gray-700 rounded-full text-white" size={24} style={{ marginTop: 15, marginLeft: -52 }} />
                     </div>
                 </div>
-                <div className="my-3">
+                <div className="my-3 mx-3">
                     <AdSense.Google
                         client='ca-pub-1434074630735871'
                         slot='7863233219'
