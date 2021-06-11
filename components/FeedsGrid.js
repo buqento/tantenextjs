@@ -17,7 +17,7 @@ class FeedsGrid extends React.Component {
                                         <AdSense.Google
                                             client='ca-pub-1434074630735871'
                                             slot='3178716891'
-                                            className="h-64 w-full"
+                                            className="w-full"
                                             format='auto'
                                         />
                                     </div>
