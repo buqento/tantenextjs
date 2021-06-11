@@ -45,7 +45,7 @@ class Area extends Component {
                 {
                     group.map((item, index) =>
                         <div key={index} className="flex py-3 align-middle items-center">
-                            <FacebookProvider appId="123456789">
+                            <FacebookProvider appId={process.env.NEXT_PUBLIC_REACT_APP_FB_CLIENT_ID}>
                                 <Group
                                     href={item.url}
                                     width="100%"
