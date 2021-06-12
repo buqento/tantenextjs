@@ -51,7 +51,7 @@ class Detail extends React.Component {
                     <AdSense.Google
                         client='ca-pub-1434074630735871'
                         slot='5011678900'
-                        className="w-full bg-gray-400"
+                        className="w-full bg-gray-400 text-center"
                         format='auto'
                     />
                 </div>
