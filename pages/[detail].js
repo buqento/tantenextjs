@@ -189,8 +189,8 @@ class Detail extends React.Component {
               {/* title */}
               <h1 className="my-4 text-xl capitalize font-bold">{detail.title}</h1>
 
-              {/* google ads */}
               <div>
+                {/* square ads */}
                 <AdSense.Google
                   client='ca-pub-1434074630735871'
                   slot='7863233219'

@@ -86,7 +86,7 @@ class Nearby extends React.Component {
         return <div>
             <NavComponent />
 
-            <div className="xs:mx-3 my-3">
+            <div className="xs:mx-3 my-3 text-center">
               {/* horizontal ads */}
               <AdSense.Google
                 client='ca-pub-1434074630735871'
@@ -101,7 +101,7 @@ class Nearby extends React.Component {
                 load ? <CampaignItemListSkeleton /> :
                     nearbyList && nearbyList.length > 0 &&
                     <>
-                        <div className="pb-3 px-3 font-bold bg-white"><span className="font-normal">Di sekitar</span> {locationText}</div>
+                        <div className="pb-3 px-3 font-bold bg-white"><span className="font-normal">{nearbyList.length} Kost di sekitar</span> {locationText}</div>
                         <div className="mb-3">
                             <div className="mx-3 divide-y">
                                 {

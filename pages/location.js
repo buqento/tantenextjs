@@ -65,7 +65,7 @@ class MapView extends React.Component {
         const { data, keyword } = this.state
         const latitude = viewport.latitude
         const longitude = viewport.longitude
-        let nearList = []
+        let nearList = null
         let nearItem = {}
         for (var i = 0; i < data.length; i++) {
             const d = this.getDistance(latitude, longitude, data[i].location.lat_lng.w_, data[i].location.lat_lng.T_, "K")
@@ -129,8 +129,8 @@ class MapView extends React.Component {
                     <AdSense.Google
                         client='ca-pub-1434074630735871'
                         slot='7863233219'
-                        className="h-32 w-full"
-                        format=''
+                        className="w-full"
+                        format='auto'
                     />
                 </div>
                 {
@@ -142,7 +142,7 @@ class MapView extends React.Component {
                                     <>
                                         {
                                             listResult.length > 0 &&
-                                            `${listResult.length} kost di area `
+                                            `${listResult.length} Kost di Area `
                                         }
                                         {
                                             listResult.length > 0 &&
