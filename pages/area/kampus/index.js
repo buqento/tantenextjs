@@ -46,7 +46,7 @@ const Filter = () => {
                 <AdSense.Google
                     client='ca-pub-1434074630735871'
                     slot='7863233219'
-                    className="h-64 w-full"
+                    className="w-full bg-gray-400"
                     format=''
                 />
             </div>

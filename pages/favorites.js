@@ -11,6 +11,7 @@ import Header from '../components/Header'
 import NavComponent from '../components/NavComponent'
 import NavMobile from '../components/NavMobile'
 import AdSense from 'react-adsense'
+import Footer from '../components/Footer'
 class Detail extends React.Component {
     constructor(props) {
         super(props)
@@ -50,7 +51,7 @@ class Detail extends React.Component {
                     <AdSense.Google
                         client='ca-pub-1434074630735871'
                         slot='5011678900'
-                        className="w-full bg-gray-700"
+                        className="w-full bg-gray-400"
                         format='auto'
                     />
                 </div>
@@ -104,6 +105,7 @@ class Detail extends React.Component {
                 }
                 {data && data.length === 0 && <Message message="Kamu belum memiliki kost favorit" />}
                 <div className="xs:block sm:hidden md:hidden lg:hidden">
+                    <Footer />
                     <NavMobile />
                 </div>
             </>
