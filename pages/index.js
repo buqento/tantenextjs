@@ -38,12 +38,13 @@ class Index extends React.Component {
     }
     return (
       <div>
+        <Header info={info} />
         <NavComponent />
         <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-4">
 
           {/* col1 */}
           <div>
-            <Header info={info} />
+            <div class="gcse-search"></div>
             <div className="mt-2">
               {load && <CampaignItemSkeleton />}
               {!load && data && <FeedsGrid data={data} />}

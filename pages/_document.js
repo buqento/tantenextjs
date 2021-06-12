@@ -11,6 +11,7 @@ class MyDocument extends Document {
                 <body>
                     <Main />
                     <NextScript />
+                    <script async src="https://cse.google.com/cse.js?cx=d761393c77a5ff02c"></script>
                 </body>
             </Html>
         )
