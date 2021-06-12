@@ -88,6 +88,9 @@ export const Campus = [
     { slug: 'universitas-bung-karno', name: 'Universitas Bung Karno', province: 'DKI Jakarta' },
     { slug: 'universitas-borobudur', name: 'Universitas Borobudur', province: 'DKI Jakarta' },
     { slug: 'institut-transportasi-dan-logistik-trisakti', name: 'Institut Transportasi dan Logistik Trisakti', province: 'DKI Jakarta' },
+    { slug: 'sampoerna-university', name: 'Sampoerna University', province: 'DKI Jakarta' },
+    { slug: 'sahid-university-jakarta', name: 'Sahid University Jakarta', province: 'DKI Jakarta' },
+    { slug: 'bakrie-university', name: 'Bakrie University', province: 'DKI Jakarta' },
 
     { slug: 'politeknik-negeri-ujung-pandang', name: 'Politeknik Negeri Ujung Pandang', province: 'Sulawesi Selatan' },
     { slug: 'universitas-hasanuddin', name: 'Universitas Hasanuddin', province: 'Sulawesi Selatan' },

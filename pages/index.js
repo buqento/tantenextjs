@@ -57,7 +57,7 @@ class Index extends React.Component {
               <AdSense.Google
                 client='ca-pub-1434074630735871'
                 slot='3178716891'
-                className="w-full"
+                className="w-full bg-gray-700"
                 format='auto'
               />
             </div>
