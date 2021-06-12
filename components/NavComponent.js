@@ -4,7 +4,6 @@ import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import Link from 'next/link'
 import { signIn, useSession } from 'next-auth/client'
 const navigation = [
-  { name: 'Beranda', href: '/', current: false },
   { name: 'Favorit', href: '/favorites', current: false },
   { name: 'History', href: '/history', current: false },
   { name: 'Terdekat', href: '/nearby', current: false }
@@ -32,19 +31,22 @@ export default function NavComponent() {
                 </Disclosure.Button>
               </div>
               <div className="ml-2 flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                <Link href="/">
-                  <div className="cursor-pointer text-white font-bold flex-shrink-0 flex items-center">
+                <a href="/">
+                  <div className="mt-1 cursor-pointer text-white font-bold flex-shrink-0 flex items-center">
                     <h1 className="block lg:hidden">TANTEKOS</h1>
                     <h1 className="hidden lg:block">TANTEKOS</h1>
                   </div>
-                </Link>
+                </a>
                 <div className="hidden sm:block sm:ml-6">
-                  <div className="flex space-x-4">
+                  <div className="space-x-2">
+                    <a href="/">
+                      <span className="text-gray-300 hover:underline hover:text-white cursor-pointer px-3 py-2 font-medium">
+                        Beranda
+                      </span>
+                    </a>
                     {navigation.map((item) => (
                       <Link key={item.name} href={item.href} aria-current={item.current ? 'page' : undefined}>
-                        <span className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'cursor-pointer px-3 py-2 rounded-md text-sm font-medium')}>
+                        <span className="text-gray-300 hover:underline hover:text-white cursor-pointer px-3 py-2 font-medium">
                           {item.name}
                         </span>
                       </Link>
