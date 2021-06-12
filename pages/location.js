@@ -65,7 +65,7 @@ class MapView extends React.Component {
         const { data, keyword } = this.state
         const latitude = viewport.latitude
         const longitude = viewport.longitude
-        let nearList = null
+        let nearList = []
         let nearItem = {}
         for (var i = 0; i < data.length; i++) {
             const d = this.getDistance(latitude, longitude, data[i].location.lat_lng.w_, data[i].location.lat_lng.T_, "K")
