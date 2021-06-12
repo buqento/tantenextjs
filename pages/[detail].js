@@ -57,7 +57,7 @@ class Detail extends React.Component {
   }
   render() {
     const { slug, details, otherdatas } = this.props
-    const { showAlert, showAds } = this.state
+    const { showAlert } = this.state
     const detail = JSON.parse(details)
     const descriptionDetail = detail && detail.description.replace(/&nbsp;|<\/?[^>]+(>|$)/g, " ")
     const otherdata = JSON.parse(otherdatas)
@@ -162,72 +162,75 @@ class Detail extends React.Component {
 
       {
         detail &&
-        <div className={`${showAds ? `mt-4` : `mt-0`} grid sm:grid-cols-2 md:grid-cols-3 gap-4`}>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
 
-          <div className="mt-3">
-            <div className="text-left mx-3">
+          <div className="mt-3 mx-3">
 
-              {/* price/share */}
-              <div className="mb-1 flex">
-                <div className="self-center flex-auto pr-4">
-                  <div className="mt-n2 font-bold">
-                    <span className="text-3xl">{Cash(detail.price.start_from)}</span>
-                    <span className="text-xs text-gray-700 uppercase"> &middot; {detail.price.duration}</span>
-                  </div>
-                </div>
-                <div>
-                  <Share detail={detail} />
-                </div>
-              </div>
-
-              {/* type */}
-              <div className="my-2 text-left uppercase text-green-600 font-bold"><KostType item={detail.type} /></div>
-
-              {/* date modified */}
-              <small className="text-gray-700 uppercase">{moment(detail.date_modified).lang('id').fromNow()} &middot; {detail.hit} kali dilihat</small>
-
-              {/* title */}
-              <h1 className="my-4 text-xl capitalize font-bold">{detail.title}</h1>
-
-              <div>
-                {/* square ads */}
-                <AdSense.Google
-                  client='ca-pub-1434074630735871'
-                  slot='7863233219'
-                  className="w-full bg-gray-400 text-center"
-                  format='auto'
-                />
-              </div>
-
-              {/* description */}
-              <div className="my-3">
-                <h2 className="font-bold">Deskripsi *</h2>
-                <div dangerouslySetInnerHTML={{ __html: detail.description }} />
-              </div>
-
-              {/* facilities */}
-              {
-                detail && detail.facility && detail.facility.room.length > 0 && detail.facility.room[0] !== "" &&
-                <div className="mb-4">
-                  <h2 className="font-bold">Fasilitas Kamar</h2>
-                  <Facilities items={detail.facility.room} />
-                </div>
-              }
-              {
-                detail && detail.facility && detail.facility.bathroom.length > 0 && detail.facility.bathroom[0] !== "" &&
-                <div className="mb-4">
-                  <h2 className="font-bold">Fasilitas Kamar Mandi</h2>
-                  <Facilities items={detail.facility.bathroom} />
-                </div>
-              }
-              {
-                detail && detail.facility && detail.facility.share.length > 0 && detail.facility.share[0] !== "" &&
-                <div>
-                  <h2 className="font-bold">Fasilitas Bersama</h2>
-                  <Facilities items={detail.facility.share} />
-                </div>
-              }
+            {/* search by google */}
+            <div className="mb-3">
+              <div class="gcse-search" />
             </div>
+
+            {/* price/share */}
+            <div className="mb-1 flex">
+              <div className="self-center flex-auto pr-4">
+                <div className="mt-n2 font-bold">
+                  <span className="text-3xl">{Cash(detail.price.start_from)}</span>
+                  <span className="text-xs text-gray-700 uppercase"> &middot; {detail.price.duration}</span>
+                </div>
+              </div>
+              <div>
+                <Share detail={detail} />
+              </div>
+            </div>
+
+            {/* type */}
+            <div className="my-2 text-left uppercase text-green-600 font-bold"><KostType item={detail.type} /></div>
+
+            {/* date modified */}
+            <small className="text-gray-700 uppercase">{moment(detail.date_modified).lang('id').fromNow()} &middot; {detail.hit} kali dilihat</small>
+
+            {/* title */}
+            <h1 className="my-4 text-xl capitalize font-bold">{detail.title}</h1>
+
+            <div>
+              {/* square ads */}
+              <AdSense.Google
+                client='ca-pub-1434074630735871'
+                slot='7863233219'
+                className="w-full bg-gray-400 text-center"
+                format='auto'
+              />
+            </div>
+
+            {/* description */}
+            <div className="my-3">
+              <h2 className="font-bold">Deskripsi *</h2>
+              <div dangerouslySetInnerHTML={{ __html: detail.description }} />
+            </div>
+
+            {/* facilities */}
+            {
+              detail && detail.facility && detail.facility.room.length > 0 && detail.facility.room[0] !== "" &&
+              <div className="mb-4">
+                <h2 className="font-bold">Fasilitas Kamar</h2>
+                <Facilities items={detail.facility.room} />
+              </div>
+            }
+            {
+              detail && detail.facility && detail.facility.bathroom.length > 0 && detail.facility.bathroom[0] !== "" &&
+              <div className="mb-4">
+                <h2 className="font-bold">Fasilitas Kamar Mandi</h2>
+                <Facilities items={detail.facility.bathroom} />
+              </div>
+            }
+            {
+              detail && detail.facility && detail.facility.share.length > 0 && detail.facility.share[0] !== "" &&
+              <div>
+                <h2 className="font-bold">Fasilitas Bersama</h2>
+                <Facilities items={detail.facility.share} />
+              </div>
+            }
           </div>
 
           {/* location */}

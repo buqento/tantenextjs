@@ -44,7 +44,12 @@ class Index extends React.Component {
 
           {/* col1 */}
           <div>
-            <div class="gcse-search"></div>
+
+            {/* search by google */}
+            <div className="mx-3 my-3">
+              <div class="gcse-search" />
+            </div>
+
             <div className="mt-2">
               {load && <CampaignItemSkeleton />}
               {!load && data && <FeedsGrid data={data} />}

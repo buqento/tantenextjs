@@ -123,3 +123,6 @@
     border-bottom: 1px solid rgb(219, 219, 219);
     padding-bottom: 10px;
 }
+.gsc-control-cse.gsc-control-cse-en {
+    padding: 0;
+}
