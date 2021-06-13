@@ -59,5 +59,12 @@ export const City = [
     // { name: 'Gunungkidul', province: 'Daerah Istimewa Yogyakarta' },
     { name: 'Kulon Progo', province: 'Daerah Istimewa Yogyakarta' },
     { name: 'Sleman', province: 'Daerah Istimewa Yogyakarta' },
-    { name: 'Yogyakarta', province: 'Daerah Istimewa Yogyakarta' }
+    { name: 'Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
+    
+    { name: 'Medan', province: 'Sumatera Utara' },
+    { name: 'Padangsidempuan', province: 'Sumatera Utara' },
+    { name: 'Pematangsiantar', province: 'Sumatera Utara' },
+    { name: 'Sibolga', province: 'Sumatera Utara' },
+    { name: 'Tanjungbalai', province: 'Sumatera Utara' },
+    { name: 'Tebing Tinggi', province: 'Sumatera Utara' },
 ]

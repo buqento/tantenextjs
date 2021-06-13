@@ -8,5 +8,6 @@ export const DtProvinsi = [
     { title: 'Jawa Barat', slug: 'jawa-barat' },
     { title: 'Daerah Istimewa Yogyakarta', slug: 'daerah-istimewa-yogyakarta' },
     { title: 'Sulawesi Selatan', slug: 'sulawesi-selatan' },
-    { title: 'Sulawesi Utara', slug: 'sulawesi-utara' }
+    { title: 'Sulawesi Utara', slug: 'sulawesi-utara' },
+    { title: 'Sumatera Utara', slug: 'sumatera-utara' },
 ]

@@ -131,4 +131,7 @@ export const Campus = [
     { slug: 'sekolah-tinggi-ilmu-komunikasi-manado', name: 'Sekolah Tinggi Ilmu Komunikasi Manado', province: 'Sulawesi Utara' },
     { slug: 'politeknik-kesehatan-kemenkes-manado', name: 'Politeknik Kesehatan Kemenkes Manado', province: 'Sulawesi Utara' },
     { slug: 'stikom-manado', name: 'STIKOM Manado', province: 'Sulawesi Utara' },
+
+    { slug: 'universitas-methodist-indonesia', name: 'Universitas Methodist Indonesia', province: 'Sumatera Utara' },
+    { slug: 'universitas-medan-area', name: 'Universitas Medan Area', province: 'Sumatera Utara' },
 ]
