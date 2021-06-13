@@ -215,7 +215,7 @@ function Addnew() {
                             category: "Kost",
                             type: arrType,
                             contact_us: {
-                                phone: contact_phone,
+                                phone: "+" + contact_phone,
                                 whatsapp: contact_whatsapp
                             },
                             facility: {
@@ -538,7 +538,7 @@ function Addnew() {
 
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact_phone">Nomor Handphone <span className="text-danger">*</span></label>
-                            <input required className="border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none" id="contact_phone" type="text" placeholder="+6285243322123" value={contact_phone} onChange={(e) => setContactPhone(e.target.value)} />
+                            <input required className="border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none" id="contact_phone" type="text" placeholder="6285243322123" value={contact_phone} onChange={(e) => setContactPhone(e.target.value)} />
                         </div>
 
                         <div className="mb-4">

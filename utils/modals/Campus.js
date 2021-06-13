@@ -10,6 +10,9 @@ export const Campus = [
     { slug: 'universitas-cenderawasih', name: 'Universitas Cenderawasih', province: 'Papua' },
     { slug: 'universitas-ottow-geissler-papua', name: 'Universitas Ottow Geissler Papua', province: 'Papua' },
     { slug: 'universitas-sains-dan-teknologi-jayapura', name: 'Universitas Sains dan Teknologi Jayapura', province: 'Papua' },
+    { slug: 'sekolah-tinggi-manajemen-informatika-dan-ilmu-komputer-muhammadiyah', name: 'Sekolah Tinggi Manajemen Informatika Dan Ilmu Komputer Muhammadiyah', province: 'Papua' },
+    { slug: 'sekolah-tinggi-ilmu-ekonomi-ottow-geissler', name: 'Sekolah Tinggi Ilmu Ekonomi Ottow Geissler', province: 'Papua' },
+    { slug: 'sekolah-tinggi-ilmu-ekonomi-yapis-jayapura', name: 'Sekolah Tinggi Ilmu Ekonomi Yapis Jayapura', province: 'Papua' },
 
     { slug: 'pgsd-universitas-pattimura', name: 'PGSD Universitas Pattimura', province: 'Maluku' },
     { slug: 'universitas-pattimura', name: 'Universitas Pattimura', province: 'Maluku' },
@@ -126,4 +129,6 @@ export const Campus = [
     { slug: 'universitas-prisma', name: 'Universitas Prisma', province: 'Sulawesi Utara' },
     { slug: 'universitas-katolik-de-la-salle-manado', name: 'Universitas Katolik De La Salle Manado', province: 'Sulawesi Utara' },
     { slug: 'sekolah-tinggi-ilmu-komunikasi-manado', name: 'Sekolah Tinggi Ilmu Komunikasi Manado', province: 'Sulawesi Utara' },
+    { slug: 'politeknik-kesehatan-kemenkes-manado', name: 'Politeknik Kesehatan Kemenkes Manado', province: 'Sulawesi Utara' },
+    { slug: 'stikom-manado', name: 'STIKOM Manado', province: 'Sulawesi Utara' },
 ]
