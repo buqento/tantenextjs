@@ -1,5 +1,13 @@
 const Dotenv = require("dotenv-webpack")
-module.exports = {
+const path = require("path");
+const withPWA = require("next-pwa");
+const runtimeCaching = require("next-pwa/cache");
+
+module.exports = withPWA({
+    pwa: {
+        dest: "public",
+        runtimeCaching,
+    },
     images: {
         domains: ['cdn.statically.io'],
     },
@@ -7,4 +15,4 @@ module.exports = {
         config.plugins.push(new Dotenv({ silent: true }));
         return config;
     }
-}
+})
