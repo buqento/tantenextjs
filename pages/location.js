@@ -28,7 +28,9 @@ class MapView extends React.Component {
         }
     }
     componentDidMount() {
-        document.getElementsByTagName("input")[0].setAttribute("placeholder", "Masukan nama lokasi/area/alamat");
+        const input = document.getElementsByTagName("input")[0]
+        input.setAttribute("placeholder", "Masukan nama lokasi/area/alamat")
+        input.select()
         const dt = fire.firestore().collection('kosts')
         dt.where('is_active', '==', true)
             .onSnapshot(snapshot => {
@@ -100,8 +102,7 @@ class MapView extends React.Component {
     }
     handleResetSearch = () => {
         const input = document.getElementsByTagName("input")[0]
-        input.focus();
-        input.select();
+        input.select()
     }
     render() {
         const { viewport, listResult, placeName, load, keyword } = this.state
@@ -118,7 +119,6 @@ class MapView extends React.Component {
                             hideOnSelect={true}
                             queryParams={{ country: "id" }}
                             updateInputOnSelect
-                            initialInputValue={keyword}
                         />
                     </div>
                     <div className="flex-auto cursor-pointer" onClick={this.handleResetSearch}>

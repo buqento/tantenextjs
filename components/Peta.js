@@ -22,7 +22,7 @@ export default function Peta(props) {
         zoom: zoom
     })
     viewport.width = "100%"
-    viewport.height = windowWIdth > 768 ? 700 : 200
+    viewport.height = windowWIdth > 768 ? 400 : 200
     return (
         <ReactMapGl
             {...viewport}
