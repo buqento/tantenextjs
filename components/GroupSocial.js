@@ -5,6 +5,11 @@ class Area extends Component {
         const group = [
             {
                 name: 'Kost Dan Kontrakan Daerah Khusus Ibukota Jakarta',
+                url: 'https://www.facebook.com/groups/1424288534599425',
+                image: 'Aux8Yxk'
+            },
+            {
+                name: 'Kost Dan Kontrakan Daerah Khusus Ibukota Jakarta',
                 url: 'https://www.facebook.com/groups/485414032435519',
                 image: 'Aux8Yxk'
             },
