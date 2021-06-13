@@ -20,8 +20,9 @@ class CampaignItem extends Component {
         if (findFav > 0) this.setState({ like: true })
     }
     render() {
-        const { like } = this.state;
+        const { like } = this.state
         const { item, customStyle } = this.props
+        const defaultEmail = process.env.NEXT_PUBLIC_REACT_APP_EMAIL
         const newItem = {
             category: item.category,
             date_view: Date.now(),
@@ -61,7 +62,7 @@ class CampaignItem extends Component {
                                     item.user ?
                                         <>
                                             {
-                                                item.user.email === 'buqento@gmail.com' ? 'Admin' : item.user.display_name
+                                                item.user.email === defaultEmail ? 'Admin' : item.user.display_name
                                             }
                                         </> : 'Admin'
                                 }

@@ -9,8 +9,8 @@ export default function Peta(props) {
             setWindowWidth(window.innerWidth)
         }
     })
-    const accessToken = "pk.eyJ1IjoiYnVxZW50byIsImEiOiJjanJ5a3p4cDkwZXJiNDlvYXMxcnhud3hhIn0.AhQ-vGYSIo6uTBmQD4MCsA"
-    const type = props.type
+    const accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN
+    const mapStyle = "mapbox://styles/buqento/ckg4bb6cc2hrr19k84gzrs97j"
     const lat = parseFloat(props.location.lat_lng.latitude)
     const long = parseFloat(props.location.lat_lng.longitude)
     const zoom = parseInt(props.zoom)
@@ -26,9 +26,9 @@ export default function Peta(props) {
     return (
         <ReactMapGl
             {...viewport}
-            mapboxApiAccessToken="pk.eyJ1IjoiYnVxZW50byIsImEiOiJjanJ5a3p4cDkwZXJiNDlvYXMxcnhud3hhIn0.AhQ-vGYSIo6uTBmQD4MCsA"
+            mapboxApiAccessToken={accessToken}
             onViewportChange={viewport => { setViewport(viewport) }}
-            mapStyle="mapbox://styles/buqento/ckg4bb6cc2hrr19k84gzrs97j"
+            mapStyle={mapStyle}
         >
             <div className="ml-2 mt-2" style={{ width: '29px', zIndex: -1 }}>
                 <FullscreenControl label="Perbesar Peta" />

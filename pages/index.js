@@ -21,7 +21,7 @@ class Index extends React.Component {
     const dt = fire.firestore().collection('kosts')
     dt.where('is_active', '==', true)
       .orderBy('date_modified', 'desc')
-      .limit(10)
+      .limit(6)
       .onSnapshot(snapshot => {
         const data = snapshot.docs.map(doc => ({
           id: doc.id, ...doc.data()
@@ -58,15 +58,6 @@ class Index extends React.Component {
 
           {/* col2 */}
           <div>
-            <div className="xs:mx-3 my-3">
-              {/* vertical ads */}
-              <AdSense.Google
-                client='ca-pub-1434074630735871'
-                slot='3178716891'
-                className="w-full bg-gray-400 text-center"
-                format='auto'
-              />
-            </div>
             <div className="lg:mt-4"><Ads /></div>
             <div className="mt-3 py-2 px-3 bg-white z-10">
               <span className="text-uppercase text-current font-bold">Dekat Kampus</span>
