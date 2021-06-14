@@ -26,13 +26,13 @@ export default function Account() {
                 </div>
                 <Link href="/iklansaya">
                     <div className="py-3 cursor-pointer">
-                        <FaList className="inline mb-1 mr-1" /> Iklan Saya
+                        <FaList className="inline mb-1 mr-1" /> My Ads
                 </div>
                 </Link>
                 {
                     session.user.email === 'buqento@gmail.com' &&
                     <Link href="/addnew">
-                        <div className="py-3 cursor-pointer"><MdAdd className="inline mb-1 mr-1" /> Tambah Iklan</div>
+                        <div className="py-3 cursor-pointer"><MdAdd className="inline mb-1 mr-1" /> Create New Ads</div>
                     </Link>
                 }
                 <div className="py-3 cursor-pointer" onClick={handleLogout}>
