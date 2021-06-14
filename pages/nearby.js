@@ -101,7 +101,7 @@ class Nearby extends React.Component {
             {
                 !load && nearbyList && nearbyList.length > 0 &&
                 <>
-                    <div className="pb-3 px-3 font-bold bg-white"><span className="font-normal">{nearbyList.length} Kost di sekitar</span> {locationText}</div>
+                    <div className="pb-3 px-3 font-bold bg-white"><span className="font-normal">{nearbyList.length} Room Near</span> {locationText}</div>
                     <div className="mb-3">
                         <div className="mx-3 divide-y">
                             {
