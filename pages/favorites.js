@@ -103,7 +103,7 @@ class Detail extends React.Component {
                             }
                         </div>
                 }
-                {data && data.length === 0 && <Message title="No Room" message="You don't have favorite room" />}}
+                {data && data.length === 0 && <Message title="No Room" message="You don't have favorite room" />}
                 <div className="xs:block sm:hidden md:hidden lg:hidden">
                     <Footer />
                     <NavMobile />

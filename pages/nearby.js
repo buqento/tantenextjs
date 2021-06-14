@@ -87,44 +87,44 @@ class Nearby extends React.Component {
             <NavComponent />
 
             <div className="xs:mx-3 my-3 text-center">
-              {/* horizontal ads */}
-              <AdSense.Google
-                client='ca-pub-1434074630735871'
-                slot='5011678900'
-                className="w-full bg-gray-400 text-center"
-                format='auto'
-              />
+                {/* horizontal ads */}
+                <AdSense.Google
+                    client='ca-pub-1434074630735871'
+                    slot='5011678900'
+                    className="w-full bg-gray-400 text-center"
+                    format='auto'
+                />
             </div>
 
             <Header info={info} />
+            {load && <CampaignItemListSkeleton />}
             {
-                load ? <CampaignItemListSkeleton /> :
-                    nearbyList && nearbyList.length > 0 &&
-                    <>
-                        <div className="pb-3 px-3 font-bold bg-white"><span className="font-normal">{nearbyList.length} Kost di sekitar</span> {locationText}</div>
-                        <div className="mb-3">
-                            <div className="mx-3 divide-y">
-                                {
-                                    nearbyList
-                                        .sort(
-                                            function compare(a, b) {
-                                                const dtA = a.distance;
-                                                const dtB = b.distance;
-                                                let comparison = 0;
-                                                if (dtA > dtB) {
-                                                    comparison = 1;
-                                                } else if (dtA < dtB) {
-                                                    comparison = -1;
-                                                }
-                                                return comparison;
+                !load && nearbyList && nearbyList.length > 0 &&
+                <>
+                    <div className="pb-3 px-3 font-bold bg-white"><span className="font-normal">{nearbyList.length} Kost di sekitar</span> {locationText}</div>
+                    <div className="mb-3">
+                        <div className="mx-3 divide-y">
+                            {
+                                nearbyList
+                                    .sort(
+                                        function compare(a, b) {
+                                            const dtA = a.distance;
+                                            const dtB = b.distance;
+                                            let comparison = 0;
+                                            if (dtA > dtB) {
+                                                comparison = 1;
+                                            } else if (dtA < dtB) {
+                                                comparison = -1;
                                             }
-                                        )
-                                        .map((item, index) => <div><CampaignItemList key={index} item={item} nearby /></div>)
-                                }
-                            </div>
+                                            return comparison;
+                                        }
+                                    )
+                                    .map((item, index) => <div><CampaignItemList key={index} item={item} nearby /></div>)
+                            }
                         </div>
-                        {/* <Ads /> */}
-                    </>
+                    </div>
+                    {/* <Ads /> */}
+                </>
             }
             {
                 nearbyList && nearbyList.length === 0 && <Message title="No Room" message="Use search to view more rooms" />
