@@ -49,7 +49,7 @@ class Detail extends React.Component {
                 </NextHead>
                 <NavComponent />
                 <>
-                    <div className="container divide-y divide-gray-400">
+                    <div className="mx-3 divide-y divide-gray-400">
                         {
                             slug != 'all' ?
                                 DtArea
@@ -62,7 +62,7 @@ class Detail extends React.Component {
                                     })
                                     .filter(item => Generateslug(item.province) === slug)
                                     .map((item, index) =>
-                                        <div className="py-3 px-3" key={index}>
+                                        <div className="py-3 px-3 cursor-pointer" key={index}>
                                             <Link href={`../../area/${Generateslug(item.district)}`}>
                                                 <div>
                                                     <span>{item.district}</span>
@@ -97,7 +97,7 @@ class Detail extends React.Component {
                                                         })
                                                         .filter(item => Generateslug(item.province) === Generateslug(itemProvinsi.title))
                                                         .map((item, index) =>
-                                                            <div className="py-3 px-3 bg-gray-100 border-bottom" key={index}>
+                                                            <div className="py-3 px-3 bg-gray-100" key={index}>
                                                                 <Link href={`../../area/${Generateslug(item.district)}`}>
                                                                     <div>
                                                                         <span>{item.district}</span>

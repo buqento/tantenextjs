@@ -4,7 +4,7 @@ import Campus from '../components/Campus'
 import GroupSocial from '../components/GroupSocial'
 import FeedsGrid from '../components/FeedsGrid'
 import fire from '../configurations/firebase'
-import Ads from '../components/Ads'
+import AdSense from 'react-adsense'
 import NavComponent from '../components/NavComponent'
 import Footer from '../components/Footer'
 import NavMobile from '../components/NavMobile'
@@ -50,7 +50,7 @@ class Index extends React.Component {
               <div class="gcse-search" />
             </div>
 
-            <div className="mt-2">
+            <div className="mt-2 mb-4 pb-4 xs:border-b">
               {load && <CampaignItemSkeleton />}
               {!load && data && <FeedsGrid data={data} />}
             </div>
@@ -58,30 +58,20 @@ class Index extends React.Component {
 
           {/* col2 */}
           <div>
-            {/* ads */}
-            <div className="lg:mt-4"><Ads /></div>
 
             {/* popular cities */}
-            <div className="mt-3 py-2 px-3 bg-white z-10">
+            <div className="lg:mt-3 mb-3 px-3">
               <span className="text-uppercase text-current font-bold">Popular Cities</span>
             </div>
-            <div className="border-bottom mb-4">
+            <div className="border-b pb-3 mb-4">
               <ComponentCities />
             </div>
 
-            {/* facebook group */}
-            <div className="m-3 mb-n3">
-              <span className="text-uppercase text-current font-bold">Facebook Group</span>
-            </div>
-            <div className="border-bottom">
-              <GroupSocial />
-            </div>
-
             {/* near campus */}
-            <div className="mt-3 py-2 px-3 bg-white z-10">
+            <div className="mt-4 py-2 px-3">
               <span className="text-uppercase text-current font-bold">Near Campus</span>
             </div>
-            <div>
+            <div className="border-b">
               <Campus />
               <Link href="/area/kampus">
                 <div className="align-middle text-center text-indigo-700 font-bold uppercase mb-3 mt-2 py-2 mx-3 cursor-pointer underline">
@@ -89,6 +79,24 @@ class Index extends React.Component {
                 </div>
               </Link>
             </div>
+
+            {/* facebook group */}
+            <div className="m-3 mt-4 mb-n3">
+              <span className="text-uppercase text-current font-bold">Facebook Group</span>
+            </div>
+            <div className="border-b">
+              <GroupSocial />
+            </div>
+
+            <div className="xs:mx-3 my-4">
+              <AdSense.Google
+                client='ca-pub-1434074630735871'
+                slot='5011678900'
+                className="w-full bg-gray-400 text-center"
+                format='auto'
+              />
+            </div>
+
           </div>
         </div>
         <div className="mb-85"><Footer /></div>

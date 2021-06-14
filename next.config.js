@@ -1,5 +1,4 @@
 const Dotenv = require("dotenv-webpack")
-const path = require("path");
 const withPWA = require("next-pwa");
 const runtimeCaching = require("next-pwa/cache");
 

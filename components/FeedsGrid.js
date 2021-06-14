@@ -2,6 +2,7 @@ import React from 'react'
 import CampaignItem from './CampaignItem'
 import Link from 'next/link'
 import AdSense from 'react-adsense'
+import Ads from './Ads'
 class FeedsGrid extends React.Component {
     render() {
         const { data } = this.props
@@ -20,6 +21,12 @@ class FeedsGrid extends React.Component {
                                             className="w-full bg-gray-400 text-center"
                                             format='auto'
                                         />
+                                    </div>
+                                }
+                                {
+                                    index === 5 &&
+                                    <div className="mx-3 my-2">
+                                        <Ads />
                                     </div>
                                 }
                                 <CampaignItem key={index} item={item} />

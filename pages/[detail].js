@@ -162,7 +162,7 @@ class Detail extends React.Component {
 
       {
         detail &&
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mb-4">
 
           <div className="mt-3 mx-3">
 
@@ -213,21 +213,21 @@ class Detail extends React.Component {
             {
               detail && detail.facility && detail.facility.room.length > 0 && detail.facility.room[0] !== "" &&
               <div className="mb-4">
-                <h2 className="font-bold">Room</h2>
+                <h2 className="font-bold">Room Facilities</h2>
                 <Facilities items={detail.facility.room} />
               </div>
             }
             {
               detail && detail.facility && detail.facility.bathroom.length > 0 && detail.facility.bathroom[0] !== "" &&
               <div className="mb-4">
-                <h2 className="font-bold">Bathroom</h2>
+                <h2 className="font-bold">Bathroom Facilities</h2>
                 <Facilities items={detail.facility.bathroom} />
               </div>
             }
             {
               detail && detail.facility && detail.facility.share.length > 0 && detail.facility.share[0] !== "" &&
               <div>
-                <h2 className="font-bold">Share</h2>
+                <h2 className="font-bold">Shared Facilities</h2>
                 <Facilities items={detail.facility.share} />
               </div>
             }
@@ -238,7 +238,7 @@ class Detail extends React.Component {
             detail.location &&
             <div className="mt-3 mx-3">
               <div className="mb-3">
-                <h2 className="mb-3 font-bold">Location <small>({detail.location.district}, {detail.location.city}, {detail.location.province})</small></h2>
+                <h2 className="mb-3 font-bold">Room Location <small>({detail.location.district}, {detail.location.city}, {detail.location.province})</small></h2>
                 <Peta location={detail.location} zoom={10} />
                 <a href={`https://www.google.com/maps/search/?api=1&query=${detail.location.lat_lng.latitude},${detail.location.lat_lng.longitude}`} target="_blank">
                   <div className="my-3 uppercase underline text-indigo-700 font-bold">View in Google Map <FaExternalLinkAlt className="inline ml-1 mb-1" /></div>
