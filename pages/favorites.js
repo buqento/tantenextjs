@@ -10,7 +10,6 @@ import Header from '../components/Header'
 import NavComponent from '../components/NavComponent'
 import NavMobile from '../components/NavMobile'
 import AdSense from 'react-adsense'
-import Footer from '../components/Footer'
 import Link from 'next/link'
 class Detail extends React.Component {
     constructor(props) {
@@ -58,7 +57,7 @@ class Detail extends React.Component {
                 {
                     load ? <CampaignItemListSkeleton /> :
                         data && data.length > 0 &&
-                        <div className="mx-3 my-2 divide-y">
+                        <div className="mx-3 my-2 divide-y mb-85">
                             {
                                 data && data
                                     .sort(
@@ -105,7 +104,6 @@ class Detail extends React.Component {
                 }
                 {data && data.length === 0 && <Message title="No Room" message="You don't have favorite room" />}
                 <div className="xs:block sm:hidden md:hidden lg:hidden">
-                    <Footer />
                     <NavMobile />
                 </div>
             </>

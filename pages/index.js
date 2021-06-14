@@ -10,6 +10,7 @@ import Footer from '../components/Footer'
 import NavMobile from '../components/NavMobile'
 import Link from 'next/link'
 import CampaignItemSkeleton from '../components/CampaignItemSkeleton'
+import ComponentCities from '../components/Cities'
 
 class Index extends React.Component {
   constructor(props) {
@@ -57,13 +58,26 @@ class Index extends React.Component {
 
           {/* col2 */}
           <div>
+            {/* ads */}
             <div className="lg:mt-4"><Ads /></div>
+
+            {/* popular cities */}
+            <div className="mt-3 py-2 px-3 bg-white z-10">
+              <span className="text-uppercase text-current font-bold">Popular Cities</span>
+            </div>
+            <div className="border-bottom mb-4">
+              <ComponentCities />
+            </div>
+
+            {/* facebook group */}
             <div className="m-3 mb-n3">
               <span className="text-uppercase text-current font-bold">Facebook Group</span>
             </div>
             <div className="border-bottom">
               <GroupSocial />
             </div>
+
+            {/* near campus */}
             <div className="mt-3 py-2 px-3 bg-white z-10">
               <span className="text-uppercase text-current font-bold">Near Campus</span>
             </div>
@@ -77,7 +91,7 @@ class Index extends React.Component {
             </div>
           </div>
         </div>
-        <Footer />
+        <div className="mb-85"><Footer /></div>
         <div className="xs:block sm:hidden md:hidden lg:hidden">
           <NavMobile />
         </div>

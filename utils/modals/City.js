@@ -1,7 +1,7 @@
 export const City = [
     // DKI Jakarta
     { name: 'Jakarta Barat', province: 'DKI Jakarta' },
-    { name: 'Jakarta Pusat', province: 'DKI Jakarta' },
+    { name: 'Jakarta Pusat', province: 'DKI Jakarta', is_popular: true },
     { name: 'Jakarta Selatan', province: 'DKI Jakarta' },
     { name: 'Jakarta Timur', province: 'DKI Jakarta' },
     { name: 'Jakarta Utara', province: 'DKI Jakarta' },
@@ -17,17 +17,17 @@ export const City = [
     // { name: 'Karangasem', province: 'Bali' },
     // { name: 'Klungkung', province: 'Bali' },
     { name: 'Tabanan', province: 'Bali' },
-    { name: 'Denpasar', province: 'Bali' },
+    { name: 'Denpasar', province: 'Bali', is_popular: true },
     // Maluku
-    { name: 'Ambon', province: 'Maluku' },
+    { name: 'Ambon', province: 'Maluku', is_popular: true },
     { name: 'Tual', province: 'Maluku' },
     // Sulawesi Utara
-    { name: 'Manado', province: 'Sulawesi Utara' },
+    { name: 'Manado', province: 'Sulawesi Utara', is_popular: true },
     { name: 'Tomohon', province: 'Sulawesi Utara' },
     { name: 'Bitung', province: 'Sulawesi Utara' },
     { name: 'Minahasa', province: 'Sulawesi Utara' },
     // Sulawesi Selatan
-    { name: 'Makassar', province: 'Sulawesi Selatan' },
+    { name: 'Makassar', province: 'Sulawesi Selatan', is_popular: true },
     { name: 'Gowa', province: 'Sulawesi Selatan' },
     // Papua
     { name: 'Kota Jayapura', province: 'Papua' },
@@ -59,9 +59,9 @@ export const City = [
     // { name: 'Gunungkidul', province: 'Daerah Istimewa Yogyakarta' },
     { name: 'Kulon Progo', province: 'Daerah Istimewa Yogyakarta' },
     { name: 'Sleman', province: 'Daerah Istimewa Yogyakarta' },
-    { name: 'Yogyakarta', province: 'Daerah Istimewa Yogyakarta' },
-    
-    { name: 'Medan', province: 'Sumatera Utara' },
+    { name: 'Yogyakarta', province: 'Daerah Istimewa Yogyakarta', is_popular: true },
+
+    { name: 'Medan', province: 'Sumatera Utara', is_popular: true },
     { name: 'Padangsidempuan', province: 'Sumatera Utara' },
     { name: 'Pematangsiantar', province: 'Sumatera Utara' },
     { name: 'Sibolga', province: 'Sumatera Utara' },

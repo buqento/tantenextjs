@@ -1,7 +1,7 @@
 import React from 'react'
 import { string } from 'prop-types'
 import { DtArea } from '../../../utils/modals/Area'
-import HeadPage from '../../../components/HeadPage'
+import NavMobile from '../../../components/NavMobile'
 import NextHead from 'next/head'
 import Generateslug from '../../../utils/Generateslug'
 import Titlecase from '../../../utils/Titlecase'
@@ -49,7 +49,7 @@ class Detail extends React.Component {
                 </NextHead>
                 <NavComponent />
                 <>
-                    <div className="mx-3 divide-y divide-gray-400">
+                    <div className="mx-3 divide-y divide-gray-400 mb-85">
                         {
                             slug != 'all' ?
                                 DtArea
@@ -113,6 +113,9 @@ class Detail extends React.Component {
                         }
                     </div>
                 </>
+                <div className="xs:block sm:hidden md:hidden lg:hidden">
+                    <NavMobile />
+                </div>
             </>
         )
     }

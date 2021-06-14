@@ -1,7 +1,7 @@
 import React from 'react'
 import { string } from 'prop-types'
 import { DtArea } from '../../utils/modals/Area'
-import HeadPage from '../../components/HeadPage'
+import NavMobile from '../../components/NavMobile'
 import NextHead from 'next/head'
 import Generateslug from '../../utils/Generateslug'
 import fire from '../../configurations/firebase'
@@ -114,11 +114,16 @@ class Detail extends React.Component {
                 <NavComponent />
                 <>
                     {load && <CampaignItemListSkeleton />}
-                    {data && data.length === 0 && <Message title="Tidak Ditemukan" message="Silahkan cari dengan kriteria lainnya" />}
-                    <div className="mx-3 my-2 divide-y">
-                        {data && data.map((item, index) => <CampaignItemList item={item} key={index} />)}
+                    {data && data.length === 0 && <Message title="No Room" message="Use search to view more rooms" />}
+                    <div className="mx-3 my-2 divide-y mb-85">
+                        {data && data.map((item, index) =>
+                            <div key={index}><CampaignItemList item={item} /></div>
+                        )}
                     </div>
                 </>
+                <div className="xs:block sm:hidden md:hidden lg:hidden">
+                    <NavMobile />
+                </div>
             </>
         )
     }

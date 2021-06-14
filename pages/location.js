@@ -2,7 +2,6 @@ import React from 'react'
 import Geocoder from 'react-mapbox-gl-geocoder'
 import CampaignItemList from '../components/CampaignItemList'
 import CampaignItemListSkeleton from '../components/CampaignItemListSkeleton'
-import Footer from '../components/Footer'
 import NavComponent from '../components/NavComponent'
 import NavMobile from '../components/NavMobile'
 import Message from '../components/Message'
@@ -161,7 +160,7 @@ class MapView extends React.Component {
                             </div>
                             {
                                 listResult && listResult.length > 0 &&
-                                <div className="divide-y">
+                                <div className="divide-y mb-85">
                                     {
                                         listResult.map((item, index) =>
                                             <div key={index}>
@@ -173,7 +172,6 @@ class MapView extends React.Component {
                             }
                         </div>
                 }
-                <Footer />
                 <div className="xs:block sm:hidden md:hidden lg:hidden">
                     <NavMobile />
                 </div>

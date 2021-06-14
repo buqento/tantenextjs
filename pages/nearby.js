@@ -5,7 +5,6 @@ import Message from '../components/Message'
 import CampaignItemListSkeleton from '../components/CampaignItemListSkeleton'
 import Header from '../components/Header'
 import NavComponent from '../components/NavComponent'
-import Footer from '../components/Footer'
 import NavMobile from '../components/NavMobile'
 import AdSense from 'react-adsense'
 class Nearby extends React.Component {
@@ -102,7 +101,7 @@ class Nearby extends React.Component {
                 !load && nearbyList && nearbyList.length > 0 &&
                 <>
                     <div className="pb-3 px-3 font-bold bg-white"><span className="font-normal">{nearbyList.length} Room Near</span> {locationText}</div>
-                    <div className="mb-3">
+                    <div className="mb-3 mb-85">
                         <div className="mx-3 divide-y">
                             {
                                 nearbyList
@@ -129,7 +128,6 @@ class Nearby extends React.Component {
             {
                 nearbyList && nearbyList.length === 0 && <Message title="No Room" message="Use search to view more rooms" />
             }
-            <Footer />
             <div className="xs:block sm:hidden md:hidden lg:hidden">
                 <NavMobile />
             </div>
