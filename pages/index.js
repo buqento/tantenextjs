@@ -58,10 +58,16 @@ class Index extends React.Component {
           {/* col2 */}
           <div>
             <div className="lg:mt-4"><Ads /></div>
+            <div className="m-3 mb-n3">
+              <span className="text-uppercase text-current font-bold">Facebook Group</span>
+            </div>
+            <div className="border-bottom">
+              <GroupSocial />
+            </div>
             <div className="mt-3 py-2 px-3 bg-white z-10">
               <span className="text-uppercase text-current font-bold">Near Campus</span>
             </div>
-            <div className="border-bottom">
+            <div>
               <Campus />
               <Link href="/area/kampus">
                 <div className="align-middle text-center text-indigo-700 font-bold uppercase mb-3 mt-2 py-2 mx-3 cursor-pointer underline">
@@ -69,10 +75,6 @@ class Index extends React.Component {
                 </div>
               </Link>
             </div>
-            <div className="m-3 mb-n3">
-              <span className="text-uppercase text-current font-bold">Facebook Group</span>
-            </div>
-            <GroupSocial />
           </div>
         </div>
         <Footer />

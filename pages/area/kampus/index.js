@@ -40,7 +40,7 @@ const Filter = () => {
             </NextHead>
             <NavComponent />
             <div className="d-flex z-10 sticky top-0 bg-white border-bottom">
-                <input className="w-full rounded p-3 my-3 mx-3 text-gray-700 leading-tight focus:outline-none font-medium border" id="name" type="text" placeholder="Masukan Nama Kampus" value={name} onChange={(e) => setName(e.target.value)} />
+                <input className="w-full rounded p-3 my-3 mx-3 text-gray-700 leading-tight focus:outline-none font-medium border" id="name" type="text" placeholder="Campus name..." value={name} onChange={(e) => setName(e.target.value)} />
             </div>
             <div className="mx-3 my-3">
                 <AdSense.Google

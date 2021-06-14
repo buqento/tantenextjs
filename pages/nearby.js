@@ -127,7 +127,7 @@ class Nearby extends React.Component {
                     </>
             }
             {
-                nearbyList && nearbyList.length === 0 && <Message title="Tidak Ditemukan" message="Temukan kost menggunakan pencarian" />
+                nearbyList && nearbyList.length === 0 && <Message title="No Room" message="Use search to view more rooms" />
             }
             <Footer />
             <div className="xs:block sm:hidden md:hidden lg:hidden">

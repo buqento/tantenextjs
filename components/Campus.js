@@ -13,8 +13,8 @@ class ComponentCampus extends Component {
             <div className="container divide-y">
                 {
                     Campus
-                        .sort(() => .10 - Math.random())
-                        .slice(0, 10)
+                        .sort(() => .5 - Math.random())
+                        .slice(0, 5)
                         .map((item, index) =>
                             <Link key={index} href={`area/kampus/${Generateslug(item.name)}`}>
                                 <div className="w-full overflow-hidden py-2 flex">

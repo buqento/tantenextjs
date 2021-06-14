@@ -49,7 +49,7 @@ class ListKosOthers extends Component {
                         </div> :
                         <div>
                             <Link href='/location'>
-                                <div className="cursor-pointer align-middle text-center text-indigo-700 underline font-bold uppercase py-3">Find More Rooms</div>
+                                <div className="cursor-pointer align-middle text-center text-indigo-700 underline font-bold uppercase py-3">View More Rooms</div>
                             </Link>
                         </div>
                 }

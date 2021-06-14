@@ -29,7 +29,7 @@ class MapView extends React.Component {
     }
     componentDidMount() {
         const input = document.getElementsByTagName("input")[0]
-        input.setAttribute("placeholder", "Masukan nama lokasi/area/alamat")
+        input.setAttribute("placeholder", "Location/Area/Address")
         input.select()
         const dt = fire.firestore().collection('kosts')
         dt.where('is_active', '==', true)
@@ -154,7 +154,7 @@ class MapView extends React.Component {
                                         }
                                         {
                                             listResult.length === 0 &&
-                                            <Message title="Tidak Ditemukan" message={`Tidak ditemukan kost area ${placeName}. Silahkan cari di area lainnya`} />
+                                            <Message title="No Room" message={`No room near ${placeName}. Use search to view more rooms`} />
                                         }
                                     </>
                                 }

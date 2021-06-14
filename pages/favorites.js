@@ -85,7 +85,7 @@ class Detail extends React.Component {
                                             <Link href={`/${item.slug}`}>
                                                 <div className="flex-1 ml-2 mt-1 self-center">
                                                     <div className="leading-none font-bold">
-                                                        {Cash(item.price.start_from)}<span className="text-xs font-normal uppercase"> &middot; {item.price.duration}</span>
+                                                        {Cash(item.price.start_from)}<span className="text-xs font-normal uppercase"> &middot; {item.price.duration === "Hari" && "Day"}{item.price.duration === "Minggu" && "Week"}{item.price.duration === "Bulan" && "Month"}{item.price.duration === "Tahun" && "Year"}</span>
                                                     </div>
                                                     <Facilities items={item.facility.room} inline />
                                                     <div className="text-sm clamp-1">
@@ -103,7 +103,7 @@ class Detail extends React.Component {
                             }
                         </div>
                 }
-                {data && data.length === 0 && <Message message="Kamu belum memiliki kost favorit" />}
+                {data && data.length === 0 && <Message title="No Room" message="You don't have favorite room" />}}
                 <div className="xs:block sm:hidden md:hidden lg:hidden">
                     <Footer />
                     <NavMobile />
