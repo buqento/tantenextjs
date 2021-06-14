@@ -14,7 +14,7 @@ class ListKosOthers extends Component {
                     listData.length > 0 &&
                     <div>
                         <div className="py-3 font-bold">
-                            <span className="font-normal">Kost Lainnya di </span>
+                            <span className="font-normal">Other Room at </span>
                             <span>{`${detail.location.district}, ${detail.location.city}, ${detail.location.province}`}</span>
                         </div>
                         <div className="divide-y">
@@ -43,13 +43,13 @@ class ListKosOthers extends Component {
                         <div>
                             <Link href={url}>
                                 <div className="cursor-pointer align-middle text-center text-indigo-700 underline font-bold uppercase py-3">
-                                    <span>Lihat {listData.length - 10} Lainnya</span>
+                                    <span>View {listData.length - 10} More</span>
                                 </div>
                             </Link>
                         </div> :
                         <div>
                             <Link href='/location'>
-                                <div className="cursor-pointer align-middle text-center text-indigo-700 underline font-bold uppercase py-3">Cari Kost Lainnya</div>
+                                <div className="cursor-pointer align-middle text-center text-indigo-700 underline font-bold uppercase py-3">Find More Rooms</div>
                             </Link>
                         </div>
                 }

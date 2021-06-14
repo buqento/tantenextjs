@@ -176,7 +176,7 @@ class Detail extends React.Component {
               <div className="self-center flex-auto pr-4">
                 <div className="mt-n2 font-bold">
                   <span className="text-3xl">{Cash(detail.price.start_from)}</span>
-                  <span className="text-xs text-gray-700 uppercase"> &middot; {detail.price.duration}</span>
+                  <span className="text-xs text-gray-700 uppercase"> &middot; {detail.price.duration === "Hari" && "Day"}{detail.price.duration === "Minggu" && "Week"}{detail.price.duration === "Bulan" && "Month"}{detail.price.duration === "Tahun" && "Year"}</span>
                 </div>
               </div>
               <div>
@@ -188,7 +188,7 @@ class Detail extends React.Component {
             <div className="my-2 text-left uppercase text-green-600 font-bold"><KostType item={detail.type} /></div>
 
             {/* date modified */}
-            <small className="text-gray-700 uppercase">{moment(detail.date_modified).lang('id').fromNow()} &middot; {detail.hit} kali dilihat</small>
+            <small className="text-gray-700 uppercase">{moment(detail.date_modified).fromNow()} &middot; {detail.hit} Views</small>
 
             {/* title */}
             <h1 className="my-4 text-xl capitalize font-bold">{detail.title}</h1>
@@ -205,7 +205,7 @@ class Detail extends React.Component {
 
             {/* description */}
             <div className="my-3">
-              <h2 className="font-bold">Deskripsi *</h2>
+              <h2 className="font-bold">Description *</h2>
               <div dangerouslySetInnerHTML={{ __html: detail.description }} />
             </div>
 
@@ -213,21 +213,21 @@ class Detail extends React.Component {
             {
               detail && detail.facility && detail.facility.room.length > 0 && detail.facility.room[0] !== "" &&
               <div className="mb-4">
-                <h2 className="font-bold">Fasilitas Kamar</h2>
+                <h2 className="font-bold">Room</h2>
                 <Facilities items={detail.facility.room} />
               </div>
             }
             {
               detail && detail.facility && detail.facility.bathroom.length > 0 && detail.facility.bathroom[0] !== "" &&
               <div className="mb-4">
-                <h2 className="font-bold">Fasilitas Kamar Mandi</h2>
+                <h2 className="font-bold">Bathroom</h2>
                 <Facilities items={detail.facility.bathroom} />
               </div>
             }
             {
               detail && detail.facility && detail.facility.share.length > 0 && detail.facility.share[0] !== "" &&
               <div>
-                <h2 className="font-bold">Fasilitas Bersama</h2>
+                <h2 className="font-bold">Share</h2>
                 <Facilities items={detail.facility.share} />
               </div>
             }
@@ -238,14 +238,14 @@ class Detail extends React.Component {
             detail.location &&
             <div className="mt-3 mx-3">
               <div className="mb-3">
-                <h2 className="mb-3 font-bold">Lokasi <small>({detail.location.district}, {detail.location.city}, {detail.location.province})</small></h2>
+                <h2 className="mb-3 font-bold">Location <small>({detail.location.district}, {detail.location.city}, {detail.location.province})</small></h2>
                 <Peta location={detail.location} zoom={10} />
                 <a href={`https://www.google.com/maps/search/?api=1&query=${detail.location.lat_lng.latitude},${detail.location.lat_lng.longitude}`} target="_blank">
-                  <div className="my-3 uppercase underline text-indigo-700 font-bold">Lihat Peta Google <FaExternalLinkAlt className="inline ml-1 mb-1" /></div>
+                  <div className="my-3 uppercase underline text-indigo-700 font-bold">View in Google Map <FaExternalLinkAlt className="inline ml-1 mb-1" /></div>
                 </a>
               </div>
               <div className="mt-3">
-                <small>* Data kost dapat berubah sewaktu-waktu.</small>
+                <small>* Room data can change at any time.</small>
               </div>
 
               <div className="my-3">
@@ -279,7 +279,7 @@ class Detail extends React.Component {
         <div className="alert-banner w-full fixed top-0 z-40 bg-green-500" onClick={this.handleCloseAlert}>
           <input type="checkbox" className="hidden" id="banneralert" />
           <label className="cursor-pointer flex items-center justify-between w-full px-3 py-3 m-0 text-white" title="Tutup" htmlFor="banneralert">
-            <span className="text-white">{detail.category} tersimpan ke favorit Kamu</span>
+            <span className="text-white">{detail.category} saved to Your favorite</span>
             <svg className="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
               <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
             </svg>

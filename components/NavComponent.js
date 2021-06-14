@@ -4,9 +4,9 @@ import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import Link from 'next/link'
 import { signIn, useSession } from 'next-auth/client'
 const navigation = [
-  { name: 'Favorit', href: '/favorites', current: false },
+  { name: 'Favorite', href: '/favorites', current: false },
   { name: 'History', href: '/history', current: false },
-  { name: 'Terdekat', href: '/nearby', current: false }
+  { name: 'Nearby', href: '/nearby', current: false }
 ]
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -41,7 +41,7 @@ export default function NavComponent() {
                   <div className="space-x-2">
                     <a href="/">
                       <span className="text-gray-300 hover:underline hover:text-white cursor-pointer px-3 py-2 font-medium">
-                        Beranda
+                        Home
                       </span>
                     </a>
                     {navigation.map((item) => (
@@ -94,7 +94,7 @@ export default function NavComponent() {
                                       'block px-4 py-2 text-sm text-gray-700'
                                     )}
                                   >
-                                    Akun Saya
+                                    Profile
                                   </a>
                                 )}
                               </Menu.Item>
@@ -107,7 +107,7 @@ export default function NavComponent() {
                                       'block px-4 py-2 text-sm text-gray-700'
                                     )}
                                   >
-                                    Iklan Saya
+                                    My Ads
                                   </a>
                                 )}
                               </Menu.Item>

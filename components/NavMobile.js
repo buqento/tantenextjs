@@ -7,13 +7,13 @@ function NavMobile() {
   const router = useRouter()
   const navButtons = [
     {
-      label: "Terdekat",
+      label: "Nearby",
       path: "/nearby",
       icon: router.pathname === '/nearby' ? <HiLocationMarker /> : <HiOutlineLocationMarker />,
       color: router.pathname === '/nearby' ? 'text-indigo-700' : 'text-gray-700'
     },
     {
-      label: "Cari Kost",
+      label: "Search",
       path: "/location",
       icon: router.pathname === '/location' ? <BiSearchAlt /> : <BiSearch />,
       color: router.pathname === '/location' ? 'text-indigo-700' : 'text-gray-700'
@@ -27,7 +27,7 @@ function NavMobile() {
           <div className="text-2xl mb-n1" style={{ textAlign: '-webkit-center' }}>
             {routeHome ? <AiFillHome /> : <AiOutlineHome />}
           </div>
-          <span className="font-bold uppercase text-xs">Beranda</span>
+          <span className="font-bold uppercase text-xs">Home</span>
         </a>
       </div>
       {navButtons.map(button => (

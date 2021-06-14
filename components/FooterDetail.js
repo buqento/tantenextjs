@@ -85,15 +85,15 @@ class FooterDetail extends Component {
                                     <div style={{ textAlign: '-webkit-center' }}>
                                         <MdStar size={22} />
                                     </div>
-                                    Simpan
-                                    </button>
+                                    Save
+                                </button>
                                 :
                                 <button className="w-100 bg-indigo-700 hover:bg-indigo-600 text-white text-center font-bold mr-1 py-1 px-1 uppercase focus:outline-none" onClick={like ? () => this.handleUnfavorite() : () => this.handleFavorite()}>
                                     <div style={{ textAlign: '-webkit-center' }}>
                                         <MdStarBorder size={22} />
                                     </div>
-                                Simpan
-                            </button>
+                                    Save
+                                </button>
                         }
                     </div>
                     <div className="w-100">
@@ -103,15 +103,15 @@ class FooterDetail extends Component {
                                     <div style={{ textAlign: '-webkit-center' }}>
                                         <BiPhoneCall size={22} />
                                     </div>
-                                Telepon
+                                    Call
                                 </button>
                                 :
                                 <button className="w-100 bg-blue-500 text-white font-bold mr-1 py-1 px-3 opacity-50 cursor-not-allowed uppercase focus:outline-none">
                                     <div style={{ textAlign: '-webkit-center' }}>
                                         <BiPhoneCall size={22} />
                                     </div>
-                            Telepon
-                            </button>
+                                    Call
+                                </button>
                         }
                     </div>
                     <div className="w-100">
@@ -119,7 +119,7 @@ class FooterDetail extends Component {
                             data.contact_us && data.contact_us.whatsapp !== undefined ?
                                 <a href={`https://wa.me/${data.contact_us.whatsapp}/?text=Hai, saya tertarik dengan kost ini https://tantekos.com/${data.slug}`} target="BLANK">
                                     <button className="w-100 bg-green-500 hover:bg-green-400 text-white font-bold py-1 px-1 uppercase focus:outline-none" onClick={() => this.handleWa(data.contact_us.phone)}><div style={{ textAlign: '-webkit-center' }}><FaWhatsapp size={22} /></div>WhatsApp
-                                </button></a>
+                                    </button></a>
                                 :
                                 <button className="w-100 bg-green-300 text-gray-800 font-bold py-1 px-1 opacity-50 cursor-not-allowed uppercase focus:outline-none"><div style={{ textAlign: '-webkit-center' }}><FaWhatsapp size={22} /></div>WhatsApp</button>
                         }

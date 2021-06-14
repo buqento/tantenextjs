@@ -10,7 +10,6 @@ import Footer from '../components/Footer'
 import NavMobile from '../components/NavMobile'
 import Link from 'next/link'
 import CampaignItemSkeleton from '../components/CampaignItemSkeleton'
-import AdSense from 'react-adsense'
 
 class Index extends React.Component {
   constructor(props) {
@@ -60,18 +59,18 @@ class Index extends React.Component {
           <div>
             <div className="lg:mt-4"><Ads /></div>
             <div className="mt-3 py-2 px-3 bg-white z-10">
-              <span className="text-uppercase text-current font-bold">Dekat Kampus</span>
+              <span className="text-uppercase text-current font-bold">Near Campus</span>
             </div>
             <div className="border-bottom">
               <Campus />
               <Link href="/area/kampus">
                 <div className="align-middle text-center text-indigo-700 font-bold uppercase mb-3 mt-2 py-2 mx-3 cursor-pointer underline">
-                  <span>Kampus Lainnya</span>
+                  <span>View More Campus</span>
                 </div>
               </Link>
             </div>
             <div className="m-3 mb-n3">
-              <span className="text-uppercase text-current font-bold">Grup Facebook</span>
+              <span className="text-uppercase text-current font-bold">Facebook Group</span>
             </div>
             <GroupSocial />
           </div>

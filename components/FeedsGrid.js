@@ -37,7 +37,7 @@ class FeedsGrid extends React.Component {
                     </div>
                 </div>
                 <Link href="/location">
-                    <div className="cursor-pointer align-middle text-center text-indigo-700 font-bold uppercase underline py-3 mx-3">Cari Kost Lainnya</div>
+                    <div className="cursor-pointer align-middle text-center text-indigo-700 font-bold uppercase underline py-3 mx-3">Find More Rooms</div>
                 </Link>
             </div>
         )

@@ -68,7 +68,7 @@ class CampaignItem extends Component {
                                 }
                             </div>
                             <div>
-                                <small className="text-gray-700 uppercase">{moment(item.date_modified).lang('id').fromNow()} &middot; {item.hit} kali dilihat</small>
+                                <small className="text-gray-700 uppercase">{moment(item.date_modified).fromNow()} &middot; {item.hit} Views</small>
                             </div>
                         </div>
                     </div>
@@ -83,9 +83,9 @@ class CampaignItem extends Component {
                                     {like && <MdStar className="inline text-pink-500 mt-1 mr-1 float-right" />}
                                     {Cash(item.price.start_from, false)}
                                 </span>
-                                <span className="text-xs text-gray-700 uppercase"> &middot; {item.price.duration}</span>
+                                <span className="text-xs text-gray-700 uppercase"> &middot; {item.price.duration === "Hari" && "Day"}{item.price.duration === "Minggu" && "Week"}{item.price.duration === "Bulan" && "Month"}{item.price.duration === "Tahun" && "Year"}</span>
                             </div>
-                            <div className="mt-2 text-sm underline uppercase text-indigo-700 font-bold">Selengkapnya</div>
+                            <div className="mt-2 text-sm underline uppercase text-indigo-700 font-bold">Read More</div>
                         </div>
 
                         {/* location */}
@@ -100,19 +100,19 @@ class CampaignItem extends Component {
                         <div className="text-sm uppercase mt-1 text-green-600 font-bold">
                             {
                                 item.type.includes("Campur") &&
-                                <span className="inline-block mr-2">Campur</span>
+                                <span className="inline-block mr-2">All</span>
                             }
                             {
                                 item.type.includes("Putri") &&
-                                <span className="inline-block mr-2">Putri</span>
+                                <span className="inline-block mr-2">Woman</span>
                             }
                             {
                                 item.type.includes("Putra") &&
-                                <span className="inline-block mr-2">Putra</span>
+                                <span className="inline-block mr-2">Man</span>
                             }
                             {
                                 item.type.includes("Pasutri") &&
-                                <span className="inline-block mr-2">Pasutri</span>
+                                <span className="inline-block mr-2">Married</span>
                             }
                             {
                                 item.type.includes("LV") &&

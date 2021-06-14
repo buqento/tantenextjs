@@ -56,7 +56,7 @@ class CampaignItemList extends Component {
                         <div className="text-xl font-bold flex">
                             <div className="leading-none flex">
                                 {Cash(item.price.start_from)}<span className="text-xs uppercase mt-1"> 
-                                <span className="mx-1">&middot;</span>{item.price.duration}
+                                <span className="mx-1">&middot;</span>{item.price.duration === "Hari" && "Day"}{item.price.duration === "Minggu" && "Week"}{item.price.duration === "Bulan" && "Month"}{item.price.duration === "Tahun" && "Year"}
                                 </span>
                             </div>
                             {
@@ -67,8 +67,8 @@ class CampaignItemList extends Component {
                             }
                             {
                                 myads && <div className="text-sm uppercase w-full">{item.is_active ?
-                                    <span className="float-right text-green-700 rounded-full px-1 border">Aktif</span> :
-                                    <span className="float-right text-indigo-700 rounded-full px-1 border">Persetujuan</span>
+                                    <span className="float-right text-green-700 rounded-full px-1 border">Active</span> :
+                                    <span className="float-right text-indigo-700 rounded-full px-1 border">Waiting</span>
                                 }</div>
                             }
                         </div>
