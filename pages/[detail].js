@@ -19,6 +19,7 @@ import Footer from '../components/Footer'
 import NavMobile from '../components/NavMobile'
 import AdSense from 'react-adsense'
 import { Comments, FacebookProvider } from 'react-facebook';
+import Duration from '../components/Duration'
 class Detail extends React.Component {
   constructor(props) {
     super(props)
@@ -176,7 +177,7 @@ class Detail extends React.Component {
               <div className="self-center flex-auto pr-4">
                 <div className="mt-n2 font-bold">
                   <span className="text-3xl">{Cash(detail.price.start_from)}</span>
-                  <span className="text-xs text-gray-700 uppercase"> &middot; {detail.price.duration === "Hari" && "Day"}{detail.price.duration === "Minggu" && "Week"}{detail.price.duration === "Bulan" && "Month"}{detail.price.duration === "Tahun" && "Year"}</span>
+                  <span className="text-xs text-gray-700 uppercase"> / {Duration(detail.price.duration)}</span>
                 </div>
               </div>
               <div>

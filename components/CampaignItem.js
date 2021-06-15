@@ -85,7 +85,7 @@ class CampaignItem extends Component {
                                     {like && <MdStar className="inline text-pink-500 mt-1 mr-1 float-right" />}
                                     {Cash(item.price.start_from, false)}
                                 </span>
-                                <span className="text-xs text-gray-700 uppercase"> &middot; {Duration(item.price.duration)}</span>
+                                <span className="text-xs text-gray-700 uppercase"> / {Duration(item.price.duration)}</span>
                             </div>
                             <div className="mt-2 text-sm underline uppercase text-indigo-700 font-bold">Read More</div>
                         </div>

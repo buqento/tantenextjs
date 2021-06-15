@@ -217,7 +217,8 @@ function Addnew() {
                             type: arrType,
                             contact_us: {
                                 phone: "+" + contact_phone,
-                                whatsapp: contact_whatsapp
+                                whatsapp: contact_whatsapp,
+                                facebook_url: contact_fb
                             },
                             facility: {
                                 room: arrFacilityRoom,
@@ -228,6 +229,7 @@ function Addnew() {
                                 start_from: parseInt(start_from),
                                 duration: duration
                             },
+                            post_url: post_url,
                             user: user,
                             is_active: true,
                             hit: 1

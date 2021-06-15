@@ -19,7 +19,8 @@ export const Campus = [
     { slug: 'institut-teknologi-dan-bisnis-stikom-ambon', name: 'Institut Teknologi dan Bisnis STIKOM Ambon', province: 'Maluku' },
     { slug: 'universitas-kristen-indonesia-maluku', name: 'Universitas Kristen Indonesia Maluku', province: 'Maluku' },
     { slug: 'politeknik-negeri-ambon', name: 'Politeknik Negeri Ambon', province: 'Maluku' },
-
+    { slug: 'institut-agama-islam-negeri-ambon', name: 'Institut Agama Islam Negeri Ambon', province: 'Maluku' },
+    
     { slug: 'universitas-mahasaraswati-denpasar', name: 'Universitas Mahasaraswati Denpasar', province: 'Bali' },
     { slug: 'universitas-udayana', name: 'Universitas Udayana', province: 'Bali' },
     { slug: 'stmik-stikom-indonesia', name: 'STMIK STIKOM Indonesia', province: 'Bali' },

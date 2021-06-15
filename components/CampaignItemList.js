@@ -57,7 +57,7 @@ class CampaignItemList extends Component {
                         <div className="text-xl font-bold flex">
                             <div className="leading-none flex">
                                 {Cash(item.price.start_from)}<span className="text-xs uppercase mt-1"> 
-                                <span className="mx-1">&middot;</span>{Duration(item.price.duration)}
+                                <span className="mx-1">/</span>{Duration(item.price.duration)}
                                 </span>
                             </div>
                             {
