@@ -59,7 +59,7 @@ class IklanSaya extends React.Component {
                                             return comparison;
                                         }
                                     )
-                                    .map((item, index) => <CampaignItemList key={index} item={item} myads />)
+                                    .map((item, index) => <div><CampaignItemList key={index} item={item} myads /></div>)
                             }
                         </div>
                     </div>
@@ -70,9 +70,6 @@ class IklanSaya extends React.Component {
                     <Message title="Belum ada iklan" message="Kamu belum memiliki Iklan! Silahkan membuat iklan secara gratis." />
                 </div>
             }
-            {/* <div className="mb-4">
-                <Ads />
-            </div> */}
             <Footer />
             <div className="xs:block sm:hidden md:hidden lg:hidden">
                 <NavMobile />

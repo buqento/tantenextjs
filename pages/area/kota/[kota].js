@@ -49,7 +49,7 @@ class Detail extends React.Component {
                 </NextHead>
                 <NavComponent />
                 <>
-                    <div className="mx-3 divide-y divide-gray-400 mb-85">
+                    <div className="mx-3 divide-y divide-gray-400">
                         {
                             slug != 'all' ?
                                 DtArea

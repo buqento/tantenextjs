@@ -5,6 +5,7 @@ import Generateslug from '../utils/Generateslug'
 import { BiMap } from 'react-icons/bi'
 import KostType from './Type'
 import Facilities from './Facilities'
+import Duration from './Duration'
 class CampaignItemList extends Component {
     constructor(props) {
         super(props);
@@ -56,7 +57,7 @@ class CampaignItemList extends Component {
                         <div className="text-xl font-bold flex">
                             <div className="leading-none flex">
                                 {Cash(item.price.start_from)}<span className="text-xs uppercase mt-1"> 
-                                <span className="mx-1">&middot;</span>{item.price.duration === "Hari" && "Day"}{item.price.duration === "Minggu" && "Week"}{item.price.duration === "Bulan" && "Month"}{item.price.duration === "Tahun" && "Year"}
+                                <span className="mx-1">&middot;</span>{Duration(item.price.duration)}
                                 </span>
                             </div>
                             {

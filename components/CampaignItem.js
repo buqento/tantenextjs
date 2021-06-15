@@ -6,6 +6,8 @@ import { BiMap } from 'react-icons/bi'
 import { MdStar } from 'react-icons/md'
 import Facilities from './Facilities'
 import moment from 'moment'
+import KostType from './Type'
+import Duration from './Duration'
 class CampaignItem extends Component {
     constructor(props) {
         super(props);
@@ -83,7 +85,7 @@ class CampaignItem extends Component {
                                     {like && <MdStar className="inline text-pink-500 mt-1 mr-1 float-right" />}
                                     {Cash(item.price.start_from, false)}
                                 </span>
-                                <span className="text-xs text-gray-700 uppercase"> &middot; {item.price.duration === "Hari" && "Day"}{item.price.duration === "Minggu" && "Week"}{item.price.duration === "Bulan" && "Month"}{item.price.duration === "Tahun" && "Year"}</span>
+                                <span className="text-xs text-gray-700 uppercase"> &middot; {Duration(item.price.duration)}</span>
                             </div>
                             <div className="mt-2 text-sm underline uppercase text-indigo-700 font-bold">Read More</div>
                         </div>
@@ -98,26 +100,7 @@ class CampaignItem extends Component {
 
                         {/* category */}
                         <div className="text-sm uppercase mt-1 text-green-600 font-bold">
-                            {
-                                item.type.includes("Campur") &&
-                                <span className="inline-block mr-2">All</span>
-                            }
-                            {
-                                item.type.includes("Putri") &&
-                                <span className="inline-block mr-2">Woman</span>
-                            }
-                            {
-                                item.type.includes("Putra") &&
-                                <span className="inline-block mr-2">Man</span>
-                            }
-                            {
-                                item.type.includes("Pasutri") &&
-                                <span className="inline-block mr-2">Married</span>
-                            }
-                            {
-                                item.type.includes("LV") &&
-                                <span className="inline-block">LV</span>
-                            }
+                            <KostType item={item.type} />
                         </div>
 
                     </div>

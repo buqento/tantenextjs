@@ -50,7 +50,7 @@ class Index extends React.Component {
               <div class="gcse-search" />
             </div>
 
-            <div className="mt-2 mb-4 pb-4 xs:border-b">
+            <div className="mt-2 mb-3 pb-3  xs:border-b">
               {load && <CampaignItemSkeleton />}
               {!load && data && <FeedsGrid data={data} />}
             </div>
@@ -84,13 +84,13 @@ class Index extends React.Component {
             <div className="m-3 mt-4 mb-n3">
               <span className="text-uppercase text-current font-bold">Facebook Group</span>
             </div>
-            <div className="border-b">
+            <div>
               <GroupSocial />
             </div>
 
           </div>
         </div>
-        <div className="mb-85"><Footer /></div>
+        <Footer />
         <div className="xs:block sm:hidden md:hidden lg:hidden">
           <NavMobile />
         </div>

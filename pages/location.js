@@ -4,6 +4,7 @@ import CampaignItemList from '../components/CampaignItemList'
 import CampaignItemListSkeleton from '../components/CampaignItemListSkeleton'
 import NavComponent from '../components/NavComponent'
 import NavMobile from '../components/NavMobile'
+import Footer from '../components/Footer'
 import Message from '../components/Message'
 import fire from '../configurations/firebase'
 import AdSense from 'react-adsense'
@@ -134,7 +135,7 @@ class MapView extends React.Component {
                 </div>
                 {
                     load ? <CampaignItemListSkeleton /> :
-                        <div className="mx-3 my-3">
+                        <div className="mx-3 my-2">
                             <div className="my-2">
                                 {
                                     listResult &&
@@ -160,7 +161,7 @@ class MapView extends React.Component {
                             </div>
                             {
                                 listResult && listResult.length > 0 &&
-                                <div className="divide-y mb-85">
+                                <div className="divide-y">
                                     {
                                         listResult.map((item, index) =>
                                             <div key={index}>
@@ -172,6 +173,7 @@ class MapView extends React.Component {
                             }
                         </div>
                 }
+                <Footer />
                 <div className="xs:block sm:hidden md:hidden lg:hidden">
                     <NavMobile />
                 </div>

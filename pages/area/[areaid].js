@@ -115,7 +115,7 @@ class Detail extends React.Component {
                 <>
                     {load && <CampaignItemListSkeleton />}
                     {data && data.length === 0 && <Message title="No Room" message="Use search to view more rooms" />}
-                    <div className="mx-3 my-2 divide-y mb-85">
+                    <div className="mx-3 my-2 divide-y">
                         {data && data.map((item, index) =>
                             <div key={index}><CampaignItemList item={item} /></div>
                         )}
