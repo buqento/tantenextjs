@@ -201,7 +201,7 @@ function Addnew() {
                             date_published: Date.now(),
                             slug: Generateslug(title)+ '-' + randomSlug,
                             name: name,
-                            title: title + '-' + randomSlug,
+                            title: title + ' ' + randomSlug,
                             description: description,
                             durations: arrDurations,
                             keywords: keywords,
