@@ -88,15 +88,6 @@ class Index extends React.Component {
               <GroupSocial />
             </div>
 
-            <div className="xs:mx-3 my-4">
-              <AdSense.Google
-                client='ca-pub-1434074630735871'
-                slot='5011678900'
-                className="w-full bg-gray-400 text-center"
-                format='auto'
-              />
-            </div>
-
           </div>
         </div>
         <div className="mb-85"><Footer /></div>
