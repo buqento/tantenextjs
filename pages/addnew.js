@@ -191,7 +191,7 @@ function Addnew() {
                 photo_url: session.user.image
             }
         }
-        const randomSlug = Math.random().toString(20).substr(2, 5).toLocaleUpperCase()
+        const randomSlug = Math.random().toString(20).substr(2, 5)
         docRef.get()
             .then(() => {
                 if (!found) {
@@ -199,9 +199,9 @@ function Addnew() {
                         .add({
                             date_modified: Date.now(),
                             date_published: Date.now(),
-                            slug: Generateslug(title),
+                            slug: Generateslug(title)+ '-' + randomSlug,
                             name: name,
-                            title: title + randomSlug,
+                            title: title + '-' + randomSlug,
                             description: description,
                             durations: arrDurations,
                             keywords: keywords,
