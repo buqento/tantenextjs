@@ -142,7 +142,7 @@ class MapView extends React.Component {
                                     <>
                                         {
                                             listResult.length > 0 &&
-                                            `${listResult.length} Room Near `
+                                            `${listResult.length} Rooms Near `
                                         }
                                         {
                                             listResult.length > 0 &&

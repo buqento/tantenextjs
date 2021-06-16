@@ -84,7 +84,7 @@ class History extends React.Component {
                                             <Link href={`/${item.slug}`}>
                                                 <div className="flex-1 ml-2 mt-1 self-center">
                                                     <div className="leading-none font-bold">
-                                                        {Cash(item.price.start_from)}<span className="text-xs font-normal uppercase"> &middot; {Duration(item.price.duration)}</span>
+                                                        {Cash(item.price.start_from)}<span className="text-xs font-normal uppercase"> / {Duration(item.price.duration)}</span>
                                                     </div>
                                                     <Facilities items={item.facility.room} inline />
                                                     <div className="text-sm clamp-1">
