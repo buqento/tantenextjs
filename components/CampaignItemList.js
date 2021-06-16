@@ -3,9 +3,8 @@ import { shape, string } from 'prop-types'
 import Cash from '../utils/Cash'
 import Generateslug from '../utils/Generateslug'
 import { BiMap } from 'react-icons/bi'
-import KostType from './Type'
-import Facilities from './Facilities'
 import Duration from './Duration'
+import { facility, type } from './Campaign'
 class CampaignItemList extends Component {
     constructor(props) {
         super(props);
@@ -56,14 +55,14 @@ class CampaignItemList extends Component {
                     <div className="flex-1 ml-2 mt-1 self-center">
                         <div className="text-xl font-bold flex">
                             <div className="leading-none flex">
-                                {Cash(item.price.start_from)}<span className="text-xs uppercase mt-1"> 
-                                <span className="mx-1">/</span>{Duration(item.price.duration)}
+                                {Cash(item.price.start_from)}<span className="text-xs uppercase mt-1">
+                                    <span className="mx-1">/</span>{Duration(item.price.duration)}
                                 </span>
                             </div>
                             {
                                 nearby &&
                                 <div className="w-full">
-                                    <span className="float-right text-green-700 text-sm mr-1 rounded-full inline-block px-1 border">{item.distance} Km</span>
+                                    <span className="float-right text-green-700 text-xs mr-1 rounded-full inline-block px-1 border">{item.distance} Km</span>
                                 </div>
                             }
                             {
@@ -73,14 +72,12 @@ class CampaignItemList extends Component {
                                 }</div>
                             }
                         </div>
-                        <Facilities items={item.facility.room} inline />
-                        <div className="text-sm clamp-1">
+                        <div className="clamp-1">
                             <BiMap size={16} className="inline mr-1 mb-1" /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
                         </div>
+                        <div className="clamp-1">{facility(item.facility.room)}</div>
                         <div className="w-full">
-                            <span className="text-green-700 font-bold text-xs uppercase">
-                                <KostType item={item.type} />
-                            </span>
+                            <span className="text-green-700 font-bold text-xs uppercase">{type(item.type)}</span>
                         </div>
                     </div>
                 </div>

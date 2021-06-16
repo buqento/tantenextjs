@@ -4,10 +4,9 @@ import Cash from '../utils/Cash'
 import Generateslug from '../utils/Generateslug'
 import { BiMap } from 'react-icons/bi'
 import { MdStar } from 'react-icons/md'
-import Facilities from './Facilities'
 import moment from 'moment'
-import KostType from './Type'
 import Duration from './Duration'
+import { facility, type } from './Campaign'
 class CampaignItem extends Component {
     constructor(props) {
         super(props);
@@ -96,12 +95,10 @@ class CampaignItem extends Component {
                         </div>
 
                         {/* facilities */}
-                        <Facilities items={item.facility.room} inline />
+                        <div className="clamp-1">{facility(item.facility.room)}</div>
 
                         {/* category */}
-                        <div className="text-sm uppercase mt-1 text-green-600 font-bold">
-                            <KostType item={item.type} />
-                        </div>
+                        <div className="text-sm uppercase mt-1 text-green-600 font-bold">{type(item.type)}</div>
 
                     </div>
                 </div>

@@ -1,11 +1,10 @@
 import React from 'react'
-import Facilities from '../components/Facilities'
 import Message from '../components/Message'
 import Cash from '../utils/Cash'
 import { BiMap } from 'react-icons/bi'
 import { MdClose } from 'react-icons/md'
 import CampaignItemListSkeleton from '../components/CampaignItemListSkeleton'
-import KostType from '../components/Type'
+import { type, facility } from '../components/Campaign'
 import Header from '../components/Header'
 import NavComponent from '../components/NavComponent'
 import NavMobile from '../components/NavMobile'
@@ -88,14 +87,12 @@ class Detail extends React.Component {
                                                     <div className="leading-none font-bold">
                                                         {Cash(item.price.start_from)}<span className="text-xs font-normal uppercase"> / {Duration(item.price.duration)}</span>
                                                     </div>
-                                                    <Facilities items={item.facility.room} inline />
-                                                    <div className="text-sm clamp-1">
+                                                    <div className="clamp-1">
                                                         <BiMap size={16} className="inline mr-1 mb-1" /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
                                                     </div>
+                                                    <div className="clamp-1">{facility(item.facility.room)}</div>
                                                     <div className="w-full">
-                                                        <span className="text-green-700 text-xs font-bold uppercase">
-                                                            <KostType item={item.type} />
-                                                        </span>
+                                                        <span className="text-green-700 text-xs uppercase font-bold">{type(item.type)}</span>
                                                     </div>
                                                 </div>
                                             </Link>
