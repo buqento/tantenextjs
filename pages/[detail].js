@@ -305,7 +305,12 @@ export const getServerSideProps = async (context) => {
       ...doc.docs[0].data(),
     }))
     .catch(err => console.log(err))
-  if (!detail) return { notFound: true }
+  if (!detail) return {
+    redirect: {
+      permanent: false,
+      destination: '/'
+    }
+  }
   let otherData = []
   const querySnapshot = await fire.firestore().collection('kosts')
     .where('slug', '!=', context.query.detail)
