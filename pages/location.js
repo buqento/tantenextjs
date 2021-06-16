@@ -133,45 +133,45 @@ class MapView extends React.Component {
                         format='auto'
                     />
                 </div>
-                {
-                    load ? <CampaignItemListSkeleton /> :
-                        <div className="mx-3 my-2">
-                            <div className="my-2">
-                                {
-                                    listResult &&
-                                    <>
-                                        {
-                                            listResult.length > 0 &&
-                                            `${listResult.length} Rooms Near `
-                                        }
-                                        {
-                                            listResult.length > 0 &&
-                                                !placeName ? <strong>{keyword}</strong> : ` `
-                                        }
-                                        {
-                                            listResult.length > 0 &&
-                                            placeName && <strong>{placeName}</strong>
-                                        }
-                                        {
-                                            listResult.length === 0 &&
-                                            <Message title="No Room" message={`No room near ${placeName}. Use search to view more rooms`} />
-                                        }
-                                    </>
-                                }
-                            </div>
+                {load && <CampaignItemListSkeleton />}
+                { !load &&
+                    <div className="mx-3 my-2">
+                        <div className="my-2">
                             {
-                                listResult && listResult.length > 0 &&
-                                <div className="divide-y">
+                                listResult &&
+                                <>
                                     {
-                                        listResult.map((item, index) =>
-                                            <div key={index}>
-                                                <CampaignItemList item={item} />
-                                            </div>
-                                        )
+                                        listResult.length > 0 &&
+                                        `${listResult.length} Rooms Near `
                                     }
-                                </div>
+                                    {
+                                        listResult.length > 0 &&
+                                            !placeName ? <strong>{keyword}</strong> : ` `
+                                    }
+                                    {
+                                        listResult.length > 0 &&
+                                        placeName && <strong>{placeName}</strong>
+                                    }
+                                    {
+                                        listResult.length === 0 && placeName &&
+                                        <Message title="No Room" message={`No room near ${placeName}. Use search to view more rooms`} />
+                                    }
+                                </>
                             }
                         </div>
+                        {
+                            listResult && listResult.length > 0 &&
+                            <div className="divide-y">
+                                {
+                                    listResult.map((item, index) =>
+                                        <div key={index}>
+                                            <CampaignItemList item={item} />
+                                        </div>
+                                    )
+                                }
+                            </div>
+                        }
+                    </div>
                 }
                 <Footer />
                 <div className="xs:block sm:hidden md:hidden lg:hidden">
