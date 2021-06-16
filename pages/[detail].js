@@ -6,7 +6,6 @@ import { FaExternalLinkAlt } from 'react-icons/fa'
 import Cash from '../utils/Cash'
 import Slide from '../components/Slide'
 import Peta from '../components/Peta'
-import KostType from '../components/Type'
 import NavComponent from '../components/NavComponent'
 import FooterDetail from '../components/FooterDetail'
 import ReactGa from 'react-ga'
@@ -14,6 +13,7 @@ import moment from 'moment'
 import ListKosOthers from '../components/ListKosOthers'
 import fire from '../configurations/firebase'
 import Facilities from '../components/Facilities'
+import { type } from '../components/Campaign'
 import Share from '../components/Share'
 import Footer from '../components/Footer'
 import NavMobile from '../components/NavMobile'
@@ -186,7 +186,7 @@ class Detail extends React.Component {
             </div>
 
             {/* type */}
-            <div className="my-2 text-left uppercase text-green-600 font-bold"><KostType item={detail.type} /></div>
+            <div className="my-2 text-left uppercase text-green-600 font-bold">{type(detail.type)}</div>
 
             {/* date modified */}
             <small className="text-gray-700 uppercase">{moment(detail.date_modified).fromNow()} &middot; {detail.hit} Views</small>
