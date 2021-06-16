@@ -133,7 +133,7 @@ class MapView extends React.Component {
                         format='auto'
                     />
                 </div>
-                {load && <CampaignItemListSkeleton />}
+                {load && !placeName && <CampaignItemListSkeleton />}
                 { !load &&
                     <div className="mx-3 my-2">
                         <div className="my-2">

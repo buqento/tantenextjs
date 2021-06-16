@@ -31,6 +31,12 @@ class Index extends React.Component {
   }
   render() {
     const { data, load } = this.state
+    if (typeof window === 'object') {
+      var input = document.getElementsByName('search');
+      for (var i = 0; i < input.length; i++) {
+        input[i].style.backgroundImage = '';
+      }
+    }
     const info = {
       title: 'Kost Murah Sewa Harian Bulanan Tahunan',
       description: 'Cari Kost Dan Kontrakan Harian Bulanan Tahunan Murah Terjangkau Nyaman Strategis',
