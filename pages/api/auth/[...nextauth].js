@@ -3,7 +3,7 @@ import Providers from 'next-auth/providers'
 const options = {
     providers: [
         Providers.Google({
-            clientId: '788082975831-ntcfkidf9min361onfgppq616af2gagt.apps.googleusercontent.com',
+            clientId: process.env.NEXT_PUBLIC_GOOGLE_ID,
             clientSecret: process.env.NEXT_PUBLIC_GOOGLE_SECRET,
         }),
     ],
