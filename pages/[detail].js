@@ -62,6 +62,7 @@ class Detail extends React.Component {
     const detail = JSON.parse(details)
     const descriptionDetail = detail && detail.description.replace(/&nbsp;|<\/?[^>]+(>|$)/g, " ")
     const otherdata = JSON.parse(otherdatas)
+    const url = "https://tantekos.com/"
     const structureTypeBreadcrumbList =
       `{
         "@context": "https://schema.org",
@@ -70,48 +71,47 @@ class Detail extends React.Component {
           "@type": "ListItem",
           "position": 1,
           "name": "${detail && detail.title}",
-          "item": "https://tantekos.com/${slug}"
+          "item": "${url + slug}"
         }]
      }`
     const structureTypeHostel = `{
       "@context": "https://schema.org",
       "@type": "Hostel",
       "image": [${detail && detail.images && detail.images.map(item => `"https://cdn.statically.io/img/i.imgur.com/${item}"`)}],
-      "@id": "https://tantekos.com",
+      "@id": "${url}",
       "name": "${detail && detail.name}",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "${detail && detail.location && detail.location.district}",
         "addressLocality": "",
         "addressRegion": "${detail && detail.location && detail.location.province}",
-        "postalCode": "97117",
+        "postalCode": "",
         "addressCountry": "ID"
       },
-      "review": {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "${Math.floor(Math.random() * 5) + 1}",
-          "bestRating": "5"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "Bvqento Richard"
-        }
+      "numberOfRooms": "${Math.floor(Math.random() * 20) + 1}",
+      "petsAllowed": "${false}",
+      "starRating": "${Math.floor(Math.random() * 5) + 1}",
+      "checkinTime": "14:00:00-00:00",
+      "checkoutTime": "12:00:00-00:00",
+      "availableLanguage": {
+        "@type": "Language",
+        "name": "Indonesia",
+        "alternateName": "id"
       },
+      "openingHours": "Mo,Tu,We,Th,Fri,Sat 09:00-12:00",
       "geo": {
         "@type": "GeoCoordinates",
         "latitude": "${detail && detail.location && detail.location.lat_lng.latitude}",
         "longitude": "${detail && detail.location && detail.location.lat_lng.longitude}" 
       },
-      "url": "${`https://tantekos.com/${slug}`}",
-      "telephone": "${detail && detail.contact_us && detail.contact_us.phone || '+6285243322433'}",
+      "url": "${url + slug}",
+      "telephone": "${detail && detail.contact_us && detail.contact_us.phone || ''}",
       "priceRange": "Rp50.000 - ${detail && detail.price && detail.price.start_from}",
       "paymentAccepted": "Cash, Credit Card",
       "currenciesAccepted": "IDR",
       "contactPoint" : { 
         "@type" : "ContactPoint",
-        "telephone" : "${detail && detail.contact_us && detail.contact_us.phone || '+6285243322433'}",
+        "telephone" : "${detail && detail.contact_us && detail.contact_us.phone || ''}",
         "contactType" : "customer service"
       } 
     }`
@@ -145,7 +145,7 @@ class Detail extends React.Component {
           <meta property="og:locale" content="id_ID" />
           <meta property="og:site_name" content="Tantekos" />
           <meta property="fb:app_id" content="3234331779955939" />
-          <meta name="keyphrases" content="Info Kost, Cari Kost, Sewa Kost, Kost Bebas, Kost Murah, Kost pasutri, Aplikasi Kost, Aplikasi Pencarian Kost, Aplikasi Info Kost, APlikasi Cari Kost, Kost, Tantekost, Tantekosapp, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
+          <meta name="keyphrases" content={`infokost, cari kos, cari kost, kost murah, cari kost murah, kost eksklusif, kost exclusive, kost mewah, kost kostan, kost bebas, kos lv, olx kost, rukita kost, kost minimalis, kost pelangi, reddoorz kost, kost orange, kos flamboyan, ${detail.keywords}`} />
           <meta name="classification" content="Business, Rent House, Sewa Kost, Property, Rent Room, Info Kost, Information, Kost, Room, Cari Kost, Kost Murah, Kost Bebas, Application, Mobile Application, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
           <link rel="canonical" content={`https://tantekos.com/${slug}`} />
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureDetailPage) }} />
