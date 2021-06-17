@@ -15,9 +15,11 @@ class FeedsGrid extends React.Component {
                                 {
                                     index === 2 &&
                                     <div className="mx-3 my-2">
+                                        {/* ad-feed */}
                                         <AdSense.Google
                                             client='ca-pub-1434074630735871'
-                                            slot='5011678900'
+                                            slot='9479754560'
+                                            layout='-6i+dh+2c+a-19'
                                             className="w-full bg-gray-400 text-center"
                                             format='auto'
                                         />
@@ -34,10 +36,11 @@ class FeedsGrid extends React.Component {
                         )
                     }
                     <div className="mx-3 my-3">
-                        {/* vertical ads */}
+                        {/* ad-feed */}
                         <AdSense.Google
                             client='ca-pub-1434074630735871'
-                            slot='3178716891'
+                            slot='9479754560'
+                            layout='-6i+dh+2c+a-19'
                             className="w-full bg-gray-400 text-center"
                             format='auto'
                         />
