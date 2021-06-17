@@ -2,6 +2,7 @@ import React from 'react'
 import { string } from 'prop-types'
 import { DtArea } from '../../utils/modals/Area'
 import NavMobile from '../../components/NavMobile'
+import Footer from '../../components/Footer'
 import NextHead from 'next/head'
 import Generateslug from '../../utils/Generateslug'
 import fire from '../../configurations/firebase'
@@ -121,6 +122,7 @@ class Detail extends React.Component {
                         )}
                     </div>
                 </>
+                <Footer />
                 <div className="xs:block sm:hidden md:hidden lg:hidden">
                     <NavMobile />
                 </div>

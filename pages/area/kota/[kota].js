@@ -9,6 +9,7 @@ import { BiChevronRight, BiMap } from 'react-icons/bi'
 import { City } from '../../../utils/modals/City'
 import NavComponent from '../../../components/NavComponent'
 import Link from 'next/link'
+import Footer from '../../../components/Footer'
 
 class Detail extends React.Component {
     static async getInitialProps(ctx) {
@@ -113,6 +114,7 @@ class Detail extends React.Component {
                         }
                     </div>
                 </>
+                <Footer />
                 <div className="xs:block sm:hidden md:hidden lg:hidden">
                     <NavMobile />
                 </div>
