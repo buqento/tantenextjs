@@ -19,7 +19,6 @@ class FeedsGrid extends React.Component {
                                         <AdSense.Google
                                             client='ca-pub-1434074630735871'
                                             slot='9479754560'
-                                            layout='-6i+dh+2c+a-19'
                                             className="w-full bg-gray-400 text-center"
                                             format='auto'
                                         />
@@ -40,7 +39,6 @@ class FeedsGrid extends React.Component {
                         <AdSense.Google
                             client='ca-pub-1434074630735871'
                             slot='9479754560'
-                            layout='-6i+dh+2c+a-19'
                             className="w-full bg-gray-400 text-center"
                             format='auto'
                         />
