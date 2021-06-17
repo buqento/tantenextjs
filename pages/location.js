@@ -7,7 +7,6 @@ import NavMobile from '../components/NavMobile'
 import Footer from '../components/Footer'
 import Message from '../components/Message'
 import fire from '../configurations/firebase'
-import AdSense from 'react-adsense'
 import { MdClose } from 'react-icons/md'
 
 const mapboxApiKey = 'pk.eyJ1IjoiYnVxZW50byIsImEiOiJjanJ5a3p4cDkwZXJiNDlvYXMxcnhud3hhIn0.AhQ-vGYSIo6uTBmQD4MCsA'
@@ -125,14 +124,7 @@ class MapView extends React.Component {
                         <MdClose className="bg-gray-700 rounded-full text-white" size={24} style={{ marginTop: 15, marginLeft: -52 }} />
                     </div>
                 </div>
-                <div className="my-3 mx-3">
-                    <AdSense.Google
-                        client='ca-pub-1434074630735871'
-                        slot='7863233219'
-                        className="w-full bg-gray-400 text-center"
-                        format='auto'
-                    />
-                </div>
+
                 {load && !placeName && <CampaignItemListSkeleton />}
                 { !load &&
                     <div className="mx-3 my-2">

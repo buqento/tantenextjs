@@ -6,7 +6,6 @@ import CampaignItemListSkeleton from '../components/CampaignItemListSkeleton'
 import Header from '../components/Header'
 import NavComponent from '../components/NavComponent'
 import NavMobile from '../components/NavMobile'
-import AdSense from 'react-adsense'
 import Footer from '../components/Footer'
 class Nearby extends React.Component {
     constructor(props) {
@@ -85,16 +84,6 @@ class Nearby extends React.Component {
         }
         return <div>
             <NavComponent />
-
-            <div className="xs:mx-3 my-3 text-center">
-                {/* horizontal ads */}
-                <AdSense.Google
-                    client='ca-pub-1434074630735871'
-                    slot='5011678900'
-                    className="w-full bg-gray-400 text-center"
-                    format='auto'
-                />
-            </div>
 
             <Header info={info} />
             {load && <CampaignItemListSkeleton />}

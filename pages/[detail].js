@@ -17,7 +17,6 @@ import { type } from '../components/Campaign'
 import Share from '../components/Share'
 import Footer from '../components/Footer'
 import NavMobile from '../components/NavMobile'
-import AdSense from 'react-adsense'
 import { Comments, FacebookProvider } from 'react-facebook';
 import Duration from '../components/Duration'
 class Detail extends React.Component {
@@ -194,16 +193,6 @@ class Detail extends React.Component {
             {/* title */}
             <h1 className="my-4 text-xl capitalize font-bold">{detail.title}</h1>
 
-            <div>
-              {/* square ads */}
-              <AdSense.Google
-                client='ca-pub-1434074630735871'
-                slot='7863233219'
-                className="w-full bg-gray-400 text-center"
-                format='auto'
-              />
-            </div>
-
             {/* description */}
             <div className="my-3">
               <h2 className="font-bold">Description *</h2>
@@ -247,16 +236,6 @@ class Detail extends React.Component {
               </div>
               <div className="mt-3">
                 <small>* Room data can change at any time.</small>
-              </div>
-
-              <div className="my-3">
-                {/* horizontal ads */}
-                <AdSense.Google
-                  client='ca-pub-1434074630735871'
-                  slot='5011678900'
-                  className="w-full bg-gray-400 text-center"
-                  format='auto'
-                />
               </div>
 
               {/* facebook comment */}

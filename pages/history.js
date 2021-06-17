@@ -4,7 +4,6 @@ import CampaignItemListSkeleton from '../components/CampaignItemListSkeleton'
 import Header from '../components/Header'
 import NavComponent from '../components/NavComponent'
 import NavMobile from '../components/NavMobile'
-import AdSense from 'react-adsense'
 import Footer from '../components/Footer'
 import CampaignItemListAction from '../components/CampaignItemListAction'
 class History extends React.Component {
@@ -18,13 +17,14 @@ class History extends React.Component {
         if (userFav === null) { data = [] } else { data = JSON.parse(userFav) }
         this.setState({ data, load: false })
     }
-    handleRemoveHistoryItem = (item) => {
+    handleRemove = (item) => {
         let lastView = localStorage.getItem('lastview')
         let data
         if (lastView === null) { data = [] } else { data = JSON.parse(lastView) }
         const newData = data.filter(i => i.id !== item.id)
         localStorage.setItem('lastview', JSON.stringify(newData))
-        this.setState({ data: newData })
+        // this.setState({ data: newData })
+        // console.log(newData);
     }
     render() {
         const { data, load } = this.state
@@ -37,16 +37,6 @@ class History extends React.Component {
             <>
                 <Header info={info} />
                 <NavComponent />
-
-                <div className="my-3 mx-3">
-                    {/* horizontal ads */}
-                    <AdSense.Google
-                        client='ca-pub-1434074630735871'
-                        slot='5011678900'
-                        className="w-full bg-gray-400 text-center"
-                        format='auto'
-                    />
-                </div>
 
                 {
                     load ? <CampaignItemListSkeleton /> :
@@ -68,7 +58,7 @@ class History extends React.Component {
                                         }
                                     )
                                     .map((item, index) =>
-                                        <div key={index}><CampaignItemListAction key={index} item={item} callbackFromParent={this.handleRemoveHistoryItem} /></div>
+                                        <div key={index}><CampaignItemListAction key={index} item={item} callbackFromParent={this.handleRemove} /></div>
 
                                     )
                             }

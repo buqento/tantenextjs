@@ -7,7 +7,6 @@ import Generateslug from '../../../utils/Generateslug'
 import NavComponent from '../../../components/NavComponent'
 import Footer from '../../../components/Footer'
 import NavMobile from '../../../components/NavMobile'
-import AdSense from 'react-adsense'
 const Filter = () => {
     const [name, setName] = useState("")
     const filterItems = (keyword) => {
@@ -42,14 +41,7 @@ const Filter = () => {
             <div className="d-flex z-10 sticky top-0 bg-white border-b">
                 <input className="w-full rounded p-3 my-3 mx-3 text-gray-700 leading-tight focus:outline-none font-medium border" id="name" type="text" placeholder="Campus name..." value={name} onChange={(e) => setName(e.target.value)} />
             </div>
-            <div className="mx-3 my-3">
-                <AdSense.Google
-                    client='ca-pub-1434074630735871'
-                    slot='7863233219'
-                    className="w-full bg-gray-400 text-center"
-                    format=''
-                />
-            </div>
+
             {
                 DtProvinsi
                     .sort(function (a, b) {

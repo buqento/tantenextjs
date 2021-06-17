@@ -4,7 +4,6 @@ import CampaignItemListSkeleton from '../components/CampaignItemListSkeleton'
 import Header from '../components/Header'
 import NavComponent from '../components/NavComponent'
 import NavMobile from '../components/NavMobile'
-import AdSense from 'react-adsense'
 import Footer from '../components/Footer'
 import CampaignItemListAction from '../components/CampaignItemListAction'
 class Detail extends React.Component {
@@ -41,15 +40,6 @@ class Detail extends React.Component {
             <>
                 <Header info={info} />
                 <NavComponent />
-                <div className="my-3 mx-3">
-                    {/* horizontal ads */}
-                    <AdSense.Google
-                        client='ca-pub-1434074630735871'
-                        slot='5011678900'
-                        className="w-full bg-gray-400 text-center"
-                        format='auto'
-                    />
-                </div>
                 {
                     load ? <CampaignItemListSkeleton /> :
                         data && data.length > 0 &&
