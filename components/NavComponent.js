@@ -5,8 +5,7 @@ import Link from 'next/link'
 import { signIn, useSession } from 'next-auth/client'
 const navigation = [
   { name: 'Favorite', href: '/favorites', current: false },
-  { name: 'History', href: '/history', current: false },
-  { name: 'Nearby', href: '/nearby', current: false }
+  { name: 'History', href: '/history', current: false }
 ]
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')

@@ -59,12 +59,6 @@ class Detail extends React.Component {
   render() {
     const { slug, details, otherdatas } = this.props
     const { showAlert } = this.state
-    if (typeof window === 'object') {
-      var input = document.getElementsByName('search');
-      for (var i = 0; i < input.length; i++) {
-        input[i].style.backgroundImage = '';
-      }
-    }
     const detail = JSON.parse(details)
     const descriptionDetail = detail && detail.description.replace(/&nbsp;|<\/?[^>]+(>|$)/g, " ")
     const otherdata = JSON.parse(otherdatas)
