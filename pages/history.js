@@ -69,14 +69,14 @@ class History extends React.Component {
                                                 <MdClose className="button-delete bg-gray-700 text-white rounded-full p-1 mt-1 ml-1" size="24" onClick={() => this.handleRemoveHistoryItem(item)} />
                                             </div>
                                             <Link href={`/${item.slug}`}>
-                                                <div className="flex-1 ml-2 mt-1 self-center">
-                                                    <div className="leading-none font-bold">
-                                                        {Cash(item.price.start_from)}<span className="text-xs font-normal uppercase"> &middot; {Duration(item.price.duration)}</span>
+                                                <div className="flex-1 ml-2 self-center">
+                                                    <div className="font-bold">
+                                                        {Cash(item.price.start_from)}<span className="text-xs uppercase"> / {Duration(item.price.duration)}</span>
                                                     </div>
-                                                    <div className="text-sm clamp-1">
+                                                    <div className="clamp-1">
                                                         <BiMap size={16} className="inline mr-1 mb-1" /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
                                                     </div>
-                                                    {facility(item.facility.room)}
+                                                    <div className="clamp-1 leading-none">{facility(item.facility.room)}</div>
                                                     <div className="w-full">
                                                         <span className="text-green-700 text-xs uppercase font-bold">
                                                             {type(item.type)}

@@ -52,12 +52,10 @@ class CampaignItemList extends Component {
                     <div className="w-20 bg-gray-400">
                         <img src={`https://cdn.statically.io/img/i.imgur.com/${item.images[0]}`} alt={item.title} className="object-cover object-center float-left mr-2 h-24 w-20" onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} />
                     </div>
-                    <div className="flex-1 ml-2 mt-1 self-center">
+                    <div className="flex-1 ml-2 self-center">
                         <div className="text-xl font-bold flex">
-                            <div className="leading-none flex">
-                                {Cash(item.price.start_from)}<span className="text-xs uppercase mt-1">
-                                    <span className="mx-1">/</span>{Duration(item.price.duration)}
-                                </span>
+                            <div className="font-bold">
+                                {Cash(item.price.start_from)}<span className="text-xs uppercase"> / {Duration(item.price.duration)}</span>
                             </div>
                             {
                                 nearby &&
@@ -75,9 +73,11 @@ class CampaignItemList extends Component {
                         <div className="clamp-1">
                             <BiMap size={16} className="inline mr-1 mb-1" /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
                         </div>
-                        <div className="clamp-1">{facility(item.facility.room)}</div>
+                        <div className="clamp-1 leading-none">{facility(item.facility.room)}</div>
                         <div className="w-full">
-                            <span className="text-green-700 font-bold text-xs uppercase">{type(item.type)}</span>
+                            <span className="text-green-700 text-xs uppercase font-bold">
+                                {type(item.type)}
+                            </span>
                         </div>
                     </div>
                 </div>
