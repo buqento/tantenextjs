@@ -22,6 +22,8 @@ class MyDocument extends Document {
                     <Main />
                     <NextScript />
                     <script async src="https://cse.google.com/cse.js?cx=d761393c77a5ff02c"></script>
+                    <script>var id = "35450da0677736ee3e2f4c2ba6f11fa494ca2741";</script>
+                    <script type="text/javascript" src="https://api.sosiago.id/js/tracking.js"></script>
                 </body>
             </Html>
         )
