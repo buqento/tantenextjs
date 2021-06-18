@@ -117,10 +117,10 @@ class MapView extends React.Component {
                             viewport={viewport}
                             hideOnSelect={true}
                             queryParams={{ country: "id" }}
-                            updateInputOnSelect
+                            // updateInputOnSelect
                         />
                     </div>
-                    <div className="flex-auto cursor-pointer" onClick={this.handleResetSearch}>
+                    <div className="hidden flex-auto cursor-pointer" onClick={this.handleResetSearch}>
                         <MdClose className="bg-gray-700 rounded-full text-white" size={24} style={{ marginTop: 15, marginLeft: -52 }} />
                     </div>
                 </div>

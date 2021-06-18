@@ -54,8 +54,11 @@ class CampaignItemList extends Component {
                     </div>
                     <div className="flex-1 ml-2 self-center">
                         <div className="text-xl font-bold flex">
-                            <div className="font-bold">
-                                {Cash(item.price.start_from)}<span className="text-xs uppercase"> / {Duration(item.price.duration)}</span>
+                            <div className="leading-none flex">
+                                {Cash(item.price.start_from)}
+                                <span className="text-xs uppercase mt-2">
+                                    <span className="mx-1">/</span>{Duration(item.price.duration)}
+                                </span>
                             </div>
                             {
                                 nearby &&
