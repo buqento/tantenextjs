@@ -7,9 +7,6 @@ import NavMobile from '../components/NavMobile'
 import Footer from '../components/Footer'
 import Message from '../components/Message'
 import fire from '../configurations/firebase'
-import { MdClose } from 'react-icons/md'
-
-const mapboxApiKey = 'pk.eyJ1IjoiYnVxZW50byIsImEiOiJjanJ5a3p4cDkwZXJiNDlvYXMxcnhud3hhIn0.AhQ-vGYSIo6uTBmQD4MCsA'
 
 class MapView extends React.Component {
     constructor(props) {
@@ -30,25 +27,23 @@ class MapView extends React.Component {
         const input = document.getElementsByTagName("input")[0]
         input.setAttribute("placeholder", "Location/Area/Address")
         input.select()
-        const dt = fire.firestore().collection('kosts')
-        dt.where('is_active', '==', true)
-            .onSnapshot(snapshot => {
+        const { viewport } = this.state
+        const promise = new Promise((resolve, reject) => {
+            const dt = fire.firestore().collection('kosts')
+            dt.where('is_active', '==', true).onSnapshot(snapshot => {
                 const data = snapshot.docs.map(doc => ({
-                    id: doc.id,
-                    ...doc.data()
+                    id: doc.id, ...doc.data()
                 }))
-                this.setState({ data, load: false })
-                this.initData()
+                resolve(data)
             })
+        })
+        promise.then(data => this.setState({ data, load: false, listResult: this.setData(viewport, data) }))
     }
-    initData = () => {
-        const { data, viewport } = this.state
-        let initList = []
-        let initItem = {}
+    setData = (viewport, data) => {
+        let res = []
         for (var i = 0; i < data.length; i++) {
             const d = this.getDistance(viewport.latitude, viewport.longitude, data[i].location.lat_lng.w_, data[i].location.lat_lng.T_, "K")
-            initItem = {
-                distance: (d).toFixed(1),
+            if (d <= 3) res.push({
                 facility: data[i].facility,
                 images: data[i].images,
                 location: data[i].location,
@@ -57,33 +52,17 @@ class MapView extends React.Component {
                 slug: data[i].slug,
                 title: data[i].title,
                 type: data[i].type
-            }
-            if (d <= 5) initList.push(initItem)
+            })
         }
-        this.setState({ listResult: initList })
+        return res
     }
     onSelected = (viewport, item) => {
-        const { data, keyword } = this.state
-        const latitude = viewport.latitude
-        const longitude = viewport.longitude
-        let nearList = []
-        let nearItem = {}
-        for (var i = 0; i < data.length; i++) {
-            const d = this.getDistance(latitude, longitude, data[i].location.lat_lng.w_, data[i].location.lat_lng.T_, "K")
-            nearItem = {
-                distance: (d).toFixed(1),
-                facility: data[i].facility,
-                images: data[i].images,
-                location: data[i].location,
-                name: data[i].name,
-                price: data[i].price,
-                slug: data[i].slug,
-                title: data[i].title,
-                type: data[i].type
-            }
-            if (d <= 3) nearList.push(nearItem)
-        }
-        this.setState({ listResult: nearList, placeName: item.place_name, keyword: keyword })
+        const { keyword, data } = this.state
+        this.setState({
+            listResult: this.setData(viewport, data),
+            placeName: item.place_name,
+            keyword: keyword
+        })
     }
     getDistance = (lat1, lon1, lat2, lon2, unit) => {
         var radlat1 = Math.PI * lat1 / 180
@@ -99,32 +78,21 @@ class MapView extends React.Component {
         if (unit == "N") dist = dist * 0.8684
         return dist
     }
-    handleResetSearch = () => {
-        const input = document.getElementsByTagName("input")[0]
-        input.select()
-    }
     render() {
         const { viewport, listResult, placeName, load, keyword } = this.state
+        const mapboxApiKey = process.env.NEXT_PUBLIC_MAPBOX_TOKEN
         return (
             <>
                 <NavComponent />
-                <div className="my-3 flex">
-                    <div className="w-full">
-                        <Geocoder
-                            className="border text-lg mx-3 pr-5"
-                            mapboxApiAccessToken={mapboxApiKey}
-                            onSelected={this.onSelected}
-                            viewport={viewport}
-                            hideOnSelect={true}
-                            queryParams={{ country: "id" }}
-                            // updateInputOnSelect
-                        />
-                    </div>
-                    <div className="hidden flex-auto cursor-pointer" onClick={this.handleResetSearch}>
-                        <MdClose className="bg-gray-700 rounded-full text-white" size={24} style={{ marginTop: 15, marginLeft: -52 }} />
-                    </div>
+                <div className="my-3">
+                    <Geocoder
+                        className="border text-lg mx-3 p-0"
+                        mapboxApiAccessToken={mapboxApiKey}
+                        onSelected={this.onSelected}
+                        viewport={viewport}
+                        hideOnSelect={true}
+                        queryParams={{ country: "id" }} />
                 </div>
-
                 {load && !placeName && <CampaignItemListSkeleton />}
                 { !load &&
                     <div className="mx-3 my-2">
