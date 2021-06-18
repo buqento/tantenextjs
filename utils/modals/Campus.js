@@ -137,4 +137,6 @@ export const Campus = [
     { slug: 'universitas-methodist-indonesia', name: 'Universitas Methodist Indonesia', province: 'Sumatera Utara' },
     { slug: 'universitas-medan-area', name: 'Universitas Medan Area', province: 'Sumatera Utara' },
     { slug: 'politeknik-negeri-medan', name: 'Politeknik Negeri Medan', province: 'Sumatera Utara' },
+    { slug: 'universitas-muhammadiyah-sumatera-utara', name: 'Universitas Muhammadiyah Sumatera Utara', province: 'Sumatera Utara' },
+    { slug: 'universitas-negeri-medan', name: 'Universitas Negeri Medan', province: 'Sumatera Utara' },
 ]
