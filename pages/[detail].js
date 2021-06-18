@@ -239,7 +239,7 @@ class Detail extends React.Component {
               </div>
 
               {/* facebook comment */}
-              <div>
+              <div className="bg-gray-400">
                 <FacebookProvider appId={process.env.NEXT_PUBLIC_REACT_APP_FB_CLIENT_ID}>
                   <Comments width={`100%`} href={`https://tantekos.com/${detail.slug}`} />
                 </FacebookProvider>
