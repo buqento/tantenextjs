@@ -19,7 +19,7 @@ class Index extends React.Component {
   componentDidMount() {
     const dt = fire.firestore().collection('kosts')
     dt.where('is_active', '==', true)
-      .orderBy('date_modified', 'desc')
+      .orderBy('date_published', 'desc')
       .limit(6)
       .onSnapshot(snapshot => {
         const data = snapshot.docs.map(doc => ({
