@@ -25,7 +25,8 @@ export const DtArea = [
     { province: 'Sumatera Utara', city: 'Medan', district: 'Medan Tembung' },
     { province: 'Sumatera Utara', city: 'Padangsidempuan', district: 'Padangsidimpuan Angkola Julu' },
     { province: 'Sumatera Utara', city: 'Padangsidempuan', district: 'Padangsidimpuan Batunadua' },
-
+    { province: 'Sumatera Utara', city: 'Kota Medan', district: 'Medan Timur' },
+    
     { province: 'Maluku', city: 'Ambon', district: 'Teluk Ambon' },
     { province: 'Maluku', city: 'Ambon', district: 'Baguala' },
     { province: 'Maluku', city: 'Ambon', district: 'Sirimau' },
