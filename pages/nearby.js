@@ -10,28 +10,27 @@ import Footer from '../components/Footer'
 class Nearby extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            data: null,
-            locationText: "Jakarta Pusat",
-            nearbyList: null,
-            load: true
-        }
+        this.state = { data: null, load: true }
     }
     componentDidMount() {
-        const dt = fire.firestore().collection('kosts')
-        dt.where('is_active', '==', true)
-            .onSnapshot(snapshot => {
-                const data = snapshot.docs.map(doc => ({
-                    id: doc.id,
-                    ...doc.data()
-                }))
-                this.setState({ data })
-                if (typeof window !== 'undefined' && window.navigator.geolocation) {
-                    window.navigator.geolocation.getCurrentPosition(
-                        this.successfulLookup, this.showAlert
-                    )
-                }
-            })
+        const promise = new Promise((resolve, reject) => {
+            const dt = fire.firestore().collection('kosts')
+            dt.where('is_active', '==', true)
+                .onSnapshot(snapshot => {
+                    const data = snapshot.docs.map(doc => ({
+                        id: doc.id, ...doc.data()
+                    }))
+                    resolve(data)
+                })
+        })
+        promise.then((data) => {
+            this.setState({ data })
+            if (typeof window !== 'undefined' && window.navigator.geolocation) {
+                window.navigator.geolocation.getCurrentPosition(
+                    this.successfulLookup, this.showAlert
+                )
+            }
+        })
     }
     showAlert = () => { console.log('Your location is unknown!') }
     getDistance = (lat1, lon1, lat2, lon2, unit) => {
@@ -52,12 +51,10 @@ class Nearby extends React.Component {
         const { latitude, longitude } = position.coords
         const { data } = this.state
         let nearbyList = []
-        let nearItem = {}
         let locationText
         for (var i = 0; i < data.length; i++) {
-            // if this location is within 5KM of the user, add it to the list
             const d = this.getDistance(latitude, longitude, data[i].location.lat_lng.w_, data[i].location.lat_lng.T_, "K")
-            nearItem = {
+            if (d <= 5) nearbyList.push({
                 distance: (d).toFixed(1),
                 facility: data[i].facility,
                 images: data[i].images,
@@ -67,8 +64,7 @@ class Nearby extends React.Component {
                 slug: data[i].slug,
                 title: data[i].title,
                 type: data[i].type
-            }
-            if (d <= 5) nearbyList.push(nearItem)
+            })
         }
         fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=111ed9e8cfcb4f7a83d8b17c1671a4f0`)
             .then(response => response.json())
@@ -91,28 +87,25 @@ class Nearby extends React.Component {
                 !load && nearbyList && nearbyList.length > 0 &&
                 <>
                     <div className="py-3 px-3 font-bold bg-white"><span className="font-normal">{nearbyList.length} Rooms Near</span> {locationText}</div>
-                    <div className="mb-3">
-                        <div className="mx-3 divide-y">
-                            {
-                                nearbyList
-                                    .sort(
-                                        function compare(a, b) {
-                                            const dtA = a.distance;
-                                            const dtB = b.distance;
-                                            let comparison = 0;
-                                            if (dtA > dtB) {
-                                                comparison = 1;
-                                            } else if (dtA < dtB) {
-                                                comparison = -1;
-                                            }
-                                            return comparison;
+                    <div className="mx-3 mb-2 divide-y">
+                        {
+                            nearbyList
+                                .sort(
+                                    function compare(a, b) {
+                                        const dtA = a.distance;
+                                        const dtB = b.distance;
+                                        let comparison = 0;
+                                        if (dtA > dtB) {
+                                            comparison = 1;
+                                        } else if (dtA < dtB) {
+                                            comparison = -1;
                                         }
-                                    )
-                                    .map((item, index) => <div><CampaignItemList key={index} item={item} nearby /></div>)
-                            }
-                        </div>
+                                        return comparison;
+                                    }
+                                )
+                                .map((item, index) => <div key={index}><CampaignItemList item={item} nearby /></div>)
+                        }
                     </div>
-                    {/* <Ads /> */}
                 </>
             }
             {
