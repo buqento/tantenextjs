@@ -28,16 +28,13 @@ class MapView extends React.Component {
         input.setAttribute("placeholder", "Location/Area/Address")
         input.select()
         const { viewport } = this.state
-        const promise = new Promise((resolve, reject) => {
-            const dt = fire.firestore().collection('kosts')
-            dt.where('is_active', '==', true).onSnapshot(snapshot => {
-                const data = snapshot.docs.map(doc => ({
-                    id: doc.id, ...doc.data()
-                }))
-                resolve(data)
-            })
+        const dt = fire.firestore().collection('kosts')
+        dt.where('is_active', '==', true).onSnapshot(snapshot => {
+            const data = snapshot.docs.map(doc => ({
+                id: doc.id, ...doc.data()
+            }))
+            this.setState({ data, listResult: this.setData(viewport, data), load: false })
         })
-        promise.then(data => this.setState({ data, load: false, listResult: this.setData(viewport, data) }))
     }
     setData = (viewport, data) => {
         let res = []
@@ -102,7 +99,7 @@ class MapView extends React.Component {
                                 <>
                                     {
                                         listResult.length > 0 &&
-                                        `${listResult.length} Rooms Near `
+                                        `${listResult.length} Room${listResult.length > 1 ? 's' : ''} Near `
                                     }
                                     {
                                         listResult.length > 0 &&
@@ -123,11 +120,20 @@ class MapView extends React.Component {
                             listResult && listResult.length > 0 &&
                             <div className="divide-y">
                                 {
-                                    listResult.map((item, index) =>
-                                        <div key={index}>
-                                            <CampaignItemList item={item} />
-                                        </div>
-                                    )
+                                    listResult
+                                        .sort(function compare(a, b) {
+                                            const priceA = a.price.start_from
+                                            const priceB = b.price.start_from
+                                            let comparison = 0
+                                            if (priceA > priceB) comparison = 1
+                                            if (priceA < priceB) comparison = -1
+                                            return comparison
+                                        })
+                                        .map((item, index) =>
+                                            <div key={index}>
+                                                <CampaignItemList item={item} />
+                                            </div>
+                                        )
                                 }
                             </div>
                         }

@@ -13,24 +13,19 @@ class Nearby extends React.Component {
         this.state = { data: null, load: true }
     }
     componentDidMount() {
-        const promise = new Promise((resolve, reject) => {
-            const dt = fire.firestore().collection('kosts')
-            dt.where('is_active', '==', true)
-                .onSnapshot(snapshot => {
-                    const data = snapshot.docs.map(doc => ({
-                        id: doc.id, ...doc.data()
-                    }))
-                    resolve(data)
-                })
-        })
-        promise.then((data) => {
-            this.setState({ data })
-            if (typeof window !== 'undefined' && window.navigator.geolocation) {
-                window.navigator.geolocation.getCurrentPosition(
-                    this.successfulLookup, this.showAlert
-                )
-            }
-        })
+        const dt = fire.firestore().collection('kosts')
+        dt.where('is_active', '==', true)
+            .onSnapshot(snapshot => {
+                const data = snapshot.docs.map(doc => ({
+                    id: doc.id, ...doc.data()
+                }))
+                this.setState({ data })
+                if (typeof window !== 'undefined' && window.navigator.geolocation) {
+                    window.navigator.geolocation.getCurrentPosition(
+                        this.successfulLookup, this.showAlert
+                    )
+                }
+            })
     }
     showAlert = () => { console.log('Your location is unknown!') }
     getDistance = (lat1, lon1, lat2, lon2, unit) => {
@@ -86,23 +81,18 @@ class Nearby extends React.Component {
             {
                 !load && nearbyList && nearbyList.length > 0 &&
                 <>
-                    <div className="py-3 px-3 font-bold bg-white"><span className="font-normal">{nearbyList.length} Rooms Near</span> {locationText}</div>
+                    <div className="py-3 px-3 font-bold bg-white"><span className="font-normal">{nearbyList.length} Room{nearbyList.length > 1 ? 's' : ''} Near</span> {locationText}</div>
                     <div className="mx-3 mb-2 divide-y">
                         {
                             nearbyList
-                                .sort(
-                                    function compare(a, b) {
-                                        const dtA = a.distance;
-                                        const dtB = b.distance;
-                                        let comparison = 0;
-                                        if (dtA > dtB) {
-                                            comparison = 1;
-                                        } else if (dtA < dtB) {
-                                            comparison = -1;
-                                        }
-                                        return comparison;
-                                    }
-                                )
+                                .sort(function compare(a, b) {
+                                    const dtA = a.distance
+                                    const dtB = b.distance
+                                    let comparison = 0
+                                    if (dtA > dtB) comparison = 1
+                                    if (dtA < dtB) comparison = -1
+                                    return comparison
+                                })
                                 .map((item, index) => <div key={index}><CampaignItemList item={item} nearby /></div>)
                         }
                     </div>
