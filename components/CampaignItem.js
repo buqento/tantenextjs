@@ -74,7 +74,11 @@ class CampaignItem extends Component {
                         </div>
                     </div>
                     <div className="bg-gray-400">
-                        <img className="object-cover object-center w-full h-64" src={`https://cdn.statically.io/img/i.imgur.com/${item.images[0]}`} alt={item.title} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} />
+                        <picture>
+                            <source media="(min-width:425px)" srcSet={`https://cdn.statically.io/img/i.imgur.com/w=425/${item.images[0]}`} />
+                            <source media="(min-width:375px)" srcSet={`https://cdn.statically.io/img/i.imgur.com/w=375/${item.images[0]}`} />
+                            <img className="object-cover object-center w-full h-64" src={`https://cdn.statically.io/img/i.imgur.com/${item.images[0]}`} alt={item.title} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} />
+                        </picture>
                     </div>
                     <div className="mx-3 my-3">
                         {/* price and action */}
