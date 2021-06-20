@@ -38,14 +38,14 @@ export default function NavComponent() {
                   </div>
                 </a>
                 <div className="hidden sm:block sm:ml-6">
-                  <div className="space-x-2">
-                    <a href="/">
+                  <div className="space-x-2" itemscope="itemscope" itemtype="http://www.schema.org/SiteNavigationElement">
+                    <a href="/" itemprop="hasPart">
                       <span className="text-gray-300 hover:underline hover:text-white cursor-pointer px-3 py-2 font-medium">
                         Home
                       </span>
                     </a>
                     {navigation.map((item) => (
-                      <Link key={item.name} href={item.href} aria-current={item.current ? 'page' : undefined}>
+                      <Link key={item.name} href={item.href} aria-current={item.current ? 'page' : undefined} itemprop="hasPart">
                         <span className="text-gray-300 hover:underline hover:text-white cursor-pointer px-3 py-2 font-medium">
                           {item.name}
                         </span>
