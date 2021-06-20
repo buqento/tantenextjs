@@ -3,8 +3,7 @@ import { shape, string } from 'prop-types'
 import Cash from '../utils/Cash'
 import Generateslug from '../utils/Generateslug'
 import { BiMap } from 'react-icons/bi'
-import Duration from './Duration'
-import { facility, type } from './Campaign'
+import { facility, type, duration } from './Campaign'
 class CampaignItemList extends Component {
     constructor(props) {
         super(props);
@@ -56,8 +55,8 @@ class CampaignItemList extends Component {
                         <div className="text-xl font-bold flex">
                             <div className="leading-none flex">
                                 {Cash(item.price.start_from)}
-                                <span className="text-xs uppercase mt-2">
-                                    <span className="mx-1">/</span>{Duration(item.price.duration)}
+                                <span className="text-xs text-gray-700 uppercase mt-2">
+                                    <span className="mx-1">/</span>{duration(item.price.duration)}
                                 </span>
                             </div>
                             {

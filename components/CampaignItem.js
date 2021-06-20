@@ -5,8 +5,7 @@ import Generateslug from '../utils/Generateslug'
 import { BiMap } from 'react-icons/bi'
 import { MdStar } from 'react-icons/md'
 import moment from 'moment'
-import Duration from './Duration'
-import { facility, type } from './Campaign'
+import { facility, type, duration } from './Campaign'
 class CampaignItem extends Component {
     constructor(props) {
         super(props);
@@ -88,7 +87,7 @@ class CampaignItem extends Component {
                                     {like && <MdStar className="inline text-pink-500 mt-1 mr-1 float-right" />}
                                     {Cash(item.price.start_from, false)}
                                 </span>
-                                <span className="text-xs text-gray-700 uppercase"> / {Duration(item.price.duration)}</span>
+                                <span className="text-xs text-gray-700 uppercase"> / {duration(item.price.duration)}</span>
                             </div>
                             <div className="mt-2 text-sm underline uppercase text-indigo-700 font-bold">Read More</div>
                         </div>

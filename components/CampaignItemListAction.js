@@ -3,8 +3,7 @@ import { shape } from 'prop-types'
 import Cash from '../utils/Cash'
 import { BiMap } from 'react-icons/bi'
 import { MdClose } from 'react-icons/md'
-import Duration from './Duration'
-import { facility, type } from './Campaign'
+import { facility, type, duration } from './Campaign'
 import Link from 'next/link'
 class CampaignItemListAction extends Component {
     constructor(props) {
@@ -51,14 +50,14 @@ class CampaignItemListAction extends Component {
             <div className="w-full overflow-hidden divide-gray-100 py-2 flex cursor-pointer" onClick={() => handleLastView(item)}>
                 <div className="container-image w-20 bg-gray-400">
                     <Link href={`/${item.slug}`}>
-                        <img src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} className="object-cover object-center float-left mr-2 w-20 h-24" onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} />
+                        <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${item.images[0]}`} alt={item.title} className="object-cover object-center float-left mr-2 w-20 h-24" onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} />
                     </Link>
                     <MdClose className="button-delete bg-gray-700 text-white rounded-full p-1 mt-1 ml-1" size="24" onClick={() => this.props.callbackFromParent(item)} />
                 </div>
                 <Link href={`/${item.slug}`}>
                     <div className="flex-1 ml-2 self-center">
                         <div className="font-bold">
-                            {Cash(item.price.start_from)}<span className="text-xs uppercase"> / {Duration(item.price.duration)}</span>
+                            {Cash(item.price.start_from)}<span className="text-xs text-gray-700 uppercase"> / {duration(item.price.duration)}</span>
                         </div>
                         <div className="clamp-1">
                             <BiMap size={16} className="inline mr-1 mb-1" /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>

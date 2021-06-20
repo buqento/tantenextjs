@@ -4,13 +4,12 @@ import Cash from '../utils/Cash'
 import { BiMap } from 'react-icons/bi'
 import { MdClose } from 'react-icons/md'
 import CampaignItemListSkeleton from '../components/CampaignItemListSkeleton'
-import { type, facility } from '../components/Campaign'
+import { type, facility, duration } from '../components/Campaign'
 import Header from '../components/Header'
 import NavComponent from '../components/NavComponent'
 import NavMobile from '../components/NavMobile'
 import Footer from '../components/Footer'
 import Link from 'next/link'
-import Duration from '../components/Duration'
 class History extends React.Component {
     constructor(props) {
         super(props)
@@ -59,14 +58,14 @@ class History extends React.Component {
                                         <div className="w-full overflow-hidden divide-gray-100 py-2 mb-2 flex" key={index}>
                                             <div className="container-image w-20 bg-gray-400">
                                                 <Link href={`/${item.slug}`}>
-                                                    <img src={`https://cdn.statically.io/img/i.imgur.com/w=200/${item.images[0]}`} alt={item.title} className="object-cover object-center float-left mr-2 w-20 h-24" onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} />
+                                                    <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${item.images[0]}`} alt={item.title} className="object-cover object-center float-left mr-2 w-20 h-24" onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} />
                                                 </Link>
                                                 <MdClose className="button-delete bg-gray-700 text-white rounded-full p-1 mt-1 ml-1" size="24" onClick={() => this.handleRemoveHistoryItem(item)} />
                                             </div>
                                             <Link href={`/${item.slug}`}>
                                                 <div className="flex-1 ml-2 self-center">
                                                     <div className="font-bold">
-                                                        {Cash(item.price.start_from)}<span className="text-xs uppercase"> / {Duration(item.price.duration)}</span>
+                                                        {Cash(item.price.start_from)}<span className="text-xs text-gray-700 uppercase"> / {duration(item.price.duration)}</span>
                                                     </div>
                                                     <div className="clamp-1">
                                                         <BiMap size={16} className="inline mr-1 mb-1" /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
