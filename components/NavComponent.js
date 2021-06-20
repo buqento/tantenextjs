@@ -45,11 +45,11 @@ export default function NavComponent() {
                       </span>
                     </a>
                     {navigation.map((item) => (
-                      <Link key={item.name} href={item.href} aria-current={item.current ? 'page' : undefined} itemprop="hasPart">
+                      <a key={item.name} href={item.href} aria-current={item.current ? 'page' : undefined} itemprop="hasPart">
                         <span className="text-gray-300 hover:underline hover:text-white cursor-pointer px-3 py-2 font-medium">
                           {item.name}
                         </span>
-                      </Link>
+                      </a>
                     ))}
                   </div>
                 </div>
