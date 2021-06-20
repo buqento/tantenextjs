@@ -139,4 +139,6 @@ export const Campus = [
     { slug: 'politeknik-negeri-medan', name: 'Politeknik Negeri Medan', province: 'Sumatera Utara' },
     { slug: 'universitas-muhammadiyah-sumatera-utara', name: 'Universitas Muhammadiyah Sumatera Utara', province: 'Sumatera Utara' },
     { slug: 'universitas-negeri-medan', name: 'Universitas Negeri Medan', province: 'Sumatera Utara' },
+    { slug: 'universitas-katolik-santo-thomas-medan', name: 'Universitas Katolik Santo Thomas Medan', province: 'Sumatera Utara' },
+    { slug: 'universitas-quality-medan', name: 'Universitas Quality Medan', province: 'Sumatera Utara' },
 ]
