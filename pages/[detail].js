@@ -13,12 +13,11 @@ import moment from 'moment'
 import ListKosOthers from '../components/ListKosOthers'
 import fire from '../configurations/firebase'
 import Facilities from '../components/Facilities'
-import { type } from '../components/Campaign'
+import { type, duration } from '../components/Campaign'
 import Share from '../components/Share'
 import Footer from '../components/Footer'
 import NavMobile from '../components/NavMobile'
 import { Comments, FacebookProvider } from 'react-facebook';
-import Duration from '../components/Duration'
 class Detail extends React.Component {
   constructor(props) {
     super(props)
@@ -176,7 +175,7 @@ class Detail extends React.Component {
               <div className="self-center flex-auto pr-4">
                 <div className="mt-n2 font-bold">
                   <span className="text-3xl">{Cash(detail.price.start_from)}</span>
-                  <span className="text-xs text-gray-700 uppercase"> / {Duration(detail.price.duration)}</span>
+                  <span className="text-xs text-gray-700 uppercase"> / {duration(detail.price.duration)}</span>
                 </div>
               </div>
               <div>
