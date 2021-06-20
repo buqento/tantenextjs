@@ -46,19 +46,14 @@ class Detail extends React.Component {
                         <div className="mx-3 my-2 divide-y">
                             {
                                 data && data
-                                    .sort(
-                                        function compare(a, b) {
-                                            const dtModifiedA = b.date_view;
-                                            const dtModifiedB = a.date_view;
-                                            let comparison = 0;
-                                            if (dtModifiedA > dtModifiedB) {
-                                                comparison = 1;
-                                            } else if (dtModifiedA < dtModifiedB) {
-                                                comparison = -1;
-                                            }
-                                            return comparison;
-                                        }
-                                    )
+                                    .sort(function compare(a, b) {
+                                        const itemA = a.price.start_from
+                                        const itemB = b.price.start_from
+                                        let comparison = 0
+                                        if (itemA > itemB) comparison = 1
+                                        if (itemA < itemB) comparison = -1
+                                        return comparison
+                                    })
                                     .map((item, index) =>
                                         <div key={index}><CampaignItemListAction key={index} item={item} callbackFromParent={this.handleRemove} /></div>
                                     )

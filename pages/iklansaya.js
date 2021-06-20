@@ -46,19 +46,14 @@ class IklanSaya extends React.Component {
                         <div className="mx-3 divide-y">
                             {
                                 data
-                                    .sort(
-                                        function compare(a, b) {
-                                            const dtA = a.distance;
-                                            const dtB = b.distance;
-                                            let comparison = 0;
-                                            if (dtA > dtB) {
-                                                comparison = 1;
-                                            } else if (dtA < dtB) {
-                                                comparison = -1;
-                                            }
-                                            return comparison;
-                                        }
-                                    )
+                                    .sort(function compare(a, b) {
+                                        const itemA = a.price.start_from
+                                        const itemB = b.price.start_from
+                                        let comparison = 0
+                                        if (itemA > itemB) comparison = 1
+                                        if (itemA < itemB) comparison = -1
+                                        return comparison
+                                    })
                                     .map((item, index) => <div><CampaignItemList key={index} item={item} myads /></div>)
                             }
                         </div>
