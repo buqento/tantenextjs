@@ -130,25 +130,26 @@ class University extends React.Component {
         return (
             <>
                 <NextHead>
-                    <title>Tantekos - Kost &amp; Kontrakan Dekat Kampus {campusName}</title>
+                    <title>Infokost kost murah kost eksklusif kost mewah kost bebas dekat kampus {campusName}</title>
                     <meta name="googlebot" content="index, follow" />
                     <meta name="robot" content="index, follow" />
                     <meta name="application-name" content="Tantekos" />
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                    <meta name="title" content={`Kost Dan Kontrakan Murah Dekat Kampus ${campusName}`} />
-                    <meta name="description" content={`Tersedia Kost Dan Kontrakan Murah Area ${campusName}`} />
+                    <meta name="title" content={`Infokost kost murah kost eksklusif kost mewah kost bebas dekat kampus ${campusName}`} />
+                    <meta name="description" content={`Informasi kost dekat kampus ${campusName}. Kost putri, kost putra, kost pasutri, kost campur. Kost harian, kost bulanan, kost mingguan, dan kost tahunan. Kost murah, kost eksklusif, dan kost bebas. Kost di Jogja, Makassar, Jakarta, Medan, Bandung, Malang, Surabaya, Manado, Denpasar, dan Palembang.`} />
                     <meta name="keywords" content={`infokost, cari kos, cari kost, kost murah, cari kost murah, kost eksklusif, kost exclusive, kost mewah, kost kostan, kost bebas, kos lv, olx kost, rukita kost, kost minimalis, kost pelangi, reddoorz kost, kost orange, kos flamboyan, kost murah, kost dekat ${campusName}`} />
-                    <meta property="og:title" content={`Kost Dan Kontrakan Murah Dekat Kampus ${campusName}`} />
-                    <meta property="og:description" content={`Tersedia Kost Dan Kontrakan Murah Dekat Kampus ${campusName}`} />
+                    <meta property="og:title" content={`Infokost kost murah kost eksklusif kost mewah kost bebas dekat kampus ${campusName}`} />
+                    <meta property="og:description" content={`Informasi kost dekat kampus ${campusName}. Kost putri, kost putra, kost pasutri, kost campur. Kost harian, kost bulanan, kost mingguan, dan kost tahunan. Kost murah, kost eksklusif, dan kost bebas. Kost di Jogja, Makassar, Jakarta, Medan, Bandung, Malang, Surabaya, Manado, Denpasar, dan Palembang.`} />
                     <meta property="og:type" content="website" />
-                    <meta property="og:url" content={`https://tantekos.com/area/${slug}`} />
-                    <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/w=300/${listResult && listResult.length > 0 && listResult[0].image}`} />
+                    <meta property="og:url" content={`https://tantekos.com/area/kampus/${slug}`} />
+                    <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/${listResult && listResult.length > 0 && listResult[0].image}`} />
                     <meta property="og:image:alt" content={campusName} />
                     <meta property="og:locale" content="id_ID" />
                     <meta property="og:site_name" content="Tantekos" />
+                    <meta property="fb:app_id" content="3234331779955939" />
                     <meta name="keyphrases" content={`infokost, cari kos, cari kost, kost murah, cari kost murah, kost eksklusif, kost exclusive, kost mewah, kost kostan, kost bebas, kos lv, olx kost, rukita kost, kost minimalis, kost pelangi, reddoorz kost, kost orange, kos flamboyan, kost murah`} />
                     <meta name="classification" content="Sewa Kost, Property, Rent House, Rent Room, Info Kost, Information, Kost, Room, Cari Kost, Kost Murah, Kost Eksklusif, Kost Bebas, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian, Kost Mingguan, Kost Bulanan, Kost Tahunan" />
-                    <link rel="canonical" content={`https://tantekos.com/area/${slug}`} />
+                    <link rel="canonical" content={`https://tantekos.com/area/kampus/${slug}`} />
                     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureAreaPage) }} />
                 </NextHead>
                 <NavComponent />
