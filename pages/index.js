@@ -20,7 +20,7 @@ class Index extends React.Component {
     const dt = fire.firestore().collection('kosts')
     dt.where('is_active', '==', true)
       .orderBy('date_published', 'desc')
-      .limit(6)
+      .limit(7)
       .onSnapshot(snapshot => {
         const data = snapshot.docs.map(doc => ({
           id: doc.id, ...doc.data()
@@ -30,6 +30,8 @@ class Index extends React.Component {
   }
   render() {
     const { data, load } = this.state
+    const dataFeed = data && data.filter(item => item.user.email === process.env.NEXT_PUBLIC_REACT_APP_EMAIL)
+    const dataSponsored = data && data.filter(item => item.user.email !== process.env.NEXT_PUBLIC_REACT_APP_EMAIL)
     if (typeof window === 'object') {
       var input = document.getElementsByName('search');
       for (var i = 0; i < input.length; i++) {
@@ -44,35 +46,38 @@ class Index extends React.Component {
     return (
       <div>
         <Header info={info} />
+
         <NavComponent />
+
         <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-4">
 
-          {/* col1 */}
           <div>
-
-            {/* search by google */}
             <div className="mx-3 my-3">
               <div class="gcse-search" />
             </div>
-
             <div className="mt-2 mb-3 pb-3  xs:border-b">
               {load && <CampaignItemSkeleton />}
-              {!load && data && <FeedsGrid data={data} />}
+              <div>
+                <div className="lg:mt-3 mb-3 px-3 text-uppercase text-current font-bold">Sponsored</div>
+                {!load && data && <FeedsGrid data={dataSponsored} />}
+              </div>
+              <div>
+                <div className="mt-5 mb-3 px-3 text-uppercase text-current font-bold">New Feed</div>
+                {!load && data && <FeedsGrid data={dataFeed} />}
+                <Link href="/location">
+                  <div className="cursor-pointer align-middle text-center text-indigo-700 font-bold uppercase underline py-3 mx-3">View More Rooms</div>
+                </Link>
+              </div>
             </div>
           </div>
 
-          {/* col2 */}
           <div>
-
-            {/* popular cities */}
             <div className="lg:mt-3 mb-3 px-3">
               <span className="text-uppercase text-current font-bold">Popular Cities</span>
             </div>
             <div className="border-b pb-3 mb-4">
               <ComponentCities />
             </div>
-
-            {/* near campus */}
             <div className="mt-4 py-2 px-3">
               <span className="text-uppercase text-current font-bold">Near Campus</span>
             </div>
@@ -84,21 +89,22 @@ class Index extends React.Component {
                 </div>
               </Link>
             </div>
-
-            {/* facebook group */}
             <div className="m-3 mt-4 mb-n3">
               <span className="text-uppercase text-current font-bold">Facebook Group</span>
             </div>
             <div>
               <GroupSocial />
             </div>
-
           </div>
+
         </div>
+
         <Footer />
+
         <div className="xs:block sm:hidden md:hidden lg:hidden">
           <NavMobile />
         </div>
+
       </div>
     )
   }
