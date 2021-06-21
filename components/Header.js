@@ -97,10 +97,8 @@ class Header extends Component {
                     <meta name="application-name" content="Tantekos" />
                     <meta name="classification" content="Sewa Kost, Property, Rent House, Rent Room, Info Kost, Information, Kost, Room, Cari Kost, Kost Murah, Kost Eksklusif, Kost Bebas, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian, Kost Mingguan, Kost Bulanan, Kost Tahunan" />
                     <meta name="keywords" content="infokost, cari kos, cari kost, kost murah, cari kost murah, kost eksklusif, kost exclusive, kost mewah, kost kostan, kost bebas, kos lv, olx kost, rukita kost, kost minimalis, kost pelangi, reddoorz kost, kost orange, kos flamboyan, kost murah" />
-                    <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/w=300/${images[rand]}.webp`} />
+                    <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/${images[rand]}.webp`} />
                     <meta property="og:image:alt" content={info.title} />
-                    <meta property="og:image:width" content="300" />
-                    <meta property="og:image:height" content="300" />
                     <meta property="og:locale" content="id_ID" />
                     <meta property="og:site_name" content="Tantekos" />
                     <meta property="fb:app_id" content="3234331779955939" />

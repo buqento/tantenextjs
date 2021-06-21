@@ -127,6 +127,8 @@ class University extends React.Component {
                 JSON.parse(structureTypeBreadcrumbList)
             ]
         }
+        const images = ['tt9t2IU', 'NaAULjD', 'RSbvRHn', 'DnxVdqt', 'kOuWQYi', 'TjA9SEq', 'stmSYZ2', 'yXRAu9W', 'rtX3zp9', 'i2aQSZ9']
+        const rand = Math.floor(Math.random() * 10)
         return (
             <>
                 <NextHead>
@@ -142,7 +144,7 @@ class University extends React.Component {
                     <meta property="og:description" content={`Informasi kost dekat kampus ${campusName}. Kost putri, kost putra, kost pasutri, kost campur. Kost harian, kost bulanan, kost mingguan, dan kost tahunan. Kost murah, kost eksklusif, dan kost bebas. Kost di Jogja, Makassar, Jakarta, Medan, Bandung, Malang, Surabaya, Manado, Denpasar, dan Palembang.`} />
                     <meta property="og:type" content="website" />
                     <meta property="og:url" content={`https://tantekos.com/area/kampus/${slug}`} />
-                    <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/${listResult && listResult.length > 0 && listResult[0].image}`} />
+                    <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/${images[rand]}.webp`} />
                     <meta property="og:image:alt" content={campusName} />
                     <meta property="og:locale" content="id_ID" />
                     <meta property="og:site_name" content="Tantekos" />
