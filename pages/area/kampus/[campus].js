@@ -18,7 +18,7 @@ class University extends React.Component {
             load: true,
             data: null,
             listResult: null,
-            campusName: null
+            campusName: ""
         }
     }
     componentDidMount() {
