@@ -131,20 +131,18 @@ class Detail extends React.Component {
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <meta name="title" content={detail.title} />
           <meta name="description" content={descriptionDetail} />
-          <meta name="keywords" content={`infokost, cari kos, cari kost, kost murah, cari kost murah, kost eksklusif, kost exclusive, kost mewah, kost kostan, kost bebas, kos lv, olx kost, rukita kost, kost minimalis, kost pelangi, reddoorz kost, kost orange, kos flamboyan, ${detail.keywords}`} />
+          <meta name="keywords" content={`infokost, cari kos, cari kost, kost murah, cari kost murah, kost eksklusif, kost exclusive, kost mewah, kost kostan, kost bebas, kos lv, olx kost, rukita kost, kost minimalis, kost pelangi, reddoorz kost, kost orange, kos flamboyan, kost murah, ${detail.keywords}`} />
           <meta property="og:title" content={detail.title} />
           <meta property="og:description" content={descriptionDetail} />
           <meta property="og:type" content="website" />
           <meta property="og:url" content={`https://tantekos.com/${slug}`} />
-          <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/w=300/${detail.images && detail.images[0]}`} />
+          <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/${detail.images && detail.images[0]}`} />
           <meta property="og:image:alt" content={detail.title} />
-          <meta property="og:image:width" content="300" />
-          <meta property="og:image:height" content="300" />
           <meta property="og:locale" content="id_ID" />
           <meta property="og:site_name" content="Tantekos" />
           <meta property="fb:app_id" content="3234331779955939" />
-          <meta name="keyphrases" content={`infokost, cari kos, cari kost, kost murah, cari kost murah, kost eksklusif, kost exclusive, kost mewah, kost kostan, kost bebas, kos lv, olx kost, rukita kost, kost minimalis, kost pelangi, reddoorz kost, kost orange, kos flamboyan, ${detail.keywords}`} />
-          <meta name="classification" content="Business, Rent House, Sewa Kost, Property, Rent Room, Info Kost, Information, Kost, Room, Cari Kost, Kost Murah, Kost Bebas, Application, Mobile Application, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
+          <meta name="keyphrases" content={`infokost, cari kos, cari kost, kost murah, cari kost murah, kost eksklusif, kost exclusive, kost mewah, kost kostan, kost bebas, kos lv, olx kost, rukita kost, kost minimalis, kost pelangi, reddoorz kost, kost orange, kos flamboyan, kost murah, ${detail.keywords}`} />
+          <meta name="classification" content="Sewa Kost, Property, Rent House, Rent Room, Info Kost, Information, Kost, Room, Cari Kost, Kost Murah, Kost Eksklusif, Kost Bebas, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian, Kost Mingguan, Kost Bulanan, Kost Tahunan" />
           <link rel="canonical" content={`https://tantekos.com/${slug}`} />
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureDetailPage) }} />
         </NextHead>

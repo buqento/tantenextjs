@@ -8,6 +8,7 @@ import Message from '../../../components/Message'
 import fire from '../../../configurations/firebase'
 import { string } from 'prop-types'
 import { Campus } from '../../../utils/modals/Campus'
+import NextHead from 'next/head'
 
 class University extends React.Component {
     static async getInitialProps(ctx) { return { slug: ctx.query.campus } }
@@ -67,8 +68,89 @@ class University extends React.Component {
     }
     render() {
         const { listResult, campusName, load } = this.state
+        const { slug } = this.props
+        const structureTypeBreadcrumbList =
+            `{
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "item": {
+                        "@id": "https://tantekos.com/",
+                        "name": "Tantekos"
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "item": {
+                        "@id": "https://tantekos.com/area",
+                        "name": "Area"
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "item": {
+                        "@id": "https://tantekos.com/area/kampus",
+                        "name": "Kampus"
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "item": {
+                        "@id": "https://tantekos.com/area/kampus/${slug}",
+                        "name": "${campusName}"
+                    }
+                }
+            ]
+           }`
+        const structureTypeItemList =
+            `{
+                "@context": "https://schema.org",
+                "@type": "ItemList",
+                "name": "Dekat Kampus ${campusName}",
+                "itemListElement": [
+                    ${listResult && listResult.map((item, index) => `{
+                        "@type": "ListItem",
+                        "position": ${index + 1},
+                        "url": "https://tantekos.com/${item.slug}"
+                    }`)}
+                ]
+            }`
+        const structureAreaPage = {
+            '@graph': [
+                JSON.parse(structureTypeItemList),
+                JSON.parse(structureTypeBreadcrumbList)
+            ]
+        }
         return (
             <>
+                <NextHead>
+                    <title>Tantekos - Kost &amp; Kontrakan Dekat Kampus {campusName}</title>
+                    <meta name="googlebot" content="index, follow" />
+                    <meta name="robot" content="index, follow" />
+                    <meta name="application-name" content="Tantekos" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <meta name="title" content={`Kost Dan Kontrakan Murah Dekat Kampus ${campusName}`} />
+                    <meta name="description" content={`Tersedia Kost Dan Kontrakan Murah Area ${campusName}`} />
+                    <meta name="keywords" content={`infokost, cari kos, cari kost, kost murah, cari kost murah, kost eksklusif, kost exclusive, kost mewah, kost kostan, kost bebas, kos lv, olx kost, rukita kost, kost minimalis, kost pelangi, reddoorz kost, kost orange, kos flamboyan, kost murah, kost dekat ${campusName}`} />
+                    <meta property="og:title" content={`Kost Dan Kontrakan Murah Dekat Kampus ${campusName}`} />
+                    <meta property="og:description" content={`Tersedia Kost Dan Kontrakan Murah Dekat Kampus ${campusName}`} />
+                    <meta property="og:type" content="website" />
+                    <meta property="og:url" content={`https://tantekos.com/area/${slug}`} />
+                    <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/w=300/${listResult && listResult.length > 0 && listResult[0].image}`} />
+                    <meta property="og:image:alt" content={campusName} />
+                    <meta property="og:locale" content="id_ID" />
+                    <meta property="og:site_name" content="Tantekos" />
+                    <meta name="keyphrases" content={`infokost, cari kos, cari kost, kost murah, cari kost murah, kost eksklusif, kost exclusive, kost mewah, kost kostan, kost bebas, kos lv, olx kost, rukita kost, kost minimalis, kost pelangi, reddoorz kost, kost orange, kos flamboyan, kost murah`} />
+                    <meta name="classification" content="Sewa Kost, Property, Rent House, Rent Room, Info Kost, Information, Kost, Room, Cari Kost, Kost Murah, Kost Eksklusif, Kost Bebas, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian, Kost Mingguan, Kost Bulanan, Kost Tahunan" />
+                    <link rel="canonical" content={`https://tantekos.com/area/${slug}`} />
+                    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureAreaPage) }} />
+                </NextHead>
                 <NavComponent />
 
                 {load && <CampaignItemListSkeleton />}

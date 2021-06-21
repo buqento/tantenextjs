@@ -39,8 +39,8 @@ class Index extends React.Component {
       }
     }
     const info = {
-      title: 'Kost Murah Sewa Harian Bulanan Tahunan',
-      description: 'Cari Kost Dan Kontrakan Harian Bulanan Tahunan Murah Terjangkau Nyaman Strategis',
+      title: 'Infokost kost murah kost eksklusif kost mewah kost bebas',
+      description: 'Informasi kost dekat kampus. Kost putri, kost putra, kost pasutri, kost campur. Kost harian, kost bulanan, kost mingguan, dan kost tahunan. Kost murah, kost eksklusif, dan kost bebas. Kost di Jogja, Makassar, Jakarta, Medan, Bandung, Malang, Surabaya, Manado, Denpasar, dan Palembang.',
       url: ''
     }
     return (
