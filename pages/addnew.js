@@ -89,7 +89,6 @@ function Addnew() {
     const [province, setProvince] = useState("Bali")
     const [city, setCity] = useState("Denpasar")
     const [district, setDistrict] = useState("Denpasar Utara")
-    const [near, setNear] = useState("")
     const [lat_lng, setLatlng] = useState("")
     const [contact_phone, setContactPhone] = useState("")
     const [contact_whatsapp, setContactWhatsapp] = useState("")
@@ -170,8 +169,7 @@ function Addnew() {
         const bulan = durations.bulan ? 'kost bulanan, ' : ''
         const tahun = durations.tahun ? 'kost tahunan, ' : ''
 
-        const nearCampus = strToArray(near)
-        const keywords = hari + minggu + bulan + tahun + 'kost putri dekat ' + nearCampus[0] + ', kost putra dekat ' + nearCampus[0] + ', ' + campur + putra + putri + pasutri + 'kost putra dekat ' + district + ', kost putri dekat ' + district + ', kost ' + district + ', kost di ' + district + ', kost ' + city + ', kost di ' + city + ', kost dekat ' + nearCampus[0]
+        const keywords = hari + minggu + bulan + tahun + campur + putra + putri + pasutri + 'kost putra dekat ' + district + ', kost putri dekat ' + district + ', kost ' + district + ', kost di ' + district + ', kost ' + city + ', kost di ' + city
         let found = false
         const docRef = fire
             .firestore().collection('kosts')
@@ -199,7 +197,7 @@ function Addnew() {
                         .add({
                             date_modified: Date.now(),
                             date_published: Date.now(),
-                            slug: Generateslug(title)+ '-' + randomSlug,
+                            slug: Generateslug(title) + '-' + randomSlug,
                             name: name,
                             title: title + ' ' + randomSlug,
                             description: description,
@@ -210,7 +208,7 @@ function Addnew() {
                                 province: province,
                                 city: city,
                                 district: district,
-                                near: nearCampus,
+                                near: [],
                                 lat_lng: new fire.firestore.GeoPoint(Number(strToArray(lat_lng)[0]), Number(strToArray(lat_lng)[1]))
                             },
                             category: "Kost",
@@ -243,7 +241,6 @@ function Addnew() {
                     setProvince("")
                     setCity("")
                     setDistrict("")
-                    setNear("")
                     setLatlng("")
                     setContactPhone("")
                     setContactWhatsapp("")
@@ -529,12 +526,6 @@ function Addnew() {
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm mb-2 font-bold" htmlFor="lat_lng">Latitude, Longitude</label>
                             <input className="border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none" id="lat_lng" type="text" placeholder="-8.669823629718868, 115.20791945067694" value={lat_lng} onChange={(e) => setLatlng(e.target.value)} />
-                        </div>
-
-                        <div className="mb-4">
-                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="near">Kampus Terdekat</label>
-                            <input className="border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none" id="near" type="text" placeholder="Universitas Atma Jaya Yogyakarta, Universitas Gadjah Mada" value={near} onChange={(e) => setNear(e.target.value)} />
-                            <div className="small my-1 text-green-500 font-bold">Tiap kampus dipisahkan oleh tanda koma ( , )</div>
                         </div>
 
                         <div className="text-3xl font-bold border-b-2 mb-3">Kontak</div>

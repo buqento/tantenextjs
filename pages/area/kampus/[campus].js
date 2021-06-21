@@ -73,7 +73,7 @@ class University extends React.Component {
 
                 {load && <CampaignItemListSkeleton />}
                 { !load &&
-                    <div className="mx-3 my-2">
+                    <div className="mx-3 my-3">
                         <div className="my-2">
                             {
                                 listResult &&
