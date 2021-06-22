@@ -40,7 +40,7 @@ class MapView extends React.Component {
         let res = []
         for (var i = 0; i < data.length; i++) {
             const d = this.getDistance(viewport.latitude, viewport.longitude, data[i].location.lat_lng.w_, data[i].location.lat_lng.T_, "K")
-            if (d <= 1) res.push({
+            if (d <= 2) res.push({
                 facility: data[i].facility,
                 images: data[i].images,
                 location: data[i].location,
