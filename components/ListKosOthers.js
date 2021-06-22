@@ -14,7 +14,7 @@ class ListKosOthers extends Component {
                     listData.length > 0 &&
                     <div>
                         <div className="py-3 font-bold">
-                            <span className="font-normal">{listData.length} Other Room{listData.length > 1 ? 's' : ''} at </span>
+                            <span className="font-normal">{listData.length} Other Room{listData.length > 1 ? 's' : ''} in </span>
                             <span>{`${detail.location.district}, ${detail.location.city}, ${detail.location.province}`}</span>
                         </div>
                         <div className="divide-y">
