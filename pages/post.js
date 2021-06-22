@@ -28,7 +28,7 @@ function Post() {
         tahun: false
     }
     const initFacilityRoom = {
-        kamarMandiDalam: false,
+        kamarMandiDalam: true,
         wifi: false,
         springbed: false,
         kasur: false,
@@ -80,13 +80,11 @@ function Post() {
     ]
     const facilityTitle = (key) => listFacility.filter(facility => facility.name === key)
     const strToArray = (str) => { return str.trim().split(", ") }
-
-    // map
-    const accessToken = "pk.eyJ1IjoiYnVxZW50byIsImEiOiJjanJ5a3p4cDkwZXJiNDlvYXMxcnhud3hhIn0.AhQ-vGYSIo6uTBmQD4MCsA"
-    const lat = parseFloat(-6.175428880001885)
-    const long = parseFloat(106.82717876549592)
+    const accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN
+    const lat = parseFloat(-1.2550654525970668)
+    const long = parseFloat(116.84417465294132)
     const height = 300
-    const zoom = 10
+    const zoom = 4
     const [viewport, setViewport] = useState({
         latitude: lat,
         longitude: long,
@@ -96,8 +94,6 @@ function Post() {
     })
     viewport.width = "100%"
     viewport.height = height
-    // end map
-
     const [publish, setPublish] = useState(false)
     const [type, setType] = useState(initType)
     const [durations, setDurations] = useState(initDurations);
@@ -110,7 +106,6 @@ function Post() {
     const [province, setProvince] = useState("Bali")
     const [city, setCity] = useState("Denpasar")
     const [district, setDistrict] = useState("Denpasar Utara")
-    const [near, setNear] = useState("")
     const [contact_phone, setContactPhone] = useState("")
     const [contact_whatsapp, setContactWhatsapp] = useState("")
     const [start_from, setStartFrom] = useState("")
@@ -118,11 +113,11 @@ function Post() {
     const [allImages, setAllimages] = useState("")
     const [session] = useSession()
 
-    useEffect(() => {
-        if (!session) {
-            signIn('google', { callbackUrl: '/account' })
-        }
-    })
+    // useEffect(() => {
+    //     if (!session) {
+    //         signIn('google', { callbackUrl: '/account' })
+    //     }
+    // })
 
     const onFileChange = event => {
         let f = event.target.files
@@ -227,14 +222,13 @@ function Post() {
                                 province: province,
                                 city: city,
                                 district: district,
-                                near: strToArray(near),
                                 lat_lng: new fire.firestore.GeoPoint(viewport.latitude, viewport.longitude)
                             },
                             category: "Kost",
                             type: arrType,
                             contact_us: {
                                 facebook_url: "contact_fb",
-                                phone: contact_phone,
+                                phone: '+' + contact_phone,
                                 whatsapp: contact_whatsapp
                             },
                             facility: {
@@ -260,7 +254,6 @@ function Post() {
                     setProvince("")
                     setCity("")
                     setDistrict("")
-                    setNear("")
                     setContactPhone("")
                     setContactWhatsapp("")
                     setStartFrom("")
@@ -532,10 +525,10 @@ function Post() {
                         </div>
 
                         <div className="mb-4">
-                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="district">Peta Lokasi <span className="text-danger">*</span></label>
+                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="district">Titik Lokasi Kost <span className="text-danger">*</span></label>
                             <ReactMapGl
                                 {...viewport}
-                                mapboxApiAccessToken="pk.eyJ1IjoiYnVxZW50byIsImEiOiJjanJ5a3p4cDkwZXJiNDlvYXMxcnhud3hhIn0.AhQ-vGYSIo6uTBmQD4MCsA"
+                                mapboxApiAccessToken={accessToken}
                                 onViewportChange={viewport => { setViewport(viewport) }}
                                 mapStyle="mapbox://styles/buqento/ckg4bb6cc2hrr19k84gzrs97j"
                             >
@@ -560,33 +553,27 @@ function Post() {
                             </ReactMapGl>
                         </div>
 
-                        <div className="mb-4">
-                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="near">Kampus Terdekat</label>
-                            <input className="border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none" id="near" type="text" placeholder="Universitas Atma Jaya Yogyakarta, Universitas Gadjah Mada" value={near} onChange={(e) => setNear(e.target.value)} />
-                            <div className="small my-1 text-green-500 font-bold">Tiap kampus dipisahkan oleh tanda koma ( , )</div>
-                        </div>
-
                         <div className="text-3xl font-bold border-b-2 mb-3">Kontak</div>
 
                         <div className="mb-4">
-                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact_phone">Nomor Handphone <span className="text-danger">*</span></label>
-                            <input required className="border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none" id="contact_phone" type="text" placeholder="+6285243322123" value={contact_phone} onChange={(e) => setContactPhone(e.target.value)} />
+                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact_phone">Telepon <span className="text-danger">*</span></label>
+                            <input required className="border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none" id="contact_phone" type="text" placeholder="62852xxxxxxxx" value={contact_phone} onChange={(e) => setContactPhone(e.target.value)} />
                         </div>
 
                         <div className="mb-4">
-                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact_whatsapp">Nomor Whatsapp</label>
-                            <input className="border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none" id="contact_whatsapp" type="text" placeholder="6285243322123" value={contact_whatsapp} onChange={(e) => setContactWhatsapp(e.target.value)} />
+                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact_whatsapp">Whatsapp</label>
+                            <input className="border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none" id="contact_whatsapp" type="text" placeholder="62852xxxxxxxx" value={contact_whatsapp} onChange={(e) => setContactWhatsapp(e.target.value)} />
                         </div>
 
                         <div className="text-3xl font-bold border-b-2 mb-3">Fasilitas</div>
 
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact_phone">Fasilitas Kamar <span className="text-danger">*</span></label>
-                            <div className="capitalize grid grid-cols-3 gap-0">
+                            <div className="capitalize grid grid-cols-2 gap-0">
                                 {
                                     Object.keys(facilityRoom).map((key, index) =>
                                         <div key={index}>
-                                            <div className={`font-bold clamp-1 rounded cursor-pointer m-1 p-1 text-center small ${facilityRoom[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleFacilityRoom(key)}>{facilityTitle(key)[0].title}</div>
+                                            <div className={`font-bold clamp-1 rounded cursor-pointer m-1 px-1 py-3 text-center small ${facilityRoom[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleFacilityRoom(key)}>{facilityTitle(key)[0].title}</div>
                                         </div>
                                     )
                                 }
@@ -595,11 +582,11 @@ function Post() {
 
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact_phone">Fasilitas Kamar Mandi <span className="text-danger">*</span></label>
-                            <div className="capitalize grid grid-cols-3 gap-0">
+                            <div className="capitalize grid grid-cols-2 gap-0">
                                 {
                                     Object.keys(facilityBathroom).map((key, index) =>
                                         <div key={index}>
-                                            <div className={`font-bold clamp-1 rounded cursor-pointer m-1 p-1 text-center small ${facilityBathroom[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleFacilityBathroom(key)}>{facilityTitle(key)[0].title}</div>
+                                            <div className={`font-bold clamp-1 rounded cursor-pointer m-1 px-1 py-3 text-center small ${facilityBathroom[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleFacilityBathroom(key)}>{facilityTitle(key)[0].title}</div>
                                         </div>
                                     )
                                 }
@@ -608,18 +595,18 @@ function Post() {
 
                         <div className="mb-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact_phone">Fasilitas Bersama <span className="text-danger">*</span></label>
-                            <div className="capitalize grid grid-cols-3 gap-0">
+                            <div className="capitalize grid grid-cols-2 gap-0">
                                 {
                                     Object.keys(facilityShare).map((key, index) =>
                                         <div key={index}>
-                                            <div className={`font-bold clamp-1 rounded cursor-pointer m-1 p-1 pr-2 text-center small ${facilityShare[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleFacilityShare(key)}>{facilityTitle(key)[0].title}</div>
+                                            <div className={`font-bold clamp-1 rounded cursor-pointer m-1 px-1 py-3 pr-2 text-center small ${facilityShare[key] ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={() => toggleFacilityShare(key)}>{facilityTitle(key)[0].title}</div>
                                         </div>
                                     )
                                 }
                             </div>
                         </div>
 
-                        <button className={`${publish ? "bg-gray-300 text-current" : "bg-indigo-700 hover:bg-indigo-600 focus:outline-none text-white"} text-xl font-bold py-2 px-4 rounded w-100`} type="submit">{publish ? <BiLoaderCircle size={22} className="animate-spin inline mr-1 mb-1" /> : <FiSend className="inline mr-1 mb-1" />}{publish ? `Sending Data` : `Publish`}</button>
+                        <button className={`${publish ? "bg-gray-300 text-current" : "bg-indigo-700 hover:bg-indigo-600 focus:outline-none text-white"} text-xl font-bold py-3 px-4 rounded w-100`} type="submit">{publish ? <BiLoaderCircle size={22} className="animate-spin inline mr-1 mb-1" /> : <FiSend className="inline mr-1 mb-1" />}{publish ? `Mengirim Data...` : `Kirim`}</button>
 
                     </form>
                     <Footer />
