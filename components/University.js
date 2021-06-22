@@ -16,7 +16,7 @@ class University extends React.Component {
             const latitude = parseFloat(data[i].latlng.split(", ")[0])
             const longitude = parseFloat(data[i].latlng.split(", ")[1])
             const d = this.getDistance(viewport.latitude, viewport.longitude, latitude, longitude, "K")
-            if (d <= 3) res.push({ name: data[i].name, slug: data[i].slug })
+            if (d <= 1) res.push({ name: data[i].name, slug: data[i].slug })
         }
         return res
     }
