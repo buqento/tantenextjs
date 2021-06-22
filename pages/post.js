@@ -79,7 +79,6 @@ function Post() {
         { name: 'rTamu', title: 'R.Tamu' }
     ]
     const facilityTitle = (key) => listFacility.filter(facility => facility.name === key)
-    const strToArray = (str) => { return str.trim().split(", ") }
     const accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN
     const lat = parseFloat(-1.2550654525970668)
     const long = parseFloat(116.84417465294132)
@@ -113,11 +112,11 @@ function Post() {
     const [allImages, setAllimages] = useState("")
     const [session] = useSession()
 
-    // useEffect(() => {
-    //     if (!session) {
-    //         signIn('google', { callbackUrl: '/account' })
-    //     }
-    // })
+    useEffect(() => {
+        if (!session) {
+            signIn('google', { callbackUrl: '/account' })
+        }
+    })
 
     const onFileChange = event => {
         let f = event.target.files
