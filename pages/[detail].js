@@ -18,6 +18,7 @@ import Share from '../components/Share'
 import Footer from '../components/Footer'
 import NavMobile from '../components/NavMobile'
 import { Comments, FacebookProvider } from 'react-facebook';
+import University from '../components/University'
 class Detail extends React.Component {
   constructor(props) {
     super(props)
@@ -163,12 +164,10 @@ class Detail extends React.Component {
 
           <div className="mt-3 mx-3">
 
-            {/* search by google */}
             <div className="mb-3">
               <div class="gcse-search" />
             </div>
 
-            {/* price/share */}
             <div className="mb-1 flex">
               <div className="self-center flex-auto pr-4">
                 <div className="mt-n2 font-bold">
@@ -181,25 +180,22 @@ class Detail extends React.Component {
               </div>
             </div>
 
-            {/* type */}
             <div className="my-2 text-left uppercase text-green-600 font-bold">{type(detail.type)}</div>
 
-            {/* date modified */}
             <small className="text-gray-700 uppercase">{moment(detail.date_modified).fromNow()} &middot; {detail.hit} Views</small>
 
-            {/* title */}
             <h1 className="my-4 text-xl capitalize font-bold">{detail.title}</h1>
 
-            {/* description */}
             <div className="my-3">
               <h2 className="font-bold">Description *</h2>
               <div dangerouslySetInnerHTML={{ __html: detail.description }} />
             </div>
 
-            {/* facilities */}
+            <University viewport={detail.location && detail.location.lat_lng} />
+
             {
               detail && detail.facility && detail.facility.room.length > 0 && detail.facility.room[0] !== "" &&
-              <div className="mb-4">
+              <div className="my-3">
                 <h2 className="font-bold">Room Facilities</h2>
                 <Facilities items={detail.facility.room} />
               </div>
@@ -220,7 +216,6 @@ class Detail extends React.Component {
             }
           </div>
 
-          {/* location */}
           {
             detail.location &&
             <div className="mt-3 mx-3">
@@ -235,7 +230,6 @@ class Detail extends React.Component {
                 <small>* Room data can change at any time.</small>
               </div>
 
-              {/* facebook comment */}
               <div className="mt-3 bg-gray-100">
                 <FacebookProvider appId={process.env.NEXT_PUBLIC_REACT_APP_FB_CLIENT_ID}>
                   <Comments width={`100%`} href={`https://tantekos.com/${detail.slug}`} />
@@ -244,7 +238,6 @@ class Detail extends React.Component {
             </div>
           }
 
-          {/* other */}
           <div className="mx-3">
             <ListKosOthers data={otherdata} detail={detail} />
           </div>
