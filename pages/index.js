@@ -5,6 +5,7 @@ import GroupSocial from '../components/GroupSocial'
 import FeedsGrid from '../components/FeedsGrid'
 import fire from '../configurations/firebase'
 import NavComponent from '../components/NavComponent'
+import Ads from '../components/Ads'
 import Footer from '../components/Footer'
 import NavMobile from '../components/NavMobile'
 import Link from 'next/link'
@@ -17,8 +18,8 @@ class Index extends React.Component {
     this.state = { data: null, load: true }
   }
   componentDidMount() {
-    const dt = fire.firestore().collection('kosts')
-    dt.where('is_active', '==', true)
+    const kostsRef = fire.firestore().collection('kosts')
+    kostsRef.where('is_active', '==', true)
       .orderBy('date_published', 'desc')
       .limit(7)
       .onSnapshot(snapshot => {
@@ -60,6 +61,7 @@ class Index extends React.Component {
               <div>
                 <div className="lg:mt-3 mb-3 px-3 text-uppercase text-current font-bold">Sponsored</div>
                 {!load && data && <FeedsGrid data={dataSponsored} />}
+                <div className="mx-3 my-2"><Ads /></div>
               </div>
               <div>
                 <div className="mt-5 mb-3 px-3 text-uppercase text-current font-bold">New Feed</div>
