@@ -14,12 +14,12 @@ class MapView extends React.Component {
         this.state = {
             load: true,
             data: null,
-            keyword: 'Jakarta Pusat',
+            keyword: 'Universitas Atma Jaya Yogyakarta',
             listResult: null,
             placeName: null,
             viewport: {
-                latitude: -6.177167845630349,
-                longitude: 106.82731084626721
+                latitude: -7.780471209178254,
+                longitude: 110.41408899968006
             }
         }
     }
@@ -40,7 +40,7 @@ class MapView extends React.Component {
         let res = []
         for (var i = 0; i < data.length; i++) {
             const d = this.getDistance(viewport.latitude, viewport.longitude, data[i].location.lat_lng.w_, data[i].location.lat_lng.T_, "K")
-            if (d <= 3) res.push({
+            if (d <= 1) res.push({
                 facility: data[i].facility,
                 images: data[i].images,
                 location: data[i].location,

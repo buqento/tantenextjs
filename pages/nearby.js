@@ -49,7 +49,7 @@ class Nearby extends React.Component {
         let locationText
         for (var i = 0; i < data.length; i++) {
             const d = this.getDistance(latitude, longitude, data[i].location.lat_lng.w_, data[i].location.lat_lng.T_, "K")
-            if (d <= 5) nearbyList.push({
+            if (d <= 1) nearbyList.push({
                 distance: (d).toFixed(1),
                 facility: data[i].facility,
                 images: data[i].images,
