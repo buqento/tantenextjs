@@ -28,11 +28,11 @@ const CampusList = (props) => {
                                 return 0;
                             })
                             .map((item, index) =>
-                                <div className="py-2 px-3" key={index}>
+                                <div className="pb-2 pt-3 px-3" key={index}>
                                     <Link href={`../../area/kampus/${Generateslug(item.name)}`}>
                                         <div className="d-flex cursor-pointer">
                                             <span className="w-full">{item.name}</span>
-                                            <span className="ml-0.5 float-right self-center"><BiChevronRight size={28} className="inline ml-1 mb-1" /></span>
+                                            <span className="ml-0.5 float-right self-center"><BiChevronRight size={20} className="inline ml-1 mb-1" /></span>
                                         </div>
                                     </Link>
                                 </div>
