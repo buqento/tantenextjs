@@ -62,7 +62,7 @@ class IklanSaya extends React.Component {
             {
                 data && data.length === 0 &&
                 <div>
-                    <Message title="Belum ada iklan" message="Kamu belum memiliki Iklan! Silahkan membuat iklan secara gratis." />
+                    <Message title="No Ad" message="You have no ads. Create Your ad for free now" />
                 </div>
             }
             <Footer />

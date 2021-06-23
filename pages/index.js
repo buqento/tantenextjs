@@ -53,49 +53,36 @@ class Index extends React.Component {
         <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-4">
 
           <div>
-            <div className="mx-3 my-3">
-              <div class="gcse-search" />
-            </div>
-            <div className="mt-2 mb-3 pb-3  xs:border-b">
+            <div className="mt-3 mb-3 pb-3  xs:border-b">
               {load && <CampaignItemSkeleton />}
               <div>
-                <div className="lg:mt-3 mb-3 px-3 text-uppercase text-current font-bold">Sponsored</div>
+                <div className="lg:mt-3 mb-3 px-3 text-2xl text-uppercase text-current font-bold">Sponsored</div>
                 {!load && data && <FeedsGrid data={dataSponsored} />}
                 <div className="mx-3 my-2"><Ads /></div>
               </div>
               <div>
-                <div className="mt-5 mb-3 px-3 text-uppercase text-current font-bold">New Feed</div>
+                <div className="mt-5 mb-3 px-3 text-2xl text-uppercase text-current font-bold">New Feed</div>
                 {!load && data && <FeedsGrid data={dataFeed} />}
                 <Link href="/location">
-                  <div className="cursor-pointer align-middle text-center text-indigo-700 font-bold uppercase underline py-3 mx-3">View More Rooms</div>
+                  <div className="cursor-pointer align-middle text-center text-indigo-700 font-bold uppercase underline py-3 mx-3">View More</div>
                 </Link>
               </div>
             </div>
           </div>
 
           <div>
-            <div className="lg:mt-3 mb-3 px-3">
-              <span className="text-uppercase text-current font-bold">Popular Cities</span>
-            </div>
-            <div className="border-b pb-3 mb-4">
-              <ComponentCities />
-            </div>
-            <div className="mt-4 py-2 px-3">
-              <span className="text-uppercase text-current font-bold">Near Campus</span>
-            </div>
+            <div className="lg:mt-3 mb-3 px-3 text-2xl text-uppercase text-current font-bold">Near Campus</div>
             <div className="border-b">
               <Campus />
               <Link href="/area/kampus">
-                <div className="align-middle text-center text-indigo-700 font-bold uppercase mb-3 mt-2 py-2 mx-3 cursor-pointer underline">
-                  <span>View More Campus</span>
+                <div className="align-middle text-center text-indigo-700 font-bold uppercase my-4 py-2 mx-3 cursor-pointer underline">
+                  <span>View More</span>
                 </div>
               </Link>
             </div>
-            <div className="m-3 mt-4 mb-n3">
-              <span className="text-uppercase text-current font-bold">Facebook Group</span>
-            </div>
-            <div>
-              <GroupSocial />
+            <div className="mt-4 py-3 px-3 text-2xl text-uppercase text-current font-bold">Popular Cities</div>
+            <div className="pb-3">
+              <ComponentCities />
             </div>
           </div>
 
