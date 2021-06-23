@@ -84,7 +84,7 @@ class Detail extends React.Component {
                                     .map((itemCity, index) =>
                                         <div className="tab w-full overflow-hidden" key={index}>
                                             <input className="absolute opacity-0" id={index} type="radio" name="tabs2" />
-                                            <label htmlFor={index} className="block pt-3 leading-normal cursor-pointer" onClick={() => this.handleCollapse(index)}>
+                                            <label htmlFor={index} className="block pt-3 font-bold text-gray-800 cursor-pointer" onClick={() => this.handleCollapse(index)}>
                                                 <div><BiMap className="inline mr-1 mb-1" />{itemCity.name}</div>
                                                 <div className="uppercase text-xs text-indigo-700">{itemCity.province}</div>
                                             </label>
@@ -100,7 +100,7 @@ class Detail extends React.Component {
                                                         })
                                                         .filter(item => Generateslug(item.city) === Generateslug(itemCity.name))
                                                         .map((item, index) =>
-                                                            <div className="py-1 pl-2 bg-gray-100" key={index}>
+                                                            <div className="py-1 pl-2 bg-gray-100 cursor-pointer" key={index}>
                                                                 <Link href={`../../area/${Generateslug(item.district)}`}>
                                                                     <div>
                                                                         <span>{item.district}</span>

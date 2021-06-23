@@ -19,14 +19,15 @@ class ComponentCampus extends Component {
                         .map((item, index) =>
                             <Link key={index} href={`area/kampus/${Generateslug(item.name)}`}>
                                 <div className="w-full overflow-hidden py-2 flex">
-                                    <div className="h-20 w-20 bg-indigo-700 text-white flex justify-center items-center uppercase text-4xl">{TitleCase(item.name)}</div>
+                                    <div className="h-20 w-10 bg-indigo-700 text-white flex justify-center items-center uppercase text-xl">{TitleCase(item.name)}</div>
                                     <div className="flex-1 mx-3 mr-3 mt-n1 self-center items-center cursor-pointer">
-                                        <div className="text-xl clamp-2 leading-tight mb-2">
+                                        <div className="text-xl clamp-1 leading-tight mb-2">
                                             {item.name}
-                                            <span className="ml-0.5 float-right self-center"><BiChevronRight size={20} className="inline ml-1 mb-1" /></span>
                                         </div>
                                         <div className="text-sm clamp-1 text-indigo-700 uppercase">
                                             <BiMap className="inline mr-1 mb-1" size={16} /><span>{item.province}</span>
+
+                                            <span className="ml-0.5 float-right self-center"><BiChevronRight size={20} className="inline ml-1 mb-1" /></span>
                                         </div>
                                     </div>
                                 </div>
