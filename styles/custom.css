@@ -64,7 +64,7 @@
     top: 0;
     display: block;
     width: 1.5em;
-    height: 1.5em;
+    /* height: 1.5em; */
     line-height: 1.5;
     font-size: 1.25rem;
     text-align: center;
@@ -78,7 +78,8 @@
     font-weight:bold;
 }
 .tab input[type=radio] + label::after {
-    content: "\276F";
+    /* content: "\276F"; */
+    content: "";
     transform: rotate(90deg);
     color: grey;
     font-size: 1rem;

@@ -67,7 +67,7 @@ class Detail extends React.Component {
                                             <Link href={`../../area/${Generateslug(item.district)}`}>
                                                 <div>
                                                     <span>{item.district}</span>
-                                                    <span className="float-right"><BiChevronRight size={28} className="inline ml-1 mb-1" /></span>
+                                                    <span className="float-right"><BiChevronRight size={20} className="inline ml-1 mb-1" /></span>
                                                 </div>
                                             </Link>
                                         </div>
@@ -84,9 +84,11 @@ class Detail extends React.Component {
                                     .map((itemCity, index) =>
                                         <div className="tab w-full overflow-hidden" key={index}>
                                             <input className="absolute opacity-0" id={index} type="radio" name="tabs2" />
-                                            <label htmlFor={index} className="block pt-3 pb-2 leading-normal cursor-pointer uppercase" onClick={() => this.handleCollapse(index)}>
-                                                <BiMap className="inline mr-1 mb-1" /><span>{itemCity.name}, {itemCity.province}</span></label>
-                                            <div className="tab-content overflow-hidden leading-normal">
+                                            <label htmlFor={index} className="block pt-3 leading-normal cursor-pointer" onClick={() => this.handleCollapse(index)}>
+                                                <div><BiMap className="inline mr-1 mb-1" />{itemCity.name}</div>
+                                                <div className="uppercase text-xs text-indigo-700">{itemCity.province}</div>
+                                            </label>
+                                            <div className="tab-content overflow-hidden leading-normal divide-y">
                                                 {
                                                     DtArea
                                                         .sort(function (a, b) {
@@ -98,11 +100,11 @@ class Detail extends React.Component {
                                                         })
                                                         .filter(item => Generateslug(item.city) === Generateslug(itemCity.name))
                                                         .map((item, index) =>
-                                                            <div className="py-3 px-3 bg-gray-100 border-b" key={index}>
+                                                            <div className="py-1 pl-2 bg-gray-100" key={index}>
                                                                 <Link href={`../../area/${Generateslug(item.district)}`}>
                                                                     <div>
                                                                         <span>{item.district}</span>
-                                                                        <span className="float-right"><Link href="/search/category/Kost"><BiChevronRight size={28} className="inline ml-1 mb-1" /></Link></span>
+                                                                        <span className="float-right"><Link href="/search/category/Kost"><BiChevronRight size={20} className="inline ml-1 mb-1" /></Link></span>
                                                                     </div>
                                                                 </Link>
                                                             </div>

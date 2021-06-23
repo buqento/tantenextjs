@@ -3,6 +3,7 @@ import { Campus } from '../utils/modals/Campus'
 import { BiMap } from 'react-icons/bi'
 import Link from 'next/link'
 import Generateslug from '../utils/Generateslug'
+import { BiChevronRight } from 'react-icons/bi'
 class ComponentCampus extends Component {
     render() {
         const TitleCase = (str, splitBy = ' ') => {
@@ -22,6 +23,7 @@ class ComponentCampus extends Component {
                                     <div className="flex-1 mx-3 mr-3 mt-n1 self-center items-center cursor-pointer">
                                         <div className="text-xl clamp-2 leading-tight mb-2">
                                             {item.name}
+                                            <span className="ml-0.5 float-right self-center"><BiChevronRight size={20} className="inline ml-1 mb-1" /></span>
                                         </div>
                                         <div className="text-sm clamp-1 text-indigo-700 uppercase">
                                             <BiMap className="inline mr-1 mb-1" size={16} /><span>{item.province}</span>
