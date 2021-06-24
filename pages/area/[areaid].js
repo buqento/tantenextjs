@@ -116,6 +116,10 @@ class Detail extends React.Component {
                 <>
                     {load && <CampaignItemListSkeleton />}
                     {data && data.length === 0 && <Message title="No Room" message="Use search to view more rooms" />}
+                    {
+                        data && data.length > 0 &&
+                        <div className="pt-3 px-3 font-bold bg-white"><span className="font-normal">{data.length} Room{data.length > 1 ? 's' : ''} Near</span> {Titlecase(slug)}</div>
+                    }
                     <div className="mx-3 my-2 divide-y">
                         {data && data
                             .sort(function compare(a, b) {

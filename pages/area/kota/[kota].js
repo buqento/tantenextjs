@@ -84,9 +84,9 @@ class Detail extends React.Component {
                                     .map((itemCity, index) =>
                                         <div className="tab w-full overflow-hidden" key={index}>
                                             <input className="absolute opacity-0" id={index} type="radio" name="tabs2" />
-                                            <label htmlFor={index} className="block pt-3 font-bold text-gray-800 cursor-pointer" onClick={() => this.handleCollapse(index)}>
-                                                <div><BiMap className="inline mr-1 mb-1" />{itemCity.name}</div>
-                                                <div className="uppercase text-xs text-indigo-700">{itemCity.province}</div>
+                                            <label htmlFor={index} className="block pt-3 text-gray-800 cursor-pointer" onClick={() => this.handleCollapse(index)}>
+                                                <div className="font-bold text-xl text-gray-800">{itemCity.name}</div>
+                                                <div className="uppercase text-xs text-indigo-700"><BiMap className="inline mr-1 mb-1" />{itemCity.province}</div>
                                             </label>
                                             <div className="tab-content overflow-hidden leading-normal divide-y">
                                                 {
@@ -102,7 +102,7 @@ class Detail extends React.Component {
                                                         .map((item, index) =>
                                                             <div className="py-1 pl-2 bg-gray-100 cursor-pointer" key={index}>
                                                                 <Link href={`../../area/${Generateslug(item.district)}`}>
-                                                                    <div>
+                                                                    <div className="my-2">
                                                                         <span>{item.district}</span>
                                                                         <span className="float-right"><Link href="/search/category/Kost"><BiChevronRight size={20} className="inline ml-1 mb-1" /></Link></span>
                                                                     </div>
