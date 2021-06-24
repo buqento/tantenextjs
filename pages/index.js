@@ -20,7 +20,7 @@ class Index extends React.Component {
     const kostsRef = fire.firestore().collection('kosts')
     kostsRef.where('is_active', '==', true)
       .orderBy('date_published', 'desc')
-      .limit(7)
+      .limit(5)
       .onSnapshot(snapshot => {
         const data = snapshot.docs.map(doc => ({
           id: doc.id, ...doc.data()
@@ -30,14 +30,6 @@ class Index extends React.Component {
   }
   render() {
     const { data, load } = this.state
-    const dataFeed = data && data.filter(item => item.user.email === process.env.NEXT_PUBLIC_REACT_APP_EMAIL)
-    const dataSponsored = data && data.filter(item => item.user.email !== process.env.NEXT_PUBLIC_REACT_APP_EMAIL)
-    if (typeof window === 'object') {
-      var input = document.getElementsByName('search');
-      for (var i = 0; i < input.length; i++) {
-        input[i].style.backgroundImage = '';
-      }
-    }
     const info = {
       title: 'Infokost kost murah kost eksklusif kost mewah kost bebas',
       description: 'Informasi kost dekat kampus. Kost putri, kost putra, kost pasutri, kost campur. Kost harian, kost bulanan, kost mingguan, dan kost tahunan. Kost murah, kost eksklusif, dan kost bebas. Kost di Jogja, Makassar, Jakarta, Medan, Bandung, Malang, Surabaya, Manado, Denpasar, dan Palembang.',
@@ -55,13 +47,9 @@ class Index extends React.Component {
             <div className="mt-3 mb-3 pb-3  xs:border-b">
               {load && <CampaignItemSkeleton />}
               <div>
-                <div className="lg:mt-3 mb-3 px-3 text-2xl text-uppercase text-current font-bold">Sponsored</div>
-                {!load && data && <FeedsGrid data={dataSponsored} />}
-                <div className="mx-3 my-2"><Ads /></div>
-              </div>
-              <div>
-                <div className="mt-5 px-3 text-2xl text-uppercase text-current font-bold">New Feed</div>
-                {!load && data && <FeedsGrid data={dataFeed} />}
+                <div className="mt-3 px-3 text-2xl text-uppercase text-current font-bold">New Feed</div>
+                {!load && data && <FeedsGrid data={data} />}
+                <div className="mx-3 my-3"><Ads /></div>
                 <Link href="/location">
                   <div className="cursor-pointer align-middle text-center text-indigo-700 font-bold uppercase underline py-3 mx-3">View More</div>
                 </Link>
@@ -74,7 +62,7 @@ class Index extends React.Component {
             <div className="border-b">
               <Campus />
               <Link href="/area/kampus">
-                <div className="align-middle text-center text-indigo-700 font-bold uppercase my-4 py-2 cursor-pointer underline">
+                <div className="align-middle text-center text-indigo-700 font-bold uppercase my-3 py-2 cursor-pointer underline">
                   <span>View More</span>
                 </div>
               </Link>

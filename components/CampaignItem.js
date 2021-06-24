@@ -98,7 +98,7 @@ class CampaignItem extends Component {
                         </div>
 
                         {/* facilities */}
-                        <div className="clamp-1">{facility(item.facility.room)}</div>
+                        <div className="clamp-1">{facility(item.facility.room)} &middot; {facility(item.facility.bathroom)} &middot; {facility(item.facility.share)}</div>
 
                         {/* category */}
                         <div className="text-sm uppercase mt-1 text-green-600 font-bold">{type(item.type)}</div>

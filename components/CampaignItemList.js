@@ -75,7 +75,7 @@ class CampaignItemList extends Component {
                         <div className="clamp-1">
                             <BiMap size={16} className="inline mr-1 mb-1" /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
                         </div>
-                        <div className="clamp-1 leading-none">{facility(item.facility.room)}</div>
+                        <div className="clamp-1 leading-none">{facility(item.facility.room)} &middot; {facility(item.facility.bathroom)} &middot; {facility(item.facility.share)}</div>
                         <div className="w-full">
                             <span className="text-green-700 text-xs uppercase font-bold">
                                 {type(item.type)}

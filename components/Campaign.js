@@ -2,7 +2,7 @@ export const type = (types) => {
     types.splice(types.indexOf('Campur'), 1, 'Mixed')
     types.splice(types.indexOf('Putra'), 1, 'Men')
     types.splice(types.indexOf('Putri'), 1, 'Woman')
-    types.splice(types.indexOf('Pasutri'), 1, 'Married Couple')
+    types.splice(types.indexOf('Pasutri'), 1, 'Married')
     return types.join(" · ")
 }
 export const duration = (durations) => {

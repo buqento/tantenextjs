@@ -1,6 +1,6 @@
 import React from 'react'
 import { FacebookShareButton, WhatsappShareButton, WhatsappIcon, FacebookIcon, TelegramShareButton, TelegramIcon, TwitterShareButton, TwitterIcon } from "react-share"
-import { array } from 'prop-types'
+import { shape } from 'prop-types'
 class Share extends React.Component {
     render() {
         const { detail } = this.props;
@@ -15,7 +15,7 @@ class Share extends React.Component {
     }
 }
 Share.propTypes = {
-    detail: array
+    detail: shape({})
 }
 Share.defaultProps = {
     detail: null
