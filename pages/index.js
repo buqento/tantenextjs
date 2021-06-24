@@ -74,7 +74,7 @@ class Index extends React.Component {
             <div className="border-b">
               <Campus />
               <Link href="/area/kampus">
-                <div className="align-middle text-center text-indigo-700 font-bold uppercase my-4 py-2 mx-3 cursor-pointer underline">
+                <div className="align-middle text-center text-indigo-700 font-bold uppercase my-4 py-2 cursor-pointer underline">
                   <span>View More</span>
                 </div>
               </Link>
@@ -83,7 +83,7 @@ class Index extends React.Component {
             <div className="pb-3">
               <ComponentCities />
               <Link href="/area/kota/all">
-                <div className="cursor-pointer align-middle text-center text-indigo-700 font-bold uppercase underline py-3 mx-3">View More</div>
+                <div className="cursor-pointer align-middle text-center text-indigo-700 font-bold uppercase underline py-3">View More</div>
               </Link>
             </div>
           </div>

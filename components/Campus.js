@@ -15,7 +15,7 @@ class ComponentCampus extends Component {
                         .map((item, index) =>
                             <Link key={index} href={`area/kampus/${Generateslug(item.name)}`}>
                                 <div className="w-full overflow-hidden py-2">
-                                    <div className="flex-1 mx-3 mr-3 mt-n1 self-center items-center cursor-pointer">
+                                    <div className="flex-1 mt-n1 self-center items-center cursor-pointer">
                                         <div className="text-xl clamp-1 leading-tight mb-2 font-bold text-gray-800">
                                             {item.name}
                                         </div>
