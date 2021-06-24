@@ -1,10 +1,11 @@
-export const type = (types) => {
+export const type_ = (types) => {
     types.splice(types.indexOf('Campur'), 1, 'Mixed')
     types.splice(types.indexOf('Putra'), 1, 'Men')
     types.splice(types.indexOf('Putri'), 1, 'Woman')
     types.splice(types.indexOf('Pasutri'), 1, 'Married')
     return types.join(" · ")
 }
+export const type = (types) => types.join(" · ")
 export const duration = (durations) => {
     let duration
     switch (durations) {
