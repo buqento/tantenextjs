@@ -22,6 +22,7 @@ export const Campus = [
     { latlng: '-3.681353470497336, 128.2244898185582', slug: 'institut-agama-islam-negeri-ambon', name: 'Institut Agama Islam Negeri Ambon', province: 'Maluku' },
     { latlng: '-3.6776416242940666, 128.21592301018995', slug: 'universitas-darussalam-ambon', name: 'Universitas Darussalam Ambon', province: 'Maluku' },
     { latlng: '-3.6199229279384446, 128.28484386111793', slug: 'politeknik-kesehatan-pasapua', name: 'Politeknik Kesehatan Pasapua', province: 'Maluku' },
+    { latlng: '-3.6659900082471375, 128.20947123432916', slug: 'institut-agama-kristen-negeri-ambon', name: 'Institut Agama Kristen Negeri Ambon', province: 'Maluku' },
 
     { latlng: '-8.652994907208202, 115.22517736809438', slug: 'universitas-mahasaraswati-denpasar', name: 'Universitas Mahasaraswati Denpasar', province: 'Bali' },
     { latlng: '-8.798410527312301, 115.17243501227595', slug: 'universitas-udayana', name: 'Universitas Udayana', province: 'Bali' },
