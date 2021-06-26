@@ -17,10 +17,14 @@ class Detail extends React.Component {
     }
     constructor(props) {
         super(props)
-        this.state = { data: null, load: true }
+        this.state = {
+            data: null,
+            load: true,
+            seo: null
+        }
     }
     async componentDidMount() {
-        const { slug } = this.props;
+        const { slug } = this.props
         const docRef = await fire.firestore().collection('kosts')
             .where("location.district", "==", Titlecase(slug))
         docRef.onSnapshot(snap => {
@@ -28,21 +32,31 @@ class Detail extends React.Component {
                 id: doc.id,
                 ...doc.data()
             }))
-            this.setState({ data, load: false })
+
+            const dataArea = DtArea.filter(item => Generateslug(item.district) === slug)
+            let seoItem = { province: '', city: '', district: '' }
+            if (dataArea.length > 0) seoItem = { province: dataArea[0].province, city: dataArea[0].city, district: dataArea[0].district }
+
+            this.setState(
+                {
+                    data,
+                    seo: {
+                        title: `${data.length} Room${data.length > 1 ? 's' : ''} in ${seoItem.district}, ${seoItem.city}, ${seoItem.province}`,
+                        description: `Cari kost dan kontrakan di area ${seoItem.district}, ${seoItem.city}, ${seoItem.province}`,
+                        keyword: `infokost, cari kos, cari kost, kost murah, cari kost murah, kost eksklusif, kost exclusive, kost mewah, kost kostan, kost bebas, kos lv, olx kost, rukita kost, kost minimalis, kost pelangi, reddoorz kost, kost orange, kos flamboyan, kost di ${seoItem.district}, kost di ${seoItem.city}, kost di ${seoItem.province}`,
+                        image: data[0].images[0]
+                    },
+                    load: false
+                })
         })
         docRef.get().catch(err => console.log(err))
     }
     render() {
-        const { data, load } = this.state
+        const { data, seo, load } = this.state
         const { slug } = this.props
         const dataArea = DtArea.filter(item => Generateslug(item.district) === slug)
         let seoItem = { province: '', city: '', district: '', image: '' }
         if (dataArea.length > 0) seoItem = { province: dataArea[0].province, city: dataArea[0].city, district: dataArea[0].district, image: data && data[0].images[0] }
-        const seo = {
-            title: `${data && data.length} Room${data && data.length > 1 ? 's' : ''} in ${seoItem.district}, ${seoItem.city}, ${seoItem.province}`,
-            description: `Cari kost dan kontrakan di area ${seoItem.district}, ${seoItem.city}, ${seoItem.province}`,
-            keyword: `infokost, cari kos, cari kost, kost murah, cari kost murah, kost eksklusif, kost exclusive, kost mewah, kost kostan, kost bebas, kos lv, olx kost, rukita kost, kost minimalis, kost pelangi, reddoorz kost, kost orange, kos flamboyan, kost di ${seoItem.district}, kost di ${seoItem.city}, kost di ${seoItem.province}`
-        }
         const structureTypeBreadcrumbList =
             `{
               "@context": "https://schema.org",
@@ -110,7 +124,7 @@ class Detail extends React.Component {
                         <meta property="og:description" content={seo.description} />
                         <meta property="og:type" content="website" />
                         <meta property="og:url" content={`https://tantekos.com/area/${slug}`} />
-                        <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/${seoItem.image}`} />
+                        <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/${seo.image}`} />
                         <meta property="og:image:alt" content={seoItem.district} />
                         <meta property="og:locale" content="id_ID" />
                         <meta property="og:site_name" content="Tantekos" />
