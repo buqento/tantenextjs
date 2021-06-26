@@ -156,6 +156,12 @@ export const getServerSideProps = async (context) => {
             ...doc.data()
         })
     })
+    if (datas.length === 0) return {
+        redirect: {
+            permanent: false,
+            destination: '/'
+        }
+    }
     return {
         props: {
             slug: context.query.areaid,
