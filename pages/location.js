@@ -137,7 +137,6 @@ class Location extends React.Component {
         )
     }
 }
-
 export const getServerSideProps = async () => {
     let kosts = []
     const querySnapshot = await fire.firestore().collection('kosts')

@@ -1,24 +1,19 @@
 import React from 'react'
+import { string } from 'prop-types'
 import CampaignItemList from '../../../components/CampaignItemList'
-import CampaignItemListSkeleton from '../../../components/CampaignItemListSkeleton'
 import NavComponent from '../../../components/NavComponent'
 import NavMobile from '../../../components/NavMobile'
 import Footer from '../../../components/Footer'
 import Message from '../../../components/Message'
 import fire from '../../../configurations/firebase'
-import { string } from 'prop-types'
 import { Campus } from '../../../utils/modals/Campus'
 import NextHead from 'next/head'
-
 class University extends React.Component {
-    static async getInitialProps(ctx) { return { slug: ctx.query.campus } }
     constructor(props) {
         super(props);
         this.state = {
-            load: true,
-            data: null,
             listResult: null,
-            campusName: ""
+            campusName: null
         }
     }
     componentDidMount() {
@@ -26,19 +21,14 @@ class University extends React.Component {
         const campus = Campus.filter(campus => campus.slug === slug)
         const lat = parseFloat(campus[0].latlng.split(", ")[0])
         const lng = parseFloat(campus[0].latlng.split(", ")[1])
-        this.setState({ campusName: campus[0].name })
-        const dt = fire.firestore().collection('kosts')
-        dt.where('is_active', '==', true).onSnapshot(snapshot => {
-            const data = snapshot.docs.map(doc => ({
-                id: doc.id, ...doc.data()
-            }))
-            this.setState({ data, listResult: this.setData(lat, lng, data), load: false })
-        })
+        this.setState({ campusName: campus[0].name, listResult: this.setData(lat, lng) })
     }
-    setData = (lat, lng, data) => {
+    setData = (lat, lng) => {
+        const { kosts } = this.props
+        const data = JSON.parse(kosts)
         let res = []
         for (var i = 0; i < data.length; i++) {
-            const d = this.getDistance(lat, lng, data[i].location.lat_lng.w_, data[i].location.lat_lng.T_, "K")
+            const d = this.getDistance(lat, lng, data[i].location.lat_lng.latitude, data[i].location.lat_lng.longitude, "K")
             if (d <= 3) res.push({
                 facility: data[i].facility,
                 images: data[i].images,
@@ -67,7 +57,7 @@ class University extends React.Component {
         return dist
     }
     render() {
-        const { listResult, campusName, load } = this.state
+        const { listResult, campusName } = this.state
         const { slug } = this.props
         const structureTypeBreadcrumbList =
             `{
@@ -155,56 +145,52 @@ class University extends React.Component {
                     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureAreaPage) }} />
                 </NextHead>
                 <NavComponent />
-
-                {load && <CampaignItemListSkeleton />}
-                { !load &&
-                    <div className="mx-3 my-3">
-                        <div className="my-2">
-                            {
-                                listResult &&
-                                <>
-                                    {
-                                        listResult.length > 0 &&
-                                        `${listResult.length} Room${listResult.length > 1 ? 's' : ''} Near `
-                                    }
-                                    {
-                                        listResult.length > 0 &&
-                                            !campusName ? <strong>{campusName}</strong> : ` `
-                                    }
-                                    {
-                                        listResult.length > 0 &&
-                                        campusName && <strong>{campusName}</strong>
-                                    }
-                                    {
-                                        listResult.length === 0 && campusName &&
-                                        <Message title="No Room" message={`No room near ${campusName}. Use search to view more rooms`} />
-                                    }
-                                </>
-                            }
-                        </div>
+                <div className="mx-3 my-3">
+                    <div className="my-2">
                         {
-                            listResult && listResult.length > 0 &&
-                            <div className="divide-y">
+                            listResult &&
+                            <>
                                 {
-                                    listResult
-                                        .sort(function compare(a, b) {
-                                            const priceA = a.price.start_from
-                                            const priceB = b.price.start_from
-                                            let comparison = 0
-                                            if (priceA > priceB) comparison = 1
-                                            if (priceA < priceB) comparison = -1
-                                            return comparison
-                                        })
-                                        .map((item, index) =>
-                                            <div key={index}>
-                                                <CampaignItemList item={item} />
-                                            </div>
-                                        )
+                                    listResult.length > 0 &&
+                                    `${listResult.length} Room${listResult.length > 1 ? 's' : ''} Near `
                                 }
-                            </div>
+                                {
+                                    listResult.length > 0 &&
+                                        !campusName ? <strong>{campusName}</strong> : ` `
+                                }
+                                {
+                                    listResult.length > 0 &&
+                                    campusName && <strong>{campusName}</strong>
+                                }
+                                {
+                                    listResult.length === 0 && campusName &&
+                                    <Message title="No Room" message={`No room near ${campusName}. Use search to view more rooms`} />
+                                }
+                            </>
                         }
                     </div>
-                }
+                    {
+                        listResult && listResult.length > 0 &&
+                        <div className="divide-y">
+                            {
+                                listResult
+                                    .sort(function compare(a, b) {
+                                        const priceA = a.price.start_from
+                                        const priceB = b.price.start_from
+                                        let comparison = 0
+                                        if (priceA > priceB) comparison = 1
+                                        if (priceA < priceB) comparison = -1
+                                        return comparison
+                                    })
+                                    .map((item, index) =>
+                                        <div key={index}>
+                                            <CampaignItemList item={item} />
+                                        </div>
+                                    )
+                            }
+                        </div>
+                    }
+                </div>
                 <Footer />
                 <div className="xs:block sm:hidden md:hidden lg:hidden">
                     <NavMobile />
@@ -213,10 +199,30 @@ class University extends React.Component {
         )
     }
 }
+export const getServerSideProps = async (context) => {
+    let kosts = []
+    const querySnapshot = await fire.firestore().collection('kosts')
+        .where('is_active', '==', true)
+        .get()
+    querySnapshot.forEach(doc => {
+        kosts.push({
+            id: doc.id,
+            ...doc.data()
+        })
+    })
+    return {
+        props: {
+            slug: context.query.campus,
+            kosts: JSON.stringify(kosts)
+        }
+    }
+}
 University.propTypes = {
-    slug: string
+    slug: string,
+    kosts: string
 }
 University.defaultProps = {
-    slug: null
+    slug: null,
+    kosts: null
 }
-export default University;
+export default University

@@ -10,7 +10,6 @@ import Footer from '../components/Footer'
 import NavMobile from '../components/NavMobile'
 import Link from 'next/link'
 import ComponentCities from '../components/Cities'
-
 class Index extends React.Component {
   render() {
     const { kosts } = this.props
@@ -23,11 +22,8 @@ class Index extends React.Component {
     return (
       <div>
         <Header info={info} />
-
         <NavComponent />
-
         <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-4">
-
           <div>
             <div className="mt-3 mb-3 pb-3  xs:border-b">
               <h2 className="mt-3 px-3 text-2xl text-uppercase text-current font-bold">New Feed</h2 >
@@ -38,7 +34,6 @@ class Index extends React.Component {
               </Link>
             </div>
           </div>
-
           <div>
             <h2 className="lg:mt-4 md:mt-4 sm:mt-4 mb-3 px-3 text-2xl text-uppercase text-current font-bold">Near Campus</h2>
             <div className="border-b">
@@ -57,15 +52,11 @@ class Index extends React.Component {
               </Link>
             </div>
           </div>
-
         </div>
-
         <Footer />
-
         <div className="xs:block sm:hidden md:hidden lg:hidden">
           <NavMobile />
         </div>
-
       </div>
     )
   }
@@ -89,10 +80,6 @@ export const getServerSideProps = async () => {
     }
   }
 }
-Index.propTypes = {
-  kosts: string
-}
-Index.defaultProps = {
-  kosts: null
-}
+Index.propTypes = { kosts: string }
+Index.defaultProps = { kosts: null }
 export default Index

@@ -3,6 +3,7 @@ import { Campus } from '../utils/modals/Campus'
 import { BiMap } from 'react-icons/bi'
 import Generateslug from '../utils/Generateslug'
 import { BiChevronRight } from 'react-icons/bi'
+import Link from 'next/link'
 class ComponentCampus extends Component {
     render() {
         return (
@@ -12,7 +13,7 @@ class ComponentCampus extends Component {
                         .sort(() => .7 - Math.random())
                         .slice(0, 7)
                         .map((item, index) =>
-                            <a key={index} href={`area/kampus/${Generateslug(item.name)}`}>
+                            <Link key={index} href={`area/kampus/${Generateslug(item.name)}`}>
                                 <div className="w-full overflow-hidden py-2">
                                     <div className="flex-1 mt-n1 self-center items-center cursor-pointer">
                                         <h3 className="text-xl clamp-1 leading-tight mb-2 font-bold text-gray-800">
@@ -25,7 +26,7 @@ class ComponentCampus extends Component {
                                         </div>
                                     </div>
                                 </div>
-                            </a>
+                            </Link>
                         )
                 }
             </div>
