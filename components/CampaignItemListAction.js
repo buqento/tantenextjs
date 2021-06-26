@@ -64,9 +64,7 @@ class CampaignItemListAction extends Component {
                         </div>
                         <div className="clamp-1 leading-none">{facility(item.facility.room)}</div>
                         <div className="w-full">
-                            <span className="text-green-700 text-xs uppercase font-bold">
-                                {type(item.type)}
-                            </span>
+                            <span className="text-green-800 text-xs uppercase font-bold">{type(item.type)}</span>
                         </div>
                     </div>
                 </Link>

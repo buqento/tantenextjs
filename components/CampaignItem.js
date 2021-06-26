@@ -8,7 +8,7 @@ import moment from 'moment'
 import { facility, type, duration } from './Campaign'
 class CampaignItem extends Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.state = { like: false }
     }
     componentDidMount() {
@@ -80,7 +80,6 @@ class CampaignItem extends Component {
                         </picture>
                     </div>
                     <div className="mx-3 my-3">
-                        {/* price and action */}
                         <div className="text-2xl flex">
                             <div className="flex-auto font-bold">
                                 <span>
@@ -91,17 +90,11 @@ class CampaignItem extends Component {
                             </div>
                             <div className="mt-2 text-sm underline uppercase text-indigo-700 font-bold">Read More</div>
                         </div>
-
-                        {/* location */}
                         <div className="clamp-1">
                             <BiMap size={16} className="inline mr-1 mb-1" /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
                         </div>
-
-                        {/* facilities */}
                         <div className="clamp-1">{facility(item.facility.room)} &middot; {facility(item.facility.bathroom)} &middot; {facility(item.facility.share)}</div>
-
-                        {/* category */}
-                        <div className="text-sm uppercase mt-1 text-green-600 font-bold">{type(item.type)}</div>
+                        <div className="text-sm uppercase mt-1 text-green-800 font-bold">{type(item.type)}</div>
 
                     </div>
                 </div>

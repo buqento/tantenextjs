@@ -62,12 +62,12 @@ class CampaignItemList extends Component {
                             {
                                 nearby &&
                                 <div className="w-full">
-                                    <span className="float-right text-green-700 text-xs mr-1 rounded-full inline-block px-1 border">{item.distance} Km</span>
+                                    <span className="float-right text-green-800 text-xs mr-1 rounded-full inline-block px-1 border">{item.distance} Km</span>
                                 </div>
                             }
                             {
                                 myads && <div className="text-sm uppercase w-full">{item.is_active ?
-                                    <span className="float-right text-green-700 rounded-full px-1 border">Active</span> :
+                                    <span className="float-right text-green-800 rounded-full px-1 border">Active</span> :
                                     <span className="float-right text-indigo-700 rounded-full px-1 border">Waiting</span>
                                 }</div>
                             }
@@ -77,9 +77,7 @@ class CampaignItemList extends Component {
                         </div>
                         <div className="clamp-1 leading-none">{facility(item.facility.room)} &middot; {facility(item.facility.bathroom)} &middot; {facility(item.facility.share)}</div>
                         <div className="w-full">
-                            <span className="text-green-700 text-xs uppercase font-bold">
-                                {type(item.type)}
-                            </span>
+                            <span className="text-green-800 text-xs uppercase font-bold">{type(item.type)}</span>
                         </div>
                     </div>
                 </div>
