@@ -1,4 +1,5 @@
 import React from 'react'
+import { string } from 'prop-types'
 import Header from '../components/Header'
 import Campus from '../components/Campus'
 import FeedsGrid from '../components/FeedsGrid'
@@ -8,28 +9,12 @@ import Ads from '../components/Ads'
 import Footer from '../components/Footer'
 import NavMobile from '../components/NavMobile'
 import Link from 'next/link'
-import CampaignItemSkeleton from '../components/CampaignItemSkeleton'
 import ComponentCities from '../components/Cities'
 
 class Index extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { data: null, load: true }
-  }
-  componentDidMount() {
-    const kostsRef = fire.firestore().collection('kosts')
-    kostsRef.where('is_active', '==', true)
-      .orderBy('date_published', 'desc')
-      .limit(5)
-      .onSnapshot(snapshot => {
-        const data = snapshot.docs.map(doc => ({
-          id: doc.id, ...doc.data()
-        }))
-        this.setState({ data, load: false })
-      })
-  }
   render() {
-    const { data, load } = this.state
+    const { kosts } = this.props
+    const data = JSON.parse(kosts)
     const info = {
       title: 'Infokost kost murah kost eksklusif kost mewah kost bebas',
       description: 'Informasi kost dekat kampus. Kost putri, kost putra, kost pasutri, kost campur. Kost harian, kost bulanan, kost mingguan, dan kost tahunan. Kost murah, kost eksklusif, dan kost bebas. Kost di Jogja, Makassar, Jakarta, Medan, Bandung, Malang, Surabaya, Manado, Denpasar, dan Palembang.',
@@ -46,8 +31,7 @@ class Index extends React.Component {
           <div>
             <div className="mt-3 mb-3 pb-3  xs:border-b">
               <h2 className="mt-3 px-3 text-2xl text-uppercase text-current font-bold">New Feed</h2 >
-              {load && <CampaignItemSkeleton />}
-              {!load && data && <FeedsGrid data={data} />}
+              <FeedsGrid data={data} />
               <div className="mx-3 my-3"><Ads /></div>
               <Link href="/location">
                 <div className="cursor-pointer align-middle text-center text-indigo-700 font-bold uppercase underline py-3 mx-3">View More</div>
@@ -85,5 +69,30 @@ class Index extends React.Component {
       </div>
     )
   }
+}
+export const getServerSideProps = async () => {
+  let kosts = []
+  const querySnapshot = await fire.firestore().collection('kosts')
+    .where('is_active', '==', true)
+    .orderBy('date_published', 'desc')
+    .limit(5)
+    .get()
+  querySnapshot.forEach(doc => {
+    kosts.push({
+      id: doc.id,
+      ...doc.data()
+    })
+  })
+  return {
+    props: {
+      kosts: JSON.stringify(kosts)
+    }
+  }
+}
+Index.propTypes = {
+  kosts: string
+}
+Index.defaultProps = {
+  kosts: null
 }
 export default Index

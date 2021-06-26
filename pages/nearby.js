@@ -1,4 +1,5 @@
 import React from 'react'
+import { string } from 'prop-types'
 import fire from '../configurations/firebase'
 import CampaignItemList from '../components/CampaignItemList'
 import Message from '../components/Message'
@@ -10,22 +11,14 @@ import Footer from '../components/Footer'
 class Nearby extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { data: null, load: true }
+        this.state = { locationText: null }
     }
     componentDidMount() {
-        const dt = fire.firestore().collection('kosts')
-        dt.where('is_active', '==', true)
-            .onSnapshot(snapshot => {
-                const data = snapshot.docs.map(doc => ({
-                    id: doc.id, ...doc.data()
-                }))
-                this.setState({ data })
-                if (typeof window !== 'undefined' && window.navigator.geolocation) {
-                    window.navigator.geolocation.getCurrentPosition(
-                        this.successfulLookup, this.showAlert
-                    )
-                }
-            })
+        if (typeof window !== 'undefined' && window.navigator.geolocation) {
+            window.navigator.geolocation.getCurrentPosition(
+                this.successfulLookup, this.showAlert
+            )
+        }
     }
     showAlert = () => { console.log('Your location is unknown!') }
     getDistance = (lat1, lon1, lat2, lon2, unit) => {
@@ -44,11 +37,12 @@ class Nearby extends React.Component {
     }
     successfulLookup = position => {
         const { latitude, longitude } = position.coords
-        const { data } = this.state
+        const { kosts } = this.props
+        const data = JSON.parse(kosts)
         let nearbyList = []
         let locationText
         for (var i = 0; i < data.length; i++) {
-            const d = this.getDistance(latitude, longitude, data[i].location.lat_lng.w_, data[i].location.lat_lng.T_, "K")
+            const d = this.getDistance(latitude, longitude, data[i].location.lat_lng.latitude, data[i].location.lat_lng.longitude, "K")
             if (d <= 2) nearbyList.push({
                 distance: (d).toFixed(1),
                 facility: data[i].facility,
@@ -64,10 +58,10 @@ class Nearby extends React.Component {
         fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=111ed9e8cfcb4f7a83d8b17c1671a4f0`)
             .then(response => response.json())
             .then(response => { locationText = response.results[0].formatted })
-            .then(() => this.setState({ locationText, nearbyList, load: false }))
+            .then(() => this.setState({ locationText, nearbyList }))
     }
     render() {
-        const { locationText, nearbyList, load } = this.state
+        const { locationText, nearbyList } = this.state
         const info = {
             title: 'Kost Terdekat Disekitar Kamu',
             description: 'Kost Terdekat Harian Bulanan Tahunan Murah',
@@ -75,11 +69,10 @@ class Nearby extends React.Component {
         }
         return <div>
             <NavComponent />
-
             <Header info={info} />
-            {load && <CampaignItemListSkeleton />}
+            {!nearbyList && <CampaignItemListSkeleton />}
             {
-                !load && nearbyList && nearbyList.length > 0 &&
+                nearbyList && nearbyList.length > 0 &&
                 <>
                     <div className="py-3 px-3 font-bold bg-white"><span className="font-normal">{nearbyList.length} Room{nearbyList.length > 1 ? 's' : ''} Near</span> {locationText}</div>
                     <div className="mx-3 mb-2 divide-y">
@@ -107,5 +100,28 @@ class Nearby extends React.Component {
             </div>
         </div>
     }
+}
+export const getServerSideProps = async () => {
+    let kosts = []
+    const querySnapshot = await fire.firestore().collection('kosts')
+        .where('is_active', '==', true)
+        .get()
+    querySnapshot.forEach(doc => {
+        kosts.push({
+            id: doc.id,
+            ...doc.data()
+        })
+    })
+    return {
+        props: {
+            kosts: JSON.stringify(kosts)
+        }
+    }
+}
+Nearby.propTypes = {
+    kosts: string
+}
+Nearby.defaultProps = {
+    kosts: null
 }
 export default Nearby

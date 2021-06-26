@@ -1,19 +1,16 @@
 import React from 'react'
+import { string } from 'prop-types'
 import Geocoder from 'react-mapbox-gl-geocoder'
 import CampaignItemList from '../components/CampaignItemList'
-import CampaignItemListSkeleton from '../components/CampaignItemListSkeleton'
 import NavComponent from '../components/NavComponent'
 import NavMobile from '../components/NavMobile'
 import Footer from '../components/Footer'
 import Message from '../components/Message'
 import fire from '../configurations/firebase'
-
-class MapView extends React.Component {
+class Location extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            load: true,
-            data: null,
             keyword: 'Universitas Atma Jaya Yogyakarta',
             listResult: null,
             placeName: null,
@@ -25,21 +22,17 @@ class MapView extends React.Component {
     }
     componentDidMount() {
         const input = document.getElementsByTagName("input")[0]
+        const { viewport } = this.state
         input.setAttribute("placeholder", "Location/Area/Address")
         input.select()
-        const { viewport } = this.state
-        const dt = fire.firestore().collection('kosts')
-        dt.where('is_active', '==', true).onSnapshot(snapshot => {
-            const data = snapshot.docs.map(doc => ({
-                id: doc.id, ...doc.data()
-            }))
-            this.setState({ data, listResult: this.setData(viewport, data), load: false })
-        })
+        this.setState({ listResult: this.setData(viewport) })
     }
-    setData = (viewport, data) => {
+    setData = (viewport) => {
+        const { kosts } = this.props
+        const data = JSON.parse(kosts)
         let res = []
         for (var i = 0; i < data.length; i++) {
-            const d = this.getDistance(viewport.latitude, viewport.longitude, data[i].location.lat_lng.w_, data[i].location.lat_lng.T_, "K")
+            const d = this.getDistance(viewport.latitude, viewport.longitude, data[i].location.lat_lng.latitude, data[i].location.lat_lng.longitude, "K")
             if (d <= 2) res.push({
                 facility: data[i].facility,
                 images: data[i].images,
@@ -54,9 +47,9 @@ class MapView extends React.Component {
         return res
     }
     onSelected = (viewport, item) => {
-        const { keyword, data } = this.state
+        const { keyword } = this.state
         this.setState({
-            listResult: this.setData(viewport, data),
+            listResult: this.setData(viewport),
             placeName: item.place_name,
             keyword: keyword
         })
@@ -76,7 +69,7 @@ class MapView extends React.Component {
         return dist
     }
     render() {
-        const { viewport, listResult, placeName, load, keyword } = this.state
+        const { viewport, listResult, placeName, keyword } = this.state
         const mapboxApiKey = process.env.NEXT_PUBLIC_MAPBOX_TOKEN
         return (
             <>
@@ -90,55 +83,52 @@ class MapView extends React.Component {
                         hideOnSelect={true}
                         queryParams={{ country: "id" }} />
                 </div>
-                {load && !placeName && <CampaignItemListSkeleton />}
-                { !load &&
-                    <div className="mx-3 my-2">
-                        <div className="my-2">
-                            {
-                                listResult &&
-                                <>
-                                    {
-                                        listResult.length > 0 &&
-                                        `${listResult.length} Room${listResult.length > 1 ? 's' : ''} Near `
-                                    }
-                                    {
-                                        listResult.length > 0 &&
-                                            !placeName ? <strong>{keyword}</strong> : ` `
-                                    }
-                                    {
-                                        listResult.length > 0 &&
-                                        placeName && <strong>{placeName}</strong>
-                                    }
-                                    {
-                                        listResult.length === 0 && placeName &&
-                                        <Message title="No Room" message={`No room near ${placeName}. Use search to view more rooms`} />
-                                    }
-                                </>
-                            }
-                        </div>
+                <div className="mx-3 my-2">
+                    <div className="my-2">
                         {
-                            listResult && listResult.length > 0 &&
-                            <div className="divide-y">
+                            listResult &&
+                            <>
                                 {
-                                    listResult
-                                        .sort(function compare(a, b) {
-                                            const priceA = a.price.start_from
-                                            const priceB = b.price.start_from
-                                            let comparison = 0
-                                            if (priceA > priceB) comparison = 1
-                                            if (priceA < priceB) comparison = -1
-                                            return comparison
-                                        })
-                                        .map((item, index) =>
-                                            <div key={index}>
-                                                <CampaignItemList item={item} />
-                                            </div>
-                                        )
+                                    listResult.length > 0 &&
+                                    `${listResult.length} Room${listResult.length > 1 ? 's' : ''} Near `
                                 }
-                            </div>
+                                {
+                                    listResult.length > 0 &&
+                                        !placeName ? <strong>{keyword}</strong> : ` `
+                                }
+                                {
+                                    listResult.length > 0 &&
+                                    placeName && <strong>{placeName}</strong>
+                                }
+                                {
+                                    listResult.length === 0 && placeName &&
+                                    <Message title="No Room" message={`No room near ${placeName}. Use search to view more rooms`} />
+                                }
+                            </>
                         }
                     </div>
-                }
+                    {
+                        listResult && listResult.length > 0 &&
+                        <div className="divide-y">
+                            {
+                                listResult
+                                    .sort(function compare(a, b) {
+                                        const priceA = a.price.start_from
+                                        const priceB = b.price.start_from
+                                        let comparison = 0
+                                        if (priceA > priceB) comparison = 1
+                                        if (priceA < priceB) comparison = -1
+                                        return comparison
+                                    })
+                                    .map((item, index) =>
+                                        <div key={index}>
+                                            <CampaignItemList item={item} />
+                                        </div>
+                                    )
+                            }
+                        </div>
+                    }
+                </div>
                 <Footer />
                 <div className="xs:block sm:hidden md:hidden lg:hidden">
                     <NavMobile />
@@ -147,4 +137,28 @@ class MapView extends React.Component {
         )
     }
 }
-export default MapView;
+
+export const getServerSideProps = async () => {
+    let kosts = []
+    const querySnapshot = await fire.firestore().collection('kosts')
+        .where('is_active', '==', true)
+        .get()
+    querySnapshot.forEach(doc => {
+        kosts.push({
+            id: doc.id,
+            ...doc.data()
+        })
+    })
+    return {
+        props: {
+            kosts: JSON.stringify(kosts)
+        }
+    }
+}
+Location.propTypes = {
+    kosts: string
+}
+Location.defaultProps = {
+    kosts: null
+}
+export default Location
