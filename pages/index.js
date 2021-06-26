@@ -45,20 +45,18 @@ class Index extends React.Component {
 
           <div>
             <div className="mt-3 mb-3 pb-3  xs:border-b">
+              <h2 className="mt-3 px-3 text-2xl text-uppercase text-current font-bold">New Feed</h2 >
               {load && <CampaignItemSkeleton />}
-              <div>
-                <div className="mt-3 px-3 text-2xl text-uppercase text-current font-bold">New Feed</div>
-                {!load && data && <FeedsGrid data={data} />}
-                <div className="mx-3 my-3"><Ads /></div>
-                <Link href="/location">
-                  <div className="cursor-pointer align-middle text-center text-indigo-700 font-bold uppercase underline py-3 mx-3">View More</div>
-                </Link>
-              </div>
+              {!load && data && <FeedsGrid data={data} />}
+              <div className="mx-3 my-3"><Ads /></div>
+              <Link href="/location">
+                <div className="cursor-pointer align-middle text-center text-indigo-700 font-bold uppercase underline py-3 mx-3">View More</div>
+              </Link>
             </div>
           </div>
 
           <div>
-            <div className="lg:mt-4 md:mt-4 sm:mt-4 mb-3 px-3 text-2xl text-uppercase text-current font-bold">Near Campus</div>
+            <h2 className="lg:mt-4 md:mt-4 sm:mt-4 mb-3 px-3 text-2xl text-uppercase text-current font-bold">Near Campus</h2>
             <div className="border-b">
               <Campus />
               <Link href="/area/kampus">
@@ -67,7 +65,7 @@ class Index extends React.Component {
                 </div>
               </Link>
             </div>
-            <div className="mt-4 py-3 px-3 text-2xl text-uppercase text-current font-bold">Popular Cities</div>
+            <h2 className="mt-4 py-3 px-3 text-2xl text-uppercase text-current font-bold">Popular Cities</h2>
             <div className="pb-3">
               <ComponentCities />
               <Link href="/area/kota/all">
