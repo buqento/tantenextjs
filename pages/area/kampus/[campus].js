@@ -148,7 +148,7 @@ class University extends React.Component {
                     <meta property="og:image:alt" content={campusName} />
                     <meta property="og:locale" content="id_ID" />
                     <meta property="og:site_name" content="Tantekos" />
-                    <meta property="fb:app_id" content="3234331779955939" />
+                    <meta property="fb:app_id" content={process.env.NEXT_PUBLIC_REACT_APP_FB_CLIENT_ID} />
                     <meta name="keyphrases" content={`infokost, cari kos, cari kost, kost murah, cari kost murah, kost eksklusif, kost exclusive, kost mewah, kost kostan, kost bebas, kos lv, olx kost, rukita kost, kost minimalis, kost pelangi, reddoorz kost, kost orange, kos flamboyan, kost murah`} />
                     <meta name="classification" content="Sewa Kost, Property, Rent House, Rent Room, Info Kost, Information, Kost, Room, Cari Kost, Kost Murah, Kost Eksklusif, Kost Bebas, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian, Kost Mingguan, Kost Bulanan, Kost Tahunan" />
                     <link rel="canonical" content={`https://tantekos.com/area/kampus/${slug}`} />
