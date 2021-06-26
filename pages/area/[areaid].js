@@ -38,6 +38,11 @@ class Detail extends React.Component {
         const dataArea = DtArea.filter(item => Generateslug(item.district) === slug)
         let seoItem = { province: '', city: '', district: '', image: '' }
         if (dataArea.length > 0) seoItem = { province: dataArea[0].province, city: dataArea[0].city, district: dataArea[0].district, image: data && data[0].images[0] }
+        const seo = {
+            title: `${data && data.length} Room${data && data.length > 1 ? 's' : ''} in ${seoItem.district}, ${seoItem.city}, ${seoItem.province}`,
+            description: `Cari kost dan kontrakan di area ${seoItem.district}, ${seoItem.city}, ${seoItem.province}`,
+            keyword: `infokost, cari kos, cari kost, kost murah, cari kost murah, kost eksklusif, kost exclusive, kost mewah, kost kostan, kost bebas, kos lv, olx kost, rukita kost, kost minimalis, kost pelangi, reddoorz kost, kost orange, kos flamboyan, kost di ${seoItem.district}, kost di ${seoItem.city}, kost di ${seoItem.province}`
+        }
         const structureTypeBreadcrumbList =
             `{
               "@context": "https://schema.org",
@@ -91,16 +96,16 @@ class Detail extends React.Component {
         return (
             <>
                 <NextHead>
-                    <title>{data && data.length} Room{data && data.length > 1 ? 's' : ''} in {seoItem.district}, {seoItem.city}, {seoItem.province}</title>
+                    <title>{seo.title}</title>
                     <meta name="googlebot" content="index, follow" />
                     <meta name="robot" content="index, follow" />
                     <meta name="application-name" content="Tantekos" />
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                    <meta name="title" content={`Kost Dan Kontrakan Murah Area ${seoItem.district}`} />
-                    <meta name="description" content={`Tersedia Kost Dan Kontrakan Murah Area ${seoItem.district}`} />
-                    <meta name="keywords" content={`tantekos, Info Kost, Cari kost, kost, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian, ${seoItem.district}`} />
-                    <meta property="og:title" content={`Kost Dan Kontrakan Murah Area ${seoItem.district}`} />
-                    <meta property="og:description" content={`Tersedia Kost Dan Kontrakan Murah Area ${seoItem.district}`} />
+                    <meta name="title" content={seo.title} />
+                    <meta name="description" content={seo.description} />
+                    <meta name="keywords" content={seo.keyword} />
+                    <meta property="og:title" content={seo.title} />
+                    <meta property="og:description" content={seo.description} />
                     <meta property="og:type" content="website" />
                     <meta property="og:url" content={`https://tantekos.com/area/${slug}`} />
                     <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/${seoItem.image}`} />
@@ -108,7 +113,7 @@ class Detail extends React.Component {
                     <meta property="og:locale" content="id_ID" />
                     <meta property="og:site_name" content="Tantekos" />
                     <meta property="fb:app_id" content={process.env.NEXT_PUBLIC_REACT_APP_FB_CLIENT_ID} />
-                    <meta name="keyphrases" content="Info Kost, Cari Kost, Sewa Kost, Kost Bebas, Kost Murah, Kost pasutri, Aplikasi Kost, Aplikasi Pencarian Kost, Aplikasi Info Kost, APlikasi Cari Kost, Kost, Tantekost, Tantekosapp, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
+                    <meta name="keyphrases" content={seo.keyword} />
                     <meta name="classification" content="Business, Rent House, Sewa Kost, Property, Rent Room, Info Kost, Information, Kost, Room, Cari Kost, Kost Murah, Kost Bebas, Application, Mobile Application, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
                     <link rel="canonical" content={`https://tantekos.com/area/${slug}`} />
                     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureAreaPage) }} />
