@@ -12,48 +12,33 @@ import CampaignItemListSkeleton from '../../components/CampaignItemListSkeleton'
 import Message from '../../components/Message'
 import NavComponent from '../../components/NavComponent'
 class Detail extends React.Component {
-    static async getInitialProps(ctx) {
-        return { slug: ctx.query.areaid }
-    }
     constructor(props) {
         super(props)
-        this.state = {
-            data: null,
-            load: true,
-            seo: null
-        }
+        this.state = { seo: null, load: true }
     }
     async componentDidMount() {
-        const { slug } = this.props
-        const docRef = await fire.firestore().collection('kosts')
-            .where("location.district", "==", Titlecase(slug))
-        docRef.onSnapshot(snap => {
-            const data = snap.docs.map(doc => ({
-                id: doc.id,
-                ...doc.data()
-            }))
+        const { slug, datas } = this.props
+        const data = JSON.parse(datas)
 
-            const dataArea = DtArea.filter(item => Generateslug(item.district) === slug)
-            let seoItem = { province: '', city: '', district: '' }
-            if (dataArea.length > 0) seoItem = { province: dataArea[0].province, city: dataArea[0].city, district: dataArea[0].district }
+        const dataArea = DtArea.filter(item => Generateslug(item.district) === slug)
+        let seoItem = { province: '', city: '', district: '' }
+        if (dataArea.length > 0) seoItem = { province: dataArea[0].province, city: dataArea[0].city, district: dataArea[0].district }
 
-            this.setState(
-                {
-                    data,
-                    seo: {
-                        title: `${data.length} Room${data.length > 1 ? 's' : ''} in ${seoItem.district}, ${seoItem.city}, ${seoItem.province}`,
-                        description: `Cari kost dan kontrakan di area ${seoItem.district}, ${seoItem.city}, ${seoItem.province}`,
-                        keyword: `infokost, cari kos, cari kost, kost murah, cari kost murah, kost eksklusif, kost exclusive, kost mewah, kost kostan, kost bebas, kos lv, olx kost, rukita kost, kost minimalis, kost pelangi, reddoorz kost, kost orange, kos flamboyan, kost di ${seoItem.district}, kost di ${seoItem.city}, kost di ${seoItem.province}`,
-                        image: data[0].images[0]
-                    },
-                    load: false
-                })
-        })
-        docRef.get().catch(err => console.log(err))
+        this.setState(
+            {
+                seo: {
+                    title: `${data.length} Room${data.length > 1 ? 's' : ''} in ${seoItem.district}, ${seoItem.city}, ${seoItem.province}`,
+                    description: `Cari kost dan kontrakan di area ${seoItem.district}, ${seoItem.city}, ${seoItem.province}`,
+                    keyword: `infokost, cari kos, cari kost, kost murah, cari kost murah, kost eksklusif, kost exclusive, kost mewah, kost kostan, kost bebas, kos lv, olx kost, rukita kost, kost minimalis, kost pelangi, reddoorz kost, kost orange, kos flamboyan, kost di ${seoItem.district}, kost di ${seoItem.city}, kost di ${seoItem.province}`,
+                    image: data[0].images[0]
+                },
+                load: false
+            })
     }
     render() {
-        const { data, seo, load } = this.state
-        const { slug } = this.props
+        const { load, seo } = this.state
+        const { slug, datas } = this.props
+        const data = JSON.parse(datas)
         const dataArea = DtArea.filter(item => Generateslug(item.district) === slug)
         let seoItem = { province: '', city: '', district: '', image: '' }
         if (dataArea.length > 0) seoItem = { province: dataArea[0].province, city: dataArea[0].city, district: dataArea[0].district, image: data && data[0].images[0] }
@@ -166,10 +151,31 @@ class Detail extends React.Component {
         )
     }
 }
+export const getServerSideProps = async (context) => {
+    let datas = []
+    const querySnapshot = await fire.firestore().collection('kosts')
+        .where("location.district", "==", Titlecase(context.query.areaid))
+        .where('is_active', '==', true)
+        .get()
+    querySnapshot.forEach(doc => {
+        datas.push({
+            id: doc.id,
+            ...doc.data()
+        })
+    })
+    return {
+        props: {
+            slug: context.query.areaid,
+            datas: JSON.stringify(datas)
+        }
+    }
+}
 Detail.propTypes = {
-    slug: string
+    slug: string,
+    datas: string
 }
 Detail.defaultProps = {
-    slug: null
+    slug: null,
+    datas: null
 }
 export default Detail;
