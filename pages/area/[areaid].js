@@ -109,32 +109,29 @@ class Detail extends React.Component {
         };
         return (
             <>
-                {
-                    data &&
-                    <NextHead>
-                        <title>{seo.title}</title>
-                        <meta name="googlebot" content="index, follow" />
-                        <meta name="robot" content="index, follow" />
-                        <meta name="application-name" content="Tantekos" />
-                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                        <meta name="title" content={seo.title} />
-                        <meta name="description" content={seo.description} />
-                        <meta name="keywords" content={seo.keyword} />
-                        <meta property="og:title" content={seo.title} />
-                        <meta property="og:description" content={seo.description} />
-                        <meta property="og:type" content="website" />
-                        <meta property="og:url" content={`https://tantekos.com/area/${slug}`} />
-                        <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/${seo.image}`} />
-                        <meta property="og:image:alt" content={seoItem.district} />
-                        <meta property="og:locale" content="id_ID" />
-                        <meta property="og:site_name" content="Tantekos" />
-                        <meta property="fb:app_id" content={process.env.NEXT_PUBLIC_REACT_APP_FB_CLIENT_ID} />
-                        <meta name="keyphrases" content={seo.keyword} />
-                        <meta name="classification" content="Business, Rent House, Sewa Kost, Property, Rent Room, Info Kost, Information, Kost, Room, Cari Kost, Kost Murah, Kost Bebas, Application, Mobile Application, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
-                        <link rel="canonical" content={`https://tantekos.com/area/${slug}`} />
-                        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureAreaPage) }} />
-                    </NextHead>
-                }
+                <NextHead>
+                    <title>{seo.title}</title>
+                    <meta name="googlebot" content="index, follow" />
+                    <meta name="robot" content="index, follow" />
+                    <meta name="application-name" content="Tantekos" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <meta name="title" content={seo.title} />
+                    <meta name="description" content={seo.description} />
+                    <meta name="keywords" content={seo.keyword} />
+                    <meta property="og:title" content={seo.title} />
+                    <meta property="og:description" content={seo.description} />
+                    <meta property="og:type" content="website" />
+                    <meta property="og:url" content={`https://tantekos.com/area/${slug}`} />
+                    <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/${seo.image}`} />
+                    <meta property="og:image:alt" content={seoItem.district} />
+                    <meta property="og:locale" content="id_ID" />
+                    <meta property="og:site_name" content="Tantekos" />
+                    <meta property="fb:app_id" content={process.env.NEXT_PUBLIC_REACT_APP_FB_CLIENT_ID} />
+                    <meta name="keyphrases" content={seo.keyword} />
+                    <meta name="classification" content="Business, Rent House, Sewa Kost, Property, Rent Room, Info Kost, Information, Kost, Room, Cari Kost, Kost Murah, Kost Bebas, Application, Mobile Application, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian" />
+                    <link rel="canonical" content={`https://tantekos.com/area/${slug}`} />
+                    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureAreaPage) }} />
+                </NextHead>
                 <NavComponent />
                 <>
                     {load && <CampaignItemListSkeleton />}
