@@ -62,14 +62,14 @@ class Nearby extends React.Component {
     }
     render() {
         const { locationText, nearbyList } = this.state
-        const info = {
-            title: 'Tersedia kost terdekat di sekitar lokasi Kamu',
+        const seo = {
+            title: 'Nearby - Kost terdekat di sekitar lokasi Kamu',
             description: 'Kost bebas, kost campur, kost putra, kost putri, kost pasutri terdekat di sekitar lokasi Kamu.',
             url: 'nearby'
         }
         return <div>
             <NavComponent />
-            <Header info={info} />
+            <Header seo={seo} />
             {!nearbyList && <CampaignItemListSkeleton />}
             {
                 nearbyList && nearbyList.length > 0 &&

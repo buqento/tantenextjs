@@ -33,8 +33,8 @@ export default function NavComponent() {
               <div className="ml-2 flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <a href="/">
                   <div className="mt-1 cursor-pointer text-white font-bold flex-shrink-0 flex items-center">
-                    <h1 className="block lg:hidden">TANTEKOS</h1>
-                    <h1 className="hidden lg:block">TANTEKOS</h1>
+                    <div className="block lg:hidden">TANTEKOS</div>
+                    <div className="hidden lg:block">TANTEKOS</div>
                   </div>
                 </a>
                 <div className="hidden sm:block sm:ml-6">

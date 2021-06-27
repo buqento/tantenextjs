@@ -14,19 +14,19 @@ class Index extends React.Component {
   render() {
     const { kosts } = this.props
     const data = JSON.parse(kosts)
-    const info = {
+    const seo = {
       title: 'Infokost kost murah kost eksklusif kost mewah kost bebas',
-      description: 'Informasi kost dekat kampus. Kost putri, kost putra, kost pasutri, kost campur. Kost harian, kost bulanan, kost mingguan, dan kost tahunan. Kost murah, kost eksklusif, dan kost bebas. Kost di Jogja, Makassar, Jakarta, Medan, Bandung, Malang, Surabaya, Manado, Denpasar, dan Palembang.',
+      description: 'Infokost kost dekat kampus. Kost putri, kost putra, kost pasutri, kost campur. Kost harian, kost bulanan, kost mingguan, dan kost tahunan. Kost murah, kost eksklusif, dan kost bebas. Kost di Jogja, Makassar, Jakarta, Medan, Bandung, Malang, Surabaya, Manado, Denpasar, dan Palembang.',
       url: ''
     }
     return (
       <div>
-        <Header info={info} />
+        <Header seo={seo} />
         <NavComponent />
         <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-4">
           <div>
             <div className="mt-3 mb-3 pb-3  xs:border-b">
-              <h2 className="mt-3 px-3 text-2xl text-uppercase text-current font-bold">New Feed</h2 >
+              <h1 className="mt-3 px-3 text-2xl text-uppercase text-current font-bold">New Feed</h1>
               <FeedsGrid data={data} />
               <div className="mx-3 my-3"><Ads /></div>
               <Link href="/location">

@@ -180,14 +180,14 @@ class Detail extends React.Component {
         if (dataCallback && dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---') { titleHead = dataCallback.province }
         if (dataCallback && dataCallback.city !== '---Semua---') { titleHead = dataCallback.city + ', ' + dataCallback.province }
         if (dataCallback && dataCallback.district !== '---Semua---') { titleHead = dataCallback.district + ', ' + dataCallback.city + ', ' + dataCallback.province }
-        const info = {
+        const seo = {
             title: 'Cari Kost Murah Sewa Harian Bulanan Tahunan Disekitar Kamu',
             description: 'Kost Murah Sewa Harian Bulanan Tahunan Murah',
             url: 'search/all'
         }
         return <>
             <NavComponent />
-            <Header info={info} />
+            <Header seo={seo} />
             {titleHead && <div className="py-4 px-3 font-bold z-40 sticky top-0 bg-white"><span className="font-normal">Sewa </span>{dataCallback.duration}an, {titleHead} <span className="text-green-700">({data.length})</span></div>}
             <div className="mt-2" ref={(node) => this.node = node}>
                 {

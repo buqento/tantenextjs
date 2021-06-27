@@ -7,6 +7,7 @@ import NavMobile from '../components/NavMobile'
 import Footer from '../components/Footer'
 import Message from '../components/Message'
 import fire from '../configurations/firebase'
+import Header from '../components/Header'
 class Location extends React.Component {
     constructor(props) {
         super(props);
@@ -71,9 +72,15 @@ class Location extends React.Component {
     render() {
         const { viewport, listResult, placeName, keyword } = this.state
         const mapboxApiKey = process.env.NEXT_PUBLIC_MAPBOX_TOKEN
+        const seo = {
+            title: 'Search - Cari kost di sekitar lokasi Kamu',
+            description: 'Kost bebas, kost campur, kost putra, kost putri, kost pasutri terdekat di sekitar lokasi Kamu.',
+            url: 'location'
+        }
         return (
             <>
                 <NavComponent />
+                <Header seo={seo} />
                 <div className="my-3">
                     <Geocoder
                         className="border text-lg mx-3 p-0"
@@ -84,7 +91,7 @@ class Location extends React.Component {
                         queryParams={{ country: "id" }} />
                 </div>
                 <div className="mx-3 my-2">
-                    <div className="my-2 font-bold">
+                    <h1 className="my-2 font-bold">
                         {
                             listResult &&
                             <>
@@ -94,7 +101,7 @@ class Location extends React.Component {
                                 {listResult.length === 0 && placeName && <Message title="No Room" message={`No room near ${placeName}. Use search to view more rooms`} />}
                             </>
                         }
-                    </div>
+                    </h1>
                     {
                         listResult && listResult.length > 0 &&
                         <div className="divide-y">

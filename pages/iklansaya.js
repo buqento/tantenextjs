@@ -7,6 +7,7 @@ import Footer from '../components/Footer'
 import NavComponent from '../components/NavComponent'
 import NavMobile from '../components/NavMobile'
 import { getSession } from 'next-auth/client'
+import Header from '../components/Header'
 class IklanSaya extends React.Component {
     constructor(props) {
         super(props)
@@ -32,8 +33,14 @@ class IklanSaya extends React.Component {
     }
     render() {
         const { data, load } = this.state
+        const seo = {
+            title: 'My Ads - Daftar iklan saya',
+            description: 'Kost bebas, kost campur, kost putra, kost putri, kost pasutri terdekat di sekitar lokasi Kamu.',
+            url: 'iklansaya'
+        }
         return <>
             <NavComponent />
+            <Header seo={seo} />
             {
                 load ? <CampaignItemListSkeleton /> :
                     data && data.length > 0 &&

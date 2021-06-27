@@ -31,34 +31,39 @@ class Detail extends React.Component {
     }
     render() {
         const { data, load } = this.state
-        const info = {
-            title: 'Kost Terdekat Disekitar Kamu',
+        const seo = {
+            title: 'Favorites - Daftar kost tersimpan',
             description: 'Kost Terdekat Harian Bulanan Tahunan Murah',
             url: 'favorites'
         }
         return (
             <>
-                <Header info={info} />
+                <Header seo={seo} />
                 <NavComponent />
                 {
                     load ? <CampaignItemListSkeleton /> :
                         data && data.length > 0 &&
-                        <div className="mx-3 my-2 divide-y">
-                            {
-                                data && data
-                                    .sort(function compare(a, b) {
-                                        const itemA = a.price.start_from
-                                        const itemB = b.price.start_from
-                                        let comparison = 0
-                                        if (itemA > itemB) comparison = 1
-                                        if (itemA < itemB) comparison = -1
-                                        return comparison
-                                    })
-                                    .map((item, index) =>
-                                        <div key={index}><CampaignItemListAction key={index} item={item} callbackFromParent={this.handleRemove} /></div>
-                                    )
-                            }
-                        </div>
+                        <>
+                            <h1 className="my-3 mx-3 font-bold">
+                                {`${data.length} Room${data.length > 1 ? 's' : ''} in History`}
+                            </h1>
+                            <div className="mx-3 divide-y">
+                                {
+                                    data && data
+                                        .sort(function compare(a, b) {
+                                            const itemA = a.price.start_from
+                                            const itemB = b.price.start_from
+                                            let comparison = 0
+                                            if (itemA > itemB) comparison = 1
+                                            if (itemA < itemB) comparison = -1
+                                            return comparison
+                                        })
+                                        .map((item, index) =>
+                                            <div key={index}><CampaignItemListAction key={index} item={item} callbackFromParent={this.handleRemove} /></div>
+                                        )
+                                }
+                            </div>
+                        </>
                 }
                 {data && data.length === 0 && <Message title="No Room" message="You don't have favorite room" />}
                 <Footer />

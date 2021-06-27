@@ -59,7 +59,6 @@ class Detail extends React.Component {
     const { slug, details, otherdatas } = this.props
     const { showAlert } = this.state
     const detail = JSON.parse(details)
-    const descriptionDetail = detail && detail.description.replace(/&nbsp;|<\/?[^>]+(>|$)/g, " ")
     const otherdata = JSON.parse(otherdatas)
     const url = "https://tantekos.com/"
     const structureTypeBreadcrumbList =
@@ -114,35 +113,40 @@ class Detail extends React.Component {
         "contactType" : "customer service"
       } 
     }`
-    const structureDetailPage = detail && {
+    const structureDetailPage = {
       '@graph': [
         JSON.parse(structureTypeHostel),
         JSON.parse(structureTypeBreadcrumbList)
       ]
+    }
+    const seo = {
+      title: detail.title,
+      description: detail.description.replace(/&nbsp;|<\/?[^>]+(>|$)/g, " "),
+      keywords: `infokost, cari kos, cari kost, kost murah, cari kost murah, kost eksklusif, kost exclusive, kost mewah, kost kostan, kost bebas, kos lv, olx kost, rukita kost, kost minimalis, kost pelangi, reddoorz kost, kost orange, kos flamboyan, kost murah, ${detail.keywords}`
     }
     return <>
       <NavComponent />
       {
         detail &&
         <NextHead>
-          <title>{detail.title}</title>
+          <title>{seo.title}</title>
           <meta name="googlebot" content="index, follow" />
           <meta name="robot" content="index, follow" />
           <meta name="application-name" content="Tantekos" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <meta name="title" content={detail.title} />
-          <meta name="description" content={descriptionDetail} />
-          <meta name="keywords" content={`infokost, cari kos, cari kost, kost murah, cari kost murah, kost eksklusif, kost exclusive, kost mewah, kost kostan, kost bebas, kos lv, olx kost, rukita kost, kost minimalis, kost pelangi, reddoorz kost, kost orange, kos flamboyan, kost murah, ${detail.keywords}`} />
-          <meta property="og:title" content={detail.title} />
-          <meta property="og:description" content={descriptionDetail} />
+          <meta name="title" content={seo.title} />
+          <meta name="description" content={seo.description} />
+          <meta name="keywords" content={seo.keywords} />
+          <meta property="og:title" content={seo.title} />
+          <meta property="og:description" content={seo.description} />
           <meta property="og:type" content="website" />
           <meta property="og:url" content={`https://tantekos.com/${slug}`} />
           <meta property="og:image" content={`https://cdn.statically.io/img/i.imgur.com/${detail.images && detail.images[0]}`} />
-          <meta property="og:image:alt" content={detail.title} />
+          <meta property="og:image:alt" content={seo.title} />
           <meta property="og:locale" content="id_ID" />
           <meta property="og:site_name" content="Tantekos" />
           <meta property="fb:app_id" content={process.env.NEXT_PUBLIC_REACT_APP_FB_CLIENT_ID} />
-          <meta name="keyphrases" content={`infokost, cari kos, cari kost, kost murah, cari kost murah, kost eksklusif, kost exclusive, kost mewah, kost kostan, kost bebas, kos lv, olx kost, rukita kost, kost minimalis, kost pelangi, reddoorz kost, kost orange, kos flamboyan, kost murah, ${detail.keywords}`} />
+          <meta name="keyphrases" content={seo.keywords} />
           <meta name="classification" content="Sewa Kost, Property, Rent House, Rent Room, Info Kost, Information, Kost, Room, Cari Kost, Kost Murah, Kost Eksklusif, Kost Bebas, Kamar Kost, Kamar Kos, Kostan, Kos, Rumah Kost, Rumah Kos, Kost Harian, Kost Mingguan, Kost Bulanan, Kost Tahunan" />
           <link rel="canonical" content={`https://tantekos.com/${slug}`} />
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureDetailPage) }} />
@@ -150,7 +154,6 @@ class Detail extends React.Component {
       }
 
       {
-        /* slide */
         detail &&
         <div>
           <Slide imagesData={detail.images} imageTitle={detail.title} />

@@ -10,6 +10,7 @@ import NavComponent from '../components/NavComponent'
 import Footer from '../components/Footer'
 import NavMobile from '../components/NavMobile'
 import { BtnBold, BtnUnderline, BtnItalic, Editor, Toolbar, BtnBulletList } from 'react-simple-wysiwyg';
+import Header from '../components/Header'
 function Addnew() {
 
     const initType = {
@@ -371,12 +372,19 @@ function Addnew() {
         }
     }
 
+    const seo = {
+        title: 'Add New',
+        description: 'Kost bebas, kost campur, kost putra, kost putri, kost pasutri terdekat di sekitar lokasi Kamu.',
+        url: 'addnew'
+    }
+
     return (
         <>
             {
                 session &&
                 <>
                     <NavComponent />
+                    <Header seo={seo} />
                     <form className="bg-white mx-3 my-3" onSubmit={onFileUpload}>
 
                         <div className="mb-4">

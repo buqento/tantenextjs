@@ -7,13 +7,18 @@ import Link from 'next/link';
 import NavComponent from '../components/NavComponent'
 import NavMobile from '../components/NavMobile'
 import { signOut, useSession } from 'next-auth/client'
+import Header from '../components/Header'
 export default function Account() {
     const [session, loading] = useSession()
-    const handleLogout = () => {
-        signOut({ callbackUrl: '/' })
+    const handleLogout = () => signOut({ callbackUrl: '/' })
+    const seo = {
+        title: 'My Account',
+        description: 'Kost bebas, kost campur, kost putra, kost putri, kost pasutri terdekat di sekitar lokasi Kamu.',
+        url: 'account'
     }
     return <>
         <NavComponent />
+        <Header seo={seo} />
         {
             !loading && session &&
             <div className="mx-3 divide-y-2 divide">
