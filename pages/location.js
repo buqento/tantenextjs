@@ -84,26 +84,14 @@ class Location extends React.Component {
                         queryParams={{ country: "id" }} />
                 </div>
                 <div className="mx-3 my-2">
-                    <div className="my-2">
+                    <div className="my-2 font-bold">
                         {
                             listResult &&
                             <>
-                                {
-                                    listResult.length > 0 &&
-                                    `${listResult.length} Room${listResult.length > 1 ? 's' : ''} Near `
-                                }
-                                {
-                                    listResult.length > 0 &&
-                                        !placeName ? <strong>{keyword}</strong> : ` `
-                                }
-                                {
-                                    listResult.length > 0 &&
-                                    placeName && <strong>{placeName}</strong>
-                                }
-                                {
-                                    listResult.length === 0 && placeName &&
-                                    <Message title="No Room" message={`No room near ${placeName}. Use search to view more rooms`} />
-                                }
+                                {listResult.length > 0 && `${listResult.length} Room${listResult.length > 1 ? 's' : ''} Near `}
+                                {listResult.length > 0 && !placeName ? keyword : ` `}
+                                {listResult.length > 0 && placeName && placeName}
+                                {listResult.length === 0 && placeName && <Message title="No Room" message={`No room near ${placeName}. Use search to view more rooms`} />}
                             </>
                         }
                     </div>
@@ -140,18 +128,12 @@ class Location extends React.Component {
 export const getServerSideProps = async () => {
     let kosts = []
     const querySnapshot = await fire.firestore().collection('kosts')
-        .where('is_active', '==', true)
-        .get()
+        .where('is_active', '==', true).get()
     querySnapshot.forEach(doc => {
-        kosts.push({
-            id: doc.id,
-            ...doc.data()
-        })
+        kosts.push({ id: doc.id, ...doc.data() })
     })
     return {
-        props: {
-            kosts: JSON.stringify(kosts)
-        }
+        props: { kosts: JSON.stringify(kosts) }
     }
 }
 Location.propTypes = {

@@ -63,8 +63,8 @@ class Nearby extends React.Component {
     render() {
         const { locationText, nearbyList } = this.state
         const info = {
-            title: 'Kost Terdekat Disekitar Kamu',
-            description: 'Kost Terdekat Harian Bulanan Tahunan Murah',
+            title: 'Tersedia kost terdekat di sekitar lokasi Kamu',
+            description: 'Kost bebas, kost campur, kost putra, kost putri, kost pasutri terdekat di sekitar lokasi Kamu.',
             url: 'nearby'
         }
         return <div>
@@ -74,7 +74,7 @@ class Nearby extends React.Component {
             {
                 nearbyList && nearbyList.length > 0 &&
                 <>
-                    <div className="py-3 px-3 font-bold bg-white"><span className="font-normal">{nearbyList.length} Room{nearbyList.length > 1 ? 's' : ''} Near</span> {locationText}</div>
+                    <h1 className="py-3 px-3 font-bold bg-white">{nearbyList.length} Room{nearbyList.length > 1 ? 's' : ''} Near {locationText}</h1>
                     <div className="mx-3 mb-2 divide-y">
                         {
                             nearbyList

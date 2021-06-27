@@ -17,7 +17,7 @@ class Area extends React.Component {
         const location = JSON.parse(locations)
         const seo = {
             title: `${area.length} Room${area.length > 1 ? 's' : ''} in ${location.district}, ${location.city}, ${location.province}`,
-            description: `Masih ada ${area.length} kost bebas, kost putra, dan kost putri tersedia di area ${location.district}, ${location.city}, ${location.province}.`,
+            description: `Masih ada ${area.length} kost bebas, kost campur, kost putra, kost putri dan kost pasutri tersedia di area ${location.district}, ${location.city}, ${location.province}.`,
             keyword: `infokost, cari kos, cari kost, kost murah, cari kost murah, kost eksklusif, kost exclusive, kost mewah, kost kostan, kost bebas, kos lv, olx kost, rukita kost, kost minimalis, kost pelangi, reddoorz kost, kost orange, kos flamboyan, kost di ${location.district}, kost di ${location.city}, kost di ${location.province}`,
             image: area[0].images[0],
             location

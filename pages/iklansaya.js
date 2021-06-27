@@ -6,14 +6,7 @@ import CampaignItemListSkeleton from '../components/CampaignItemListSkeleton'
 import Footer from '../components/Footer'
 import NavComponent from '../components/NavComponent'
 import NavMobile from '../components/NavMobile'
-import { useSession } from 'next-auth/client'
-const withSession = Component => props => {
-    const [session, loading] = useSession()
-    if (Component.prototype.render) {
-        return <Component session={session} loading={loading} {...props} />
-    }
-    throw new Error([])
-};
+import { getSession } from 'next-auth/client'
 class IklanSaya extends React.Component {
     constructor(props) {
         super(props)
@@ -22,9 +15,8 @@ class IklanSaya extends React.Component {
             load: true
         }
     }
-    render() {
-        const { session } = this.props
-        const { data, load } = this.state
+    async componentDidMount() {
+        const session = await getSession()
         if (session) {
             const dt = fire.firestore().collection('kosts')
             dt.where('user.email', '==', session.user.email)
@@ -37,6 +29,9 @@ class IklanSaya extends React.Component {
                     this.setState({ data, load: false })
                 })
         }
+    }
+    render() {
+        const { data, load } = this.state
         return <>
             <NavComponent />
             {
@@ -54,7 +49,7 @@ class IklanSaya extends React.Component {
                                         if (itemA < itemB) comparison = -1
                                         return comparison
                                     })
-                                    .map((item, index) => <div><CampaignItemList key={index} item={item} myads /></div>)
+                                    .map((item, index) => <div key={index}><CampaignItemList item={item} myads /></div>)
                             }
                         </div>
                     </div>
@@ -72,4 +67,4 @@ class IklanSaya extends React.Component {
         </>
     }
 }
-export default withSession(IklanSaya)
+export default IklanSaya
