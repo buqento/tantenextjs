@@ -105,6 +105,12 @@ export const DtArea = [
     { province: 'Jawa Barat', city: 'Bekasi', district: 'Pondokgede' },
     { province: 'Jawa Barat', city: 'Bekasi', district: 'Jatiasih' },
     { province: 'Jawa Barat', city: 'Bekasi', district: 'Bantargebang' },
+    
+    { province: 'Jawa Timur', city: 'Surabaya', district: 'Pakal' },
+    { province: 'Jawa Timur', city: 'Surabaya', district: 'Rungkut' },
+    { province: 'Jawa Timur', city: 'Malang', district: 'Blimbing' },
+    { province: 'Jawa Timur', city: 'Malang', district: 'Kedungkandang' },
+    
     { province: 'Daerah Istimewa Yogyakarta', city: 'Yogyakarta', district: 'Danurejan' },
     { province: 'Daerah Istimewa Yogyakarta', city: 'Yogyakarta', district: 'Gedongtengen' },
     { province: 'Daerah Istimewa Yogyakarta', city: 'Yogyakarta', district: 'Gondokusuman' },
