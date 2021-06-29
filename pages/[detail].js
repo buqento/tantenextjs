@@ -17,8 +17,10 @@ import { type, duration } from '../components/Campaign'
 import Share from '../components/Share'
 import Footer from '../components/Footer'
 import NavMobile from '../components/NavMobile'
-import { Comments, FacebookProvider } from 'react-facebook';
+// import { Comments, FacebookProvider } from 'react-facebook'
 import University from '../components/University'
+import Link from 'next/link'
+import Generateslug from '../utils/Generateslug'
 class Detail extends React.Component {
   constructor(props) {
     super(props)
@@ -223,27 +225,30 @@ class Detail extends React.Component {
             detail.location &&
             <div className="mt-3 mx-3">
               <div className="mb-3">
-                <h2 className="mb-3 font-bold">Room Location <small>({detail.location.district}, {detail.location.city}, {detail.location.province})</small></h2>
+                <h2 className="font-bold mb-1">Room Location</h2>
+                <div className="mb-3">
+                  <Link href={`/area/provinsi/${Generateslug(detail.location.province)}`}><span className="mr-2 underline cursor-pointer text-indigo-700">{detail.location.province}</span></Link>&middot;
+                  <Link href={`/area/kota/${Generateslug(detail.location.city)}`}><span className="mx-2 underline cursor-pointer text-indigo-700">{detail.location.city}</span></Link>&middot;
+                  <Link href={`/area/${Generateslug(detail.location.district)}`}>
+                    <span className="ml-2 underline cursor-pointer text-indigo-700">{detail.location.district}</span>
+                  </Link>
+                </div>
                 <Peta location={detail.location} zoom={10} />
                 <a href={`https://www.google.com/maps/search/?api=1&query=${detail.location.lat_lng.latitude},${detail.location.lat_lng.longitude}`} target="_blank">
-                  <div className="my-3 uppercase underline text-indigo-700 font-bold">View in Google Map <FaExternalLinkAlt className="inline ml-1 mb-1" /></div>
+                  <div className="my-3 underline text-indigo-700">Google Map <FaExternalLinkAlt className="inline ml-1 mb-1" /></div>
                 </a>
               </div>
-              <div className="mt-3">
-                <small>* Room data can change at any time.</small>
-              </div>
+              <div className="mt-3 text-xs text-green-800 font-bold">* Room data can change at any time.</div>
 
-              <div className="mt-3 bg-gray-100">
+              {/* <div className="mt-3 bg-gray-100">
                 <FacebookProvider appId={process.env.NEXT_PUBLIC_REACT_APP_FB_CLIENT_ID}>
                   <Comments width={`100%`} href={`https://tantekos.com/${detail.slug}`} />
                 </FacebookProvider>
-              </div>
+              </div> */}
+
             </div>
           }
-
-          <div className="mx-3">
-            <ListKosOthers data={otherdata} detail={detail} />
-          </div>
+          <ListKosOthers data={otherdata} detail={detail} />
         </div>
       }
 
