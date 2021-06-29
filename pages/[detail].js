@@ -1,7 +1,7 @@
 import React from 'react'
 import NextHead from 'next/head'
 import Router from 'next/router'
-import { string } from 'prop-types'
+import { string, number } from 'prop-types'
 import { FaExternalLinkAlt } from 'react-icons/fa'
 import Cash from '../utils/Cash'
 import Slide from '../components/Slide'
@@ -58,7 +58,7 @@ class Detail extends React.Component {
       .catch(err => { console.log(err) })
   }
   render() {
-    const { slug, details, otherdatas } = this.props
+    const { slug, details, otherdatas, lengthOther } = this.props
     const { showAlert } = this.state
     const detail = JSON.parse(details)
     const otherdata = JSON.parse(otherdatas)
@@ -227,11 +227,11 @@ class Detail extends React.Component {
               <div className="mb-3">
                 <h2 className="font-bold mb-1">Room Location</h2>
                 <div className="mb-3">
-                  <Link href={`/area/provinsi/${Generateslug(detail.location.province)}`}><span className="mr-2 underline cursor-pointer text-indigo-700">{detail.location.province}</span></Link>&middot;
-                  <Link href={`/area/kota/${Generateslug(detail.location.city)}`}><span className="mx-2 underline cursor-pointer text-indigo-700">{detail.location.city}</span></Link>&middot;
                   <Link href={`/area/${Generateslug(detail.location.district)}`}>
-                    <span className="ml-2 underline cursor-pointer text-indigo-700">{detail.location.district}</span>
-                  </Link>
+                    <span className="mr-2 underline cursor-pointer text-indigo-700">{detail.location.district}</span>
+                  </Link>&middot;
+                  <Link href={`/area/kota/${Generateslug(detail.location.city)}`}><span className="mx-2 underline cursor-pointer text-indigo-700">{detail.location.city}</span></Link>&middot;
+                  <Link href={`/area/provinsi/${Generateslug(detail.location.province)}`}><span className="ml-2 underline cursor-pointer text-indigo-700">{detail.location.province}</span></Link>
                 </div>
                 <Peta location={detail.location} zoom={10} />
                 <a href={`https://www.google.com/maps/search/?api=1&query=${detail.location.lat_lng.latitude},${detail.location.lat_lng.longitude}`} target="_blank">
@@ -248,7 +248,7 @@ class Detail extends React.Component {
 
             </div>
           }
-          <ListKosOthers data={otherdata} detail={detail} />
+          <div><ListKosOthers data={otherdata} lengthOther={lengthOther} detail={detail} /></div>
         </div>
       }
 
@@ -289,10 +289,16 @@ export const getServerSideProps = async (context) => {
     }
   }
   let otherData = []
+  const queryLength = await fire.firestore().collection('kosts')
+    .where('slug', '!=', context.query.detail)
+    .where('location.district', '==', detail.location.district)
+    .where('is_active', '==', true)
+    .get()
   const querySnapshot = await fire.firestore().collection('kosts')
     .where('slug', '!=', context.query.detail)
     .where('location.district', '==', detail.location.district)
     .where('is_active', '==', true)
+    .limit(5)
     .get()
   querySnapshot.forEach(doc => {
     otherData.push({
@@ -304,18 +310,21 @@ export const getServerSideProps = async (context) => {
     props: {
       slug: context.query.detail,
       details: JSON.stringify(detail),
-      otherdatas: JSON.stringify(otherData)
+      otherdatas: JSON.stringify(otherData),
+      lengthOther: queryLength.size
     },
   };
 };
 Detail.propTypes = {
   details: string,
   otherdatas: string,
-  slug: string
+  slug: string,
+  lengthOther: number
 }
 Detail.defaultProps = {
   details: null,
   otherdatas: null,
-  slug: null
+  slug: null,
+  lengthOther: 0
 }
 export default Detail;

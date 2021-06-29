@@ -12,8 +12,8 @@ class Filter extends React.Component {
         this.state = {
             duration: 'Bulan',
             province: 'Daerah Istimewa Yogyakarta',
-            city: '---Semua---',
-            district: '---Semua---',
+            city: '---All---',
+            district: '---All---',
             rangePrice: { min: 250000, max: 5000000 },
             facilities: {
                 kamarMandiDalam: true,
@@ -37,8 +37,8 @@ class Filter extends React.Component {
         const nam = event.target.name
         const val = event.target.value
         this.setState({ [nam]: val })
-        nam === 'province' && this.setState({ city: '---Semua---', district: '---Semua---' })
-        nam === 'city' && this.setState({ district: '---Semua---' })
+        nam === 'province' && this.setState({ city: '---All---', district: '---All---' })
+        nam === 'city' && this.setState({ district: '---All---' })
     }
     handleCancleFilter() {
         const { showHideForm } = this.state
@@ -158,19 +158,19 @@ class Filter extends React.Component {
                 <form className="bg-white uppercase" onSubmit={this.handleSearch}>
                     <div className="px-3">
                         <div className="mb-2">
-                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="duration">Jenis Sewa</label>
+                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="duration">Duration</label>
                             <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="duration"
                                 value={duration}
                                 name="duration"
                                 onChange={this.handleChange}>
-                                <option value="Hari">Harian</option>
-                                <option value="Minggu">Mingguan</option>
-                                <option value="Bulan">Bulanan</option>
-                                <option value="Tahun">Tahunan</option>
+                                <option value="Hari">Day</option>
+                                <option value="Minggu">Week</option>
+                                <option value="Bulan">Month</option>
+                                <option value="Tahun">Year</option>
                             </select>
                         </div>
                         <div className="mb-2">
-                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="province">Provinsi</label>
+                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="province">Province</label>
                             <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="province"
                                 name="province"
                                 value={province}
@@ -189,7 +189,7 @@ class Filter extends React.Component {
                             </select>
                         </div>
                         <div className="mb-2">
-                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="city">Kota/Kabupaten</label>
+                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="city">City</label>
                             <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="city"
                                 name="city"
                                 value={city}
@@ -210,7 +210,7 @@ class Filter extends React.Component {
                             </select>
                         </div>
                         <div className="mb-2">
-                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="district">Kecamatan</label>
+                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="district">District</label>
                             <select className="block appearance-none w-full bg-white border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded-full leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="district"
                                 name="district"
                                 value={district}
@@ -231,7 +231,7 @@ class Filter extends React.Component {
                             </select>
                         </div>
                         <div className="text-gray-700 mt-2">
-                            <label className="block text-sm font-bold mb-n1" htmlFor="facilityRoom">Fasilitas Kamar</label>
+                            <label className="block text-sm font-bold mb-n1" htmlFor="facilityRoom">Room Facilites</label>
                             <div className="capitalize grid grid-cols-3 gap-2 my-2 text-sm">
                                 <div className="mb-n1">
                                     <div className={`rounded-full cursor-pointer my-1 p-1 text-center ${facilities.ac ? 'bg-indigo-600 text-white' : 'bg-gray-300 text-gray-500'}`} onClick={this.toggleAc}>AC</div>
@@ -272,7 +272,7 @@ class Filter extends React.Component {
                             </div>
                         </div>
                         <div className="my-3">
-                            <label className="block text-gray-700 text-sm font-bold mb-n1" htmlFor="maxPrice">Harga Sewa</label>
+                            <label className="block text-gray-700 text-sm font-bold mb-n1" htmlFor="maxPrice">Price Range</label>
                             <div className="text-center text-gray-700 mb-n3">
                                 {Cash(rangePrice.min)} - {Cash(rangePrice.max)}
                             </div>
@@ -288,7 +288,7 @@ class Filter extends React.Component {
                         </div>
                     </div>
                     <div className="border-top pt-2 px-3">
-                        <button className="bg-indigo-700 hover:bg-indigo-600 focus:outline-none text-white font-bold py-3 px-3 my-2 mr-3 rounded-full w-full uppercase" type="submit">Mulai Mencari</button>
+                        <button className="bg-indigo-700 hover:bg-indigo-600 focus:outline-none text-white font-bold py-3 px-3 my-2 mr-3 rounded-full w-full uppercase" type="submit">Search</button>
                     </div>
                 </form>
             }

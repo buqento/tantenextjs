@@ -91,31 +91,22 @@ class Detail extends React.Component {
         if (dataCallback.facilitiesRoom.length > 0) facilitiesRoom = dataCallback.facilitiesRoom
         const dt = fire.firestore().collection('kosts')
         let conditions
-        if (dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---') {
+        if (dataCallback.city === '---All---' && dataCallback.district === '---All---') {
             conditions = dt
                 .where('location.province', '==', dataCallback.province)
                 .where("price.start_from", ">=", dataCallback.rangePrice.min)
                 .where("price.start_from", "<=", dataCallback.rangePrice.max)
                 .where("facility.room", "array-contains-any", facilitiesRoom)
                 .where('is_active', '==', true)
-        } else if (dataCallback.city !== '---Semua---' && dataCallback.district === '---Semua---') {
-            conditions = dt
-                .where('location.province', '==', dataCallback.province)
-                .where('location.city', '==', dataCallback.city)
-                .where("price.start_from", ">=", dataCallback.rangePrice.min)
-                .where("price.start_from", "<=", dataCallback.rangePrice.max)
-                .where("facility.room", "array-contains-any", facilitiesRoom)
-                .where('is_active', '==', true)
-        } else if (dataCallback.city !== '---Semua---' && dataCallback.district !== '---Semua---') {
+        } else if (dataCallback.city !== '---All---' && dataCallback.district === '---All---') {
             conditions = dt
                 .where('location.province', '==', dataCallback.province)
                 .where('location.city', '==', dataCallback.city)
-                .where('location.district', '==', dataCallback.district)
                 .where("price.start_from", ">=", dataCallback.rangePrice.min)
                 .where("price.start_from", "<=", dataCallback.rangePrice.max)
                 .where("facility.room", "array-contains-any", facilitiesRoom)
                 .where('is_active', '==', true)
-        } else if (dataCallback.city !== '---Semua---' && dataCallback.district !== '---Semua---') {
+        } else if (dataCallback.city !== '---All---' && dataCallback.district !== '---All---') {
             conditions = dt
                 .where('location.province', '==', dataCallback.province)
                 .where('location.city', '==', dataCallback.city)
@@ -124,7 +115,16 @@ class Detail extends React.Component {
                 .where("price.start_from", "<=", dataCallback.rangePrice.max)
                 .where("facility.room", "array-contains-any", facilitiesRoom)
                 .where('is_active', '==', true)
-        } else if (dataCallback.city !== '---Semua---' && dataCallback.district === '---Semua---') {
+        } else if (dataCallback.city !== '---All---' && dataCallback.district !== '---All---') {
+            conditions = dt
+                .where('location.province', '==', dataCallback.province)
+                .where('location.city', '==', dataCallback.city)
+                .where('location.district', '==', dataCallback.district)
+                .where("price.start_from", ">=", dataCallback.rangePrice.min)
+                .where("price.start_from", "<=", dataCallback.rangePrice.max)
+                .where("facility.room", "array-contains-any", facilitiesRoom)
+                .where('is_active', '==', true)
+        } else if (dataCallback.city !== '---All---' && dataCallback.district === '---All---') {
             conditions = dt
                 .where('location.province', '==', dataCallback.province)
                 .where('location.city', '==', dataCallback.city)
@@ -132,7 +132,7 @@ class Detail extends React.Component {
                 .where("price.start_from", "<=", dataCallback.rangePrice.max)
                 .where("facility.room", "array-contains-any", facilitiesRoom)
                 .where('is_active', '==', true)
-        } else if (dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---') {
+        } else if (dataCallback.city === '---All---' && dataCallback.district === '---All---') {
             conditions = dt
                 .where('location.province', '==', dataCallback.province)
                 .where("price.start_from", ">=", dataCallback.rangePrice.min)
@@ -173,13 +173,14 @@ class Detail extends React.Component {
     }
     scrollToNode(node) { node.scrollIntoView({ behavior: 'smooth' }) }
     render() {
-        const { show, data, more, isFilter, dataCallback, load } = this.state;
+        const { show, data, more, isFilter, dataCallback, load } = this.state
+        const { province, city, district } = this.props
         const handleClose = () => { this.setState({ show: false }) }
         const handleShow = () => { this.setState({ show: true }) }
         let titleHead = null
-        if (dataCallback && dataCallback.city === '---Semua---' && dataCallback.district === '---Semua---') { titleHead = dataCallback.province }
-        if (dataCallback && dataCallback.city !== '---Semua---') { titleHead = dataCallback.city + ', ' + dataCallback.province }
-        if (dataCallback && dataCallback.district !== '---Semua---') { titleHead = dataCallback.district + ', ' + dataCallback.city + ', ' + dataCallback.province }
+        if (dataCallback && dataCallback.city === '---All---' && dataCallback.district === '---All---') { titleHead = dataCallback.province }
+        if (dataCallback && dataCallback.city !== '---All---') { titleHead = dataCallback.city + ', ' + dataCallback.province }
+        if (dataCallback && dataCallback.district !== '---All---') { titleHead = dataCallback.district + ', ' + dataCallback.city + ', ' + dataCallback.province }
         const seo = {
             title: 'Cari Kost Murah Sewa Harian Bulanan Tahunan Disekitar Kamu',
             description: 'Kost Murah Sewa Harian Bulanan Tahunan Murah',
@@ -188,12 +189,12 @@ class Detail extends React.Component {
         return <>
             <NavComponent />
             <Header seo={seo} />
-            {titleHead && <div className="py-4 px-3 font-bold z-40 sticky top-0 bg-white"><span className="font-normal">Sewa </span>{dataCallback.duration}an, {titleHead} <span className="text-green-700">({data.length})</span></div>}
+            {data.length > 0 && titleHead && <div className="py-4 px-3 font-bold z-40 sticky top-0 bg-white">{data.length} Room{data.length > 1 ? 's' : ''}, {dataCallback.duration}an, in {titleHead}</div>}
             <div className="mt-2" ref={(node) => this.node = node}>
                 {
                     <div className="cursor-pointer fixed inset-x-0 bottom-0 mb-5 pb-5 text-center z-40">
                         <span onClick={handleShow} className={`${!show ? 'bg-indigo-700 text-white' : 'bg-white text-black border'} shadow-md w-max px-3 py-3 rounded-full hover:bg-white-700 focus:outline-none uppercase`}>
-                            <BiFilterAlt className="inline mb-1 mr-1" />Saring</span>
+                            <BiFilterAlt className="inline mb-1 mr-1" />Filter</span>
                     </div>
                 }
                 {
@@ -205,17 +206,29 @@ class Detail extends React.Component {
                                 hasMore={more}
                                 loader={<div className="py-3 text-center"></div>}
                             >
-                                <div className="mx-3 mb-3 divide-y">
-                                    {data.map((item, index) => <div key={index}><CampaignItemList key={index} item={item} /></div>
-                                    )}
+                                <div>
+                                    <div>
+                                        {data.length > 0 && <div className="py-3 px-3 font-bold z-40">{data.length} Room{data.length > 1 ? 's' : ''} in {Titlecase(district)}, {Titlecase(city)}, {Titlecase(province)}</div>}
+                                    </div>
+                                    <div className="mx-3 mb-3 divide-y">
+
+                                        {data.map((item, index) => <div key={index}><CampaignItemList key={index} item={item} /></div>
+                                        )}
+                                    </div>
                                 </div>
                             </InfiniteScroll>
                             :
-                            data.length > 0 ? <div className="mx-3 mb-3 divide-y">{data.map((item, index) =>
-                                <div key={index}><CampaignItemList item={item} /></div>
-                            )}</div>
+                            data.length > 0 ?
+                                <div>
+                                    <div className="mx-3 mb-3 divide-y">
+                                        {data.map((item, index) =>
+                                            <div key={index}><CampaignItemList item={item} /></div>
+                                        )}
+                                    </div>
+
+                                </div>
                                 :
-                                <Message title="Tidak Ditemukan" message="Silahkan cari dengan kriteria lainnya" />
+                                <Message title="No Room" message="Use search to view more rooms" />
                 }
             </div>
             <Modal show={show} onHide={handleClose}>
