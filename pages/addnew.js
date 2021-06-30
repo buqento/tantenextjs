@@ -41,6 +41,9 @@ function Addnew() {
     }
     const initFacilityBathroom = {
         shower: false,
+        waterHeater: false,
+        wastafel: false,
+        bathtub: false,
         klosetJongkok: true,
         klosetDuduk: false
     }
@@ -66,6 +69,9 @@ function Addnew() {
         { name: 'tv', title: 'TV' },
         { name: 'ac', title: 'AC' },
         { name: 'shower', title: 'Shower' },
+        { name: 'waterHeater', title: 'Water Heater' },
+        { name: 'wastafel', title: 'Wastafel' },
+        { name: 'bathtub', title: 'Bathtub' },
         { name: 'klosetJongkok', title: 'Kloset Jongkok' },
         { name: 'klosetDuduk', title: 'Kloset Duduk' },
         { name: 'dapur', title: 'Dapur' },
@@ -336,6 +342,15 @@ function Addnew() {
         switch (facility) {
             case 'shower':
                 setFacilityBathroom((prevState) => ({ ...prevState, shower: !facilityBathroom.shower }));
+                break;
+            case 'waterHeater':
+                setFacilityBathroom((prevState) => ({ ...prevState, waterHeater: !facilityBathroom.waterHeater }));
+                break;
+            case 'wastafel':
+                setFacilityBathroom((prevState) => ({ ...prevState, wastafel: !facilityBathroom.wastafel }));
+                break;
+            case 'bathtub':
+                setFacilityBathroom((prevState) => ({ ...prevState, bathtub: !facilityBathroom.bathtub }));
                 break;
             case 'klosetJongkok':
                 setFacilityBathroom((prevState) => ({ ...prevState, klosetJongkok: !facilityBathroom.klosetJongkok }));

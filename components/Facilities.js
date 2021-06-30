@@ -48,6 +48,12 @@ class Facilities extends React.Component {
 
                                         {item === 'Shower' && <div style={{ textAlign: '-webkit-center' }}><img src="../static/images/icons/shower_icon_149724.svg" alt="Shower" className="mr-1" width={24} height={24} />Shower</div>}
 
+                                        {item === 'Water Heater' && <div style={{ textAlign: '-webkit-center' }}><img src="../static/images/icons/water_heater.svg" alt="Water Heater" className="mr-1" width={24} height={24} />Water Heater</div>}
+
+                                        {item === 'Wastafel' && <div style={{ textAlign: '-webkit-center' }}><img src="../static/images/icons/wastafel.svg" alt="Wastafel" className="mr-1" width={24} height={24} />Wastafel</div>}
+
+                                        {item === 'Bathtub' && <div style={{ textAlign: '-webkit-center' }}><img src="../static/images/icons/bath.svg" alt="Bathtub" className="mr-1" width={24} height={24} />Bathtub</div>}
+
                                         {item === 'Kloset Duduk' && <div style={{ textAlign: '-webkit-center' }}><img src="../static/images/icons/toilet_wc_icon_149719.svg" alt="Kloset Duduk" className="mr-1" width={24} height={24} />Kl Duduk</div>}
 
                                         {item === 'Kloset Jongkok' && <div style={{ textAlign: '-webkit-center' }}><img src="../static/images/icons/toilet_squad_icon_149721.svg" alt="Kloset Jongkok" className="mr-1" width={24} height={24} />Kl Jongkok</div>}
