@@ -3,7 +3,7 @@ import { array, bool } from 'prop-types'
 class Facilities extends React.Component {
     render() {
         const { items, inline } = this.props;
-        const facility = ['Kamar Mandi Dalam', 'AC', 'Wifi', 'Springbed', 'Kasur', 'Lemari Pakaian', 'Meja', 'Kursi', 'Exhaust Fan', 'Kipas Angin', 'TV', 'Shower', 'Kloset Duduk', 'Kloset Jongkok', 'Parkir Mobil', 'Parkir Motor', 'R.Jemur', 'R.Cuci', 'R.Tamu', 'Kamar Mandi Luar', 'Dapur']
+        const facility = ['Kamar Mandi Dalam', 'AC', 'Wifi', 'Springbed', 'Kasur', 'Lemari Pakaian', 'Meja', 'Kursi', 'Exhaust Fan', 'Kipas Angin', 'TV', 'Shower', 'Water Heater', 'Bathtub', 'Wastafel', 'Kloset Duduk', 'Kloset Jongkok', 'Parkir Mobil', 'Parkir Motor', 'R.Jemur', 'R.Cuci', 'R.Tamu', 'Kamar Mandi Luar', 'Dapur']
         return (
             <>
                 {
