@@ -228,10 +228,10 @@ class Detail extends React.Component {
                 <h2 className="font-bold mb-1">Room Location</h2>
                 <div className="mb-3">
                   <Link href={`/area/${Generateslug(detail.location.district)}`}>
-                    <span className="mr-2 underline cursor-pointer text-indigo-700">{detail.location.district}</span>
+                    <span className="mr-1 underline cursor-pointer text-indigo-700">{detail.location.district}</span>
                   </Link>&middot;
-                  <Link href={`/area/kota/${Generateslug(detail.location.city)}`}><span className="mx-2 underline cursor-pointer text-indigo-700">{detail.location.city}</span></Link>&middot;
-                  <Link href={`/area/provinsi/${Generateslug(detail.location.province)}`}><span className="ml-2 underline cursor-pointer text-indigo-700">{detail.location.province}</span></Link>
+                  <Link href={`/area/kota/${Generateslug(detail.location.city)}`}><span className="mx-1 underline cursor-pointer text-indigo-700">{detail.location.city}</span></Link>&middot;
+                  <Link href={`/area/provinsi/${Generateslug(detail.location.province)}`}><span className="ml-1 underline cursor-pointer text-indigo-700">{detail.location.province}</span></Link>
                 </div>
                 <Peta location={detail.location} zoom={10} />
                 <a href={`https://www.google.com/maps/search/?api=1&query=${detail.location.lat_lng.latitude},${detail.location.lat_lng.longitude}`} target="_blank">
