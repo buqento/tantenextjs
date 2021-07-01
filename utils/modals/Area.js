@@ -24,6 +24,7 @@ export const DtArea = [
     { province: 'Sumatera Utara', city: 'Medan', district: 'Medan Selayang' },
     { province: 'Sumatera Utara', city: 'Medan', district: 'Medan Tembung' },
     { province: 'Sumatera Utara', city: 'Medan', district: 'Medan Timur' },
+    { province: 'Sumatera Utara', city: 'Medan', district: 'Medan Baru' },
     { province: 'Sumatera Utara', city: 'Medan', district: 'Medan Marelan' },
     { province: 'Sumatera Utara', city: 'Medan', district: 'Medan Helvetia' },
     { province: 'Sumatera Utara', city: 'Medan', district: 'Medan Petisah' },
