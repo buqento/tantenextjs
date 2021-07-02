@@ -23,6 +23,7 @@ class CampaignItem extends Component {
         const { like } = this.state
         const { item, customStyle } = this.props
         const defaultEmail = process.env.NEXT_PUBLIC_REACT_APP_EMAIL
+        const profileImage = item.user.email === defaultEmail ? '../static/images/user.jpg' : item.user.photo_url
         const newItem = {
             category: item.category,
             date_view: Date.now(),
@@ -53,19 +54,10 @@ class CampaignItem extends Component {
             <a className="hover:text-current" href={`/${Generateslug(item.title)}`}>
                 <div className={`mx-3 my-3 border overflow-hidden ${customStyle}`} onClick={() => handleLastView()}>
                     <div className="flex mx-3 my-3">
-                        <div className="">
-                            <img className="rounded-full mr-2 h-10 w-10 rounded-full" src={item.user ? item.user.photo_url : `https://lh3.googleusercontent.com/a-/AOh14GjjPCDsfAHebN5lD2lUt2blSJY6jlKDiukkYGkCbw=s96-c`} alt={item.user ? item.user.display_name : `admin`} />
-                        </div>
+                        <img src={profileImage} className="rounded-full mr-2 h-10 w-10 rounded-full" alt={item.user.display_name} />
                         <div className="mt-n1">
                             <div className="font-bold">
-                                {
-                                    item.user ?
-                                        <>
-                                            {
-                                                item.user.email === defaultEmail ? 'Admin' : item.user.display_name
-                                            }
-                                        </> : 'Admin'
-                                }
+                                {item.user.email === defaultEmail ? 'Tantekos' : item.user.display_name}
                             </div>
                             <div>
                                 <small className="text-gray-700 uppercase">{moment(item.date_modified).fromNow()} &middot; {item.hit} Views</small>
