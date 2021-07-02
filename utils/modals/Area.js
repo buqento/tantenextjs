@@ -113,6 +113,7 @@ export const DtArea = [
     { province: 'Jawa Timur', city: 'Surabaya', district: 'Rungkut' },
     { province: 'Jawa Timur', city: 'Malang', district: 'Blimbing' },
     { province: 'Jawa Timur', city: 'Malang', district: 'Kedungkandang' },
+    { province: 'Jawa Timur', city: 'Sidoarjo', district: 'Waru' },
     
     { province: 'Daerah Istimewa Yogyakarta', city: 'Yogyakarta', district: 'Danurejan' },
     { province: 'Daerah Istimewa Yogyakarta', city: 'Yogyakarta', district: 'Gedongtengen' },
