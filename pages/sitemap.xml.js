@@ -16,8 +16,8 @@ const sitemapXml = (dataArea, dataKostKontrakan) => {
       </url>`;
   });
 
-  dataKostKontrakan.map(post => {
-    const postDate = post.date_modified;
+  dataKostKontrakan.map(post => {  
+    const postDate = new Date(post.date_published).toLocaleString()
     if (!latestPost || postDate > latestPost) {
       latestPost = postDate;
     }
@@ -56,8 +56,17 @@ const sitemapXml = (dataArea, dataKostKontrakan) => {
 class Sitemap extends React.Component {
   static async getInitialProps({ res }) {
     let DtKostKontrakan = []
-    const querySnapshot = await fire.firestore().collection('kosts').get()
-    querySnapshot.forEach(doc => { DtKostKontrakan.push(doc.data()) })
+    const querySnapshot = await fire.firestore()
+    .collection('kosts')
+    .orderBy('date_published', 'asc')
+    .get()
+    querySnapshot.forEach(doc => {
+      DtKostKontrakan.push({
+        id: doc.id,
+        date: doc.date_modified,
+        ...doc.data()
+      })
+    })
     res.setHeader("Content-Type", "text/xml");
     res.write(sitemapXml(DtArea, DtKostKontrakan));
     res.end();
