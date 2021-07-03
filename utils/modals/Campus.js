@@ -23,6 +23,9 @@ export const Campus = [
     { latlng: '-3.6776416242940666, 128.21592301018995', slug: 'universitas-darussalam-ambon', name: 'Universitas Darussalam Ambon', province: 'Maluku' },
     { latlng: '-3.6199229279384446, 128.28484386111793', slug: 'politeknik-kesehatan-pasapua', name: 'Politeknik Kesehatan Pasapua', province: 'Maluku' },
     { latlng: '-3.6659900082471375, 128.20947123432916', slug: 'institut-agama-kristen-negeri-ambon', name: 'Institut Agama Kristen Negeri Ambon', province: 'Maluku' },
+    { latlng: '-3.6615330415799074, 128.22103284659005', slug: 'sekolah-tinggi-ilmu-administrasi-trinitas', name: 'Sekolah Tinggi Ilmu Administrasi Trinitas', province: 'Maluku' },
+    { latlng: '-3.69232837600396, 128.21828263904345', slug: 'stia-abdul-aziz-kataloka', name: 'STIA Abdul Aziz Kataloka', province: 'Maluku' },
+    { latlng: '-3.7074745363350887, 128.1671434697862', slug: 'akademi-maritim-maluku', name: 'Akademi Maritim Maluku', province: 'Maluku' },
 
     { latlng: '-8.652994907208202, 115.22517736809438', slug: 'universitas-mahasaraswati-denpasar', name: 'Universitas Mahasaraswati Denpasar', province: 'Bali' },
     { latlng: '-8.798410527312301, 115.17243501227595', slug: 'universitas-udayana', name: 'Universitas Udayana', province: 'Bali' },
@@ -163,6 +166,12 @@ export const Campus = [
     { latlng: '1.452096563080456, 124.81547144669231', slug: 'sekolah-tinggi-ilmu-komunikasi-manado', name: 'Sekolah Tinggi Ilmu Komunikasi Manado', province: 'Sulawesi Utara' },
     { latlng: '1.4576379813418454, 124.80724396464268', slug: 'politeknik-kesehatan-kemenkes-manado', name: 'Politeknik Kesehatan Kemenkes Manado', province: 'Sulawesi Utara' },
     { latlng: '1.4566380228391556, 124.8217828122036', slug: 'stikom-manado', name: 'STIKOM Manado', province: 'Sulawesi Utara' },
+    { latlng: '0.741370296780651, 124.31218039650078', slug: 'universitas-dumoga-kotamobagu', name: 'Universitas Dumoga Kotamobagu', province: 'Sulawesi Utara' },
+    { latlng: '1.482655223195042, 124.88065218336753', slug: 'universitas-nusantara-manado', name: 'Universitas Nusantara Manado', province: 'Sulawesi Utara' },
+    { latlng: '1.4174702527974037, 124.98401804548321', slug: 'universitas-klabat', name: 'Universitas Klabat', province: 'Sulawesi Utara' },
+    { latlng: '1.3321056792594062, 124.83756058006443', slug: 'universitas-kristen-indonesia-tomohon', name: 'Universitas Kristen Indonesia Tomohon', province: 'Sulawesi Utara' },
+    { latlng: '1.347521560495207, 124.82810543720623', slug: 'universitas-sari-putra-tomohon', name: 'Universitas Sari Putra Tomohon', province: 'Sulawesi Utara' },
+    { latlng: '1.476601773657743, 124.83332271220351', slug: 'universitas-teknologi-sulawesi-utara', name: 'Universitas Teknologi Sulawesi Utara', province: 'Sulawesi Utara' },
 
     { latlng: '3.5786124578267007, 98.67075152569325', slug: 'universitas-methodist-indonesia', name: 'Universitas Methodist Indonesia', province: 'Sumatera Utara' },
     { latlng: '3.576677149777431, 98.6432460545292', slug: 'universitas-medan-area', name: 'Universitas Medan Area', province: 'Sumatera Utara' },
