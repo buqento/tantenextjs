@@ -214,7 +214,7 @@ class Detail extends React.Component {
             }
             {
               detail && detail.facility && detail.facility.share.length > 0 && detail.facility.share[0] !== "" &&
-              <div>
+              <div className="lg:mb-5">
                 <h2 className="font-bold">Shared Facilities</h2>
                 <Facilities items={detail.facility.share} />
               </div>
