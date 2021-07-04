@@ -165,7 +165,7 @@ class Detail extends React.Component {
 
       {
         detail &&
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 mb-4">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
 
           <div className="mt-3 mx-3">
 
