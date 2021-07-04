@@ -116,7 +116,6 @@ export const DtArea = [
     { province: 'Jawa Timur', city: 'Sidoarjo', district: 'Waru' },
     
     { province: 'Daerah Istimewa Yogyakarta', city: 'Yogyakarta', district: 'Danurejan' },
-    { province: 'Daerah Istimewa Yogyakarta', city: 'Yogyakarta', district: 'Gedongtengen' },
     { province: 'Daerah Istimewa Yogyakarta', city: 'Yogyakarta', district: 'Gondokusuman' },
     { province: 'Daerah Istimewa Yogyakarta', city: 'Yogyakarta', district: 'Gondomanan' },
     { province: 'Daerah Istimewa Yogyakarta', city: 'Yogyakarta', district: 'Jetis' },
