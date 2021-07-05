@@ -20,7 +20,7 @@ function NavMobile() {
     },
     {
       label: "Search",
-      path: "http://fumacrom.com/1AKOa",
+      path: "/location",
       icon: router.pathname === '/location' ? <BiSearchAlt /> : <BiSearch />,
       color: router.pathname === '/location' ? 'text-indigo-700' : 'text-gray-700'
     }
