@@ -67,9 +67,7 @@ class Detail extends React.Component {
                 }
                 {data && data.length === 0 && <Message title="No Room" message="You don't have favorite room" />}
                 <Footer />
-                <div className="xs:block sm:hidden md:hidden lg:hidden">
-                    <NavMobile />
-                </div>
+                <NavMobile />
             </>
         )
     }

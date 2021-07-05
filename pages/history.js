@@ -91,9 +91,7 @@ class History extends React.Component {
                 }
                 {data && data.length === 0 && <Message title="No Room" message="You don't have history" />}
                 <Footer />
-                <div className="xs:block sm:hidden md:hidden lg:hidden">
-                    <NavMobile />
-                </div>
+                <NavMobile />
             </>
         )
     }

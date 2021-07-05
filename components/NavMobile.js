@@ -27,7 +27,7 @@ function NavMobile() {
   ]
   const routeHome = router.pathname === '/'
   return (
-    <div className="nav-bottom flex bottom-0 fixed border-top bg-gray-100 py-3 px-3 z-50">
+    <div className="sm:hidden nav-bottom flex bottom-0 fixed border-top bg-gray-100 py-3 px-3 z-50">
       {navButtons.map(button => (
         <NavButton
           key={button.path}

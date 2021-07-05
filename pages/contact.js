@@ -38,9 +38,7 @@ export default function Index() {
         </div>
       </div>
       <Footer />
-      <div className="xs:block sm:hidden md:hidden lg:hidden">
-        <NavMobile />
-      </div>
+      <NavMobile />
     </>
   )
 }

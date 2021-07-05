@@ -45,8 +45,6 @@ export default function Account() {
                 </div>
             </div>
         }
-        <div className="xs:block sm:hidden md:hidden lg:hidden">
-            <NavMobile />
-        </div>
+        <NavMobile />
     </>
 }

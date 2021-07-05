@@ -22,9 +22,7 @@ export default function Index() {
         <p>Konten yang kami bagikan berasal dari informasi yang Kami dapatkan yang telah tersaring. Perkenankan Kami menyampaikan terima kasih atas dukungan dan partisipasi menjaga layanan Tantekos tetap sehat.</p>
       </div>
       <Footer />
-      <div className="xs:block sm:hidden md:hidden lg:hidden">
-        <NavMobile />
-      </div>
+      <NavMobile />
     </>
   )
 }

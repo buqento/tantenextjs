@@ -28,9 +28,7 @@ export default function Index() {
         <p className="my-3 pt-2 font-bold border-t-2">Tantekos</p>
       </div>
       <Footer />
-      <div className="xs:block sm:hidden md:hidden lg:hidden">
-        <NavMobile />
-      </div>
+      <NavMobile />
     </>
   )
 }

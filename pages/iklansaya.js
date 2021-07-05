@@ -68,9 +68,7 @@ class IklanSaya extends React.Component {
                 </div>
             }
             <Footer />
-            <div className="xs:block sm:hidden md:hidden lg:hidden">
-                <NavMobile />
-            </div>
+            <NavMobile />
         </>
     }
 }

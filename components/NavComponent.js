@@ -51,6 +51,11 @@ export default function NavComponent() {
                         </span>
                       </a>
                     ))}
+                    <a href="http://fumacrom.com/1AKOa" itemProp="hasPart">
+                      <span className="text-gray-300 hover:underline hover:text-white cursor-pointer px-3 py-2 font-medium">
+                        Search
+                      </span>
+                    </a>
                   </div>
                 </div>
               </div>
