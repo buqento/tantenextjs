@@ -31,7 +31,7 @@ export const City = [
     { name: 'Makassar', province: 'Sulawesi Selatan', is_popular: true },
     { name: 'Gowa', province: 'Sulawesi Selatan' },
     // Papua
-    { name: 'Kota Jayapura', province: 'Papua' },
+    { name: 'Kota Jayapura', province: 'Papua', is_popular: true },
     { name: 'Jayapura', province: 'Papua' },
     // { name: 'Merauke', province: 'Papua' },
     // { name: 'Mimika', province: 'Papua' },
@@ -56,10 +56,10 @@ export const City = [
     { name: 'Bogor', province: 'Jawa Barat' },
     { name: 'Depok', province: 'Jawa Barat' },
 
-    { name: 'Surabaya', province: 'Jawa Timur' },
+    { name: 'Surabaya', province: 'Jawa Timur', is_popular: true },
     { name: 'Malang', province: 'Jawa Timur' },
     { name: 'Sidoarjo', province: 'Jawa Timur' },
-    
+
     // Daerah Istimewa Yogyakarta
     { name: 'Bantul', province: 'Daerah Istimewa Yogyakarta' },
     // { name: 'Gunungkidul', province: 'Daerah Istimewa Yogyakarta' },

@@ -17,10 +17,12 @@ import { type, duration } from '../components/Campaign'
 import Share from '../components/Share'
 import Footer from '../components/Footer'
 import NavMobile from '../components/NavMobile'
+import ComponentCities from '../components/Cities'
 // import { Comments, FacebookProvider } from 'react-facebook'
 import University from '../components/University'
 import Link from 'next/link'
 import Generateslug from '../utils/Generateslug'
+import Ads from '../components/Ads'
 class Detail extends React.Component {
   constructor(props) {
     super(props)
@@ -167,9 +169,9 @@ class Detail extends React.Component {
         detail &&
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
 
-          <div className="mt-3 mx-3">
+          <div className="mx-3">
 
-            <div className="mb-3">
+            <div className="my-3">
               <div class="gcse-search" />
             </div>
 
@@ -246,9 +248,19 @@ class Detail extends React.Component {
                 </FacebookProvider>
               </div> */}
 
+              <ListKosOthers data={otherdata} lengthOther={lengthOther} detail={detail} />
             </div>
           }
-          <div><ListKosOthers data={otherdata} lengthOther={lengthOther} detail={detail} /></div>
+          <div className="xs:border-t">
+            <h2 className="py-3 px-3 text-2xl text-uppercase text-current font-bold">Popular Cities</h2>
+            <div>
+              <ComponentCities />
+              <Link href="/area/kota/all">
+                <div className="cursor-pointer align-middle text-center text-indigo-700 font-bold uppercase underline py-3">View More</div>
+              </Link>
+            </div>
+            <div className="my-3"><Ads /></div>
+          </div>
         </div>
       }
 

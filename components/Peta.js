@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import ReactMapGl, { FullscreenControl, GeolocateControl, Marker } from 'react-map-gl'
 import { shape } from 'prop-types'
 import { FaMapMarkerAlt } from 'react-icons/fa';
 export default function Peta(props) {
-    const [windowWIdth, setWindowWidth] = useState(null)
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            setWindowWidth(window.innerWidth)
-        }
-    })
+    // const [windowWIdth, setWindowWidth] = useState(null)
+    // useEffect(() => {
+    //     if (typeof window !== 'undefined') {
+    //         setWindowWidth(window.innerWidth)
+    //     }
+    // })
     const accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN
     const mapStyle = "mapbox://styles/buqento/ckg4bb6cc2hrr19k84gzrs97j"
     const lat = parseFloat(props.location.lat_lng.latitude)
@@ -22,7 +22,8 @@ export default function Peta(props) {
         zoom: zoom
     })
     viewport.width = "100%"
-    viewport.height = windowWIdth > 768 ? 400 : 200
+    // viewport.height = windowWIdth > 768 ? 300 : 200
+    viewport.height = 200
     return (
         <ReactMapGl
             {...viewport}

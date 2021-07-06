@@ -11,9 +11,9 @@ class ListKosOthers extends Component {
             <>
                 {
                     listData.length > 0 &&
-                    <div className="border-t">
-                        <div className="mx-3">
-                            <div className="py-3 font-bold">
+                    <div className="mt-3">
+                        <div>
+                            <div className="py-2 font-bold">
                                 {lengthOther} Other Room{lengthOther > 1 ? 's' : ''} in {`${detail.location.district}, ${detail.location.city}, ${detail.location.province}`}
                             </div>
                             <div className="divide-y">

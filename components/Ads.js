@@ -3,11 +3,11 @@ import Link from 'next/link'
 import { MdAdd } from 'react-icons/md'
 export default function Ads() {
     return <Link href="post">
-        <div className="text-center text-white py-4 px-3 border bg-indigo-700 cursor-pointer">
-            <p>Did You want to see your rooms at Tantekos?</p>
-            <p>Create Your ad for free now.</p>
-            <div className="rounded-full align-middle rouded border text-center text-white font-bold uppercase mt-2 py-3 mx-3">
-                <span>Create Free Ad</span>
+        <div className="text-center text-white py-4 px-3 border bg-indigo-800 cursor-pointer">
+            <p>Ingin lihat kost Kamu di Tantekos?</p>
+            <p>Ayo, pasang iklan kost secara Gratis.</p>
+            <div className="rounded-full align-middle border text-center text-white font-bold uppercase mt-3 py-3 mx-3">
+                <span>Pasang Iklan Gratis</span>
             </div>
         </div>
     </Link>
