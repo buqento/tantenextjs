@@ -195,7 +195,7 @@ class Detail extends React.Component {
 
             <div className="my-3">
               <h2 className="font-bold">Description *</h2>
-              <div dangerouslySetInnerHTML={{ __html: detail.description }} />
+              <div dangerouslySetInnerHTML={{ __html: detail.description }} /><a href="http://fumacrom.com/1AKOa" target="_blank" className="underline cursor-pointer text-indigo-700">View more...</a>
             </div>
 
             <University viewport={detail.location && detail.location.lat_lng} />

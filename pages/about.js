@@ -13,7 +13,7 @@ export default function Index() {
     <>
       <Header seo={seo} />
       <NavComponent />
-      <div className="my-3 mx-3 pb-5 text-center leading-relaxed">
+      <div className="my-3 mx-3 text-center leading-relaxed">
         <div style={{ textAlign: '-webkit-center' }}>
           <img src="/static/images/logo.png" width={100} height={100} alt="logo_tantekos" className="object-center justify-center" />
         </div>
