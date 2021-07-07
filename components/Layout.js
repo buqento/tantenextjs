@@ -1,4 +1,5 @@
 import React from 'react'
+import { string, bool } from 'prop-types'
 import Footer from '../components/Footer'
 import HeadPage from '../components/HeadPage'
 import NavMobile from './NavMobile';
@@ -10,4 +11,16 @@ const Layout = (props) => (
         <NavMobile />
     </div>
 )
-export default Layout;
+Layout.propTypes = {
+    children: string,
+    title: string,
+    withHeader: bool,
+    withFooter: bool
+}
+Layout.defaultProps = {
+    children: null,
+    title: null,
+    withHeader: null,
+    withFooter: null
+}
+export default Layout

@@ -425,7 +425,7 @@ function Addnew() {
                                     <BtnBulletList />
                                 </Toolbar>
                             </Editor>
-                            <textarea value={description} onChange={(e) => setDescription(e.target.value)} class="w-full my-3 px-2 py-2 text-gray-700 border focus:outline-none" rows="4"></textarea>
+                            <textarea value={description} onChange={(e) => setDescription(e.target.value)} className="w-full my-3 px-2 py-2 text-gray-700 border focus:outline-none" rows="4"></textarea>
                         </div>
 
                         <div className="mb-4">

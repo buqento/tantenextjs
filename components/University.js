@@ -1,4 +1,5 @@
 import React from 'react'
+import { shape } from 'prop-types'
 import { Campus } from '../utils/modals/Campus'
 class University extends React.Component {
     constructor(props) {
@@ -10,7 +11,7 @@ class University extends React.Component {
         const result = this.setData(viewport, Campus)
         this.setState({ listResult: result, load: false })
     }
-    setData = (viewport, data) => {
+    setData(viewport, data) {
         let res = []
         for (var i = 0; i < data.length; i++) {
             const latitude = parseFloat(data[i].latlng.split(", ")[0])
@@ -20,7 +21,7 @@ class University extends React.Component {
         }
         return res
     }
-    getDistance = (lat1, lon1, lat2, lon2, unit) => {
+    getDistance(lat1, lon1, lat2, lon2, unit) {
         var radlat1 = Math.PI * lat1 / 180
         var radlat2 = Math.PI * lat2 / 180
         var theta = lon1 - lon2
@@ -54,5 +55,11 @@ class University extends React.Component {
             }
         </div>
     }
+}
+University.propTypes = {
+    viewport: shape({})
+}
+University.defaultProps = {
+    viewport: null
 }
 export default University

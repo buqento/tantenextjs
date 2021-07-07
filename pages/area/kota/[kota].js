@@ -50,7 +50,7 @@ class Detail extends React.Component {
                 </NextHead>
                 <NavComponent />
                 <>
-                    <div className="mx-3 divide-y divide-gray-400">
+                    <div className="mx-3 divide-y divide-gray-400 font-bold">
                         {
                             slug != 'all' ?
                                 DtArea
@@ -63,7 +63,7 @@ class Detail extends React.Component {
                                     })
                                     .filter(item => Generateslug(item.city) === slug)
                                     .map((item, index) =>
-                                        <div className="py-3 px-3 cursor-pointer" key={index}>
+                                        <div className="py-3 cursor-pointer" key={index}>
                                             <Link href={`../../area/${Generateslug(item.district)}`}>
                                                 <div>
                                                     <span>{item.district}</span>

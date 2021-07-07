@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { shape } from 'prop-types'
+import { shape, func } from 'prop-types'
 import { FaWhatsapp } from 'react-icons/fa'
 import { BiPhoneCall } from 'react-icons/bi'
 import { MdStar, MdStarBorder } from 'react-icons/md'
@@ -132,8 +132,10 @@ class FooterDetail extends Component {
 }
 FooterDetail.propTypes = {
     data: shape({}),
+    callbackFromParent: func
 }
 FooterDetail.defaultProps = {
-    data: null
+    data: null,
+    callbackFromParent: null
 }
 export default FooterDetail;

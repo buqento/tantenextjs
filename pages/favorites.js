@@ -10,6 +10,7 @@ class Detail extends React.Component {
     constructor(props) {
         super(props)
         this.state = { data: null, load: true }
+        this.handleRemove = this.handleRemove.bind(this)
     }
     componentDidMount() {
         let userFav = localStorage.getItem('favorites')
@@ -17,7 +18,7 @@ class Detail extends React.Component {
         if (userFav === null) { data = [] } else { data = JSON.parse(userFav) }
         this.setState({ data, load: false })
     }
-    handleRemove = (data) => {
+    handleRemove(data) {
         let userFav = localStorage.getItem('favorites')
         let userdataFav
         if (userFav === null) { userdataFav = [] } else { userdataFav = JSON.parse(userFav) }

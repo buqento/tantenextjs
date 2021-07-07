@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import { MdAdd } from 'react-icons/md'
 export default function Ads() {
     return <Link href="post">
         <div className="text-center text-white py-4 px-3 border bg-indigo-800 cursor-pointer">

@@ -1,4 +1,5 @@
 import React from 'react'
+import { arrayOf, shape } from 'prop-types'
 import CampaignItem from './CampaignItem'
 class FeedsGrid extends React.Component {
     render() {
@@ -15,5 +16,11 @@ class FeedsGrid extends React.Component {
             </>
         )
     }
+}
+FeedsGrid.propTypes = {
+    data: arrayOf(shape({})),
+}
+FeedsGrid.defaultProps = {
+    data: null
 }
 export default FeedsGrid

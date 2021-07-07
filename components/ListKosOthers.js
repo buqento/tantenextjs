@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { arrayOf, shape } from 'prop-types'
+import { arrayOf, shape, number } from 'prop-types'
 import CampaignItemList from '../components/CampaignItemList'
 import Generateslug from '../utils/Generateslug'
 import Link from 'next/link'
@@ -53,11 +53,13 @@ class ListKosOthers extends Component {
     }
 }
 ListKosOthers.propTypes = {
+    lengthOther: number,
     data: arrayOf(shape({})),
     detail: shape({}),
     item: shape({})
 }
 ListKosOthers.defaultProps = {
+    lengthOther: null,
     data: null,
     detail: null,
     item: null,

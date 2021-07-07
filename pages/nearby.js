@@ -12,6 +12,9 @@ class Nearby extends React.Component {
     constructor(props) {
         super(props)
         this.state = { locationText: null }
+        this.showAlert = this.showAlert.bind(this)
+        this.getDistance = this.getDistance.bind(this)
+        this.successfulLookup = this.successfulLookup.bind(this)
     }
     componentDidMount() {
         if (typeof window !== 'undefined' && window.navigator.geolocation) {
@@ -20,8 +23,8 @@ class Nearby extends React.Component {
             )
         }
     }
-    showAlert = () => { console.log('Your location is unknown!') }
-    getDistance = (lat1, lon1, lat2, lon2, unit) => {
+    showAlert() { console.log('Your location is unknown!') }
+    getDistance(lat1, lon1, lat2, lon2, unit) {
         var radlat1 = Math.PI * lat1 / 180
         var radlat2 = Math.PI * lat2 / 180
         var theta = lon1 - lon2
@@ -35,7 +38,7 @@ class Nearby extends React.Component {
         if (unit == "N") dist = dist * 0.8684
         return dist
     }
-    successfulLookup = position => {
+    successfulLookup(position) {
         const { latitude, longitude } = position.coords
         const { kosts } = this.props
         const data = JSON.parse(kosts)

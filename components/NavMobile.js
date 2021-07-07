@@ -1,3 +1,4 @@
+import React from 'react'
 import NavButton from "./NavButton"
 import { AiFillHome, AiOutlineHome } from 'react-icons/ai'
 import { HiLocationMarker, HiOutlineLocationMarker } from 'react-icons/hi'
@@ -25,7 +26,6 @@ function NavMobile() {
       color: router.pathname === '/location' ? 'text-indigo-700' : 'text-gray-700'
     }
   ]
-  const routeHome = router.pathname === '/'
   return (
     <div className="sm:hidden nav-bottom flex bottom-0 fixed border-top bg-gray-100 py-3 px-3 z-50">
       {navButtons.map(button => (

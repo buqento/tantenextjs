@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { shape } from 'prop-types'
+import { shape, func } from 'prop-types'
 import Cash from '../utils/Cash'
 import { BiMap } from 'react-icons/bi'
 import { MdClose } from 'react-icons/md'
@@ -73,9 +73,11 @@ class CampaignItemListAction extends Component {
     }
 }
 CampaignItemListAction.propTypes = {
-    item: shape({})
+    item: shape({}),
+    callbackFromParent: func
 }
 CampaignItemListAction.defaultProps = {
-    item: null
+    item: null,
+    callbackFromParent: null
 }
 export default CampaignItemListAction;

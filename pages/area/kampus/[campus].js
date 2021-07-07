@@ -15,6 +15,8 @@ class University extends React.Component {
             listResult: null,
             campusName: null
         }
+        this.setData = this.setData.bind(this)
+        this.getDistance = this.getDistance.bind(this)
     }
     componentDidMount() {
         const { slug } = this.props
@@ -23,7 +25,7 @@ class University extends React.Component {
         const lng = parseFloat(campus[0].latlng.split(", ")[1])
         this.setState({ campusName: campus[0].name, listResult: this.setData(lat, lng) })
     }
-    setData = (lat, lng) => {
+    setData(lat, lng) {
         const { kosts } = this.props
         const data = JSON.parse(kosts)
         let res = []
@@ -42,7 +44,7 @@ class University extends React.Component {
         }
         return res
     }
-    getDistance = (lat1, lon1, lat2, lon2, unit) => {
+    getDistance(lat1, lon1, lat2, lon2, unit) {
         var radlat1 = Math.PI * lat1 / 180
         var radlat2 = Math.PI * lat2 / 180
         var theta = lon1 - lon2
@@ -145,23 +147,17 @@ class University extends React.Component {
                     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureAreaPage) }} />
                 </NextHead>
                 <NavComponent />
-                <div className="mx-3 my-3">
+                <div className="mx-3 mt-3">
                     <div className="my-2">
                         {
                             listResult &&
                             <>
+                            <span className="font-bold">
                                 {
                                     listResult.length > 0 &&
-                                    `${listResult.length} Room${listResult.length > 1 ? 's' : ''} Near `
+                                    `${listResult.length} Room${listResult.length > 1 ? 's' : ''} Near ${campusName}`
                                 }
-                                {
-                                    listResult.length > 0 &&
-                                        !campusName ? <strong>{campusName}</strong> : ` `
-                                }
-                                {
-                                    listResult.length > 0 &&
-                                    campusName && <strong>{campusName}</strong>
-                                }
+                            </span>
                                 {
                                     listResult.length === 0 && campusName &&
                                     <Message title="No Room" message={`No room near ${campusName}. Use search to view more rooms`} />
@@ -192,9 +188,7 @@ class University extends React.Component {
                     }
                 </div>
                 <Footer />
-                <div className="xs:block sm:hidden md:hidden lg:hidden">
-                    <NavMobile />
-                </div>
+                <NavMobile />
             </>
         )
     }

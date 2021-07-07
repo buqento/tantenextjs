@@ -1,7 +1,6 @@
-import { Fragment } from 'react'
+import React, { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
-import Link from 'next/link'
 import { signIn, useSession } from 'next-auth/client'
 const navigation = [
   { name: 'Favorite', href: '/favorites', current: false },

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import ReactMapGl, { FullscreenControl, GeolocateControl, Marker } from 'react-map-gl'
-import { shape } from 'prop-types'
+import { shape, number } from 'prop-types'
 import { FaMapMarkerAlt } from 'react-icons/fa';
 export default function Peta(props) {
     // const [windowWIdth, setWindowWidth] = useState(null)
@@ -53,5 +53,6 @@ export default function Peta(props) {
     )
 }
 Peta.propTypes = {
-    location: shape({})
+    location: shape({}),
+    zoom: number
 }

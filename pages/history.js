@@ -14,6 +14,7 @@ class History extends React.Component {
     constructor(props) {
         super(props)
         this.state = { data: null, load: true }
+        this.handleRemoveHistoryItem = this.handleRemoveHistoryItem.bind(this)
     }
     componentDidMount() {
         let userFav = localStorage.getItem('lastview')
@@ -21,7 +22,7 @@ class History extends React.Component {
         if (userFav === null) { data = [] } else { data = JSON.parse(userFav) }
         this.setState({ data, load: false })
     }
-    handleRemoveHistoryItem = (item) => {
+    handleRemoveHistoryItem(item) {
         let lastView = localStorage.getItem('lastview')
         let data
         if (lastView === null) { data = [] } else { data = JSON.parse(lastView) }

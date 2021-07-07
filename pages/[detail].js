@@ -29,6 +29,8 @@ class Detail extends React.Component {
     this.state = { otherData: null, showAlert: false }
     this.myRef = React.createRef()
     this.handleHit = this.handleHit.bind(this)
+    this.handleShowAlert = this.handleShowAlert.bind(this)
+    this.handleCloseAlert = this.handleCloseAlert.bind(this)
   }
   async componentDidMount() {
     const { details } = this.props
@@ -45,11 +47,11 @@ class Detail extends React.Component {
       ReactGa.pageview('/detail')
     }
   }
-  handleCloseAlert = () => {
+  handleCloseAlert() {
     this.setState({ showAlert: false })
     Router.push('/favorites')
   }
-  handleShowAlert = () => {
+  handleShowAlert() {
     this.setState({ showAlert: true })
     setTimeout(function () {
       this.setState({ showAlert: false })
@@ -172,7 +174,7 @@ class Detail extends React.Component {
           <div className="mx-3">
 
             <div className="my-3">
-              <div class="gcse-search" />
+              <div className="gcse-search" />
             </div>
 
             <div className="mb-1 flex">
@@ -195,7 +197,7 @@ class Detail extends React.Component {
 
             <div className="my-3">
               <h2 className="font-bold">Description *</h2>
-              <div dangerouslySetInnerHTML={{ __html: detail.description }} /><a href="http://fumacrom.com/1AKOa" target="_blank" className="hidden lg:block underline cursor-pointer text-indigo-700">View more...</a>
+              <div dangerouslySetInnerHTML={{ __html: detail.description }} /><a href="http://fumacrom.com/1AKOa" target="_blank" rel="noreferrer" className="hidden lg:block underline cursor-pointer text-indigo-700">View more...</a>
             </div>
 
             <University viewport={detail.location && detail.location.lat_lng} />
@@ -236,7 +238,7 @@ class Detail extends React.Component {
                   <Link href={`/area/provinsi/${Generateslug(detail.location.province)}`}><span className="ml-1 underline cursor-pointer text-indigo-700">{detail.location.province}</span></Link>
                 </div>
                 <Peta location={detail.location} zoom={10} />
-                <a href={`https://www.google.com/maps/search/?api=1&query=${detail.location.lat_lng.latitude},${detail.location.lat_lng.longitude}`} target="_blank">
+                <a href={`https://www.google.com/maps/search/?api=1&query=${detail.location.lat_lng.latitude},${detail.location.lat_lng.longitude}`} target="_blank" rel="noreferrer">
                   <div className="my-3 underline text-indigo-700">Google Map <FaExternalLinkAlt className="inline ml-1 mb-1" /></div>
                 </a>
               </div>

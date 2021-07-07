@@ -20,6 +20,9 @@ class Location extends React.Component {
                 longitude: 110.41408899968006
             }
         }
+        this.setData = this.setData.bind(this)
+        this.onSelected = this.onSelected.bind(this)
+        this.getDistance = this.getDistance.bind(this)
     }
     componentDidMount() {
         const input = document.getElementsByTagName("input")[0]
@@ -28,7 +31,7 @@ class Location extends React.Component {
         input.select()
         this.setState({ listResult: this.setData(viewport) })
     }
-    setData = (viewport) => {
+    setData(viewport) {
         const { kosts } = this.props
         const data = JSON.parse(kosts)
         let res = []
@@ -47,7 +50,7 @@ class Location extends React.Component {
         }
         return res
     }
-    onSelected = (viewport, item) => {
+    onSelected(viewport, item) {
         const { keyword } = this.state
         this.setState({
             listResult: this.setData(viewport),
@@ -55,7 +58,7 @@ class Location extends React.Component {
             keyword: keyword
         })
     }
-    getDistance = (lat1, lon1, lat2, lon2, unit) => {
+    getDistance(lat1, lon1, lat2, lon2, unit) {
         var radlat1 = Math.PI * lat1 / 180
         var radlat2 = Math.PI * lat2 / 180
         var theta = lon1 - lon2

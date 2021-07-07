@@ -15,7 +15,7 @@ const CampusList = (props) => {
         <>
             <div>
                 {
-                    data.length > 0 && <div className="px-3 pt-3 text-lg font-bold">{locationProvince}</div>
+                    data.length > 0 && <div className="px-3 pt-3 text-lg font-bold uppercase">{locationProvince}</div>
                 }
                 <div className="container divide-y divide-gray-400">
                     {
@@ -28,7 +28,7 @@ const CampusList = (props) => {
                                 return 0;
                             })
                             .map((item, index) =>
-                                <div className="pb-2 pt-3 px-3" key={index}>
+                                <div className="pb-2 pt-3" key={index}>
                                     <Link href={`../../area/kampus/${Generateslug(item.name)}`}>
                                         <div className="d-flex cursor-pointer">
                                             <span className="w-full">{item.name}</span>
@@ -45,8 +45,10 @@ const CampusList = (props) => {
 }
 CampusList.propTypes = {
     name: string,
+    locationProvince:string
 }
 CampusList.defaultProps = {
-    name: null
+    name: null,
+    locationProvince:null
 }
 export default CampusList

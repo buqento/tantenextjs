@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { shape, string } from 'prop-types'
+import { shape, string, bool } from 'prop-types'
 import Cash from '../utils/Cash'
 import Generateslug from '../utils/Generateslug'
 import { BiMap } from 'react-icons/bi'
@@ -86,10 +86,14 @@ class CampaignItemList extends Component {
     }
 }
 CampaignItemList.propTypes = {
+    nearby: bool,
+    myads: bool,
     item: shape({}),
     customStyle: string
 }
 CampaignItemList.defaultProps = {
+    nearby: null,
+    myads: null,
     item: null,
     customStyle: null
 }
