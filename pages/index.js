@@ -45,7 +45,7 @@ class Index extends React.Component {
               </Link>
             </div>
             <h2 className="mt-4 py-3 px-3 text-2xl text-uppercase text-current font-bold">Popular Cities</h2>
-            <div>
+            <div className="mx-3">
               <ComponentCities />
               <Link href="/area/kota/all">
                 <div className="cursor-pointer align-middle text-center text-indigo-700 font-bold uppercase underline py-3">View More</div>

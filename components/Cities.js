@@ -7,7 +7,7 @@ import { BiChevronRight } from 'react-icons/bi'
 class ComponentCities extends Component {
     render() {
         return (
-            <div className="container divide-y">
+            <div className="divide-y">
                 {
                     City
                         .filter(item => item.is_popular === true)

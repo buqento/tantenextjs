@@ -169,9 +169,9 @@ class Detail extends React.Component {
 
       {
         detail &&
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="mx-3 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
 
-          <div className="mx-3">
+          <div>
 
             <div className="my-3">
               <div className="gcse-search" />
@@ -227,7 +227,7 @@ class Detail extends React.Component {
 
           {
             detail.location &&
-            <div className="mt-3 mx-3">
+            <div className="mt-3">
               <div className="mb-3">
                 <h2 className="font-bold mb-1">Room Location</h2>
                 <div className="mb-3">
@@ -254,7 +254,7 @@ class Detail extends React.Component {
             </div>
           }
           <div className="xs:border-t">
-            <h2 className="py-3 px-3 text-2xl text-uppercase text-current font-bold">Popular Cities</h2>
+            <h2 className="py-3 text-2xl text-uppercase text-current font-bold">Popular Cities</h2>
             <div>
               <ComponentCities />
               <Link href="/area/kota/all">
