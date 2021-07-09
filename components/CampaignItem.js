@@ -80,7 +80,7 @@ class CampaignItem extends Component {
                                 </span>
                                 <span className="text-xs text-gray-700 uppercase"> / {duration(item.price.duration)}</span>
                             </div>
-                            <div className="mt-2 text-sm underline uppercase text-indigo-700 font-bold">Read More</div>
+                            <div className="mt-2 text-sm underline uppercase text-indigo-700 font-bold">View More</div>
                         </div>
                         <div className="clamp-1">
                             <BiMap size={16} className="inline mr-1 mb-1" /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
