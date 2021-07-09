@@ -7,7 +7,7 @@ import Link from 'next/link'
 class ComponentCampus extends Component {
     render() {
         return (
-            <div className="container divide-y">
+            <div className="divide-y">
                 {
                     Campus
                         .sort(() => .7 - Math.random())

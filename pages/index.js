@@ -20,42 +20,44 @@ class Index extends React.Component {
       url: ''
     }
     return (
-      <div>
+      <>
         <Header seo={seo} />
         <NavComponent />
-        <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-4">
-          <div>
-            <div className="mt-3 mb-3 pb-3  xs:border-b">
-              <h1 className="mt-3 px-3 text-2xl text-uppercase text-current font-bold">New Feed</h1>
-              <FeedsGrid data={data} />
-              <div className="mx-3 my-3"><Ads /></div>
-              <Link href="/location">
-                <div className="cursor-pointer align-middle text-center text-indigo-700 font-bold uppercase underline py-3 mx-3">View More</div>
-              </Link>
+        <div>
+          <div className="mx-3 grid sm:grid-cols-2 md:grid-cols-2 gap-4">
+            <div>
+              <div className="mt-3 mb-3 pb-3  xs:border-b">
+                <h1 className="mt-3 text-2xl text-uppercase text-current font-bold">New Feed</h1>
+                <FeedsGrid data={data} />
+                <div className="my-3"><Ads /></div>
+                <Link href="/location">
+                  <div className="cursor-pointer align-middle text-center text-indigo-700 font-bold uppercase underline py-3 mx-3">View More</div>
+                </Link>
+              </div>
             </div>
-          </div>
-          <div>
-            <h2 className="lg:mt-4 md:mt-4 sm:mt-4 mb-3 px-3 text-2xl text-uppercase text-current font-bold">Near Campus</h2>
-            <div className="border-b">
-              <Campus />
-              <Link href="/area/kampus">
-                <div className="align-middle text-center text-indigo-700 font-bold uppercase my-3 py-2 cursor-pointer underline">
-                  <span>View More</span>
-                </div>
-              </Link>
-            </div>
-            <h2 className="mt-4 py-3 px-3 text-2xl text-uppercase text-current font-bold">Popular Cities</h2>
-            <div className="mx-3">
-              <ComponentCities />
-              <Link href="/area/kota/all">
-                <div className="cursor-pointer align-middle text-center text-indigo-700 font-bold uppercase underline py-3">View More</div>
-              </Link>
+            <div className="lg:mx-3">
+              <h2 className="lg:mt-4 md:mt-4 sm:mt-4 mb-3 text-2xl text-uppercase text-current font-bold">Near Campus</h2>
+              <div className="border-b">
+                <Campus />
+                <Link href="/area/kampus">
+                  <div className="align-middle text-center text-indigo-700 font-bold uppercase my-3 py-2 cursor-pointer underline">
+                    <span>View More</span>
+                  </div>
+                </Link>
+              </div>
+              <h2 className="mt-4 py-3 text-2xl text-uppercase text-current font-bold">Popular Cities</h2>
+              <div>
+                <ComponentCities />
+                <Link href="/area/kota/all">
+                  <div className="cursor-pointer align-middle text-center text-indigo-700 font-bold uppercase underline py-3">View More</div>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
         <Footer />
         <NavMobile />
-      </div>
+      </>
     )
   }
 }

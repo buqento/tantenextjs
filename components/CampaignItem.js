@@ -52,7 +52,7 @@ class CampaignItem extends Component {
         }
         return (
             <a className="hover:text-current" href={`/${Generateslug(item.title)}`}>
-                <div className={`mx-3 my-3 border overflow-hidden ${customStyle}`} onClick={() => handleLastView()}>
+                <div className={`my-3 border overflow-hidden ${customStyle}`} onClick={() => handleLastView()}>
                     <div className="flex mx-3 my-3">
                         <img src={profileImage} className="rounded-full mr-2 h-10 w-10 rounded-full" alt={item.user.display_name} />
                         <div className="mt-n1">
