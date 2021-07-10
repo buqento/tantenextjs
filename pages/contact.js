@@ -21,10 +21,9 @@ export default function Index() {
           src="https://cdn.statically.io/img/i.imgur.com/Rf38RlC.webp"
           alt="room"
           layout="fill"
-          objectFit="cover"
           // width={100}
           // height={100}
-        // className="object-cover object-center w-full h-64"
+        className="object-cover object-center"
         />
       </div>
       <div className="my-3 mx-3 text-center leading-relaxed">
