@@ -6,7 +6,6 @@ import NavMobile from '../components/NavMobile'
 import Link from 'next/link'
 import Header from '../components/Header'
 import Image from 'next/image'
-
 export default function Index() {
   const seo = {
     title: 'Contact',
@@ -17,6 +16,17 @@ export default function Index() {
     <>
       <Header seo={seo} />
       <NavComponent />
+      <div className="h-64 w-full relative">
+        <Image
+          src="https://cdn.statically.io/img/i.imgur.com/Rf38RlC.webp"
+          alt="room"
+          layout="fill"
+          objectFit="cover"
+          // width={100}
+          // height={100}
+        // className="object-cover object-center w-full h-64"
+        />
+      </div>
       <div className="my-3 mx-3 text-center leading-relaxed">
         <h1 className="text-2xl pb-3">Kontak Kami</h1>
         <p>Jika Anda memiliki pertanyaan atau saran untuk pengembangan layanan Tantekos, jangan ragu untuk menghubungi kami melalui:</p>
