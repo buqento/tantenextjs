@@ -8,7 +8,7 @@ module.exports = withPWA({
         runtimeCaching,
     },
     images: {
-        domains: ['cdn.statically.io'],
+        domains: ['cdn.statically.io', 'images.unsplash.com'],
     },
     webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
         config.plugins.push(new Dotenv({ silent: true }));
