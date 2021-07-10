@@ -21,8 +21,8 @@ export default function Index() {
           src="https://cdn.statically.io/img/i.imgur.com/Rf38RlC.webp"
           alt="room"
           layout="fill"
-          // width={100}
-          // height={100}
+          width={100}
+          height={100}
         className="object-cover object-center"
         />
       </div>
