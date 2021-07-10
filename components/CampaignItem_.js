@@ -65,13 +65,23 @@ class CampaignItem extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="h-64 w-full relative">
+                    {/* <div className="h-64 w-full relative">
                         <Image
                             src={`https://cdn.statically.io/img/i.imgur.com/${item.images[0]}`}
                             alt="room"
                             layout="fill"
                             objectFit="cover"
                             // className="object-cover object-center w-full h-64"
+                        />
+                    </div> */}
+                    <div className="unset-img full-bleed">
+                        <Image
+                            className="custom-img"
+                            src={`https://cdn.statically.io/img/i.imgur.com/${item.images[0]}`}
+                            // src="https://images.unsplash.com/photo-1494587351196-bbf5f29cff42?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1651&q=80"
+                            // width={1920}
+                            // height={1024}
+                            layout="fill"
                         />
                     </div>
                     <div className="mx-3 my-3">
