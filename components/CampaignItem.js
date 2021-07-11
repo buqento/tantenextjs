@@ -6,6 +6,7 @@ import { BiMap } from 'react-icons/bi'
 import { MdStar } from 'react-icons/md'
 import moment from 'moment'
 import { facility, type, duration } from './Campaign'
+import Image from 'next/image'
 class CampaignItem extends Component {
     constructor(props) {
         super(props)
@@ -64,13 +65,20 @@ class CampaignItem extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="bg-gray-400">
+                    <div className="w-full h-64 bg-gray-400">
+                        <Image
+                            className="object-cover object-center w-full h-64"
+                            src={`https://cdn.statically.io/img/i.imgur.com/${item.images[0]}`}
+                            layout="fill"
+                        />
+                    </div>
+                    {/* <div className="bg-gray-400">
                         <picture>
                             <source media="(min-width:425px)" srcSet={`https://cdn.statically.io/img/i.imgur.com/w=425/${item.images[0]}`} />
                             <source media="(min-width:375px)" srcSet={`https://cdn.statically.io/img/i.imgur.com/w=375/${item.images[0]}`} />
                             <img className="object-cover object-center w-full h-64" src={`https://cdn.statically.io/img/i.imgur.com/h=256/${item.images[0]}`} alt={item.title} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} />
                         </picture>
-                    </div>
+                    </div> */}
                     <div className="mx-3 my-3">
                         <div className="text-2xl flex">
                             <div className="flex-auto font-bold">
