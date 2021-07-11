@@ -70,6 +70,7 @@ class CampaignItem extends Component {
                             className="object-cover object-center w-full h-72"
                             src={`https://cdn.statically.io/img/i.imgur.com/w=400/${item.images[0]}`}
                             layout="fill"
+                            quality={50}
                         />
                     </div>
                     <div className="mx-3 my-3">
