@@ -17,15 +17,12 @@ export default function Index() {
       <Header seo={seo} />
       <NavComponent />
       <div className="unset-img full-bleed">
-                        <Image
-                            className="custom-img"
-                            // src={`https://cdn.statically.io/img/i.imgur.com/${item.images[0]}`}
-                            src="https://images.unsplash.com/photo-1494587351196-bbf5f29cff42?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1651&q=80"
-                            // width={1920}
-                            // height={1024}
-                            layout="fill"
-                        />
-                    </div>
+        <Image
+          className="custom-img"
+          src="https://placeimg.com/640/480/any"
+          layout="fill"
+        />
+      </div>
       <div className="my-3 mx-3 text-center leading-relaxed">
         <h1 className="text-2xl pb-3">Kontak Kami</h1>
         <p>Jika Anda memiliki pertanyaan atau saran untuk pengembangan layanan Tantekos, jangan ragu untuk menghubungi kami melalui:</p>
