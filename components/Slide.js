@@ -18,10 +18,10 @@ class Slide extends Component {
             {
                 imagesData && imagesData.map((item, index) =>
                     <SwiperSlide key={index} className="bg-gray-900">
-                        <div className="w-full h-72">
+                        <div className="w-full h-80">
                             <Image
                                 loader="/static/images/image-not-found.png"
-                                className="object-cover object-center w-full h-72" src={`https://cdn.statically.io/img/i.imgur.com/h=400/${item}`} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} layout="fill"  quality={60}
+                                className="object-contain object-center w-full h-72" src={`https://cdn.statically.io/img/i.imgur.com/h=400/${item}`} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} layout="fill"  quality={60}
                             />
                         </div>
                     </SwiperSlide>
