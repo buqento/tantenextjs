@@ -4,6 +4,7 @@ import Cash from '../utils/Cash'
 import Generateslug from '../utils/Generateslug'
 import { BiMap } from 'react-icons/bi'
 import { facility, type, duration } from './Campaign'
+import Image from 'next/image'
 class CampaignItemList extends Component {
     constructor(props) {
         super(props);
@@ -48,8 +49,14 @@ class CampaignItemList extends Component {
         return (
             <a className="hover:text-current" href={`/${Generateslug(item.title)}`}>
                 <div className="cursor-pointer w-full overflow-hidden py-2 flex" onClick={() => handleLastView(item)}>
-                    <div className="w-20 bg-gray-400">
-                        <img src={`https://cdn.statically.io/img/i.imgur.com/w=100/${item.images[0]}`} alt={item.title} className="object-cover object-center float-left mr-2 h-24 w-20" onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} />
+                    <div className="w-20 h-24 bg-gray-400">
+                        <Image
+                            className="object-cover object-center"
+                            src={`https://cdn.statically.io/img/i.imgur.com/w=100/${item.images[0]}`}
+                            alt={item.title}
+                            onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }}
+                            layout="fill"
+                        />
                     </div>
                     <div className="flex-1 ml-2 self-center">
                         <div className="text-xl font-bold flex">
