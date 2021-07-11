@@ -3,6 +3,7 @@ import { string, arrayOf } from 'prop-types'
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/swiper-bundle.css'
+import Image from 'next/image'
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
 class Slide extends Component {
     render() {
@@ -17,7 +18,13 @@ class Slide extends Component {
             {
                 imagesData && imagesData.map((item, index) =>
                     <SwiperSlide key={index} className="bg-gray-900">
-                        <img style={{height:'350px'}} className="object-contain object-center w-full" src={`https://cdn.statically.io/img/i.imgur.com/h=350/${item}`} alt={`${imageTitle}${index + 1}`} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} />
+                        <div className="w-full h-72 bg-gray-400">
+                            <Image
+                                className="object-cover object-center w-full h-72"
+                                src={`https://cdn.statically.io/img/i.imgur.com/h=400/${item}`} alt={`${imageTitle}${index + 1}`} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }}
+                                layout="fill"
+                            />
+                        </div>
                     </SwiperSlide>
                 )
             }
