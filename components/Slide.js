@@ -22,7 +22,7 @@ class Slide extends Component {
                             <Image
                                 loader="/static/images/image-not-found.png"
                                 className="object-cover object-center w-full h-72"
-                                src={`https://cdn.statically.io/img/i.imgur.com/h=400/${item}`} alt={`${imageTitle}${index + 1}`} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }}
+                                src={`https://cdn.statically.io/img/i.imgur.com/h=400/${item} || /static/images/image-not-found.png`} alt={`${imageTitle}${index + 1}`} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }}
                                 layout="fill"
                             />
                         </div>
