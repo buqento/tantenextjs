@@ -51,11 +51,8 @@ class CampaignItemList extends Component {
                 <div className="cursor-pointer w-full overflow-hidden py-2 flex" onClick={() => handleLastView(item)}>
                     <div className="w-20 h-24 bg-gray-400">
                         <Image
-                            className="object-cover object-center"
-                            src={`https://cdn.statically.io/img/i.imgur.com/w=100/${item.images[0]}`}
-                            alt={item.title}
-                            onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }}
-                            layout="fill"
+                            className="object-cover object-center w-20 h-24"
+                            src={`https://cdn.statically.io/img/i.imgur.com/w=100/${item.images[0]}`} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} layout="fill"
                         />
                     </div>
                     <div className="flex-1 ml-2 self-center">
