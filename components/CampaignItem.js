@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import { shape, string } from 'prop-types'
 import Cash from '../utils/Cash'
 import Generateslug from '../utils/Generateslug'
@@ -67,7 +69,7 @@ class CampaignItem extends Component {
                     </div>
                     <div className="w-full h-72 bg-gray-400">
                         <Image
-                            className="object-cover object-center w-full h-72"
+                            className="lazyload object-cover object-center w-full h-72"
                             src={`https://cdn.statically.io/img/i.imgur.com/w=400/${item.images[0]}`}
                             layout="fill"
                             quality={50}

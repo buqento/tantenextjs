@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import { shape, string, bool } from 'prop-types'
 import Cash from '../utils/Cash'
 import Generateslug from '../utils/Generateslug'
@@ -51,7 +53,7 @@ class CampaignItemList extends Component {
                 <div className="cursor-pointer w-full overflow-hidden py-2 flex" onClick={() => handleLastView(item)}>
                     <div className="w-20 h-24 bg-gray-400">
                         <Image
-                            className="object-cover object-center w-20 h-24"
+                            className="lazyload object-cover object-center w-20 h-24"
                             src={`https://cdn.statically.io/img/i.imgur.com/w=100/${item.images[0]}`} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} layout="fill"
                         />
                     </div>
