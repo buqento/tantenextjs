@@ -8,7 +8,7 @@ import Slide from '../components/Slide'
 import Peta from '../components/Peta'
 import NavComponent from '../components/NavComponent'
 import FooterDetail from '../components/FooterDetail'
-import ReactGa from 'react-ga'
+// import ReactGa from 'react-ga'
 import moment from 'moment'
 import ListKosOthers from '../components/ListKosOthers'
 import fire from '../configurations/firebase'
@@ -32,21 +32,21 @@ class Detail extends React.Component {
     this.handleShowAlert = this.handleShowAlert.bind(this)
     this.handleCloseAlert = this.handleCloseAlert.bind(this)
   }
-  async componentDidMount() {
-    const { details } = this.props
-    const detail = JSON.parse(details)
-    if (window.location.hostname !== 'localhost') {
-      this.handleHit(detail.id, detail.hit + 1)
-      ReactGa.initialize('UA-132808614-2')
-      ReactGa.pageview('/detail')
-    }
-  }
-  componentDidUpdate() {
-    if (window.location.hostname !== 'localhost') {
-      ReactGa.initialize('UA-132808614-2')
-      ReactGa.pageview('/detail')
-    }
-  }
+  // async componentDidMount() {
+  //   const { details } = this.props
+  //   const detail = JSON.parse(details)
+  //   if (window.location.hostname !== 'localhost') {
+  //     this.handleHit(detail.id, detail.hit + 1)
+  //     ReactGa.initialize('UA-132808614-2')
+  //     ReactGa.pageview('/detail')
+  //   }
+  // }
+  // componentDidUpdate() {
+  //   if (window.location.hostname !== 'localhost') {
+  //     ReactGa.initialize('UA-132808614-2')
+  //     ReactGa.pageview('/detail')
+  //   }
+  // }
   handleCloseAlert() {
     this.setState({ showAlert: false })
     Router.push('/favorites')
@@ -170,13 +170,10 @@ class Detail extends React.Component {
       {
         detail &&
         <div className="mx-3 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-
           <div>
-
-            <div className="my-3">
+            {/* <div className="my-3">
               <div className="gcse-search" />
-            </div>
-
+            </div> */}
             <div className="mb-1 flex">
               <div className="self-center flex-auto pr-4">
                 <div className="mt-n2 font-bold">
@@ -294,10 +291,17 @@ export const getServerSideProps = async (context) => {
       ...doc.docs[0].data(),
     }))
     .catch(err => console.log(err))
-  if (!detail) return {
-    redirect: {
-      permanent: false,
-      destination: '/'
+  if (detail) {
+    const incHit = detail.hit + 1
+    await fire.firestore().collection("kosts")
+      .doc(detail.id).update({ incHit })
+      .catch(err => { console.log(err) })
+  } else {
+    return {
+      redirect: {
+        permanent: false,
+        destination: '/'
+      }
     }
   }
   let otherData = []
