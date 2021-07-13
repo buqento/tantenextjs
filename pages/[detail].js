@@ -1,10 +1,9 @@
 import React from 'react'
 import NextHead from 'next/head'
 import Router from 'next/router'
-import { string, number } from 'prop-types'
+import { string } from 'prop-types'
 import { FaExternalLinkAlt } from 'react-icons/fa'
 import Cash from '../utils/Cash'
-import Slide from '../components/Slide'
 import Peta from '../components/Peta'
 import NavComponent from '../components/NavComponent'
 import FooterDetail from '../components/FooterDetail'
@@ -21,6 +20,7 @@ import University from '../components/University'
 import Link from 'next/link'
 import Generateslug from '../utils/Generateslug'
 import Ads from '../components/Ads'
+import GalleryComponent from '../components/GalleryComponent'
 class Detail extends React.Component {
   constructor(props) {
     super(props)
@@ -45,7 +45,7 @@ class Detail extends React.Component {
       .catch(err => { console.log(err) })
   }
   render() {
-    const { slug, details, otherdatas, lengthOther } = this.props
+    const { slug, details, otherdatas } = this.props
     const { showAlert } = this.state
     const detail = JSON.parse(details)
     const otherdata = JSON.parse(otherdatas)
@@ -145,7 +145,7 @@ class Detail extends React.Component {
       {
         detail &&
         <div>
-          <Slide imagesData={detail.images} imageTitle={detail.title} />
+          <GalleryComponent images={detail.images} />
           <FooterDetail data={detail} callbackFromParent={this.handleShowAlert} />
         </div>
       }
@@ -310,4 +310,4 @@ Detail.defaultProps = {
   otherdatas: null,
   slug: null
 }
-export default Detail;
+export default Detail
