@@ -8,7 +8,6 @@ import Slide from '../components/Slide'
 import Peta from '../components/Peta'
 import NavComponent from '../components/NavComponent'
 import FooterDetail from '../components/FooterDetail'
-// import ReactGa from 'react-ga'
 import moment from 'moment'
 import ListKosOthers from '../components/ListKosOthers'
 import fire from '../configurations/firebase'
@@ -18,7 +17,6 @@ import Share from '../components/Share'
 import Footer from '../components/Footer'
 import NavMobile from '../components/NavMobile'
 import ComponentCities from '../components/Cities'
-// import { Comments, FacebookProvider } from 'react-facebook'
 import University from '../components/University'
 import Link from 'next/link'
 import Generateslug from '../utils/Generateslug'
@@ -32,21 +30,6 @@ class Detail extends React.Component {
     this.handleShowAlert = this.handleShowAlert.bind(this)
     this.handleCloseAlert = this.handleCloseAlert.bind(this)
   }
-  // async componentDidMount() {
-  //   const { details } = this.props
-  //   const detail = JSON.parse(details)
-  //   if (window.location.hostname !== 'localhost') {
-  //     this.handleHit(detail.id, detail.hit + 1)
-  //     ReactGa.initialize('UA-132808614-2')
-  //     ReactGa.pageview('/detail')
-  //   }
-  // }
-  // componentDidUpdate() {
-  //   if (window.location.hostname !== 'localhost') {
-  //     ReactGa.initialize('UA-132808614-2')
-  //     ReactGa.pageview('/detail')
-  //   }
-  // }
   handleCloseAlert() {
     this.setState({ showAlert: false })
     Router.push('/favorites')
@@ -171,10 +154,8 @@ class Detail extends React.Component {
         detail &&
         <div className="mx-3 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
           <div>
-            {/* <div className="my-3">
-              <div className="gcse-search" />
-            </div> */}
-            <div className="mb-1 flex">
+
+            <div className="mt-3 mb-1 flex">
               <div className="self-center flex-auto pr-4">
                 <div className="mt-n2 font-bold">
                   <span className="text-3xl">{Cash(detail.price.start_from)}</span>
@@ -240,13 +221,7 @@ class Detail extends React.Component {
                 </a>
               </div>
               <div className="mt-3 text-xs text-green-800 font-bold">* Room data can change at any time.</div>
-
-              {/* <div className="mt-3 bg-gray-100">
-                <FacebookProvider appId={process.env.NEXT_PUBLIC_REACT_APP_FB_CLIENT_ID}>
-                  <Comments width={`100%`} href={`https://tantekos.com/${detail.slug}`} />
-                </FacebookProvider>
-              </div> */}
-
+              
               <ListKosOthers data={otherdata} lengthOther={lengthOther} detail={detail} />
             </div>
           }
@@ -292,9 +267,9 @@ export const getServerSideProps = async (context) => {
     }))
     .catch(err => console.log(err))
   if (detail) {
-    const incHit = detail.hit + 1
+    const hit = detail.hit + 1
     await fire.firestore().collection("kosts")
-      .doc(detail.id).update({ incHit })
+      .doc(detail.id).update({ hit })
       .catch(err => { console.log(err) })
   } else {
     return {
