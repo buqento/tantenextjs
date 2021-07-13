@@ -1,13 +1,13 @@
 import React from 'react'
 import { string } from 'prop-types'
 import Geocoder from 'react-mapbox-gl-geocoder'
-import CampaignItemList from '../components/CampaignItemList'
 import NavComponent from '../components/NavComponent'
 import NavMobile from '../components/NavMobile'
 import Footer from '../components/Footer'
 import Message from '../components/Message'
 import fire from '../configurations/firebase'
 import Header from '../components/Header'
+import ListComponent from '../components/ListComponent'
 class Location extends React.Component {
     constructor(props) {
         super(props);
@@ -93,8 +93,8 @@ class Location extends React.Component {
                         hideOnSelect={true}
                         queryParams={{ country: "id" }} />
                 </div>
-                <div className="mx-3 my-2">
-                    <h1 className="my-2 font-bold">
+                <div className="mx-3">
+                    <h1 className="my-3 font-bold">
                         {
                             listResult &&
                             <>
@@ -105,27 +105,7 @@ class Location extends React.Component {
                             </>
                         }
                     </h1>
-                    {
-                        listResult && listResult.length > 0 &&
-                        <div className="divide-y">
-                            {
-                                listResult
-                                    .sort(function compare(a, b) {
-                                        const priceA = a.price.start_from
-                                        const priceB = b.price.start_from
-                                        let comparison = 0
-                                        if (priceA > priceB) comparison = 1
-                                        if (priceA < priceB) comparison = -1
-                                        return comparison
-                                    })
-                                    .map((item, index) =>
-                                        <div key={index}>
-                                            <CampaignItemList item={item} />
-                                        </div>
-                                    )
-                            }
-                        </div>
-                    }
+                    {listResult && listResult.length > 0 && <ListComponent data={listResult} />}
                 </div>
                 <Footer />
                 <NavMobile />

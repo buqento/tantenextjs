@@ -1,13 +1,13 @@
 import React from 'react'
 import { string } from 'prop-types'
 import fire from '../configurations/firebase'
-import CampaignItemList from '../components/CampaignItemList'
 import Message from '../components/Message'
 import CampaignItemListSkeleton from '../components/CampaignItemListSkeleton'
 import Header from '../components/Header'
 import NavComponent from '../components/NavComponent'
 import NavMobile from '../components/NavMobile'
 import Footer from '../components/Footer'
+import ListComponent from '../components/ListComponent'
 class Nearby extends React.Component {
     constructor(props) {
         super(props)
@@ -76,23 +76,10 @@ class Nearby extends React.Component {
             {!nearbyList && <CampaignItemListSkeleton />}
             {
                 nearbyList && nearbyList.length > 0 &&
-                <>
-                    <h1 className="py-3 px-3 font-bold bg-white">{nearbyList.length} Room{nearbyList.length > 1 ? 's' : ''} Near {locationText}</h1>
-                    <div className="mx-3 mb-2 divide-y">
-                        {
-                            nearbyList
-                                .sort(function compare(a, b) {
-                                    const dtA = a.distance
-                                    const dtB = b.distance
-                                    let comparison = 0
-                                    if (dtA > dtB) comparison = 1
-                                    if (dtA < dtB) comparison = -1
-                                    return comparison
-                                })
-                                .map((item, index) => <div key={index}><CampaignItemList item={item} nearby /></div>)
-                        }
-                    </div>
-                </>
+                <div className="px-3">
+                    <h1 className="py-3 font-bold bg-white">{nearbyList.length} Room{nearbyList.length > 1 ? 's' : ''} Near {locationText}</h1>
+                    <ListComponent data={nearbyList} />
+                </div>
             }
             {
                 nearbyList && nearbyList.length === 0 && <Message title="No Room" message="Use search to view more rooms" />

@@ -34,6 +34,7 @@
     "react-mapbox-gl-geocoder": "^1.1.0",
     "react-share": "^4.4.0",
     "react-simple-wysiwyg": "^1.0.2",
+    "react-virtualized": "^9.22.3",
     "sass": "^1.27.0",
     "swiper": "^6.3.4"
   },

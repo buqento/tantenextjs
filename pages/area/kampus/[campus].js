@@ -1,6 +1,5 @@
 import React from 'react'
 import { string } from 'prop-types'
-import CampaignItemList from '../../../components/CampaignItemList'
 import NavComponent from '../../../components/NavComponent'
 import NavMobile from '../../../components/NavMobile'
 import Footer from '../../../components/Footer'
@@ -8,6 +7,7 @@ import Message from '../../../components/Message'
 import fire from '../../../configurations/firebase'
 import { Campus } from '../../../utils/modals/Campus'
 import NextHead from 'next/head'
+import ListComponent from '../../../components/ListComponent'
 class University extends React.Component {
     constructor(props) {
         super(props);
@@ -152,12 +152,12 @@ class University extends React.Component {
                         {
                             listResult &&
                             <>
-                            <span className="font-bold">
-                                {
-                                    listResult.length > 0 &&
-                                    `${listResult.length} Room${listResult.length > 1 ? 's' : ''} Near ${campusName}`
-                                }
-                            </span>
+                                <span className="font-bold">
+                                    {
+                                        listResult.length > 0 &&
+                                        `${listResult.length} Room${listResult.length > 1 ? 's' : ''} Near ${campusName}`
+                                    }
+                                </span>
                                 {
                                     listResult.length === 0 && campusName &&
                                     <Message title="No Room" message={`No room near ${campusName}. Use search to view more rooms`} />
@@ -166,25 +166,7 @@ class University extends React.Component {
                         }
                     </div>
                     {
-                        listResult && listResult.length > 0 &&
-                        <div className="divide-y">
-                            {
-                                listResult
-                                    .sort(function compare(a, b) {
-                                        const priceA = a.price.start_from
-                                        const priceB = b.price.start_from
-                                        let comparison = 0
-                                        if (priceA > priceB) comparison = 1
-                                        if (priceA < priceB) comparison = -1
-                                        return comparison
-                                    })
-                                    .map((item, index) =>
-                                        <div key={index}>
-                                            <CampaignItemList item={item} />
-                                        </div>
-                                    )
-                            }
-                        </div>
+                        listResult && listResult.length > 0 && <ListComponent data={listResult} />
                     }
                 </div>
                 <Footer />

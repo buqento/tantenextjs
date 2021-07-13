@@ -2,14 +2,14 @@ import React from 'react'
 import { string } from 'prop-types'
 import { DtArea } from '../../utils/modals/Area'
 import NavMobile from '../../components/NavMobile'
-import Footer from '../../components/Footer'
 import NextHead from 'next/head'
 import Generateslug from '../../utils/Generateslug'
 import fire from '../../configurations/firebase'
 import Titlecase from '../../utils/Titlecase'
-import CampaignItemList from '../../components/CampaignItemList'
 import Message from '../../components/Message'
 import NavComponent from '../../components/NavComponent'
+import ListComponent from '../../components/ListComponent'
+import Footer from '../../components/Footer'
 class Area extends React.Component {
     render() {
         const { slug, areas, locations } = this.props
@@ -71,7 +71,7 @@ class Area extends React.Component {
                 JSON.parse(structureTypeItemList),
                 JSON.parse(structureTypeBreadcrumbList)
             ]
-        };
+        }
         return (
             <>
                 <NextHead>
@@ -98,27 +98,11 @@ class Area extends React.Component {
                     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureAreaPage) }} />
                 </NextHead>
                 <NavComponent />
-                <>
+                <div className="px-3">
                     {area.length === 0 && <Message title="No Room" message="Use search to view more rooms" />}
-                    {
-                        area.length > 0 &&
-                        <h1 className="pt-3 px-3 font-bold bg-white">{seo.title}</h1>
-                    }
-                    <div className="mx-3 my-2 divide-y">
-                        {area
-                            .sort(function compare(a, b) {
-                                const itemA = a.price.start_from
-                                const itemB = b.price.start_from
-                                let comparison = 0
-                                if (itemA > itemB) comparison = 1
-                                if (itemA < itemB) comparison = -1
-                                return comparison
-                            })
-                            .map((item, index) =>
-                                <div key={index}><CampaignItemList item={item} /></div>
-                            )}
-                    </div>
-                </>
+                    {area.length > 0 && <h1 className="py-3 font-bold bg-white">{seo.title}</h1>}
+                    <ListComponent data={area} />
+                </div>
                 <Footer />
                 <div className="xs:block sm:hidden md:hidden lg:hidden">
                     <NavMobile />
@@ -139,11 +123,9 @@ export const getServerSideProps = async (context) => {
     if (areas.length === 0) return {
         redirect: { permanent: false, destination: '/' }
     }
-
     const dataArea = DtArea.filter(item => Generateslug(item.district) === context.query.areaid)
     let locations
     if (dataArea.length > 0) locations = { province: dataArea[0].province, city: dataArea[0].city, district: dataArea[0].district }
-
     return {
         props: {
             slug: context.query.areaid,

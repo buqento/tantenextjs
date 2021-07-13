@@ -1,13 +1,12 @@
 import React from 'react'
 import fire from '../../configurations/firebase'
 import Message from '../../components/Message'
-import InfiniteScroll from 'react-infinite-scroll-component'
 import { BiFilterAlt } from 'react-icons/bi'
 import Filter from '../../components/Filter'
 import Modal from 'react-bootstrap/Modal'
 import Titlecase from '../../utils/Titlecase'
 import { DtProvinsi } from '../../utils/modals/Provinsi'
-import CampaignItemList from '../../components/CampaignItemList'
+import ListComponent from '../../components/ListComponent'
 import CampaignItemListSkeleton from '../../components/CampaignItemListSkeleton'
 import Header from '../../components/Header'
 import NavComponent from '../../components/NavComponent'
@@ -186,11 +185,12 @@ class Detail extends React.Component {
             description: 'Kost Murah Sewa Harian Bulanan Tahunan Murah',
             url: 'search/all'
         }
+        console.log(isFilter);
         return <>
             <NavComponent />
             <Header seo={seo} />
             {data.length > 0 && titleHead && <div className="py-4 px-3 font-bold z-40 sticky top-0 bg-white">{data.length} Room{data.length > 1 ? 's' : ''}, {dataCallback.duration}an, in {titleHead}</div>}
-            <div className="mt-2" ref={(node) => this.node = node}>
+            <div ref={(node) => this.node = node}>
                 {
                     <div className="cursor-pointer fixed inset-x-0 bottom-0 mb-5 pb-5 text-center z-40">
                         <span onClick={handleShow} className={`${!show ? 'bg-indigo-700 text-white' : 'bg-white text-black border'} shadow-md w-max px-3 py-3 rounded-full hover:bg-white-700 focus:outline-none uppercase`}>
@@ -200,35 +200,18 @@ class Detail extends React.Component {
                 {
                     load ? <CampaignItemListSkeleton /> :
                         !isFilter ?
-                            <InfiniteScroll
-                                dataLength={data.length}
-                                next={this.fetchMoreData}
-                                hasMore={more}
-                                loader={<div className="py-3 text-center"></div>}
-                            >
+                            <div className="px-3">
                                 <div>
-                                    <div>
-                                        {data.length > 0 && <div className="py-3 px-3 font-bold z-40">{data.length} Room{data.length > 1 ? 's' : ''} in {Titlecase(district)}, {Titlecase(city)}, {Titlecase(province)}</div>}
-                                    </div>
-                                    <div className="mx-3 mb-3 divide-y">
-
-                                        {data.map((item, index) => <div key={index}><CampaignItemList key={index} item={item} /></div>
-                                        )}
-                                    </div>
+                                    {data.length > 0 && <div className="py-3 font-bold z-40">{data.length} Room{data.length > 1 ? 's' : ''} in {Titlecase(district)}, {Titlecase(city)}, {Titlecase(province)}</div>}
                                 </div>
-                            </InfiniteScroll>
+                                <ListComponent data={data} />
+                            </div>
                             :
-                            data.length > 0 ?
-                                <div>
-                                    <div className="mx-3 mb-3 divide-y">
-                                        {data.map((item, index) =>
-                                            <div key={index}><CampaignItemList item={item} /></div>
-                                        )}
-                                    </div>
-
-                                </div>
-                                :
-                                <Message title="No Room" message="Use search to view more rooms" />
+                            <div className="px-3">
+                                {
+                                    data.length > 0 ? <ListComponent data={data} /> : <Message title="No Room" message="Use search to view more rooms" />
+                                }
+                            </div>
                 }
             </div>
             <Modal show={show} onHide={handleClose}>
