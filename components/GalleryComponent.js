@@ -7,7 +7,7 @@ class GalleryComponent extends Component {
         const imageBaseUrl = "https://cdn.statically.io/img/i.imgur.com"
         return (
             <div className="grid grid-cols-2 gap-1">
-                <div className="xs:col-span-2 row-span-2 h-96">
+                <div className="xs:col-span-2 row-span-2 h-96 xs:h-80">
                     <Image className="lazyload object-cover object-center w-full h-96" layout="fill" src={`${imageBaseUrl}/${images[0]}`} />
                 </div>
                 <div className="block xs:hidden h-48">
