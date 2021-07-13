@@ -221,8 +221,8 @@ class Detail extends React.Component {
                 </a>
               </div>
               <div className="mt-3 text-xs text-green-800 font-bold">* Room data can change at any time.</div>
-              
-              <ListKosOthers data={otherdata} lengthOther={lengthOther} detail={detail} />
+
+              <ListKosOthers data={otherdata} detail={detail} />
             </div>
           }
           <div className="xs:border-t">
@@ -280,11 +280,6 @@ export const getServerSideProps = async (context) => {
     }
   }
   let otherData = []
-  const queryLength = await fire.firestore().collection('kosts')
-    .where('slug', '!=', context.query.detail)
-    .where('location.district', '==', detail.location.district)
-    .where('is_active', '==', true)
-    .get()
   const querySnapshot = await fire.firestore().collection('kosts')
     .where('slug', '!=', context.query.detail)
     .where('location.district', '==', detail.location.district)
@@ -301,21 +296,18 @@ export const getServerSideProps = async (context) => {
     props: {
       slug: context.query.detail,
       details: JSON.stringify(detail),
-      otherdatas: JSON.stringify(otherData),
-      lengthOther: queryLength.size
+      otherdatas: JSON.stringify(otherData)
     },
   };
 };
 Detail.propTypes = {
   details: string,
   otherdatas: string,
-  slug: string,
-  lengthOther: number
+  slug: string
 }
 Detail.defaultProps = {
   details: null,
   otherdatas: null,
-  slug: null,
-  lengthOther: 0
+  slug: null
 }
 export default Detail;

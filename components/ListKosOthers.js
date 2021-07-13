@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { arrayOf, shape, number } from 'prop-types'
+import { arrayOf, shape } from 'prop-types'
 import CampaignItemList from '../components/CampaignItemList'
 import Generateslug from '../utils/Generateslug'
 import Link from 'next/link'
 class ListKosOthers extends Component {
     render() {
-        const { data: listData, lengthOther, detail } = this.props
+        const { data: listData, detail } = this.props
         const url = '/search/bulan?province=' + Generateslug(detail.location.province) + '&city=' + Generateslug(detail.location.city) + '&district=' + Generateslug(detail.location.district)
         return (
             <>
@@ -14,7 +14,7 @@ class ListKosOthers extends Component {
                     <div className="mt-3">
                         <div>
                             <div className="py-2 font-bold">
-                                {lengthOther} Other Room{lengthOther > 1 ? 's' : ''} in {`${detail.location.district}, ${detail.location.city}, ${detail.location.province}`}
+                                Other Room{listData.length > 1 ? 's' : ''} in {`${detail.location.district}, ${detail.location.city}, ${detail.location.province}`}
                             </div>
                             <div className="divide-y">
                                 {
@@ -33,33 +33,21 @@ class ListKosOthers extends Component {
                         </div>
                     </div>
                 }
-                {
-                    lengthOther > 5 ?
-                        <div>
-                            <Link href={url}>
-                                <div className="cursor-pointer align-middle text-center text-indigo-700 underline font-bold uppercase py-3">
-                                    <span>View {lengthOther - 5} More</span>
-                                </div>
-                            </Link>
-                        </div> :
-                        <div>
-                            <Link href='/location'>
-                                <div className="cursor-pointer align-middle text-center text-indigo-700 underline font-bold uppercase py-3">Search Other Location</div>
-                            </Link>
-                        </div>
-                }
+                <div>
+                    <Link href={url}>
+                        <div className="cursor-pointer align-middle text-center text-indigo-700 underline font-bold uppercase py-3"><span>View More</span></div>
+                    </Link>
+                </div>
             </>
         )
     }
 }
 ListKosOthers.propTypes = {
-    lengthOther: number,
     data: arrayOf(shape({})),
     detail: shape({}),
     item: shape({})
 }
 ListKosOthers.defaultProps = {
-    lengthOther: null,
     data: null,
     detail: null,
     item: null,
