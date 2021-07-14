@@ -114,14 +114,6 @@ class Detail extends React.Component {
       description: detail.description.replace(/&nbsp;|<\/?[^>]+(>|$)/g, " "),
       keywords: `infokost, cari kos, cari kost, kost murah, cari kost murah, kost eksklusif, kost exclusive, kost mewah, kost kostan, kost bebas, kos lv, olx kost, rukita kost, kost minimalis, kost pelangi, reddoorz kost, kost orange, kos flamboyan, kost murah, ${detail.keywords}`
     }
-
-    const windowWidth = () => {
-      if (typeof window !== 'undefined') {
-        return window.innerWidth
-      }
-      return null
-    }
-
     return <>
       <NavComponent />
       {
@@ -154,9 +146,8 @@ class Detail extends React.Component {
       {
         detail &&
         <div>
-          {
-            windowWidth() > 768 ? <GalleryComponent images={detail.images} /> : <Slide images={detail.images} />
-          }
+          <div className="block xs:hidden"><GalleryComponent images={detail.images} /></div>
+          <div className="block sm:hidden md:hidden lg:hidden"><Slide images={detail.images} /></div>
           <FooterDetail data={detail} callbackFromParent={this.handleShowAlert} />
         </div>
       }
