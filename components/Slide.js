@@ -7,7 +7,7 @@ import Image from 'next/image'
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
 class Slide extends Component {
     render() {
-        const { imagesData } = this.props;
+        const { images } = this.props;
         return <Swiper
             spaceBetween={0}
             slidesPerView={1}
@@ -16,12 +16,12 @@ class Slide extends Component {
             autoplay
         >
             {
-                imagesData && imagesData.map((item, index) =>
+                images && images.map((item, index) =>
                     <SwiperSlide key={index} className="bg-gray-900">
                         <div className="w-full h-80">
                             <Image
                                 loader="/static/images/image-not-found.png"
-                                className="object-contain object-center w-full h-80" src={`https://cdn.statically.io/img/i.imgur.com/h=400/${item}`} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} layout="fill"  quality={60}
+                                className="object-contain object-center w-full h-80" src={`https://cdn.statically.io/img/i.imgur.com/h=400/${item}`} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} layout="fill" quality={60}
                             />
                         </div>
                     </SwiperSlide>
@@ -32,10 +32,10 @@ class Slide extends Component {
 }
 Slide.propTypes = {
     imageTitle: string,
-    imagesData: arrayOf(string)
+    images: arrayOf(string)
 }
 Slide.defaultProps = {
     imageTitle: null,
-    imagesData: null
+    images: null
 }
 export default Slide;

@@ -21,6 +21,7 @@ import Link from 'next/link'
 import Generateslug from '../utils/Generateslug'
 import Ads from '../components/Ads'
 import GalleryComponent from '../components/GalleryComponent'
+import Slide from '../components/Slide'
 class Detail extends React.Component {
   constructor(props) {
     super(props)
@@ -113,6 +114,14 @@ class Detail extends React.Component {
       description: detail.description.replace(/&nbsp;|<\/?[^>]+(>|$)/g, " "),
       keywords: `infokost, cari kos, cari kost, kost murah, cari kost murah, kost eksklusif, kost exclusive, kost mewah, kost kostan, kost bebas, kos lv, olx kost, rukita kost, kost minimalis, kost pelangi, reddoorz kost, kost orange, kos flamboyan, kost murah, ${detail.keywords}`
     }
+
+    const windowWidth = () => {
+      if (typeof window !== 'undefined') {
+        return window.innerWidth
+      }
+      return null
+    }
+
     return <>
       <NavComponent />
       {
@@ -145,7 +154,9 @@ class Detail extends React.Component {
       {
         detail &&
         <div>
-          <GalleryComponent images={detail.images} />
+          {
+            windowWidth() > 768 ? <GalleryComponent images={detail.images} /> : <Slide images={detail.images} />
+          }
           <FooterDetail data={detail} callbackFromParent={this.handleShowAlert} />
         </div>
       }
