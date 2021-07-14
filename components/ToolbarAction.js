@@ -3,8 +3,7 @@ import { shape, func } from 'prop-types'
 import { FaWhatsapp } from 'react-icons/fa'
 import { BiPhoneCall } from 'react-icons/bi'
 import { MdStar, MdStarBorder } from 'react-icons/md'
-import ReactGa from 'react-ga'
-class FooterDetail extends Component {
+class ToolbarAction extends Component {
     constructor(props) {
         super(props);
         this.state = { like: false }
@@ -19,19 +18,7 @@ class FooterDetail extends Component {
         const findFav = userdataFav.filter(i => i.id === data.id).length
         if (findFav > 0) this.setState({ like: true })
     }
-    handleCall(phone) {
-        ReactGa.event({
-            category: 'Call Button',
-            action: phone
-        })
-        window.open('tel:' + phone);
-    }
-    handleWa(phone) {
-        ReactGa.event({
-            category: 'Whatsapp',
-            action: 'WA' + phone
-        })
-    }
+    handleCall(phone) { window.open('tel:' + phone) }
     handleFavorite() {
         const { data } = this.props
         this.setState({ like: true })
@@ -118,7 +105,7 @@ class FooterDetail extends Component {
                         {
                             data.contact_us && data.contact_us.whatsapp !== undefined ?
                                 <a href={`https://wa.me/${data.contact_us.whatsapp}/?text=Hai, saya tertarik dengan kost ini https://tantekos.com/${data.slug}`} target="BLANK">
-                                    <button className="w-100 bg-green-500 hover:bg-green-400 text-white font-bold py-1 px-1 uppercase focus:outline-none" onClick={() => this.handleWa(data.contact_us.phone)}><div style={{ textAlign: '-webkit-center' }}><FaWhatsapp size={22} /></div>WhatsApp
+                                    <button className="w-100 bg-green-500 hover:bg-green-400 text-white font-bold py-1 px-1 uppercase focus:outline-none"><div style={{ textAlign: '-webkit-center' }}><FaWhatsapp size={22} /></div>WhatsApp
                                     </button></a>
                                 :
                                 <button className="w-100 bg-green-300 text-gray-800 font-bold py-1 px-1 opacity-50 cursor-not-allowed uppercase focus:outline-none"><div style={{ textAlign: '-webkit-center' }}><FaWhatsapp size={22} /></div>WhatsApp</button>
@@ -130,12 +117,12 @@ class FooterDetail extends Component {
         )
     }
 }
-FooterDetail.propTypes = {
+ToolbarAction.propTypes = {
     data: shape({}),
     callbackFromParent: func
 }
-FooterDetail.defaultProps = {
+ToolbarAction.defaultProps = {
     data: null,
     callbackFromParent: null
 }
-export default FooterDetail;
+export default ToolbarAction

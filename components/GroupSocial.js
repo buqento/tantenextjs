@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { FacebookProvider, Group } from 'react-facebook'
 class Area extends Component {
     render() {
         const group = [
@@ -49,15 +48,7 @@ class Area extends Component {
                 {
                     group.map((item, index) =>
                         <div key={index} className="py-3 text-center">
-                            <FacebookProvider appId={process.env.NEXT_PUBLIC_REACT_APP_FB_CLIENT_ID}>
-                                <Group
-                                    href={item.url}
-                                    width="320"
-                                    showSocialContext={true}
-                                    showMetaData={true}
-                                    skin="light"
-                                />
-                            </FacebookProvider>
+                            {item.name}
                         </div>
                     )
                 }

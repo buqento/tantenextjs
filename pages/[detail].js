@@ -6,7 +6,7 @@ import { FaExternalLinkAlt } from 'react-icons/fa'
 import Cash from '../utils/Cash'
 import Peta from '../components/Peta'
 import NavComponent from '../components/NavComponent'
-import FooterDetail from '../components/FooterDetail'
+import ToolbarAction from '../components/ToolbarAction'
 import moment from 'moment'
 import ListKosOthers from '../components/ListKosOthers'
 import fire from '../configurations/firebase'
@@ -148,7 +148,7 @@ class Detail extends React.Component {
         <div>
           <div className="block xs:hidden"><GalleryComponent images={detail.images} /></div>
           <div className="block sm:hidden md:hidden lg:hidden"><Slide images={detail.images} /></div>
-          <FooterDetail data={detail} callbackFromParent={this.handleShowAlert} />
+          <ToolbarAction data={detail} callbackFromParent={this.handleShowAlert} />
         </div>
       }
 
