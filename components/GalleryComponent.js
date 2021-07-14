@@ -10,7 +10,7 @@ class GalleryComponent extends Component {
                 <div className="xs:col-span-2 row-span-2 h-96 xs:h-80 pr-2">
                     <Image className="lazyload object-cover object-center w-full h-96 xs:h-80" layout="fill" src={`${imageBaseUrl}/${images[0]}`} />
                 </div>
-                <div className="block xs:hidden h-48 border-b pb-2">
+                <div className="block xs:hidden h-48 mb-2">
                     <Image className="lazyload object-cover object-center w-full h-48" layout="fill" src={`${imageBaseUrl}/${images[1]}`} />
                 </div>
                 <div className="block xs:hidden h-48">
