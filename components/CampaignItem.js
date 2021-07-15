@@ -57,7 +57,7 @@ class CampaignItem extends Component {
             <a className="hover:text-current" href={`/${Generateslug(item.title)}`}>
                 <div className={`my-4 overflow-hidden ${customStyle}`} onClick={() => handleLastView()}>
                     <div className="flex mx-2 my-2">
-                        <Image src={profileImage} className="rounded-full mr-2 h-10 w-10 rounded-full" alt={item.user.display_name} />
+                        <img src={profileImage} className="rounded-full mr-2 h-10 w-10 rounded-full" alt={item.user.display_name} />
                         <div>
                             <div className="font-bold my-n1">
                                 {item.user.email === defaultEmail ? 'Tantekos' : item.user.display_name}
