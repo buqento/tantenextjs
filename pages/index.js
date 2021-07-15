@@ -5,7 +5,6 @@ import Campus from '../components/Campus'
 import FeedsGrid from '../components/FeedsGrid'
 import fire from '../configurations/firebase'
 import NavComponent from '../components/NavComponent'
-import Ads from '../components/Ads'
 import Footer from '../components/Footer'
 import NavMobile from '../components/NavMobile'
 import Link from 'next/link'
@@ -24,35 +23,42 @@ class Index extends React.Component {
         <Header seo={seo} />
         <NavComponent />
         <div>
-          <div className="mx-3 grid sm:grid-cols-2 md:grid-cols-2 gap-4">
+          <div className="lg:mx-3 grid sm:grid-cols-2 md:grid-cols-2 gap-4">
+
             <div>
-              <div className="mt-3 mb-3 pb-3  xs:border-b">
-                <h1 className="mt-3 text-2xl text-uppercase text-current font-bold">New Feed</h1>
+              <div className="mt-3 mb-3 pb-3 xs:border-b">
+                <h1 className="mx-3 mt-3 text-2xl text-uppercase text-current font-bold">New Feed</h1>
                 <FeedsGrid data={data} />
-                <div className="my-3"><Ads /></div>
                 <Link href="/location">
                   <div className="cursor-pointer align-middle text-center text-indigo-700 font-bold uppercase underline py-3 mx-3">View More</div>
                 </Link>
               </div>
             </div>
-            <div className="lg:mx-3">
-              <h2 className="lg:mt-4 md:mt-4 sm:mt-4 mb-3 text-2xl text-uppercase text-current font-bold">Near Campus</h2>
-              <div className="border-b">
-                <Campus />
-                <Link href="/area/kampus">
-                  <div className="align-middle text-center text-indigo-700 font-bold uppercase my-3 py-2 cursor-pointer underline">
-                    <span>View More</span>
-                  </div>
-                </Link>
+
+            <div>
+              <div className="xs:mx-3">
+                <h2 className="lg:mt-4 md:mt-4 sm:mt-4 mb-3 text-2xl text-uppercase text-current font-bold">Near Campus</h2>
+                <div>
+                  <Campus />
+                  <Link href="/area/kampus">
+                    <div className="align-middle text-center text-indigo-700 font-bold uppercase my-3 py-2 cursor-pointer underline">
+                      <span>View More</span>
+                    </div>
+                  </Link>
+                </div>
               </div>
-              <h2 className="mt-4 py-3 text-2xl text-uppercase text-current font-bold">Popular Cities</h2>
-              <div>
-                <ComponentCities />
-                <Link href="/area/kota/all">
-                  <div className="cursor-pointer align-middle text-center text-indigo-700 font-bold uppercase underline py-3">View More</div>
-                </Link>
+              <div className="border-b" />
+              <div className="xs:mx-3">
+                <h2 className="mt-3 py-3 text-2xl text-uppercase text-current font-bold">Popular Cities</h2>
+                <div>
+                  <ComponentCities />
+                  <Link href="/area/kota/all">
+                    <div className="cursor-pointer align-middle text-center text-indigo-700 font-bold uppercase underline py-3">View More</div>
+                  </Link>
+                </div>
               </div>
             </div>
+
           </div>
         </div>
         <Footer />

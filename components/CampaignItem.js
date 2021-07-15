@@ -7,7 +7,7 @@ import Generateslug from '../utils/Generateslug'
 import { BiMap } from 'react-icons/bi'
 import { MdStar } from 'react-icons/md'
 import moment from 'moment'
-import { facility, type, duration } from './Campaign'
+import { type, duration } from './Campaign'
 import Image from 'next/image'
 class CampaignItem extends Component {
     constructor(props) {
@@ -55,11 +55,11 @@ class CampaignItem extends Component {
         }
         return (
             <a className="hover:text-current" href={`/${Generateslug(item.title)}`}>
-                <div className={`my-3 border overflow-hidden ${customStyle}`} onClick={() => handleLastView()}>
-                    <div className="flex mx-3 my-3">
+                <div className={`my-4 overflow-hidden ${customStyle}`} onClick={() => handleLastView()}>
+                    <div className="flex mx-3 my-2">
                         <img src={profileImage} className="rounded-full mr-2 h-10 w-10 rounded-full" alt={item.user.display_name} />
-                        <div className="mt-n1">
-                            <div className="font-bold">
+                        <div>
+                            <div className="font-bold mb-n2">
                                 {item.user.email === defaultEmail ? 'Tantekos' : item.user.display_name}
                             </div>
                             <div>
@@ -68,14 +68,10 @@ class CampaignItem extends Component {
                         </div>
                     </div>
                     <div className="w-full h-72 bg-gray-400">
-                        <Image
-                            className="lazyload object-cover object-center w-full h-72"
-                            src={`https://cdn.statically.io/img/i.imgur.com/w=400/${item.images[0]}`}
-                            layout="fill"
-                            quality={65}
+                        <Image className="lazyload object-cover object-center w-full h-72" src={`https://cdn.statically.io/img/i.imgur.com/${item.images[0]}`} layout="fill"
                         />
                     </div>
-                    <div className="mx-3 my-3">
+                    <div className="mx-3 my-1">
                         <div className="text-2xl flex">
                             <div className="flex-auto font-bold">
                                 <span>
@@ -84,12 +80,11 @@ class CampaignItem extends Component {
                                 </span>
                                 <span className="text-xs text-gray-700 uppercase"> / {duration(item.price.duration)}</span>
                             </div>
-                            <div className="mt-2 text-sm underline uppercase text-indigo-700 font-bold">View More</div>
+                            <div className="mt-2 text-sm underline uppercase text-indigo-700 font-bold">View Detail</div>
                         </div>
                         <div className="clamp-1">
                             <BiMap size={16} className="inline mr-1 mb-1" /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
                         </div>
-                        <div className="clamp-1">{facility(item.facility.room)} &middot; {facility(item.facility.bathroom)} &middot; {facility(item.facility.share)}</div>
                         <div className="text-sm uppercase mt-1 text-green-800 font-bold">{type(item.type)}</div>
 
                     </div>
