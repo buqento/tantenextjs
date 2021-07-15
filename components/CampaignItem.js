@@ -56,10 +56,10 @@ class CampaignItem extends Component {
         return (
             <a className="hover:text-current" href={`/${Generateslug(item.title)}`}>
                 <div className={`my-4 overflow-hidden ${customStyle}`} onClick={() => handleLastView()}>
-                    <div className="flex mx-3 my-2">
-                        <img src={profileImage} className="rounded-full mr-2 h-10 w-10 rounded-full" alt={item.user.display_name} />
+                    <div className="flex mx-2 my-2">
+                        <Image src={profileImage} className="rounded-full mr-2 h-10 w-10 rounded-full" alt={item.user.display_name} />
                         <div>
-                            <div className="font-bold mb-n2">
+                            <div className="font-bold my-n1">
                                 {item.user.email === defaultEmail ? 'Tantekos' : item.user.display_name}
                             </div>
                             <div>
@@ -71,8 +71,8 @@ class CampaignItem extends Component {
                         <Image className="lazyload object-cover object-center w-full h-72" src={`https://cdn.statically.io/img/i.imgur.com/${item.images[0]}`} layout="fill"
                         />
                     </div>
-                    <div className="mx-3 my-1">
-                        <div className="text-2xl flex">
+                    <div className="mx-2 my-1">
+                        <div className="text-2xl mb-n2 flex">
                             <div className="flex-auto font-bold">
                                 <span>
                                     {like && <MdStar className="inline text-pink-500 mt-1 mr-1 float-right" />}
@@ -82,10 +82,10 @@ class CampaignItem extends Component {
                             </div>
                             <div className="mt-2 text-sm underline uppercase text-indigo-700 font-bold">View Detail</div>
                         </div>
-                        <div className="clamp-1">
-                            <BiMap size={16} className="inline mr-1 mb-1" /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
+                        <div className="clamp-1 my-1">
+                            <BiMap size={16} className="inline mr-1" /><span>{item.location.district}, {item.location.city}, {item.location.province}</span>
                         </div>
-                        <div className="text-sm uppercase mt-1 text-green-800 font-bold">{type(item.type)}</div>
+                        <div className="text-sm uppercase text-green-800 font-bold">{type(item.type)}</div>
 
                     </div>
                 </div>
