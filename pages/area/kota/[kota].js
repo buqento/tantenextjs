@@ -50,7 +50,7 @@ class Detail extends React.Component {
                 </NextHead>
                 <NavComponent />
                 <>
-                    <div className="mx-3 divide-y divide-gray-400 font-bold">
+                    <div className="mx-2 divide-y divide-gray-400 font-bold">
                         {
                             slug != 'all' ?
                                 DtArea
@@ -84,7 +84,7 @@ class Detail extends React.Component {
                                     .map((itemCity, index) =>
                                         <div className="tab w-full overflow-hidden" key={index}>
                                             <input className="absolute opacity-0" id={index} type="radio" name="tabs2" />
-                                            <label htmlFor={index} className="block pt-3 text-gray-800 cursor-pointer" onClick={() => this.handleCollapse(index)}>
+                                            <label htmlFor={index} className="block pt-2 text-gray-800 cursor-pointer" onClick={() => this.handleCollapse(index)}>
                                                 <div className="font-bold text-xl text-gray-800">{itemCity.name}</div>
                                                 <div className="uppercase text-xs text-indigo-700"><BiMap className="inline mr-1 mb-1" />{itemCity.province}</div>
                                             </label>

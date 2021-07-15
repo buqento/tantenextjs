@@ -35,7 +35,6 @@ class Detail extends React.Component {
             load: true
         }
         this.fetchMoreData = this.fetchMoreData.bind(this)
-        this.scrollToNode = this.scrollToNode.bind(this)
     }
     async componentDidMount() {
         const { province, city, district, slug } = this.props
@@ -146,7 +145,6 @@ class Detail extends React.Component {
             }))
             const dataFilterByDuration = data.filter((item) => item.durations.includes(dataCallback.duration.toLowerCase()))
             this.setState({ data: dataFilterByDuration, isFilter: true, show: false, dataCallback, load: false })
-            this.scrollToNode(this.node)
         })
     }
     fetchMoreData() {
@@ -170,9 +168,8 @@ class Detail extends React.Component {
             this.setState({ more: false })
         }
     }
-    scrollToNode(node) { node.scrollIntoView({ behavior: 'smooth' }) }
     render() {
-        const { show, data, more, isFilter, dataCallback, load } = this.state
+        const { show, data, isFilter, dataCallback, load } = this.state
         const { province, city, district } = this.props
         const handleClose = () => { this.setState({ show: false }) }
         const handleShow = () => { this.setState({ show: true }) }
@@ -185,29 +182,28 @@ class Detail extends React.Component {
             description: 'Kost Murah Sewa Harian Bulanan Tahunan Murah',
             url: 'search/all'
         }
-        console.log(isFilter);
         return <>
             <NavComponent />
             <Header seo={seo} />
-            {data.length > 0 && titleHead && <div className="py-4 px-3 font-bold z-40 sticky top-0 bg-white">{data.length} Room{data.length > 1 ? 's' : ''}, {dataCallback.duration}an, in {titleHead}</div>}
-            <div ref={(node) => this.node = node}>
+            {data.length > 0 && titleHead && <div className="py-2 px-2 font-bold bg-white">{data.length} Room{data.length > 1 ? 's' : ''}, {dataCallback.duration}an, in {titleHead}</div>}
+            <div>
                 {
                     <div className="cursor-pointer fixed inset-x-0 bottom-0 mb-5 pb-5 text-center z-40">
-                        <span onClick={handleShow} className={`${!show ? 'bg-indigo-700 text-white' : 'bg-white text-black border'} shadow-md w-max px-3 py-3 rounded-full hover:bg-white-700 focus:outline-none uppercase`}>
+                        <span onClick={handleShow} className={`${!show ? 'bg-indigo-700 text-white' : 'bg-white text-black border'} shadow-md w-max px-2 py-2 hover:bg-white-700 focus:outline-none uppercase`}>
                             <BiFilterAlt className="inline mb-1 mr-1" />Filter</span>
                     </div>
                 }
                 {
                     load ? <CampaignItemListSkeleton /> :
                         !isFilter ?
-                            <div className="px-3">
+                            <div className="px-2">
                                 <div>
-                                    {data.length > 0 && <div className="py-3 font-bold z-40">{data.length} Room{data.length > 1 ? 's' : ''} in {Titlecase(district)}, {Titlecase(city)}, {Titlecase(province)}</div>}
+                                    {data.length > 0 && <div className="py-2 font-bold z-40">{data.length} Room{data.length > 1 ? 's' : ''} in {Titlecase(district)}, {Titlecase(city)}, {Titlecase(province)}</div>}
                                 </div>
                                 <ListComponent data={data} />
                             </div>
                             :
-                            <div className="px-3">
+                            <div className="px-2">
                                 {
                                     data.length > 0 ? <ListComponent data={data} /> : <Message title="No Room" message="Use search to view more rooms" />
                                 }

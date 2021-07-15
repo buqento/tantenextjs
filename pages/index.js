@@ -27,7 +27,7 @@ class Index extends React.Component {
 
             <div>
               <div className="mt-3 mb-3 pb-3 xs:border-b">
-                <h1 className="mx-3 mt-3 text-2xl text-uppercase text-current font-bold">New Feed</h1>
+                <h1 className="mx-2 text-2xl text-uppercase text-current font-bold">New Feed</h1>
                 <FeedsGrid data={data} />
                 <Link href="/location">
                   <div className="cursor-pointer align-middle text-center text-indigo-700 font-bold uppercase underline py-3 mx-3">View More</div>
@@ -36,7 +36,7 @@ class Index extends React.Component {
             </div>
 
             <div>
-              <div className="xs:mx-3">
+              <div className="xs:mx-2">
                 <h2 className="lg:mt-4 md:mt-4 sm:mt-4 mb-3 text-2xl text-uppercase text-current font-bold">Near Campus</h2>
                 <div>
                   <Campus />
@@ -48,7 +48,7 @@ class Index extends React.Component {
                 </div>
               </div>
               <div className="border-b" />
-              <div className="xs:mx-3">
+              <div className="xs:mx-2">
                 <h2 className="mt-3 py-3 text-2xl text-uppercase text-current font-bold">Popular Cities</h2>
                 <div>
                   <ComponentCities />

@@ -98,9 +98,9 @@ class Area extends React.Component {
                     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureAreaPage) }} />
                 </NextHead>
                 <NavComponent />
-                <div className="px-3">
+                <div className="px-2">
                     {area.length === 0 && <Message title="No Room" message="Use search to view more rooms" />}
-                    {area.length > 0 && <h1 className="py-3 font-bold bg-white">{seo.title}</h1>}
+                    {area.length > 0 && <h1 className="py-2 font-bold bg-white">{seo.title}</h1>}
                     <ListComponent data={area} />
                 </div>
                 <Footer />

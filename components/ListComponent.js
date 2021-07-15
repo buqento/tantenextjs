@@ -13,7 +13,7 @@ class ListComponent extends React.Component {
                             width={width}
                             height={height}
                             rowCount={data.length}
-                            rowHeight={112}
+                            rowHeight={104}
                             rowRenderer={({ key, index, style }) => <div key={key} style={style}><CampaignItemList item={data[index]} /></div>}
                         />
                     }

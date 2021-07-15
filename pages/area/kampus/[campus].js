@@ -147,7 +147,7 @@ class University extends React.Component {
                     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structureAreaPage) }} />
                 </NextHead>
                 <NavComponent />
-                <div className="mx-3 mt-3">
+                <div className="mx-2 mt-2">
                     <div className="my-2">
                         {
                             listResult &&

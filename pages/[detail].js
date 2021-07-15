@@ -154,10 +154,11 @@ class Detail extends React.Component {
 
       {
         detail &&
-        <div className="mx-3 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-          <div>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
 
-            <div className="mt-3 mb-1 flex">
+          <div className="mx-2">
+
+            <div className="mt-2 mb-n1 flex">
               <div className="self-center flex-auto pr-4">
                 <div className="mt-n2 font-bold">
                   <span className="text-3xl">{Cash(detail.price.start_from)}</span>
@@ -169,14 +170,14 @@ class Detail extends React.Component {
               </div>
             </div>
 
-            <div className="my-2 text-left uppercase text-green-600 font-bold">{type(detail.type)}</div>
+            <div className="text-left uppercase text-green-600 font-bold">{type(detail.type)}</div>
 
-            <small className="text-gray-700 uppercase">{moment(detail.date_modified).fromNow()} &middot; {detail.hit} Views</small>
+            <small className="text-gray-700 uppercase">Updated {moment(detail.date_modified).fromNow()} &middot; {detail.hit} Views</small>
 
-            <h1 className="my-4 text-xl capitalize font-bold">{detail.title}</h1>
+            <h1 className="my-3 text-xl capitalize font-bold">{detail.title}</h1>
 
             <div className="my-3">
-              <h2 className="font-bold">Description *</h2>
+              <h2 className="font-bold">Description</h2>
               <div dangerouslySetInnerHTML={{ __html: detail.description }} /><a href="http://fumacrom.com/1AKOa" target="_blank" rel="noreferrer" className="hidden lg:block underline cursor-pointer text-indigo-700">View more...</a>
             </div>
 
@@ -191,7 +192,7 @@ class Detail extends React.Component {
             }
             {
               detail && detail.facility && detail.facility.bathroom.length > 0 && detail.facility.bathroom[0] !== "" &&
-              <div className="mb-4">
+              <div className="mb-3">
                 <h2 className="font-bold">Bathroom Facilities</h2>
                 <Facilities items={detail.facility.bathroom} />
               </div>
@@ -208,9 +209,9 @@ class Detail extends React.Component {
           {
             detail.location &&
             <div className="mt-3">
-              <div className="mb-3">
+              <div className="mb-3 mx-2">
                 <h2 className="font-bold mb-1">Room Location</h2>
-                <div className="mb-3">
+                <div className="mb-2">
                   <Link href={`/area/${Generateslug(detail.location.district)}`}>
                     <span className="mr-1 underline cursor-pointer text-indigo-700">{detail.location.district}</span>
                   </Link>&middot;
@@ -219,23 +220,27 @@ class Detail extends React.Component {
                 </div>
                 <Peta location={detail.location} zoom={10} />
                 <a href={`https://www.google.com/maps/search/?api=1&query=${detail.location.lat_lng.latitude},${detail.location.lat_lng.longitude}`} target="_blank" rel="noreferrer">
-                  <div className="my-3 underline text-indigo-700">Google Map <FaExternalLinkAlt className="inline ml-1 mb-1" /></div>
+                  <div className="my-2 underline text-indigo-700">Google Map <FaExternalLinkAlt className="inline ml-1 mb-1" /></div>
                 </a>
               </div>
-              <div className="mt-3 text-xs text-green-800 font-bold">* Room data can change at any time.</div>
-
-              <ListKosOthers data={otherdata} detail={detail} />
+              <div className="border-t">
+                <div className="mx-2">
+                  <ListKosOthers data={otherdata} detail={detail} />
+                </div>
+              </div>
             </div>
           }
           <div className="xs:border-t">
-            <h2 className="py-3 text-2xl text-uppercase text-current font-bold">Popular Cities</h2>
-            <div>
-              <ComponentCities />
-              <Link href="/area/kota/all">
-                <div className="cursor-pointer align-middle text-center text-indigo-700 font-bold uppercase underline py-3">View More</div>
-              </Link>
+            <div className="mx-2">
+              <h2 className="py-3 text-2xl text-uppercase text-current font-bold">Popular Cities</h2>
+              <div>
+                <ComponentCities />
+                <Link href="/area/kota/all">
+                  <div className="cursor-pointer align-middle text-center text-indigo-700 font-bold uppercase underline py-3">View More</div>
+                </Link>
+              </div>
             </div>
-            <div className="my-3"><Ads /></div>
+            <div className="mt-3"><Ads /></div>
           </div>
         </div>
       }

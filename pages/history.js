@@ -45,10 +45,10 @@ class History extends React.Component {
                     load ? <CampaignItemListSkeleton /> :
                         data && data.length > 0 &&
                         <>
-                            <h1 className="my-3 mx-3 font-bold">
+                            <h1 className="my-2 mx-2 font-bold">
                                 {`${data.length} Room${data.length > 1 ? 's' : ''} in History`}
                             </h1>
-                            <div className="mx-3 divide-y">
+                            <div className="mx-2 divide-y">
 
                                 {
                                     data

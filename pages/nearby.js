@@ -76,8 +76,8 @@ class Nearby extends React.Component {
             {!nearbyList && <CampaignItemListSkeleton />}
             {
                 nearbyList && nearbyList.length > 0 &&
-                <div className="px-3">
-                    <h1 className="py-3 font-bold bg-white">{nearbyList.length} Room{nearbyList.length > 1 ? 's' : ''} Near {locationText}</h1>
+                <div className="px-2">
+                    <h1 className="py-2 font-bold bg-white">{nearbyList.length} Room{nearbyList.length > 1 ? 's' : ''} Near {locationText}</h1>
                     <ListComponent data={nearbyList} />
                 </div>
             }

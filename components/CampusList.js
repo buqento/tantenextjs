@@ -15,7 +15,7 @@ const CampusList = (props) => {
         <>
             <div>
                 {
-                    data.length > 0 && <div className="px-3 pt-3 text-lg font-bold uppercase">{locationProvince}</div>
+                    data.length > 0 && <div className="px-2 pt-2 text-lg font-bold uppercase">{locationProvince}</div>
                 }
                 <div className="container divide-y divide-gray-400">
                     {

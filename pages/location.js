@@ -84,17 +84,17 @@ class Location extends React.Component {
             <>
                 <NavComponent />
                 <Header seo={seo} />
-                <div className="my-3">
+                <div className="my-2">
                     <Geocoder
-                        className="border text-lg mx-3 p-0"
+                        className="border text-lg mx-2 p-0"
                         mapboxApiAccessToken={mapboxApiKey}
                         onSelected={this.onSelected}
                         viewport={viewport}
                         hideOnSelect={true}
                         queryParams={{ country: "id" }} />
                 </div>
-                <div className="mx-3">
-                    <h1 className="my-3 font-bold">
+                <div className="mx-2">
+                    <h1 className="my-2 font-bold">
                         {
                             listResult &&
                             <>

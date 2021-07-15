@@ -11,31 +11,29 @@ class ListKosOthers extends Component {
             <>
                 {
                     listData.length > 0 &&
-                    <div className="mt-3">
-                        <div>
-                            <div className="py-2 font-bold">
-                                Other Room{listData.length > 1 ? 's' : ''} in {`${detail.location.district}, ${detail.location.city}, ${detail.location.province}`}
-                            </div>
-                            <div className="divide-y">
-                                {
-                                    listData
-                                        .sort(function compare(a, b) {
-                                            const itemA = a.price.start_from
-                                            const itemB = b.price.start_from
-                                            let comparison = 0
-                                            if (itemA > itemB) comparison = 1
-                                            if (itemA < itemB) comparison = -1
-                                            return comparison
-                                        })
-                                        .slice(0, 10).map((item, index) => <div key={index}><CampaignItemList key={index} item={item} /></div>)
-                                }
-                            </div>
+                    <div>
+                        <div className="pt-2 font-bold">
+                            Other Room{listData.length > 1 ? 's' : ''} in {`${detail.location.district}, ${detail.location.city}, ${detail.location.province}`}
+                        </div>
+                        <div className="divide-y">
+                            {
+                                listData
+                                    .sort(function compare(a, b) {
+                                        const itemA = a.price.start_from
+                                        const itemB = b.price.start_from
+                                        let comparison = 0
+                                        if (itemA > itemB) comparison = 1
+                                        if (itemA < itemB) comparison = -1
+                                        return comparison
+                                    })
+                                    .slice(0, 10).map((item, index) => <div key={index}><CampaignItemList key={index} item={item} /></div>)
+                            }
                         </div>
                     </div>
                 }
                 <div>
                     <Link href={url}>
-                        <div className="cursor-pointer align-middle text-center text-indigo-700 underline font-bold uppercase py-3"><span>View More</span></div>
+                        <div className="cursor-pointer align-middle text-center text-indigo-700 underline font-bold uppercase pt-3"><span>View More</span></div>
                     </Link>
                 </div>
             </>
