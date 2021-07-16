@@ -9,13 +9,14 @@ class ListComponent extends React.Component {
             <div style={{ height: "100vh" }}>
                 <AutoSizer>
                     {
-                        ({ height, width }) => <List
-                            width={width}
-                            height={height}
-                            rowCount={data.length}
-                            rowHeight={104}
-                            rowRenderer={({ key, index, style }) => <div key={key} style={style}><CampaignItemList item={data[index]} /></div>}
-                        />
+                        ({ height, width }) =>
+                            <List
+                                width={width}
+                                height={height}
+                                rowCount={data.length}
+                                rowHeight={112}
+                                rowRenderer={({ key, index, style }) => <div key={key} style={style} className={`${data.length !== index + 1 && `border-b`}`}><CampaignItemList item={data[index]} /></div>}
+                            />
                     }
                 </AutoSizer>
             </div>

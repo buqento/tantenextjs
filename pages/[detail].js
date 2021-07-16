@@ -178,7 +178,7 @@ class Detail extends React.Component {
 
             <div className="my-3">
               <h2 className="font-bold">Description</h2>
-              <div dangerouslySetInnerHTML={{ __html: detail.description }} /><a href="http://fumacrom.com/1AKOa" target="_blank" rel="noreferrer" className="hidden lg:block underline cursor-pointer text-indigo-700">View more...</a>
+              <div dangerouslySetInnerHTML={{ __html: detail.description }} />
             </div>
 
             <University viewport={detail.location && detail.location.lat_lng} />
@@ -208,7 +208,7 @@ class Detail extends React.Component {
 
           {
             detail.location &&
-            <div className="mt-3">
+            <div className="xs:mt-3 lg:mt-2">
               <div className="mb-3 mx-2">
                 <h2 className="font-bold mb-1">Room Location</h2>
                 <div className="mb-2">
@@ -231,8 +231,8 @@ class Detail extends React.Component {
             </div>
           }
           <div className="xs:border-t">
-            <div className="mx-2">
-              <h2 className="py-3 text-2xl text-uppercase text-current font-bold">Popular Cities</h2>
+            <div className="mx-2 xs:mt-3 lg:mt-2">
+              <h2 className="pb-2 text-2xl text-uppercase text-current font-bold">Popular Cities</h2>
               <div>
                 <ComponentCities />
                 <Link href="/area/kota/all">
