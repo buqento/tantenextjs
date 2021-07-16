@@ -33,7 +33,7 @@ export const DtArea = [
     { province: 'Sumatera Utara', city: 'Medan', district: 'Medan Johor' },
     { province: 'Sumatera Utara', city: 'Padangsidempuan', district: 'Padangsidimpuan Angkola Julu' },
     { province: 'Sumatera Utara', city: 'Padangsidempuan', district: 'Padangsidimpuan Batunadua' },
-    
+
     { province: 'Maluku', city: 'Ambon', district: 'Teluk Ambon' },
     { province: 'Maluku', city: 'Ambon', district: 'Baguala' },
     { province: 'Maluku', city: 'Ambon', district: 'Sirimau' },
@@ -110,14 +110,17 @@ export const DtArea = [
     { province: 'Jawa Barat', city: 'Bekasi', district: 'Pondokgede' },
     { province: 'Jawa Barat', city: 'Bekasi', district: 'Jatiasih' },
     { province: 'Jawa Barat', city: 'Bekasi', district: 'Bantargebang' },
-    
+
     { province: 'Jawa Timur', city: 'Surabaya', district: 'Pakal' },
     { province: 'Jawa Timur', city: 'Surabaya', district: 'Rungkut' },
     { province: 'Jawa Timur', city: 'Malang', district: 'Blimbing' },
     { province: 'Jawa Timur', city: 'Malang', district: 'Kedungkandang' },
     { province: 'Jawa Timur', city: 'Sidoarjo', district: 'Waru' },
     { province: 'Jawa Timur', city: 'Sidoarjo', district: 'Sukodono' },
-    
+
+    { province: 'Jawa Tengah', city: 'Sukoharjo', district: 'Baki' },
+    { province: 'Jawa Tengah', city: 'Sukoharjo', district: 'Bendosari' },
+
     { province: 'Daerah Istimewa Yogyakarta', city: 'Yogyakarta', district: 'Danurejan' },
     { province: 'Daerah Istimewa Yogyakarta', city: 'Yogyakarta', district: 'Gondokusuman' },
     { province: 'Daerah Istimewa Yogyakarta', city: 'Yogyakarta', district: 'Gondomanan' },

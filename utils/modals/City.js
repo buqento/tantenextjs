@@ -60,6 +60,9 @@ export const City = [
     { name: 'Malang', province: 'Jawa Timur' },
     { name: 'Sidoarjo', province: 'Jawa Timur' },
 
+    { name: 'Banjarnegara', province: 'Jawa Tengah' },
+    { name: 'Sukoharjo', province: 'Jawa Tengah' },
+
     // Daerah Istimewa Yogyakarta
     { name: 'Bantul', province: 'Daerah Istimewa Yogyakarta' },
     // { name: 'Gunungkidul', province: 'Daerah Istimewa Yogyakarta' },
