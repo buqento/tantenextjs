@@ -50,7 +50,7 @@ class CampaignItemList extends Component {
         }
         return (
             <a className="hover:text-current" href={`/${Generateslug(item.title)}`}>
-                <div className="cursor-pointer w-full overflow-hidden pt-2 flex" onClick={() => handleLastView(item)}>
+                <div className="cursor-pointer w-full overflow-hidden py-2 flex" onClick={() => handleLastView(item)}>
                     <div className="w-20 h-24 bg-gray-400">
                         <Image
                             className="lazyload object-cover object-center w-20 h-24" src={`https://cdn.statically.io/img/i.imgur.com/${item.images[0]}`} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} layout="fill"
