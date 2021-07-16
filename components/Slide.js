@@ -21,7 +21,7 @@ class Slide extends Component {
                         <div className="w-full h-80">
                             <Image
                                 loader="/static/images/image-not-found.png"
-                                className="object-contain object-center w-full h-80" src={`https://cdn.statically.io/img/i.imgur.com/h=400/${item}`} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} layout="fill" quality={60}
+                                className="object-contain object-center w-full h-80" src={`https://cdn.statically.io/img/i.imgur.com/${item}`} onError={(e) => { e.target.onerror = null; e.target.src = "/static/images/image-not-found.png" }} layout="fill"
                             />
                         </div>
                     </SwiperSlide>
