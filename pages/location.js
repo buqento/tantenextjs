@@ -12,8 +12,8 @@ class Location extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            keyword: 'Universitas Atma Jaya Yogyakarta',
-            listResult: null,
+            keyword: null,
+            listResult: JSON.parse(props.kosts),
             placeName: null,
             viewport: {
                 latitude: -7.780471209178254,
@@ -26,10 +26,8 @@ class Location extends React.Component {
     }
     componentDidMount() {
         const input = document.getElementsByTagName("input")[0]
-        const { viewport } = this.state
         input.setAttribute("placeholder", "Location/Area/Address")
         input.select()
-        this.setState({ listResult: this.setData(viewport) })
     }
     setData(viewport) {
         const { kosts } = this.props
@@ -73,7 +71,7 @@ class Location extends React.Component {
         return dist
     }
     render() {
-        const { viewport, listResult, placeName, keyword } = this.state
+        const { viewport, listResult, placeName } = this.state
         const mapboxApiKey = process.env.NEXT_PUBLIC_MAPBOX_TOKEN
         const seo = {
             title: 'Search - Cari kost di sekitar lokasi Kamu',
@@ -94,13 +92,14 @@ class Location extends React.Component {
                         queryParams={{ country: "id" }} />
                 </div>
                 <div className="mx-2">
-                    <h1 className="my-2 font-bold">
+                    <h1 className="my-2">
                         {
                             listResult &&
                             <>
-                                {listResult.length > 0 && `${listResult.length} Room${listResult.length > 1 ? 's' : ''} Near `}
-                                {listResult.length > 0 && !placeName ? keyword : ` `}
-                                {listResult.length > 0 && placeName && placeName}
+                                <span className="font-bold">
+                                    {listResult.length > 0 && `${listResult.length} Room${listResult.length > 1 ? 's' : ''}`}
+                                    {listResult.length > 0 && placeName && 'Near ' + placeName}
+                                </span>
                                 {listResult.length === 0 && placeName && <Message title="No Room" message={`No room near ${placeName}. Use search to view more rooms`} />}
                             </>
                         }
