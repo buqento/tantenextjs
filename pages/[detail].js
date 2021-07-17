@@ -170,9 +170,9 @@ class Detail extends React.Component {
               </div>
             </div>
 
-            <div className="text-left uppercase text-green-600 font-bold">{type(detail.type)}</div>
-
             <small className="text-gray-700 uppercase">Updated {moment(detail.date_modified).fromNow()} &middot; {detail.hit} Views</small>
+
+            <div className="text-left uppercase text-green-600 font-bold">{type(detail.type)}</div>
 
             <h1 className="my-3 text-xl capitalize font-bold">{detail.title}</h1>
 
