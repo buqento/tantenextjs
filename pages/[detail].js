@@ -22,6 +22,7 @@ import Generateslug from '../utils/Generateslug'
 import Ads from '../components/Ads'
 import GalleryComponent from '../components/GalleryComponent'
 import Slide from '../components/Slide'
+import YoutubeEmbed from '../components/YoutubeEmbed'
 class Detail extends React.Component {
   constructor(props) {
     super(props)
@@ -222,6 +223,13 @@ class Detail extends React.Component {
                 <a href={`https://www.google.com/maps/search/?api=1&query=${detail.location.lat_lng.latitude},${detail.location.lat_lng.longitude}`} target="_blank" rel="noreferrer">
                   <div className="my-2 underline text-indigo-700">Google Map <FaExternalLinkAlt className="inline ml-1 mb-1" /></div>
                 </a>
+                {
+                  detail.video && detail.video.youtube &&
+                  <div className="my-3">
+                    <h2 className="font-bold mb-1">Video Detail</h2>
+                    <YoutubeEmbed title={detail.title} embedId={detail.video.youtube} />
+                  </div>
+                }
               </div>
               <div className="border-t">
                 <div className="mx-2">
